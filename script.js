@@ -156,7 +156,7 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
       'chat' : 'Chat',
       'email' : 'Kontaktformular',
       'reactionMail' : 'Reaktionszeit: 1 Arbeitstag',
-      'contact' : 'Kontaktiere uns',
+      'contact' : 'Schreibe uns',
       'questionNotAnswered' : 'Deine Frage ist nicht beantwortet?',
       'noAnswerFound' : 'Keine passende Antwort gefunden?',
       'writeUs' : 'Schreib uns!!',
