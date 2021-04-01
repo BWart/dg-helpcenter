@@ -961,15 +961,28 @@ ul {
   background: #00559d;
   border-color: transparent;
   border: 0;
+  border-radius: 3px; 
+}
+
+.blocks-item-link-galaxus{
+  color: #fff;
+  padding: 20px 30px;
+  background: #444;
+  border-color: transparent;
+  border: 0;
   border-radius: 3px;
- 
-  
 }
 
 .blocks-item-link:hover, .blocks-item-link:focus, .blocks-item-link:active {
   text-decoration: none;
   color: #fff;
   background: #e60020;
+}
+
+.blocks-item-link-galaxus:hover, .blocks-item-link-galaxus:focus, .blocks-item-link-galaxus:active {
+  text-decoration: none;
+  color: #fff;
+  background: #000;
 }
 
 .blocks-item-title {
