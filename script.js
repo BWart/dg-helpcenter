@@ -159,7 +159,7 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
       'contact' : 'Kontaktiere uns',
       'questionNotAnswered' : 'Deine Frage ist nicht beantwortet?',
       'noAnswerFound' : 'Keine passende Antwort gefunden?',
-      'writeUs' : 'Schreib uns',
+      'writeUs' : 'Schreib uns!',
       'openingHoursChat' : '&nbsp',
       'placeholder' : '&nbsp;',
       'placeholder2' : '&nbsp;',
