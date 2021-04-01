@@ -4550,6 +4550,10 @@ display: none;
 .body-border {
   border: 8px solid #00559D;
 }
+
+.body-border-galaxus {
+  border: none;
+}
   
 }
   
