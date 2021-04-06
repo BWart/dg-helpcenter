@@ -4,7 +4,7 @@
 
 if(window.location.hostname !="https://digitec1547742938.zendesk.com/"){
   var brand = "{{asset 'galaxus-styles.css'}}";
-  $('head').append('<link rel="stylesheet" type="text/css" href="{{asset 'galaxus-styles.css'}}">');
+  $('head').append('<link rel="stylesheet" type="text/css" href="galaxus-styles.css">');
 }
 else{
   var brand = "{{asset 'digitec-styles.css'}}";
