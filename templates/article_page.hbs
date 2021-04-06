@@ -100,16 +100,18 @@
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
               {{vote 'down' role='radio' class='button article-vote article-vote-down' id="feedback"}}
 
-            <div id="fbopen">
-              <textarea  height="120%" width="80px" align="center" style="display: none;"></textarea>
-              <button  onclick="document.getElementById('Add').innerHTML=document.getElementById('downvotebox').value;" style="display: none;">Senden</button>
-            </div>
+            
             </div>
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
             </small>
           </div>
         {{/with}}
+
+        <div id="fbopen">
+              <textarea  height="120%" width="80px" align="center" style="display: none;"></textarea>
+              <button  onclick="document.getElementById('Add').innerHTML=document.getElementById('downvotebox').value;" style="display: none;">Senden</button>
+        </div>
         
         
 <!-- Request Link
