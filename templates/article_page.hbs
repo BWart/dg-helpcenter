@@ -108,9 +108,9 @@
           </div>
         {{/with}}
 
-        <div id="fbopen">
-              <textarea  height="120%" width="80px" align="center" style="display: hide;"></textarea>
-              <button  onclick="document.getElementById('Add').innerHTML=document.getElementById('downvotebox').value;" style="display: none;">Senden</button>
+        <div id="fbopen" style="display: none;">
+              <textarea  height="120%" width="80px" align="center" ></textarea>
+              <button  onclick="document.getElementById('Add').innerHTML=document.getElementById('downvotebox').value;">Senden</button>
         </div>
         
         
@@ -226,8 +226,11 @@
         </section> -->
 
         <script>
+
             $('.article-vote-down').click(function(){
-                $("#fbopen").show(1000);
+              if($('#fbopen').is(':hidden')){
+                $('#fbopen').show(1000);
+              }                
             });
 
 
