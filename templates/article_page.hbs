@@ -96,23 +96,15 @@
         {{#with article}}
           <div class="article-votes">
             <span class="article-votes-question">{{t 'was_this_article_helpful'}}</span>
-          
-            <div class="article-votes-controls" role='radiogroup'>
+            <div class="article-votes-controls" role='radiogroup' id="votebuttons">
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
+              {{vote 'down' role='radio' class='button article-vote article-vote-down' id="feedback"}}
 
-            </div>
-
-              <div id="downvotebox" class="article-votes-controls" role='radiogroup'>
-                {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
-                
-              </div>
-                   
-
-
+            <div id="fbopen">
               <textarea id="downvotebox" height="120%" width="80px" align="center" ></textarea>
               <button id="downvotebox" onclick="document.getElementById('Add').innerHTML=document.getElementById('downvotebox').value;">Senden</button>
-
-            
+            </div>
+            </div>
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
             </small>
@@ -232,8 +224,14 @@
         </section> -->
 
         <script>
-            function votedownclick(){
-              var x = document.getElementById("downvotebox");
+            $("#feedback").click(function(){
+                $("votebuttons").show(1000);
+            });
+
+        </script>
+
+                    <!--function votedownclick(){
+              var x = document.getElementById("Add");
               if(x.style.display === "none"){
                 x.style.display = "block";
               }
@@ -250,9 +248,7 @@
             $("#Remove").on("click", function() {  
                 $("#article-votes-controls").children().last().remove();  
             });  
-        });  
-
-        </script>
+        });  -->
       </div>
     </article>
   </div>
