@@ -395,6 +395,7 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   $('.article-vote-down').on('click', function(e) {
       var path = window.location.pathname;
       ga('send', 'event', 'Vote', 'Not Helpful', path);
+      $("#fbopen").show(1000);
   });  
   
   // zopim integration
