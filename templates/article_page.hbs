@@ -98,7 +98,12 @@
             <span class="article-votes-question">{{t 'was_this_article_helpful'}}</span>
             <div class="article-votes-controls" role='radiogroup'>
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
-              {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
+              {{vote 'down' role='radio' class='button article-vote article-vote-down' id='Add'}}
+
+
+              <textarea id="text" height="80px" width="80px"></textarea>
+              <button onclick="document.getElementById('varticle-votes-controls').innerHTML=document.getElementById('text').value;">Senden</button>
+
             </div>
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
@@ -217,6 +222,20 @@
 
           <p class="comment-callout">{{comment_callout}}</p>
         </section> -->
+        <script>
+            function votedownclick(){
+              document.getElementById('downvoteInput').className="show";
+            }
+        $(document).ready(function() {  
+            $("#Add").on("click", function() {  
+                $("#article-votes-controls").append("<div><br><input type='text'/><br></div>");  
+            });  
+            $("#Remove").on("click", function() {  
+                $("#article-votes-controls").children().last().remove();  
+            });  
+        });  
+
+        </script>
       </div>
     </article>
   </div>
