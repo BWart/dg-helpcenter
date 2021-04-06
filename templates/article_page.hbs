@@ -98,7 +98,7 @@
             <span class="article-votes-question">{{t 'was_this_article_helpful'}}</span>
             <div class="article-votes-controls" role='radiogroup'>
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
-              {{vote 'down' role='radio' class='button article-vote article-vote-down' id='Add' onclick=""}}
+              {{vote 'down' role='radio' class='button article-vote article-vote-down' id='Add' onclick="votedownclick"}}
 
 
               <textarea id="downvotebox" height="120%" width="80px" align="center" ></textarea>
@@ -225,7 +225,7 @@
 
         <script>
             function votedownclick(){
-              var x = document.getElementById("Add");
+              var x = document.getElementById("downvotebox");
               if(x.style.display === "none"){
                 x.style.display = "block";
               }
