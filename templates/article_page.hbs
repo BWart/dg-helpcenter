@@ -98,11 +98,11 @@
             <span class="article-votes-question">{{t 'was_this_article_helpful'}}</span>
             <div class="article-votes-controls" role='radiogroup'>
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
-              {{vote 'down' role='radio' class='button article-vote article-vote-down' id='Add'}}
+              {{vote 'down' role='radio' class='button article-vote article-vote-down' id='Add' onclick=""}}
 
 
-              <textarea id="downvotebox" height="80px" width="80px" ></textarea>
-              <button onclick="document.getElementById('article-votes-controls').innerHTML=document.getElementById('downvotebox').value;">Senden</button>
+              <textarea id="downvotebox" height="120%" width="80px" align="center" ></textarea>
+              <button id="downvotebox" onclick="document.getElementById('article-votes-controls').innerHTML=document.getElementById('downvotebox').value;">Senden</button>
 
             </div>
             <small class="article-votes-count">
@@ -222,11 +222,20 @@
 
           <p class="comment-callout">{{comment_callout}}</p>
         </section> -->
+        
         <script>
             function votedownclick(){
-              document.getElementById('downvoteInput').className="show";
+              var x = document.getElementById("downvotebox");
+              if(x.style.display === "none"){
+                x.style.display = "block";
+              }
+              else{
+                x.style.display = "none"
+              }
+
             }
-        $(document).ready(function() {  
+
+        $(document).ready(function()) {  
             $("#Add").on("click", function() {  
                 $("#article-votes-controls").append("<div><br><input type='text'/><br></div>");  
             });  
