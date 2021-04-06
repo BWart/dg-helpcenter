@@ -2,6 +2,28 @@
  * jQuery v1.9.1 included
  */
 
+if(window.location.hostname !="https://digitec1547742938.zendesk.com/"){
+  var brand = 'href="{{asset 'galaxus-styles.css'}}" rel="stylesheet"';
+}
+else{
+  'href="{{asset 'digitec-styles.css'}}" rel="stylesheet"';
+}
+
+console.log(window.location.hostname);
+
+
+var cssId = 'myCss';  // you could encode the css path itself to generate id..if (!document.getElementById(cssId))
+{
+    var head  = document.getElementsByTagName('head')[0];
+    var link  = document.createElement('link');
+    link.id   = cssId;
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = brand;
+    link.media = 'all';
+    head.appendChild(link);
+}
+
 $(document).ready(function() {
   switch ($('html').attr('lang')){
     case 'de':
@@ -280,7 +302,7 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   $('.article-vote-down').on('click', function(e) {
       this.blur();
   });  
-    
+  
   
   // set initial Customer Type  
     if(!localStorage.getItem('isPrivateCustomer') === null){
