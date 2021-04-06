@@ -3,10 +3,10 @@
  */
 
 if(window.location.hostname !="https://digitec1547742938.zendesk.com/"){
-  var brand = 'href="{{asset 'galaxus-styles.css'}}';
+  var brand = "{{asset 'galaxus-styles.css'}}";
 }
 else{
-  'href="{{asset 'digitec-styles.css'}}';
+  "{{asset 'digitec-styles.css'}}";
 }
 
 console.log(window.location.hostname);
