@@ -98,9 +98,8 @@
             <span class="article-votes-question">{{t 'was_this_article_helpful'}}</span>
             <div class="article-votes-controls" role='radiogroup' id="votebuttons">
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
-              {{vote 'down' role='radio' class='button article-vote article-vote-down' id="feedback"}}
+              {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
 
-            
             </div>
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
@@ -110,7 +109,7 @@
 
         <div id="fbopen" style="display: none;">
               <textarea  height="120%" width="80px" align="center" ></textarea>
-              <button  onclick="document.getElementById('Add').innerHTML=document.getElementById('downvotebox').value;">Senden</button>
+              <button  onclick="document.getElementById('Add').innerHTML=document.getElementById('downvotebox').value;">Feedback senden</button>
         </div>
         
         
