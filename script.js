@@ -2,6 +2,7 @@
  * jQuery v1.9.1 included
  */
 
+$('head').append( $('<link rel="stylesheet" type="text/css" />').attr('href', 'https://digitec1547742938.zendesk.com/') );
 
 console.log(window.location.hostname);
 
