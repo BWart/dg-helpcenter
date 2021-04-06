@@ -230,6 +230,7 @@
             $('.article-vote-down').click(function(){
               if($('#fbopen').is(':hidden')){
                 $('#fbopen').show(1000);
+                $(this).toggleClass('clicked')
               }                
             });
 
