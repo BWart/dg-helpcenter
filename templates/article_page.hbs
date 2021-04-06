@@ -231,7 +231,7 @@
                 $('#fbopen').show(1000);
                 $(this).toggleClass('clicked')
               } 
-              else if($('.article-vote-up').click(function()){
+              else if($('#fbopen').is(':visible') && $('.article-vote-up').data('clicked')){
                 	$('#fbopen').hide(1000);
               }               
             });
