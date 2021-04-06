@@ -1,3 +1,14 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 <meta name="google-site-verification" content="8X_8QzD4bZxyaCY1dA-h_IbHT_1aIVhsuTgc_8KGDzo" />
-<script src="https://www.googleoptimize.com/optimize.js?id=OPT-M87GVRZ"></script>
+<script src="https://www.googleoptimize.com/optimize.js?id=OPT-M87GVRZ">
+
+    if(window.location.hostname !="https://digitec1547742938.zendesk.com/"){
+        var brand = "{{asset 'galaxus-styles.css'}}";
+        <link rel="stylesheet" type="text/css" href="{{asset 'galaxus-styles.css'}}">
+    }
+    else{
+        var brand = "{{asset 'digitec-styles.css'}}";
+        <link rel="stylesheet" type="text/css" href="{{asset 'digitec-styles.css'}}">
+    }
+
+</script>

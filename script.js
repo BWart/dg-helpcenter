@@ -2,18 +2,8 @@
  * jQuery v1.9.1 included
  */
 
-if(window.location.hostname !="https://digitec1547742938.zendesk.com/"){
-  var brand = "{{asset 'galaxus-styles.css'}}";
-  $('head').append('<link rel="stylesheet" type="text/css" href="galaxus-styles.css">');
-}
-else{
-  var brand = "{{asset 'digitec-styles.css'}}";
-  $('head').append('<link rel="stylesheet" type="text/css" href="digitec-styles.css">');
-}
 
 console.log(window.location.hostname);
-
-
 
 $(document).ready(function() {
   switch ($('html').attr('lang')){
