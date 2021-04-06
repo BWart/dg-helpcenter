@@ -4,25 +4,16 @@
 
 if(window.location.hostname !="https://digitec1547742938.zendesk.com/"){
   var brand = "{{asset 'galaxus-styles.css'}}";
+  $('head').append('<link rel="stylesheet" type="text/css" href="{{asset 'galaxus-styles.css'}}">');
 }
 else{
   var brand = "{{asset 'digitec-styles.css'}}";
+  $('head').append('<link rel="stylesheet" type="text/css" href="{{asset 'digitec-styles.css'}}">');
 }
 
 console.log(window.location.hostname);
 
 
-var cssId = 'myCss';  // you could encode the css path itself to generate id..if (!document.getElementById(cssId))
-{
-    var head  = document.getElementsByTagName('head')[0];
-    var link  = document.createElement('link');
-    link.id   = cssId;
-    link.rel  = 'stylesheet';
-    link.type = 'text/css';
-    link.href = brand;
-    link.media = 'all';
-    head.appendChild(link);
-}
 
 $(document).ready(function() {
   switch ($('html').attr('lang')){
