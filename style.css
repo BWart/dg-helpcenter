@@ -4209,5 +4209,9 @@ ul {
 
 
 #fbopen {
-  display: hide;
+  display: none;
+}
+
+#downvotebox {
+  display: none;
 }
