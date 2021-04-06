@@ -100,6 +100,8 @@
             <div class="article-votes-controls" role='radiogroup'>
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
 
+            </div>
+
               <div id="downvotebox" class="article-votes-controls" role='radiogroup'>
                 {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
                 
@@ -110,7 +112,7 @@
               <textarea id="downvotebox" height="120%" width="80px" align="center" ></textarea>
               <button id="downvotebox" onclick="document.getElementById('Add').innerHTML=document.getElementById('downvotebox').value;">Senden</button>
 
-            </div>
+            
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
             </small>
