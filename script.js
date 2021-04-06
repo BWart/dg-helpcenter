@@ -6,7 +6,7 @@ if(window.location.hostname !="https://digitec1547742938.zendesk.com/"){
   var brand = "{{asset 'galaxus-styles.css'}}";
 }
 else{
-  "{{asset 'digitec-styles.css'}}";
+  var brand = "{{asset 'digitec-styles.css'}}";
 }
 
 console.log(window.location.hostname);
