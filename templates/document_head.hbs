@@ -1,19 +1,12 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 <meta name="google-site-verification" content="8X_8QzD4bZxyaCY1dA-h_IbHT_1aIVhsuTgc_8KGDzo" />
-<div id="asdf1234"></div>
-<script>
+<div id="customDGStyle"></div>
 
+<script>
     if(window.location.hostname !="digitec1547742938.zendesk.com/" ){
-        document.getElementById('asdf1234').innerHTML = '<link href="{{asset 'galaxus-styles.css'}}" rel="stylesheet" type="text/css" />'
+        document.getElementById('customDGStyle').innerHTML = '<link href="{{asset 'digitec-styles.css'}}" rel="stylesheet" type="text/css" />';
     }
     else{
-        document.getElementById('asdf1234').innerHTML = '<link href="{{asset 'digitec-styles.css'}}" rel="stylesheet" type="text/css" />'
-    }
-
-    
-
-    console.log(window.location.name)
-    
-
-
+        document.getElementById('customDGStyle').innerHTML = '<link href="{{asset 'galaxus-styles.css'}}" rel="stylesheet" type="text/css" />';
+    }   
 </script>

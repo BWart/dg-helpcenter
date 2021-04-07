@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* custom DG styles **/
 
 .nesty-panel {
@@ -47,6 +49,10 @@
    
    .hidden {
        display: none;
+   }
+   
+   .footer{
+        background-color: #00559d;
    }
    
    .footer-side,
