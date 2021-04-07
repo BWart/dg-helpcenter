@@ -243,10 +243,11 @@
             });
 
             $('.article-vote-down').click(function(){
-
-            $('html, body').animate({
-              scrollTop: $("#fbsenden").offset().top
-            }, 5000);
+              var position = $("#fbsenden").offset().top;
+            
+              $('html, body').animate({
+                scrollTop: position
+              }, 10000);
               
             });
 
