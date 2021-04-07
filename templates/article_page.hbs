@@ -243,11 +243,10 @@
             });
 
             $('.article-vote-down').click(function(){
-              var position = $("#fbsenden").offset().top;
-            
+
               $('html, body').animate({
-                scrollTop: position
-              }, 10000);
+                scrollTop: $("#fbsenden").offset().top
+              }, 2000, 'swing');
               
             });
 
@@ -260,7 +259,7 @@
 
                 $('html, body').animate({
                   scrollTop: $('.article-vote-up').offset().top
-                }, 5000);              
+                }, 2000, 'swing');              
 
                 
             });
