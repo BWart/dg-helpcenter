@@ -233,15 +233,15 @@
             $('.article-vote-down').click(function(){ 
               if($('#fbopen').is(':hidden')){
                 $('#fbopen').show(1000);
-                //$(this).toggleClass('clicked')
-
-              //Scroll down to "Feedback senden" Button if clicked and Box opened
-
-              $('html, body').animate({
-                scrollTop: $("h4").offset().top
-              }, 600, 'swing');
+                $(this).toggleClass('clicked')
 
               }      
+              //Scroll down to "Feedback senden" Button if clickedand Box opened
+
+              $('html, body').animate({
+                scrollTop: $("#fbsenden").offset().top
+              }, 2000);              
+
             });
 
             // Wenn Feedbox offen und man Upvote klickt, verschwindet die Feedbackbox
@@ -253,7 +253,9 @@
 
                 $('html, body').animate({
                   scrollTop: $('.article-vote-up').offset().top
-                }, 600, 'swing');               
+                }, 2000);              
+
+                
             });
 
 
