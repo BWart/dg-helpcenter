@@ -32,6 +32,10 @@ header svg {
 	display: none;
 }
 
+.footer{
+    background-color: #333;
+}
+
 .footer-side,
 .footer-center,
 .footer-inner{

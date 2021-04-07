@@ -51,6 +51,10 @@
        display: none;
    }
    
+   .footer{
+        background-color: #00559d;
+   }
+   
    .footer-side,
    .footer-center,
    .footer-inner{
