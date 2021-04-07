@@ -6,10 +6,10 @@
 <script>
     if(window.location.hostname !="digitec1547742938.zendesk.com/"){
         document.getElementById('customDGStyle').innerHTML = '<link href="{{asset 'galaxus-styles.css'}}" rel="stylesheet" type="text/css"/>';
-        document.getElementById('favicon').innerHTML = '<link id="favicon" rel="shortcut icon" type="image/png" href="{{asset 'fav_galaxus.css'}}"/>
+        document.getElementById('favicon').innerHTML = '<link id="favicon" rel="shortcut icon" type="image/png" href="{{asset 'fav_galaxus.css'}}"/>';
     }
     else{
         document.getElementById('customDGStyle').innerHTML = '<link href="{{asset 'digitec-styles.css'}}" rel="stylesheet" type="text/css"/>';
-        document.getElementById('favicon').innerHTML = '<link id="favicon" rel="shortcut icon" type="image/png" href="{{asset 'fav_digitec.css'}}"/>
+        document.getElementById('favicon').innerHTML = '<link id="favicon" rel="shortcut icon" type="image/png" href="{{asset 'fav_digitec.css'}}"/>';
     }   
 </script>
