@@ -226,7 +226,9 @@
 
         <script>
 
-            $('.article-vote-down').click(function(){
+            //Feedbackbox bei Downvote; Wenn versteckt und geklickt, dann oefnnen
+
+            $('.article-vote-down').click(function(){ 
               if($('#fbopen').is(':hidden')){
                 $('#fbopen').show(1000);
                 $(this).toggleClass('clicked')
@@ -234,6 +236,14 @@
               else if($('#fbopen').is(':visible') && $('.article-vote-up').data('clicked')){
                 	$('#fbopen').hide(1000);
               }               
+            });
+
+            $('.article-vote-up').click(function(){
+                if($('#fbopen').is(':visible')){
+                  $('#fbopen').hide(1000);
+                }
+
+
             });
 
 
