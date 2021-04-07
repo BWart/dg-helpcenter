@@ -235,12 +235,15 @@
                 $('#fbopen').show(1000);
                 $(this).toggleClass('clicked')
 
+                $('html, body').animate({
+                  scrollTop: $("#fbsenden").offset().top
+                }, 2000, function() {
+                  $("#fbsenden").focus();
+                });              
               }      
               //Scroll down to "Feedback senden" Button if clickedand Box opened
 
-              $('html, body').animate({
-                scrollTop: $("#fbsenden").offset().top
-              }, 2000);              
+
 
             });
 
@@ -255,7 +258,6 @@
                   scrollTop: $('.article-vote-up').offset().top
                 }, 2000);              
 
-                
             });
 
 
