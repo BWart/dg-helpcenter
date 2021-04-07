@@ -4207,5 +4207,16 @@ ul {
 }
 
 #fbsenden{
-  margin-bottom: 10px;
+  margin-bottom: 50px;
+}
+
+span{
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  resize: vertical;
+  width: 80%;
+  height: 150px;
+  outline: none;
+  padding: 10px;
+  text-align: center;
 }
