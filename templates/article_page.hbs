@@ -227,27 +227,32 @@
         <script>
 
             //Feedbackbox bei Downvote; Wenn versteckt und geklickt, dann oefnnen
+            var fdbox = false;
 
             $('.article-vote-down').click(function(){ 
               if($('#fbopen').is(':hidden')){
                 $('#fbopen').show(1000);
                 $(this).toggleClass('clicked')
+                fdbox = true;
               } 
-              else if($('#fbopen').is(':visible') && $('.article-vote-up').data('clicked')){
+              else if($('#fbopen').is(':visible') && $('.article-vote-up').on("click")){
                 	$('#fbopen').hide(1000);
               }               
             });
 
-            $('.article-vote-up').click(function(){
-                if($('#fbopen').is(':visible')){
-                  $('#fbopen').hide(1000);
-                }
+            
 
 
             });
 
 
         </script>
+
+              <!--$('.article-vote-up').click(function(){
+                if($('#fbopen').is(':visible')){
+                  $('#fbopen').hide(1000);
+                }-->
+                
 
                     <!--function votedownclick(){
               var x = document.getElementById("Add");
