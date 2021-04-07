@@ -240,7 +240,7 @@
 
               $('html, body').animate({
                 scrollTop: $("#fbsenden").offset().top
-              }, 1000);              
+              });              
 
             });
 
@@ -250,6 +250,12 @@
                 if($('#fbopen').is(':visible')){
                   $('#fbopen').hide(1000);
                 }
+
+                $('html, body').animate({
+                  scrollTop: $('.article-vote-up').offset().top
+                });              
+
+                
             });
 
 
