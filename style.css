@@ -4208,6 +4208,7 @@ ul {
 
 #fbsenden{
   margin-bottom: 50px;
+  margin-top: 10px;
 }
 
 #fbtext{
@@ -4218,5 +4219,4 @@ ul {
   height: 150px;
   outline: none;
   padding: 10px;
-  text-align: center;
 }

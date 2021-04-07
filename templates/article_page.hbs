@@ -108,8 +108,10 @@
         {{/with}}
 
         <div id="fbopen" style="display: none;">
+          <a href="#">
               <textarea id="fbtext" height="120%" width="80px" align="center" ></textarea>
               <button id="fbsenden" onclick="document.getElementById('Add').innerHTML=document.getElementById('downvotebox').value;">Feedback senden</button>
+          </a>
         </div>
         
         
@@ -227,13 +229,11 @@
         <script>
 
             //Feedbackbox bei Downvote; Wenn versteckt und geklickt, dann oefnnen
-            var fdbox = false;
 
             $('.article-vote-down').click(function(){ 
               if($('#fbopen').is(':hidden')){
                 $('#fbopen').show(1000);
                 $(this).toggleClass('clicked')
-                fdbox = true;
               }              
             });
 
