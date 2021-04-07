@@ -51,6 +51,16 @@
        display: none;
    }
    
+   .blocks-item-link {
+    color: #fff;
+    background: #00559d;
+    }
+
+    .blocks-item-link:hover, .blocks-item-link:focus, .blocks-item-link:active {
+    color: #fff;
+    background: #e60020;
+    }
+   
    .footer{
         background-color: #00559d;
    }

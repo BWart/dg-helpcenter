@@ -31,6 +31,16 @@ header svg {
 .hidden {
 	display: none;
 }
+ 
+.blocks-item-link {
+   color: fff;
+   background: #444;
+   }
+
+   .blocks-item-link:hover, .blocks-item-link:focus, .blocks-item-link:active {
+   color: #fff;
+   background: #333;
+   }
 
 .footer{
     background-color: #333;

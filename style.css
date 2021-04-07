@@ -957,9 +957,7 @@ ul {
 }
 
 .blocks-item-link {
-  color: #fff;
   padding: 20px 30px;
-  background: #00559d;
   border-color: transparent;
   border: 0;
   border-radius: 3px; 
@@ -968,8 +966,6 @@ ul {
 
 .blocks-item-link:hover, .blocks-item-link:focus, .blocks-item-link:active {
   text-decoration: none;
-  color: #fff;
-  background: #e60020;
 }
 
 
