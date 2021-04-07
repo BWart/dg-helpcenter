@@ -234,6 +234,10 @@
               if($('#fbopen').is(':hidden')){
                 $('#fbopen').show(1000);
                 $(this).toggleClass('clicked')
+
+                    $('html, body').animate({
+                      scrollTop: $("#fbsenden").offset().top
+                    }, 2000);
               }              
             });
 
