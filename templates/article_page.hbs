@@ -107,11 +107,11 @@
           </div>
         {{/with}}
 
+        <!-- Feedback senden Box wenn Downvote gedrueckt wird -->
+
         <div id="fbopen" style="display: none;">
-          <a href="#">
               <textarea id="fbtext" height="120%" width="80px" align="center" ></textarea>
               <button id="fbsenden" onclick="document.getElementById('Add').innerHTML=document.getElementById('downvotebox').value;">Feedback senden</button>
-          </a>
         </div>
         
         
@@ -234,6 +234,8 @@
               if($('#fbopen').is(':hidden')){
                 $('#fbopen').show(1000);
                 $(this).toggleClass('clicked')
+
+                //Scroll down to "Feedback senden" Button if clickedand Box opened
 
                     $('html, body').animate({
                       scrollTop: $("#fbsenden").offset().top

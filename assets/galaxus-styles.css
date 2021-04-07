@@ -425,4 +425,20 @@
    html {
      min-height: 100%;
      background-color: #d1d3d4; 
+     scroll-behavior: smooth;
    }
+
+   #fbsenden{
+    margin-bottom: 50px;
+    margin-top: 10px;
+  }
+  
+  #fbtext{
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    resize: vertical;
+    width: 100%;
+    height: 150px;
+    outline: none;
+    padding: 10px;
+  }
