@@ -3,11 +3,11 @@
 <div id="asdf1234"></div>
 <script>
 
-    if(window.location.hostname !="digitec1547742938.zendesk.com/"){
-        document.getElementById('asdf1234').innerHTML = '<link href="{{asset 'galaxus-styles.css'}}" rel="stylesheet" />'
+    if(window.location.hostname !="digitec1547742938.zendesk.com/" ){
+        document.getElementById('asdf1234').innerHTML = '<link href="{{asset 'galaxus-styles.css'}}" rel="stylesheet" type="text/css" />'
     }
     else{
-        document.getElementById('asdf1234').innerHTML = '<link href="{{asset 'digitec-styles.css'}}" rel="stylesheet" />'
+        document.getElementById('asdf1234').innerHTML = '<link href="{{asset 'digitec-styles.css'}}" rel="stylesheet" type="text/css" />'
     }
 
     
