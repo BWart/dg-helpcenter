@@ -1,5 +1,5 @@
 function fillInfoBoxWording(){
-    var portal = window.location.name();
+    var portal = window.location.name;
     var link1 = ""
     var link2 = ""
     console.log(portal);
