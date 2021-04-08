@@ -72,7 +72,7 @@
             "outputDeleteAccountDescriptionLabel" : "Beschreibung\nHinweis: Für eine rasche Bearbeitung benötigen wir deine Kundennummer",
     
             "Ich komme nicht auf mein Benutzerkonto" : "inputCantLogin",
-            "outputCantLogin" : "Du kannst dein Passwort jederzeit zurücksetzen und ein neues zusenden lassen:\n\n\u2022	Klicke im Login-Bereich auf <a href='https:\/\/www.digitec.ch\/de\/Register\/RequestPassword' target='blank'>Passwort vergessen?<\/a>\n\u2022	Gib deinen Benutzernamen oder die hinterlegte E-Mail-Adresse an und klicke auf \"Link anfordern\"",
+            "outputCantLogin" : "Du kannst dein Passwort jederzeit zurücksetzen und ein neues zusenden lassen:\n\n\u2022 Klicke im Login-Bereich auf <a href='https:\/\/www.digitec.ch\/de\/Register\/RequestPassword' target='blank'>Passwort vergessen?<\/a>\n\u2022 Gib deinen Benutzernamen oder die hinterlegte E-Mail-Adresse an und klicke auf \"Link anfordern\"",
             "Ich komme nicht auf mein Benutzerkonto descriptionLabel" : "inputCantLoginDescriptionLabel",
             "outputCantLoginDescriptionLabel" : "Beschreibung\nHinweis: Für eine rasche Bearbeitung benötigen wir deine Kundennummer"
   
@@ -117,7 +117,7 @@
         },
         "Level 0: Problème avec la commande":{
             "J'ai reçu un produit endommagé à l'extérieur" : "inputDamagedProduct",
-            "outputDamagedProduct" : "Pour un traitement rapide, nous avons besoin des informations suivantes de votre part : \n\n\u2022	numéro de votre commande\n\u2022	description du dommage\n\u2022	photos du dommage et de l'emballage\n\nNous examinerons votre demande avec nos partenaires logistiques et vous informerons dès que possible des étapes suivantes.",
+            "outputDamagedProduct" : "Pour un traitement rapide, nous avons besoin des informations suivantes de votre part:\n\n\u2022 numéro de votre commande\n\u2022 description du dommage\n\u2022 photos du dommage et de l'emballage\n\nNous examinerons votre demande avec nos partenaires logistiques et vous informerons dès que possible des étapes suivantes.",
         
             "Mon produit ne fonctionne pas" : "inputNotWorking",
             "outputNotWorking" : "Si un produit est défectueux et s'il peut être pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='https:\/\/www.digitec.ch\/fr\/after-sales\/service-cases\/select-position' target='blank'>signaler un défaut<\/a>.\n\nLes dommages causés par une utilisation inappropriée ne sont pas couverts par la garantie. Vous trouverez un complément d'information concernant ce point dans nos <a href='https:\/\/www.digitec.ch\/fr\/wiki\/559' target='blank'>conditions de garantie<\/a> et <a href='https:\/\/www.digitec.ch\/Wiki\/478' target='blank'>CGV<\/a>.",
@@ -163,7 +163,7 @@
             "outputDeleteAccountDescriptionLabel" : "Description\nNote : Pour un traitement rapide, nous avons besoin de votre numéro de client",
       
             "Je n'arrive pas à accéder à mon compte d'utilisateur" : "inputCantLogin",
-            "outputCantLogin" : "Vous pouvez à tout moment réinitialiser votre mot de passe pour qu'un nouveau vous soit envoyé : \n\n\u2022	Cliquez dans la zone de connexion sur <a href='https:\/\/www.digitec.ch\/fr\/Register\/RequestPassword' target='blank'>mot de passe oublié ?<\/a>\n\u2022	Saisissez votre nom d'utilisateur ou adresse électronique fournie et cliquez sur \u00AB Demander un lien \u00BB",
+            "outputCantLogin" : "Vous pouvez à tout moment réinitialiser votre mot de passe pour qu'un nouveau vous soit envoyé : \n\n\u2022Cliquez dans la zone de connexion sur <a href='https:\/\/www.digitec.ch\/fr\/Register\/RequestPassword' target='blank'>mot de passe oublié ?<\/a>\n\u2022Saisissez votre nom d'utilisateur ou adresse électronique fournie et cliquez sur \u00AB Demander un lien \u00BB",
             "Je n'arrive pas à accéder à mon compte d'utilisateur descriptionLabel" : "inputCantLoginDescriptionLabel",
             "outputCantLoginDescriptionLabel" : "Description\nNote : Pour un traitement rapide, nous avons besoin de votre numéro de client"  
         },
@@ -203,7 +203,7 @@
         },
         "Level 0: Problemi con un ordine":{
             "Ho ricevuto un prodotto danneggiato esternamente" : "inputDamagedProduct",
-            "outputDamagedProduct" : "Per una rapida elaborazione abbiamo bisogno delle seguenti informazioni:\n\n\u2022 Numero d’ordine\n\u2022 Breve descrizione del danno\n\u2022	Foto dell’articolo e dell’imballaggio danneggiati\n\nEsamineremo la tua richiesta insieme ai nostri partner logistici e ti informeremo al più presto su come procedere.",
+            "outputDamagedProduct" : "Per una rapida elaborazione abbiamo bisogno delle seguenti informazioni:\n\n\u2022 Numero d’ordine\n\u2022 Breve descrizione del danno\n\u2022 Foto dell’articolo e dell’imballaggio danneggiati\n\nEsamineremo la tua richiesta insieme ai nostri partner logistici e ti informeremo al più presto su come procedere.",
         
             "Il mio prodotto non funziona" : "inputNotWorking",
             "outputNotWorking" : "Se un prodotto è difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='https:\/\/www.digitec.ch\/it\/after-sales\/service-cases\/select-position' target='blank'>segnala un difetto<\/a>.\n\nI danni dovuti ad un uso improprio non sono coperti dalla garanzia. Puoi trovare ulteriori informazioni nelle nostre <a href='https:\/\/www.digitec.ch\/it\/wiki\/559' target='blank'>condizioni di garanzia<\/a> e nelle <a href='https:\/\/www.digitec.ch\/Wiki\/478' target='blank'>CGC<\/a>.",
