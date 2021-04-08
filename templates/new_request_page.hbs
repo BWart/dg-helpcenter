@@ -891,6 +891,65 @@ hideOrderNumber();
   
   }
 
+
+if (urlHash != ""){
+//console.log("urlHash: " + urlHash);
+		var topCategory;
+		var topCategoryTag;
+		var currentLanguage = $('html').attr('lang');
+
+		switch (urlHash){
+			case 'damagedProduct':
+				switch (currentLanguage){
+					case 'de':
+						topCategory = 'Ich habe ein äusserlich beschädigtes Produkt erhalten';
+						topCategoryTag = 'webform_case_damaged_product';
+						break;
+					case 'en-US':
+						topCategory = "I've received an externally damaged product";
+						topCategoryTag = 'webform_case_damaged_product';
+						break;
+					case 'fr':
+						topCategory = "J'ai reçu un produit endommagé à l'extérieur";
+						topCategoryTag = 'webform_case_damaged_product';
+						break;
+					case 'it':
+						topCategory = 'Ho ricevuto un prodotto danneggiato esternamente';
+						topCategoryTag = 'webform_case_damaged_product';
+						break;
+					default:
+						topCategory = "-";
+						topCategoryTag = "";
+				}
+				break;
+			default:
+				topCategory = "-";
+				topCategoryTag = "";
+		}
+		
+ 		try {
+		
+      var catJson = JSON.parse($('#request_custom_fields_360014169819').attr("data-tagger"));
+  		//console.log("catJson: " + catJson);
+      $('#request_custom_fields_360014169819').attr("data-tagger", replaceCategoryFromJson(catJson, topCategory, topCategoryTag));
+    }
+    catch (e) {
+    }
+
+
+
+		onDropdownChange(topCategory);
+                                                                                              
+            
+} 
+
+function replaceCategoryFromJson (catJson, topCategory, topCategoryTag){
+	catJson[0].label = topCategory;
+  catJson[0].value = topCategoryTag;
+	//console.log(JSON.stringify(catJson));
+  return JSON.stringify(catJson);
+}
+
                                                                                        
 if (!(typeof $('#request_subject').val() === 'undefined' || $('#request_subject').val() == "")){
 	mailFormOnly();
