@@ -27,15 +27,15 @@ $(document).ready(function(){
 $(document).ready(function(){
   if (window.location.hostname.indexOf("helpcenter.digitec.ch") >= 0) {
     alert("helpcenter.digitec.ch");
-    portal1 = 'helpcenter.digitec.ch';
+    portal2 = 'helpcenter.digitec.ch';
   }
   else if (window.location.hostname.indexOf("helpcenter.galaxus.ch") >= 0) {
     alert("helpcenter.galaxus.ch");
-    portal1 = 'helpcenter.galaxus.ch';
+    portal2 = 'helpcenter.galaxus.ch';
   }
   else{
     alert("helpcenter.galaxus.de");
-    portal1 = 'helpcenter.galaxus.de';
+    portal2 = 'helpcenter.galaxus.de';
   }
 });
 
