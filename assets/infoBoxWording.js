@@ -17,6 +17,7 @@ function fillInfoBoxWording(){
             case 'galaxus.de':
                     link1 = "'https://www.galaxus.de/";
                     console.log("sw3");
+            default: console.log("CASE FAILED 1");
     }
     
     switch (portal2){
@@ -29,6 +30,7 @@ function fillInfoBoxWording(){
             case 'helpcenter.galaxus.de':
                     link2 = "'https://helpcenter.galaxus.de/";
                     console.log("sw6");
+            default: console.log("CASE FAILED 2");
     }
 
     console.log("NACH SWITCHES");
