@@ -2,6 +2,43 @@
  * jQuery v1.9.1 included
  */
 
+var portal1 = window.location.hostname;
+var portal2 = window.location.hostname;
+
+//URL test
+
+$(document).ready(function(){
+  if (window.location.hostname.indexOf("digitec.ch") >= 0) {
+    alert("digitec.ch");
+    portal1 = 'digitec.ch';
+  }
+  else if (window.location.hostname.indexOf("galaxus.ch") >= 0) {
+    alert("galaxus.ch");
+    portal1 = 'galaxus.ch';
+  }
+  else{
+    alert("galaxus.de");
+    portal1 = 'galaxus.de';
+  }
+});
+
+//Helpcenter URL test
+
+$(document).ready(function(){
+  if (window.location.hostname.indexOf("helpcenter.digitec.ch") >= 0) {
+    alert("helpcenter.digitec.ch");
+    portal1 = 'helpcenter.digitec.ch';
+  }
+  else if (window.location.hostname.indexOf("helpcenter.galaxus.ch") >= 0) {
+    alert("helpcenter.galaxus.ch");
+    portal1 = 'helpcenter.galaxus.ch';
+  }
+  else{
+    alert("helpcenter.galaxus.de");
+    portal1 = 'helpcenter.galaxus.de';
+  }
+});
+
 $(document).ready(function() {
   switch ($('html').attr('lang')){
     case 'de':
