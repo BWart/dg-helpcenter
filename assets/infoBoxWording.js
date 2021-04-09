@@ -52,7 +52,7 @@ function fillInfoBoxWording(){
         "outputShippingStatusMailTemplate" : "Welche Artikel fehlen:\nSendungsnummer:",
 
         "Der Versandstatus lautet \"versandbereit\". Wann wird die Sendung verschickt?" : "inputReadyForShipment",
-        "outputReadyForShipment" : "Erst wenn alle Produkte deiner Bestellung versandbereit sind, wird die Bestellung versendet. Soll es schneller gehen kannst du eine <a href='https://helpcenter.digitec.ch/hc/de/articles/115005646225-Wie-l�se-ich-eine-Teillieferung-aus-' target='blank'>kostenlose Teillieferung aktivieren</a>.",
+        "outputReadyForShipment" : "Erst wenn alle Produkte deiner Bestellung versandbereit sind, wird die Bestellung versendet. Soll es schneller gehen kannst du eine <a href='" + link2 + "articles/115005646225-Wie-l�se-ich-eine-Teillieferung-aus-' target='blank'>kostenlose Teillieferung aktivieren</a>.",
 
     //Level 0: Probleme mit einer Bestellung
         "Ich habe ein �usserlich besch�digtes Produkt erhalten" : "inputDamagedProduct",
