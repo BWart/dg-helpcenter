@@ -6,6 +6,8 @@ function fillInfoBoxWording(){
     var link2 = ""
     console.log(portal1);
     console.log(portal2);
+    alert(portal1);
+    alert(portal2);
 
     switch (portal1){
             case 'digitec.ch':
