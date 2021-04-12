@@ -8,7 +8,7 @@ var portal2 = window.location.hostname;
 //URL test
 
 $(document).ready(function(){
-  if (window.location.hostname.indexOf("digitec.ch") >= 0) {
+  if (window.location.hostname.indexOf("digitec1547742938.zendesk.com") >= 0) {
     alert("digitec.ch");
     portal1 = 'digitec.ch';
   }
