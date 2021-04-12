@@ -7,8 +7,6 @@ var portal2 = window.location.hostname;
 
 console.log(portal1);
 console.log(portal2);
-alert(portal1);
-alert(portal2);
 
 
 //URL test
@@ -17,6 +15,7 @@ $(document).ready(function(){
   if (window.location.hostname.indexOf("digitec1547742938.zendesk.com") >= 0) {
     alert("digitec.ch");
     portal1 = 'digitec.ch';
+    console.log(portal1);
   }
   else if (window.location.hostname.indexOf("galaxus.ch") >= 0) {
     alert("galaxus.ch");
@@ -34,6 +33,7 @@ $(document).ready(function(){
   if (window.location.hostname.indexOf("digitec1547742938.zendesk.com") >= 0) {
     alert("helpcenter.digitec.ch");
     portal2 = 'helpcenter.digitec.ch';
+    console.log(portal2);
   }
   else if (window.location.hostname.indexOf("helpcenter.galaxus.ch") >= 0) {
     alert("helpcenter.galaxus.ch");
