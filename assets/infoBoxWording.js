@@ -1,4 +1,4 @@
-function fillInfoBoxWording(){
+function fillInfoBoxWording(portal1, portal2){
     //var portal1 = window.location.hostname;
     //var portal2 = window.location.hostname;
     
