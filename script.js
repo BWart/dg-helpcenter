@@ -2,16 +2,17 @@
  * jQuery v1.9.1 included
  */
 
-var portal1 = window.location.hostname;
-var portal2 = window.location.hostname;
+$(document).ready(function() {
 
-console.log(portal1);
-console.log(portal2);
+  var portal1 = window.location.hostname;
+  var portal2 = window.location.hostname;
+
+  console.log(portal1);
+  console.log(portal2);
 
 
-//URL test
+  //URL test
 
-$(document).ready(function(){
   if (window.location.hostname.indexOf("digitec1547742938.zendesk.com") >= 0) {
     alert("digitec.ch");
     portal1 = 'digitec.ch';
@@ -25,11 +26,9 @@ $(document).ready(function(){
     alert("galaxus.de");
     portal1 = 'galaxus.de';
   }
-});
 
-//Helpcenter URL test
+  //Helpcenter URL test
 
-$(document).ready(function(){
   if (window.location.hostname.indexOf("digitec1547742938.zendesk.com") >= 0) {
     alert("helpcenter.digitec.ch");
     portal2 = 'helpcenter.digitec.ch';
@@ -43,9 +42,9 @@ $(document).ready(function(){
     alert("helpcenter.galaxus.de");
     portal2 = 'helpcenter.galaxus.de';
   }
-});
 
-$(document).ready(function() {
+
+
   switch ($('html').attr('lang')){
     case 'de':
       $('#query').attr('placeholder','Suche nach Hilfe und Lösungen');

@@ -18,7 +18,9 @@ function fillInfoBoxWording(){
             case 'galaxus.de':
                     link1 = "'https://www.galaxus.de/";
                     console.log("sw3");
-            default: console.log("CASE DEFAULT 1");
+            default: 
+                    link1 = "'https://www.digitec.ch/";
+                    console.log("CASE DEFAULT 1");
     }
     
     switch (portal2){
@@ -31,7 +33,8 @@ function fillInfoBoxWording(){
             case 'helpcenter.galaxus.de':
                     link2 = "'https://helpcenter.galaxus.de/";
                     console.log("sw6");
-            default: console.log("CASE DEFAULT 2");
+            default:link2 = "'https://helpcenter.digitec.ch/";
+                    console.log("CASE DEFAULT 2");
     }
 
     console.log("NACH SWITCHES");
