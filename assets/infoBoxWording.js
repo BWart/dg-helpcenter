@@ -47,7 +47,7 @@ function fillInfoBoxWording(){
 
     console.log("NACH SWITCHES");
        
-    infoBoxWording = {
+    BoxWording = {
     //DEUTSCH
           de: {
     "-" : "inputNone",
@@ -374,6 +374,6 @@ function fillInfoBoxWording(){
       "outputOffer" : "Please note: For a quotation, the minimum order volume must be 5'000 CHF. The prices quoted in our store apply."        
         }
     }
-    return infoBoxWording;
+    return BoxWording;
 }
 
