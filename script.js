@@ -4,7 +4,8 @@
 
 $(document).ready(function() {
 
-
+  var portal1 = window.location.hostname;
+  var portal2 = window.location.hostname;
 
   console.log(portal1);
   console.log(portal2);
