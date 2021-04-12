@@ -125,49 +125,49 @@ function fillInfoBoxWording(){
                   "outputNone" : "-",
 
                   "Autre demande" : "inputOtherRequest" ,
-                  "outputOtherRequest" : "Dans l'<a href='https://www.digitec.ch/fr/Order' target='blank'>aper�u des commandes</a> de votre compte client, vous pouvez consulter les derni�res informations relatives au statut de livraison de vos produits et tous les re�us, certificats de garantie.<br><br>Si un produit est d�fectueux et s'il peut �tre pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='https://www.digitec.ch/fr/Warranty/Overview' target='blank'>signaler un d�faut</a>.",
+                  "outputOtherRequest" : "Dans l'<a href='" + link1 + "Order' target='blank'>aper�u des commandes</a> de votre compte client, vous pouvez consulter les derni�res informations relatives au statut de livraison de vos produits et tous les re�us, certificats de garantie.<br><br>Si un produit est d�fectueux et s'il peut �tre pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + link1 + "Warranty/Overview' target='blank'>signaler un d�faut</a>.",
 
         //Level 0: Ou est ma commande?
         "V�rifier l'�tat de ma commande" : "inputOrderStatus",
-        "outputOrderStatus" : "Dans l'<a href='https://www.digitec.ch/fr/Order' target='blank'>aper�u des commandes</a> de votre compte client, vous pouvez consulter les derni�res informations relatives au statut de livraison de vos produits. Vous y trouverez �galement le num�ro de suivi de votre colis.",
+        "outputOrderStatus" : "Dans l'<a href='" + link1 + "Order' target='blank'>aper�u des commandes</a> de votre compte client, vous pouvez consulter les derni�res informations relatives au statut de livraison de vos produits. Vous y trouverez �galement le num�ro de suivi de votre colis.",
 
         "Le statut de l'envoi est � exp�di� �, mais l'envoi n'est pas arriv�" : "inputShippingStatus",
-        "outputShippingStatus": "Dans l'<a href='https://www.digitec.ch/fr/Order' target='blank'>aper�u des commandes</a> de votre compte client, vous pouvez consulter les derni�res informations relatives au statut de livraison de vos produits. Vous y trouverez �galement le num�ro de suivi de votre colis.<br><br>Malheureusement, un colis peut parfois rester plus longtemps en cours d'acheminement ou atterrir chez le voisin. Si le colis n'arrive pas, m�me apr�s quelques jours, nous serons heureux d'ouvrir une enqu�te.",
+        "outputShippingStatus": "Dans l'<a href='" + link1 + "Order' target='blank'>aper�u des commandes</a> de votre compte client, vous pouvez consulter les derni�res informations relatives au statut de livraison de vos produits. Vous y trouverez �galement le num�ro de suivi de votre colis.<br><br>Malheureusement, un colis peut parfois rester plus longtemps en cours d'acheminement ou atterrir chez le voisin. Si le colis n'arrive pas, m�me apr�s quelques jours, nous serons heureux d'ouvrir une enqu�te.",
         "Le statut de l'envoi est � exp�di� �, mais l'envoi n'est pas arriv� descriptionTemplate" : "inputShippingStatusMailTemplate",
         "outputShippingStatusMailTemplate" : "Quels sont les articles manquants :\nNum�ro de suivi :",
 
         "Le statut d'exp�dition est � pr�t � �tre exp�di� �. Quand l'envoi sera-t-il effectu� ?" : "inputReadyForShipment",
-        "outputReadyForShipment" : "La commande ne sera exp�di�e que lorsque tous les produits de votre commande seront pr�ts � �tre envoy�s. Pour acc�l�rer ce processus, vous pouvez activer la <a href='https://helpcenter.digitec.ch/hc/fr/articles/115005646225-Comment-activer-une-livraison-partielle-' target='blank'>livraison partielle</a>.",
+        "outputReadyForShipment" : "La commande ne sera exp�di�e que lorsque tous les produits de votre commande seront pr�ts � �tre envoy�s. Pour acc�l�rer ce processus, vous pouvez activer la <a href='" + link2 + "articles/115005646225-Comment-activer-une-livraison-partielle-' target='blank'>livraison partielle</a>.",
 
     //Level 0: Probl�me avec la commande
         "J'ai re�u un produit endommag� � l'ext�rieur" : "inputDamagedProduct",
         "outputDamagedProduct" : "Pour un traitement rapide, nous avons besoin des informations suivantes de votre part : <br><br>�	num�ro de votre commande<br>�	description du dommage<br>�	photos du dommage et de l'emballage<br><br>Nous examinerons votre demande avec nos partenaires logistiques et vous informerons d�s que possible des �tapes suivantes.",
 
         "Mon produit ne fonctionne pas" : "inputNotWorking",
-        "outputNotWorking" : "Si un produit est d�fectueux et s'il peut �tre pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='https://www.digitec.ch/fr/Warranty/Overview' target='blank'>signaler un d�faut</a>.<br><br>Les dommages caus�s par une utilisation inappropri�e ne sont pas couverts par la garantie. Vous trouverez un compl�ment d'information concernant ce point dans nos <a href='https://www.digitec.ch/fr/wiki/559' target='blank'>conditions de garantie</a> et <a href='https://www.digitec.ch/Wiki/478' target='blank'>CGV</a>.",
+        "outputNotWorking" : "Si un produit est d�fectueux et s'il peut �tre pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + link1 + "Warranty/Overview' target='blank'>signaler un d�faut</a>.<br><br>Les dommages caus�s par une utilisation inappropri�e ne sont pas couverts par la garantie. Vous trouverez un compl�ment d'information concernant ce point dans nos <a href='" + link1 + "wiki/559' target='blank'>conditions de garantie</a> et <a href='" + link1 + "Wiki/478' target='blank'>CGV</a>.",
 
         "J'ai re�u le mauvais produit" : "inputWrongProduct",
         "outputWrongProduct" : "Afin de pouvoir v�rifier rapidement votre demande, il serait utile que vous nous communiquiez le num�ro du fabricant ou le code EAN du produit re�u par erreur. Vous trouverez ces informations sur l'emballage du produit.",
 
         "Ma commande n'a pas �t� enti�rement livr�e" : "inputReceivedNotEverything",
-        "outputReceivedNotEverything" : "Tous les produits ne proviennent pas directement de notre entrep�t. Les produits de nos partenaires vous sont donc livr�s directement et dans un colis s�par�. Dans votre compte client sous <a href='https://www.digitec.ch/fr/Order' target='blank'>commandes</a>, vous pouvez v�rifier si votre colis a d�j� �t� envoy� ou est encore en cours de pr�paration.",
+        "outputReceivedNotEverything" : "Tous les produits ne proviennent pas directement de notre entrep�t. Les produits de nos partenaires vous sont donc livr�s directement et dans un colis s�par�. Dans votre compte client sous <a href='" + link1 + "Order' target='blank'>commandes</a>, vous pouvez v�rifier si votre colis a d�j� �t� envoy� ou est encore en cours de pr�paration.",
 
                   "Je souhaite annuler une commande" : "inputCancelOrder",
-                  "outputCancelOrder" : "Tant que votre commande n'a pas �t� pr�par�e pour l'exp�dition, vous pouvez annuler le produit non d�sir� de mani�re ind�pendante en allant dans votre compte client sous <a href='https://www.digitec.ch/fr/Order' target='blank'>commandes</a>. Si le produit a d�j� �t� exp�di�, vous pouvez <a href='https://www.digitec.ch/fr/Return' target='blank'>enregistrer un retour</a> dans votre compte client .",
+                  "outputCancelOrder" : "Tant que votre commande n'a pas �t� pr�par�e pour l'exp�dition, vous pouvez annuler le produit non d�sir� de mani�re ind�pendante en allant dans votre compte client sous <a href='" + link1 + "Order' target='blank'>commandes</a>. Si le produit a d�j� �t� exp�di�, vous pouvez <a href='" + link1 + "Return' target='blank'>enregistrer un retour</a> dans votre compte client .",
 
     //Level 0: Retour
           "V�rifier le statut d'un retour" : "inputReturnStatus",
-           "outputReturnStatus" : "Sous la rubrique � <a href='https://www.digitec.ch/fr/ServiceCase/List' target='blank'>Tous les retours</a> �, vous trouverez une vue d'ensemble et le statut actuel de tous les retours et demandes de garantie que vous avez soumis.",
+           "outputReturnStatus" : "Sous la rubrique � <a href='" + link1 + "ServiceCase/List' target='blank'>Tous les retours</a> �, vous trouverez une vue d'ensemble et le statut actuel de tous les retours et demandes de garantie que vous avez soumis.",
 
           "Je souhaite retourner un produit" : "inputReturn",
-          "outputReturn" : "Les produits achet�s directement chez digitec peuvent �tre retourn�s dans les 30 jours, ceux achet�s aupr�s d'un <a href='https://helpcenter.digitec.ch/hc/fr/articles/360012370979-Offres-de-fournisseur-tiers' target='blank'>fournisseur tiers</a>, dans les 14 jours suivant leur r�ception. Vous pouvez <a href='https://www.digitec.ch/fr/ReturnsAndWarranty' target='blank'>enregistrer un retour</a> directement dans votre compte client.",
+          "outputReturn" : "Les produits achet�s directement chez digitec peuvent �tre retourn�s dans les 30 jours, ceux achet�s aupr�s d'un <a href='" + link2 + "articles/360012370979-Offres-de-fournisseur-tiers' target='blank'>fournisseur tiers</a>, dans les 14 jours suivant leur r�ception. Vous pouvez <a href='" + link1 + "ReturnsAndWarranty' target='blank'>enregistrer un retour</a> directement dans votre compte client.",
 
   //Level 0: Paiement et remboursement
           "Remboursement de mon avoir" : "inputCreditReturn",
-          "outputCreditReturn" : "Vous pouvez effectuer vous-m�me le remboursement d'un avoir en quelques �tapes. La proc�dure exacte est d�crite dans le pr�sent <a href='https://helpcenter.digitec.ch/hc/fr/articles/360000457949-Que-faire-pour-lancer-le-processus-de-remboursement-' target='blank'>article</a>.<br><br>Veuillez noter que le virement prend habituellement entre 1 � 3 jours ouvrables.<br><br>Les remboursements sur votre carte de cr�dit figureront sur votre prochain relev� de carte de cr�dit.",
+          "outputCreditReturn" : "Vous pouvez effectuer vous-m�me le remboursement d'un avoir en quelques �tapes. La proc�dure exacte est d�crite dans le pr�sent <a href='" + link2 + "articles/360000457949-Que-faire-pour-lancer-le-processus-de-remboursement-' target='blank'>article</a>.<br><br>Veuillez noter que le virement prend habituellement entre 1 � 3 jours ouvrables.<br><br>Les remboursements sur votre carte de cr�dit figureront sur votre prochain relev� de carte de cr�dit.",
 
           "J'ai besoin d'un re�u/une facture" : "inputReceipt",
-          "outputReceipt" : "Vous trouverez tous les re�us, certificats de garantie et autres � la rubrique <a href='https://www.digitec.ch/fr/Order' target='blank'>commandes</a> dans votre compte client en s�lectionnant la commande souhait�e.<br><br>Vous trouverez <a href='https://www.digitec.ch/fr/Invoice/ListInvoices' target='blank'>ici</a> un justificatif de facture pour les commandes pay�es sur facture.",
+          "outputReceipt" : "Vous trouverez tous les re�us, certificats de garantie et autres � la rubrique <a href='" + link1 + "Order' target='blank'>commandes</a> dans votre compte client en s�lectionnant la commande souhait�e.<br><br>Vous trouverez <a href='" + link1 + "Invoice/ListInvoices' target='blank'>ici</a> un justificatif de facture pour les commandes pay�es sur facture.",
 
           "J'ai re�u un rappel m�me si j'ai pay�" : "inputPaymentReminder",
           "outputPaymentReminder" : "Jusqu'� cinq jours ouvrables peuvent s'�couler avant que nous recevions votre paiement. Il se peut donc que notre rappel de paiement et votre paiement se soient crois�s. Dans ce cas, vous n'avez rien � faire et pouvez simplement ignorer le rappel.<br><br>Veuillez noter que les virements group�s ne sont pas comptabilis�s correctement. R�glez toujours une commande � la fois pour que nous puissions clairement attribuer votre paiement.",
@@ -180,12 +180,12 @@ function fillInfoBoxWording(){
 
   //Level 0: Compte client
           "Je souhaite supprimer mon compte client" : "inputDeleteAccount",
-          "outputDeleteAccount" : "Une fois votre compte supprim�, vous n'aurez plus acc�s � vos re�us �lectroniques et autres documents. De ce fait, nous vous recommandons d'imprimer ou de sauvegarder une copie des formulaires dont vous avez encore besoin avant de supprimer votre compte.<br><br>Vous pouvez initier la suppression directement � partir de votre <a href='https://www.digitec.ch/DeleteAccount' target='blank'>compte d'utilisateur</a>.",
+          "outputDeleteAccount" : "Une fois votre compte supprim�, vous n'aurez plus acc�s � vos re�us �lectroniques et autres documents. De ce fait, nous vous recommandons d'imprimer ou de sauvegarder une copie des formulaires dont vous avez encore besoin avant de supprimer votre compte.<br><br>Vous pouvez initier la suppression directement � partir de votre <a href='" + link1 + "DeleteAccount' target='blank'>compte d'utilisateur</a>.",
           "Je souhaite supprimer mon compte client descriptionLabel" : "inputDeleteAccountDescriptionLabel",
       "outputDeleteAccountDescriptionLabel" : "Description<br>Note : Pour un traitement rapide, nous avons besoin de votre num�ro de client",
 
                   "Je n'arrive pas � acc�der � mon compte d'utilisateur" : "inputCantLogin",
-          "outputCantLogin" : "Vous pouvez � tout moment r�initialiser votre mot de passe pour qu'un nouveau vous soit envoy� : <br><br>�	Cliquez dans la zone de connexion sur <a href='https://www.digitec.ch/fr/Register/RequestPassword' target='blank'>mot de passe oubli� ?</a><br>�	Saisissez votre nom d'utilisateur ou adresse �lectronique fournie et cliquez sur � Demander un lien �",
+          "outputCantLogin" : "Vous pouvez � tout moment r�initialiser votre mot de passe pour qu'un nouveau vous soit envoy� : <br><br>�	Cliquez dans la zone de connexion sur <a href='" + link1 + "Register/RequestPassword' target='blank'>mot de passe oubli� ?</a><br>�	Saisissez votre nom d'utilisateur ou adresse �lectronique fournie et cliquez sur � Demander un lien �",
           "Je n'arrive pas � acc�der � mon compte d'utilisateur descriptionLabel" : "inputCantLoginDescriptionLabel",
       "outputCantLoginDescriptionLabel" : "Description<br>Note : Pour un traitement rapide, nous avons besoin de votre num�ro de client",
 
@@ -208,49 +208,49 @@ function fillInfoBoxWording(){
                   "outputNone" : "-",
 
         "Altre domande" : "inputOtherRequest" ,
-                  "outputOtherRequest" : "Trovi informazioni pi� dettagliate sullo stato di consegna dei tuoi articoli, tutte le ricevute d'acquisto, i certificati di garanzia e altro nel tuo conto cliente alla voce <a href='https://www.digitec.ch/it/Order' target='blank'>ordini</a>.<br><br>Se un prodotto � difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='https://www.digitec.ch/it/Warranty/Overview' target='blank'>segnala un difetto</a>.",
+                  "outputOtherRequest" : "Trovi informazioni pi� dettagliate sullo stato di consegna dei tuoi articoli, tutte le ricevute d'acquisto, i certificati di garanzia e altro nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>.<br><br>Se un prodotto � difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + link1 + "Warranty/Overview' target='blank'>segnala un difetto</a>.",
 
     //Level 0: Dove si trova il mio ordine?
         "Verificare lo stato del mio ordine" : "inputOrderStatus",
-        "outputOrderStatus" : "Trovi informazioni pi� dettagliate sullo stato di consegna dei tuoi articoli nel tuo conto cliente alla voce <a href='https://www.digitec.ch/it/Order' target='blank'>ordini</a>. Trovi, inoltre, anche il numero di tracking del tuo pacco.",
+        "outputOrderStatus" : "Trovi informazioni pi� dettagliate sullo stato di consegna dei tuoi articoli nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>. Trovi, inoltre, anche il numero di tracking del tuo pacco.",
 
         "Sullo stato della spedizione � indicato �spedito�, ma la spedizione non � arrivata" : "inputShippingStatus",
-        "outputShippingStatus": "Trovi informazioni pi� dettagliate sullo stato di consegna dei tuoi articoli nel tuo conto cliente alla voce <a href='https://www.digitec.ch/it/Order' target='blank'>ordini</a>. Trovi, inoltre, anche il numero di tracking del tuo pacco.<br><br>Purtroppo, a volte la consegna del pacco pu� avere ritardi oppure essere recapitato a un indirizzo errato. Se il pacco non dovesse arrivare dopo qualche giorno, avvieremo una ricerca.",
+        "outputShippingStatus": "Trovi informazioni pi� dettagliate sullo stato di consegna dei tuoi articoli nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>. Trovi, inoltre, anche il numero di tracking del tuo pacco.<br><br>Purtroppo, a volte la consegna del pacco pu� avere ritardi oppure essere recapitato a un indirizzo errato. Se il pacco non dovesse arrivare dopo qualche giorno, avvieremo una ricerca.",
         "Sullo stato della spedizione � indicato �spedito�, ma la spedizione non � arrivata descriptionTemplate" : "inputShippingStatusMailTemplate",
         "outputShippingStatusMailTemplate" : "Quali articoli mancano:\nNumero di spedizione:",
 
         "Sullo stato della spedizione � indicato �pronto per la spedizione�. Quando verr� inviata la spedizione?" : "inputReadyForShipment",
-        "outputReadyForShipment" : "Solo quando tutti i prodotti del tuo ordine saranno pronti per essere spediti, l'ordine verr� inviato. Se vuoi che sia pi� veloce, puoi attivare gratuitamente la <a href='https://helpcenter.digitec.ch/hc/it/articles/115005646225-Come-faccio-a-richiedere-una-consegna-parziale-' target='blank'>consegna parziale</a>.",
+        "outputReadyForShipment" : "Solo quando tutti i prodotti del tuo ordine saranno pronti per essere spediti, l'ordine verr� inviato. Se vuoi che sia pi� veloce, puoi attivare gratuitamente la <a href='" + link2 + "articles/115005646225-Come-faccio-a-richiedere-una-consegna-parziale-' target='blank'>consegna parziale</a>.",
 
     //Level 0: Problemi con un ordine
         "Ho ricevuto un prodotto danneggiato esternamente" : "inputDamagedProduct",
         "outputDamagedProduct" : "Per una rapida elaborazione abbiamo bisogno delle seguenti informazioni:<br><br>� Numero d�ordine<br>� Breve descrizione del danno<br>�	Foto dell�articolo e dell�imballaggio danneggiati<br><br>Esamineremo la tua richiesta insieme ai nostri partner logistici e ti informeremo al pi� presto su come procedere.",
 
         "Il mio prodotto non funziona" : "inputNotWorking",
-        "outputNotWorking" : "Se un prodotto � difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='https://www.digitec.ch/it/Warranty/Overview' target='blank'>segnala un difetto</a>.<br><br>I danni dovuti ad un uso improprio non sono coperti dalla garanzia. Puoi trovare ulteriori informazioni nelle nostre <a href='https://www.digitec.ch/it/wiki/559' target='blank'>condizioni di garanzia</a> e nelle <a href='https://www.digitec.ch/Wiki/478' target='blank'>CGC</a>.",
+        "outputNotWorking" : "Se un prodotto � difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + link1 + "Warranty/Overview' target='blank'>segnala un difetto</a>.<br><br>I danni dovuti ad un uso improprio non sono coperti dalla garanzia. Puoi trovare ulteriori informazioni nelle nostre <a href='" + link1 + "wiki/559' target='blank'>condizioni di garanzia</a> e nelle <a href='" + link1 + "Wiki/478' target='blank'>CGC</a>.",
 
         "Ho ricevuto un prodotto sbagliato" : "inputWrongProduct",
         "outputWrongProduct" : "Per poter verificare rapidamente la vostra richiesta, sarebbe utile che ci forniste il numero del produttore o il codice EAN del prodotto ricevuto in modo errato. Queste informazioni sono riportate sulla confezione del prodotto.",
 
         "Il mio ordine non � stato consegnato completamente" : "inputReceivedNotEverything",
-        "outputReceivedNotEverything" : "Non tutti i prodotti provengono direttamente dal nostro magazzino. I prodotti dei nostri partner ti vengono consegnati direttamente in un pacchetto separato. Nel menu <a href='https://www.digitec.ch/it/Order' target='blank'>ordini</a> puoi anche vedere se il tuo pacco � gi� stato spedito o se � ancora in fase di preparazione.",
+        "outputReceivedNotEverything" : "Non tutti i prodotti provengono direttamente dal nostro magazzino. I prodotti dei nostri partner ti vengono consegnati direttamente in un pacchetto separato. Nel menu <a href='" + link1 + "Order' target='blank'>ordini</a> puoi anche vedere se il tuo pacco � gi� stato spedito o se � ancora in fase di preparazione.",
 
                   "Desidero stornare un ordine" : "inputCancelOrder",
-                  "outputCancelOrder" : "Finch� il tuo ordine non � stato preparato per la spedizione, puoi stornare l�ordine del prodotto che non vuoi pi� acquistare direttamente nel tuo conto cliente alla voce <a href='https://www.digitec.ch/it/Order' target='blank'>ordini</a>. Se il prodotto � gi� stato spedito, puoi registrare il reso nel tuo conto cliente cliccando su <a href='https://www.digitec.ch/it/Return' target='blank'>registra il reso</a>.",
+                  "outputCancelOrder" : "Finch� il tuo ordine non � stato preparato per la spedizione, puoi stornare l�ordine del prodotto che non vuoi pi� acquistare direttamente nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>. Se il prodotto � gi� stato spedito, puoi registrare il reso nel tuo conto cliente cliccando su <a href='" + link1 + "Return' target='blank'>registra il reso</a>.",
 
     //Level 0: Resi
           "Verificare lo stato di un reso" : "inputReturnStatus",
-           "outputReturnStatus" : "Sotto <a href='https://www.digitec.ch/it/ServiceCase/List' target='blank'>tutti i resi</a> trovi una panoramica e lo stato attuale di tutti i resi e le richieste di garanzia da te presentate.",
+           "outputReturnStatus" : "Sotto <a href='" + link1 + "ServiceCase/List' target='blank'>tutti i resi</a> trovi una panoramica e lo stato attuale di tutti i resi e le richieste di garanzia da te presentate.",
 
           "Vorrei restituire un prodotto" : "inputReturn",
-          "outputReturn" : "Puoi restituire gli articoli acquistati direttamente da digitec entro 30 giorni dal ricevimento, mentre gli articoli acquistati da un <a href='https://helpcenter.digitec.ch/hc/it/articles/360012370979-Offerte-da-parte-di-terzi' target='blank'>fornitore terzo</a> entro 14 giorni dal ricevimento. Puoi registrare il <a href='https://www.digitec.ch/it/ReturnsAndWarranty' target='blank'>reso</a> direttamente nel tuo conto cliente.",
+          "outputReturn" : "Puoi restituire gli articoli acquistati direttamente da digitec entro 30 giorni dal ricevimento, mentre gli articoli acquistati da un <a href='" + link2 + "articles/360012370979-Offerte-da-parte-di-terzi' target='blank'>fornitore terzo</a> entro 14 giorni dal ricevimento. Puoi registrare il <a href='" + link1 + "ReturnsAndWarranty' target='blank'>reso</a> direttamente nel tuo conto cliente.",
 
   //Level 0: Pagamento e rimborso
           "Rimborso di un credito" : "inputCreditReturn",
-          "outputCreditReturn" : "Puoi avviare il rimborso di un credito autonomamente. La procedura esatta � descritta in questo <a href='https://helpcenter.digitec.ch/hc/it/articles/360000457949-Come-faccio-a-richiedere-il-rimborso-' target='blank'>articolo</a>.<br><br>Si prega di notare che il trasferimento di denaro di solito richiede da 1 a 3 giorni lavorativi.<br><br>I rimborsi sulla carta di credito appariranno sul prossimo estratto conto della carta di credito.",
+          "outputCreditReturn" : "Puoi avviare il rimborso di un credito autonomamente. La procedura esatta � descritta in questo <a href='" + link2 + "articles/360000457949-Come-faccio-a-richiedere-il-rimborso-' target='blank'>articolo</a>.<br><br>Si prega di notare che il trasferimento di denaro di solito richiede da 1 a 3 giorni lavorativi.<br><br>I rimborsi sulla carta di credito appariranno sul prossimo estratto conto della carta di credito.",
 
           "Necessito di una ricevuta/fattura" : "inputReceipt",
-          "outputReceipt" : "Trovi tutte le ricevute d'acquisto, i certificati di garanzia e altro ancora alla voce <a href='https://www.digitec.ch/it/Order' target='blank'>ordini</a> nel tuo conto cliente selezionando l�articolo desiderato.<br><br><a href='https://www.digitec.ch/it/Invoice/ListInvoices' target='blank'>Qui</a> trovi le ricevute per gli ordini che hai pagato tramite fattura.",
+          "outputReceipt" : "Trovi tutte le ricevute d'acquisto, i certificati di garanzia e altro ancora alla voce <a href='" + link1 + "Order' target='blank'>ordini</a> nel tuo conto cliente selezionando l�articolo desiderato.<br><br><a href='" + link1 + "Invoice/ListInvoices' target='blank'>Qui</a> trovi le ricevute per gli ordini che hai pagato tramite fattura.",
 
           "Ho ricevuto un richiamo, nonostante io abbia gi� effettuato il pagamento" : "inputPaymentReminder",
           "outputPaymentReminder" : "Possono volerci fino a cinque giorni lavorativi per ricevere il pagamento. � possibile che il tuo pagamento sia avvenuto contemporaneamente al nostro sollecito. In questo caso non devi fare nulla e puoi ignorare il sollecito.<br><br>Si prega di notare che i pagamenti collettivi non vengono registrati correttamente. Effettua sempre un bonifico separato per ciascun ordine, in modo che possiamo assegnare il pagamento all�ordine corretto.",
@@ -263,12 +263,12 @@ function fillInfoBoxWording(){
 
   //Level 0: Conto cliente
           "Desidero cancellare il mio conto cliente" : "inputDeleteAccount",
-          "outputDeleteAccount" : "Una volta eliminato il conto, non avrai pi� accesso alle tue ricevute e documenti elettronici. Pertanto, consigliamo di stamparne o salvare una copia delle ricevute e dei moduli prima di cancellare il tuo conto in maniera definitiva.<br><br>Potete avviare la cancellazione direttamente dal vostro <a href='https://www.digitec.ch/DeleteAccount' target='blank'>conto utente</a>.",
+          "outputDeleteAccount" : "Una volta eliminato il conto, non avrai pi� accesso alle tue ricevute e documenti elettronici. Pertanto, consigliamo di stamparne o salvare una copia delle ricevute e dei moduli prima di cancellare il tuo conto in maniera definitiva.<br><br>Potete avviare la cancellazione direttamente dal vostro <a href='" + link1 + "DeleteAccount' target='blank'>conto utente</a>.",
                   "Desidero cancellare il mio conto cliente descriptionLabel" : "inputDeleteAccountDescriptionLabel",
       "outputDeleteAccountDescriptionLabel" : "Descrizione<br>Nota: per una rapida elaborazione abbiamo bisogno del vostro numero cliente",
 
                   "Non riesco ad accedere al mio conto utente" : "inputCantLogin",
-          "outputCantLogin" : "Puoi reimpostare la tua password in qualsiasi momento e fartene inviare una nuova:<br><br>� Nell'area di login, clicca su <a href='https://www.digitec.ch/it/Register/RequestPassword' target='blank'>Hai dimenticato la password?</a><br>� Inserisci il tuo nome utente o l'indirizzo e-mail che hai registrato nel tuo conto e clicca poi su �Richiedi link�.",
+          "outputCantLogin" : "Puoi reimpostare la tua password in qualsiasi momento e fartene inviare una nuova:<br><br>� Nell'area di login, clicca su <a href='" + link1 + "Register/RequestPassword' target='blank'>Hai dimenticato la password?</a><br>� Inserisci il tuo nome utente o l'indirizzo e-mail che hai registrato nel tuo conto e clicca poi su �Richiedi link�.",
           "Non riesco ad accedere al mio conto utente descriptionLabel" : "inputCantLoginDescriptionLabel",
       "outputCantLoginDescriptionLabel" : "Descrizione<br>Nota: per una rapida elaborazione abbiamo bisogno del vostro numero cliente",
 
@@ -290,49 +290,49 @@ function fillInfoBoxWording(){
                   "outputNone" : "-",
 
                   "Other requests" : "inputOtherRequest" ,
-                  "outputOtherRequest" : "We'll keep the delivery status, sales receipts and warranty certificates updated in the <a href='https://www.digitec.ch/en/Order' target='blank'>order overview</a> in your customer account.<br><br>Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='https://www.digitec.ch/en/Warranty/Overview' target='blank'>report a defect</a>.",
+                  "outputOtherRequest" : "We'll keep the delivery status, sales receipts and warranty certificates updated in the <a href='" + link1 + "Order' target='blank'>order overview</a> in your customer account.<br><br>Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + link1 + "Warranty/Overview' target='blank'>report a defect</a>.",
 
     //Level 0: Where is my order?
         "I�d like to check the status of my order" : "inputOrderStatus",
-        "outputOrderStatus" : "We'll keep the delivery status updated in the <a href='https://www.digitec.ch/en/Order' target='blank'>order overview</a> in your customer account. You�ll also find the tracking number of your parcel there.",
+        "outputOrderStatus" : "We'll keep the delivery status updated in the <a href='" + link1 + "Order' target='blank'>order overview</a> in your customer account. You�ll also find the tracking number of your parcel there.",
 
         "The shipment status is �sent�, but the parcel hasn�t arrived" : "inputShippingStatus",
-        "outputShippingStatus": "We'll keep the delivery status updated in the <a href='https://www.digitec.ch/en/Order' target='blank'>order overview</a> in your customer account. You�ll also find the tracking number of your parcel there.<br><br>Sometimes it takes a little longer for a parcel to arrive � or it may end up at your neighbour's. If it still hasn�t arrived after a few days, we�re happy to initiate an investigation.",
+        "outputShippingStatus": "We'll keep the delivery status updated in the <a href='" + link1 + "Order' target='blank'>order overview</a> in your customer account. You�ll also find the tracking number of your parcel there.<br><br>Sometimes it takes a little longer for a parcel to arrive � or it may end up at your neighbour's. If it still hasn�t arrived after a few days, we�re happy to initiate an investigation.",
         "The shipment status is �sent�, but the parcel hasn�t arrived descriptionTemplate" : "inputShippingStatusMailTemplate",
         "outputShippingStatusMailTemplate" : "Which articles are missing:\nConsigment number:",
 
         "The shipment status is �ready for shipment�. When will the order be sent?" : "inputReadyForShipment",
-        "outputReadyForShipment" : "We don't ship the order until all your products are in the warehouse and �ready for shipment�. If you need any items sooner, please <a href='https://helpcenter.digitec.ch/hc/en-us/articles/115005646225-How-do-I-arrange-partial-delivery-' target='blank'>activate partial delivery</a>.",
+        "outputReadyForShipment" : "We don't ship the order until all your products are in the warehouse and �ready for shipment�. If you need any items sooner, please <a href='" + link2 + "articles/115005646225-How-do-I-arrange-partial-delivery-' target='blank'>activate partial delivery</a>.",
 
     //Level 0: Problems with an order
         "I've received an externally damaged product" : "inputDamagedProduct",
         "outputDamagedProduct" : "For quick processing, please send us the following details:<br><br>� Order number<br>� Description of the damage<br>� Photos of the damage and packaging<br><br>We'll then work together with the delivery company to check what happened to your order and will get back to you as quickly as possible with updates and next steps.",
 
         "My product isn�t working" : "inputNotWorking",
-        "outputNotWorking" : "Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='https://www.digitec.ch/en/Warranty/Overview' target='blank'>report a defect</a>.<br><br>Damage caused by incorrect use is not covered by the warranty. For more information, see our <a href='https://www.digitec.ch/en/wiki/559' target='blank'>warranty policy</a> and our <a href='https://www.digitec.ch/Wiki/478' target='blank'>terms and conditions</a>.",
+        "outputNotWorking" : "Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + link1 + "Warranty/Overview' target='blank'>report a defect</a>.<br><br>Damage caused by incorrect use is not covered by the warranty. For more information, see our <a href='" + link1 + "wiki/559' target='blank'>warranty policy</a> and our <a href='" + link1 + "Wiki/478' target='blank'>terms and conditions</a>.",
 
         "I�ve received the wrong product" : "inputWrongProduct",
         "outputWrongProduct" : "To be able to check your request quickly, it would be helpful if you could provide us with the manufacturer's number or the EAN code of the incorrectly received product. You can find this information on the product packaging.",
 
         "There are items missing in my order" : "inputReceivedNotEverything",
-        "outputReceivedNotEverything" : "Not all products are sent from our warehouse. When an item comes from one of our partner suppliers, it'll be sent to you directly in a separate parcel. Go to <a href='https://www.digitec.ch/en/Order' target='blank'>orders</a> in your customer account to find your order status to check if it has been shipped or if it's not been processed yet.",
+        "outputReceivedNotEverything" : "Not all products are sent from our warehouse. When an item comes from one of our partner suppliers, it'll be sent to you directly in a separate parcel. Go to <a href='" + link1 + "Order' target='blank'>orders</a> in your customer account to find your order status to check if it has been shipped or if it's not been processed yet.",
 
                   "I�d like to cancel my order" : "inputCancelOrder",
-                  "outputCancelOrder" : "As long as we haven�t yet got your order ready to ship, you can still cancel the product you no longer want in the <a href='https://www.digitec.ch/en/Order' target='blank'>orders</a> section in your customer account. If the product has already been shipped, you�ll have to <a href='https://www.digitec.ch/en/Return' target='blank'>register a return</a> in your customer account.",
+                  "outputCancelOrder" : "As long as we haven�t yet got your order ready to ship, you can still cancel the product you no longer want in the <a href='" + link1 + "Order' target='blank'>orders</a> section in your customer account. If the product has already been shipped, you�ll have to <a href='" + link1 + "Return' target='blank'>register a return</a> in your customer account.",
 
     //Level 0: Returns
           "I�d like to check the status of a return" : "inputReturnStatus",
-           "outputReturnStatus" : "Go to <a href='https://www.digitec.ch/en/ServiceCase/List' target='blank'>all returns</a> to find an overview and the current status of all your returns and warranty cases.",
+           "outputReturnStatus" : "Go to <a href='" + link1 + "ServiceCase/List' target='blank'>all returns</a> to find an overview and the current status of all your returns and warranty cases.",
 
           "I need to return a product" : "inputReturn",
-          "outputReturn" : "You have 30 days to return products sold by digitec and 14 days to return items sold by <a href='https://helpcenter.digitec.ch/hc/en-us/articles/360012370979-Buying-from-third-party-sellers' target='blank'>third parties</a> from the day you received them. <a href='https://www.digitec.ch/en/ReturnsAndWarranty' target='blank'>Register returns</a> in your customer account.",
+          "outputReturn" : "You have 30 days to return products sold by digitec and 14 days to return items sold by <a href='" + link2 + "articles/360012370979-Buying-from-third-party-sellers' target='blank'>third parties</a> from the day you received them. <a href='" + link1 + "ReturnsAndWarranty' target='blank'>Register returns</a> in your customer account.",
 
   //Level 0: Payment and refund
           "I want to refund my credit" : "inputCreditReturn",
-          "outputCreditReturn" : "To refund a credit note, please follow the simple steps described in this <a href='https://helpcenter.digitec.ch/hc/en-us/articles/360000457949-How-do-I-get-a-refund-' target='blank'>article</a>.<br><br>Please bear in mind that transfers usually take one to three working days.<br><br>Refunds to your credit card will appear on your next credit card statement.",
+          "outputCreditReturn" : "To refund a credit note, please follow the simple steps described in this <a href='" + link2 + "articles/360000457949-How-do-I-get-a-refund-' target='blank'>article</a>.<br><br>Please bear in mind that transfers usually take one to three working days.<br><br>Refunds to your credit card will appear on your next credit card statement.",
 
           "I need a receipt/invoice" : "inputReceipt",
-          "outputReceipt" : "All sales receipts and warranty certificates are saved in the <a href='https://www.digitec.ch/en/Order' target='blank'>orders</a> section in your customer account. Go to the according order detail page.<br><br>You�ll find the sales receipt for all orders you paid by invoice <a href='https://www.digitec.ch/en/Invoice/ListInvoices' target='blank'>here</a>.",
+          "outputReceipt" : "All sales receipts and warranty certificates are saved in the <a href='" + link1 + "Order' target='blank'>orders</a> section in your customer account. Go to the according order detail page.<br><br>You�ll find the sales receipt for all orders you paid by invoice <a href='" + link1 + "Invoice/ListInvoices' target='blank'>here</a>.",
 
           "I�ve received a reminder even though I paid for my order" : "inputPaymentReminder",
           "outputPaymentReminder" : "It can take up to five working days until your payment arrives in our system. Therefore, it�s possible that the reminder has overlapped with your payment. In this case, please ignore the reminder.<br><br>Please note that collective transfers are not entered correctly. It�s important you pay for each order in a separate bank transfer to make sure we can clearly identify your payment.",
@@ -345,12 +345,12 @@ function fillInfoBoxWording(){
 
   //Level 0: Customer account
           "I�d like to delete my customer account" : "inputDeleteAccount",
-          "outputDeleteAccount" : "Once your account is deleted, you will no longer have access to your sales receipts and other documents. That�s why we recommend making a copy (printing out a hard copy or saving an electronic one) before you ask us to delete your account.<br><br>You can initiate the deletion directly from your <a href='https://www.digitec.ch/DeleteAccount' target='blank'>user account</a>.",
+          "outputDeleteAccount" : "Once your account is deleted, you will no longer have access to your sales receipts and other documents. That�s why we recommend making a copy (printing out a hard copy or saving an electronic one) before you ask us to delete your account.<br><br>You can initiate the deletion directly from your <a href='" + link1 + "DeleteAccount' target='blank'>user account</a>.",
       "I�d like to delete my customer account descriptionLabel" : "inputDeleteAccountDescriptionLabel",
       "outputDeleteAccountDescriptionLabel" : "Description<br>Note: For quick processing we need your customer number",
 
                   "I can�t access my customer account" : "inputCantLogin",
-          "outputCantLogin" : "You can reset your password at any time:<br><br>� Go to the login screen and click <a href='https://www.digitec.ch/en/Register/RequestPassword' target='blank'>forgot your password?</a><br>� Enter your username or e-mail address and click �Request link�.",
+          "outputCantLogin" : "You can reset your password at any time:<br><br>� Go to the login screen and click <a href='" + link1 + "Register/RequestPassword' target='blank'>forgot your password?</a><br>� Enter your username or e-mail address and click �Request link�.",
       "I can�t access my customer account descriptionLabel" : "inputCantLoginDescriptionLabel",
       "outputCantLoginDescriptionLabel" : "Description<br>Note: For quick processing we need your customer number",
 
