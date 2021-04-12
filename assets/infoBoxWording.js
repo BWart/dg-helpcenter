@@ -12,29 +12,37 @@ function fillInfoBoxWording(){
             case 'digitec.ch':
                     link1 = "'https://www.digitec.ch/"; 
                     console.log("sw1");
+                    break;
             case 'galaxus.ch':
                     link1 = "'https://www.galaxus.ch/"; 
                     console.log("sw2");
+                    break;
             case 'galaxus.de':
                     link1 = "'https://www.galaxus.de/";
                     console.log("sw3");
+                    break;
             default: 
                     link1 = "'https://www.digitec.ch/";
                     console.log("CASE DEFAULT 1");
+                    break;
     }
     
     switch (portal2){
             case 'helpcenter.digitec.ch':
                     link2 = "'https://helpcenter.digitec.ch/";
                     console.log("sw4");
+                    break;
             case 'helpcenter.galaxus.ch':
                     link2 = "'https://helpcenter.galaxus.ch/";
                     console.log("sw5");
+                    break;
             case 'helpcenter.galaxus.de':
                     link2 = "'https://helpcenter.galaxus.de/";
                     console.log("sw6");
+                    break;
             default:link2 = "'https://helpcenter.digitec.ch/";
                     console.log("CASE DEFAULT 2");
+                    break;
     }
 
     console.log("NACH SWITCHES");
