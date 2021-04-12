@@ -10,32 +10,32 @@ var portal2 = window.location.hostname;
 $(document).ready(function(){
   if (window.location.hostname.indexOf("digitec1547742938.zendesk.com") >= 0) {
     alert("digitec.ch");
-    portal1 = 'digitec.ch';
+    portal1 = "digitec.ch";
   }
   else if (window.location.hostname.indexOf("galaxus.ch") >= 0) {
     alert("galaxus.ch");
-    portal1 = 'galaxus.ch';
+    portal1 = "galaxus.ch";
   }
   else{
     alert("galaxus.de");
-    portal1 = 'galaxus.de';
+    portal1 = "galaxus.de";
   }
 });
 
 //Helpcenter URL test
 
 $(document).ready(function(){
-  if (window.location.hostname.indexOf("helpcenter.digitec.ch") >= 0) {
+  if (window.location.hostname.indexOf("digitec1547742938.zendesk.com") >= 0) {
     alert("helpcenter.digitec.ch");
-    portal2 = 'helpcenter.digitec.ch';
+    portal2 = "helpcenter.digitec.ch";
   }
   else if (window.location.hostname.indexOf("helpcenter.galaxus.ch") >= 0) {
     alert("helpcenter.galaxus.ch");
-    portal2 = 'helpcenter.galaxus.ch';
+    portal2 = "helpcenter.galaxus.ch";
   }
   else{
     alert("helpcenter.galaxus.de");
-    portal2 = 'helpcenter.galaxus.de';
+    portal2 = "helpcenter.galaxus.de";
   }
 });
 
