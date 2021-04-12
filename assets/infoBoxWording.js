@@ -4,8 +4,8 @@ function fillInfoBoxWording(){
     
     var link1 = ""
     var link2 = ""
-    console.log(portal1);
-    console.log(portal2);
+    console.log("AAA"+portal1);
+    console.log("BBB"+portal2);
 
 
     switch (portal1){
