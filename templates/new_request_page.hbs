@@ -430,13 +430,13 @@ hideOrderNumber();
   //Update description and label
   function updateDescriptionAndLabel(descriptionTemplateText, descriptionLabel){
     var currentLanguage = $('html').attr('lang');
-    if (descriptionTemplateText == infoBoxWording[currentLanguage]['outputOtherRequest']){
+    if (descriptionTemplateText == fillInfoBoxWording(BoxWording)[currentLanguage]['outputOtherRequest']){
     	$('#request_description').val('');
     }
     else {
     	$('#request_description').val(descriptionTemplateText);
     }
-    if (descriptionLabel == infoBoxWording[currentLanguage]['outputOtherRequest']){
+    if (descriptionLabel == fillInfoBoxWording(BoxWording)[currentLanguage]['outputOtherRequest']){
 			$('#request_description_label').html(initialDescriptionLabel);
     }
     else{
