@@ -398,7 +398,7 @@ function fillInfoBoxWording(){
                 infoBoxWording= infoBoxWording['de'];
                 console.log(infoBoxWording)
                 break;
-    }
+    }*/
 
     return infoBoxWording;
 
