@@ -10,7 +10,7 @@ function fillInfoBoxWording(){
 
     switch (portal1){
             case 'digitec.ch':
-                    link1 = "'https:\/\/www.digitec.ch\/"; 
+                    link1 = "'https:\/\/www.digitec.ch\//"; 
                     console.log("sw1");
                     break;
             case 'galaxus.ch':
@@ -29,7 +29,7 @@ function fillInfoBoxWording(){
     
     switch (portal2){
             case 'helpcenter.digitec.ch':
-                    link2 = "'https:\/\/helpcenter.digitec.ch\/";
+                    link2 = "'https:\/\/helpcenter.digitec.ch\//";
                     console.log("sw4");
                     break;
             case 'helpcenter.galaxus.ch':
