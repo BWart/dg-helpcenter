@@ -400,7 +400,7 @@ function fillInfoBoxWording(){
                 break;
     }*/
 
-    return infoBoxWording;
+    
 
 
 
@@ -411,4 +411,5 @@ function fillInfoBoxWording(){
     }*/
 
 }
+return infoBoxWording;
 
