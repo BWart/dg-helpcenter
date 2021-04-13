@@ -417,8 +417,8 @@ hideOrderNumber();
 
   console.log(infoBoxWording);
   //console.log(currentLanguage);
-
-  console.log(infoBoxWording[de]);
+  
+  console.log(infoBoxWording[currentLanguage]);
  
   
   
@@ -436,8 +436,8 @@ hideOrderNumber();
   function updateDescriptionAndLabel(descriptionTemplateText, descriptionLabel){
     var currentLanguage = $('html').attr('lang');
 	console.log(currentLanguage);
-	console.log(infoBoxWording[de]);
-    if (descriptionTemplateText == infoBoxWording[de]['outputOtherRequest']){
+	console.log(infoBoxWording[currentLanguage]);
+    if (descriptionTemplateText == infoBoxWording[currentLanguage]['outputOtherRequest']){
     	$('#request_description').val('');
     }
     else {
