@@ -376,8 +376,14 @@ function fillInfoBoxWording(){
     }
     console.log(infoBoxWording);
     var currentLanguage = $('html').attr('lang');
-    console.log(currentLanguage);
 
-    return infoBoxWording;
+    if(currentLanguage == infoBoxWording[currentLanguage]){
+        console.log(currentLanguage);
+        return currentLanguage;
+    }
+
+    
+
+    
 }
 
