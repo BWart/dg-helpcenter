@@ -219,35 +219,35 @@ function fillInfoBoxWording(){
                   "outputNone" : "-",
 
         "Altre domande" : "inputOtherRequest" ,
-                  "outputOtherRequest" : "Trovi informazioni pi� dettagliate sullo stato di consegna dei tuoi articoli, tutte le ricevute d'acquisto, i certificati di garanzia e altro nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>.<br><br>Se un prodotto � difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + link1 + "Warranty/Overview' target='blank'>segnala un difetto</a>.",
+                  "outputOtherRequest" : "Trovi informazioni più dettagliate sullo stato di consegna dei tuoi articoli, tutte le ricevute d'acquisto, i certificati di garanzia e altro nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>.<br><br>Se un prodotto è difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + link1 + "Warranty/Overview' target='blank'>segnala un difetto</a>.",
 
     //Level 0: Dove si trova il mio ordine?
         "Verificare lo stato del mio ordine" : "inputOrderStatus",
-        "outputOrderStatus" : "Trovi informazioni pi� dettagliate sullo stato di consegna dei tuoi articoli nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>. Trovi, inoltre, anche il numero di tracking del tuo pacco.",
+        "outputOrderStatus" : "Trovi informazioni più dettagliate sullo stato di consegna dei tuoi articoli nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>. Trovi, inoltre, anche il numero di tracking del tuo pacco.",
 
-        "Sullo stato della spedizione � indicato �spedito�, ma la spedizione non � arrivata" : "inputShippingStatus",
-        "outputShippingStatus": "Trovi informazioni pi� dettagliate sullo stato di consegna dei tuoi articoli nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>. Trovi, inoltre, anche il numero di tracking del tuo pacco.<br><br>Purtroppo, a volte la consegna del pacco pu� avere ritardi oppure essere recapitato a un indirizzo errato. Se il pacco non dovesse arrivare dopo qualche giorno, avvieremo una ricerca.",
-        "Sullo stato della spedizione � indicato �spedito�, ma la spedizione non � arrivata descriptionTemplate" : "inputShippingStatusMailTemplate",
+        "Sullo stato della spedizione è indicato «spedito», ma la spedizione non è arrivata" : "inputShippingStatus",
+        "outputShippingStatus": "Trovi informazioni più dettagliate sullo stato di consegna dei tuoi articoli nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>. Trovi, inoltre, anche il numero di tracking del tuo pacco.<br><br>Purtroppo, a volte la consegna del pacco può avere ritardi oppure essere recapitato a un indirizzo errato. Se il pacco non dovesse arrivare dopo qualche giorno, avvieremo una ricerca.",
+        "Sullo stato della spedizione è indicato «spedito», ma la spedizione non è arrivata descriptionTemplate" : "inputShippingStatusMailTemplate",
         "outputShippingStatusMailTemplate" : "Quali articoli mancano:\nNumero di spedizione:",
 
-        "Sullo stato della spedizione � indicato �pronto per la spedizione�. Quando verr� inviata la spedizione?" : "inputReadyForShipment",
-        "outputReadyForShipment" : "Solo quando tutti i prodotti del tuo ordine saranno pronti per essere spediti, l'ordine verr� inviato. Se vuoi che sia pi� veloce, puoi attivare gratuitamente la <a href='" + link2 + "articles/115005646225-Come-faccio-a-richiedere-una-consegna-parziale-' target='blank'>consegna parziale</a>.",
+        "Sullo stato della spedizione è indicato «pronto per la spedizione». Quando verrà inviata la spedizione?" : "inputReadyForShipment",
+        "outputReadyForShipment" : "Solo quando tutti i prodotti del tuo ordine saranno pronti per essere spediti, l'ordine verrà inviato. Se vuoi che sia più veloce, puoi attivare gratuitamente la <a href='" + link2 + "articles/115005646225-Come-faccio-a-richiedere-una-consegna-parziale-' target='blank'>consegna parziale</a>.",
 
     //Level 0: Problemi con un ordine
         "Ho ricevuto un prodotto danneggiato esternamente" : "inputDamagedProduct",
-        "outputDamagedProduct" : "Per una rapida elaborazione abbiamo bisogno delle seguenti informazioni:<br><br>� Numero d�ordine<br>� Breve descrizione del danno<br>�	Foto dell�articolo e dell�imballaggio danneggiati<br><br>Esamineremo la tua richiesta insieme ai nostri partner logistici e ti informeremo al pi� presto su come procedere.",
+        "outputDamagedProduct" : "Per una rapida elaborazione abbiamo bisogno delle seguenti informazioni:<br><br>• Numero d’ordine<br>• Breve descrizione del danno<br>• Foto dell’articolo e dell’imballaggio danneggiati<br><br>Esamineremo la tua richiesta insieme ai nostri partner logistici e ti informeremo al più presto su come procedere.",
 
         "Il mio prodotto non funziona" : "inputNotWorking",
-        "outputNotWorking" : "Se un prodotto � difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + link1 + "Warranty/Overview' target='blank'>segnala un difetto</a>.<br><br>I danni dovuti ad un uso improprio non sono coperti dalla garanzia. Puoi trovare ulteriori informazioni nelle nostre <a href='" + link1 + "wiki/559' target='blank'>condizioni di garanzia</a> e nelle <a href='" + link1 + "Wiki/478' target='blank'>CGC</a>.",
+        "outputNotWorking" : "Se un prodotto è difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + link1 + "Warranty/Overview' target='blank'>segnala un difetto</a>.<br><br>I danni dovuti ad un uso improprio non sono coperti dalla garanzia. Puoi trovare ulteriori informazioni nelle nostre <a href='" + link1 + "wiki/559' target='blank'>condizioni di garanzia</a> e nelle <a href='" + link1 + "Wiki/478' target='blank'>CGC</a>.",
 
         "Ho ricevuto un prodotto sbagliato" : "inputWrongProduct",
         "outputWrongProduct" : "Per poter verificare rapidamente la vostra richiesta, sarebbe utile che ci forniste il numero del produttore o il codice EAN del prodotto ricevuto in modo errato. Queste informazioni sono riportate sulla confezione del prodotto.",
 
-        "Il mio ordine non � stato consegnato completamente" : "inputReceivedNotEverything",
-        "outputReceivedNotEverything" : "Non tutti i prodotti provengono direttamente dal nostro magazzino. I prodotti dei nostri partner ti vengono consegnati direttamente in un pacchetto separato. Nel menu <a href='" + link1 + "Order' target='blank'>ordini</a> puoi anche vedere se il tuo pacco � gi� stato spedito o se � ancora in fase di preparazione.",
+        "Il mio ordine non è stato consegnato completamente" : "inputReceivedNotEverything",
+        "outputReceivedNotEverything" : "Non tutti i prodotti provengono direttamente dal nostro magazzino. I prodotti dei nostri partner ti vengono consegnati direttamente in un pacchetto separato. Nel menu <a href='" + link1 + "Order' target='blank'>ordini</a> puoi anche vedere se il tuo pacco è già stato spedito o se è ancora in fase di preparazione.",
 
                   "Desidero stornare un ordine" : "inputCancelOrder",
-                  "outputCancelOrder" : "Finch� il tuo ordine non � stato preparato per la spedizione, puoi stornare l�ordine del prodotto che non vuoi pi� acquistare direttamente nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>. Se il prodotto � gi� stato spedito, puoi registrare il reso nel tuo conto cliente cliccando su <a href='" + link1 + "Return' target='blank'>registra il reso</a>.",
+                  "outputCancelOrder" : "Finché il tuo ordine non è stato preparato per la spedizione, puoi stornare l’ordine del prodotto che non vuoi più acquistare direttamente nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>. Se il prodotto è già stato spedito, puoi registrare il reso nel tuo conto cliente cliccando su <a href='" + link1 + "Return' target='blank'>registra il reso</a>.",
 
     //Level 0: Resi
           "Verificare lo stato di un reso" : "inputReturnStatus",
@@ -258,34 +258,34 @@ function fillInfoBoxWording(){
 
   //Level 0: Pagamento e rimborso
           "Rimborso di un credito" : "inputCreditReturn",
-          "outputCreditReturn" : "Puoi avviare il rimborso di un credito autonomamente. La procedura esatta � descritta in questo <a href='" + link2 + "articles/360000457949-Come-faccio-a-richiedere-il-rimborso-' target='blank'>articolo</a>.<br><br>Si prega di notare che il trasferimento di denaro di solito richiede da 1 a 3 giorni lavorativi.<br><br>I rimborsi sulla carta di credito appariranno sul prossimo estratto conto della carta di credito.",
+          "outputCreditReturn" : "Puoi avviare il rimborso di un credito autonomamente. La procedura esatta è descritta in questo <a href='" + link2 + "articles/360000457949-Come-faccio-a-richiedere-il-rimborso-' target='blank'>articolo</a>.<br><br>Si prega di notare che il trasferimento di denaro di solito richiede da 1 a 3 giorni lavorativi.<br><br>I rimborsi sulla carta di credito appariranno sul prossimo estratto conto della carta di credito.",
 
           "Necessito di una ricevuta/fattura" : "inputReceipt",
           "outputReceipt" : "Trovi tutte le ricevute d'acquisto, i certificati di garanzia e altro ancora alla voce <a href='" + link1 + "Order' target='blank'>ordini</a> nel tuo conto cliente selezionando l�articolo desiderato.<br><br><a href='" + link1 + "Invoice/ListInvoices' target='blank'>Qui</a> trovi le ricevute per gli ordini che hai pagato tramite fattura.",
 
-          "Ho ricevuto un richiamo, nonostante io abbia gi� effettuato il pagamento" : "inputPaymentReminder",
-          "outputPaymentReminder" : "Possono volerci fino a cinque giorni lavorativi per ricevere il pagamento. � possibile che il tuo pagamento sia avvenuto contemporaneamente al nostro sollecito. In questo caso non devi fare nulla e puoi ignorare il sollecito.<br><br>Si prega di notare che i pagamenti collettivi non vengono registrati correttamente. Effettua sempre un bonifico separato per ciascun ordine, in modo che possiamo assegnare il pagamento all�ordine corretto.",
+          "Ho ricevuto un richiamo, nonostante io abbia già effettuato il pagamento" : "inputPaymentReminder",
+          "outputPaymentReminder" : "Possono volerci fino a cinque giorni lavorativi per ricevere il pagamento. È possibile che il tuo pagamento sia avvenuto contemporaneamente al nostro sollecito. In questo caso non devi fare nulla e puoi ignorare il sollecito.<br><br>Si prega di notare che i pagamenti collettivi non vengono registrati correttamente. Effettua sempre un bonifico separato per ciascun ordine, in modo che possiamo assegnare il pagamento all’ordine corretto.",
 
           "Non posso effettuare ordini su fattura" : "inputNoBill",
-          "outputNoBill" : "Se il valore del tuo carrello � superiore al tuo limite di credito individuale o se hai gi� esaurito il tuo limite di credito con ordini non ancora pagati, la modalit� di pagamento tramite fattura viene disabilitata.<br><br>Nota bene: il nostro servizio clienti non ha alcun influsso sui metodi di pagamento disponibili o sul tuo limite di credito.",
+          "outputNoBill" : "Se il valore del tuo carrello è superiore al tuo limite di credito individuale o se hai già esaurito il tuo limite di credito con ordini non ancora pagati, la modalità di pagamento tramite fattura viene disabilitata.<br><br>Nota bene: il nostro servizio clienti non ha alcun influsso sui metodi di pagamento disponibili o sul tuo limite di credito.",
 
-          "Ho bisogno di un termine di pagamento pi� lungo" : "inputLongerPayment",
-          "outputLongerPayment" : "Il termine di pagamento � di 20 giorni e in generale non pu� essere prorogato. Naturalmente, pu� succedere che una fattura vada dimenticata. Per questo motivo, dopo la scadenza del termine di pagamento inviamo un sollecito. Sul sollecito di pagamento � indicato il periodo di proroga del termine. Questo periodo non � generalmente prorogabile.<br><br>Per evitare costi aggiuntivi, effettua immediatamente il pagamento.Non � necessaria una conferma da parte tua di effettuato pagamento.",
+          "Ho bisogno di un termine di pagamento più lungo" : "inputLongerPayment",
+          "outputLongerPayment" : "Il termine di pagamento è di 20 giorni e in generale non può essere prorogato. Naturalmente, può succedere che una fattura vada dimenticata. Per questo motivo, dopo la scadenza del termine di pagamento inviamo un sollecito. Sul sollecito di pagamento è indicato il periodo di proroga del termine. Questo periodo non è generalmente prorogabile.<br><br>Per evitare costi aggiuntivi, effettua immediatamente il pagamento.Non è necessaria una conferma da parte tua di effettuato pagamento.",
 
   //Level 0: Conto cliente
           "Desidero cancellare il mio conto cliente" : "inputDeleteAccount",
-          "outputDeleteAccount" : "Una volta eliminato il conto, non avrai pi� accesso alle tue ricevute e documenti elettronici. Pertanto, consigliamo di stamparne o salvare una copia delle ricevute e dei moduli prima di cancellare il tuo conto in maniera definitiva.<br><br>Potete avviare la cancellazione direttamente dal vostro <a href='" + link1 + "DeleteAccount' target='blank'>conto utente</a>.",
+          "outputDeleteAccount" : "Una volta eliminato il conto, non avrai più accesso alle tue ricevute e documenti elettronici. Pertanto, consigliamo di stamparne o salvare una copia delle ricevute e dei moduli prima di cancellare il tuo conto in maniera definitiva.<br><br>Potete avviare la cancellazione direttamente dal vostro <a href='" + link1 + "DeleteAccount' target='blank'>conto utente</a>.",
                   "Desidero cancellare il mio conto cliente descriptionLabel" : "inputDeleteAccountDescriptionLabel",
       "outputDeleteAccountDescriptionLabel" : "Descrizione<br>Nota: per una rapida elaborazione abbiamo bisogno del vostro numero cliente",
 
                   "Non riesco ad accedere al mio conto utente" : "inputCantLogin",
-          "outputCantLogin" : "Puoi reimpostare la tua password in qualsiasi momento e fartene inviare una nuova:<br><br>� Nell'area di login, clicca su <a href='" + link1 + "Register/RequestPassword' target='blank'>Hai dimenticato la password?</a><br>� Inserisci il tuo nome utente o l'indirizzo e-mail che hai registrato nel tuo conto e clicca poi su �Richiedi link�.",
+          "outputCantLogin" : "Puoi reimpostare la tua password in qualsiasi momento e fartene inviare una nuova:<br><br>• Nell'area di login, clicca su <a href='" + link1 + "Register/RequestPassword' target='blank'>Hai dimenticato la password?</a><br>• Inserisci il tuo nome utente o l'indirizzo e-mail che hai registrato nel tuo conto e clicca poi su «Richiedi link».",
           "Non riesco ad accedere al mio conto utente descriptionLabel" : "inputCantLoginDescriptionLabel",
       "outputCantLoginDescriptionLabel" : "Descrizione<br>Nota: per una rapida elaborazione abbiamo bisogno del vostro numero cliente",
 
   //Level 0: Consigli sui prodotti
           "Consulenza prodotti" : "inputProductAdvice",
-          "outputProductAdvice" : "Le domande su un prodotto gi� disponibile su digitec possono essere scritte direttamente sulla relativa pagina del prodotto. La nostra comunit� vi risponder� entro poche ore. La cosa migliore: tutti beneficiano del vostro contributo :-)",
+          "outputProductAdvice" : "Le domande su un prodotto già disponibile su digitec possono essere scritte direttamente sulla relativa pagina del prodotto. La nostra comunità vi risponderà entro poche ore. La cosa migliore: tutti beneficiano del vostro contributo :-)",
 
   //Level 0: Offerta
       "Offerta" : "inputOffer",
