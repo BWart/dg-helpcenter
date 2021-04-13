@@ -58,7 +58,7 @@ function fillInfoBoxWording(){
 
     //Level 0: Wo ist meine Bestellung?
         "Ich will den Status meiner Bestellung überprüfen" : "inputOrderStatus",
-        "outputOrderStatus" : "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + link1 + "\/Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.",
+        "outputOrderStatus" : "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='"+ link1 +" "+ / +""Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.",
 
         "Der Versandstatus lautet \"versendet\", aber die Sendung ist nicht angekommen" : "inputShippingStatus",
         "outputShippingStatus": "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + link1 + "\/Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas länger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.",
