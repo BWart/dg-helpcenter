@@ -375,7 +375,7 @@ function fillInfoBoxWording(){
         }
     }
     console.log(infoBoxWording);
-    var currentLanguage = $('html').attr('lang');
+    /*var currentLanguage = $('html').attr('lang');
 
     switch(currentLanguage){
             case'de':
@@ -397,7 +397,7 @@ function fillInfoBoxWording(){
             default: 
                 infoBoxWording= infoBoxWording['de'];
                 console.log(infoBoxWording)
-                break;
+                break;*/
     }
 
     return infoBoxWording;

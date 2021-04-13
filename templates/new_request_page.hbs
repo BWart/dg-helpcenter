@@ -431,6 +431,8 @@ hideOrderNumber();
   //Update description and label
   function updateDescriptionAndLabel(descriptionTemplateText, descriptionLabel){
     var currentLanguage = $('html').attr('lang');
+	console.log(currentLanguage);
+	console.log(infoBoxWording[currentLanguage]);
     if (descriptionTemplateText == infoBoxWording[currentLanguage]['outputOtherRequest']){
     	$('#request_description').val('');
     }
