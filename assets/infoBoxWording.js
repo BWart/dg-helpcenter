@@ -10,37 +10,37 @@ function fillInfoBoxWording(){
 
     switch (portal1){
             case 'digitec.ch':
-                    link1 = "'https:\/\/www.digitec.ch\//"; 
+                    link1 = "'https://www.digitec.ch/"; 
                     console.log("sw1");
                     break;
             case 'galaxus.ch':
-                    link1 = "'https:\/\/www.galaxus.ch\/"; 
+                    link1 = "'https://www.galaxus.ch/"; 
                     console.log("sw2");
                     break;
             case 'galaxus.de':
-                    link1 = "'https:\/\/www.galaxus.de\/";
+                    link1 = "'https://www.galaxus.de/";
                     console.log("sw3");
                     break;
             default: 
-                    link1 = "'https:\/\/www.digitec.ch\/";
+                    link1 = "'https://www.digitec.ch/";
                     console.log("CASE DEFAULT 1");
                     break;
     }
     
     switch (portal2){
             case 'helpcenter.digitec.ch':
-                    link2 = "'https:\/\/helpcenter.digitec.ch\//";
+                    link2 = "'https://helpcenter.digitec.ch/";
                     console.log("sw4");
                     break;
             case 'helpcenter.galaxus.ch':
-                    link2 = "'https:\/\/helpcenter.galaxus.ch\/";
+                    link2 = "'https://helpcenter.galaxus.ch/";
                     console.log("sw5");
                     break;
             case 'helpcenter.galaxus.de':
-                    link2 = "'https:\/\/helpcenter.galaxus.de\/";
+                    link2 = "'https://helpcenter.galaxus.de/";
                     console.log("sw6");
                     break;
-            default:link2 = "'https:\/\/helpcenter.digitec.ch\/";
+            default:link2 = "'https://helpcenter.digitec.ch/";
                     console.log("CASE DEFAULT 2");
                     break;
     }
@@ -54,19 +54,19 @@ function fillInfoBoxWording(){
           "outputNone" : "-",
 
     "Anderweitige Anfrage" : "inputOtherRequest" ,
-                  "outputOtherRequest" : "Die aktuellen Informationen zum Lieferstatus, Kaufbelege, Garantiescheine und Weiteres findest du in der <a href='" + link1 + "\/Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto.<br><br>Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + link1 + "\/Warranty/Overview' target='blank'>Defekt anmelden</a>.",
+                  "outputOtherRequest" : "Die aktuellen Informationen zum Lieferstatus, Kaufbelege, Garantiescheine und Weiteres findest du in der <a href='" + link1 + "Order' target='blank'>Bestell�bersicht</a> in deinem Kundenkonto.<br><br>Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + link1 + "Warranty/Overview' target='blank'>Defekt anmelden</a>.",
 
     //Level 0: Wo ist meine Bestellung?
         "Ich will den Status meiner Bestellung überprüfen" : "inputOrderStatus",
-        "outputOrderStatus" : "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='"+ link1 +"+Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.",
+        "outputOrderStatus" : "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + link1 + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.",
 
         "Der Versandstatus lautet \"versendet\", aber die Sendung ist nicht angekommen" : "inputShippingStatus",
-        "outputShippingStatus": "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + link1 + "\/Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas länger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.",
+        "outputShippingStatus": "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + link1 + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas l�nger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.",
         "Der Versandstatus lautet \"versendet\", aber die Sendung ist nicht angekommen descriptionTemplate" : "inputShippingStatusMailTemplate",
         "outputShippingStatusMailTemplate" : "Welche Artikel fehlen:\nSendungsnummer:",
 
         "Der Versandstatus lautet \"versandbereit\". Wann wird die Sendung verschickt?" : "inputReadyForShipment",
-        "outputReadyForShipment" : "Erst wenn alle Produkte deiner Bestellung versandbereit sind, wird die Bestellung versendet. Soll es schneller gehen kannst du eine <a href='" + link2 + "\/articles/115005646225-Wie-löse-ich-eine-Teillieferung-aus-' target='blank'>kostenlose Teillieferung aktivieren</a>.",
+        "outputReadyForShipment" : "Erst wenn alle Produkte deiner Bestellung versandbereit sind, wird die Bestellung versendet. Soll es schneller gehen kannst du eine <a href='" + link2 + "articles/115005646225-Wie-l�se-ich-eine-Teillieferung-aus-' target='blank'>kostenlose Teillieferung aktivieren</a>.",
 
     //Level 0: Probleme mit einer Bestellung
         "Ich habe ein �usserlich besch�digtes Produkt erhalten" : "inputDamagedProduct",
