@@ -397,7 +397,7 @@ function fillInfoBoxWording(){
             default: 
                 infoBoxWording= infoBoxWording['de'];
                 console.log(infoBoxWording)
-                break;*/
+                break;
     }
 
     return infoBoxWording;
