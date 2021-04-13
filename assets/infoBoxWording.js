@@ -410,8 +410,5 @@ function fillInfoBoxWording(){
         return infoBoxWording;
     }*/
 
-    
-
-    
 }
 
