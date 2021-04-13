@@ -379,23 +379,23 @@ function fillInfoBoxWording(){
 
     switch(currentLanguage){
             case'de':
-                infoBoxWording= infoBoxWording['de'][''];
+                return infoBoxWording['de'];
                 console.log(infoBoxWording)
                 break;
             case'fr':
-                infoBoxWording= infoBoxWording['fr'][''];
+                infoBoxWording= infoBoxWording['fr'];
                 console.log(infoBoxWording)
                 break;
             case'it':
-                infoBoxWording= infoBoxWording['it'][''];
+                infoBoxWording= infoBoxWording['it'];
                 console.log(infoBoxWording)
                 break;
             case'en-US':
-                infoBoxWording= infoBoxWording['en-US'][''];
+                infoBoxWording= infoBoxWording['en-US'];
                 console.log(infoBoxWording)
                 break;
             default: 
-                infoBoxWording= infoBoxWording['de'][''];
+                infoBoxWording= infoBoxWording['de'];
                 console.log(infoBoxWording)
                 break;
     }
