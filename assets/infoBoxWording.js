@@ -378,8 +378,8 @@ function fillInfoBoxWording(){
     var currentLanguage = $('html').attr('lang');
 
     if(currentLanguage == infoBoxWording[currentLanguage]){
-        console.log(currentLanguage);
-        return currentLanguage;
+        infoBoxWording = currentLanguage;
+        return infoBoxWording;
     }
 
     
