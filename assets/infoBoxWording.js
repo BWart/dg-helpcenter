@@ -377,10 +377,38 @@ function fillInfoBoxWording(){
     console.log(infoBoxWording);
     var currentLanguage = $('html').attr('lang');
 
-    if(currentLanguage == infoBoxWording[currentLanguage]){
-        infoBoxWording = currentLanguage;
-        return infoBoxWording;
+    switch(currentLanguage){
+            case'de':
+                infoBoxWording= infoBoxWording['de'];
+                console.log(infoBoxWording)
+                break;
+            case'fr':
+                infoBoxWording= infoBoxWording['fr'];
+                console.log(infoBoxWording)
+                break;
+            case'it':
+                infoBoxWording= infoBoxWording['it'];
+                console.log(infoBoxWording)
+                break;
+            case'en-US':
+                infoBoxWording= infoBoxWording['en-US'];
+                console.log(infoBoxWording)
+                break;
+            default: 
+                infoBoxWording= infoBoxWording['de'];
+                console.log(infoBoxWording)
+                break;
     }
+
+    return infoBoxWording;
+
+
+
+    /*if(currentLanguage == infoBoxWording[currentLanguage]){
+        infoBoxWording = currentLanguage;
+        console.log(infoBoxWording);
+        return infoBoxWording;
+    }*/
 
     
 
