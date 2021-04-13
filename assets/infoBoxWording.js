@@ -54,69 +54,69 @@ function fillInfoBoxWording(){
           "outputNone" : "-",
 
     "Anderweitige Anfrage" : "inputOtherRequest" ,
-                  "outputOtherRequest" : "Die aktuellen Informationen zum Lieferstatus, Kaufbelege, Garantiescheine und Weiteres findest du in der <a href='" + link1 + "Order' target='blank'>Bestell�bersicht</a> in deinem Kundenkonto.<br><br>Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + link1 + "Warranty/Overview' target='blank'>Defekt anmelden</a>.",
+                  "outputOtherRequest" : "Die aktuellen Informationen zum Lieferstatus, Kaufbelege, Garantiescheine und Weiteres findest du in der <a href='" + link1 + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto.<br><br>Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + link1 + "Warranty/Overview' target='blank'>Defekt anmelden</a>.",
 
     //Level 0: Wo ist meine Bestellung?
         "Ich will den Status meiner Bestellung überprüfen" : "inputOrderStatus",
         "outputOrderStatus" : "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + link1 + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.",
 
         "Der Versandstatus lautet \"versendet\", aber die Sendung ist nicht angekommen" : "inputShippingStatus",
-        "outputShippingStatus": "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + link1 + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas l�nger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.",
+        "outputShippingStatus": "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + link1 + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas länger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.",
         "Der Versandstatus lautet \"versendet\", aber die Sendung ist nicht angekommen descriptionTemplate" : "inputShippingStatusMailTemplate",
         "outputShippingStatusMailTemplate" : "Welche Artikel fehlen:\nSendungsnummer:",
 
         "Der Versandstatus lautet \"versandbereit\". Wann wird die Sendung verschickt?" : "inputReadyForShipment",
-        "outputReadyForShipment" : "Erst wenn alle Produkte deiner Bestellung versandbereit sind, wird die Bestellung versendet. Soll es schneller gehen kannst du eine <a href='" + link2 + "articles/115005646225-Wie-l�se-ich-eine-Teillieferung-aus-' target='blank'>kostenlose Teillieferung aktivieren</a>.",
+        "outputReadyForShipment" : "Erst wenn alle Produkte deiner Bestellung versandbereit sind, wird die Bestellung versendet. Soll es schneller gehen kannst du eine <a href='" + link2 + "articles/115005646225-Wie-löse-ich-eine-Teillieferung-aus-' target='blank'>kostenlose Teillieferung aktivieren</a>.",
 
     //Level 0: Probleme mit einer Bestellung
-        "Ich habe ein �usserlich besch�digtes Produkt erhalten" : "inputDamagedProduct",
-        "outputDamagedProduct" : "F�r eine rasche Bearbeitung ben�tigen wir folgende Informationen von dir: <br><br>� Auftragsnummer deiner Bestellung<br>� Beschreibung des Schadens<br>� Fotos des Schadens und der Verpackung<br><br>Wir werden deine Anfrage zusammen mit unseren Logistikpartnern pr�fen und dich so rasch als m�glich �ber die weiteren Schritte informieren.",
+        "Ich habe ein äusserlich beschädigtes Produkt erhalten" : "inputDamagedProduct",
+        "outputDamagedProduct" : "Für eine rasche Bearbeitung benötigen wir folgende Informationen von dir: <br><br>• Auftragsnummer deiner Bestellung<br>• Beschreibung des Schadens<br>• Fotos des Schadens und der Verpackung<br><br>Wir werden deine Anfrage zusammen mit unseren Logistikpartnern prüfen und dich so rasch als möglich über die weiteren Schritte informieren.",
 
         "Mein Produkt funktioniert nicht" : "inputNotWorking",
-        "outputNotWorking" : "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + link1 + "Warranty/Overview' target='blank'>Defekt anmelden</a>.<br><br>Besch�digungen, welche auf unsachgem�sse Bedienung zur�ckzuf�hren sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + link1 + "wiki/559' target='blank'>Garantierichtlinien</a> sowie in unseren <a href='" + link1 + "Wiki/478' target='blank'>AGBs</a>.",
+        "outputNotWorking" : "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + link1 + "Warranty/Overview' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + link1 + "wiki/559' target='blank'>Garantierichtlinien</a> sowie in unseren <a href='" + link1 + "Wiki/478' target='blank'>AGBs</a>.",
 
         "Ich habe ein falsches Produkt erhalten" : "inputWrongProduct",
-        "outputWrongProduct" : "Damit wir dein Anliegen rasch pr�fen k�nnen, w�re es hilfreich, wenn du uns die Herstellernummer oder den EAN-Code des falsch erhaltenen Produkt mitteilen k�nntest. Die Angaben dazu findest du auf der Produktverpackung.",
+        "outputWrongProduct" : "Damit wir dein Anliegen rasch prüfen können, wäre es hilfreich, wenn du uns die Herstellernummer oder den EAN-Code des falsch erhaltenen Produkt mitteilen könntest. Die Angaben dazu findest du auf der Produktverpackung.",
 
         "Meine Bestellung wurde nicht komplett geliefert" : "inputReceivedNotEverything",
-        "outputReceivedNotEverything" : "Nicht alle Produkte kommen direkt ab unserem eigenen Lager. Produkte von unseren Partnern werden dir somit direkt und in einem separaten Paket zugestellt. in deinem Kundenkonto kannst du unter <a href='" + link1 + "Order' target='blank'>Bestellungen</a> �berpr�fen, ob dein Paket bereits versendet wurde oder noch vorbereitet wird.",
+        "outputReceivedNotEverything" : "Nicht alle Produkte kommen direkt ab unserem eigenen Lager. Produkte von unseren Partnern werden dir somit direkt und in einem separaten Paket zugestellt. in deinem Kundenkonto kannst du unter <a href='" + link1 + "Order' target='blank'>Bestellungen</a> überprüfen, ob dein Paket bereits versendet wurde oder noch vorbereitet wird.",
 
-                  "Ich m�chte eine Bestellung stornieren" : "inputCancelOrder",
-                  "outputCancelOrder" : "Solange deine Lieferung noch nicht f�r den Versand vorbereitet wurde, kannst du in deinem Kundenkonto unter <a href='" + link1 + "Order' target='blank'>Bestellungen</a> das unerw�nschte Produkt selbstst�ndig stornieren. Sollte das Produkt bereits versendet worden sein, kannst du in deinem Kundenkonto eine <a href='" + link1 + "Return' target='blank'>R�ckgabe erfassen</a>.",
+                  "Ich möchte eine Bestellung stornieren" : "inputCancelOrder",
+                  "outputCancelOrder" : "Solange deine Lieferung noch nicht für den Versand vorbereitet wurde, kannst du in deinem Kundenkonto unter <a href='" + link1 + "Order' target='blank'>Bestellungen</a> das unerwünschte Produkt selbstständig stornieren. Sollte das Produkt bereits versendet worden sein, kannst du in deinem Kundenkonto eine <a href='" + link1 + "Return' target='blank'>Rückgabe erfassen</a>.",
 
-    //Level 0: R�ckgabe
-          "Status einer R�ckgabe �berpr�fen" : "inputReturnStatus",
-           "outputReturnStatus" : "Unter <a href='" + link1 + "ServiceCase/List' target='blank'>\"Alle R�cksendungen\"</a> findest du eine �bersicht und den aktuellen Status zu allen von dir eingereichten R�ckgaben und Garantief�llen.",
+    //Level 0: Rückgabe
+          "Status einer Rückgabe überprüfen" : "inputReturnStatus",
+           "outputReturnStatus" : "Unter <a href='" + link1 + "ServiceCase/List' target='blank'>\"Alle Rücksendungen\"</a> findest du eine Übersicht und den aktuellen Status zu allen von dir eingereichten Rückgaben und Garantiefällen.",
 
-          "Ich m�chte ein Produkt zur�ckgeben" : "inputReturn",
-          "outputReturn" : "Du kannst direkt von digitec gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 +"articles/360012370979-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte w�hrend 14 Tagen nach dem Erhalt zur�ckgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "ReturnsAndWarranty' target='blank'>R�ckgabe erfassen</a>.",
+          "Ich möchte ein Produkt zurückgeben" : "inputReturn",
+          "outputReturn" : "Du kannst direkt von digitec gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 +"articles/360012370979-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "ReturnsAndWarranty' target='blank'>Rückgabe erfassen</a>.",
 
-  //Level 0: Zahlung und R�ckerstattung
-          "R�ckerstattung meiner Gutschrift" : "inputCreditReturn",
-          "outputCreditReturn" : "Du kannst die R�ckerstattung einer Gutschrift in wenigen Schritten selbst vornehmen. Das genaue Vorgehen beschreiben wir in diesem <a href='" + link2 +"articles/360000457949-R�ckerstattung-einer-Gutschrift' target='blank'>Artikel</a>.<br><br>Bitte beachte, dass die Geld�berweisung in der Regel 1-3 Werktage in Anspruch nimmt.<br><br>R�ckerstattungen auf deine Kreditkarte werden auf deiner n�chsten Kreditkartenabrechnung ersichtlich.",
+  //Level 0: Zahlung und Rückerstattung
+          "Rückerstattung meiner Gutschrift" : "inputCreditReturn",
+          "outputCreditReturn" : "Du kannst die Rückerstattung einer Gutschrift in wenigen Schritten selbst vornehmen. Das genaue Vorgehen beschreiben wir in diesem <a href='" + link2 +"articles/360000457949-Rückerstattung-einer-Gutschrift' target='blank'>Artikel</a>.<br><br>Bitte beachte, dass die Geldüberweisung in der Regel 1-3 Werktage in Anspruch nimmt.<br><br>Rückerstattungen auf deine Kreditkarte werden auf deiner nächsten Kreditkartenabrechnung ersichtlich.",
 
-          "Ich ben�tige eine/n Kaufbeleg/Rechnung" : "inputReceipt",
-          "outputReceipt" : "S�mtliche Kaufbelege, Garantiescheine und Weiteres findest du unter dem Men�punkt <a href='" + link1 + "Order' target='blank'>Bestellungen</a> in deinem Kundenkonto, indem du den gew�nschten Auftrag ausw�hlst.<br><br>Rechnungsbelege f�r Bestellungen, welche du per Rechnung get�tigt hast, findest du <a href='" + link1 + "Invoice/ListInvoices' target='blank'>hier</a>.",
+          "Ich benötige eine/n Kaufbeleg/Rechnung" : "inputReceipt",
+          "outputReceipt" : "Sämtliche Kaufbelege, Garantiescheine und Weiteres findest du unter dem Menüpunkt <a href='" + link1 + "Order' target='blank'>Bestellungen</a> in deinem Kundenkonto, indem du den gewünschten Auftrag auswählst.<br><br>Rechnungsbelege für Bestellungen, welche du per Rechnung getätigt hast, findest du <a href='" + link1 + "Invoice/ListInvoices' target='blank'>hier</a>.",
 
           "Ich habe eine Mahnung erhalten, obwohl ich bezahlt habe" : "inputPaymentReminder",
-          "outputPaymentReminder" : "Es kann bis zu f�nf Werktage dauern, bis deine Zahlung in unserem System verbucht wird. Deshalb kann es sein, dass sich die Mahnung/Zahlungserinnerung mit deiner Zahlung �berschnitten hat. In diesem Fall musst du nichts weiter tun und kannst die Mahnung ignorieren.<br><br>Bitte beachte, dass Sammel�berweisungen nicht korrekt verbucht werden. �berweise immer f�r jede Bestellung separat, damit wir deine Zahlung eindeutig zuordnen k�nnen.",
+          "outputPaymentReminder" : "Es kann bis zu fünf Werktage dauern, bis deine Zahlung in unserem System verbucht wird. Deshalb kann es sein, dass sich die Mahnung/Zahlungserinnerung mit deiner Zahlung überschnitten hat. In diesem Fall musst du nichts weiter tun und kannst die Mahnung ignorieren.<br><br>Bitte beachte, dass Sammelüberweisungen nicht korrekt verbucht werden. überweise immer für jede Bestellung separat, damit wir deine Zahlung eindeutig zuordnen können.",
 
           "Ich kann nicht per Rechnung bestellen" : "inputNoBill",
-          "outputNoBill": "Wenn der Wert deines Warenkorbs h�her ist als dein individuelles Kreditlimit oder du dein Kreditlimit durch noch nicht bezahlte Bestellungen bereits ausgereizt hast, entf�llt die Rechnung als Zahlungsoption.<br><br>Bitte beachte: Unser Kundenservice kann die verf�gbaren Zahlungsarten sowie das Kreditlimit nicht beeinflussen.",
+          "outputNoBill": "Wenn der Wert deines Warenkorbs höher ist als dein individuelles Kreditlimit oder du dein Kreditlimit durch noch nicht bezahlte Bestellungen bereits ausgereizt hast, entfällt die Rechnung als Zahlungsoption.<br><br>Bitte beachte: Unser Kundenservice kann die verfügbaren Zahlungsarten sowie das Kreditlimit nicht beeinflussen.",
 
-          "Ich ben�tige eine l�ngere Zahlungsfrist" : "inputLongerPayment",
-          "outputLongerPayment" : "Die Zahlungsfrist betr�gt 20 Tagen und kann generell nicht verl�ngert werden. Nat�rlich kann es passieren, dass eine Rechnung einmal �bersehen wird. Aus diesem Grund versenden wir nach Ablauf der Zahlungsfrist eine Zahlungserinnerung. Auf der Zahlungserinnerung ist der Zeitraum der Fristerstreckung aufgef�hrt. Diese Nachfrist ist generell nicht verl�ngerbar.<br><br>Um zus�tzliche Geb�hren zu vermeiden, solltest du den ausstehenden Betrag umgehend begleichen. Eine Best�tigung von dir, dass du die Zahlung get�tigt hast, ist nicht n�tig.",
+          "Ich benötige eine längere Zahlungsfrist" : "inputLongerPayment",
+          "outputLongerPayment" : "Die Zahlungsfrist beträgt 20 Tagen und kann generell nicht verlängert werden. Natürlich kann es passieren, dass eine Rechnung einmal übersehen wird. Aus diesem Grund versenden wir nach Ablauf der Zahlungsfrist eine Zahlungserinnerung. Auf der Zahlungserinnerung ist der Zeitraum der Fristerstreckung aufgeführt. Diese Nachfrist ist generell nicht verlängerbar.<br><br>Um zusätzliche Gebühren zu vermeiden, solltest du den ausstehenden Betrag umgehend begleichen. Eine Bestätigung von dir, dass du die Zahlung getätigt hast, ist nicht nötig.",
 
   //Level 0: Kundenkonto
-          "Ich m�chte mein Kundenkonto l�schen" : "inputDeleteAccount",
-          "outputDeleteAccount" : "Nachdem dein Konto gel�scht wurde, hast du keinen Zugriff mehr auf deine elektronischen Kaufbelege und andere Unterlagen. Wir empfehlen dir daher, eine Kopie der noch ben�tigten Formulare zu drucken oder abzuspeichern, bevor du dein Konto l�schen l�sst.<br><br>Du kannst die L�schung direkt �ber dein <a href='" + link1 + "DeleteAccount' target='blank'>Benutzerkonto</a> einleiten.",
-      "Ich m�chte mein Kundenkonto l�schen descriptionLabel" : "inputDeleteAccountDescriptionLabel",
-      "outputDeleteAccountDescriptionLabel" : "Beschreibung<br>Hinweis: F�r eine rasche Bearbeitung ben�tigen wir deine Kundennummer",
+          "Ich möchte mein Kundenkonto löschen" : "inputDeleteAccount",
+          "outputDeleteAccount" : "Nachdem dein Konto gelöscht wurde, hast du keinen Zugriff mehr auf deine elektronischen Kaufbelege und andere Unterlagen. Wir empfehlen dir daher, eine Kopie der noch benötigten Formulare zu drucken oder abzuspeichern, bevor du dein Konto löschen lässt.<br><br>Du kannst die Löschung direkt über dein <a href='" + link1 + "DeleteAccount' target='blank'>Benutzerkonto</a> einleiten.",
+      "Ich möchte mein Kundenkonto löschen descriptionLabel" : "inputDeleteAccountDescriptionLabel",
+      "outputDeleteAccountDescriptionLabel" : "Beschreibung<br>Hinweis: Für eine rasche Bearbeitung benötigen wir deine Kundennummer",
 
                   "Ich komme nicht auf mein Benutzerkonto" : "inputCantLogin",
-          "outputCantLogin" : "Du kannst dein Passwort jederzeit zur�cksetzen und ein neues zusenden lassen:<br><br>�	Klicke im Login-Bereich auf <a href='" + link1 + "Register/RequestPassword' target='blank'>Passwort vergessen?</a><br>�	Gib deinen Benutzernamen oder die hinterlegte E-Mail-Adresse an und klicke auf \"Link anfordern\"",
+          "outputCantLogin" : "Du kannst dein Passwort jederzeit zurücksetzen und ein neues zusenden lassen:<br><br>• Klicke im Login-Bereich auf <a href='" + link1 + "Register/RequestPassword' target='blank'>Passwort vergessen?</a><br>• Gib deinen Benutzernamen oder die hinterlegte E-Mail-Adresse an und klicke auf \"Link anfordern\"",
       "Ich komme nicht auf mein Benutzerkonto descriptionLabel" : "inputCantLoginDescriptionLabel",
-      "outputCantLoginDescriptionLabel" : "Beschreibung<br>Hinweis: F�r eine rasche Bearbeitung ben�tigen wir deine Kundennummer",
+      "outputCantLoginDescriptionLabel" : "Beschreibung<br>Hinweis: Für eine rasche Bearbeitung benötigen wir deine Kundennummer",
 
   //Level 0: Produktberatung
           "Produktberatung" : "inputProductAdvice",
@@ -130,58 +130,58 @@ function fillInfoBoxWording(){
 
 
 
-    //FRANZ�SISCH
+    //FRANZÖSISCH
                   fr: {   
                   "-" : "inputNone",
                   "outputNone" : "-",
 
                   "Autre demande" : "inputOtherRequest" ,
-                  "outputOtherRequest" : "Dans l'<a href='" + link1 + "Order' target='blank'>aper�u des commandes</a> de votre compte client, vous pouvez consulter les derni�res informations relatives au statut de livraison de vos produits et tous les re�us, certificats de garantie.<br><br>Si un produit est d�fectueux et s'il peut �tre pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + link1 + "Warranty/Overview' target='blank'>signaler un d�faut</a>.",
+                  "outputOtherRequest" : "Dans l'<a href='" + link1 + "Order' target='blank'>aperçu des commandes</a> de votre compte client, vous pouvez consulter les dernières informations relatives au statut de livraison de vos produits et tous les reçus, certificats de garantie.<br><br>Si un produit est défectueux et s'il peut être pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + link1 + "Warranty/Overview' target='blank'>signaler un défaut</a>.",
 
         //Level 0: Ou est ma commande?
-        "V�rifier l'�tat de ma commande" : "inputOrderStatus",
-        "outputOrderStatus" : "Dans l'<a href='" + link1 + "Order' target='blank'>aper�u des commandes</a> de votre compte client, vous pouvez consulter les derni�res informations relatives au statut de livraison de vos produits. Vous y trouverez �galement le num�ro de suivi de votre colis.",
+        "Vérifier l'état de ma commande" : "inputOrderStatus",
+        "outputOrderStatus" : "Dans l'<a href='" + link1 + "Order' target='blank'>aperçu des commandes</a> de votre compte client, vous pouvez consulter les dernières informations relatives au statut de livraison de vos produits. Vous y trouverez également le numéro de suivi de votre colis.",
 
-        "Le statut de l'envoi est � exp�di� �, mais l'envoi n'est pas arriv�" : "inputShippingStatus",
-        "outputShippingStatus": "Dans l'<a href='" + link1 + "Order' target='blank'>aper�u des commandes</a> de votre compte client, vous pouvez consulter les derni�res informations relatives au statut de livraison de vos produits. Vous y trouverez �galement le num�ro de suivi de votre colis.<br><br>Malheureusement, un colis peut parfois rester plus longtemps en cours d'acheminement ou atterrir chez le voisin. Si le colis n'arrive pas, m�me apr�s quelques jours, nous serons heureux d'ouvrir une enqu�te.",
-        "Le statut de l'envoi est � exp�di� �, mais l'envoi n'est pas arriv� descriptionTemplate" : "inputShippingStatusMailTemplate",
-        "outputShippingStatusMailTemplate" : "Quels sont les articles manquants :\nNum�ro de suivi :",
+        "Le statut de l'envoi est « expédié », mais l'envoi n'est pas arrivarrivé" : "inputShippingStatus",
+        "outputShippingStatus": "Dans l'<a href='" + link1 + "Order' target='blank'>aperçu des commandes</a> de votre compte client, vous pouvez consulter les dernières informations relatives au statut de livraison de vos produits. Vous y trouverez également le numéro de suivi de votre colis.<br><br>Malheureusement, un colis peut parfois rester plus longtemps en cours d'acheminement ou atterrir chez le voisin. Si le colis n'arrive pas, même après quelques jours, nous serons heureux d'ouvrir une enquête.",
+        "Le statut de l'envoi est « expédié », mais l'envoi n'est pas arrivé descriptionTemplate" : "inputShippingStatusMailTemplate",
+        "outputShippingStatusMailTemplate" : "Quels sont les articles manquants :\nNuméro de suivi :",
 
-        "Le statut d'exp�dition est � pr�t � �tre exp�di� �. Quand l'envoi sera-t-il effectu� ?" : "inputReadyForShipment",
-        "outputReadyForShipment" : "La commande ne sera exp�di�e que lorsque tous les produits de votre commande seront pr�ts � �tre envoy�s. Pour acc�l�rer ce processus, vous pouvez activer la <a href='" + link2 + "articles/115005646225-Comment-activer-une-livraison-partielle-' target='blank'>livraison partielle</a>.",
+        "Le statut d'expédition est « prêt à être expédié ». Quand l'envoi sera-t-il effectué ?" : "inputReadyForShipment",
+        "outputReadyForShipment" : "La commande ne sera expédiée que lorsque tous les produits de votre commande seront prêts à être envoyés. Pour accélérer ce processus, vous pouvez activer la <a href='" + link2 + "articles/115005646225-Comment-activer-une-livraison-partielle-' target='blank'>livraison partielle</a>.",
 
-    //Level 0: Probl�me avec la commande
-        "J'ai re�u un produit endommag� � l'ext�rieur" : "inputDamagedProduct",
-        "outputDamagedProduct" : "Pour un traitement rapide, nous avons besoin des informations suivantes de votre part : <br><br>�	num�ro de votre commande<br>�	description du dommage<br>�	photos du dommage et de l'emballage<br><br>Nous examinerons votre demande avec nos partenaires logistiques et vous informerons d�s que possible des �tapes suivantes.",
+    //Level 0: Problème avec la commande
+        "J'ai reçu un produit endommagé à l'extérieur" : "inputDamagedProduct",
+        "outputDamagedProduct" : "Pour un traitement rapide, nous avons besoin des informations suivantes de votre part : <br><br>• numéro de votre commande<br>• description du dommage<br>• photos du dommage et de l'emballage<br><br>Nous examinerons votre demande avec nos partenaires logistiques et vous informerons dès que possible des étapes suivantes.",
 
         "Mon produit ne fonctionne pas" : "inputNotWorking",
-        "outputNotWorking" : "Si un produit est d�fectueux et s'il peut �tre pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + link1 + "Warranty/Overview' target='blank'>signaler un d�faut</a>.<br><br>Les dommages caus�s par une utilisation inappropri�e ne sont pas couverts par la garantie. Vous trouverez un compl�ment d'information concernant ce point dans nos <a href='" + link1 + "wiki/559' target='blank'>conditions de garantie</a> et <a href='" + link1 + "Wiki/478' target='blank'>CGV</a>.",
+        "outputNotWorking" : "Si un produit est défectueux et s'il peut être pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + link1 + "Warranty/Overview' target='blank'>signaler un défaut</a>.<br><br>Les dommages causés par une utilisation inappropriée ne sont pas couverts par la garantie. Vous trouverez un complément d'information concernant ce point dans nos <a href='" + link1 + "wiki/559' target='blank'>conditions de garantie</a> et <a href='" + link1 + "Wiki/478' target='blank'>CGV</a>.",
 
-        "J'ai re�u le mauvais produit" : "inputWrongProduct",
-        "outputWrongProduct" : "Afin de pouvoir v�rifier rapidement votre demande, il serait utile que vous nous communiquiez le num�ro du fabricant ou le code EAN du produit re�u par erreur. Vous trouverez ces informations sur l'emballage du produit.",
+        "J'ai reçu le mauvais produit" : "inputWrongProduct",
+        "outputWrongProduct" : "Afin de pouvoir vérifier rapidement votre demande, il serait utile que vous nous communiquiez le numéro du fabricant ou le code EAN du produit reçu par erreur. Vous trouverez ces informations sur l'emballage du produit.",
 
-        "Ma commande n'a pas �t� enti�rement livr�e" : "inputReceivedNotEverything",
-        "outputReceivedNotEverything" : "Tous les produits ne proviennent pas directement de notre entrep�t. Les produits de nos partenaires vous sont donc livr�s directement et dans un colis s�par�. Dans votre compte client sous <a href='" + link1 + "Order' target='blank'>commandes</a>, vous pouvez v�rifier si votre colis a d�j� �t� envoy� ou est encore en cours de pr�paration.",
+        "Ma commande n'a pas été entièrement livrée" : "inputReceivedNotEverything",
+        "outputReceivedNotEverything" : "Tous les produits ne proviennent pas directement de notre entrepôt. Les produits de nos partenaires vous sont donc livrés directement et dans un colis séparé. Dans votre compte client sous <a href='" + link1 + "Order' target='blank'>commandes</a>, vous pouvez vérifier si votre colis a déjà été envoyé ou est encore en cours de préparation.",
 
                   "Je souhaite annuler une commande" : "inputCancelOrder",
-                  "outputCancelOrder" : "Tant que votre commande n'a pas �t� pr�par�e pour l'exp�dition, vous pouvez annuler le produit non d�sir� de mani�re ind�pendante en allant dans votre compte client sous <a href='" + link1 + "Order' target='blank'>commandes</a>. Si le produit a d�j� �t� exp�di�, vous pouvez <a href='" + link1 + "Return' target='blank'>enregistrer un retour</a> dans votre compte client .",
+                  "outputCancelOrder" : "Tant que votre commande n'a pas été préparée pour l'expédition, vous pouvez annuler le produit non désiré de manière indépendante en allant dans votre compte client sous <a href='" + link1 + "Order' target='blank'>commandes</a>. Si le produit a déjà été expédié, vous pouvez <a href='" + link1 + "Return' target='blank'>enregistrer un retour</a> dans votre compte client .",
 
     //Level 0: Retour
-          "V�rifier le statut d'un retour" : "inputReturnStatus",
-           "outputReturnStatus" : "Sous la rubrique � <a href='" + link1 + "ServiceCase/List' target='blank'>Tous les retours</a> �, vous trouverez une vue d'ensemble et le statut actuel de tous les retours et demandes de garantie que vous avez soumis.",
+          "Vérifier le statut d'un retour" : "inputReturnStatus",
+           "outputReturnStatus" : "Sous la rubrique « <a href='" + link1 + "ServiceCase/List' target='blank'>Tous les retours</a> », vous trouverez une vue d'ensemble et le statut actuel de tous les retours et demandes de garantie que vous avez soumis.",
 
           "Je souhaite retourner un produit" : "inputReturn",
-          "outputReturn" : "Les produits achet�s directement chez digitec peuvent �tre retourn�s dans les 30 jours, ceux achet�s aupr�s d'un <a href='" + link2 + "articles/360012370979-Offres-de-fournisseur-tiers' target='blank'>fournisseur tiers</a>, dans les 14 jours suivant leur r�ception. Vous pouvez <a href='" + link1 + "ReturnsAndWarranty' target='blank'>enregistrer un retour</a> directement dans votre compte client.",
+          "outputReturn" : "Les produits achetés directement chez digitec peuvent être retournés dans les 30 jours, ceux achetés auprès d'un <a href='" + link2 + "articles/360012370979-Offres-de-fournisseur-tiers' target='blank'>fournisseur tiers</a>, dans les 14 jours suivant leur réception. Vous pouvez <a href='" + link1 + "ReturnsAndWarranty' target='blank'>enregistrer un retour</a> directement dans votre compte client.",
 
   //Level 0: Paiement et remboursement
           "Remboursement de mon avoir" : "inputCreditReturn",
-          "outputCreditReturn" : "Vous pouvez effectuer vous-m�me le remboursement d'un avoir en quelques �tapes. La proc�dure exacte est d�crite dans le pr�sent <a href='" + link2 + "articles/360000457949-Que-faire-pour-lancer-le-processus-de-remboursement-' target='blank'>article</a>.<br><br>Veuillez noter que le virement prend habituellement entre 1 � 3 jours ouvrables.<br><br>Les remboursements sur votre carte de cr�dit figureront sur votre prochain relev� de carte de cr�dit.",
+          "outputCreditReturn" : "Vous pouvez effectuer vous-même le remboursement d'un avoir en quelques étapes. La procédure exacte est décrite dans le présent <a href='" + link2 + "articles/360000457949-Que-faire-pour-lancer-le-processus-de-remboursement-' target='blank'>article</a>.<br><br>Veuillez noter que le virement prend habituellement entre 1 à 3 jours ouvrables.<br><br>Les remboursements sur votre carte de crédit figureront sur votre prochain relevé de carte de crédit.",
 
-          "J'ai besoin d'un re�u/une facture" : "inputReceipt",
-          "outputReceipt" : "Vous trouverez tous les re�us, certificats de garantie et autres � la rubrique <a href='" + link1 + "Order' target='blank'>commandes</a> dans votre compte client en s�lectionnant la commande souhait�e.<br><br>Vous trouverez <a href='" + link1 + "Invoice/ListInvoices' target='blank'>ici</a> un justificatif de facture pour les commandes pay�es sur facture.",
+          "J'ai besoin d'un reçu/une facture" : "inputReceipt",
+          "outputReceipt" : "Vous trouverez tous les reçus, certificats de garantie et autres à la rubrique <a href='" + link1 + "Order' target='blank'>commandes</a> dans votre compte client en sélectionnant la commande souhaitée.<br><br>Vous trouverez <a href='" + link1 + "Invoice/ListInvoices' target='blank'>ici</a> un justificatif de facture pour les commandes payées sur facture.",
 
-          "J'ai re�u un rappel m�me si j'ai pay�" : "inputPaymentReminder",
-          "outputPaymentReminder" : "Jusqu'� cinq jours ouvrables peuvent s'�couler avant que nous recevions votre paiement. Il se peut donc que notre rappel de paiement et votre paiement se soient crois�s. Dans ce cas, vous n'avez rien � faire et pouvez simplement ignorer le rappel.<br><br>Veuillez noter que les virements group�s ne sont pas comptabilis�s correctement. R�glez toujours une commande � la fois pour que nous puissions clairement attribuer votre paiement.",
+          "J'ai reçu un rappel même si j'ai payé" : "inputPaymentReminder",
+          "outputPaymentReminder" : "Jusqu'à cinq jours ouvrables peuvent s'écouler avant que nous recevions votre paiement. Il se peut donc que notre rappel de paiement et votre paiement se soient crois�s. Dans ce cas, vous n'avez rien � faire et pouvez simplement ignorer le rappel.<br><br>Veuillez noter que les virements group�s ne sont pas comptabilis�s correctement. R�glez toujours une commande � la fois pour que nous puissions clairement attribuer votre paiement.",
 
           "Je n'arrive pas � effectuer de commande avec paiement sur facture" : "inputNoBill",
           "outputNoBill": "Si la valeur de votre panier est sup�rieure � votre limite de cr�dit individuelle ou si vous avez d�j� �puis� votre limite de cr�dit par des commandes non encore pay�es, le paiement sur facture n'est pas applicable.<br><br>Attention : notre service client n'a aucune influence sur les modes de paiement disponibles et sur votre limite de cr�dit.",
