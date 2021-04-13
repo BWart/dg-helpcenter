@@ -181,32 +181,32 @@ function fillInfoBoxWording(){
           "outputReceipt" : "Vous trouverez tous les reçus, certificats de garantie et autres à la rubrique <a href='" + link1 + "Order' target='blank'>commandes</a> dans votre compte client en sélectionnant la commande souhaitée.<br><br>Vous trouverez <a href='" + link1 + "Invoice/ListInvoices' target='blank'>ici</a> un justificatif de facture pour les commandes payées sur facture.",
 
           "J'ai reçu un rappel même si j'ai payé" : "inputPaymentReminder",
-          "outputPaymentReminder" : "Jusqu'à cinq jours ouvrables peuvent s'écouler avant que nous recevions votre paiement. Il se peut donc que notre rappel de paiement et votre paiement se soient crois�s. Dans ce cas, vous n'avez rien � faire et pouvez simplement ignorer le rappel.<br><br>Veuillez noter que les virements group�s ne sont pas comptabilis�s correctement. R�glez toujours une commande � la fois pour que nous puissions clairement attribuer votre paiement.",
+          "outputPaymentReminder" : "Jusqu'à cinq jours ouvrables peuvent s'écouler avant que nous recevions votre paiement. Il se peut donc que notre rappel de paiement et votre paiement se soient croisés. Dans ce cas, vous n'avez rien à faire et pouvez simplement ignorer le rappel.<br><br>Veuillez noter que les virements groupés ne sont pas comptabilisés correctement. Réglez toujours une commande à la fois pour que nous puissions clairement attribuer votre paiement.",
 
-          "Je n'arrive pas � effectuer de commande avec paiement sur facture" : "inputNoBill",
-          "outputNoBill": "Si la valeur de votre panier est sup�rieure � votre limite de cr�dit individuelle ou si vous avez d�j� �puis� votre limite de cr�dit par des commandes non encore pay�es, le paiement sur facture n'est pas applicable.<br><br>Attention : notre service client n'a aucune influence sur les modes de paiement disponibles et sur votre limite de cr�dit.",
+          "Je n'arrive pas à effectuer de commande avec paiement sur facture" : "inputNoBill",
+          "outputNoBill": "Si la valeur de votre panier est supérieure à votre limite de crédit individuelle ou si vous avez déjà épuisé votre limite de crédit par des commandes non encore payées, le paiement sur facture n'est pas applicable.<br><br>Attention : notre service client n'a aucune influence sur les modes de paiement disponibles et sur votre limite de crédit.",
 
-          "J'ai besoin d'un d�lai de paiement plus long" : "inputLongerPayment",
-          "outputLongerPayment" : "Le d�lai de paiement s'�l�ve � 20 jours et ne peut g�n�ralement pas �tre prolong�. Bien s�r, un oubli de facture peut arriver. C'est pourquoi nous vous enverrons un rappel apr�s l'expiration du d�lai de paiement. Le rappel de paiement pr�cise la p�riode pour laquelle le d�lai est prolong�. Ce d�lai n'est g�n�ralement pas prorogeable.<br><br>Pour �viter des frais suppl�mentaires, vous devez r�gler le montant d� imm�diatement. Une confirmation de votre part du paiement effectu� n'est pas n�cessaire.",
+          "J'ai besoin d'un délai de paiement plus long" : "inputLongerPayment",
+          "outputLongerPayment" : "Le délai de paiement s'élève à 20 jours et ne peut généralement pas être prolongé. Bien sûr, un oubli de facture peut arriver. C'est pourquoi nous vous enverrons un rappel après l'expiration du délai de paiement. Le rappel de paiement précise la période pour laquelle le délai est prolongé. Ce délai n'est généralement pas prorogeable.<br><br>Pour éviter des frais supplémentaires, vous devez régler le montant dû immédiatement. Une confirmation de votre part du paiement effectué n'est pas nécessaire.",
 
   //Level 0: Compte client
           "Je souhaite supprimer mon compte client" : "inputDeleteAccount",
-          "outputDeleteAccount" : "Une fois votre compte supprim�, vous n'aurez plus acc�s � vos re�us �lectroniques et autres documents. De ce fait, nous vous recommandons d'imprimer ou de sauvegarder une copie des formulaires dont vous avez encore besoin avant de supprimer votre compte.<br><br>Vous pouvez initier la suppression directement � partir de votre <a href='" + link1 + "DeleteAccount' target='blank'>compte d'utilisateur</a>.",
+          "outputDeleteAccount" : "Une fois votre compte supprimé, vous n'aurez plus accès à vos reçus électroniques et autres documents. De ce fait, nous vous recommandons d'imprimer ou de sauvegarder une copie des formulaires dont vous avez encore besoin avant de supprimer votre compte.<br><br>Vous pouvez initier la suppression directement à partir de votre <a href='" + link1 + "DeleteAccount' target='blank'>compte d'utilisateur</a>.",
           "Je souhaite supprimer mon compte client descriptionLabel" : "inputDeleteAccountDescriptionLabel",
-      "outputDeleteAccountDescriptionLabel" : "Description<br>Note : Pour un traitement rapide, nous avons besoin de votre num�ro de client",
+      "outputDeleteAccountDescriptionLabel" : "Description<br>Note : Pour un traitement rapide, nous avons besoin de votre numéro de client",
 
-                  "Je n'arrive pas � acc�der � mon compte d'utilisateur" : "inputCantLogin",
-          "outputCantLogin" : "Vous pouvez � tout moment r�initialiser votre mot de passe pour qu'un nouveau vous soit envoy� : <br><br>�	Cliquez dans la zone de connexion sur <a href='" + link1 + "Register/RequestPassword' target='blank'>mot de passe oubli� ?</a><br>�	Saisissez votre nom d'utilisateur ou adresse �lectronique fournie et cliquez sur � Demander un lien �",
-          "Je n'arrive pas � acc�der � mon compte d'utilisateur descriptionLabel" : "inputCantLoginDescriptionLabel",
-      "outputCantLoginDescriptionLabel" : "Description<br>Note : Pour un traitement rapide, nous avons besoin de votre num�ro de client",
+                  "Je n'arrive pas à accéder à mon compte d'utilisateur" : "inputCantLogin",
+          "outputCantLogin" : "Vous pouvez à tout moment réinitialiser votre mot de passe pour qu'un nouveau vous soit envoyé : <br><br>• Cliquez dans la zone de connexion sur <a href='" + link1 + "Register/RequestPassword' target='blank'>mot de passe oublié ?</a><br>• Saisissez votre nom d'utilisateur ou adresse électronique fournie et cliquez sur « Demander un lien »",
+          "Je n'arrive pas à accéder à mon compte d'utilisateur descriptionLabel" : "inputCantLoginDescriptionLabel",
+      "outputCantLoginDescriptionLabel" : "Description<br>Note : Pour un traitement rapide, nous avons besoin de votre numéro de client",
 
   //Level 0: Conseil produits
           "Conseil produits" : "inputProductAdvice",
-          "outputProductAdvice" : "Les questions concernant un produit d�j� disponible sur digitec peuvent �tre pos�es directement sur la page du produit concern�. Notre communaut� vous r�pondra dans les heures qui suivent. La meilleure chose : tout le monde b�n�ficie de votre contribution :-)",
+          "outputProductAdvice" : "Les questions concernant un produit déjà disponible sur digitec peuvent être posées directement sur la page du produit concerné. Notre communauté vous répondra dans les heures qui suivent. La meilleure chose : tout le monde bénéficie de votre contribution :-)",
 
   //Level 0: Offre
       "Offre" : "inputOffer",
-      "outputOffer" : "Remarque : pour une offre, le volume de la commande doit �tre d'au moins 5'000 CHF. Les prix indiqu�s dans notre boutique s'appliquent."
+      "outputOffer" : "Remarque : pour une offre, le volume de la commande doit être d'au moins 5'000 CHF. Les prix indiqués dans notre boutique s'appliquent."
 
       },
 
