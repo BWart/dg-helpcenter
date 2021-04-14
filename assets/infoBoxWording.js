@@ -12,6 +12,9 @@ function fillInfoBoxWording(){
     var hp3 = "";
     var offerte = "";
 
+    var rck = "";
+    var seite = "";
+
 
     switch (portal1){
             case 'digitec.ch':
@@ -35,15 +38,21 @@ function fillInfoBoxWording(){
     switch (portal2){
             case 'helpcenter.digitec.ch':
                     link2 = "https://helpcenter.digitec.ch/hc/";
+                    seite = "digitec";
+                    rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.";
+
                     hp1 = "/115005646225";
                     hp2 = "/360012370979";
                     hp3 = "/360000457949";
                     offerte = "CHF 5'000.-";
-                
+                                   
                     console.log("sw4");
                     break;
             case 'helpcenter.galaxus.ch':
                     link2 = "https://helpcenter.galaxus.ch/hc/";
+                    seite = "Galaxus";
+                    rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.";
+
                     hp1 = "/360007334359";
                     hp2 = "/360012372239";
                     hp3 = "/360007333839";
@@ -53,6 +62,9 @@ function fillInfoBoxWording(){
                     break;
             case 'helpcenter.galaxus.de':
                     link2 = "https://helpcenter.galaxus.de/hc/";
+                    seite = "Galaxus";
+                    rck = "Du kannst von " + seite + " gekaufte Produkte innerhalb von 30 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.";
+
                     hp1 = "/360008216899";
                     hp2 = "";
                     hp3 = "/360016850820";
@@ -62,6 +74,9 @@ function fillInfoBoxWording(){
                     break;
             default:
                     link2 = "https://helpcenter.digitec.ch/hc/";
+                    seite = "digitec";
+                    rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.";
+
                     hp1 = "/115005646225";
                     hp2 = "/360012370979";
                     hp3 = "/360000457949";
@@ -116,7 +131,7 @@ function fillInfoBoxWording(){
            "outputReturnStatus" : "Unter <a href='" + link1 + "ServiceCase/List' target='blank'>\"Alle Rücksendungen\"</a> findest du eine Übersicht und den aktuellen Status zu allen von dir eingereichten Rückgaben und Garantiefällen.",
 
           "Ich möchte ein Produkt zurückgeben" : "inputReturn",
-          "outputReturn" : "Du kannst direkt von digitec gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.",
+          "outputReturn" : "" + rck + "",
 
   //Level 0: Zahlung und Rückerstattung
           "Rückerstattung meiner Gutschrift" : "inputCreditReturn",
@@ -147,7 +162,7 @@ function fillInfoBoxWording(){
 
   //Level 0: Produktberatung
           "Produktberatung" : "inputProductAdvice",
-          "outputProductAdvice" : "Fragen zu einem bereits auf digitec vorhandenen Produkt kannst du direkt auf der jeweiligen Produktseite verfassen. Unsere Community antwortet dir innerhalb von wenigen Stunden. Das Beste: alle profitieren von deinem Beitrag :-)",
+          "outputProductAdvice" : "Fragen zu einem bereits auf " + seite + " vorhandenen Produkt kannst du direkt auf der jeweiligen Produktseite verfassen. Unsere Community antwortet dir innerhalb von wenigen Stunden. Das Beste: alle profitieren von deinem Beitrag :-)",
 
   //Level 0: Offerte
       "Offerte" : "inputOffer",
@@ -198,7 +213,7 @@ function fillInfoBoxWording(){
            "outputReturnStatus" : "Sous la rubrique « <a href='" + link1 + "ServiceCase/List' target='blank'>Tous les retours</a> », vous trouverez une vue d'ensemble et le statut actuel de tous les retours et demandes de garantie que vous avez soumis.",
 
           "Je souhaite retourner un produit" : "inputReturn",
-          "outputReturn" : "Les produits achetés directement chez digitec peuvent être retournés dans les 30 jours, ceux achetés auprès d'un <a href='" + link2 + "articles" + hp2 + "-Offres-de-fournisseur-tiers' target='blank'>fournisseur tiers</a>, dans les 14 jours suivant leur réception. Vous pouvez <a href='" + link1 + "after-sales' target='blank'>enregistrer un retour</a> directement dans votre compte client.",
+          "outputReturn" : "Les produits achetés directement chez " + seite + " peuvent être retournés dans les 30 jours, ceux achetés auprès d'un <a href='" + link2 + "articles" + hp2 + "-Offres-de-fournisseur-tiers' target='blank'>fournisseur tiers</a>, dans les 14 jours suivant leur réception. Vous pouvez <a href='" + link1 + "after-sales' target='blank'>enregistrer un retour</a> directement dans votre compte client.",
 
   //Level 0: Paiement et remboursement
           "Remboursement de mon avoir" : "inputCreditReturn",
@@ -229,7 +244,7 @@ function fillInfoBoxWording(){
 
   //Level 0: Conseil produits
           "Conseil produits" : "inputProductAdvice",
-          "outputProductAdvice" : "Les questions concernant un produit déjà disponible sur digitec peuvent être posées directement sur la page du produit concerné. Notre communauté vous répondra dans les heures qui suivent. La meilleure chose : tout le monde bénéficie de votre contribution :-)",
+          "outputProductAdvice" : "Les questions concernant un produit déjà disponible sur " + seite + " peuvent être posées directement sur la page du produit concerné. Notre communauté vous répondra dans les heures qui suivent. La meilleure chose : tout le monde bénéficie de votre contribution :-)",
 
   //Level 0: Offre
       "Offre" : "inputOffer",
@@ -281,7 +296,7 @@ function fillInfoBoxWording(){
            "outputReturnStatus" : "Sotto <a href='" + link1 + "ServiceCase/List' target='blank'>tutti i resi</a> trovi una panoramica e lo stato attuale di tutti i resi e le richieste di garanzia da te presentate.",
 
           "Vorrei restituire un prodotto" : "inputReturn",
-          "outputReturn" : "Puoi restituire gli articoli acquistati direttamente da digitec entro 30 giorni dal ricevimento, mentre gli articoli acquistati da un <a href='" + link2 + "articles" + hp2 + "-Offerte-da-parte-di-terzi' target='blank'>fornitore terzo</a> entro 14 giorni dal ricevimento. Puoi registrare il <a href='" + link1 + "after-sales' target='blank'>reso</a> direttamente nel tuo conto cliente.",
+          "outputReturn" : "Puoi restituire gli articoli acquistati direttamente da " + seite + " entro 30 giorni dal ricevimento, mentre gli articoli acquistati da un <a href='" + link2 + "articles" + hp2 + "-Offerte-da-parte-di-terzi' target='blank'>fornitore terzo</a> entro 14 giorni dal ricevimento. Puoi registrare il <a href='" + link1 + "after-sales' target='blank'>reso</a> direttamente nel tuo conto cliente.",
 
   //Level 0: Pagamento e rimborso
           "Rimborso di un credito" : "inputCreditReturn",
@@ -312,7 +327,7 @@ function fillInfoBoxWording(){
 
   //Level 0: Consigli sui prodotti
           "Consulenza prodotti" : "inputProductAdvice",
-          "outputProductAdvice" : "Le domande su un prodotto già disponibile su digitec possono essere scritte direttamente sulla relativa pagina del prodotto. La nostra comunità vi risponderà entro poche ore. La cosa migliore: tutti beneficiano del vostro contributo :-)",
+          "outputProductAdvice" : "Le domande su un prodotto già disponibile su " + seite + " possono essere scritte direttamente sulla relativa pagina del prodotto. La nostra comunità vi risponderà entro poche ore. La cosa migliore: tutti beneficiano del vostro contributo :-)",
 
   //Level 0: Offerta
       "Offerta" : "inputOffer",
@@ -363,7 +378,7 @@ function fillInfoBoxWording(){
            "outputReturnStatus" : "Go to <a href='" + link1 + "ServiceCase/List' target='blank'>all returns</a> to find an overview and the current status of all your returns and warranty cases.",
 
           "I need to return a product" : "inputReturn",
-          "outputReturn" : "You have 30 days to return products sold by digitec and 14 days to return items sold by <a href='" + link2 + "articles" + hp2 + "-Buying-from-third-party-sellers' target='blank'>third parties</a> from the day you received them. <a href='" + link1 + "after-sales' target='blank'>Register returns</a> in your customer account.",
+          "outputReturn" : "You have 30 days to return products sold by " + seite + " and 14 days to return items sold by <a href='" + link2 + "articles" + hp2 + "-Buying-from-third-party-sellers' target='blank'>third parties</a> from the day you received them. <a href='" + link1 + "after-sales' target='blank'>Register returns</a> in your customer account.",
 
   //Level 0: Payment and refund
           "I want to refund my credit" : "inputCreditReturn",
@@ -394,7 +409,7 @@ function fillInfoBoxWording(){
 
   //Level 0: Product advice
           "Product information" : "inputProductAdvice",
-          "outputProductAdvice" : "You can enter questions about products that are already available on digitec directly on its product page. Our Community answers within a few hours. Additionally: everyone benefits from your contribution :-)",
+          "outputProductAdvice" : "You can enter questions about products that are already available on " + seite + " directly on its product page. Our Community answers within a few hours. Additionally: everyone benefits from your contribution :-)",
 
       //Level 0: Offer
       "Offer" : "inputOffer",
