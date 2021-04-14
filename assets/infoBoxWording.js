@@ -15,7 +15,7 @@ function fillInfoBoxWording(){
     var rck = "";
     var seite = "";
 
-
+    //Hostname korrekt in der JSON in den Links hinterlegen
     switch (portal1){
             case 'digitec.ch':
                     link1 = "https://www.digitec.ch/"; 
@@ -34,53 +34,58 @@ function fillInfoBoxWording(){
                     console.log("CASE DEFAULT 1");
                     break;
     }
-    
+
+    // Helpcenter Links richtig hinterlegen
+    // Textänderung bei Rückgabe - Ich möchte ein Produkt zurückgeben - weil bei Galaxus.de der Beitrag nicht existiert
+    // Beitrag Seitennamen werden dynamisch angepasst
     switch (portal2){
             case 'helpcenter.digitec.ch':
                     link2 = "https://helpcenter.digitec.ch/hc/";
                     seite = "digitec";
-                    rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.";
-
+                   
                     hp1 = "/115005646225";
                     hp2 = "/360012370979";
                     hp3 = "/360000457949";
                     offerte = "CHF 5'000.-";
+                    rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.";
                                    
                     console.log("sw4");
                     break;
             case 'helpcenter.galaxus.ch':
                     link2 = "https://helpcenter.galaxus.ch/hc/";
                     seite = "Galaxus";
-                    rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.";
-
+                    
                     hp1 = "/360007334359";
                     hp2 = "/360012372239";
                     hp3 = "/360007333839";
                     offerte = "CHF 5'000.-";
+                    rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.";
                 
                     console.log("sw5");
                     break;
             case 'helpcenter.galaxus.de':
                     link2 = "https://helpcenter.galaxus.de/hc/";
                     seite = "Galaxus";
-                    rck = "Du kannst von " + seite + " gekaufte Produkte innerhalb von 30 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.";
-
+                    
                     hp1 = "/360008216899";
                     hp2 = "";
                     hp3 = "/360016850820";
                     offerte = "EUR 2'000.-";
+                    rck = "Du kannst von " + seite + " gekaufte Produkte innerhalb von 30 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.";
+
                 
                     console.log("sw6");
                     break;
             default:
                     link2 = "https://helpcenter.digitec.ch/hc/";
                     seite = "digitec";
-                    rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.";
-
+                    
                     hp1 = "/115005646225";
                     hp2 = "/360012370979";
                     hp3 = "/360000457949";
                     offerte = "CHF 5'000.-";
+                    rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.";
+
         
                     console.log("CASE DEFAULT 2");
                     break;
