@@ -54,7 +54,7 @@ function fillInfoBoxWording(){
           "outputNone" : "-",
 
     "Anderweitige Anfrage" : "inputOtherRequest" ,
-                  "outputOtherRequest" : "Die aktuellen Informationen zum Lieferstatus, Kaufbelege, Garantiescheine und Weiteres findest du in der <a href='" + link1 + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto.<br><br>Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + link1 + "Warranty/Overview' target='blank'>Defekt anmelden</a>.",
+                  "outputOtherRequest" : "Die aktuellen Informationen zum Lieferstatus, Kaufbelege, Garantiescheine und Weiteres findest du in der <a href='" + link1 + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto.<br><br>Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + link1 + "after-sales/service-cases/select-position' target='blank'>Defekt anmelden</a>.",
 
     //Level 0: Wo ist meine Bestellung?
         "Ich will den Status meiner Bestellung überprüfen" : "inputOrderStatus",
