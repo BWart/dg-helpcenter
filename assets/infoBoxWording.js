@@ -29,18 +29,18 @@ function fillInfoBoxWording(){
     
     switch (portal2){
             case 'helpcenter.digitec.ch':
-                    link2 = "https://helpcenter.digitec.ch/";
+                    link2 = "https://helpcenter.digitec.ch/hc/";
                     console.log("sw4");
                     break;
             case 'helpcenter.galaxus.ch':
-                    link2 = "https://helpcenter.galaxus.ch/";
+                    link2 = "https://helpcenter.galaxus.ch/hc/";
                     console.log("sw5");
                     break;
             case 'helpcenter.galaxus.de':
-                    link2 = "https://helpcenter.galaxus.de/";
+                    link2 = "https://helpcenter.galaxus.de/hc/";
                     console.log("sw6");
                     break;
-            default:link2 = "https://helpcenter.digitec.ch/";
+            default:link2 = "https://helpcenter.digitec.ch/hc/";
                     console.log("CASE DEFAULT 2");
                     break;
     }
@@ -66,7 +66,7 @@ function fillInfoBoxWording(){
         "outputShippingStatusMailTemplate" : "Welche Artikel fehlen:\nSendungsnummer:",
 
         "Der Versandstatus lautet \"versandbereit\". Wann wird die Sendung verschickt?" : "inputReadyForShipment",
-        "outputReadyForShipment" : "Erst wenn alle Produkte deiner Bestellung versandbereit sind, wird die Bestellung versendet. Soll es schneller gehen kannst du eine <a href='" + link2 + "hc/articles/115005646225-Wie-löse-ich-eine-Teillieferung-aus-' target='blank'>kostenlose Teillieferung aktivieren</a>.",
+        "outputReadyForShipment" : "Erst wenn alle Produkte deiner Bestellung versandbereit sind, wird die Bestellung versendet. Soll es schneller gehen kannst du eine <a href='" + link2 + "articles/115005646225-Wie-löse-ich-eine-Teillieferung-aus-' target='blank'>kostenlose Teillieferung aktivieren</a>.",
 
     //Level 0: Probleme mit einer Bestellung
         "Ich habe ein äusserlich beschädigtes Produkt erhalten" : "inputDamagedProduct",
@@ -89,11 +89,11 @@ function fillInfoBoxWording(){
            "outputReturnStatus" : "Unter <a href='" + link1 + "ServiceCase/List' target='blank'>\"Alle Rücksendungen\"</a> findest du eine Übersicht und den aktuellen Status zu allen von dir eingereichten Rückgaben und Garantiefällen.",
 
           "Ich möchte ein Produkt zurückgeben" : "inputReturn",
-          "outputReturn" : "Du kannst direkt von digitec gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 +"hc/articles/360012370979-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.",
+          "outputReturn" : "Du kannst direkt von digitec gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 +"articles/360012370979-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.",
 
   //Level 0: Zahlung und Rückerstattung
           "Rückerstattung meiner Gutschrift" : "inputCreditReturn",
-          "outputCreditReturn" : "Du kannst die Rückerstattung einer Gutschrift in wenigen Schritten selbst vornehmen. Das genaue Vorgehen beschreiben wir in diesem <a href='" + link2 +"hc/articles/360000457949-Rückerstattung-einer-Gutschrift' target='blank'>Artikel</a>.<br><br>Bitte beachte, dass die Geldüberweisung in der Regel 1-3 Werktage in Anspruch nimmt.<br><br>Rückerstattungen auf deine Kreditkarte werden auf deiner nächsten Kreditkartenabrechnung ersichtlich.",
+          "outputCreditReturn" : "Du kannst die Rückerstattung einer Gutschrift in wenigen Schritten selbst vornehmen. Das genaue Vorgehen beschreiben wir in diesem <a href='" + link2 +"articles/360000457949-Rückerstattung-einer-Gutschrift' target='blank'>Artikel</a>.<br><br>Bitte beachte, dass die Geldüberweisung in der Regel 1-3 Werktage in Anspruch nimmt.<br><br>Rückerstattungen auf deine Kreditkarte werden auf deiner nächsten Kreditkartenabrechnung ersichtlich.",
 
           "Ich benötige eine/n Kaufbeleg/Rechnung" : "inputReceipt",
           "outputReceipt" : "Sämtliche Kaufbelege, Garantiescheine und Weiteres findest du unter dem Menüpunkt <a href='" + link1 + "Order' target='blank'>Bestellungen</a> in deinem Kundenkonto, indem du den gewünschten Auftrag auswählst.<br><br>Rechnungsbelege für Bestellungen, welche du per Rechnung getätigt hast, findest du <a href='" + link1 + "Invoice/ListInvoices' target='blank'>hier</a>.",
@@ -148,7 +148,7 @@ function fillInfoBoxWording(){
         "outputShippingStatusMailTemplate" : "Quels sont les articles manquants :\nNuméro de suivi :",
 
         "Le statut d'expédition est « prêt à être expédié ». Quand l'envoi sera-t-il effectué ?" : "inputReadyForShipment",
-        "outputReadyForShipment" : "La commande ne sera expédiée que lorsque tous les produits de votre commande seront prêts à être envoyés. Pour accélérer ce processus, vous pouvez activer la <a href='" + link2 + "hc/articles/115005646225-Comment-activer-une-livraison-partielle-' target='blank'>livraison partielle</a>.",
+        "outputReadyForShipment" : "La commande ne sera expédiée que lorsque tous les produits de votre commande seront prêts à être envoyés. Pour accélérer ce processus, vous pouvez activer la <a href='" + link2 + "articles/115005646225-Comment-activer-une-livraison-partielle-' target='blank'>livraison partielle</a>.",
 
     //Level 0: Problème avec la commande
         "J'ai reçu un produit endommagé à l'extérieur" : "inputDamagedProduct",
@@ -171,11 +171,11 @@ function fillInfoBoxWording(){
            "outputReturnStatus" : "Sous la rubrique « <a href='" + link1 + "ServiceCase/List' target='blank'>Tous les retours</a> », vous trouverez une vue d'ensemble et le statut actuel de tous les retours et demandes de garantie que vous avez soumis.",
 
           "Je souhaite retourner un produit" : "inputReturn",
-          "outputReturn" : "Les produits achetés directement chez digitec peuvent être retournés dans les 30 jours, ceux achetés auprès d'un <a href='" + link2 + "hc/articles/360012370979-Offres-de-fournisseur-tiers' target='blank'>fournisseur tiers</a>, dans les 14 jours suivant leur réception. Vous pouvez <a href='" + link1 + "after-sales' target='blank'>enregistrer un retour</a> directement dans votre compte client.",
+          "outputReturn" : "Les produits achetés directement chez digitec peuvent être retournés dans les 30 jours, ceux achetés auprès d'un <a href='" + link2 + "articles/360012370979-Offres-de-fournisseur-tiers' target='blank'>fournisseur tiers</a>, dans les 14 jours suivant leur réception. Vous pouvez <a href='" + link1 + "after-sales' target='blank'>enregistrer un retour</a> directement dans votre compte client.",
 
   //Level 0: Paiement et remboursement
           "Remboursement de mon avoir" : "inputCreditReturn",
-          "outputCreditReturn" : "Vous pouvez effectuer vous-même le remboursement d'un avoir en quelques étapes. La procédure exacte est décrite dans le présent <a href='" + link2 + "hc/articles/360000457949-Que-faire-pour-lancer-le-processus-de-remboursement-' target='blank'>article</a>.<br><br>Veuillez noter que le virement prend habituellement entre 1 à 3 jours ouvrables.<br><br>Les remboursements sur votre carte de crédit figureront sur votre prochain relevé de carte de crédit.",
+          "outputCreditReturn" : "Vous pouvez effectuer vous-même le remboursement d'un avoir en quelques étapes. La procédure exacte est décrite dans le présent <a href='" + link2 + "articles/360000457949-Que-faire-pour-lancer-le-processus-de-remboursement-' target='blank'>article</a>.<br><br>Veuillez noter que le virement prend habituellement entre 1 à 3 jours ouvrables.<br><br>Les remboursements sur votre carte de crédit figureront sur votre prochain relevé de carte de crédit.",
 
           "J'ai besoin d'un reçu/une facture" : "inputReceipt",
           "outputReceipt" : "Vous trouverez tous les reçus, certificats de garantie et autres à la rubrique <a href='" + link1 + "Order' target='blank'>commandes</a> dans votre compte client en sélectionnant la commande souhaitée.<br><br>Vous trouverez <a href='" + link1 + "Invoice/ListInvoices' target='blank'>ici</a> un justificatif de facture pour les commandes payées sur facture.",
@@ -231,7 +231,7 @@ function fillInfoBoxWording(){
         "outputShippingStatusMailTemplate" : "Quali articoli mancano:\nNumero di spedizione:",
 
         "Sullo stato della spedizione è indicato «pronto per la spedizione». Quando verrà inviata la spedizione?" : "inputReadyForShipment",
-        "outputReadyForShipment" : "Solo quando tutti i prodotti del tuo ordine saranno pronti per essere spediti, l'ordine verrà inviato. Se vuoi che sia più veloce, puoi attivare gratuitamente la <a href='" + link2 + "hc/articles/115005646225-Come-faccio-a-richiedere-una-consegna-parziale-' target='blank'>consegna parziale</a>.",
+        "outputReadyForShipment" : "Solo quando tutti i prodotti del tuo ordine saranno pronti per essere spediti, l'ordine verrà inviato. Se vuoi che sia più veloce, puoi attivare gratuitamente la <a href='" + link2 + "articles/115005646225-Come-faccio-a-richiedere-una-consegna-parziale-' target='blank'>consegna parziale</a>.",
 
     //Level 0: Problemi con un ordine
         "Ho ricevuto un prodotto danneggiato esternamente" : "inputDamagedProduct",
@@ -254,11 +254,11 @@ function fillInfoBoxWording(){
            "outputReturnStatus" : "Sotto <a href='" + link1 + "ServiceCase/List' target='blank'>tutti i resi</a> trovi una panoramica e lo stato attuale di tutti i resi e le richieste di garanzia da te presentate.",
 
           "Vorrei restituire un prodotto" : "inputReturn",
-          "outputReturn" : "Puoi restituire gli articoli acquistati direttamente da digitec entro 30 giorni dal ricevimento, mentre gli articoli acquistati da un <a href='" + link2 + "hc/articles/360012370979-Offerte-da-parte-di-terzi' target='blank'>fornitore terzo</a> entro 14 giorni dal ricevimento. Puoi registrare il <a href='" + link1 + "after-sales' target='blank'>reso</a> direttamente nel tuo conto cliente.",
+          "outputReturn" : "Puoi restituire gli articoli acquistati direttamente da digitec entro 30 giorni dal ricevimento, mentre gli articoli acquistati da un <a href='" + link2 + "articles/360012370979-Offerte-da-parte-di-terzi' target='blank'>fornitore terzo</a> entro 14 giorni dal ricevimento. Puoi registrare il <a href='" + link1 + "after-sales' target='blank'>reso</a> direttamente nel tuo conto cliente.",
 
   //Level 0: Pagamento e rimborso
           "Rimborso di un credito" : "inputCreditReturn",
-          "outputCreditReturn" : "Puoi avviare il rimborso di un credito autonomamente. La procedura esatta è descritta in questo <a href='" + link2 + "hc/articles/360000457949-Come-faccio-a-richiedere-il-rimborso-' target='blank'>articolo</a>.<br><br>Si prega di notare che il trasferimento di denaro di solito richiede da 1 a 3 giorni lavorativi.<br><br>I rimborsi sulla carta di credito appariranno sul prossimo estratto conto della carta di credito.",
+          "outputCreditReturn" : "Puoi avviare il rimborso di un credito autonomamente. La procedura esatta è descritta in questo <a href='" + link2 + "articles/360000457949-Come-faccio-a-richiedere-il-rimborso-' target='blank'>articolo</a>.<br><br>Si prega di notare che il trasferimento di denaro di solito richiede da 1 a 3 giorni lavorativi.<br><br>I rimborsi sulla carta di credito appariranno sul prossimo estratto conto della carta di credito.",
 
           "Necessito di una ricevuta/fattura" : "inputReceipt",
           "outputReceipt" : "Trovi tutte le ricevute d'acquisto, i certificati di garanzia e altro ancora alla voce <a href='" + link1 + "Order' target='blank'>ordini</a> nel tuo conto cliente selezionando l’articolo desiderato.<br><br><a href='" + link1 + "Invoice/ListInvoices' target='blank'>Qui</a> trovi le ricevute per gli ordini che hai pagato tramite fattura.",
@@ -313,7 +313,7 @@ function fillInfoBoxWording(){
         "outputShippingStatusMailTemplate" : "Which articles are missing:\nConsigment number:",
 
         "The shipment status is «ready for shipment». When will the order be sent?" : "inputReadyForShipment",
-        "outputReadyForShipment" : "We don't ship the order until all your products are in the warehouse and «ready for shipment». If you need any items sooner, please <a href='" + link2 + "hc/articles/115005646225-How-do-I-arrange-partial-delivery-' target='blank'>activate partial delivery</a>.",
+        "outputReadyForShipment" : "We don't ship the order until all your products are in the warehouse and «ready for shipment». If you need any items sooner, please <a href='" + link2 + "articles/115005646225-How-do-I-arrange-partial-delivery-' target='blank'>activate partial delivery</a>.",
 
     //Level 0: Problems with an order
         "I've received an externally damaged product" : "inputDamagedProduct",
@@ -336,11 +336,11 @@ function fillInfoBoxWording(){
            "outputReturnStatus" : "Go to <a href='" + link1 + "ServiceCase/List' target='blank'>all returns</a> to find an overview and the current status of all your returns and warranty cases.",
 
           "I need to return a product" : "inputReturn",
-          "outputReturn" : "You have 30 days to return products sold by digitec and 14 days to return items sold by <a href='" + link2 + "hc/articles/360012370979-Buying-from-third-party-sellers' target='blank'>third parties</a> from the day you received them. <a href='" + link1 + "after-sales' target='blank'>Register returns</a> in your customer account.",
+          "outputReturn" : "You have 30 days to return products sold by digitec and 14 days to return items sold by <a href='" + link2 + "articles/360012370979-Buying-from-third-party-sellers' target='blank'>third parties</a> from the day you received them. <a href='" + link1 + "after-sales' target='blank'>Register returns</a> in your customer account.",
 
   //Level 0: Payment and refund
           "I want to refund my credit" : "inputCreditReturn",
-          "outputCreditReturn" : "To refund a credit note, please follow the simple steps described in this <a href='" + link2 + "hc/articles/360000457949-How-do-I-get-a-refund-' target='blank'>article</a>.<br><br>Please bear in mind that transfers usually take one to three working days.<br><br>Refunds to your credit card will appear on your next credit card statement.",
+          "outputCreditReturn" : "To refund a credit note, please follow the simple steps described in this <a href='" + link2 + "articles/360000457949-How-do-I-get-a-refund-' target='blank'>article</a>.<br><br>Please bear in mind that transfers usually take one to three working days.<br><br>Refunds to your credit card will appear on your next credit card statement.",
 
           "I need a receipt/invoice" : "inputReceipt",
           "outputReceipt" : "All sales receipts and warranty certificates are saved in the <a href='" + link1 + "Order' target='blank'>orders</a> section in your customer account. Go to the according order detail page.<br><br>You’ll find the sales receipt for all orders you paid by invoice <a href='" + link1 + "Invoice/ListInvoices' target='blank'>here</a>.",
