@@ -67,7 +67,8 @@ function fillInfoBoxWording(){
     }
 
     console.log("NACH SWITCHES");
-       
+      
+    
     infoBoxWording = {
     //DEUTSCH
           de: {
