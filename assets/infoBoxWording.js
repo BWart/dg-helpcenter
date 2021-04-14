@@ -10,6 +10,7 @@ function fillInfoBoxWording(){
     var hp1 = "";
     var hp2 = "";
     var hp3 = "";
+    var offerte = "";
 
 
     switch (portal1){
@@ -37,6 +38,7 @@ function fillInfoBoxWording(){
                     hp1 = "/115005646225";
                     hp2 = "/360012370979";
                     hp3 = "/360000457949";
+                    offerte = "CHF 5'000.-";
                 
                     console.log("sw4");
                     break;
@@ -45,6 +47,7 @@ function fillInfoBoxWording(){
                     hp1 = "/360007334359";
                     hp2 = "/360012372239";
                     hp3 = "/360007333839";
+                    offerte = "CHF 5'000.-";
                 
                     console.log("sw5");
                     break;
@@ -53,6 +56,7 @@ function fillInfoBoxWording(){
                     hp1 = "/360008216899";
                     hp2 = "";
                     hp3 = "/360016850820";
+                    offerte = "EUR 2'000.-";
                 
                     console.log("sw6");
                     break;
@@ -61,6 +65,7 @@ function fillInfoBoxWording(){
                     hp1 = "/115005646225";
                     hp2 = "/360012370979";
                     hp3 = "/360000457949";
+                    offerte = "CHF 5'000.-";
         
                     console.log("CASE DEFAULT 2");
                     break;
@@ -146,7 +151,7 @@ function fillInfoBoxWording(){
 
   //Level 0: Offerte
       "Offerte" : "inputOffer",
-      "outputOffer" : "Offerten mit einem Auftragsvolumen von bis zu CHF 5'000.- werden nicht gepriced. Es gelten die Preisangaben auf unserem Shop."
+      "outputOffer" : "Offerten mit einem Auftragsvolumen von bis zu " + offerte + " werden nicht gepriced. Es gelten die Preisangaben auf unserem Shop."
 
       },
 
@@ -228,7 +233,7 @@ function fillInfoBoxWording(){
 
   //Level 0: Offre
       "Offre" : "inputOffer",
-      "outputOffer" : "Remarque : pour une offre, le volume de la commande doit être d'au moins 5'000 CHF. Les prix indiqués dans notre boutique s'appliquent."
+      "outputOffer" : "Remarque : pour une offre, le volume de la commande doit être d'au moins " + offerte + ". Les prix indiqués dans notre boutique s'appliquent."
 
       },
 
@@ -311,7 +316,7 @@ function fillInfoBoxWording(){
 
   //Level 0: Offerta
       "Offerta" : "inputOffer",
-      "outputOffer" : "Attenzione: per un'offerta, il volume dell'ordine deve essere di almeno 5'000 CHF. Si applicano i prezzi indicati nel nostro negozio."
+      "outputOffer" : "Attenzione: per un'offerta, il volume dell'ordine deve essere di almeno " + offerte + ". Si applicano i prezzi indicati nel nostro negozio."
       },
 
 
@@ -393,7 +398,7 @@ function fillInfoBoxWording(){
 
       //Level 0: Offer
       "Offer" : "inputOffer",
-      "outputOffer" : "Please note: For a quotation, the minimum order volume must be 5'000 CHF. The prices quoted in our store apply."        
+      "outputOffer" : "Please note: For a quotation, the minimum order volume must be " + offerte + ". The prices quoted in our store apply."        
         }
     }
     
