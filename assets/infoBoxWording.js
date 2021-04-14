@@ -73,7 +73,7 @@ function fillInfoBoxWording(){
         "outputDamagedProduct" : "Für eine rasche Bearbeitung benötigen wir folgende Informationen von dir: <br><br>• Auftragsnummer deiner Bestellung<br>• Beschreibung des Schadens<br>• Fotos des Schadens und der Verpackung<br><br>Wir werden deine Anfrage zusammen mit unseren Logistikpartnern prüfen und dich so rasch als möglich über die weiteren Schritte informieren.",
 
         "Mein Produkt funktioniert nicht" : "inputNotWorking",
-        "outputNotWorking" : "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + link1 + "Warranty/Overview' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + link1 + "wiki/559' target='blank'>Garantierichtlinien</a> sowie in unseren <a href='" + link1 + "Wiki/478' target='blank'>AGBs</a>.",
+        "outputNotWorking" : "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + link1 + "after-sales/service-cases/select-position' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + link1 + "wiki/559' target='blank'>Garantierichtlinien</a> sowie in unseren <a href='" + link1 + "Wiki/478' target='blank'>AGBs</a>.",
 
         "Ich habe ein falsches Produkt erhalten" : "inputWrongProduct",
         "outputWrongProduct" : "Damit wir dein Anliegen rasch prüfen können, wäre es hilfreich, wenn du uns die Herstellernummer oder den EAN-Code des falsch erhaltenen Produkt mitteilen könntest. Die Angaben dazu findest du auf der Produktverpackung.",
@@ -89,7 +89,7 @@ function fillInfoBoxWording(){
            "outputReturnStatus" : "Unter <a href='" + link1 + "ServiceCase/List' target='blank'>\"Alle Rücksendungen\"</a> findest du eine Übersicht und den aktuellen Status zu allen von dir eingereichten Rückgaben und Garantiefällen.",
 
           "Ich möchte ein Produkt zurückgeben" : "inputReturn",
-          "outputReturn" : "Du kannst direkt von digitec gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 +"articles/360012370979-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "ReturnsAndWarranty' target='blank'>Rückgabe erfassen</a>.",
+          "outputReturn" : "Du kannst direkt von digitec gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + link2 +"articles/360012370979-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + link1 + "after-sales' target='blank'>Rückgabe erfassen</a>.",
 
   //Level 0: Zahlung und Rückerstattung
           "Rückerstattung meiner Gutschrift" : "inputCreditReturn",
@@ -136,7 +136,7 @@ function fillInfoBoxWording(){
                   "outputNone" : "-",
 
                   "Autre demande" : "inputOtherRequest" ,
-                  "outputOtherRequest" : "Dans l'<a href='" + link1 + "Order' target='blank'>aperçu des commandes</a> de votre compte client, vous pouvez consulter les dernières informations relatives au statut de livraison de vos produits et tous les reçus, certificats de garantie.<br><br>Si un produit est défectueux et s'il peut être pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + link1 + "Warranty/Overview' target='blank'>signaler un défaut</a>.",
+                  "outputOtherRequest" : "Dans l'<a href='" + link1 + "Order' target='blank'>aperçu des commandes</a> de votre compte client, vous pouvez consulter les dernières informations relatives au statut de livraison de vos produits et tous les reçus, certificats de garantie.<br><br>Si un produit est défectueux et s'il peut être pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + link1 + "after-sales/service-cases/select-position' target='blank'>signaler un défaut</a>.",
 
         //Level 0: Ou est ma commande?
         "Vérifier l'état de ma commande" : "inputOrderStatus",
@@ -155,7 +155,7 @@ function fillInfoBoxWording(){
         "outputDamagedProduct" : "Pour un traitement rapide, nous avons besoin des informations suivantes de votre part : <br><br>• numéro de votre commande<br>• description du dommage<br>• photos du dommage et de l'emballage<br><br>Nous examinerons votre demande avec nos partenaires logistiques et vous informerons dès que possible des étapes suivantes.",
 
         "Mon produit ne fonctionne pas" : "inputNotWorking",
-        "outputNotWorking" : "Si un produit est défectueux et s'il peut être pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + link1 + "Warranty/Overview' target='blank'>signaler un défaut</a>.<br><br>Les dommages causés par une utilisation inappropriée ne sont pas couverts par la garantie. Vous trouverez un complément d'information concernant ce point dans nos <a href='" + link1 + "wiki/559' target='blank'>conditions de garantie</a> et <a href='" + link1 + "Wiki/478' target='blank'>CGV</a>.",
+        "outputNotWorking" : "Si un produit est défectueux et s'il peut être pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + link1 + "after-sales/service-cases/select-position' target='blank'>signaler un défaut</a>.<br><br>Les dommages causés par une utilisation inappropriée ne sont pas couverts par la garantie. Vous trouverez un complément d'information concernant ce point dans nos <a href='" + link1 + "wiki/559' target='blank'>conditions de garantie</a> et <a href='" + link1 + "Wiki/478' target='blank'>CGV</a>.",
 
         "J'ai reçu le mauvais produit" : "inputWrongProduct",
         "outputWrongProduct" : "Afin de pouvoir vérifier rapidement votre demande, il serait utile que vous nous communiquiez le numéro du fabricant ou le code EAN du produit reçu par erreur. Vous trouverez ces informations sur l'emballage du produit.",
@@ -171,7 +171,7 @@ function fillInfoBoxWording(){
            "outputReturnStatus" : "Sous la rubrique « <a href='" + link1 + "ServiceCase/List' target='blank'>Tous les retours</a> », vous trouverez une vue d'ensemble et le statut actuel de tous les retours et demandes de garantie que vous avez soumis.",
 
           "Je souhaite retourner un produit" : "inputReturn",
-          "outputReturn" : "Les produits achetés directement chez digitec peuvent être retournés dans les 30 jours, ceux achetés auprès d'un <a href='" + link2 + "articles/360012370979-Offres-de-fournisseur-tiers' target='blank'>fournisseur tiers</a>, dans les 14 jours suivant leur réception. Vous pouvez <a href='" + link1 + "ReturnsAndWarranty' target='blank'>enregistrer un retour</a> directement dans votre compte client.",
+          "outputReturn" : "Les produits achetés directement chez digitec peuvent être retournés dans les 30 jours, ceux achetés auprès d'un <a href='" + link2 + "articles/360012370979-Offres-de-fournisseur-tiers' target='blank'>fournisseur tiers</a>, dans les 14 jours suivant leur réception. Vous pouvez <a href='" + link1 + "after-sales' target='blank'>enregistrer un retour</a> directement dans votre compte client.",
 
   //Level 0: Paiement et remboursement
           "Remboursement de mon avoir" : "inputCreditReturn",
@@ -219,7 +219,7 @@ function fillInfoBoxWording(){
                   "outputNone" : "-",
 
         "Altre domande" : "inputOtherRequest" ,
-                  "outputOtherRequest" : "Trovi informazioni più dettagliate sullo stato di consegna dei tuoi articoli, tutte le ricevute d'acquisto, i certificati di garanzia e altro nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>.<br><br>Se un prodotto è difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + link1 + "Warranty/Overview' target='blank'>segnala un difetto</a>.",
+                  "outputOtherRequest" : "Trovi informazioni più dettagliate sullo stato di consegna dei tuoi articoli, tutte le ricevute d'acquisto, i certificati di garanzia e altro nel tuo conto cliente alla voce <a href='" + link1 + "Order' target='blank'>ordini</a>.<br><br>Se un prodotto è difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + link1 + "after-sales/service-cases/select-position' target='blank'>segnala un difetto</a>.",
 
     //Level 0: Dove si trova il mio ordine?
         "Verificare lo stato del mio ordine" : "inputOrderStatus",
@@ -238,7 +238,7 @@ function fillInfoBoxWording(){
         "outputDamagedProduct" : "Per una rapida elaborazione abbiamo bisogno delle seguenti informazioni:<br><br>• Numero d’ordine<br>• Breve descrizione del danno<br>• Foto dell’articolo e dell’imballaggio danneggiati<br><br>Esamineremo la tua richiesta insieme ai nostri partner logistici e ti informeremo al più presto su come procedere.",
 
         "Il mio prodotto non funziona" : "inputNotWorking",
-        "outputNotWorking" : "Se un prodotto è difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + link1 + "Warranty/Overview' target='blank'>segnala un difetto</a>.<br><br>I danni dovuti ad un uso improprio non sono coperti dalla garanzia. Puoi trovare ulteriori informazioni nelle nostre <a href='" + link1 + "wiki/559' target='blank'>condizioni di garanzia</a> e nelle <a href='" + link1 + "Wiki/478' target='blank'>CGC</a>.",
+        "outputNotWorking" : "Se un prodotto è difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + link1 + "after-sales/service-cases/select-position' target='blank'>segnala un difetto</a>.<br><br>I danni dovuti ad un uso improprio non sono coperti dalla garanzia. Puoi trovare ulteriori informazioni nelle nostre <a href='" + link1 + "wiki/559' target='blank'>condizioni di garanzia</a> e nelle <a href='" + link1 + "Wiki/478' target='blank'>CGC</a>.",
 
         "Ho ricevuto un prodotto sbagliato" : "inputWrongProduct",
         "outputWrongProduct" : "Per poter verificare rapidamente la vostra richiesta, sarebbe utile che ci forniste il numero del produttore o il codice EAN del prodotto ricevuto in modo errato. Queste informazioni sono riportate sulla confezione del prodotto.",
@@ -254,7 +254,7 @@ function fillInfoBoxWording(){
            "outputReturnStatus" : "Sotto <a href='" + link1 + "ServiceCase/List' target='blank'>tutti i resi</a> trovi una panoramica e lo stato attuale di tutti i resi e le richieste di garanzia da te presentate.",
 
           "Vorrei restituire un prodotto" : "inputReturn",
-          "outputReturn" : "Puoi restituire gli articoli acquistati direttamente da digitec entro 30 giorni dal ricevimento, mentre gli articoli acquistati da un <a href='" + link2 + "articles/360012370979-Offerte-da-parte-di-terzi' target='blank'>fornitore terzo</a> entro 14 giorni dal ricevimento. Puoi registrare il <a href='" + link1 + "ReturnsAndWarranty' target='blank'>reso</a> direttamente nel tuo conto cliente.",
+          "outputReturn" : "Puoi restituire gli articoli acquistati direttamente da digitec entro 30 giorni dal ricevimento, mentre gli articoli acquistati da un <a href='" + link2 + "articles/360012370979-Offerte-da-parte-di-terzi' target='blank'>fornitore terzo</a> entro 14 giorni dal ricevimento. Puoi registrare il <a href='" + link1 + "after-sales' target='blank'>reso</a> direttamente nel tuo conto cliente.",
 
   //Level 0: Pagamento e rimborso
           "Rimborso di un credito" : "inputCreditReturn",
@@ -301,7 +301,7 @@ function fillInfoBoxWording(){
                   "outputNone" : "-",
 
                   "Other requests" : "inputOtherRequest" ,
-                  "outputOtherRequest" : "We'll keep the delivery status, sales receipts and warranty certificates updated in the <a href='" + link1 + "Order' target='blank'>order overview</a> in your customer account.<br><br>Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + link1 + "Warranty/Overview' target='blank'>report a defect</a>.",
+                  "outputOtherRequest" : "We'll keep the delivery status, sales receipts and warranty certificates updated in the <a href='" + link1 + "Order' target='blank'>order overview</a> in your customer account.<br><br>Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + link1 + "after-sales/service-cases/select-position' target='blank'>report a defect</a>.",
 
     //Level 0: Where is my order?
         "I’d like to check the status of my order" : "inputOrderStatus",
@@ -320,7 +320,7 @@ function fillInfoBoxWording(){
         "outputDamagedProduct" : "For quick processing, please send us the following details:<br><br>• Order number<br>• Description of the damage<br>• Photos of the damage and packaging<br><br>We'll then work together with the delivery company to check what happened to your order and will get back to you as quickly as possible with updates and next steps.",
 
         "My product isn’t working" : "inputNotWorking",
-        "outputNotWorking" : "Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + link1 + "Warranty/Overview' target='blank'>report a defect</a>.<br><br>Damage caused by incorrect use is not covered by the warranty. For more information, see our <a href='" + link1 + "wiki/559' target='blank'>warranty policy</a> and our <a href='" + link1 + "Wiki/478' target='blank'>terms and conditions</a>.",
+        "outputNotWorking" : "Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + link1 + "after-sales/service-cases/select-position' target='blank'>report a defect</a>.<br><br>Damage caused by incorrect use is not covered by the warranty. For more information, see our <a href='" + link1 + "wiki/559' target='blank'>warranty policy</a> and our <a href='" + link1 + "Wiki/478' target='blank'>terms and conditions</a>.",
 
         "I’ve received the wrong product" : "inputWrongProduct",
         "outputWrongProduct" : "To be able to check your request quickly, it would be helpful if you could provide us with the manufacturer's number or the EAN code of the incorrectly received product. You can find this information on the product packaging.",
@@ -336,7 +336,7 @@ function fillInfoBoxWording(){
            "outputReturnStatus" : "Go to <a href='" + link1 + "ServiceCase/List' target='blank'>all returns</a> to find an overview and the current status of all your returns and warranty cases.",
 
           "I need to return a product" : "inputReturn",
-          "outputReturn" : "You have 30 days to return products sold by digitec and 14 days to return items sold by <a href='" + link2 + "articles/360012370979-Buying-from-third-party-sellers' target='blank'>third parties</a> from the day you received them. <a href='" + link1 + "ReturnsAndWarranty' target='blank'>Register returns</a> in your customer account.",
+          "outputReturn" : "You have 30 days to return products sold by digitec and 14 days to return items sold by <a href='" + link2 + "articles/360012370979-Buying-from-third-party-sellers' target='blank'>third parties</a> from the day you received them. <a href='" + link1 + "after-sales' target='blank'>Register returns</a> in your customer account.",
 
   //Level 0: Payment and refund
           "I want to refund my credit" : "inputCreditReturn",
