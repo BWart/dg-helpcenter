@@ -2,8 +2,8 @@ function fillInfoBoxWording(){
     //var portal1 = window.location.hostname;
     //var portal2 = window.location.hostname;
     
-    var link1 = ""
-    var link2 = ""
+    var link1 = "";
+    var link2 = "";
     console.log("AAA"+portal1);
     console.log("BBB"+portal2);
 
@@ -261,7 +261,7 @@ function fillInfoBoxWording(){
           "outputCreditReturn" : "Puoi avviare il rimborso di un credito autonomamente. La procedura esatta è descritta in questo <a href='" + link2 + "articles/360000457949-Come-faccio-a-richiedere-il-rimborso-' target='blank'>articolo</a>.<br><br>Si prega di notare che il trasferimento di denaro di solito richiede da 1 a 3 giorni lavorativi.<br><br>I rimborsi sulla carta di credito appariranno sul prossimo estratto conto della carta di credito.",
 
           "Necessito di una ricevuta/fattura" : "inputReceipt",
-          "outputReceipt" : "Trovi tutte le ricevute d'acquisto, i certificati di garanzia e altro ancora alla voce <a href='" + link1 + "Order' target='blank'>ordini</a> nel tuo conto cliente selezionando l�articolo desiderato.<br><br><a href='" + link1 + "Invoice/ListInvoices' target='blank'>Qui</a> trovi le ricevute per gli ordini che hai pagato tramite fattura.",
+          "outputReceipt" : "Trovi tutte le ricevute d'acquisto, i certificati di garanzia e altro ancora alla voce <a href='" + link1 + "Order' target='blank'>ordini</a> nel tuo conto cliente selezionando l’articolo desiderato.<br><br><a href='" + link1 + "Invoice/ListInvoices' target='blank'>Qui</a> trovi le ricevute per gli ordini che hai pagato tramite fattura.",
 
           "Ho ricevuto un richiamo, nonostante io abbia già effettuato il pagamento" : "inputPaymentReminder",
           "outputPaymentReminder" : "Possono volerci fino a cinque giorni lavorativi per ricevere il pagamento. È possibile che il tuo pagamento sia avvenuto contemporaneamente al nostro sollecito. In questo caso non devi fare nulla e puoi ignorare il sollecito.<br><br>Si prega di notare che i pagamenti collettivi non vengono registrati correttamente. Effettua sempre un bonifico separato per ciascun ordine, in modo che possiamo assegnare il pagamento all’ordine corretto.",
@@ -304,35 +304,35 @@ function fillInfoBoxWording(){
                   "outputOtherRequest" : "We'll keep the delivery status, sales receipts and warranty certificates updated in the <a href='" + link1 + "Order' target='blank'>order overview</a> in your customer account.<br><br>Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + link1 + "Warranty/Overview' target='blank'>report a defect</a>.",
 
     //Level 0: Where is my order?
-        "I�d like to check the status of my order" : "inputOrderStatus",
-        "outputOrderStatus" : "We'll keep the delivery status updated in the <a href='" + link1 + "Order' target='blank'>order overview</a> in your customer account. You�ll also find the tracking number of your parcel there.",
+        "I’d like to check the status of my order" : "inputOrderStatus",
+        "outputOrderStatus" : "We'll keep the delivery status updated in the <a href='" + link1 + "Order' target='blank'>order overview</a> in your customer account. You’ll also find the tracking number of your parcel there.",
 
-        "The shipment status is �sent�, but the parcel hasn�t arrived" : "inputShippingStatus",
-        "outputShippingStatus": "We'll keep the delivery status updated in the <a href='" + link1 + "Order' target='blank'>order overview</a> in your customer account. You�ll also find the tracking number of your parcel there.<br><br>Sometimes it takes a little longer for a parcel to arrive � or it may end up at your neighbour's. If it still hasn�t arrived after a few days, we�re happy to initiate an investigation.",
-        "The shipment status is �sent�, but the parcel hasn�t arrived descriptionTemplate" : "inputShippingStatusMailTemplate",
+        "The shipment status is «sent», but the parcel hasn’t arrived" : "inputShippingStatus",
+        "outputShippingStatus": "We'll keep the delivery status updated in the <a href='" + link1 + "Order' target='blank'>order overview</a> in your customer account. You’ll also find the tracking number of your parcel there.<br><br>Sometimes it takes a little longer for a parcel to arrive – or it may end up at your neighbour's. If it still hasn’t arrived after a few days, we’re happy to initiate an investigation.",
+        "The shipment status is «sent», but the parcel hasn’t arrived descriptionTemplate" : "inputShippingStatusMailTemplate",
         "outputShippingStatusMailTemplate" : "Which articles are missing:\nConsigment number:",
 
-        "The shipment status is �ready for shipment�. When will the order be sent?" : "inputReadyForShipment",
-        "outputReadyForShipment" : "We don't ship the order until all your products are in the warehouse and �ready for shipment�. If you need any items sooner, please <a href='" + link2 + "articles/115005646225-How-do-I-arrange-partial-delivery-' target='blank'>activate partial delivery</a>.",
+        "The shipment status is «ready for shipment». When will the order be sent?" : "inputReadyForShipment",
+        "outputReadyForShipment" : "We don't ship the order until all your products are in the warehouse and «ready for shipment». If you need any items sooner, please <a href='" + link2 + "articles/115005646225-How-do-I-arrange-partial-delivery-' target='blank'>activate partial delivery</a>.",
 
     //Level 0: Problems with an order
         "I've received an externally damaged product" : "inputDamagedProduct",
-        "outputDamagedProduct" : "For quick processing, please send us the following details:<br><br>� Order number<br>� Description of the damage<br>� Photos of the damage and packaging<br><br>We'll then work together with the delivery company to check what happened to your order and will get back to you as quickly as possible with updates and next steps.",
+        "outputDamagedProduct" : "For quick processing, please send us the following details:<br><br>• Order number<br>• Description of the damage<br>• Photos of the damage and packaging<br><br>We'll then work together with the delivery company to check what happened to your order and will get back to you as quickly as possible with updates and next steps.",
 
-        "My product isn�t working" : "inputNotWorking",
+        "My product isn’t working" : "inputNotWorking",
         "outputNotWorking" : "Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + link1 + "Warranty/Overview' target='blank'>report a defect</a>.<br><br>Damage caused by incorrect use is not covered by the warranty. For more information, see our <a href='" + link1 + "wiki/559' target='blank'>warranty policy</a> and our <a href='" + link1 + "Wiki/478' target='blank'>terms and conditions</a>.",
 
-        "I�ve received the wrong product" : "inputWrongProduct",
+        "I’ve received the wrong product" : "inputWrongProduct",
         "outputWrongProduct" : "To be able to check your request quickly, it would be helpful if you could provide us with the manufacturer's number or the EAN code of the incorrectly received product. You can find this information on the product packaging.",
 
         "There are items missing in my order" : "inputReceivedNotEverything",
         "outputReceivedNotEverything" : "Not all products are sent from our warehouse. When an item comes from one of our partner suppliers, it'll be sent to you directly in a separate parcel. Go to <a href='" + link1 + "Order' target='blank'>orders</a> in your customer account to find your order status to check if it has been shipped or if it's not been processed yet.",
 
-                  "I�d like to cancel my order" : "inputCancelOrder",
-                  "outputCancelOrder" : "As long as we haven�t yet got your order ready to ship, you can still cancel the product you no longer want in the <a href='" + link1 + "Order' target='blank'>orders</a> section in your customer account. If the product has already been shipped, you�ll have to <a href='" + link1 + "Return' target='blank'>register a return</a> in your customer account.",
+                  "I’d like to cancel my order" : "inputCancelOrder",
+                  "outputCancelOrder" : "As long as we haven’t yet got your order ready to ship, you can still cancel the product you no longer want in the <a href='" + link1 + "Order' target='blank'>orders</a> section in your customer account. If the product has already been shipped, you’ll have to <a href='" + link1 + "Return' target='blank'>register a return</a> in your customer account.",
 
     //Level 0: Returns
-          "I�d like to check the status of a return" : "inputReturnStatus",
+          "I’d like to check the status of a return" : "inputReturnStatus",
            "outputReturnStatus" : "Go to <a href='" + link1 + "ServiceCase/List' target='blank'>all returns</a> to find an overview and the current status of all your returns and warranty cases.",
 
           "I need to return a product" : "inputReturn",
@@ -343,26 +343,26 @@ function fillInfoBoxWording(){
           "outputCreditReturn" : "To refund a credit note, please follow the simple steps described in this <a href='" + link2 + "articles/360000457949-How-do-I-get-a-refund-' target='blank'>article</a>.<br><br>Please bear in mind that transfers usually take one to three working days.<br><br>Refunds to your credit card will appear on your next credit card statement.",
 
           "I need a receipt/invoice" : "inputReceipt",
-          "outputReceipt" : "All sales receipts and warranty certificates are saved in the <a href='" + link1 + "Order' target='blank'>orders</a> section in your customer account. Go to the according order detail page.<br><br>You�ll find the sales receipt for all orders you paid by invoice <a href='" + link1 + "Invoice/ListInvoices' target='blank'>here</a>.",
+          "outputReceipt" : "All sales receipts and warranty certificates are saved in the <a href='" + link1 + "Order' target='blank'>orders</a> section in your customer account. Go to the according order detail page.<br><br>You’ll find the sales receipt for all orders you paid by invoice <a href='" + link1 + "Invoice/ListInvoices' target='blank'>here</a>.",
 
-          "I�ve received a reminder even though I paid for my order" : "inputPaymentReminder",
-          "outputPaymentReminder" : "It can take up to five working days until your payment arrives in our system. Therefore, it�s possible that the reminder has overlapped with your payment. In this case, please ignore the reminder.<br><br>Please note that collective transfers are not entered correctly. It�s important you pay for each order in a separate bank transfer to make sure we can clearly identify your payment.",
+          "I’ve received a reminder even though I paid for my order" : "inputPaymentReminder",
+          "outputPaymentReminder" : "It can take up to five working days until your payment arrives in our system. Therefore, it’s possible that the reminder has overlapped with your payment. In this case, please ignore the reminder.<br><br>Please note that collective transfers are not entered correctly. It’s important you pay for each order in a separate bank transfer to make sure we can clearly identify your payment.",
 
-          "I can�t pay by invoice" : "inputNoBill",
+          "I can’t pay by invoice" : "inputNoBill",
           "outputNoBill": "Payment by invoice is not possible if your order costs more than your credit limit allows or if you have reached your credit limit with unpaid orders.<br><br>Please note: our customer service has no influence on the available payment methods and the credit limit.",
 
           "I need to extend the payment deadline" : "inputLongerPayment",
           "outputLongerPayment" : "Our payment deadline is 20 days after the invoice is issued. Generally, this deadline cannot be extended. Of course, we understand that invoices are occasionally overlooked. For this reason, we send a reminder after the payment deadline has expired. The reminder will state the date of the new payment deadline. We cannot extend this final deadline.<br><br>The best way forward is to transfer the amount straight away to avoid any extra charges. There is no need for you to send us a confirmation of payment.",
 
   //Level 0: Customer account
-          "I�d like to delete my customer account" : "inputDeleteAccount",
-          "outputDeleteAccount" : "Once your account is deleted, you will no longer have access to your sales receipts and other documents. That�s why we recommend making a copy (printing out a hard copy or saving an electronic one) before you ask us to delete your account.<br><br>You can initiate the deletion directly from your <a href='" + link1 + "DeleteAccount' target='blank'>user account</a>.",
-      "I�d like to delete my customer account descriptionLabel" : "inputDeleteAccountDescriptionLabel",
+          "I’d like to delete my customer account" : "inputDeleteAccount",
+          "outputDeleteAccount" : "Once your account is deleted, you will no longer have access to your sales receipts and other documents. That’s why we recommend making a copy (printing out a hard copy or saving an electronic one) before you ask us to delete your account.<br><br>You can initiate the deletion directly from your <a href='" + link1 + "DeleteAccount' target='blank'>user account</a>.",
+      "I’d like to delete my customer account descriptionLabel" : "inputDeleteAccountDescriptionLabel",
       "outputDeleteAccountDescriptionLabel" : "Description<br>Note: For quick processing we need your customer number",
 
-                  "I can�t access my customer account" : "inputCantLogin",
-          "outputCantLogin" : "You can reset your password at any time:<br><br>� Go to the login screen and click <a href='" + link1 + "Register/RequestPassword' target='blank'>forgot your password?</a><br>� Enter your username or e-mail address and click �Request link�.",
-      "I can�t access my customer account descriptionLabel" : "inputCantLoginDescriptionLabel",
+                  "I can’t access my customer account" : "inputCantLogin",
+          "outputCantLogin" : "You can reset your password at any time:<br><br>• Go to the login screen and click <a href='" + link1 + "Register/RequestPassword' target='blank'>forgot your password?</a><br>• Enter your username or e-mail address and click «Request link».",
+      "I can’t access my customer account descriptionLabel" : "inputCantLoginDescriptionLabel",
       "outputCantLoginDescriptionLabel" : "Description<br>Note: For quick processing we need your customer number",
 
   //Level 0: Product advice
@@ -374,41 +374,9 @@ function fillInfoBoxWording(){
       "outputOffer" : "Please note: For a quotation, the minimum order volume must be 5'000 CHF. The prices quoted in our store apply."        
         }
     }
+    
     console.log(infoBoxWording);
-    /*var currentLanguage = $('html').attr('lang');
-
-    switch(currentLanguage){
-            case'de':
-                return infoBoxWording['de'];
-                console.log(infoBoxWording)
-                break;
-            case'fr':
-                infoBoxWording= infoBoxWording['fr'];
-                console.log(infoBoxWording)
-                break;
-            case'it':
-                infoBoxWording= infoBoxWording['it'];
-                console.log(infoBoxWording)
-                break;
-            case'en-US':
-                infoBoxWording= infoBoxWording['en-US'];
-                console.log(infoBoxWording)
-                break;
-            default: 
-                infoBoxWording= infoBoxWording['de'];
-                console.log(infoBoxWording)
-                break;
-    }*/
-
     return infoBoxWording;
-
-
-
-    /*if(currentLanguage == infoBoxWording[currentLanguage]){
-        infoBoxWording = currentLanguage;
-        console.log(infoBoxWording);
-        return infoBoxWording;
-    }*/
 
 }
 
