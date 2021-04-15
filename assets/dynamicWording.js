@@ -12,7 +12,7 @@ function filldynamicWording(){
     var telPrivatkundeText = "";
     var telFirmenkundeText = "";
 
-
+    
     switch(portal){
       case'helpcenter.digitec.ch':
               uhrzeitPrivatkunde = "09:00 - 18:00";
