@@ -4,8 +4,8 @@ function filldynamicWording(){
 
     var uhrzeitPrivatkunde = "";
     var uhrzeitFirmenkunde = "";
-    var uhrzeitPrivatkundeText = "";
-    var uhrzeitFirmenkundeText = "";
+    var uhrzeitPrivatkundeMobile = "";
+    var uhrzeitFirmenkundeMobile = "";
 
     var telPrivatkunde = "";
     var telFirmenkunde = "";
@@ -15,48 +15,48 @@ function filldynamicWording(){
 
     switch(portal){
       case'helpcenter.digitec.ch':
-              var uhrzeitPrivatkunde = "";
-              var uhrzeitPrivatkundeText = "";
-              var uhrzeitFirmenkunde = "";
-              var uhrzeitFirmenkundeText = "";
+              uhrzeitPrivatkunde = "09:00 - 18:00";
+              uhrzeitPrivatkundeMobile = "09:00 - 18:00";
+              uhrzeitFirmenkunde = "09:00 - 12:00\n13:30 - 17:00";
+              uhrzeitFirmenkundeMobile = "Mo - Fr: 09:00 - 12:00, 13:30 - 17:00";
 
-              var telPrivatkunde = "+41445759500";
-              var telPrivatkundeText = "+41 44 575 95 00";
-              var telFirmenkunde = "+41445759600";
-              var telFirmenkundeText = "+41 44 575 96 00";              
+              telPrivatkunde = "+41445759500";
+              telPrivatkundeText = "+41 44 575 95 00";
+              telFirmenkunde = "+41445759600";
+              telFirmenkundeText = "+41 44 575 96 00";              
               break;
       case'helpcenter.galaxus.ch':
-              var uhrzeitPrivatkunde = "";
-              var uhrzeitPrivatkundeText = "";
-              var uhrzeitFirmenkunde = "";
-              var uhrzeitFirmenkundeText = "";
+              uhrzeitPrivatkunde = "";
+              uhrzeitPrivatkundeText = "";
+              uhrzeitFirmenkunde = "";
+              uhrzeitFirmenkundeText = "";
 
-              var telPrivatkunde = "+41445759800";
-              var telPrivatkundeText = "+41 44 575 98 00";
-              var telFirmenkunde = "+41445759900";
-              var telFirmenkundeText = "+41 44 575 99 00";                
+              telPrivatkunde = "+41445759800";
+              telPrivatkundeText = "+41 44 575 98 00";
+              telFirmenkunde = "+41445759900";
+              telFirmenkundeText = "+41 44 575 99 00";                
               break;
       case'helpcenter.galaxus.de':
-              var uhrzeitPrivatkunde = "";
-              var uhrzeitPrivatkundeText = "";
-              var uhrzeitFirmenkunde = "";
-              var uhrzeitFirmenkundeText = "";
+              uhrzeitPrivatkunde = "";
+              uhrzeitPrivatkundeText = "";
+              uhrzeitFirmenkunde = "";
+              uhrzeitFirmenkundeText = "";
 
-              var telPrivatkunde = "+4940334614747";
-              var telPrivatkundeText = "+49 (0)40 334 614 747";
-              var telFirmenkunde = "+4940334614748";
-              var telFirmenkundeText = "+49 (0)40 334 614 748";                    
+              telPrivatkunde = "+4940334614747";
+              telPrivatkundeText = "+49 (0)40 334 614 747";
+              telFirmenkunde = "+4940334614748";
+              telFirmenkundeText = "+49 (0)40 334 614 748";                    
               break;
       default:
-              var uhrzeitPrivatkunde = "";
-              var uhrzeitPrivatkundeText = "";
-              var uhrzeitFirmenkunde = "";
-              var uhrzeitFirmenkundeText = "";
+              uhrzeitPrivatkunde = "";
+              uhrzeitPrivatkundeText = "";
+              uhrzeitFirmenkunde = "";
+              uhrzeitFirmenkundeText = "";
 
-              var telPrivatkunde = "";
-              var telPrivatkundeText = "";
-              var telFirmenkunde = "";
-              var telFirmenkundeText = "";                       
+              telPrivatkunde = "";
+              telPrivatkundeText = "";
+              telFirmenkunde = "";
+              telFirmenkundeText = "";                       
               break;
     }
 
@@ -73,10 +73,10 @@ function filldynamicWording(){
         'callUsBusiness' : 'Ruf uns an <a class="popuptext" id="phoneNumberBusiness" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'callUsBusinessMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Schon gewusst:',
-        'openingHoursPrivate' : 'Mo - Fr:<br>09:00 - 18:00',
-        'openingHoursPrivateMobile' : 'Telefon <font size = "2px">(Mo - Fr: 09:00 - 18:00</font>)',
-        'openingHoursBusiness' : 'Mo - Fr:<br>09:00 - 12:00<br>13:30 - 17:00',
-        'openingHoursBusinessMobile' : 'Telefon <font size = "2px">(Mo - Fr: 09:00 - 12:00, 13:30 - 17:00)</font>',
+        'openingHoursPrivate' : 'Mo - Fr:<br>' + uhrzeitPrivatkunde + '',
+        'openingHoursPrivateMobile' : 'Telefon <font size = "2px">(Mo - Fr: ' + uhrzeitPrivatkundeMobile + '</font>)',
+        'openingHoursBusiness' : 'Mo - Fr:<br>' + uhrzeitFirmenkunde +'',
+        'openingHoursBusinessMobile' : 'Telefon <font size = "2px">(' + uhrzeitFirmenkundeMobile + ')</font>',
         'phone' : 'Telefon',
         'chat' : 'Chat',
         'email' : 'Kontaktformular',
