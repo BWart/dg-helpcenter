@@ -1,4 +1,5 @@
 function filldynamicWording(){
+    var portal = window.location.hostname;
     console.log(portal);
 
     var uhrzeitPrivatkunde = "";

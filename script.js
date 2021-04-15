@@ -138,9 +138,8 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
 	// dynamic wording
   
  	var currentLanguage = $('html').attr('lang');
-  var portal = window.location.hostname;
 
-  var dynamicWording = filldynamicWording(portal);
+  var dynamicWording = filldynamicWording();
   
   var currentLanguage = $('html').attr('lang');
   $('[data-wording-key]').each(function(){
