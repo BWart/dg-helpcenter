@@ -17,7 +17,7 @@ function filldynamicWording(){
       case'helpcenter.digitec.ch':
               uhrzeitPrivatkunde = "09:00 - 18:00";
               uhrzeitPrivatkundeMobile = "09:00 - 18:00";
-              uhrzeitFirmenkunde = "09:00 - 12:00\n13:30 - 17:00";
+              uhrzeitFirmenkunde = "09:00 - 12:00<br>13:30 - 17:00";
               uhrzeitFirmenkundeMobile = "Mo - Fr: 09:00 - 12:00, 13:30 - 17:00";
 
               telPrivatkunde = "+41445759500";
