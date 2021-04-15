@@ -1,6 +1,64 @@
 function filldynamicWording(){
 
+    var portal = window.location.hostname;
 
+    var uhrzeitPrivatkunde = "";
+    var uhrzeitFirmenkunde = "";
+    var uhrzeitPrivatkundeText = "";
+    var uhrzeitFirmenkundeText = "";
+
+    var telPrivatkunde = "";
+    var telFirmenkunde = "";
+    var telPrivatkundeText = "";
+    var telFirmenkundeText = "";
+
+
+    switch(portal){
+      case'helpcenter.digitec.ch':
+              var uhrzeitPrivatkunde = "";
+              var uhrzeitPrivatkundeText = "";
+              var uhrzeitFirmenkunde = "";
+              var uhrzeitFirmenkundeText = "";
+
+              var telPrivatkunde = "+41445759500";
+              var telPrivatkundeText = "+41 44 575 95 00";
+              var telFirmenkunde = "+41445759600";
+              var telFirmenkundeText = "+41 44 575 96 00";              
+              break;
+      case'helpcenter.galaxus.ch':
+              var uhrzeitPrivatkunde = "";
+              var uhrzeitPrivatkundeText = "";
+              var uhrzeitFirmenkunde = "";
+              var uhrzeitFirmenkundeText = "";
+
+              var telPrivatkunde = "+41445759800";
+              var telPrivatkundeText = "+41 44 575 98 00";
+              var telFirmenkunde = "+41445759900";
+              var telFirmenkundeText = "+41 44 575 99 00";                
+              break;
+      case'helpcenter.galaxus.de':
+              var uhrzeitPrivatkunde = "";
+              var uhrzeitPrivatkundeText = "";
+              var uhrzeitFirmenkunde = "";
+              var uhrzeitFirmenkundeText = "";
+
+              var telPrivatkunde = "+4940334614747";
+              var telPrivatkundeText = "+49 (0)40 334 614 747";
+              var telFirmenkunde = "+4940334614748";
+              var telFirmenkundeText = "+49 (0)40 334 614 748";                    
+              break;
+      default:
+              var uhrzeitPrivatkunde = "";
+              var uhrzeitPrivatkundeText = "";
+              var uhrzeitFirmenkunde = "";
+              var uhrzeitFirmenkundeText = "";
+
+              var telPrivatkunde = "";
+              var telPrivatkundeText = "";
+              var telFirmenkunde = "";
+              var telFirmenkundeText = "";                       
+              break;
+    }
 
 
     
@@ -10,10 +68,10 @@ function filldynamicWording(){
         'privateCustomers' : 'Privatkunden',
         'businessCustomers' : 'Firmenkunden',
         'chatUs': 'Chatte mit uns',
-        'callUsPrivate' : 'Ruf uns an <a class="popuptext" id="phoneNumberPrivate" href="tel:+41445759500">+41 44 575 95 00</a>',
-        'callUsPrivateMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:+41445759500">+41 44 575 95 00</a>',
-        'callUsBusiness' : 'Ruf uns an <a class="popuptext" id="phoneNumberBusiness" href="tel:+41445759600">+41 44 575 96 00</a>',
-        'callUsBusinessMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:+41445759600">+41 44 575 96 00</a>',
+        'callUsPrivate' : 'Ruf uns an <a class="popuptext" id="phoneNumberPrivate" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+        'callUsPrivateMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '0</a>',
+        'callUsBusiness' : 'Ruf uns an <a class="popuptext" id="phoneNumberBusiness" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
+        'callUsBusinessMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Schon gewusst:',
         'openingHoursPrivate' : 'Mo - Fr:<br>09:00 - 18:00',
         'openingHoursPrivateMobile' : 'Telefon <font size = "2px">(Mo - Fr: 09:00 - 18:00</font>)',
@@ -40,10 +98,10 @@ function filldynamicWording(){
         'privateCustomers' : 'Clients privés',
         'businessCustomers' : 'Clients professionnels',
         'chatUs': 'Chattez avec nous',
-        'callUsPrivate' : 'Appelez-nous <a class="popuptext" id="phoneNumberPrivate" href="tel:+41445759500">+41 44 575 95 00</a>',
-        'callUsPrivateMobile' : 'Appelez-nous <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:+41445759500">+41 44 575 95 00</a>',
-        'callUsBusiness' : 'Appelez-nous <a class="popuptext" id="phoneNumberBusiness" href="tel:+41445759600">+41 44 575 96 00</a>',
-        'callUsBusinessMobile' : 'Appelez-nous <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:+41445759600">+41 44 575 96 00</a>',
+        'callUsPrivate' : 'Appelez-nous <a class="popuptext" id="phoneNumberPrivate" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+        'callUsPrivateMobile' : 'Appelez-nous <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+        'callUsBusiness' : 'Appelez-nous <a class="popuptext" id="phoneNumberBusiness" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
+        'callUsBusinessMobile' : 'Appelez-nous <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Le saviez-vous :',
         'openingHoursPrivate' : 'Lu - Ve:<br>09:00 - 18:00',
         'openingHoursPrivateMobile' : 'Téléphone <font size = "2px">(Lu - Ve: 09:00 - 18:00</font>)',
@@ -70,10 +128,10 @@ function filldynamicWording(){
         'privateCustomers' : 'Clienti privati',
         'businessCustomers' : 'Clienti commerciali',
         'chatUs': 'Chatta con noi',
-        'callUsPrivate' : 'Chiamaci <a class="popuptext" id="phoneNumberPrivate" href="tel:+41445759500">+41 44 575 95 00</a>',
-        'callUsPrivateMobile' : 'Chiamaci <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:+41445759500">+41 44 575 95 00</a>',
-        'callUsBusiness' : 'Chiamaci <a class="popuptext" id="phoneNumberBusiness"" href="tel:+41445759600">+41 44 575 96 00</a>',
-        'callUsBusinessMobile' : 'Chiamaci <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:+41445759600">+41 44 575 96 00</a>',
+        'callUsPrivate' : 'Chiamaci <a class="popuptext" id="phoneNumberPrivate" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+        'callUsPrivateMobile' : 'Chiamaci <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+        'callUsBusiness' : 'Chiamaci <a class="popuptext" id="phoneNumberBusiness"" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
+        'callUsBusinessMobile' : 'Chiamaci <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Lo sapevi:',
         'openingHoursPrivate' : 'Lun - Ven:<br>09:00 - 18:00',
         'openingHoursPrivateMobile' : 'Telefono <font size = "2px">(Lun - Ven: 09:00 - 18:00</font>)',
@@ -100,10 +158,10 @@ function filldynamicWording(){
         'privateCustomers' : 'Private customers',
         'businessCustomers' : 'Business customers',
         'chatUs': 'Chat with us',
-        'callUsPrivate' : 'Call us <a class="popuptext" id="phoneNumberPrivate" href="tel:+41445759500">+41 44 575 95 00</a>',
-        'callUsPrivateMobile' : 'Call us <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:+41445759500">+41 44 575 95 00</a>',
-        'callUsBusiness' : 'Call us <a class="popuptext" id="phoneNumberBusiness"" href="tel:+41445759600">+41 44 575 96 00</a>',
-        'callUsBusinessMobile' : 'Call us <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:+41445759600">+41 44 575 96 00</a>',
+        'callUsPrivate' : 'Call us <a class="popuptext" id="phoneNumberPrivate" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+        'callUsPrivateMobile' : 'Call us <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+        'callUsBusiness' : 'Call us <a class="popuptext" id="phoneNumberBusiness"" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
+        'callUsBusinessMobile' : 'Call us <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Did you know:',
         'openingHoursPrivate' : 'Mo - Fr:<br>09:00 -18:00',
         'openingHoursPrivateMobile' : 'Phone <font size = "2px">(Mo - Fr: 09:00 - 18:00</font>)',
