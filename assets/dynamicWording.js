@@ -56,7 +56,8 @@ function filldynamicWording(){
               telPrivatkunde = "+41445759500";
               telPrivatkundeText = "+41 44 575 95 00";
               telFirmenkunde = "+41445759600";
-              telFirmenkundeText = "+41 44 575 96 00";              
+              telFirmenkundeText = "+41 44 575 96 00";
+              console.log("DEFAULT");              
               break;
     }
 
