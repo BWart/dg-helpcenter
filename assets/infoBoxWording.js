@@ -31,7 +31,7 @@ function fillInfoBoxWording(){
                     break;
             default: 
                     shopURL = "https://www.digitec.ch/";
-                    console.log("CASE DEFAULT 1");
+                    console.log("DEFAULT iBW 1");
                     break;
     }
 
@@ -87,7 +87,7 @@ function fillInfoBoxWording(){
                     rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + helpcenterURL + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
 
         
-                    console.log("CASE DEFAULT 2");
+                    console.log("DEFAULT iBW 2");
                     break;
     }
 
