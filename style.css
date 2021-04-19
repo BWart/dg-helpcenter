@@ -34,8 +34,6 @@
 }
 
 body {
-  background-color: #ffffff;
-  color: #333333;
   font-family: Gibson, sans-serif;
   font-size: 15px;
  /* font-weight: 400;*/
@@ -73,12 +71,11 @@ h4 {
 }
 
 a {
-  color: #007bc8;
   text-decoration: none;
 }
 
 a:hover, a:active, a:focus {
-  color: #094979;
+  
 }
 
 input,
@@ -117,7 +114,7 @@ select {
 }
 
 select:focus {
-  border: 1px solid #0072ef;
+  
 }
 
 select::-ms-expand {
@@ -180,11 +177,8 @@ ul {
 
 /***** Buttons *****/
 .button, [role="button"]{
-  border: 1px solid #00559d;;
   border-radius: 3px;
-  color: #fff;
   cursor: pointer;
-  background-color: #00559d;
   display: inline-block;
   font-size: 12px;
   line-height: 2.34;
@@ -199,11 +193,8 @@ ul {
 }
 
 .button-contact{ 
-  border: 1px solid #d6e6f4;;
   border-radius: 3px;
-  color: #00559d;
   cursor: pointer;
-  background-color: #d6e6f4;
   display: inline-block;
   font-size: 12px;
   line-height: 2.34;
@@ -216,12 +207,9 @@ ul {
   -webkit-touch-callout: none;
 }
 
-.button-contact2{ 
-  border: 1px solid #bebebe;
+.button-contact2{  
   border-radius: 3px;
-  color: #00559d;
   cursor: pointer;
-  background-color: #d6e4ef;
   display: inline-block;
   line-height: 2.34;
   padding: 2px 6px;
@@ -235,17 +223,12 @@ ul {
 
 
 .button-contact2:hover {
-    background-color: #e60021;
-    border: 1px solid #565656;
-    color: #fff;
-    }
+
+}
 
 
 [role="button"]:active, .button:active.button[aria-selected="true"], [role="button"][aria-selected="true"]{
-  background-color: #d6e6f4;
-  color: #00559d;
-  text-decoration: none;
-  border: 1px solid #d6e6f4;  
+
 }
 
 @media (min-width: 768px) {
@@ -258,10 +241,7 @@ ul {
 }
 
 .button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover {
-  background-color: #e60020;
-  color: #ffffff;
   text-decoration: none;
-  border: 1px solid #e60020;
 }
 
 .button[data-disabled], [role="button"][data-disabled] {
