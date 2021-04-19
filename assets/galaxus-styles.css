@@ -450,7 +450,7 @@ html {
 }
 
 /* aus style.css */
-/*
+
 .button, [role="button"]{
   border: 1px solid #000;
   color: #fff;
@@ -508,4 +508,3 @@ a:hover, a:active, a:focus {
 select:focus {
   border: 1px solid #0072ef;
 }
-*/
