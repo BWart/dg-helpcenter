@@ -487,6 +487,16 @@ html {
   border: 1px solid #565656;
 }
 
+.button-large, input[type="submit"] {
+  color: #fff;
+  background-color: #000;
+}
+
+.button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
+  background:#ddd;
+  color:#000
+}
+
 a {
   color: #007bc8;
 }

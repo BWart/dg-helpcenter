@@ -484,9 +484,19 @@
 }
 
 .button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover {
-  background-color: #e60020;
+  background-color: #e60021;
   color: #ffffff;
-  border: 1px solid #e60020;
+  border: 1px solid #e60021;
+}
+
+.button-large, input[type="submit"] {
+  color: #00559d;
+  background-color: #d6e4ef;
+}
+
+.button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
+  background:#e60021;
+  color:#fff
 }
 
 a {
