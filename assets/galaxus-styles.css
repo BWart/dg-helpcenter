@@ -33,13 +33,13 @@ header svg {
 }
  
 .blocks-item-link {
-   color: fff;
+   color: #fff;
    background: #444;
    }
 
    .blocks-item-link:hover, .blocks-item-link:focus, .blocks-item-link:active {
    color: #fff;
-   background: #333;
+   background: #000;
    }
 
 .footer{
@@ -378,9 +378,9 @@ display: none;
   width: 170px;
 }
 
-.body-border {
+/*.body-border {
   border: 8px solid #00559D;
-}
+}*/
     
 .button-contact{
   width: 100%;
@@ -445,3 +445,10 @@ html {
   min-height: 100%;
   background-color: #d1d3d4; 
 }
+
+/*aus style.css 
+
+.button-contact2{
+  color: #000;
+  background-color: #eee;
+}*/

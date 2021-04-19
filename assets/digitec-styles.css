@@ -13,7 +13,7 @@
    
    searchBoxNote{
      width: 100%;
-     position: relative:
+     position: relative;
      display: inline-block;
      top: 10%;
    }
@@ -22,7 +22,7 @@
      font-size: x-large;
      font-weight: lighter;
      color: #000000 !important;
-     display: none:
+     display: none;
    }
    
    infoNoteBox{
@@ -96,7 +96,7 @@
    
    .contactFormText{
      border: 5px solid #00559d;
-       display:none; 
+     display:none; 
      width:100%;
      padding: 20px;
    }
@@ -354,9 +354,9 @@
      width: 170px;
    }
    
-   .body-border {
+   /*.body-border {
      border: 8px solid #00559D;
-   }
+   }*/
    
    .body-border-galaxus {
      border: none;
@@ -446,3 +446,10 @@
     outline: none;
     padding: 0px 10px 10px;
   }
+
+/*aus style.css 
+
+  .button-contact2{
+    color: #00559d;
+    background-color: #d6e4ef;
+  }*/
