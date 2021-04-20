@@ -424,6 +424,13 @@ display: none;
 
 body {
   min-height: 100VH;  
+  background-color: #ffffff;
+  color: #333333;
+
+  margin: 0 auto !important;
+		float: none !important;
+    width: 1360px;
+    display: table;
 }
 
 @media (min-width: 1360px){
