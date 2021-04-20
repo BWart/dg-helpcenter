@@ -453,9 +453,9 @@ html {
 
 
 .button, [role="button"]{
-  border: 1px solid #000;
+  border: 1px solid #444;
   color: #fff;
-  background-color: #000;
+  background-color: #444;
 }
 /*
 .button-contact{
@@ -482,12 +482,12 @@ html {
   text-decoration: none;
   border: 1px solid #d6e6f4;  
 }
-
+*/
 .button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover {
-  background-color: #ddd;
-  border: 1px solid #565656;
+  background-color: #000;
+  border: 1px solid #000;
 }
-
+/*
 .button-large, input[type="submit"] {
   color: #fff;
   background-color: #000;
