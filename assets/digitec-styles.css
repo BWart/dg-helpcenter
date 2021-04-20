@@ -452,13 +452,13 @@
 
 /* aus style.css */
 
-/*
+
 .button, [role="button"]{
   border: 1px solid #00559d;
   color: #fff;
   background-color: #00559d;
 }
-
+/*
 .button-contact{
   color: #00559d;
   background-color: #d6e4ef;
@@ -483,13 +483,13 @@
   text-decoration: none;
   border: 1px solid #d6e6f4;  
 }
-
+*/
 .button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover {
   background-color: #e60021;
   color: #ffffff;
   border: 1px solid #e60021;
 }
-
+/*
 .button-large, input[type="submit"] {
   color: #00559d;
   background-color: #d6e4ef;
