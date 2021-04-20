@@ -336,7 +336,7 @@ display: none;
 }
 
 .body-border {
-  border: 8px solid #00559D;
+  border: 0px solid transparent;
 }
   
 }
@@ -463,7 +463,7 @@ html {
   background-color: #eee;
   border: 1px solid #bebebe;
 }
-
+*/
 .button-contact2{
   color: #000;
   background-color: #eee;
@@ -475,7 +475,7 @@ html {
   border: 1px solid #565656;
   color: #000;
 }
-
+/*
 [role="button"]:active, .button:active.button[aria-selected="true"], [role="button"][aria-selected="true"]{
   background-color: #d6e6f4;
   color: #000;
