@@ -336,8 +336,7 @@ display: none;
 }
 
 .body-border {
-  border-top: 30px solid blue;
-  padding-top: 8px;
+  border: 8px solid #00559D;
 }
   
 }
