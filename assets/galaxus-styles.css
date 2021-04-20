@@ -336,7 +336,7 @@ display: none;
 }
 
 .body-border {
-  
+  border: 8px solid transparent;
 }
   
 }
@@ -378,9 +378,9 @@ display: none;
   width: 170px;
 }
 
-/*.body-border {
-  border: 8px solid #00559D;
-}*/
+.body-border {
+  border: 8px solid transparent;
+}
     
 .button-contact{
   width: 100%;
