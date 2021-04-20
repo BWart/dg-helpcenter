@@ -448,7 +448,7 @@ html {
 
 /* aus style.css */
 
-
+/*
 .button, [role="button"]{
   border: 1px solid #444;
   color: #fff;
@@ -460,7 +460,7 @@ html {
   background-color: #eee;
   border: 1px solid #bebebe;
 }
-*/
+*//*
 .button-contact2{
   color: #000;
   background-color: #eee;
@@ -479,7 +479,7 @@ html {
   text-decoration: none;
   border: 1px solid #d6e6f4;  
 }
-*/
+*//*
 .button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover {
   background-color: #000;
   border: 1px solid #000;
@@ -507,7 +507,7 @@ select:focus {
   border: 1px solid #0072ef;
 }
 */
-
+/*
 .article-votes-question{
   color: #000;
-}
+}*/
