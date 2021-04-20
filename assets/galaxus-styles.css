@@ -336,7 +336,7 @@ display: none;
 }
 
 .body-border {
-  border: 8px solid transparent;
+  border-top: 8px solid transparent;
 }
   
 }
