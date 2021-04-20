@@ -33,13 +33,13 @@ header svg {
 }
  
 .blocks-item-link {
-   color: #fff;
+   color: fff;
    background: #444;
    }
 
    .blocks-item-link:hover, .blocks-item-link:focus, .blocks-item-link:active {
    color: #fff;
-   background: #000;
+   background: #333;
    }
 
 .footer{
@@ -336,7 +336,7 @@ display: none;
 }
 
 .body-border {
-  
+  border: 8px solid #00559D;
 }
   
 }
@@ -379,7 +379,7 @@ display: none;
 }
 
 .body-border {
-  
+  border: 8px solid #00559D;
 }
     
 .button-contact{
@@ -423,15 +423,7 @@ display: none;
 }
 
 body {
-  min-height: 100VH;
-  /*background-color: #ffffff;*/
-  color: #333333;
-  margin: 0 auto !important;
-		float: none !important;
-    width: 1360px;
-    display: table;
-  }
-  
+  min-height: 100VH;  
 }
 
 @media (min-width: 1360px){
@@ -456,7 +448,7 @@ html {
 
 /* aus style.css */
 
-
+/*
 .button, [role="button"]{
   border: 1px solid #444;
   color: #fff;
@@ -468,7 +460,7 @@ html {
   background-color: #eee;
   border: 1px solid #bebebe;
 }
-*/
+*//*
 .button-contact2{
   color: #000;
   background-color: #eee;
@@ -487,7 +479,7 @@ html {
   text-decoration: none;
   border: 1px solid #d6e6f4;  
 }
-*/
+*//*
 .button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover {
   background-color: #000;
   border: 1px solid #000;
@@ -515,7 +507,7 @@ select:focus {
   border: 1px solid #0072ef;
 }
 */
-
+/*
 .article-votes-question{
   color: #000;
-}
+}*/
