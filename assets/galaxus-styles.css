@@ -425,7 +425,7 @@ display: none;
 body {
   min-height: 100VH;
   background-color: transparent;
-  color: #333333;
+  color: transparent;
   
 }
 
