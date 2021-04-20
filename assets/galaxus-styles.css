@@ -378,9 +378,9 @@ display: none;
   width: 170px;
 }
 
-.body-border {
-  border: 8px solid transparent;
-}
+/*.body-border {
+  border: 8px solid #00559D;
+}*/
     
 .button-contact{
   width: 100%;
@@ -426,7 +426,7 @@ body {
   min-height: 100VH;
   background-color: #ffffff;
   color: #333333;
-  margin-top: 8px;
+  
 }
 
 @media (min-width: 1360px){
