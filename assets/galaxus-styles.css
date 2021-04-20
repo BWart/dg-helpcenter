@@ -424,7 +424,7 @@ display: none;
 
 body {
   min-height: 100VH;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
   color: #333333;
   margin: 0 auto !important;
 		float: none !important;
