@@ -14,7 +14,7 @@ function filldynamicWording(){
 
 
     switch(portal){
-      case'11helpcenter.digitec.ch':
+      case'helpcenter.digitec.ch':
               uhrzeitPrivatkunde = "09:00 - 18:00";
               uhrzeitPrivatkundeMobile = "09:00 - 18:00";
               uhrzeitFirmenkunde = "09:00 - 12:00<br>13:30 - 17:00";
@@ -36,7 +36,7 @@ function filldynamicWording(){
               telFirmenkunde = "+41445759900";
               telFirmenkundeText = "+41 44 575 99 00";                
               break;
-      case'helpcenter.digitec.ch':
+      case'helpcenter.galaxus.de':
               uhrzeitPrivatkunde = "09:00 - 19:00";
               uhrzeitPrivatkundeMobile = "09:00 -19:00";
               uhrzeitFirmenkunde = "10:00 - 18:00";

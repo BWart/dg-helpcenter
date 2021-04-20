@@ -17,7 +17,7 @@ function fillInfoBoxWording(){
 
     //Hostname korrekt in der JSON in den Links hinterlegen
     switch (portal1){
-            case '11digitec.ch':
+            case 'digitec.ch':
                     shopURL = "https://www.digitec.ch/"; 
                     console.log("sw1");
                     break;
@@ -25,7 +25,7 @@ function fillInfoBoxWording(){
                     shopURL = "https://www.galaxus.ch/"; 
                     console.log("sw2");
                     break;
-            case 'digitec.ch':
+            case 'galaxus.de':
                     shopURL = "https://www.galaxus.de/";
                     console.log("sw3");
                     break;
@@ -39,7 +39,7 @@ function fillInfoBoxWording(){
     // Textänderung bei Rückgabe - Ich möchte ein Produkt zurückgeben - weil bei Galaxus.de der Beitrag nicht existiert; var "rck"
     // Beitrag Seitennamen werden dynamisch angepasst, var "seite"
     switch (portal2){
-            case 'qqhelpcenter.digitec.ch':
+            case 'helpcenter.digitec.ch':
                     helpcenterURL = "https://helpcenter.digitec.ch/hc/";
                     seite = "digitec";
                    
@@ -63,7 +63,7 @@ function fillInfoBoxWording(){
                 
                     console.log("sw5");
                     break;
-            case 'helpcenter.digitec.ch':
+            case 'helpcenter.galaxus.de':
                     helpcenterURL = "https://helpcenter.galaxus.de/hc/";
                     seite = "Galaxus";
                     
