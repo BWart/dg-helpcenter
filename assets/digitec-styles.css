@@ -417,7 +417,7 @@
    @media (min-width: 1360px){
      body {
        margin: 0 auto !important;
-           float: none !important;
+       float: none !important;
        width: 1360px;
        display: table;
      }
