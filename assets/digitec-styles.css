@@ -512,3 +512,6 @@ select:focus {
   border: 1px solid #0072ef;
 }
 */
+.article-votes-question{
+  color: #000;
+}
