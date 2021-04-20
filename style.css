@@ -180,11 +180,11 @@ ul {
 
 /***** Buttons *****/
 .button, [role="button"]{
-  border: 1px solid #00559d;;
+  /*border: 1px solid #00559d;;*/
   border-radius: 3px;
-  color: #fff;
+  /*color: #fff;*/
   cursor: pointer;
-  background-color: #00559d;
+  /*background-color: #00559d;*/
   display: inline-block;
   font-size: 12px;
   line-height: 2.34;
@@ -217,11 +217,11 @@ ul {
 }
 
 .button-contact2{ 
-  border: 1px solid #bebebe;
+  /*border: 1px solid #bebebe;*/
   border-radius: 3px;
-  color: #00559d;
+  /*color: #00559d;*/
   cursor: pointer;
-  background-color: #d6e4ef;
+  /*background-color: #d6e4ef;*/
   display: inline-block;
   line-height: 2.34;
   padding: 2px 6px;
@@ -235,9 +235,9 @@ ul {
 
 
 .button-contact2:hover {
-    background-color: #e60021;
+    /*background-color: #e60021;
     border: 1px solid #565656;
-    color: #fff;
+    color: #fff;*/
     }
 
 
@@ -258,10 +258,10 @@ ul {
 }
 
 .button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover {
-  background-color: #e60020;
-  color: #ffffff;
+  /*background-color: #e60020;*/
+  /*color: #ffffff;*/
   text-decoration: none;
-  border: 1px solid #e60020;
+  /*border: 1px solid #e60020;*/
 }
 
 .button[data-disabled], [role="button"][data-disabled] {
