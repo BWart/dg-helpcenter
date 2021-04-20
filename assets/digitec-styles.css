@@ -513,6 +513,23 @@ select:focus {
 }
 */
 
+/*CHAT*/
+
 .article-votes-question{
   color: #00559d;
+}
+
+.meshim_widget_widgets_TitleBar{
+  color: #97bad7;
+  background: #00559d;
+}
+
+.meshim_widget_widgets_ConnAwareSubmit{
+  color: #ffffff;
+  background: #00559d;
+  border-color: #003e83;
+}
+
+.meshim_widget_widgets_ConnAwareSubmit:hover{
+  background: #2e6ab4;
 }
