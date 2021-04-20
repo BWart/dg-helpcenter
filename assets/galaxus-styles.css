@@ -428,10 +428,6 @@ body {
   background-color: #ffffff;
   color: #333333;
 
-  margin: 0 auto !important;
-		float: none !important;
-    width: 1360px;
-    display: table;
 }
 
 @media (min-width: 1360px){
@@ -480,14 +476,14 @@ html {
   border: 1px solid #565656;
   color: #000;
 }
-/*
+
 [role="button"]:active, .button:active.button[aria-selected="true"], [role="button"][aria-selected="true"]{
-  background-color: #d6e6f4;
-  color: #000;
+  background-color: #bebebe;
+  color: #444;
   text-decoration: none;
-  border: 1px solid #d6e6f4;  
+  border: 1px solid #bebebe;  
 }
-*/
+
 .button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover {
   background-color: #565656;
   color: #fff;

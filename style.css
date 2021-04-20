@@ -242,10 +242,10 @@ ul {
 
 
 [role="button"]:active, .button:active.button[aria-selected="true"], [role="button"][aria-selected="true"]{
-  background-color: #d6e6f4;
-  color: #00559d;
+  /*background-color: #d6e6f4;*/
+  /*: #00559d;*/
   text-decoration: none;
-  border: 1px solid #d6e6f4;  
+  /*border: 1px solid #d6e6f4;  */
 }
 
 @media (min-width: 768px) {
@@ -297,8 +297,8 @@ ul {
 }
 
 .button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
-  background:#e60021;
-  color:#fff
+  /*background:#e60021;*/
+  /*color:#fff*/
 }
 
 .button-large[disabled], input[type="submit"][disabled] {
