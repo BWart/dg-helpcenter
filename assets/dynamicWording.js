@@ -82,7 +82,7 @@ function filldynamicWording(){
         'chat' : 'Chat',
         'email' : 'Kontaktformular',
         'reactionMail' : 'Reaktionszeit: 1 Arbeitstag',
-        'contact' : 'Schreibe uns',
+        'contact' : 'Kontaktiere uns',
         'questionNotAnswered' : 'Deine Frage ist nicht beantwortet?',
         'noAnswerFound' : 'Keine passende Antwort gefunden?',
         'writeUs' : 'Schreib uns!!',
