@@ -85,7 +85,7 @@ function filldynamicWording(){
         'contact' : 'Kontaktiere uns',
         'questionNotAnswered' : 'Deine Frage ist nicht beantwortet?',
         'noAnswerFound' : 'Keine passende Antwort gefunden?',
-        'writeUs' : 'Schreib uns!!',
+        'writeUs' : 'Schreib uns',
         'openingHoursChat' : '&nbsp',
         'placeholder' : '&nbsp;',
         'placeholder2' : '&nbsp;',
