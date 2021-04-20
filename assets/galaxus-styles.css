@@ -337,6 +337,7 @@ display: none;
 
 .body-border {
   border-top: 30px transparent;
+  padding-top: 30px;
 }
   
 }
