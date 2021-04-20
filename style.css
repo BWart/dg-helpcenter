@@ -199,11 +199,11 @@ ul {
 }
 
 .button-contact{ 
-  border: 1px solid #d6e6f4;;
+  /*border: 1px solid #d6e6f4;*/
   border-radius: 3px;
-  color: #00559d;
+  /*color: #00559d;*/
   cursor: pointer;
-  background-color: #d6e6f4;
+  /*background-color: #d6e6f4;*/
   display: inline-block;
   font-size: 12px;
   line-height: 2.34;
