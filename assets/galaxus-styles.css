@@ -336,7 +336,7 @@ display: none;
 }
 
 .body-border {
-  border-top: 10px hidden;
+  
 }
   
 }
@@ -379,7 +379,7 @@ display: none;
 }
 
 .body-border {
-  border: 8px solid #00559D;
+  
 }
     
 .button-contact{
@@ -424,7 +424,7 @@ display: none;
 
 body {
   min-height: 100VH;
-  background-color: #ffffff;
+  background-color: transparent;
   color: #333333;
   
 }
