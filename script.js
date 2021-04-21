@@ -4,6 +4,29 @@
 
 $(document).ready(function() {
 
+  var chatcolor = '';
+  var portal = window.location.hostname;
+
+  switch(portal){
+    case'helpcenter.digitec.ch':
+            chatcolor = '#00559D';
+            console.log("Color digitec");
+            break;
+    case'helpcenter.galaxus.ch':
+            chatcolor = '#333333';
+            console.log("Color galaxus ch");
+            break;
+    case'helpcenter.galaxus.de':
+            chatcolor = '#333333';
+            console.log("Color galaxus de");
+            break;
+    default:
+            console.log("Color DEFAULT");
+            break;
+}
+
+
+
   switch ($('html').attr('lang')){
     case 'de':
       $('#query').attr('placeholder','Suche nach Hilfe und Lösungen');
@@ -386,7 +409,7 @@ $zopim(function() {
   
   // Hide or Shows Button if Status Changes
   $zopim(function() {
-      $zopim.livechat.theme.setColor('#00559D');
+      $zopim.livechat.theme.setColor(chatcolor);
       $zopim.livechat.setOnStatus(function(statusChange){
         if(statusChange == 'online' && chatButton == 'hidden' ){
           loadChat();
