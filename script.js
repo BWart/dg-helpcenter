@@ -9,6 +9,8 @@ $(document).ready(function() {
   var chatBackColorOffline = '';
   var portal = window.location.hostname;
 
+// CHAT Farben
+
   switch(portal){
     case'1helpcenter.digitec.ch1':
             chatcolor = '#00559D';
