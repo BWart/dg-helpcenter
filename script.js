@@ -5,22 +5,37 @@
 $(document).ready(function() {
 
   var chatcolor = '';
+  var chatColorOffline = '';
+  var chatBackColorOffline = '';
   var portal = window.location.hostname;
 
   switch(portal){
     case'1helpcenter.digitec.ch1':
             chatcolor = '#00559D';
+            chatColorOffline = '#bebebe';
+            chatBackColorOffline = '#ededed';
+
             console.log("Color digitec");
             break;
     case'helpcenter.digitec.ch':
             chatcolor = '#333333';
+            chatColorOffline = '#bebebe';
+            chatBackColorOffline = '#ededed';
+
             console.log("Color galaxus ch");
             break;
     case'helpcenter.galaxus.de':
             chatcolor = '#333333';
+            chatColorOffline = '#bebebe';
+            chatBackColorOffline = '#ededed';
+
             console.log("Color galaxus de");
             break;
     default:
+            chatcolor = '#00559D';
+            chatColorOffline = '#bebebe';
+            chatBackColorOffline = '#ededed';
+
             console.log("Color DEFAULT");
             break;
 }
@@ -485,8 +500,8 @@ $zopim(function() {
     } 
     if(cssStatusChange == 'offline'){
      $(".chat-private").css('pointer-events', 'none');
-      $(".chat-private").css('color', '#bebebe');
-      $(".chat-private").css('background-color', '#ededed');
+      $(".chat-private").css('color', chatColorOffline);
+      $(".chat-private").css('background-color', chatBackColorOffline);
       $(".chat-private").html(getNoAgentText);
     }
   }
