@@ -12,14 +12,14 @@ $(document).ready(function() {
 // CHAT Farben
 
   switch(portal){
-    case'1helpcenter.digitec.ch1':
+    case'helpcenter.digitec.ch':
             chatcolor = '#00559D';
             chatColorOffline = '#bebebe';
             chatBackColorOffline = '#ededed';
 
             console.log("Color digitec");
             break;
-    case'helpcenter.digitec.ch':
+    case'helpcenter.galaxus.ch':
             chatcolor = '#333333';
             chatColorOffline = '#bebebe';
             chatBackColorOffline = '#ededed';
