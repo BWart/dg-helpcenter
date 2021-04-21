@@ -8,11 +8,11 @@ $(document).ready(function() {
   var portal = window.location.hostname;
 
   switch(portal){
-    case'helpcenter.digitec.ch':
+    case'1helpcenter.digitec.ch1':
             chatcolor = '#00559D';
             console.log("Color digitec");
             break;
-    case'helpcenter.galaxus.ch':
+    case'helpcenter.digitec.ch':
             chatcolor = '#333333';
             console.log("Color galaxus ch");
             break;
