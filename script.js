@@ -481,7 +481,7 @@ $zopim(function() {
  */
   
   // Returns availability
-  function checkAvailability(){
+  /*function checkAvailability(){
     var dep;
     $zopim(function() {  
        dep = $zopim.livechat.departments.getDepartment(getZopimLanguage());
@@ -544,4 +544,4 @@ $zopim(function() {
     return langdep; 
   }
   
-});
+});*/
