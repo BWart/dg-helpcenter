@@ -91,12 +91,21 @@ var initialDescriptionLabel = $('#request_description_label').html();
 
 // Ticket Form Changes
  console.log("wenn anfrage einreichen geklickt"); 
-$('.request_anonymous_requester_email').insertBefore('.request_custom_fields_360007585419');
-$('.contactFormNote').insertAfter('.request_custom_fields_360014169819');
-$('.form-field:not(.request_ticket_form_id)').hide();
-$('.request_custom_fields_360014169819').show();
-$('.request-form .footer').hide();
-$('input[name ="commit"]').hide();
+
+ try{
+   console.log("Try Catch");
+   throw new Error("We mad an error");
+
+  $('.request_anonymous_requester_email').insertBefore('.request_custom_fields_360007585419');
+  $('.contactFormNote').insertAfter('.request_custom_fields_360014169819');
+  $('.form-field:not(.request_ticket_form_id)').hide();
+  $('.request_custom_fields_360014169819').show();
+  $('.request-form .footer').hide();
+  $('input[name ="commit"]').hide();
+ }catch(e){
+   console.log("Oops! Something went wrong... ");
+   console.error(e);
+ };
   
 // Removes Offers for Private Customers
   
