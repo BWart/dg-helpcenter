@@ -308,8 +308,9 @@ hideOrderNumber();
   var isActive = 0;
   
   $('.contactFormWriteUs').on("click", function () {
+    console.log("kontaktformular anfang");
   	if(isActive == 0){
-  
+      console.log("kontaktformular if");
 			//Hide Mail Subject Field
   		$('#request_subject').hide();
   		$('#request_subject_label').hide();
@@ -329,6 +330,7 @@ hideOrderNumber();
       isActive = 1;
 			mailFormOnly();
     }else{
+      console.log("kontaktformular else");
       $('.form-field').hide();
       $('.request_custom_fields_360014169819').hide();
       $('input[name ="commit"]').hide();
