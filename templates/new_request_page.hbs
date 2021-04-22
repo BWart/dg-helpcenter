@@ -90,56 +90,13 @@ var urlHash = window.location.hash.substring(1);
 var initialDescriptionLabel = $('#request_description_label').html();
 
 // Ticket Form Changes
- console.log("wenn anfrage einreichen geklickt"); 
-
-var isActive = 0;
-
- try{
-   console.log("Try Catch");
-   throw new Error("We mad an error");
-
-  $('.1request_anonymous_requester_email').insertBefore('.request_custom_fields_360007585419');
-  $('.1contactFormNote').insertAfter('.request_custom_fields_360014169819');
-  $('.1form-field:not(.request_ticket_form_id)').hide();
-  $('.1request_custom_fields_360014169819').show();
-  $('.1request-form .footer').hide();
-  $('1input[name ="commit"]').hide();
- }catch(e){
-   console.log("Oops! Something went wrong... ");
-   console.error(e);
-
-    
-    console.log("kontaktformular anfang");
-  	if(isActive == 0){
-      console.log("kontaktformular if");
-			//Hide Mail Subject Field
-  		$('#request_subject').hide();
-  		$('#request_subject_label').hide();
   
-      $('.form-field:not(.request_ticket_form_id)').show();
-      $('input[name ="commit"]').show();
-      //$('.request_custom_fields_360014169819').insertBefore('.request_anonymous_requester_email');
-      $('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); 
-
-			$('.contactDataTable').hide();
-			$('.contactFormTextNoBorder').hide();
-			$('.contactFormText').hide();
-			//$('.request_custom_fields_360014169819').hide();
-  
-  		hideOrderNumber();
-  
-      isActive = 1;
-			mailFormOnly();
-    }else{
-      console.log("kontaktformular else");
-      $('.form-field').hide();
-      $('.request_custom_fields_360014169819').hide();
-      $('input[name ="commit"]').hide();
-      isActive = 0;
-      $('.contactDataTableContent').css({ "border-bottom": "1px solid #ddd" });
-    }
-  
- };
+$('.request_anonymous_requester_email').insertBefore('.request_custom_fields_360007585419');
+$('.contactFormNote').insertAfter('.request_custom_fields_360014169819');
+$('.form-field:not(.request_ticket_form_id)').hide();
+$('.request_custom_fields_360014169819').show();
+$('.request-form .footer').hide();
+$('input[name ="commit"]').hide();
   
 // Removes Offers for Private Customers
   
@@ -348,7 +305,7 @@ hideOrderNumber();
   
   //Toggle for Contact Form
   
-  var isActive = 0;
+  /*var isActive = 0;
   
   $('.contactFormWriteUs').on("click", function () {
     console.log("kontaktformular anfang");
@@ -373,14 +330,14 @@ hideOrderNumber();
       isActive = 1;
 			mailFormOnly();
     }else{
-      console.log("kontaktformular else");
+      console.log("kontaktformular anfang");
       $('.form-field').hide();
       $('.request_custom_fields_360014169819').hide();
       $('input[name ="commit"]').hide();
       isActive = 0;
       $('.contactDataTableContent').css({ "border-bottom": "1px solid #ddd" });
     }
-  })
+  })*/
   
   //Phone Popups
   
