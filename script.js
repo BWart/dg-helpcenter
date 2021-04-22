@@ -1,7 +1,7 @@
 /*
  * jQuery v1.9.1 included
  */
-/*
+
 $(document).ready(function() {
 
   var chatcolor = '';
@@ -481,7 +481,7 @@ $zopim(function() {
  */
   
   // Returns availability
-  /*function checkAvailability(){
+  function checkAvailability(){
     var dep;
     $zopim(function() {  
        dep = $zopim.livechat.departments.getDepartment(getZopimLanguage());
@@ -544,4 +544,4 @@ $zopim(function() {
     return langdep; 
   }
   
-});*/
+});
