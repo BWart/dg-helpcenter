@@ -92,6 +92,8 @@ var initialDescriptionLabel = $('#request_description_label').html();
 // Ticket Form Changes
  console.log("wenn anfrage einreichen geklickt"); 
 
+var isActive = 0;
+
  try{
    console.log("Try Catch");
    throw new Error("We mad an error");
@@ -136,7 +138,7 @@ var initialDescriptionLabel = $('#request_description_label').html();
       isActive = 0;
       $('.contactDataTableContent').css({ "border-bottom": "1px solid #ddd" });
     }
-  })
+  );
  };
   
 // Removes Offers for Private Customers
