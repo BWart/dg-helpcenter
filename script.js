@@ -42,16 +42,16 @@ $(document).ready(function() {
             break;
 }
 
-try{
+/*try{
   throw new Error("We made an error");
   $('.button-contact2').on("click", function () {
-      
+
   }
 }
 catch(e){
 
   console.error(e);
-}
+}*/
 
 
 
