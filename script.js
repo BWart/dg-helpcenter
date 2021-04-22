@@ -1,7 +1,7 @@
 /*
  * jQuery v1.9.1 included
  */
-
+/*
 $(document).ready(function() {
 
   var chatcolor = '';
