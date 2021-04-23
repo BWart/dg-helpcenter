@@ -1,89 +1,48 @@
-<!--<div class="container-divider"></div>
-<div class="container">
-  <nav class="sub-nav">
-    {{breadcrumbs}}
-    {{search submit=false}}
-  </nav>
-<div class='contactFormNote'>
-  <div class='contactFormText'>
-<h2><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></h2>
-<h4><div class="contactFormTextInfo"></div></h4>
-<h4></h4>
-</div>
-<div class ='contactFormTextNoBorder'>
-    
-    <table>
-      <tr>
-        <td class = 'contactButtonTableCellLeftNoBorder' border="0"> <h2><div data-wording-key="questionNotAnswered"></div></h2></td>
-      </tr>
-    </table>
-    
-    <table class ='contactFormTextNoBorder nomobile' border="0">
-      <tr style="height:0px"></tr>
-      <tr>
-        <td class = 'contactButtonTableCellLeft'><h4 data-wording-key="email"></h4></td>
-				<td class = 'contactButtonTableCellLeftLeftBorder'><h4 data-wording-key="phone"></h4></td>
-				<td class = 'contactButtonTableCellLeftLeftBorder private-customer'><h4 data-wording-key="chat"></h4></td>
-      </tr>
-      <tr>
-        <td class ='contactButtonTableCellLeft'><a class="button-contact contactFormWriteUs" data-wording-key="writeUs"></a></td>
-        <td class ='contactButtonTableCellLeftLeftBorder'><div class="button-contact phone-number private-number private-customer" data-wording-key="callUsPrivate"></div>      <div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div></td>
-        <td class ='contactButtonTableCellLeftLeftBorder private-customer'><a class="button-contact chat-private" data-wording-key="chatUs"></a></td>
-      </tr>
-      <tr>
-        <td class ='contactButtonTableCellLeft'></td>
-        <td class ='contactButtonTableCellLeftLeftBorder'><div class='contact-info private-customer' data-wording-key="openingHoursPrivate"></div>    <div class='contact-info business-customer' data-wording-key="openingHoursBusiness"></div></td>
-        <td class ='contactButtonTableCellLeftLeftBorder private-customer'></td>
-      </tr>
-        
-    </table>
+<div id='requestException'></div>
 
-
-		<table class ='contactFormTextNoBorder mobile' border="0">
-      <tr style="height:0px"></tr>
-      <tr>
-        <td class ='contactButtonTableCellLeftNoBorder'><p class="font1" data-wording-key="email"></p></td>
-      </tr>
-      <tr>
-        <td class ='contactButtonTableCellLeftBottomBorder'><a class="button-contact contactFormWriteUs" data-wording-key="writeUs"></a></td>
-      </tr>
-      <tr>
-        <td class ='contactButtonTableCellLeftTopBorder'><div class="private-customer font1" data-wording-key="openingHoursPrivateMobile"></div><div class='business-customer font1' data-wording-key="openingHoursBusinessMobile"></div></td>
-      </tr>
-      <tr>
-        <td class ='contactButtonTableCellLeftBottomBorder'><div class="button-contact phone-number private-number2 private-customer" data-wording-key="callUsPrivateMobile"></div>      <div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div></td>
-      </tr>
-      <tr>
-        <td class ='contactButtonTableCellLeftTopBorder private-customer'><p class="font1">Chat</p></td>
-      </tr>
-      <tr>
-         <td class ='contactButtonTableCellLeftNoBorder private-customer'><a class="button-contact chat-private" data-wording-key="chatUs"></a></td>
-      </tr>
-
-    </table>
-
-  </div>
-  </div>
-
-  <h1>
-    {{t 'submit_a_request'}}
-    {{#if follow_up}}
-      <span class="follow-up-hint">
-        {{follow_up}}
-      </span>
-    {{/if}}
-  </h1>
-
-  <div class="form">
-    <h4 class = "contactFormInfoText2" data-wording-key="contactFormInfoText"></h4>
-    {{request_form}}
-  </div>
-
-  {{chat}}
-</div>
--->
 <script>
   
+var anfrageEinreichen = '<div class="container-divider"></div><div class="container"><nav class="sub-nav">{{breadcrumbs}}{{search submit=false}}</nav><div class="contactFormNote"><div class="contactFormText"><h2><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></h2><h4><div class="contactFormTextInfo"></div></h4><h4></h4></div><div class ="contactFormTextNoBorder"><table><tr><td class = "contactButtonTableCellLeftNoBorder" border="0"> <h2><div data-wording-key="questionNotAnswered"></div></h2></td></tr></table><table class ="contactFormTextNoBorder nomobile" border="0"><tr style="height:0px"></tr><tr><td class = "contactButtonTableCellLeft"><h4 data-wording-key="email"></h4></td><td class = "contactButtonTableCellLeftLeftBorder"><h4 data-wording-key="phone"></h4></td><td class = "contactButtonTableCellLeftLeftBorder private-customer"><h4 data-wording-key="chat"></h4></td></tr><tr><td class ="contactButtonTableCellLeft"><a class="button-contact contactFormWriteUs" data-wording-key="writeUs"></a></td><td class ="contactButtonTableCellLeftLeftBorder"><div class="button-contact phone-number private-number private-customer" data-wording-key="callUsPrivate"></div><div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div></td><td class ="contactButtonTableCellLeftLeftBorder private-customer"><a class="button-contact chat-private" data-wording-key="chatUs"></a></td></tr><tr><td class ="contactButtonTableCellLeft"></td<td class ="contactButtonTableCellLeftLeftBorder"><div class="contact-info private-customer" data-wording-key="openingHoursPrivate"></div><div class="contact-info business-customer" data-wording-key="openingHoursBusiness"></div></td><td class ="contactButtonTableCellLeftLeftBorder private-customer"></td></tr></table><table class ="contactFormTextNoBorder mobile" border="0"><tr style="height:0px"></tr><tr><td class ="contactButtonTableCellLeftNoBorder"><p class="font1" data-wording-key="email"></p></td></tr><tr><td class ="contactButtonTableCellLeftBottomBorder"><a class="button-contact contactFormWriteUs" data-wording-key="writeUs"></a></td></tr><tr><td class ="contactButtonTableCellLeftTopBorder"><div class="private-customer font1" data-wording-key="openingHoursPrivateMobile"></div><div class="business-customer font1" data-wording-key="openingHoursBusinessMobile"></div></td></tr><tr><td class ="contactButtonTableCellLeftBottomBorder"><div class="button-contact phone-number private-number2 private-customer" data-wording-key="callUsPrivateMobile"></div><div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div></td></tr><tr><td class ="contactButtonTableCellLeftTopBorder private-customer"><p class="font1">Chat</p></td></tr><tr><td class ="contactButtonTableCellLeftNoBorder private-customer"><a class="button-contact chat-private" data-wording-key="chatUs"></a></td></tr></table></div></div><h1>{{t "submit_a_request"}}{{#if follow_up}}<span class="follow-up-hint">{{follow_up}}</span>{{/if}}</h1><div class="form"><h4 class = "contactFormInfoText2" data-wording-key="contactFormInfoText"></h4>{{request_form}}</div>{{chat}}</div>';
+
+try{
+   throw new Error("We made an error");
+   document.getElementById('requestException').innerHTML = anfrageEinreichen;
+    
+}catch(e){
+    console.error(e);
+    console.log("catch if anfang");
+
+  	if(isActive == 0){
+      console.log("kontaktformular if");
+			//Hide Mail Subject Field
+  		$('#request_subject').hide();
+  		$('#request_subject_label').hide();
+  
+      $('.form-field:not(.request_ticket_form_id)').show();
+      $('input[name ="commit"]').show();
+      //$('.request_custom_fields_360014169819').insertBefore('.request_anonymous_requester_email');
+      $('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); 
+
+			$('.contactDataTable').hide();
+			$('.contactFormTextNoBorder').hide();
+			$('.contactFormText').hide();
+			//$('.request_custom_fields_360014169819').hide();
+  
+  		hideOrderNumber();
+  
+      isActive = 1;
+			mailFormOnly();
+    }else{
+      console.log("catch else anfang");
+      $('.form-field').hide();
+      $('.request_custom_fields_360014169819').hide();
+      $('input[name ="commit"]').hide();
+      isActive = 0;
+      $('.contactDataTableContent').css({ "border-bottom": "1px solid #ddd" });
+    }
+
+  }
+
 var mobile = window.innerWidth < 767;
 
 var urlHash = window.location.hash.substring(1);
