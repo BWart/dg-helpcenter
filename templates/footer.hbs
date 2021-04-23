@@ -1,18 +1,23 @@
 <footer class="footer">
  <div class="footer-inner">
    <h2><a class='contactLinkInfo' data-wording-key="noAnswerFound"></a></h2>
-   <h4><a href="/hc/requests/new"><button class="button-contact2" data-wording-key="contact" style="line-height: 2;padding: 0px 40px;font-family: Gibson, sans-serif;"></button></a></h4>
+   <h4><a id = 'buttonTest' href="/hc/requests/new"></a></h4>
 
   </div>
 </footer>
 <script>
   try{
+    console.log('TRY');
    throw new Error("We made an error");
-    $('.button-contact2').on("click", function () {
-    document.getElementById('buttonTest').innerHTML = '<button class="button-contact2" data-wording-key="contact" style="line-height: 2;padding: 0px 40px;font-family: Gibson, sans-serif;"></button>'
+    
+   document.getElementById('buttonTest').innerHTML = '<button class="button-contact2" data-wording-key="contact" style="line-height: 2;padding: 0px 40px;font-family: Gibson, sans-serif;"></button>';
 
-  })
+  
   }catch(e){
+      console.log('CATCH');
+      document.getElementById('buttonTest').innerHTML = '<button class="button-contact chat-private" data-wording-key="chatUs" style="line-height: 2;padding: 0px 40px;font-family: Gibson, sans-serif;"></button>';
+
+
       $('.request_anonymous_requester_email').insertBefore('.request_custom_fields_360007585419');
       $('.contactFormNote').insertAfter('.request_custom_fields_360014169819');
       $('.form-field:not(.request_ticket_form_id)').hide();
