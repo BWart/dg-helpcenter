@@ -223,14 +223,21 @@
   </div>
 </div>
 <script>
-  $('.article-vote-down').click(function(){ 
+  console.log('SCRIPT');
+  /*$('.article-vote-down').click(function(){ 
     var $this = $(this);
     if($this.data('clicked')) {
         $this.data('clicked', true);
-        $(div[href='']).attr('href', 'hc/requests/new');
+        $(a[href='{{section.url}}']).attr('href', 'hc/requests/new');
     }
     else {
         $this.data('clicked', false);
     }
-  })
+  })*/
+
+  ('.article-vote-down').click(function(){
+        window.location.href = 'hc/requests/new';
+        return false;
+  });
+
 </script>
