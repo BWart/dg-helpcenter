@@ -96,7 +96,7 @@
         {{#with article}}
           <div class="article-votes">
             <span class="article-votes-question">{{t 'was_this_article_helpful'}}</span>
-            <div class="article-votes-controls" role='radiogroup' id="votebuttons">
+            <div class="article-votes-controls" role='radiogroup'>
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
               {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
 
@@ -107,14 +107,7 @@
           </div>
         {{/with}}
 
-        <!-- Feedback senden Box wenn Downvote gedrueckt wird -->
-
-        <div id="fbopen" style="display: none;">
-              <textarea id="fbtext" height="120%" width="80px" align="center" ></textarea>
-              <button id="fbsenden" onclick="document.getElementById('Add').innerHTML=document.getElementById('downvotebox').value;">Feedback senden</button>
-        </div>
-        
-        
+       
 <!-- Request Link
 
         <div class="article-more-questions">
@@ -225,68 +218,6 @@
 
           <p class="comment-callout">{{comment_callout}}</p>
         </section> -->
-
-        <script>
-
-            //Feedbackbox bei Downvote; Wenn versteckt und geklickt, dann oefnnen
-
-            $('.article-vote-down').click(function(){ 
-              if($('#fbopen').is(':hidden')){
-                $('#fbopen').show(1000);
-                $(this).toggleClass('clicked')
-
-                $('html, body').animate({
-                  scrollTop: $("#fbsenden").offset().top
-                }, 2000, function() {
-                  $("#fbsenden").focus();
-                  /*if ($target.is(":focus")) { // Checking if the target was focused
-                    return false;
-                  } else {
-                    $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-                    $target.focus(); // Set focus again*/
-                });              
-              }      
-              //Scroll down to "Feedback senden" Button if clickedand Box opened
-
-
-
-            });
-
-            // Wenn Feedbox offen und man Upvote klickt, verschwindet die Feedbackbox
-
-            $('.article-vote-up').click(function(){
-                if($('#fbopen').is(':visible')){
-                  $('#fbopen').hide(1000);
-                }
-
-                $('html, body').animate({
-                  scrollTop: $('.article-vote-up').offset().top
-                }, 2000);              
-
-            });
-
-
-        </script>
-
-                    <!--function votedownclick(){
-              var x = document.getElementById("Add");
-              if(x.style.display === "none"){
-                x.style.display = "block";
-              }
-              else{
-                x.style.display = "none"
-              }
-
-            }
-
-        $(document).ready(function()) {  
-            $("#Add").on("click", function() {  
-                $("#article-votes-controls").append("<div><br><input type='text'/><br></div>");  
-            });  
-            $("#Remove").on("click", function() {  
-                $("#article-votes-controls").children().last().remove();  
-            });  
-        });  -->
       </div>
     </article>
   </div>

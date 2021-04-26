@@ -43,8 +43,6 @@ $(document).ready(function() {
 }
 
 
-
-
   switch ($('html').attr('lang')){
     case 'de':
       $('#query').attr('placeholder','Suche nach Hilfe und Lösungen');
