@@ -98,7 +98,7 @@
             <span class="article-votes-question">{{t 'was_this_article_helpful'}}</span>
             <div class="article-votes-controls" role='radiogroup'>
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
-              {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
+              {{vote 'down' role='radio' class='button article-vote article-vote-down' href = ''}}
 
             </div>
             <small class="article-votes-count">
@@ -222,3 +222,15 @@
     </article>
   </div>
 </div>
+<script>
+  $('.article-vote-down').click(function(){ 
+    var $this = $(this);
+    if($this.data('clicked')) {
+        $this.data('clicked', true);
+        $(a[href='']).attr('href', 'hc/requests/new');
+    }
+    else {
+        $this.data('clicked', false);
+    }
+  })
+</script>
