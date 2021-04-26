@@ -1,34 +1,25 @@
 <footer class="footer">
  <div class="footer-inner">
-   <h2><a class='contactLinkInfo' data-wording-key="noAnswerFound">
-     <button class="button-contact2" data-wording-key="contact" style="line-height: 2;padding: 0px 40px;font-family: Gibson, sans-serif;"></button>';
-
-   </a></h2>
-   <h4><a id = 'buttonTest' href="/hc/requests/new"></a></h4>
+   <h2><a class='contactLinkInfo' data-wording-key="noAnswerFound"></a></h2>
+   <h4><a href="/hc/requests/new"><button class="button-contact2" data-wording-key="contact" style="line-height: 2;padding: 0px 40px;font-family: Gibson, sans-serif;"></button></a></h4>
 
   </div>
 </footer>
 <script>
  /* try{
-    console.log('TRY');
    throw new Error("We made an error");
-    
-   document.getElementById('buttonTest').innerHTML = '<button class="button-contact2" data-wording-key="contact" style="line-height: 2;padding: 0px 40px;font-family: Gibson, sans-serif;"></button>';
+    $('.button-contact2').on("click", function () {
 
-  
+  }
   }catch(e){
-      console.log('CATCH');
-      document.getElementById('buttonTest').innerHTML = '<button class="button-contact contactFormWriteUs" data-wording-key="writeUs" style="line-height: 2;padding: 0px 40px;font-family: Gibson, sans-serif;"></button>';
-
-
-      /*$('.request_anonymous_requester_email').insertBefore('.request_custom_fields_360007585419');
+      $('.request_anonymous_requester_email').insertBefore('.request_custom_fields_360007585419');
       $('.contactFormNote').insertAfter('.request_custom_fields_360014169819');
       $('.form-field:not(.request_ticket_form_id)').hide();
       $('.request_custom_fields_360014169819').show();
       $('.request-form .footer').hide();
-      $('input[name ="commit"]').hide();*/
+      $('input[name ="commit"]').hide();
 
-   
-    console.log(e);
+    
+    console.error(e);
   }*/
 </script>
