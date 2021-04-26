@@ -239,7 +239,7 @@
 
   ('.article-vote-down').click(function(){
         console.log('SPLIT');
-        varr linkArray = url.split('articles');
+        varr linkArray = url.split('/');
         linkArray.pop();
         window.location.href = 'requests/new';
 
