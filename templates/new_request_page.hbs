@@ -102,7 +102,7 @@ $('input[name ="commit"]').hide();
 }catch(e){
     
   
-  
+  $('.contactFormWriteUs').on("click", function () {
     console.log("kontaktformular anfang");
   	if(isActive == 0){
       console.log("kontaktformular if");
@@ -132,7 +132,7 @@ $('input[name ="commit"]').hide();
       isActive = 0;
       $('.contactDataTableContent').css({ "border-bottom": "1px solid #ddd" });
     }
-  
+  })
 }
 // Removes Offers for Private Customers
   
