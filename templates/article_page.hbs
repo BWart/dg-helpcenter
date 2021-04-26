@@ -242,9 +242,9 @@
         console.log('SPLIT');
         var linkArray = url.split('articles');
         linkArray.pop();
-        window.location.href = 'requests/new';
+        window.location.href = linkArray + 'requests/new';
 
-        console.log(window.location.href);
+        console.log(linkArray[0]);
 
         /*window.location.href = 'hc/requests/new';
         return false;*/
