@@ -98,7 +98,7 @@
             <span class="article-votes-question">{{t 'was_this_article_helpful'}}</span>
             <div class="article-votes-controls" role='radiogroup'>
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
-              {{vote 'down' role='radio' class='button article-vote article-vote-down' href = ''}}
+              {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
 
             </div>
             <small class="article-votes-count">
@@ -235,9 +235,18 @@
     }
   })*/
 
+  var url = window.location.href;
+
   ('.article-vote-down').click(function(){
-        window.location.href = 'hc/requests/new';
-        return false;
+        console.log('SPLIT');
+        varr linkArray = url.split('articles');
+        linkArray.pop();
+        window.location.href = 'requests/new';
+
+        console.log(window.location.href);
+
+        /*window.location.href = 'hc/requests/new';
+        return false;*/
   });
 
 </script>
