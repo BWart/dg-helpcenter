@@ -533,3 +533,12 @@ select:focus {
 .meshim_widget_widgets_ConnAwareSubmit:hover{
   background: #494949;
 }
+
+/*downvote*/
+
+#FeedbackVote{
+  font-size: 32px;
+  font-family: Gibson, sans-serif;
+  font-weight: 300;
+  margin-top: 0;
+}
