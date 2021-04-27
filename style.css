@@ -4180,3 +4180,10 @@ ul {
   outline: none;
   padding: 0px 10px 10px;
 }
+
+#FeedbackVote{
+  font-size: 32px;
+  font-family: Gibson, sans-serif;
+  font-weight: 300;
+  margin-top: 0;
+}
