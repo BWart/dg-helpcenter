@@ -236,6 +236,7 @@
   })*/
 
   var url = window.location.href;
+  var hidden = 0;
   
 
     $('.article-vote-down').on('click',function(){
@@ -243,6 +244,7 @@
         var linkArray = url.split('articles');
         linkArray.pop();
         window.location.href = linkArray + 'requests/new';
+        hidden = 1;
 
         var urlTest = linkArray + 'requests/new';
 
