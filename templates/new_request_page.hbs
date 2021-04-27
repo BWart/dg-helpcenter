@@ -745,6 +745,13 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       //$('.request_custom_fields_360014169819').insertBefore('.request_anonymous_requester_email');
       $('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); */
 
+      $('.request_anonymous_requester_email').insertBefore('.request_custom_fields_360007585419');
+      $('.contactFormNote').insertAfter('.request_custom_fields_360014169819');
+      $('.form-field:not(.request_ticket_form_id)').hide();
+      $('.request_custom_fields_360014169819').show();
+      $('.request-form .footer').hide();
+      $('input[name ="commit"]').hide();
+
       $('#request_subject').hide();
   		$('#request_subject_label').hide();
   
