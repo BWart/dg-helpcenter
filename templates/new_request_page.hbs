@@ -730,7 +730,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
      console.log(referrer);
   }
 
-  if (window.location.href.indexOf('articles') > -1) {
+  if (referrer.indexOf('articles') > -1) {
       console.log('Contains Test');
 
       $('.container-divider').hide();
