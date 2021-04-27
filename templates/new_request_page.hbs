@@ -81,8 +81,11 @@
 
   {{chat}}
 </div>
-<div id = 'FeedbackVote'></div>
 
+<div>
+  <div id = 'FeedbackVote'></div>
+  <textarea></textarea>
+</div>
 <script>
   
 var mobile = window.innerWidth < 767;
@@ -746,7 +749,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       /*$('.form-field:not(.request_ticket_form_id)').show();
       $('input[name ="commit"]').show();
       //$('.request_custom_fields_360014169819').insertBefore('.request_anonymous_requester_email');*/
-      $('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); 
+      /*$('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); */
 
       document.getElementById('FeedbackVote').innerHTML = 'Vielen Dank für dein Feedback.<br><div style="font-size: 21px;">Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>';
       $('#FeedbackVote').show();
