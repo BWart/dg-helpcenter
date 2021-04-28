@@ -448,6 +448,8 @@ body {
 html {
   min-height: 100%;
   background-color: #d1d3d4; 
+  margin-left: calc(100vw - 100%);
+  scroll-behavior: smooth;
 }
 
 /* aus style.css */
@@ -572,7 +574,7 @@ select:focus {
   min-height: 150px;
 }
 
-#hrefEinreichen{
+/*#hrefEinreichen{
   color: #fff;
-}
+}*/
 
