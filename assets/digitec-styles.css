@@ -490,12 +490,12 @@
   border: 1px solid #e60020;
 }
 
-.button-large, input[type="submit"] {
+.button-large, input[type="submit"], .FeedbackButton[type="sumbit"] {
   color: #fff;
   background-color: #00559d;
 }
 
-.button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
+.button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus, .FeedbackButton[type="sumbit"]:hover {
   background:#e60021;
   color:#fff
 }
