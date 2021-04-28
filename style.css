@@ -4195,10 +4195,22 @@ ul {
   font-family: Gibson, sans-serif;
   font-weight: 300;
   margin-top: 0;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 5%;
 
-  display: block;
-    margin-block-start: 1.33em;
-    margin-block-end: 1.33em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+
+}
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+@media (min-width: 1160px) {
+  .container {
+    padding: 0;
+    width: 90%;
+  }
 }
