@@ -90,7 +90,7 @@
     </div>
   </div>
   <textarea id = 'FeedbackBox'></textarea>
-  <button class="button-large">Einreichen</button>
+  <button class = 'button-large' id = 'FeedbackButton'>Einreichen</button>
 </div>
 
 <script>
@@ -768,5 +768,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
     
   }
 
+  $('#FeedbackButton').on('click',function(){
+      window.location.href = referrer;
+  });
 
 </script>
