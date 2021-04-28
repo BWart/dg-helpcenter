@@ -4191,22 +4191,31 @@ ul {
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 5%;
+}
 
+@media (min-width: 1160px) {
+  #Feedbackvote {
+    padding: 0;
+    width: 90%;
+  }
 }
 
 #FeedbackText{
   font-size: 16px;
+
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
-.container {
+
+
+#FeedbackBox{
+  box-sizing: border-box;
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 5%;
-}
 
-@media (min-width: 1160px) {
-  .container {
-    padding: 0;
-    width: 90%;
-  }
 }
