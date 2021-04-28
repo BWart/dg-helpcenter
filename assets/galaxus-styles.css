@@ -572,12 +572,12 @@ select:focus {
   min-height: 150px;
 }
 
-#FeedbackButton[type="submit"]{
+#FeedbackButton{
   color: #fff;
   background-color: #444;
 }
 
-#FeedbackButton[type="submit"]:hover{
+#FeedbackButton:hover{
   background: #000;
   color: #fff;
 }
