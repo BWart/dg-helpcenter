@@ -268,7 +268,7 @@ ul {
   cursor: default;
 }
 
-.button-large, input[type="submit"] {
+.button-large, input[type="submit"], .FeedbackButton[type="sumbit"] {
   border: 0;
   border-radius: 4px;
   /*color:#fff;*/
@@ -282,7 +282,7 @@ ul {
 }
 
 @media (min-width: 768px) {
-  .button-large, input[type="submit"] {
+  .button-large, input[type="submit"], .FeedbackButton[type="sumbit"] {
     width: auto;
   }
 }
@@ -296,7 +296,7 @@ ul {
   font-size: 16px;
 }
 
-.button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
+.button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus, .FeedbackButton[type="sumbit"]:hover {
   /*background:#e60021;*/
   /*color:#fff*/
 }
