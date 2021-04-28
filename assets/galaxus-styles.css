@@ -490,12 +490,12 @@ html {
   border: 1px solid #565656;
 }
 
-.button-large, input[type="submit"], .FeedbackButton[type="submit"] {
+.button-large, input[type="submit"] {
   color: #fff;
   background-color: #444;
 }
 
-.button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus, .FeedbackButton[type="submit"]:hover {
+.button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
   background:#000;
   color:#fff
 }
@@ -534,11 +534,51 @@ select:focus {
   background: #494949;
 }
 
-/*downvote
+/*downvote*/
 
 #FeedbackVote{
   font-size: 32px;
   font-family: Gibson, sans-serif;
   font-weight: 300;
   margin-top: 0;
-}*/
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+@media (min-width: 1160px) {
+  #Feedbackvote {
+    padding: 0;
+    width: 90%;
+  }
+}
+
+#FeedbackText{
+  font-size: 16px;
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+
+
+#FeedbackBox{
+  box-sizing: border-box;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 5%;
+  min-height: 150px;
+}
+
+.FeedbackButton[type="submit"]{
+  color: #fff;
+  background-color: #444;
+}
+
+.FeedbackButton[type="submit"]:hover{
+  background: #000;
+  color: #fff;
+}
+

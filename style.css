@@ -4182,7 +4182,7 @@ ul {
 }
 
 /*downvote*/
-
+/*
 #FeedbackVote{
   font-size: 32px;
   font-family: Gibson, sans-serif;
@@ -4219,3 +4219,13 @@ ul {
   min-height: 150px;
 }
 
+.FeedbackButton[type="submit"]{
+  color: #fff;
+  background-color: #00559d;
+}
+
+.FeedbackButton[type="submit"]:hover{
+  background: #e60021;
+  color: #fff;
+}
+*/
