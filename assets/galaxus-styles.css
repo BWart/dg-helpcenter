@@ -572,13 +572,5 @@ select:focus {
   min-height: 150px;
 }
 
-#FeedbackButton{
-  color: #fff;
-  background-color: #444;
-}
 
-#FeedbackButton:hover{
-  background: #000;
-  color: #fff;
-}
 
