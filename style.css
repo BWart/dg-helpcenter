@@ -4188,18 +4188,14 @@ ul {
   font-family: Gibson, sans-serif;
   font-weight: 300;
   margin-top: 0;
-}
-
-#FeedbackText{
-  font-size: 16px;
-  font-family: Gibson, sans-serif;
-  font-weight: 300;
-  margin-top: 0;
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 5%;
 
+}
 
+#FeedbackText{
+  font-size: 16px;
 }
 
 .container {
