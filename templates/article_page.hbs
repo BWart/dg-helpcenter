@@ -239,6 +239,7 @@
   //Wenn Downvote gedrueckt wurde dann wird der Link gesplittet und die Url zum Aufruf der new request page dran gehangen
 
   var url = window.location.href;  
+  sessionStorage.clear();
   sessionStorage.setItem('Feedback', 0);
 
     $('.article-vote-down').on('click',function(){
