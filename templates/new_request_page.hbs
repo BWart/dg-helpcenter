@@ -757,7 +757,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
      console.log(referrer);
   }
 
-  if (referrer.indexOf('articles') > -1) {
+  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback') === 1) {
       console.log('Contains Test');
 
       
