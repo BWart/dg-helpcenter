@@ -1,9 +1,10 @@
 <div class="container-divider"></div>
-<div class="container">
   <nav class="sub-nav">
     {{breadcrumbs}}
     {{search submit=false}}
   </nav>
+<div class="container">
+
 <div class='contactFormNote'>
   <div class='contactFormText'>
 <h2><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></h2>
@@ -761,11 +762,18 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   if (referrer.indexOf('articles') > -1) {
       console.log('Contains Test');
 
-      
+      $('.container').hide();
       $('.contactFormNote').hide();
       $('.contactFormTextTitel').hide();
       $('.contactFormTextInfo').hide();
       $('.contactFormTextNoBorder').hide();
+
+      /*$('.contactButtonTableCellLeftNoBorder').hide();
+      $('.contactFormTextNoBorder').hide();
+      $('.contactFormTextNoBorder').hide();
+      $('.contactFormTextNoBorder').hide();
+      $('.contactFormTextNoBorder').hide();
+      $('.contactFormTextNoBorder').hide();*/
       
 
       /*$('.form-field:not(.request_ticket_form_id)').show();
