@@ -870,6 +870,10 @@ ul {
   margin-bottom: 30px;
   min-height: 50px;
   padding-bottom: 15px;
+
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 5%;
 }
 
 @media (min-width: 768px) {
