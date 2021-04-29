@@ -109,7 +109,7 @@
 
 <script>
 //Feedbackbox versteckt
-$('#FeedbackVote').hide();
+/*$('#FeedbackVote').hide();*/
 
 var mobile = window.innerWidth < 767;
 
@@ -752,7 +752,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
 //Downvote-button Formular Hide Funktion
 
-  if(document.referrer.indexOf(window.location.hostname) != -1){
+  if(document.referrer.indexOf(window.location.hostname) != -1 && sessionStorage.setItem('Feedback') === '1'){
      var referrer =  document.referrer;
      console.log(referrer);
   }
@@ -775,9 +775,9 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       /*document.getElementById('FeedbackVote').innerHTML = 'Vielen Dank für dein Feedback.<br><div style="font-size: 21px;">Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>';
       */ 
   }else{
-        $('.form').hide();
-        $('.Header').hide();
-        $('#FeedbackVote').show();
+        $('.form').show();
+        $('.Header').show();
+        $('#FeedbackVote').hide();
 
   }
 
