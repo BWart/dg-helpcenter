@@ -570,7 +570,6 @@ select:focus {
   box-sizing: border-box;
   max-width: 1160px;
   margin: 0 auto;
-
   min-height: 150px;
 }
 
