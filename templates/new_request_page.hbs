@@ -89,7 +89,7 @@
     Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.
     </div>
   </div>
-  <form >
+  <form method="POST" action="mailto:sipp.kopf@web.de?subject=Feedback%20Helpcenter">
     <textarea type="text" id ='FeedbackBox'required placeholder="Hier können Sie gerne Ihre Verbesserungsvorschläge hinterlegen."></textarea>
     <button type="submit" class = 'button-large' id = 'FeedbackButton' name="Feedback">Einreichen
       <!--<a id="hrefEinreichen" href="mailto:sipp.kopf@web.de?subject=Feedback%20Helpcenter">Einreichen</a>-->
@@ -752,14 +752,12 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
 //Downvote-button Formular Hide Funktion
 
-var referrerButton ='';
-
   if(document.referrer.indexOf(window.location.hostname) != -1){
      var referrer =  document.referrer;
      console.log(referrer);
   }
 
-  if (referrer.indexOf('articles') > -1 && document.getElementById('.article-vote-down').clicked == true) {
+  if (referrer.indexOf('articles') > -1) {
       console.log('Contains Test');
 
       
@@ -775,23 +773,19 @@ var referrerButton ='';
       /*$('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); */
 
       /*document.getElementById('FeedbackVote').innerHTML = 'Vielen Dank für dein Feedback.<br><div style="font-size: 21px;">Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>';
-            method="POST" action="mailto:sipp.kopf@web.de?subject=Feedback%20Helpcenter"*/ 
+      */ 
   }else{
-        $('.form').show();
-        $('.Header').show();
-        $('#FeedbackVote').hide();
+        $('.form').hide();
+        $('.Header').hide();
+        $('#FeedbackVote').show();
 
   }
 
-  console.log(referrer);
-  console.log(referrerButton);
-
   $('#FeedbackButton').on('click',function(){
     if($(FeedbackBox).val() != ''){
-      console.log(referrer);
-      window.location.href = referrerButton;
-      console.log('na du');
-    }else{console.log('juhu');}
+      console.log('IF');
+      window.location.href = referrer;
+    }else{console.log('ELSE');}
   });
 
 </script>
