@@ -108,15 +108,22 @@
 
 
 <script>
+//Feedbackbox versteckt
+$('#FeedbackVote').hide();
 
-
-  
 var mobile = window.innerWidth < 767;
 
 var urlHash = window.location.hash.substring(1);
 var initialDescriptionLabel = $('#request_description_label').html();
 
+// Ticket Form Changes
 
+$('.request_anonymous_requester_email').insertBefore('.request_custom_fields_360007585419');
+$('.contactFormNote').insertAfter('.request_custom_fields_360014169819');
+$('.form-field:not(.request_ticket_form_id)').hide();
+$('.request_custom_fields_360014169819').show();
+$('.request-form .footer').hide();
+$('input[name ="commit"]').hide();
 
 // Removes Offers for Private Customers
   
@@ -770,18 +777,6 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
      
     
-  }else{
-    //Feedbackbox versteckt
-    $('#FeedbackVote').hide();
-
-    // Ticket Form Changes
-
-    $('.request_anonymous_requester_email').insertBefore('.request_custom_fields_360007585419');
-    $('.contactFormNote').insertAfter('.request_custom_fields_360014169819');
-    $('.form-field:not(.request_ticket_form_id)').hide();
-    $('.request_custom_fields_360014169819').show();
-    $('.request-form .footer').hide();
-    $('input[name ="commit"]').hide();
   }
 
   $('#FeedbackButton').on('click',function(){
