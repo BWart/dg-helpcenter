@@ -90,8 +90,8 @@
     </div>
   </div>
   <form method="POST" action="mailto:sipp.kopf@web.de?subject=Feedback%20Helpcenter">
-    <textarea type="text" id = 'FeedbackBox'required placeholder="Hier können Sie gerne Ihre Verbesserungsvorschläge hinterlegen."></textarea>
-    <button type="submit" class = 'button-large' id = 'FeedbackButton' name="Feedback" href=''>Einreichen
+    <textarea type="text" id ='FeedbackBox'required placeholder="Hier können Sie gerne Ihre Verbesserungsvorschläge hinterlegen."></textarea>
+    <button type="submit" class = 'button-large' id = 'FeedbackButton' name="Feedback">Einreichen
       <!--<a id="hrefEinreichen" href="mailto:sipp.kopf@web.de?subject=Feedback%20Helpcenter">Einreichen</a>-->
     </button>
   </form>
@@ -781,8 +781,9 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   }
 
   $('#FeedbackButton').on('click',function(){
-      /*window.location.href = referrer;*/
-      document.getElementById('FeedbackButton').href = referrer;
+    if($(FeedbackBox).val().length >= 0){
+      window.location.href = referrer;
+    }
   });
 
 </script>
