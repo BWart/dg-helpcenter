@@ -759,7 +759,7 @@ var referrerButton ='';
      console.log(referrer);
   }
 
-  if (referrer.indexOf('articles') > -1) {
+  if (referrer.indexOf('articles') > -1 && document.getElementById('button-contact2').clicked == true) {
       console.log('Contains Test');
 
       
@@ -777,9 +777,9 @@ var referrerButton ='';
       /*document.getElementById('FeedbackVote').innerHTML = 'Vielen Dank für dein Feedback.<br><div style="font-size: 21px;">Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>';
             method="POST" action="mailto:sipp.kopf@web.de?subject=Feedback%20Helpcenter"*/ 
   }else{
-        $('.form').hide();
-        $('.Header').hide();
-        $('#FeedbackVote').show();
+        $('.form').show();
+        $('.Header').show();
+        $('#FeedbackVote').hide();
 
   }
 
