@@ -239,7 +239,7 @@
   //Wenn Downvote gedrueckt wurde dann wird der Link gesplittet und die Url zum Aufruf der new request page dran gehangen
 
   var url = window.location.href;  
-  sessionStorage.setItem('Feedback', '0');
+  sessionStorage.setItem('Feedback', 0);
 
     $('.article-vote-down').on('click',function(){
         console.log('SPLIT');
@@ -249,7 +249,7 @@
 
         var urlTest = linkArray + 'requests/new';
 
-        sessionStorage.setItem('Feedback', '1');
+        sessionStorage.setItem('Feedback', 1);
         sessionStorage.getItem('Feedback');
 
         console.log(linkArray[0]);

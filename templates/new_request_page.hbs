@@ -752,12 +752,12 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
 //Downvote-button Formular Hide Funktion
 
-  if(document.referrer.indexOf(window.location.hostname) != -1 && sessionStorage.getItem('Feedback') === '1'){
+  if(document.referrer.indexOf(window.location.hostname) != -1 && sessionStorage.getItem('Feedback') === 1){
      var referrer =  document.referrer;
      console.log(referrer);
   }
 
-  if (referrer.indexOf('articles') > -1 && sessionStorage.getItem('Feedback') === '1') {
+  if (referrer.indexOf('articles') > -1 && sessionStorage.getItem('Feedback') === 1) {
       console.log('Contains Test');
 
       
@@ -778,7 +778,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
         $('.form').show();
         $('.Header').show();
         $('#FeedbackVote').hide();
-        sessionStorage.setItem('Feedback', '0');
+        sessionStorage.setItem('Feedback', 0);
 
   }
 
