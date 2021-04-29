@@ -752,6 +752,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
 //Downvote-button Formular Hide Funktion
 
+var referrerButton ='';
+
   if(document.referrer.indexOf(window.location.hostname) != -1){
      var referrer =  document.referrer;
      console.log(referrer);
@@ -781,10 +783,13 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
   }
 
+  console.log(referrer);
+  console.log(referrerButton);
+
   $('#FeedbackButton').on('click',function(){
     if($(FeedbackBox).val() != ''){
       console.log(referrer);
-      window.location.href = referrer;
+      window.location.href = referrerButton;
       console.log('na du');
     }else{console.log('juhu');}
   });
