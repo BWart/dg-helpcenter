@@ -90,7 +90,7 @@
     </div>
   </div>
   <form method="POST" action="mailto:sipp.kopf@web.de?subject=Feedback%20Helpcenter">
-    <textarea type="text" id = 'FeedbackBox' placeholder="Hier können Sie gerne Ihre Verbesserungsvorschläge hinterlegen."></textarea>
+    <textarea type="text" id = 'FeedbackBox'required placeholder="Hier können Sie gerne Ihre Verbesserungsvorschläge hinterlegen."></textarea>
     <button type="submit" class = 'button-large' id = 'FeedbackButton' name="Feedback">Einreichen
       <!--<a id="hrefEinreichen" href="mailto:sipp.kopf@web.de?subject=Feedback%20Helpcenter">Einreichen</a>-->
     </button>
@@ -781,14 +781,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   }
 
   $('#FeedbackButton').on('click',function(){
-    if(document.getElementById("FeedbackBox").value == '')
-    {
-      console.log('IFFFFFFFFFFFFFFF');
-      document.getElementById('FeedbackBox').innerHTML ='<div id = "request_description_error" class = "notification notification-error notification-inline">Beschreibung: darf nicht leer sein</div>';
-    }else{
-
-    window.location.href = referrer;
-    }
+      window.location.href = referrer;
   });
 
 </script>
