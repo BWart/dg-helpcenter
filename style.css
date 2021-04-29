@@ -880,6 +880,9 @@ ul {
   .sub-nav {
     align-items: baseline;
     flex-direction: row;
+    
+    padding: 0;
+    width: 90%;
   }
 }
 
