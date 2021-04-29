@@ -241,7 +241,7 @@
   var url = window.location.href;  
   sessionStorage.setItem('Feedback', '0');
 
-    $(' ').on('click',function(){
+    $('.article-vote-down').on('click',function(){
         console.log('SPLIT');
         var linkArray = url.split('articles');
         linkArray.pop();
