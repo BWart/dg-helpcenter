@@ -65,7 +65,7 @@
   </div>
   </div>
   
-  <h1>
+  <h1 class="Header">
     {{t 'submit_a_request'}}
     {{#if follow_up}}
       <span class="follow-up-hint">
@@ -772,6 +772,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('.form').hide();
       $('.contactFormTextNoBorder').hide();
       $('.contactFormTextNoBorder').hide();
+      $('.Header').hide();
       
 
       /*$('.form-field:not(.request_ticket_form_id)').show();
