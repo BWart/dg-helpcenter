@@ -773,16 +773,17 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       /*$('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); */
 
       /*document.getElementById('FeedbackVote').innerHTML = 'Vielen Dank für dein Feedback.<br><div style="font-size: 21px;">Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>';
-      */
-      
+      */ 
+  }else{
+        $('.form').hide();
+        $('.Header').hide();
+        $('#FeedbackVote').show();
 
-     
-    
   }
 
   $('#FeedbackButton').on('click',function(){
     if($(FeedbackBox).val().length >= 0){
-      console('FeedbackBox');
+      console(FeedbackBox.val().length);
       window.location.href = referrer;
     }
   });
