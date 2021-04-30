@@ -781,7 +781,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
         $('.form').show();
         $('.Header').show();
         $('#FeedbackVote').hide();
-        /*sessionStorage.setItem('Feedback', 0);*/
+        sessionStorage.setItem('Feedback', 0);
 
   }
 
@@ -789,7 +789,10 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
     if($(FeedbackBox).val() != ''){
       console.log('IF');
       window.location.href = referrer;
-    }else{console.log('ELSE');}
+    }else{
+      console.log('ELSE');
+      window.location.href = referrer;
+    }
   });
 
 </script>
