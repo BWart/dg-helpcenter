@@ -752,7 +752,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
   /*var session = sessionStorage.getItem('Feedback');*/
 
-  if(document.referrer.indexOf(window.location.hostname) !== -1 && sessionStorage.getItem('Feedback').includes('1') && sessionStorage.getItem('lastPage').includes('1')){
+  if(document.referrer.indexOf(window.location.hostname) !== -1 && sessionStorage.getItem('Feedback').includes('1')){
      var referrer =  document.referrer;
      console.log(referrer);
   }
@@ -778,7 +778,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
         $('.Header').show();
         $('#FeedbackVote').hide();
         sessionStorage.setItem('Feedback', 0);
-
+        
   }
 
   function saveFeedback() {
@@ -798,7 +798,8 @@ function goPreviousPage(){
     if($(FeedbackBox).val() !=+ '' && sessionStorage.getItem('Feedback').includes('1')){
       console.log('IF');
       saveFeedback();
-      goPreviousPage();
+      window.history.go(-2);
+      /*goPreviousPage();*/
       /*window.location.href = referrer;
       var urlBackup = referrer;*/
     }/*else{
