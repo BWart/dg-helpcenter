@@ -792,8 +792,12 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       console.log('IF');
       saveFeedback();
       window.location.href = referrer;
+      var urlBackup = referrer;
     }else{
       console.log('ELSE');
+      console.log(referrer);
+      console.log(urlBackup);
+      window.location.href = urlBackup;
       
     }
   });
