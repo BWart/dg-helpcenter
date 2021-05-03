@@ -794,19 +794,19 @@ function goPreviousPage(){
   window.location.href = referrer;
 }
 
-  $('FeedbackButton').on('click',function(){
-    saveFeedback();
-    if(txtFeedback != '' && sessionStorage.getItem('Feedback').includes('1')){
+  $('#FeedbackButton').on('click',function(){
+    if($(FeedbackBox).val() != '' && sessionStorage.getItem('Feedback').includes('1')){
       console.log('IF');
-      sessionStorage.setItem('lastPage', 2);
+      saveFeedback();
       goPreviousPage();
       /*window.location.href = referrer;
-      */
+      var urlBackup = referrer;*/
     }/*else{
       console.log('ELSE');
       console.log(referrer);
+      console.log(urlBackup);
       window.location.href = urlBackup;
-      
+    
     }*/
   });
 
