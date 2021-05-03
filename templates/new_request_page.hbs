@@ -794,7 +794,7 @@ function goPreviousPage(){
   window.location.href = referrer;
 }
 
-  $('#FeedbackButton').on('click',function(){
+  $('FeedbackButton').on('click',function(){
     saveFeedback();
     if(txtFeedback != '' && sessionStorage.getItem('Feedback').includes('1')){
       console.log('IF');
