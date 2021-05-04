@@ -241,7 +241,7 @@
    
   sessionStorage.clear();
   sessionStorage.setItem('Feedback', 0);
-  sessionStorage.setItem('lastPage', 0);
+ /* sessionStorage.setItem('lastPage', 0);*/
 
   var url = window.location.href; 
 
@@ -254,9 +254,9 @@
         var urlTest = linkArray + 'requests/new';
 
         sessionStorage.setItem('Feedback', 1);
-        sessionStorage.setItem('lastPage', 1);
+        /*sessionStorage.setItem('lastPage', 1);*/
         sessionStorage.getItem('Feedback');
-        sessionStorage.getItem('lastPage');
+        /*sessionStorage.getItem('lastPage');*/
 
         console.log(linkArray[0]);
         console.log(window.location.href);
