@@ -804,9 +804,10 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   window.location.href = referrer;
 }*/
 
-/*if(sessionStorage.getItem('lastPage').includes('2')){
-  window.location.href = urlBackup;
-}*/
+if(sessionStorage.getItem('lastPage').includes('2')){
+      window.location.href = referrer;
+      sessionStorage.setItem('lastPage', 0);
+}
 
 
 /*if($('#FeedbackBox').val() !== ''*/
@@ -819,10 +820,10 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       /*goPreviousPage();*/
       /*window.location.href = referrer;
       var urlBackup = referrer;*/
-    }else if (sessionStorage.getItem('lastPage').includes('2')){
+    }/*else if (sessionStorage.getItem('lastPage').includes('2')){
       window.location.href = referrer;
       sessionStorage.setItem('lastPage', 0);
-    }
+    }*/
     
     else{
       console.log('ELSE');
