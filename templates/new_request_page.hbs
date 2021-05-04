@@ -807,6 +807,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 if(sessionStorage.getItem('lastPage').includes('2')){
       window.location.href = referrer;
       sessionStorage.setItem('lastPage', 0);
+      console.log(referrer);
 }
 
 
@@ -834,6 +835,7 @@ if(sessionStorage.getItem('lastPage').includes('2')){
     
     }
   });
+
 
 
 </script>
