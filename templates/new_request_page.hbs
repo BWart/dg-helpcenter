@@ -66,12 +66,7 @@
   </div>
   
   <h1 class="Header">
-    {{t 'submit_a_request'}}
-    {{#if follow_up}}
-      <span class="follow-up-hint">
-        {{follow_up}}
-      </span>
-    {{/if}}
+
   </h1>
 
   <div class="form">
@@ -786,10 +781,12 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
   }*/
   else{
-        $('.form').show();
+        /*$('.form').show();
         $('.Header').show();
-        $('#FeedbackVote').hide();
+        $('#FeedbackVote').hide();*/
         sessionStorage.setItem('Feedback', 0);
+
+        document.getElementsByClassName('Header').innerHTML ="{{t 'submit_a_request'}}{{#if follow_up}}<span class='follow-up-hint'>{{follow_up}}</span>{{/if}}";
 
   }
 
