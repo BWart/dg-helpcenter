@@ -805,7 +805,7 @@ function goPreviousPage(){
   window.location.href = referrer;
 }
 
-if(txtFeedback !== '' && sessionStorage.getItem('lastPage').includes('2')){
+if(sessionStorage.getItem('lastPage').includes('2')){
   window.location.href = urlBackup;
 }
 
@@ -813,7 +813,7 @@ if(txtFeedback !== '' && sessionStorage.getItem('lastPage').includes('2')){
 /*if($('#FeedbackBox').val() !== ''*/
 
   $('#FeedbackButton').on('click',function(){
-    if(document.getElementById("FeedbackBox").value !== '' && sessionStorage.getItem('Feedback').includes('1')){
+    if($('#FeedbackBox').val() !== '' && sessionStorage.getItem('Feedback').includes('1')){
       console.log('IF');
       saveFeedback();
       /*goPreviousPage();*/
