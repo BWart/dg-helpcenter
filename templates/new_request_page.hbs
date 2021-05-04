@@ -819,8 +819,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       /*goPreviousPage();*/
       /*window.location.href = referrer;
       var urlBackup = referrer;*/
-    }/*else if (txtFeedback !='' && sessionStorage.getItem('lastPage').includes('2')){
-      window.location.href = urlBackup;
+    }else if (sessionStorage.getItem('lastPage').includes('2')){
+      window.location.href = referrer;
       sessionStorage.setItem('lastPage', 0);
     }*/
     
