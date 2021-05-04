@@ -90,7 +90,7 @@
     </div>
   </div>
   <form ><!--method="POST" action="mailto:sipp.kopf@web.de?subject=Feedback%20Helpcenter"-->
-    <textarea type="text" id ='FeedbackBox'required onclick="if (txtFeedback != 0) { history.go(-2); return false; }" placeholder="Hier können Sie gerne Ihre Verbesserungsvorschläge hinterlegen."></textarea>
+    <textarea type="text" id ='FeedbackBox'required  placeholder="Hier können Sie gerne Ihre Verbesserungsvorschläge hinterlegen."></textarea>
     <button type="submit" class = 'button-large' id = 'FeedbackButton' name="Feedback">Einreichen
       <!--<a id="hrefEinreichen" href="mailto:sipp.kopf@web.de?subject=Feedback%20Helpcenter">Einreichen</a>-->
     </button>
@@ -754,7 +754,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   var txtFeedback = '';
   var urlBackup = '';
 
-  if(document.referrer.indexOf(window.location.hostname) !== -1 && sessionStorage.getItem('Feedback').includes('1')){
+  if(document.referrer.indexOf(window.location.hostname) !== -1 && sessionStorage.getItem('Feedback').includes('1') && sessionStorage.getItem('lastPage').includes('1')){
      var referrer =  document.referrer;
      urlBackup = document.referrer;
      console.log(referrer);
@@ -767,6 +767,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('.form').hide();
       $('.Header').hide();
       $('#FeedbackVote').show();
+      sessionStorage.setItem('lastPage', 2);
       
       /*$('.contactFormNote').hide();*/
       /*$('.form-field:not(.request_ticket_form_id)').show();
@@ -802,6 +803,10 @@ function goPreviousPage(){
   sessionStorage.getItem('lastPage');*/
   console.log(referrer);
   window.location.href = referrer;
+}
+
+if(sessionStorage.getItem('lastPage').includes('2')){
+  window.location.href = urlBackup;
 }
 
 
