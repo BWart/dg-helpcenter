@@ -805,7 +805,7 @@ function goPreviousPage(){
   window.location.href = referrer;
 }
 
-if($('#FeedbackBox').val() !== '' && sessionStorage.getItem('lastPage').includes('2')){
+if(document.getElementById("FeedbackBox").value !== '' && sessionStorage.getItem('lastPage').includes('2')){
   window.location.href = urlBackup;
 }
 
@@ -813,7 +813,7 @@ if($('#FeedbackBox').val() !== '' && sessionStorage.getItem('lastPage').includes
 /*if($('#FeedbackBox').val() !== ''*/
 
   $('#FeedbackButton').on('click',function(){
-    if($('#FeedbackBox').val() !== '' && sessionStorage.getItem('Feedback').includes('1')){
+    if(document.getElementById("FeedbackBox").value !== '' && sessionStorage.getItem('Feedback').includes('1')){
       console.log('IF');
       saveFeedback();
       /*goPreviousPage();*/
