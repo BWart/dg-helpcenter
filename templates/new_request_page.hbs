@@ -65,7 +65,7 @@
   </div>
   </div>
   
-  <h1 class="Header">
+  <h1 class="Header" id="HeaderID">
 
   </h1>
 
@@ -757,7 +757,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1')) {
       console.log('Contains Test');
 
-      document.getElementsByClassName('Header').innerHTML = "Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>";
+      document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>";
 
       
       /*$('.form').hide();
@@ -786,7 +786,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
         $('#FeedbackVote').hide();*/
         sessionStorage.setItem('Feedback', 0);
 
-        document.getElementsByClassName('Header').innerHTML ="{{t 'submit_a_request'}}{{#if follow_up}}<span class='follow-up-hint'>{{follow_up}}</span>{{/if}}";
+        document.getElementById('HeaderID').innerHTML ="{{t 'submit_a_request'}}{{#if follow_up}}<span class='follow-up-hint'>{{follow_up}}</span>{{/if}}";
 
   }
 
