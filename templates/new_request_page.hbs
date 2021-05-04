@@ -752,9 +752,11 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
   /*var session = sessionStorage.getItem('Feedback');*/
   var txtFeedback = '';
+  var urlBackup = '';
 
-  if(document.referrer.indexOf(window.location.hostname) !== -1 && sessionStorage.getItem('Feedback').includes('1') && sessionStorage.getItem('lastPage').includes('1')){
+  if(document.referrer.indexOf(window.location.hostname) !== -1 && sessionStorage.getItem('Feedback').includes('1')){
      var referrer =  document.referrer;
+     urlBackup = document.referrer;
      console.log(referrer);
   }
 
@@ -777,8 +779,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   }else if( txtFeedback !== 0 && document.referrer.indexOf('requests') !== -1){
       console.log('Contains Test2');
 
-      window.location.href = referrer;
-      console.log(referrer);
+      window.location.href = urlBackup;
+      console.log(urlBackup);
 
   }
   else{
@@ -796,8 +798,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   }
 
 function goPreviousPage(){
-  sessionStorage.setItem('lastPage', 0);
-  sessionStorage.getItem('lastPage');
+  /*sessionStorage.setItem('lastPage', 0);
+  sessionStorage.getItem('lastPage');*/
   console.log(referrer);
   window.location.href = referrer;
 }
@@ -809,7 +811,7 @@ function goPreviousPage(){
     if($('#FeedbackBox').val() !== '' && sessionStorage.getItem('Feedback').includes('1')){
       console.log('IF');
       saveFeedback();
-      goPreviousPage();
+      /*goPreviousPage();*/
       /*window.location.href = referrer;
       var urlBackup = referrer;*/
     }else{
