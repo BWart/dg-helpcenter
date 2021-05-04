@@ -751,6 +751,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 //Downvote-button Formular Hide Funktion
 
   /*var session = sessionStorage.getItem('Feedback');*/
+  var txtFeedback = '';
 
   if(document.referrer.indexOf(window.location.hostname) !== -1 && sessionStorage.getItem('Feedback').includes('1') && sessionStorage.getItem('lastPage').includes('1')){
      var referrer =  document.referrer;
@@ -776,10 +777,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   }else if( txtFeedback !== 0 && document.referrer.indexOf('requests') !== -1){
       console.log('Contains Test2');
 
-      $('.form').hide();
-      $('.Header').hide();
-      $('#FeedbackVote').show();
-
+      window.location.href = referrer;
+      
   }
   else{
         $('.form').show();
@@ -790,7 +789,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   }
 
   function saveFeedback() {
-    var txtFeedback =  document.getElementById("FeedbackBox").value;
+    txtFeedback =  document.getElementById("FeedbackBox").value;
 
     console.log(txtFeedback);
   }
