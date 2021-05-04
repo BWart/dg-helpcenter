@@ -819,7 +819,7 @@ function goPreviousPage(){
       /*goPreviousPage();*/
       /*window.location.href = referrer;
       var urlBackup = referrer;*/
-    }else if (sessionStorage.getItem('lastPage').includes('2')){
+    }else if (txtFeedback !='' && sessionStorage.getItem('lastPage').includes('2')){
       window.location.href = urlBackup;
       sessionStorage.setItem('lastPage', 0);
     }
