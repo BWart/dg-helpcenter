@@ -753,7 +753,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   /*var session = sessionStorage.getItem('Feedback');*/
   /*var urlBackup = '';*/
 
-  if(document.referrer.indexOf(window.location.hostname) !== -1 && sessionStorage.getItem('Feedback').includes('1')){
+  if(document.referrer.indexOf(window.location.hostname) !== -1 && sessionStorage.getItem('Feedback').includes('1') && essionStorage.getItem('lastPage').includes('1')){
      var referrer =  document.referrer;
      /*urlBackup = document.referrer;*/
      console.log(referrer);
@@ -816,6 +816,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
     if($('#FeedbackBox').val() !== '' && sessionStorage.getItem('Feedback').includes('1')){
       console.log('IF');
       saveFeedback();
+      sessionStorage.setItem('lastPage', 2);
       /*goPreviousPage();*/
       /*window.location.href = referrer;
       var urlBackup = referrer;*/
