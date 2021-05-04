@@ -805,7 +805,7 @@ function goPreviousPage(){
   window.location.href = referrer;
 }
 
-if(sessionStorage.getItem('lastPage').includes('2')){
+if($('#FeedbackBox').val() !== '' && sessionStorage.getItem('lastPage').includes('2')){
   window.location.href = urlBackup;
 }
 
