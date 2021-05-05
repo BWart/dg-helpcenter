@@ -754,6 +754,9 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
      console.log(referrer);
   }
 
+  console.log('TEST 1');
+  ('[aria-labelledby="request_custom_fields_360014169819_label"]').hide();
+
   if (sessionStorage.getItem('Feedback').includes('1')) {
     /*document.referrer.indexOf('articles') !== -1 && */
       console.log('Contains Test');
