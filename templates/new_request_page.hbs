@@ -754,10 +754,29 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
      console.log(referrer);
   }
 
-  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1')) {
+  if (sessionStorage.getItem('Feedback').includes('1')) {
+    /*document.referrer.indexOf('articles') !== -1 && */
       console.log('Contains Test');
       
       document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>";
+      
+      $('#request_subject').hide();
+  		$('#request_subject_label').hide();
+  
+      $('.form-field:not(.request_ticket_form_id)').show();
+      $('input[name ="commit"]').show();
+      //$('.request_custom_fields_360014169819').insertBefore('.request_anonymous_requester_email');
+      $('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); 
+
+			$('.contactDataTable').hide();
+			$('.contactFormTextNoBorder').hide();
+			$('.contactFormText').hide();
+			//$('.request_custom_fields_360014169819').hide();
+
+      
+      
+      
+      
       /*$('.contactFormInfoText2').hide();
       $('.request-form').show();
       $('.form-field string required request_anonymous_requester_email').show();
