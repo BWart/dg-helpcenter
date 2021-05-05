@@ -116,7 +116,7 @@ $('.contactFormNote').insertAfter('.request_custom_fields_360014169819');
 $('.form-field:not(.request_ticket_form_id)').hide();
 $('.request_custom_fields_360014169819').show();
 $('.request-form .footer').hide();
-$('input[name ="commit"]').hide();
+$('input[name ="commit"]').hide();*/
 
 // Removes Offers for Private Customers
   
@@ -754,11 +754,12 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
      console.log(referrer);
   }
 
-  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1')) {
+  if (sessionStorage.getItem('Feedback').includes('1')) {
+    /*document.referrer.indexOf('articles') !== -1 && */
       console.log('Contains Test');
       
       document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>";
-      /*document.querySelector('.nesty-input').value = 'Privatkunden';*/
+      /*document.querySelector('.nesty-input').value = 'Privatkunden';
       
       $('#request_subject').val($('.request_custom_fields_360014169819' + 'Feedback').text());
       /*$('.form-field.nesty-input').value('Privatkunden');*/
