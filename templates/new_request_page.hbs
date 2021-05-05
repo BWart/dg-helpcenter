@@ -775,6 +775,9 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 			$('.contactFormTextNoBorder').hide();
 			$('.contactFormText').hide();
 			//$('.request_custom_fields_360014169819').hide();
+      var catJson = JSON.parse($('#request_custom_fields_360014169819').attr("data-tagger"));
+      $('#request_custom_fields_360014169819').attr("data-tagger", removeCategoryFromJson(catJson, categoryToRemove));
+
       isFormAttachmentRequired(true);
   		hideOrderNumber();
   
