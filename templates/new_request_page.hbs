@@ -764,11 +764,11 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('.form-field:not(.request_ticket_form_id)').show(); // Feld mit beschriebung usw
       /*$('.nesty-input').text() = 'Anderweitige Anfrage';*/
       $('.form-field.select.optional.request_ticket_form_id').hide(); //Kundengruppe Option
-      $('label[for="request-attachments"]').hide(); //Anhang Drop Ueberschrift
-      $('#upload-dropzone').hide(); //Anhang Drop 
+      $('label[for="request-attachments"]').remove(); //Anhang Drop Ueberschrift
+      $('#upload-dropzone').remove(); //Anhang Drop 
       /*$('.request-form .footer').show();*/
       $('input[name ="commit"]').show();
-      $('a[aria-labelledby="request_custom_fields_360014169819_label"]').hide();
+      $('.form-field.string.required.request_custom_fields_360014169819').hide(); // Grund der Anfrage
 
       /*$('form-field.string.optional.request_custom_fields_360007585419').hide();*/
       /*$('.request_custom_fields_360014169819').hide() // Grund des Auftrags*/
