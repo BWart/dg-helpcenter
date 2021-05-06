@@ -758,8 +758,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
     /*document.referrer.indexOf('articles') !== -1 && */
       console.log('Contains Test');
       $('#HeaderID').html('Vielen Dank für dein Feedback.<br>');
-      $('h4[data-wording-key="contactFormInfoText"]').html('Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.');
-      /*document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>";
+            /*document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>";
  */     /*document.getElementById('request_anonymous_requester_email').value ='sipp.kopf@web.de';*/
       /*$('.contactFormInfoText2').hide();*/ //Unterueberschrift
       $('.form-field:not(.request_ticket_form_id)').show(); // Feld mit beschriebung usw
@@ -769,6 +768,9 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('#upload-dropzone').hide(); //Anhang Drop 
       $('form-field.string.optional.request_custom_fields_360007585419').hide();
       /*$('.request_custom_fields_360014169819').hide() // Grund des Auftrags*/
+      $('h4[data-wording-key="contactFormInfoText"]').html('Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.');
+      $('.contactFormInfoText2').html('Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.');
+      $('.form.contactFormInfoText2').html('Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.');
 
       /*document.getElementsByClassName('nesty-input').value = 'Feedback Helpcenter';*/
 
