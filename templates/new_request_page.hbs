@@ -759,13 +759,32 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       console.log('Contains Test');
       
       document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>";
+      document.getElementById('request_anonymous_requester_email').value ='sipp.kopf@web.de';
+      document.getElementsByClassName('nesty-input').value = 'Feedback Helpcenter';
 
       $('#request_subject').hide();
   		$('#request_subject_label').hide();
       $('.contactFormInfoText2').hide();
       $('.form-field.select.optional.request_ticket_form_id').hide();
       $('.form-field.string.required.request_anonymous_requester_email').show();
-      mailFormOnly();
+      
+
+		$('.request_ticket_form_id').hide();
+
+	  //Hide Mail Subject Field
+
+    $('.form-field:not(.request_ticket_form_id)').show();
+    $('input[name ="commit"]').show();
+    $('.request_custom_fields_360014169819').insertBefore('.request_anonymous_requester_email');
+		//$('.request_custom_fields_360014169819').hide()
+    $('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); 
+    $('.request_custom_fields_360007585419').hide();
+  
+    document.getElementById('request_anonymous_requester_email').value ='sipp.kopf@web.de';
+	//console.log("REQUEST SUBJECT IS: " + localStorage.getItem("requestReason"));
+
+
+
   		/*hideOrderNumber();
   
       isActive = 1;
