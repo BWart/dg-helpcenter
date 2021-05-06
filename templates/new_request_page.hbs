@@ -763,12 +763,12 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
     /*document.referrer.indexOf('articles') !== -1 && */
       console.log('Contains Test');
       
-      document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>";
+      document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br>";
       document.getElementById('request_anonymous_requester_email').value ='sipp.kopf@web.de';
-      document.getElementById('request_anonymous_requester_email').value ='sipp.kopf@web.de';
+      document.getElementsByClassName('contactFormInfoText2').innerHTML ='Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.';
       /*document.getElementsByClassName('nesty-input').value = 'Feedback Helpcenter';*/
 
-      $('.contactFormInfoText2').hide(); //Unterueberschrift
+     /*$('.contactFormInfoText2').hide(); *///Unterueberschrift
 
 
       /*$('#request_subject').hide();
