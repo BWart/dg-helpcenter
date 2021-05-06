@@ -761,8 +761,9 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>";
       /*document.getElementById('request_anonymous_requester_email').value ='sipp.kopf@web.de';*/
       $('.contactFormInfoText2').hide(); //Unterueberschrift
+      $('.form-field:not(.request_ticket_form_id)').show();
 
-      $('.nesty-input').value = 'Anderweitige Anfrage'; //Grund der Anfrage
+      /*document.getElementsByClassName('nesty-input').value = 'Feedback Helpcenter';*/
 
       
 
@@ -777,7 +778,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
 	  //Hide Mail Subject Field
 
-    $('.form-field:not(.request_ticket_form_id)').show();
+    
     $('input[name ="commit"]').show();
     $('.request_custom_fields_360014169819').insertBefore('.request_anonymous_requester_email');
 		//$('.request_custom_fields_360014169819').hide()
