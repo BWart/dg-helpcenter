@@ -66,12 +66,7 @@
   </div>
   
   <h1 class="Header" id="HeaderID">
-      {{t 'submit_a_request'}}
-        {{#if follow_up}}
-          <span class='follow-up-hint'>
-            {{follow_up}}
-          </span>
-        {{/if}}
+
   </h1>
 
   <div class="form">
@@ -763,12 +758,12 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
     /*document.referrer.indexOf('articles') !== -1 && */
       console.log('Contains Test');
       
-      document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br>";
-      document.getElementById('request_anonymous_requester_email').value ='sipp.kopf@web.de';
-      $('.contactFormInfoText2').html('Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.');
+      document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>";
+      /*document.getElementById('request_anonymous_requester_email').value ='sipp.kopf@web.de';*/
+
       /*document.getElementsByClassName('nesty-input').value = 'Feedback Helpcenter';*/
 
-      /*$('.contactFormInfoText2').hide(); *///Unterueberschrift
+      $('.contactFormInfoText2').hide(); //Unterueberschrift
 
 
       /*$('#request_subject').hide();
@@ -788,7 +783,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
     $('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); 
     $('.request_custom_fields_360007585419').hide();
   */
-    document.getElementById('request_anonymous_requester_email').value ='sipp.kopf@web.de';
+
 	//console.log("REQUEST SUBJECT IS: " + localStorage.getItem("requestReason"));
 
 
@@ -873,7 +868,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
         $('#FeedbackVote').hide();*/
         //sessionStorage.setItem('Feedback', 0);
 
-        /*document.getElementById('HeaderID').innerHTML ="{{t 'submit_a_request'}}{{#if follow_up}}<span class='follow-up-hint'>{{follow_up}}</span>{{/if}}";*/
+        document.getElementById('HeaderID').innerHTML ="{{t 'submit_a_request'}}{{#if follow_up}}<span class='follow-up-hint'>{{follow_up}}</span>{{/if}}";
 
         // Ticket Form Changes
 
