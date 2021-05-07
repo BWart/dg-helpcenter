@@ -775,10 +775,15 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('label[for="request_anonymous_requester_email"]').show(); //Mail Ueberschrift
       $('input[name="request[anonymous_requester_email]"]').show();
       $('.request_anonymous_requester_email').show();
-      document.getElementById('requestForm').innerHTML ='<div class="form-field string required request_anonymous_requester_email"><label for="request_anonymous_requester_email">E-Mail Adresse</label><input type="text" name="request[anonymous_requester_email]" id="request_anonymous_requester_email" aria-required="true" /></div>';
-
-
+      $('.form-field.string.required request_anonymous_requester_email').show();
       
+      
+      
+      
+      /*document.getElementById('requestForm').innerHTML ='<div class="form-field string required request_anonymous_requester_email"><label for="request_anonymous_requester_email">E-Mail Adresse</label><input type="text" name="request[anonymous_requester_email]" id="request_anonymous_requester_email" aria-required="true" /></div>';
+*/
+
+
       /*$('.request_anonymous_requester_email').insertAfter('.request_custom_fields_360007585419');
       $('form-field.string.required.request_anonymous_requester_email').show();*/
 
