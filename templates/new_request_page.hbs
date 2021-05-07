@@ -776,7 +776,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('input[name ="commit"]').show(); // Einreiche Button anzeigen
       $('#request_subject').text('Feedback Helpcenter');
 
-      $('input[name="request[subject]"]').val('Feedback Helpcenter');
+      $('input[name="request[subject]"]').val('Feedback Helpcenter'); //Betreff gesetzt
+      $('input[name="request[subject]"]').prop("readonly",true);
 
       /*$('label[for="request_anonymous_requester_email"]').show(); //Mail Ueberschrift
       $('input[name="request[anonymous_requester_email]"]').show();
