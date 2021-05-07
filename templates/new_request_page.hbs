@@ -69,7 +69,7 @@
       {{t 'submit_a_request'}}{{#if follow_up}}<span class='follow-up-hint'>{{follow_up}}</span>{{/if}}
   </h1>
 
-  <div class="form">
+  <div class="form" id="requestForm">
     <h4 class = "contactFormInfoText2" data-wording-key="contactFormInfoText"></h4>
     {{request_form}}
   </div>
@@ -775,7 +775,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('label[for="request_anonymous_requester_email"]').show(); //Mail Ueberschrift
       $('input[name="request[anonymous_requester_email]"]').show();
       $('.request_anonymous_requester_email').show();
-
+      document.getElementById('requestForm').innerHTML ='<div class="form-field string required request_anonymous_requester_email"><label for="request_anonymous_requester_email">E-Mail Adresse</label><input type="text" name="request[anonymous_requester_email]" id="request_anonymous_requester_email" aria-required="true" /></div>';
 
 
       
