@@ -575,3 +575,7 @@ select:focus {
 #hrefEinreichen{
   color: #fff;
 }
+
+#HeaderID{
+  max-width: 650px;
+}
