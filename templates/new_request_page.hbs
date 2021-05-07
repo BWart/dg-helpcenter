@@ -765,19 +765,22 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       /*$('.nesty-input').text() = 'Anderweitige Anfrage';*/
 
       $('.form-field.select.optional.request_ticket_form_id').hide(); //Kundengruppe Option
-      $('.form-field.string.required.request_custom_fields_360014169819').hide(); // Grund der Anfrage
+      /*$('.form-field.string.required.request_custom_fields_360014169819').hide(); // Grund der Anfrage*/
+      $('.form-field.string.required.request_custom_fields_360014169819').text('Anderweitige Anfrage');
       $('.request_custom_fields_360007585419').hide(); // Auftragsnummer Feld
 
       $('label[for="request-attachments"]').remove(); //Anhang Drop Ueberschrift
       $('#upload-dropzone').remove(); //Anhang Drop 
       $('input[name ="commit"]').show(); // Einreiche Button anzeigen
 
+
+
       $('label[for="request_anonymous_requester_email"]').show(); //Mail Ueberschrift
       $('input[name="request[anonymous_requester_email]"]').show();
       $('.request_anonymous_requester_email').show();
       $('.form-field.string.required.request_anonymous_requester_email').show();
       $('.request_anonymous_requester_email').insertBefore('.form-field.string.required.request_subject');
-      $('.form-field.string.required.request_subject').hide();
+      /*$('.form-field.string.required.request_subject').hide(); //betreff*/
       
       
       /*document.getElementById('requestForm').innerHTML ='<div class="form-field string required request_anonymous_requester_email"><label for="request_anonymous_requester_email">E-Mail Adresse</label><input type="text" name="request[anonymous_requester_email]" id="request_anonymous_requester_email" aria-required="true" /></div>';
