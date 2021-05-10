@@ -581,6 +581,6 @@ select:focus {
   max-width: 650px;
 }
 
-#request_subject_label .no-after:after{
-  content: none;
+#request_subject_label .no-after::after{
+  content: '';
 }
