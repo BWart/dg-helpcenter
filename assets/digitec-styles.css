@@ -579,3 +579,7 @@ select:focus {
 #HeaderID{
   max-width: 650px;
 }
+
+/*#request_subject_label .no-after::after{
+  content: '';
+}*/
