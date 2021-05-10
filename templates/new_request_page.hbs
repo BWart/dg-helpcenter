@@ -744,7 +744,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
 
 
-//Downvote-button Formular Hide Funktion
+//Downvote-button Formular 
 
   /*var session = sessionStorage.getItem('Feedback');*/
   /*var urlBackup = '';*/
@@ -755,7 +755,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
      console.log(referrer);
   }
 
-  /*if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1')) {
+  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1')) {
     //document.referrer.indexOf('articles') !== -1 && 
       console.log('Contains Test');
       $('#HeaderID').html("Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>");
@@ -781,15 +781,14 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
 
       $('.request_custom_fields_360007585419').hide(); // Auftragsnummer
-      $('request_anonymous_requester_email').val('sipp.kopf@web.de');//test mail
-    
-      $('a[class="nesty-input"]').text('Anderweitige Anfrage');
+      $('request_anonymous_requester_email').val('sipp.kopf@web.de');//test mail///////////////
+      //$('a[class="nesty-input"]').text('Anderweitige Anfrage');
+
+      $('.nesty-input').insertAfter('.request_anonymous_requester_email');
+      
       
 
-      $('input[name ="commit"]').show();
-      $('.request_custom_fields_360014169819').insertBefore('.request_anonymous_requester_email');
-		  //$('.request_custom_fields_360014169819').hide()
-      $('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); 
+
 
 
       /*$('#request_subject_label').addClass('no-after'); //Requierd entfernen roten Stern TEST/////////////////////////////////
@@ -851,7 +850,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('#request_subject').hide();
   		$('#request_subject_label').hide();
   
-  }*//*else if( txtFeedback !== 0 && document.referrer.indexOf('requests') !== -1){
+  }/*else if( txtFeedback !== 0 && document.referrer.indexOf('requests') !== -1){
       console.log('Contains Test2');
 
       window.location.href = urlBackup;
