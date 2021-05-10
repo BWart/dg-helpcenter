@@ -761,8 +761,6 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('#HeaderID').html("Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>");
       //document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>";
       //document.getElementById('request_anonymous_requester_email').value ='sipp.kopf@web.de';
-      
-      $('.request_anonymous_requester_email').insertAfter('.nesty-input');
       $('.contactFormInfoText2').hide(); //Unterueberschrift
       $('.form-field:not(.request_ticket_form_id)').show(); // SchreibUns-Feld mit beschreibung usw
       //$('.nesty-input').text() = 'Anderweitige Anfrage';
@@ -786,7 +784,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('request_anonymous_requester_email').val('sipp.kopf@web.de');//test mail///////////////
       //$('a[class="nesty-input"]').text('Anderweitige Anfrage');
 
-      
+      $('.nesty-input').insertAfter('.request_anonymous_requester_email');
 
       
 
@@ -856,9 +854,9 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       console.log('Contains Test2');
 
       window.location.href = urlBackup;
-      console.log(urlBackup);
+      console.log(urlBackup);*/
 
-  }*/
+  }
   else{
        /* $('.form').show();
         $('.Header').show();
