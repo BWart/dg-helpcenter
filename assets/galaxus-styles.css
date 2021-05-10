@@ -580,3 +580,7 @@ select:focus {
 #HeaderID{
   max-width: 650px;
 }
+
+input[name="request[subject]"]::after{
+  content: "";
+}
