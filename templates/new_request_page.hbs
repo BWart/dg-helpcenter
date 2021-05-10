@@ -780,6 +780,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('input[name="request[subject]"]').prop("readonly",true); //Betreff nur lesbar nicht aenderbar
       $('#request_subject_label').addClass('no-after'); //Requierd entfernen roten Stern TEST/////////////////////////////////
       $('form-field.string.required.request_subject').removeAttr('required');
+      $('.form-field.required>label::after').hide();
 
       /*$('label[for="request_anonymous_requester_email"]').show(); //Mail Ueberschrift
       $('input[name="request[anonymous_requester_email]"]').show();
