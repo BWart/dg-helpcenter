@@ -755,7 +755,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
      console.log(referrer);
   }
 
-  /*if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1')) {
+  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1')) {
     //document.referrer.indexOf('articles') !== -1 && 
       console.log('Contains Test');
       $('#HeaderID').html("Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>");
@@ -784,6 +784,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('request_anonymous_requester_email').val('sipp.kopf@web.de');//test mail///////////////
       //$('a[class="nesty-input"]').text('Anderweitige Anfrage');
       //$('.request_anonymous_requester_email').insertAfter('#request_subject');
+
+      $('for="request_anonymous_requester_email"').show();
 
 
       /*$('#request_subject_label').addClass('no-after'); //Requierd entfernen roten Stern TEST/////////////////////////////////
@@ -851,7 +853,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       window.location.href = urlBackup;
       console.log(urlBackup);*/
 
-  /*}
+  }
   else{
        /* $('.form').show();
         $('.Header').show();
@@ -867,10 +869,10 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
         $('.form-field:not(.request_ticket_form_id)').hide();
         $('.request_custom_fields_360014169819').show();
         $('.request-form .footer').hide();
-        $('input[name ="commit"]').hide();*//*
+        $('input[name ="commit"]').hide();*/
         sessionStorage.setItem('Feedback', 0);
 
-  }*/
+  }
 
   function saveFeedback() {
     var txtFeedback =  document.getElementById("FeedbackBox").value;
