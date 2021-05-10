@@ -755,20 +755,20 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
      console.log(referrer);
   }
 
-  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1')) {
-    /*document.referrer.indexOf('articles') !== -1 && */
+  /*if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1')) {
+    //document.referrer.indexOf('articles') !== -1 && 
       console.log('Contains Test');
       $('#HeaderID').html("Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>");
-      /*document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>";*/
-      /*document.getElementById('request_anonymous_requester_email').value ='sipp.kopf@web.de';*/
+      //document.getElementById('HeaderID').innerHTML = "Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>";
+      //document.getElementById('request_anonymous_requester_email').value ='sipp.kopf@web.de';
       $('.contactFormInfoText2').hide(); //Unterueberschrift
       $('.form-field:not(.request_ticket_form_id)').show(); // SchreibUns-Feld mit beschreibung usw
-      /*$('.nesty-input').text() = 'Anderweitige Anfrage';*/
+      //$('.nesty-input').text() = 'Anderweitige Anfrage';
 
       $('.form-field.select.optional.request_ticket_form_id').hide(); //Kundengruppe Option
-      /*$('.form-field.string.required.request_custom_fields_360014169819').hide(); // Grund der Anfrage*/
+      //$('.form-field.string.required.request_custom_fields_360014169819').hide(); // Grund der Anfrage
   
-      /*$('a.nesty-input').val('Anderweitige Anfrage');*/
+      //$('a.nesty-input').val('Anderweitige Anfrage');
       $('.request_custom_fields_360007585419').hide(); // Auftragsnummer Feld
 
       $('label[for="request-attachments"]').hide(); //Anhang Drop Ueberschrift
@@ -827,23 +827,6 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
 	  //Hide Mail Subject Field
 
-    
-    $('input[name ="commit"]').show();
-    $('.request_custom_fields_360014169819').insertBefore('.request_anonymous_requester_email');
-		//
-    $('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); 
-    $('.request_custom_fields_360007585419').hide();
-  */
-
-	//console.log("REQUEST SUBJECT IS: " + localStorage.getItem("requestReason"));
-
-
-
-  		/*hideOrderNumber();
-  
-      isActive = 1;
-			*/
-
       /*$('.form-field:not(.request_ticket_form_id)').show();
       $('input[name ="commit"]').show();
       //$('.request_custom_fields_360014169819').insertBefore('.request_anonymous_requester_email');
@@ -854,10 +837,6 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 			$('.contactFormText').hide();
 			//$('.request_custom_fields_360014169819').hide();*/
 
-      
-      
-      
-      
       /*$('.contactFormInfoText2').hide();
       $('.request-form').show();
       $('.form-field string required request_anonymous_requester_email').show();
@@ -872,41 +851,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('#request_subject').hide();
   		$('#request_subject_label').hide();
   
-      $('.form-field:not(.request_ticket_form_id)').show();
-      $('input[name ="commit"]').show();
-      $('.request_custom_fields_360014169819').insertBefore('.request_anonymous_requester_email');
-      $('.request_custom_fields_360014169819').innerHTML= 'Privatkunden';
-      $('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); 
-
-			$('.contactDataTable').hide();
-			$('.contactFormTextNoBorder').hide();
-			$('.contactFormText').hide();
-			//$('.request_custom_fields_360014169819').hide();
-      var catJson = JSON.parse($('#request_custom_fields_360014169819').attr("data-tagger"));
-      $('#request_custom_fields_360014169819').attr("data-tagger", removeCategoryFromJson(catJson, categoryToRemove));
-
-      isFormAttachmentRequired(true);
-  		hideOrderNumber();
-  
-      isActive = 1;
-			mailFormOnly();*/
-      
-
-      
-      /*$('.form').hide();
-      $('.Header').hide();
-      $('#FeedbackVote').show();*/
-
-      
-      /*$('.contactFormNote').hide();*/
-      /*$('.form-field:not(.request_ticket_form_id)').show();
-      $('input[name ="commit"]').show();
-      //$('.request_custom_fields_360014169819').insertBefore('.request_anonymous_requester_email');*/
-      /*$('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); */
-
-      /*document.getElementById('FeedbackVote').innerHTML = 'Vielen Dank für dein Feedback.<br><div style="font-size: 21px;">Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>';
-      */ 
-  }/*else if( txtFeedback !== 0 && document.referrer.indexOf('requests') !== -1){
+  }*//*else if( txtFeedback !== 0 && document.referrer.indexOf('requests') !== -1){
       console.log('Contains Test2');
 
       window.location.href = urlBackup;
