@@ -768,7 +768,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       //$('.form-field.string.required.request_custom_fields_360014169819').hide(); // Grund der Anfrage
   
       //$('a.nesty-input').val('Anderweitige Anfrage');
-      $('.request_custom_fields_360007585419').hide(); // Auftragsnummer Feld
+      //$('.request_custom_fields_360007585419').hide(); // Auftragsnummer Feld
+      $('.request_custom_fields_360007585419').val() = '111';
 
       $('label[for="request-attachments"]').hide(); //Anhang Drop Ueberschrift
       $('#upload-dropzone').hide(); //Anhang Drop 
@@ -779,8 +780,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('input[name="request[subject]"]').prop("readonly",true); //Betreff nur lesbar nicht aenderbar
 
 
-      //$('.request_custom_fields_360007585419').hide(); // Auftragsnummer
-      $('.request_custom_fields_360007585419').val('Anderweitige Anfrage');
+
       $('request_anonymous_requester_email').val('sipp.kopf@web.de');//test mail///////////////
 
       $('input[name="request[anonymous_requester_email]"]').show();
