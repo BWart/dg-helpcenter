@@ -784,11 +784,17 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('request_anonymous_requester_email').val('sipp.kopf@web.de');//test mail///////////////
       $('input[name="request[anonymous_requester_email]"]').show();
 
+      $('.request_custom_fields_360014169819' + ' a.nesty-input').change(function(){
+        if ($(this).attr('value') == '-') {
+            //Do your stuff
+        }
+      });
+
+
       // $('.request_custom_fields_360014169819' + ' a.nesty-input').show(); 
       //$('.request_custom_fields_360014169819' + ' a.nesty-input').text() = 'Anderweitige Anfrage';
       //$('.request_custom_fields_360014169819' + ' a.nesty-input').text('Anderweitige Anfrage');
       //$('.request_anonymous_requester_email').show();
-
 
       //$('a[class="nesty-input"]').text('Anderweitige Anfrage');
       //$('.request_anonymous_requester_email').insertAfter('#request_subject');
