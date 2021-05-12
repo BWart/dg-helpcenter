@@ -737,12 +737,14 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('#HeaderID').html("Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>");
       $('.contactFormInfoText2').hide(); //Unterueberschrift
       $('.form-field:not(.request_ticket_form_id)').show(); // SchreibUns-Feld-Form mit beschreibung, grund usw
-      $('#request_custom_fields_360014169819').val('webform_case_other_request_order'); //Grund der Anfrage ////
+      $('#request_custom_fields_360014169819').val('webform_case_other_request_order'); //Grund der Anfrage setzen////
+      $('.request_custom_fields_360014169819').hide(); // Grund der Anfrage verstecken
+      console.log($('.request_custom_fields_360014169819').val());
 
       $('.form-field.select.optional.request_ticket_form_id').hide(); //Kundengruppe Option
 
       $('.request_custom_fields_360007585419').hide(); // Auftragsnummer Feld
-      //$('#request_custom_fields_360007585419').val('1111'); // Auftragsnummer Feld Wert
+      //$('#request_custom_fields_360007585419').val('1111'); // Auftragsnummer Feld Wert setzen
 
       $('label[for="request-attachments"]').hide(); //Anhang Drop Ueberschrift
       $('#upload-dropzone').hide(); //Anhang Drop 
@@ -761,8 +763,6 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('label[for="request_anonymous_requester_email"]').hide();   // Mail Betreff
       console.log($('input[name="request[anonymous_requester_email]"]').val());
 
-      $('.request_custom_fields_360014169819').hide();
-      console.log($('.request_custom_fields_360014169819').val());
 
 
 
@@ -777,12 +777,19 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       console.log('IF');
       console.log(referrer);
       window.location.href = referrer;
-    } 
+    }else if($('#request_description').val() !== '' && sessionStorage.getItem('Feedback').includes('2')){
+      window.location.href = referrer;
+      sessionStorage.setItem('Feedback', 0);
+    }
     else{
       console.log('ELSE');
       alert('Bitte geben Sie Ihr Feedback ein.');
       console.log(referrer);
-    
+      $('.request_custom_fields_360014169819').hide(); // Grund der Anfrage
+      $('input[name="request[anonymous_requester_email]"]').hide(); //Mail Feld
+      $('label[for="request_anonymous_requester_email"]').hide();   // Mail Betreff
+      $('.request_custom_fields_360007585419').hide(); // Auftragsnummer Feld
+      sessionStorage.setItem('Feedback', 2);
     }
   });
 
