@@ -785,11 +785,11 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('input[name="request[subject]"]').hide();
       $('#request_subject_label').hide();
       var betreff = $('input[name="request[subject]"]').val();
-      console.log(betreff.value());
+      console.log(betreff.val());
 
       $('input[name="request[anonymous_requester_email]"]').val('feedback@dghelpcenter.ch');//Mail setzen////
       $('input[name="request[anonymous_requester_email]"]').hide();
-      $('label[for="request_anonymous_requester_email"]').hide();
+      //$('label[for="request_anonymous_requester_email"]').hide();
       var mailFeld = $('input[name="request[anonymous_requester_email]"]').val();
       console.log(mailFeld.val());
       
