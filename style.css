@@ -1508,15 +1508,6 @@ ul {
 .article-vote:hover::before, .article-vote:hover::after,  {
 }
 
-
-
- .article-vote[aria-selected="true"]{
-  background-color: #d6e6f4;
-  color: #00559d;
-  text-decoration: none;
-  border: 1px solid #d6e6f4; 
-}
-
 .article-vote-up::before {
   content: "\2713";
 }

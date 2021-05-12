@@ -580,6 +580,13 @@ select:focus {
   max-width: 650px;
 }
 
+.article-vote[aria-selected="true"]{
+  background-color: #d6e6f4;
+  color: #00559d;
+  text-decoration: none;
+  border: 1px solid #d6e6f4; 
+}
+
 /*#request_subject_label .no-after::after{
   content: '';
 }*/
