@@ -754,6 +754,10 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
      console.log(referrer);
   }
 
+  if(performance.navigation.type == 2 && referrer.indexOf('articles') !== -1){
+    sessionStorage.setItem('Feedback', 1);
+  }
+
   if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1')) {
     //document.referrer.indexOf('articles') !== -1 && 
       console.log('Contains Test');
@@ -820,7 +824,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('.request_anonymous_requester_email').insertBefore('.form-field.string.required.request_subject');*/
       /*$('.form-field.string.required.request_subject').hide(); //betreff*/
       
-      
+
       
       /*document.getElementById('requestForm').innerHTML ='<div class="form-field string required request_anonymous_requester_email"><label for="request_anonymous_requester_email">E-Mail Adresse</label><input type="text" name="request[anonymous_requester_email]" id="request_anonymous_requester_email" aria-required="true" /></div>';
 */
