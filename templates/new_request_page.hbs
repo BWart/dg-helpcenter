@@ -775,14 +775,13 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   $('input[type="submit"]').on('click',function(){
     if($('#request_description').val() !== '' && sessionStorage.getItem('Feedback').includes('1')){
       console.log('IF');
+      console.log(referrer);
       window.location.href = referrer;
     } 
     else{
       console.log('ELSE');
       alert('Bitte geben Sie Ihr Feedback ein.');
-      /*.log(referrer);
-      console.log(urlBackup);
-      window.location.href = urlBackup;*/
+      console.log(referrer);
     
     }
   });
