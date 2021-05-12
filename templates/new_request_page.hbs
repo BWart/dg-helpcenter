@@ -783,8 +783,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('input[name="request[subject]"]').val('Feedback Helpcenter'); //Betreff gesetzt ////
       $('input[name="request[subject]"]').prop("readonly",true); //Betreff nur lesbar nicht aenderbar ////
       $('input[name="request[subject]"]').hide();
-      $('request_subject_label').hide();
-      console.log($('input[name="request[subject]"]').val())
+      $('#request_subject_label').hide();
+      console.log($('input[name="request[subject]"]').val());
 
       $('input[name="request[anonymous_requester_email]"]').val('feedback@dghelpcenter.ch');//Mail ////
       
