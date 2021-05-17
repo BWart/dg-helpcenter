@@ -777,7 +777,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
     if($('#request_description').val() !== '' && sessionStorage.getItem('Feedback').includes('1')){
       console.log('Button wenn nicht LEER');
       console.log(referrer);
-      window.location.href = referrer;
+      window.location.replace(referrer);
+      //window.location.href = referrer;
       sessionStorage.setItem('Feedback', 0);
     }/*else if($('#request_description').val() !== '' && sessionStorage.getItem('Feedback').includes('2')){
       window.location.href = referrer;
