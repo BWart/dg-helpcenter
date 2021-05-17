@@ -759,7 +759,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       
 
       //$('input[name="request[anonymous_requester_email]"]').val('feedback@dghelpcenter.ch');//Mail setzen////
-      $('input[name="request[anonymous_requester_email]"]').val('sipp.kopf@web.de');//Mail setzen////
+      $('input[name="request[anonymous_requester_email]"]').val('sipp.kopf@web.de');////////////////////////////////////////Test Mail
       //$('input[name="request[anonymous_requester_email]"]').hide(); //Mail Feld
       //$('label[for="request_anonymous_requester_email"]').hide();   // Mail Betreff
       console.log($('input[name="request[anonymous_requester_email]"]').val());
@@ -774,11 +774,11 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
 
   $('input[type="submit"]').on('click',function(){
-    if($('#request_description').val() !== '' && sessionStorage.getItem('Feedback').includes('1')){
+    if($('#request_description').val() !== '' && sessionStorage.getItem('Feedback').includes('1')){ /////////Klappt nicht
       console.log('Button wenn nicht LEER');
       console.log(referrer);
-      window.location.replace(referrer);
-      //window.location.href = referrer;
+      //window.location.replace(referrer);
+      window.location.href = referrer;
       sessionStorage.setItem('Feedback', 0);
     }/*else if($('#request_description').val() !== '' && sessionStorage.getItem('Feedback').includes('2')){
       window.location.href = referrer;
