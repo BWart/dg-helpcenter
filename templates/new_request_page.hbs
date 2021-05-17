@@ -721,17 +721,16 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 //////////////////////////Downvote-button Formular////////////////////////////
 
 
-  if(document.referrer.indexOf(window.location.hostname) !== -1 && sessionStorage.getItem('Feedback').includes('2')){
+  if(document.referrer.indexOf(window.location.hostname) !== -1 && sessionStorage.getItem('Feedback').includes('1')){
      var referrer =  document.referrer;
      //urlBackup = document.referrer;
      console.log(referrer);
-     sessionStorage.setItem('Feedback', 1);
   }
-  console.log(referrer);
+
   /*if(window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD &&  sessionStorage.getItem('lastPage').includes('1')){
     sessionStorage.setItem('Feedback', 1);
   }*/
-if(sessionStorage.getItem('Feedback').includes('1')){
+
   if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1') || $('#request_description').val() == '' && sessionStorage.getItem('Feedback').includes('1') ) {
     //document.referrer.indexOf('articles') !== -1 && 
       console.log('Contains Test');
@@ -778,7 +777,9 @@ if(sessionStorage.getItem('Feedback').includes('1')){
     if($('#request_description').val() !== '' && sessionStorage.getItem('Feedback').includes('1')){
       console.log('LEER');
       console.log(referrer);
-      window.location.href = referrer;
+      //window.location.href = referrer;
+      window.history.back();
+      location.reload(); 
     }/*else if($('#request_description').val() !== '' && sessionStorage.getItem('Feedback').includes('2')){
       window.location.href = referrer;
       sessionStorage.setItem('Feedback', 0);
@@ -794,6 +795,6 @@ if(sessionStorage.getItem('Feedback').includes('1')){
       sessionStorage.setItem('Feedback', 1);
     }*/
   });
-}
+
 
 </script>
