@@ -259,6 +259,13 @@
         sessionStorage.getItem('Feedback');
         //sessionStorage.getItem('lastPage');*/
 
+        // set the new referrer 
+        sessionStorage.setItem("referrer", window.location.href);
+
+        // show the previous page url (just for testing)
+        console.log(referrer);
+
+
 
         console.log(linkArray[0]);
         console.log(window.location.href);
