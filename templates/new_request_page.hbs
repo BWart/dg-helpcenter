@@ -731,10 +731,6 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
      console.log(referrer);
   }*/
 
-  /*if(window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_BACK_FORWARD &&  sessionStorage.getItem('lastPage').includes('1')){
-    sessionStorage.setItem('Feedback', 1);
-  }*/
-
   if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1') || $('#request_description').val() == '' && sessionStorage.getItem('Feedback').includes('1') ) {
     //document.referrer.indexOf('articles') !== -1 && 
       console.log('Contains Test');
@@ -779,9 +775,10 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
   $('input[type="submit"]').on('click',function(){
     if($('#request_description').val() !== '' && sessionStorage.getItem('Feedback').includes('1')){
-      console.log('LEER');
+      console.log('Button wenn nicht LEER');
       console.log(referrer);
       window.location.href = referrer;
+      sessionStorage.setItem('Feedback', 0);
     }/*else if($('#request_description').val() !== '' && sessionStorage.getItem('Feedback').includes('2')){
       window.location.href = referrer;
       sessionStorage.setItem('Feedback', 0);

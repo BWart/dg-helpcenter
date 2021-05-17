@@ -242,7 +242,6 @@
   sessionStorage.clear();
   localStorage.clear();
   sessionStorage.setItem('Feedback', 0);
-  //sessionStorage.setItem('lastPage', 0);*/
 
   var url = window.location.href; 
 
@@ -258,17 +257,13 @@
         sessionStorage.getItem('Feedback');
 
 
-        // set the new referrer 
+        // neuen referrer setzen
         sessionStorage.setItem('referrer', window.location.href);
 
-        // show the previous page url (just for testing)
+        // artikel url anzeigem
         console.log(sessionStorage.getItem('referrer'));
 
 
     });
-
-
-
-
 
 </script>
