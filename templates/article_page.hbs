@@ -254,24 +254,17 @@
 
         var urlTest = linkArray + 'requests/new?ticket_form_id=39231';
 
-        sessionStorage.setItem('Feedback', 2);
-        //sessionStorage.setItem('lastPage', 1);*/
+        sessionStorage.setItem('Feedback', 1);
         sessionStorage.getItem('Feedback');
-        //sessionStorage.getItem('lastPage');*/
+
 
         // set the new referrer 
-        sessionStorage.setItem("referrer", window.location.href);
+        sessionStorage.setItem('referrer', window.location.href);
 
         // show the previous page url (just for testing)
-        console.log(referrer);
+        console.log(sessionStorage.getItem('referrer'););
 
 
-
-        console.log(linkArray[0]);
-        console.log(window.location.href);
-        console.log(urlTest);
-        /*window.location.href = 'hc/requests/new';
-        return false;*/
     });
 
 
