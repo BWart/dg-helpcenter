@@ -771,7 +771,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
         sessionStorage.setItem('Feedback', 0);
   }
 
-
+ 
   $('input[type="submit"]').on('click',function(){
     if($('#request_description').val() !== '' && sessionStorage.getItem('Feedback').includes('1')){ /////////Klappt nicht
       console.log('Button wenn nicht LEER');
