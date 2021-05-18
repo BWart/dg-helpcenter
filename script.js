@@ -312,235 +312,85 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
       ga('send', 'event', 'Vote', 'Not Helpful', path);
   });  
   
-  // zopim integration
-
-   //Waits for Zopim to Load
+  //Zopim integration
+    
+  zE('webWidget', 'setLocale', getWidgetLanguage());
   
-  var chatButton = 'new';
-  
-  var waitForZopim = setInterval(function () {
-    var n = 0;
-    if (window.$zopim === undefined || window.$zopim.livechat === undefined) {
-      n++;
-      if(n > 10){
-        changeCSS('noReply');
-      } else{
-      return;
-        }
-    }
-    $zopim(function() {
-       $zopim.livechat.setOnConnected(function() {
-       });
-     });    
-    clearInterval(waitForZopim);
-}, 400);
-  
-  
-// Defines how many Users can See the Chat Button
-  
-var perCentSeesChatButtonDE = 100 // Change Value from 0-100
-var perCentSeesChatButtonFR = 100 // Change Value from 0-100
-var perCentSeesChatButtonEN = 100 // Change Value from 0-100
-var perCentSeesChatButtonIT = 100 // Change Value from 0-100
-  
-function canSeeChatButton(){
-  if(getChatGroup() > getPercentForLang()){
-    return false;
-  }else{
-      return true;
-  }
-}
-  
-function getChatGroup(){
-   if(!sessionStorage.getItem('chatGroup')){
-      var chatGroup = getRandomInt(100);
-      sessionStorage.setItem('chatGroup', chatGroup);
-      return chatGroup;
-    }else{
-      return sessionStorage.getItem('chatGroup');
-    }
-}
-
-function getPercentForLang(){
-  	var percentForLang;
- 	switch(currentLanguage) {
-  	case 'de':
-    	percentForLang = perCentSeesChatButtonDE;
-    	break;
-  	case 'fr':
-    	percentForLang = perCentSeesChatButtonFR;
-    	break;
-  	case 'it':
-    	percentForLang = perCentSeesChatButtonIT;
-    	break;
-  	case 'en-US':
-    	percentForLang = perCentSeesChatButtonEN;
-    	break;
-  	default:
-      percentForLang = perCentSeesChatButtonDE;
-	}
-	return percentForLang;
-}
-  
-//Shows Chat if is Chatting or disables Chat if isnt
-  
-function loadChat(){
-   try {
-    $zopim(function() {
-      if($zopim.livechat.isChatting()){
-        chatButton = 'visible';
-        changeCSS('online');
-        setVisitorDepartment();
-      }else{
-        $zopim.livechat.hideAll();
-        $zopim.livechat.theme.reload();
-        changeButtonVisibility();
-        removeVisitorNotes();
-        }
-    });
-    } catch (error) {
-  console.error(error);
-	}
-}
-  
-// click Event for Chat Button
-
-$('.chat-private').on("click", function () {
-  if($zopim.livechat.window.getDisplay()){
-    $zopim.livechat.window.hide();
-  } else{
-    $zopim.livechat.window.show();
-  }
-  }); 
-  
-// opens new Window for unread messages 
-$zopim(function() {
-	$zopim.livechat.setOnUnreadMsgs(function(numUnread){
-  	if(numUnread > 0 && !$zopim.livechat.window.getDisplay()) {
-    	$zopim.livechat.window.show();
+   function getWidgetLanguage(){
+  	var languageTag = 'de';
+  	if($('html').attr('lang') != 'en-US'){
+  		languageTag = $('html').attr('lang');
+  	}else{
+  		languageTag = 'en'; 
   	}
-	});
-});
+  	return languageTag;
+  }
   
+// Initial Settings of Widget
   
-  // Hide or Shows Button if Status Changes
-  $zopim(function() {
-      $zopim.livechat.theme.setColor(chatcolor);
-      $zopim.livechat.setOnStatus(function(statusChange){
-        if(statusChange == 'online' && chatButton == 'hidden' ){
-          loadChat();
+ window.zESettings = {
+      webWidget: {
+        chat: {
+          suppress: false,
+          departments: {
+            enabled: []
+          },
+           title: {
+          	'*': 'Chat with us',
+          	fr: 'Chattez avec nous',
+            de: "Chatte mit uns",
+            it: "Chattata con noi"
+       		},
+          prechatForm: {
+          greeting: {
+            '*': 'Please have your order, service or invoice number ready so that we can help you even faster.',
+            fr: "Veuillez préparer votre numéro de commande, de service ou de facture afin que nous puissions vous aider encore plus rapidement. ",
+            de: "Bitte halte deine Bestell-, Service- oder Rechnungsnummer bereit, damit wir dir noch schneller helfen können. ",
+            it: "Tieni pronto il tuo numero d'ordine, di servizio o di fattura in modo che possiamo aiutarti ancora più velocemente. "
+          }
+  
+        },
+          offlineForm: {
+          greeting: {
+            '*': "We aren't online right now",
+            fr: "Nous ne sommes pas en ligne pour le moment",
+            en: "We aren't online right now",
+            de: "Wir sind im Moment nicht online",
+            it: "Non siamo online in questo momento"
+          }
         }
-        if(statusChange == 'offline' && chatButton == 'visible' && !$zopim.livechat.isChatting()){
-          loadChat();
+        },
+        contactForm: {
+          suppress: true
+        },
+        helpCenter: {
+          suppress: true
+        },
+        talk: {
+          suppress: true
+        },
+        answerBot: {
+          suppress: true
         }
-        if(chatButton == 'new' && statusChange != undefined ){
-          loadChat();
-        }      
-      });
+      }
+    };
+  
+// Shows Chat if Is Chatting or Hides Chat else
+  
+  zE('webWidget:on', 'chat:connected', function() {
+    IsChatting();
   });
   
-  // Shows Chat button if anyone is avaiable and inside opening hours
   
-  function changeButtonVisibility(){
-    if (checkAvailability() == 'online' && localStorage.getItem('isPrivateCustomer') == "1" && canSeeChatButton()) {
-      changeCSS('online');
-      chatButton = 'visible';
-      setVisitorDepartment();
-    }else{
-      changeCSS('offline');
-      chatButton = 'hidden';
-    }
-  }
-  
-  function setVisitorDepartment(){
-  	$zopim(function() {
-  		$zopim.livechat.departments.setVisitorDepartment(getZopimLanguage());
-  	});      
-  }
-    
-  function removeVisitorNotes(){
-  	$zopim(function() {
-  		$zopim.livechat.setNotes('');
-  	});      
-  }
-  
-  /*  
-  //Set prechat form Departments
-  
-  function setDepartments(){
-    if(currentLanguage == 'de'){ 
-        $zopim(function() {
-    $zopim.livechat.departments.filter('Rückgabe oder Garantie', 'Liefertermin', 'Rechnung oder Mahnung','Anderweitige Anfrage','Produktberatung','Bestellung','Lieferproblem');
-  });      
-    } else      
-      $zopim(function() {
-    $zopim.livechat.departments.filter(getZopimLanguage());
-  });  
-  }
- */
-  
-  // Returns availability
-  function checkAvailability(){
-    var dep;
-    $zopim(function() {  
-       dep = $zopim.livechat.departments.getDepartment(getZopimLanguage());
-       });
-    if (dep.status === undefined){
-      dep = 'offline'; 
-      } else{
-        dep = dep.status;
-      }
-    status = dep;
-    return dep;  
-  }
-  
-  // CSS Change
-  function changeCSS(cssStatusChange){
-    if(cssStatusChange == 'online'){
-      $(".contactDataChat").show();
-    } 
-    if(cssStatusChange == 'offline'){
-     $(".chat-private").css('pointer-events', 'none');
-      $(".chat-private").css('color', chatColorOffline);
-      $(".chat-private").css('background-color', chatBackColorOffline);
-      $(".chat-private").html(getNoAgentText);
-    }
-  }
-  
-  function getNoAgentText(){
-    switch(currentLanguage){
-      case 'de':
-        return 'Nicht verfügbar';
-      case 'fr':
-        return 'Non disponible';
-      case 'it':
-        return 'Non disponibile';
-      default:
-        return 'Not available';
-    }
-  }
-  
-  
-  //returns Zopim language
-  function getZopimLanguage(){
-    var langdep;
-    	switch(currentLanguage) {
-  	case 'de':
-    	langdep = 'Deutsch';
-    	break;
-  	case 'fr':
-    	langdep = 'Français';
-    	break;
-  	case 'it':
-    	langdep = 'Italiano';
-    	break;
-  	case 'en-US':
-    	langdep = 'English';
-    	break;
-  	default:
-    	langdep = 'Deutsch';
-	}      
-    return langdep; 
-  }
+function IsChatting(){
+   
+      if(zE('webWidget:get', 'chat:isChatting')){
+        zE('webWidget', 'show');
+        return true;
+      }else{
+        zE('webWidget', 'hide');
+        return false;
+        }
+}
   
 });

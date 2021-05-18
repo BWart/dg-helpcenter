@@ -28,7 +28,7 @@
       <tr>
         <td class ='contactButtonTableCellLeft'><a class="button-contact contactFormWriteUs" data-wording-key="writeUs"></a></td>
         <td class ='contactButtonTableCellLeftLeftBorder'><div class="button-contact phone-number private-number private-customer" data-wording-key="callUsPrivate"></div>      <div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div></td>
-        <td class ='contactButtonTableCellLeftLeftBorder private-customer'><a class="button-contact chat-private" data-wording-key="chatUs"></a></td>
+        <td class ='contactButtonTableCellLeftLeftBorder private-customer'><a class="button-contact chat-private button-offline" data-wording-key="chatUs"></a></td>
       </tr>
       <tr>
         <td class ='contactButtonTableCellLeft'></td>
@@ -57,7 +57,7 @@
         <td class ='contactButtonTableCellLeftTopBorder private-customer'><p class="font1">Chat</p></td>
       </tr>
       <tr>
-         <td class ='contactButtonTableCellLeftNoBorder private-customer'><a class="button-contact chat-private" data-wording-key="chatUs"></a></td>
+         <td class ='contactButtonTableCellLeftNoBorder private-customer'><a class="button-contact chat-private button-offline" data-wording-key="chatUs"></a></td>
       </tr>
 
     </table>
@@ -214,25 +214,12 @@ function checkForCallHours(){
  $('.request_custom_fields_360014169819').on("change",function() {
 	var infoText = $('.request_custom_fields_360014169819' + ' a.nesty-input').text();
 	if(infoText != ''){
-		onDropdownChange();                                                                                     
-  	setZopimTag(); 
+		onDropdownChange();
+    changeButtonNotChatting();                                                                                     
+  	setZopimTag();
 	}                                                                                           
 });
-                                                                                              
-// Set Tag for Zopim 
-  function setZopimTag(){
-    var tag = $('#request_custom_fields_360014169819').attr('value');
-  	var oldTag = localStorage.getItem('requestReason');
-    $zopim(function() {
-      if(!oldTag !== null){
-      $zopim.livechat.removeTags(oldTag);
-   		}
-    	$zopim.livechat.addTags(tag, 'digitec');
-      $zopim.livechat.removeTags('galaxus');
-    });
-  localStorage.setItem('requestReason', tag);
-  }                                                                                              
-
+                                                                                                                                                                                        
 function onDropdownChange(){
 hideOrderNumber();
 	showContactInfo();
@@ -440,6 +427,289 @@ hideOrderNumber();
     }
   }
   
+  // ZOPIM Integration
+  
+  // Defines how many Users can See the Chat Button
+  
+var perCentSeesChatButtonDE = 100 // Change Value from 0-100
+var perCentSeesChatButtonFR = 100 // Change Value from 0-100
+var perCentSeesChatButtonEN = 100 // Change Value from 0-100
+var perCentSeesChatButtonIT = 100 // Change Value from 0-100
+  
+function canSeeChatButton(){
+  if(getChatGroup() > getPercentForLang()){
+    return false;
+  }else{
+      return true;
+  }
+}
+
+  
+function getChatGroup(){
+   if(!sessionStorage.getItem('chatGroup')){
+      var chatGroup = getRandomInt(100);
+      sessionStorage.setItem('chatGroup', chatGroup);
+      return chatGroup;
+    }else{
+      return sessionStorage.getItem('chatGroup');
+    }
+}
+
+function getPercentForLang(){
+  	var percentForLang;
+ 	switch(currentLanguage) {
+  	case 'de':
+    	percentForLang = perCentSeesChatButtonDE;
+    	break;
+  	case 'fr':
+    	percentForLang = perCentSeesChatButtonFR;
+    	break;
+  	case 'it':
+    	percentForLang = perCentSeesChatButtonIT;
+    	break;
+  	case 'en-US':
+    	percentForLang = perCentSeesChatButtonEN;
+    	break;
+  	default:
+      percentForLang = perCentSeesChatButtonDE;
+	}
+	return percentForLang;
+}
+  
+// Checks initial Department Status and Changes Button if Online
+  
+function initialButtonChange(department){
+
+  var dep = zE('webWidget:get', 'chat:department', department);
+  console.log('dep');
+  if(dep.status == 'online'){
+  	changeButtonVisibility(dep.status)
+  	console.log('InitialDepartmentStatus' + dep.status)
+  	}
+}
+  
+  //Suppresses all other than Chat in the Widget and disables Departments
+  
+  function setChatWidgetOptions(){
+  console.log('WebWidgetIsSet');
+    var dep = getChatDepartment();
+
+    zE('webWidget', 'updateSettings', {
+      webWidget: {
+        chat: {
+          suppress: false,
+          departments: {
+            select: dep,
+            enabled: []
+        },
+           title: {
+          	'*': 'Chat with us',
+          	fr: 'Chattez avec nous',
+            de: "Chatte mit uns",
+            it: "Chattata con noi"
+       		},
+          prechatForm: {
+          greeting: {
+            '*': 'Please have your order, service or invoice number ready so that we can help you even faster.',
+            fr: "Veuillez préparer votre numéro de commande, de service ou de facture afin que nous puissions vous aider encore plus rapidement. ",
+            de: "Bitte halte deine Bestell-, Service- oder Rechnungsnummer bereit, damit wir dir noch schneller helfen können. ",
+            it: "Tieni pronto il tuo numero d'ordine, di servizio o di fattura in modo che possiamo aiutarti ancora più velocemente. "
+          }
+  
+        },
+          offlineForm: {
+          greeting: {
+            '*': "We aren't online right now",
+            fr: "Nous ne sommes pas en ligne pour le moment",
+            en: "We aren't online right now",
+            de: "Wir sind im Moment nicht online",
+            it: "Non siamo online in questo momento"
+          }
+        }
+        },
+        contactForm: {
+          suppress: true
+        },
+        helpCenter: {
+          suppress: true
+        },
+        talk: {
+          suppress: true
+        },
+        answerBot: {
+          suppress: true
+        }
+      }
+    });
+   console.log(window.zESettings);
+  	return dep;
+  }
+  
+  
+  function getChatDepartment(){
+    var chatDepartment;
+    var customerType = localStorage.getItem('isPrivateCustomer')
+  
+    switch(true) {
+  	case (currentLanguage === 'de' && customerType == 1):
+    	chatDepartment = 'Chat Private DE';
+    	break;
+  	case (currentLanguage === 'fr' && customerType == 1):
+    	chatDepartment = 'Chat Private FR';
+    	break;
+  	case (currentLanguage === 'it' && customerType == 1):
+    	chatDepartment = 'Chat Private IT';
+    	break;
+  	case (currentLanguage === 'en-US' && customerType == 1):
+    	chatDepartment = 'Chat Private EN';
+    	break;
+    case (currentLanguage === 'de' && customerType != 1):
+    	chatDepartment = 'Chat Business DE';
+    	break;
+    case (currentLanguage === 'fr' && customerType != 1):
+    	chatDepartment = 'Chat Business FR';
+    	break;
+    case (currentLanguage === 'it' && customerType != 1):
+    	chatDepartment = 'Chat Business IT';
+    	break;
+    case (currentLanguage === 'en-US' && customerType != 1):
+    	chatDepartment = 'Chat Business EN';
+    	break;
+  	default:
+    	chatDepartment = 'Chat Private DE';
+	}
+  	console.log('Department' + chatDepartment);
+    return chatDepartment; 
+  }
+  
+  
+  // Set Tag for Zopim 
+  function setZopimTag(){
+    var tag = $('#request_custom_fields_360014169819').attr('value');
+  	var oldTag = sessionStorage.getItem('requestReason');
+  	var languageTag = getLanguageTag();
+  
+    if(!oldTag !== null){
+      zE('webWidget', 'chat:removeTags', oldTag);      
+   		}
+    zE('webWidget', 'chat:removeTags', 'de', 'fr', 'it', 'en');                                                      
+    zE('webWidget', 'chat:addTags', tag, languageTag);                                                                                                                                                                                
+    if(tag != 'webform_case_product_advice_consumer'){
+  		 zE('webWidget', 'chat:addTags', 'standard_request');
+  	}
+  
+  	sessionStorage.setItem('requestReason', tag);
+  }            
+  
+   function getLanguageTag(){
+  	var languageTag = 'de';
+  	if($('html').attr('lang') != 'en-US'){
+  		languageTag = $('html').attr('lang');
+  	}else{
+  		languageTag = 'en'; 
+  	}
+  	return languageTag;
+  }
+  
+  // Hide or Shows Button if Status Changes
+ 
+	function listenDepartmentStatus(selectedDepartment){
+    zE('webWidget:on', 'chat:departmentStatus', function(department) {
+  		console.log('department changed' + department.name);
+    	if(department.name == selectedDepartment){
+  			changeButtonVisibility(department.status); 
+  		}
+    });
+  }
+ 
+  
+// click Event for Chat Button
+
+$('.chat-private').on("click", function () {
+  openChat();
+  }); 
+  
+// opens Window for unread messages 
+zE('webWidget:on', 'chat:unreadMessages', function(number) {
+ openChat();
+});
+  
+  // Opens Chat in WebWidget
+  function openChat(){
+    zE('webWidget', 'show');
+  	document.getElementById('launcher').contentWindow.document.getElementById('Embed').getElementsByTagName('button')[0].click();
+  }
+  
+  
+  function isChatting(){
+  	return (zE('webWidget:get', 'chat:isChatting'));
+  }
+  
+  function changeButtonNotChatting(){
+  	setZopimTag(); 
+  	if(!isChatting()){
+  		console.log("isnotChatting");
+   		var selectedDepartment = setChatWidgetOptions();                                                                                        
+    	initialButtonChange(selectedDepartment);                                                                                          
+    	listenDepartmentStatus(selectedDepartment); 
+  	}else{
+  	setButtonVisbility('online');
+  	console.log("ischatting");
+  	}
+  }
+  
+  
+  // Shows Chat button if anyone is available and inside opening hours
+  
+  function changeButtonVisibility(status){
+    if(status == 'online' && canSeeChatButton()){
+      setButtonVisbility('online');
+      zE('webWidget', 'hide');
+    } else{
+       zE('webWidget', 'hide');
+       setButtonVisbility('offline');
+    }
+  }
+  
+  // CSS Change
+  function setButtonVisbility(cssStatusChange){
+    if(cssStatusChange == 'online'){
+      $(".chat-private").removeClass("button-offline");
+      $(".chat-private").html(getButtonText('chatUs'));
+      $(".contactDataChat").show();
+    } 
+    if(cssStatusChange == 'offline'){
+      $(".chat-private").addClass("button-offline");
+ 		  $(".chat-private").html(getButtonText('chatNotOnline'));
+    }
+  }
+  
+  
+  function getButtonText(buttonText){
+  
+  var currentLanguage = $('html').attr('lang');
+	
+   var chatText = {
+  	de: {
+      'chatUs': 'Chatte mit uns',
+      'chatNotOnline' : 'Nicht verfügbar'
+    },
+		fr: {      
+      'chatUs': 'Chattez avec nous',
+      'chatNotOnline' : 'Non disponible'
+    },
+    it:{  
+      'chatUs': 'Chatta con noi',
+      'chatNotOnline' : 'Non disponibile'
+    },
+    'en-US': {
+      'chatUs': 'Chat with us',
+      'chatNotOnline' : 'Not available'
+    }
+  	}
+   return chatText[currentLanguage][buttonText];
+  }
+
   function getInfoForLang(reason){
   
   	var currentLanguage = $('html').attr('lang');
