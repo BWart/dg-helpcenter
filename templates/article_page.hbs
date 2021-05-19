@@ -99,17 +99,13 @@
             <div class="article-votes-controls" role='radiogroup'>
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
               {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
-              <div id="downvoteButton">hallo</div>
+
             </div>
-            
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
             </small>
-            <div id="downvoteButton">hallo</div>
           </div>
-          <div id="downvoteButton">hallo</div>
         {{/with}}
-        <div id="downvoteButton">hallo</div>
 
        
 <!-- Request Link
@@ -249,15 +245,6 @@
   var url = window.location.href; 
 
     $('.article-vote-down').on('click',function(){
-      document.getElementById('downvoteButton').innerHTML ='<button id="textDownvote">Schade, dass es Ihnen nicht gefällt</button>';
-    });
-  
-
-
-    function downvoteText(){
-      var feedbackbutton = document.createElement('button');
-      feedbackbutton.innerHTML = 'click me';
-      feedbackbutton.onclick = function(){
         console.log('SPLIT');
         var linkArray = url.split('articles');
         linkArray.pop();
@@ -276,12 +263,8 @@
         console.log(sessionStorage.getItem('referrer'));
 
 
-      };
-      // where do we want to have the button to appear?
-      // you can append it to another element just by doing something like
-      // document.getElementById('foobutton').appendChild(button);
-      document.getElementsByClassName('article-vote-down')..appendChild(feedbackbutton);
-      //document.body.appendChild(button);
-    };
+    });
+  
+  
 
 </script>
