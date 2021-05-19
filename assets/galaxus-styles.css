@@ -90,13 +90,11 @@ display: none;
   padding-top: 35px;
 }
 
-/**/
 .button-offline{
   pointer-events: none;
   color: #bebebe;
   background-color: #ededed;
 }
-
 
 .contactButtonTableCellFull{
   width:100%;
@@ -596,6 +594,10 @@ select:focus {
   border: 1px solid #444; 
 }
 
-/*#request_subject_label .no-after::after{
-  content: '';
+/*#downvoteTextButton{
+  border: 1px solid #444;
+  color: #fff;
+  background-color: #444;
 }*/
+
+
