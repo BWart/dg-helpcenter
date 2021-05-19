@@ -99,7 +99,7 @@
             <div class="article-votes-controls" role='radiogroup'>
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
               {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
-              <div id='downvoteTEXT'></div>
+              <div id='downvoteTextButton article-vote-down'></div>
             </div>
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
@@ -224,17 +224,6 @@
 </div>
 <script>
   console.log('SCRIPT');
-  /*$('.article-vote-down').click(function(){ 
-    var $this = $(this);
-    if($this.data('clicked')) {
-        $this.data('clicked', true);
-        $(a[href='{{section.url}}']).attr('href', 'hc/requests/new');
-    }
-    else {
-        $this.data('clicked', false);
-    }
-  })*/
-
 
   //Wenn Downvote gedrueckt wurde dann wird der Link gesplittet und die Url zum Aufruf der new request page dran gehangen
 
@@ -244,29 +233,11 @@
 
   var url = window.location.href; 
 
-    $('.article-vote-down').on('click',function(){
-        document.getElementById('downvoteTEXT').innerHTML ='Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br><button>Feedback</button>';
-        /*console.log('SPLIT');
-        var linkArray = url.split('articles');
-        linkArray.pop();
-        window.location.href = linkArray + 'requests/new?ticket_form_id=39231';
+  $('.article-vote-down').on('click',function(){
+        document.getElementById('downvoteTextButton').innerHTML ='Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br><button>Feedback</button>';
+  });
 
-        var urlTest = linkArray + 'requests/new?ticket_form_id=39231';
-
-        sessionStorage.setItem('Feedback', 1);
-        sessionStorage.getItem('Feedback');
-
-
-        // neuen referrer setzen
-        sessionStorage.setItem('referrer', window.location.href);
-
-        // artikel url anzeigem
-        console.log(sessionStorage.getItem('referrer'));*/
-
-
-    });
-
-  $('#downvoteTEXT').on('click',function(){
+  $('#downvoteTextButton').on('click',function(){
         console.log('SPLIT');
         var linkArray = url.split('articles');
         linkArray.pop();
@@ -278,11 +249,11 @@
         sessionStorage.getItem('Feedback');
 
 
-        // neuen referrer setzen
+        /*// neuen referrer setzen
         sessionStorage.setItem('referrer', window.location.href);
 
-        // artikel url anzeigem
-        console.log(sessionStorage.getItem('referrer'));
+        // artikel url anzeigen
+        console.log(sessionStorage.getItem('referrer'));*/
   });
 
 </script>

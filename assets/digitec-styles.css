@@ -108,6 +108,12 @@
      padding-top: 35px;
    }
    
+.button-offline{
+  pointer-events: none;
+  color: #97bad7;
+  background-color: #ededed;
+}
+
    .contactButtonTableCellFull{
      width:100%;
      padding-top:10px;
