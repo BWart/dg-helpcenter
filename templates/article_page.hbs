@@ -101,6 +101,7 @@
               {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
 
             </div>
+            <div id="downvoteButton"></div>
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
             </small>
@@ -244,8 +245,9 @@
 
   var url = window.location.href; 
 
-    $('.article-vote-down').on('click',downvoteText());
-
+    $('.article-vote-down').on('click',function(){
+      document.getElementById('downvoteButton').innerHTML ='<button id="textDownvote">Schade, dass es Ihnen nicht gefällt</button>';
+    });
   
 
 
