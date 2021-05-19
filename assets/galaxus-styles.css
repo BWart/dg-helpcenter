@@ -509,15 +509,21 @@ html {
 }
 
 #downvoteTextButton{
+  border-radius: 3px;
   border: 1px solid #444;
   color: #fff;
   background-color: #444;
+  min-width: 90px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 2.34;
 }
 
 #downvoteTextButton:hover, #downvoteTextButton:focus{
   background-color: #565656;
   color: #fff;
   border: 1px solid #565656;
+
 }
 /*
 a {
