@@ -99,7 +99,7 @@
             <div class="article-votes-controls" role='radiogroup'>
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
               {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
-              <button>HALLO</button>
+              <div id='downvoteTEXT'></div>
             </div>
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
@@ -245,7 +245,8 @@
   var url = window.location.href; 
 
     $('.article-vote-down').on('click',function(){
-        console.log('SPLIT');
+        document.getElementById('downvoteTEXT').innerHTML ='<button>HALLO</button>';
+        /*console.log('SPLIT');
         var linkArray = url.split('articles');
         linkArray.pop();
         window.location.href = linkArray + 'requests/new?ticket_form_id=39231';
@@ -260,7 +261,7 @@
         sessionStorage.setItem('referrer', window.location.href);
 
         // artikel url anzeigem
-        console.log(sessionStorage.getItem('referrer'));
+        console.log(sessionStorage.getItem('referrer'));*/
 
 
     });
