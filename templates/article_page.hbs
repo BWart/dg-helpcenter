@@ -237,7 +237,7 @@
 
 
   //Wenn Downvote gedrueckt wurde dann wird der Link gesplittet und die Url zum Aufruf der new request page dran gehangen
-  
+
   sessionStorage.clear();
   //localStorage.clear();
   sessionStorage.setItem('Feedback', 0);
@@ -245,6 +245,15 @@
   var url = window.location.href; 
 
     $('.article-vote-down').on('click',function(){
+      downvoteText();
+    });
+  
+
+
+    var downvoteText = function(){
+      var feedbackbutton = document.createElement('button');
+      feedbackbutton.innerHTML = 'click me';
+      feedbackbutton.onclick = function(){
         console.log('SPLIT');
         var linkArray = url.split('articles');
         linkArray.pop();
@@ -263,6 +272,12 @@
         console.log(sessionStorage.getItem('referrer'));
 
 
-    });
+      };
+      // where do we want to have the button to appear?
+      // you can append it to another element just by doing something like
+      // document.getElementById('foobutton').appendChild(button);
+      document.getElementsByClassName('article-vote-down')..appendChild(feedbackbutton);
+      //document.body.appendChild(button);
+    };
 
 </script>
