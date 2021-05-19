@@ -99,7 +99,7 @@
             <div class="article-votes-controls" role='radiogroup'>
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
               {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
-              <div id='downvoteTEXT'></div>
+              <div class='downvoteTEXT'></div>
             </div>
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
@@ -245,7 +245,7 @@
   var url = window.location.href; 
 
     $('.article-vote-down').on('click',function(){
-        document.getElementById('downvoteTEXT').innerHTML ='<button>HALLO</button>';
+        document.getElementsByClassName('downvoteTEXT').innerHTML ='<button>HALLO</button>';
         /*console.log('SPLIT');
         var linkArray = url.split('articles');
         linkArray.pop();
