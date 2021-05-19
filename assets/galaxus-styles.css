@@ -507,6 +507,18 @@ html {
   background:#000;
   color:#fff
 }
+
+#downvoteTextButton{
+  border: 1px solid #444;
+  color: #fff;
+  background-color: #444;
+}
+
+#downvoteTextButton:hover, #downvoteTextButton:focus{
+  background-color: #565656;
+  color: #fff;
+  border: 1px solid #565656;
+}
 /*
 a {
   color: #007bc8;
@@ -594,10 +606,6 @@ select:focus {
   border: 1px solid #444; 
 }
 
-/*#downvoteTextButton{
-  border: 1px solid #444;
-  color: #fff;
-  background-color: #444;
-}*/
+
 
 
