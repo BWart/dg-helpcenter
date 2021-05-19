@@ -237,7 +237,7 @@
         document.getElementById('downvoteText').innerHTML ='<br>Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br><button id="downvoteTextButton">Feedback</button>';
   });
 
-  $('#downvoteTextButton').on('click',function(){
+  $('#downvoteText').on('click',function(){
         console.log('SPLIT');
         var linkArray = url.split('articles');
         linkArray.pop();
