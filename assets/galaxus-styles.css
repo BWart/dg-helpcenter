@@ -524,7 +524,11 @@ html {
   color: #fff;
   border: 1px solid #565656;
 
+#downvoteText{
+  color: #000;
 }
+  
+
 /*
 a {
   color: #007bc8;
