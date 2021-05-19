@@ -245,12 +245,12 @@
   var url = window.location.href; 
 
     $('.article-vote-down').on('click',function(){
-      downvoteText;
+      downvoteText();
     });
   
 
 
-    var downvoteText = function(){
+    function downvoteText(){
       var feedbackbutton = document.createElement('button');
       feedbackbutton.innerHTML = 'click me';
       feedbackbutton.onclick = function(){
