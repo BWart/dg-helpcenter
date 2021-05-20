@@ -235,9 +235,9 @@
   var url = window.location.href; 
 
   $('.article-vote-down').on('click',function(){
+        sessionStorage.clear();
         document.getElementById('downvoteText').innerHTML ='<br>Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br>';
         document.getElementById('downvoteButton').innerHTML = '<button id="downvoteButton">Feedback</button>'
-        sessionStorage.clear();
   });
 
   $('#downvoteButton').on('click',function(){
