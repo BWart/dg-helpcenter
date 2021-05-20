@@ -529,6 +529,9 @@ html {
   color: #000;
 }
 
+.disabledborder {
+  border-left: none;
+}
 
 /*
 a {
