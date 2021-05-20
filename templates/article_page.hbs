@@ -239,6 +239,12 @@
         document.getElementById('downvoteButton').innerHTML = '<br><button id="downvoteButton">Feedback</button>'
   });
 
+  $('.article-vote-up').on('click',function(){
+        $('#downvoteText').hide();
+        $('#downvoteButton').hide();
+  });
+
+
   $('#downvoteButton').on('click',function(){
         console.log('SPLIT');
         var linkArray = url.split('articles');
