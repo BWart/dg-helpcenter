@@ -86,13 +86,8 @@ switch(portal){
       case'helpcenter.galaxus.ch':
               break;
       case'helpcenter.galaxus.de':
-              //$('.contactButtonTableCellLeftLeftBorder .private-customer').hide();
-              //$('contactButtonTableCellLeftLeftBorder').hide();
-              //$('a').removeClass('button-contact chat-private button-offline');
-              //$('td').removeClass('contactButtonTableCellLeftLeftBorder private-customer');
-              $('a[data-wording-key="chatUs"]').hide();
-              $('h4[data-wording-key="chat"]').hide();
-              //$('td').removeClass('private-customer');
+              $('a[data-wording-key="chatUs"]').remove();
+              $('h4[data-wording-key="chat"]').remove();
               break;
       default:
               break;
