@@ -997,7 +997,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   console.log(referrer);
 
 
-  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1') && sessionStorage.getItem('clicked').includes('1') || $('#request_description').val() == '' && sessionStorage.getItem('Feedback').includes('1') ) { 
+  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1') || $('#request_description').val() == '' && sessionStorage.getItem('Feedback').includes('1') ) { 
       console.log('Contains Article');
       $('#HeaderID').html("Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>");
       $('.contactFormInfoText2').hide(); //Unterueberschrift
@@ -1034,7 +1034,6 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   else{
 
         sessionStorage.setItem('Feedback', 0);
-        sessionStorage.setItem('clicked', 0);
         
   }
 
