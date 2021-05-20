@@ -31,6 +31,8 @@ $(document).ready(function() {
             chatColorOffline = '#bebebe';
             chatBackColorOffline = '#ededed';
 
+            
+
             console.log("Color galaxus de");
             break;
     default:
