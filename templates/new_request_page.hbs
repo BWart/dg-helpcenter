@@ -989,12 +989,12 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
 
 //////////////////////////Downvote-button Formular////////////////////////////
-  /*
+
   var referrer = '';
   if (sessionStorage.getItem("referrer")) {
     referrer = sessionStorage.getItem("referrer");
   }
-  console.log(referrer);*/
+  console.log(referrer);
 
 
   if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1') || $('#request_description').val() == '' && sessionStorage.getItem('Feedback').includes('1') ) { 
@@ -1032,7 +1032,9 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
    }
   else{
+
         sessionStorage.setItem('Feedback', 0);
+        
   }
 
 /*
