@@ -506,6 +506,28 @@
   background:#e60021;
   color:#fff
 }
+
+#downvoteButton{
+  border-radius: 3px;
+  /*border: 1px solid #00559d;*/
+  color: #fff;
+  background-color: #00559d;
+  min-width: 90px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 2.34;
+}
+
+#downvoteButton:hover, #downvoteButton:focus{
+  background-color: #e60020;
+  color: #ffffff;
+  /*border: 1px solid #e60020;*/
+}
+
+#downvoteText{
+  color: #00559d;
+}
+
 /*
 a {
   color: #007bc8;
