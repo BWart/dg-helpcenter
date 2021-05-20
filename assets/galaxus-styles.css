@@ -508,7 +508,7 @@ html {
   color:#fff
 }
 
-#downvoteTextButton{
+#downvoteButton{
   border-radius: 3px;
   border: 1px solid #444;
   color: #fff;
@@ -519,7 +519,7 @@ html {
   line-height: 2.34;
 }
 
-#downvoteTextButton:hover, #downvoteTextButton:focus{
+#downvoteButton:hover, #downvoteButton:focus{
   background-color: #565656;
   color: #fff;
   border: 1px solid #565656;
