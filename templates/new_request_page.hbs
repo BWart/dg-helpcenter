@@ -81,12 +81,14 @@
 
 switch(portal){
       case'helpcenter.digitec.ch':
+             $('a').removeClass('button-contact chat-private button-offline');
              break;
       case'helpcenter.galaxus.ch':
               break;
       case'helpcenter.galaxus.de':
               //$('.contactButtonTableCellLeftLeftBorder .private-customer').hide();
               $('contactButtonTableCellLeftLeftBorder').hide();
+              $('a').removeClass('button-contact chat-private button-offline');
               $('td').removeClass('private-customer');
               break;
       default:
