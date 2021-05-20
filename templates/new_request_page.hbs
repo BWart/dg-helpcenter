@@ -81,7 +81,7 @@
 
 switch(portal){
       case'helpcenter.digitec.ch':
-             $('a').removeClass('button-contact chat-private button-offline');
+             //$('a').removeClass('button-contact chat-private button-offline');
              break;
       case'helpcenter.galaxus.ch':
               break;
@@ -91,6 +91,7 @@ switch(portal){
               //$('a').removeClass('button-contact chat-private button-offline');
               //$('td').removeClass('contactButtonTableCellLeftLeftBorder private-customer');
               $('a[data-wording-key="chatUs"]').hide();
+              $('h4[data-wording-key="chat"]').hide();
               //$('td').removeClass('private-customer');
               break;
       default:
