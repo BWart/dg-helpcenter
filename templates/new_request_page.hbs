@@ -79,6 +79,19 @@
 
 <script>
 
+switch(portal){
+      case'helpcenter.digitec.ch':
+             break;
+      case'helpcenter.galaxus.ch':
+              break;
+      case'helpcenter.galaxus.de':
+              $('.contactButtonTableCellLeftLeftBorder').hide();
+              break;
+      default:
+              break;
+    }
+
+
 var mobile = window.innerWidth < 767;
 
 var urlHash = window.location.hash.substring(1);
