@@ -510,7 +510,7 @@ html {
 
 #downvoteButton{
   border-radius: 3px;
-  border: 1px solid #444;
+  /*border: 1px solid #444;*/
   color: #fff;
   background-color: #444;
   min-width: 90px;
@@ -527,6 +527,10 @@ html {
 
 #downvoteText{
   color: #000;
+}
+
+.addButtonborder{
+  border: 1px solid #444;
 }
 
 /*
