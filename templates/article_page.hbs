@@ -224,7 +224,7 @@
 </div>
 <script>
   console.log('SCRIPT');
-  $('downvoteText').hide();
+  
   //Wenn Downvote gedrueckt wurde dann wird der Link gesplittet und die Url zum Aufruf der new request page dran gehangen
 
   sessionStorage.clear();
@@ -233,9 +233,15 @@
 
   var url = window.location.href; 
 
+  if(sessionStorage.getItem('Feedback') == 1){
+    $('downvoteText').hide();
+    $('downvoteTextButton').hide();
+  }
+
   $('.article-vote-down').on('click',function(){
         //document.getElementById('downvoteText').innerHTML ='<br>Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br><button id="downvoteTextButton">Feedback</button>';
         $('downvoteText').show();
+        $('downvoteTextButton').show();
   });
 
   $('#downvoteTextButton').on('click',function(){
