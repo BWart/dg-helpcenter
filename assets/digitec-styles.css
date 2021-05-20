@@ -528,6 +528,14 @@
   color: #00559d;
 }
 
+/*.disabledborder {
+  border-left: none;
+}*/
+
+/*.borderright{
+  border-right: solid 1px #D3D3D3;
+}*/
+
 /*
 a {
   color: #007bc8;

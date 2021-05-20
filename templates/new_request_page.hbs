@@ -79,23 +79,6 @@
 
 <script>
 
-switch(portal){
-      case'helpcenter.digitec.ch':
-             //$('a').removeClass('button-contact chat-private button-offline');
-             break;
-      case'helpcenter.galaxus.ch':
-              break;
-      case'helpcenter.galaxus.ch':
-              $('a[data-wording-key="chatUs"]').remove(); // Chat Button
-              $('h4[data-wording-key="chat"]').remove(); // Chat Überschrift
-              $('.contactButtonTableCellLeftLeftBorder').addClass('disabledborder'); // Linie neben "Telefon" entfernt weil "chat" entfernt
-              $('.contactButtonTableCellLeft').addClass('borderright'); // Linie neben "kontaktformular" gesetzt weil nur da gebraucht
-              break;
-      default:
-              break;
-    }
-
-
 var mobile = window.innerWidth < 767;
 
 var urlHash = window.location.hash.substring(1);
@@ -1064,5 +1047,27 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       sessionStorage.setItem('Feedback', 0);
     }
   });*/
+
+
+  /////////////////////CHAT entfernen bei Galaxus DE///////////////////////////
+
+  switch(portal){
+      case'helpcenter.digitec.ch':
+             console.log('CHAT anzeigen digitech');
+             break;
+      case'helpcenter.galaxus.ch':
+              console.log('CHAT anzeigen galaxus.ch');
+              break;
+      case'helpcenter.galaxus.de':
+              console.log('CHAT REMOVED galaxus.de');
+              $('a[data-wording-key="chatUs"]').remove(); // Chat Button
+              $('h4[data-wording-key="chat"]').remove(); // Chat Überschrift
+              $('.contactButtonTableCellLeftLeftBorder').addClass('disabledborder'); // Linie neben "Telefon" entfernt weil "chat" entfernt
+              $('.contactButtonTableCellLeft').addClass('borderright'); // Linie neben "kontaktformular" gesetzt weil nur da gebraucht
+              break;
+      default:
+              console.log('CHAT anzeigen DEFAULT');
+              break;
+    }
 
 </script>
