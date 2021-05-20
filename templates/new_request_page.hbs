@@ -87,9 +87,9 @@ switch(portal){
               break;
       case'helpcenter.galaxus.de':
               $('a[data-wording-key="chatUs"]').remove();
-              $('h4[data-wording-key="chat"]').remove();
-              $('.contactButtonTableCellLeftLeftBorder').addClass('disabledborder');
-              $('.contactButtonTableCellLeft').addClass('borderright');
+              //$('h4[data-wording-key="chat"]').remove();
+              $('.contactButtonTableCellLeftLeftBorder').addClass('disabledborder'); // Linie neben "Telefon" entfernt weil "chat" entfernt
+              $('.contactButtonTableCellLeft').addClass('borderright'); // Linie neben "kontaktformular" gesetzt weil nur da gebraucht
               break;
       default:
               break;
