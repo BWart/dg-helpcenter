@@ -689,24 +689,8 @@ zE('webWidget:on', 'chat:unreadMessages', function(number) {
   
   var currentLanguage = $('html').attr('lang');
 	
-   var chatText = {
-  	de: {
-      'chatUs': 'Chatte mit uns',
-      'chatNotOnline' : 'Nicht verfügbar'
-    },
-		fr: {      
-      'chatUs': 'Chattez avec nous',
-      'chatNotOnline' : 'Non disponible'
-    },
-    it:{  
-      'chatUs': 'Chatta con noi',
-      'chatNotOnline' : 'Non disponibile'
-    },
-    'en-US': {
-      'chatUs': 'Chat with us',
-      'chatNotOnline' : 'Not available'
-    }
-  	}
+   var chatText = fillInfoBoxWording(portal1, portal2); // Chatbutton Text ausgelagert in infoBoxWording
+   
    return chatText[currentLanguage][buttonText];
   }
 
