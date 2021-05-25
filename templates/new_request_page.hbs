@@ -496,7 +496,7 @@ function initialButtonChange(department){
     var webWidget = fillWebWidgetText();
 
     zE('webWidget', 'updateSettings', webWidget); //webWidgetText aus webWidgetText JS
-
+    
    console.log(window.zESettings);
   	return dep;
   }
@@ -1001,8 +1001,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
               break;
       case'helpcenter.galaxus.de':
               console.log('CHAT REMOVED galaxus.de');
-              //$('a[data-wording-key="chatUs"]').remove(); // Chat Button
-              //$('h4[data-wording-key="chat"]').remove(); // Chat Überschrift
+              $('a[data-wording-key="chatUs"]').remove(); // Chat Button
+              $('h4[data-wording-key="chat"]').remove(); // Chat Überschrift
               $('.contactButtonTableCellLeftLeftBorder').addClass('disabledborder'); // Linie neben "Telefon" entfernt weil "chat" entfernt
               $('.contactButtonTableCellLeft').addClass('borderright'); // Linie neben "kontaktformular" gesetzt weil nur da gebraucht
               $('p:contains("Chat")').html(''); // Chat Überschrift schmales Fenster oder Mobile entfernen
