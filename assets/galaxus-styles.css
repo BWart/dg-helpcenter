@@ -532,6 +532,8 @@ html {
 .disabledborder {
   border-left: none;
   border-bottom: none;
+  border-right: none;
+  border-top: none;
 }
 
 .borderright{
