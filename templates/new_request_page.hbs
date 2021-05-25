@@ -689,7 +689,7 @@ zE('webWidget:on', 'chat:unreadMessages', function(number) {
   
   var currentLanguage = $('html').attr('lang');
 	
-   var chatText = fillInfoBoxWording(portal1, portal2); // Chatbutton Text ausgelagert in infoBoxWording
+   var chatText = fillChatButtonText(); // Chatbutton Text ausgelagert in infoBoxWording
    
    return chatText[currentLanguage][buttonText];
   }
