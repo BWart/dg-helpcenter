@@ -422,7 +422,7 @@ function fillInfoBoxWording(){
         }
     }
     
-    var chatText = {
+    chatText = {
         de: {
                 'chatUs': 'Chatte mit uns',
                 'chatNotOnline' : 'Nicht verfügbar'
