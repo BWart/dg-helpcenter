@@ -1047,9 +1047,10 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
               console.log('CHAT REMOVED galaxus.de');
               $('a[data-wording-key="chatUs"]').remove(); // Chat Button
               $('h4[data-wording-key="chat"]').remove(); // Chat Überschrift
-              $('p[class="font1"]').remove();
+              $('p[class="font1"]').remove(); // Chat Überschrift schmales Fenster oder Mobile
               $('.contactButtonTableCellLeftLeftBorder').addClass('disabledborder'); // Linie neben "Telefon" entfernt weil "chat" entfernt
               $('.contactButtonTableCellLeft').addClass('borderright'); // Linie neben "kontaktformular" gesetzt weil nur da gebraucht
+              $('.contactButtonTableCellLeftBottomBorder').remove();
               break;
       default:
               console.log('CHAT anzeigen DEFAULT');
