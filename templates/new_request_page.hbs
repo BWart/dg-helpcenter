@@ -1053,6 +1053,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
               $('.contactButtonTableCellLeft').addClass('borderright'); // Linie neben "kontaktformular" gesetzt weil nur da gebraucht
               $('.contactButtonTableCellLeftBottomBorder').addClass('disabledborder');
               $('p:contains("Chat")').html('');
+              $('contactButtonTableCellRightMobile').remove();
               break;
       default:
               console.log('CHAT anzeigen DEFAULT');
