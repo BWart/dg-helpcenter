@@ -171,7 +171,12 @@ function fillInfoBoxWording(){
 
   //Level 0: Offerte
       "Offerte" : "inputOffer",
-      "outputOffer" : "Offerten mit einem Auftragsvolumen von bis zu " + offerte + " werden nicht gepriced. Es gelten die Preisangaben auf unserem Shop."
+      "outputOffer" : "Offerten mit einem Auftragsvolumen von bis zu " + offerte + " werden nicht gepriced. Es gelten die Preisangaben auf unserem Shop.",
+
+  //Feedback
+        "outputFeedbackButtonText":"Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.",
+        "outputFeedbackHeader":"Vielen Dank für dein Feedback.",
+        "outputFeedbackBeschreibung":"Bitte verwende das Formular lediglich für Feedback zum entsprechenden Helpcenterbeitrag. Für deine Kundenanfragen kannst du gerne das "
 
       },
 
