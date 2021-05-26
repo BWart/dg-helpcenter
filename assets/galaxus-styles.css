@@ -537,16 +537,16 @@ html {
   border-right: solid 1px #D3D3D3;
 }
 
-/*
-a {
+
+/*a {
   color: #007bc8;
-}
+}*/
 
 a:hover, a:active, a:focus {
-  color: #094979;
+  color: #000;
 }
 
-select:focus {
+/*select:focus {
   border: 1px solid #0072ef;
 }
 */

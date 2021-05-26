@@ -939,7 +939,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
   if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1') || $('#request_description').val() == '' && sessionStorage.getItem('Feedback').includes('1') ) { 
       console.log('Contains Article');
-      $('#HeaderID').html("Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Wir werden auf dieses nicht antworten. Sollten Sie ein offenes Anliegen haben, bitten wir Sie, das Kontaktformular zu benutzen.</div>");
+      $('#HeaderID').html("Vielen Dank für dein Feedback.<br><div id = 'FeedbackText'>Bitte verwende das Formular lediglich für Feedback zum entsprechenden Helpcenterbeitrag. Für deine Kundenanfragen kannst du gerne das Kontaktformular verwenden.</div>");
       $('.contactFormInfoText2').hide(); //Unterueberschrift
       $('.form-field:not(.request_ticket_form_id)').show(); // SchreibUns-Feld-Form mit beschreibung, grund usw
       $('#request_custom_fields_360014169819').val('webform_case_other_request_order'); //Grund der Anfrage setzen////

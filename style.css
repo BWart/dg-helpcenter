@@ -78,7 +78,7 @@ a {
 }
 
 a:hover, a:active, a:focus {
-  color: #094979;
+  /*color: #094979;*/
 }
 
 input,
