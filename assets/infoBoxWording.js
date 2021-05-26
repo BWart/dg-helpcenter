@@ -258,7 +258,7 @@ function fillInfoBoxWording(){
 
   //Level 0: Offre
       "Offre" : "inputOffer",
-      "outputOffer" : "Remarque : pour une offre, le volume de la commande doit être d'au moins " + offerte + ". Les prix indiqués dans notre boutique s'appliquent.";
+      "outputOffer" : "Remarque : pour une offre, le volume de la commande doit être d'au moins " + offerte + ". Les prix indiqués dans notre boutique s'appliquent.",
   //Feedback TEST
         "outputFeedbackButtonText":"<br>Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br>",
         "outputFeedbackHeader":"Vielen Dank für dein Feedback.",
