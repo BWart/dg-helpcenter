@@ -75,11 +75,12 @@ $(document).ready(function()
 {
     
     
-  /*if($('#ze-snippet')) 
-    $('#ze-snippet').on("error", function(){
+  if($('#ze-snippet').attr('src') != ''){
+    //$('#ze-snippet').on("error", function(){
         $(this).attr('src', 'https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4');
-    });*/
-
+        setTimeout(check, 3000);
+    
+  }
 
 
 
