@@ -226,7 +226,10 @@
 <script>
   console.log('SCRIPT');
 
-  
+    var currentLanguage = $('html').attr('lang');
+	console.log(currentLanguage);
+	console.log(infoBoxWording[currentLanguage]);
+
 
   //Wenn Downvote gedrueckt wurde dann wird der Link gesplittet und die Url zum Aufruf der new request page dran gehangen
 
@@ -238,7 +241,7 @@
 
   $('.article-vote-down').on('click',function(){
         document.getElementById('downvoteText').innerHTML ='<br>Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br>';
-        document.getElementById('downvoteButton').innerHTML = '<button id="downvoteButton">Feedback</button>'
+        document.getElementById('downvoteButton').innerHTML = '<button id="downvoteButton">Feedback</button>';
   });
 
 

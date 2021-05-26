@@ -943,7 +943,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
   if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1') || $('#request_description').val() == '' && sessionStorage.getItem('Feedback').includes('1') ) { 
       console.log('Contains Article');
-      $('#HeaderID').html(infoBoxWording[currentLanguage]['outputFeedbackHeader'] + infoBoxWording[currentLanguage]['outputFeedbackBeschreibung']+);
+      $('#HeaderID').html(infoBoxWording[currentLanguage]['outputFeedbackHeader'] + infoBoxWording[currentLanguage]['outputFeedbackBeschreibung']);
       $('.contactFormInfoText2').hide(); //Unterueberschrift
       $('.form-field:not(.request_ticket_form_id)').show(); // SchreibUns-Feld-Form mit beschreibung, grund usw
       $('#request_custom_fields_360014169819').val('webform_case_other_request_order'); //Grund der Anfrage setzen////
@@ -1015,14 +1015,5 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
               console.log('CHAT anzeigen DEFAULT');
               break;
     }
-
-
-  var feedbackLanguage = infoBoxWording[currentLanguage][reason];
-    
-    switch(feedbackLanguage) {
-      case 'inputfeedbackButtonText':
-    	  return infoBoxWording[currentLanguage]['outputfeedbackButtonText'];
-    	  break;
-      case 'inputfeedbackHeadderz'
 
 </script>
