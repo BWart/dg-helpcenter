@@ -175,8 +175,8 @@ function fillInfoBoxWording(){
 
   //Feedback
         "outputFeedbackButtonText":"Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.",
-        "outputFeedbackHeader":"DU TESTVielen Dank für dein Feedback.",
-        "outputFeedbackBeschreibung":"Bitte verwende das Formular lediglich für Feedback zum entsprechenden Helpcenterbeitrag. Für deine Kundenanfragen kannst du gerne das "
+        "outputFeedbackHeader":"Vielen Dank für dein Feedback.",
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Bitte verwende das Formular lediglich für Feedback zum entsprechenden Helpcenterbeitrag. Für deine Kundenanfragen kannst du gerne das <a href='/requests/new'>Kontaktformular</a> verwenden.</div>"
 
       },
 
