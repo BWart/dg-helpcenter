@@ -273,7 +273,7 @@
 	console.log(infoBoxWording[currentLanguage]);
 
 
-  //Wenn Downvote gedrueckt wurde dann wird der Link gesplittet und die Url zum Aufruf der new request page dran gehangen
+  //////////Wenn Downvote gedrueckt wird erscheint ein Feedback Knopf/////////
 
   sessionStorage.clear();
   //localStorage.clear();
@@ -282,12 +282,12 @@
   var url = window.location.href; 
 
   $('.article-vote-down').on('click',function(){
-        document.getElementById('downvoteText').innerHTML =infoBoxWording[currentLanguage]['outputFeedbackBeschreibung'];
+        document.getElementById('downvoteText').innerHTML = infoBoxWording[currentLanguage]['outputFeedbackButtonText'];
         document.getElementById('downvoteButton').innerHTML = '<button id="downvoteButton">Feedback</button>';
   });
 
 
-  //Feedback Knopf
+  //Feedback Knopf - Link gesplittet und die Url zum Aufruf der new request page dran gehangen
   $('#downvoteButton').on('click',function(){
         console.log('SPLIT');
         var linkArray = url.split('articles');
