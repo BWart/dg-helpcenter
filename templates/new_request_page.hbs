@@ -935,8 +935,6 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
     referrer = sessionStorage.getItem("referrer");
   }
   console.log(referrer);
-  var formularSeite = window.location.href + 'requests/new';
-  console.log(formularSeite);
 
 
   if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1') || $('#request_description').val() == '' && sessionStorage.getItem('Feedback').includes('1') ) { 
