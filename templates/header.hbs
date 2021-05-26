@@ -1,3 +1,6 @@
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+<meta name="google-site-verification" content="8X_8QzD4bZxyaCY1dA-h_IbHT_1aIVhsuTgc_8KGDzo" />
+
 <div id="sectorBand">
 
 </div>
@@ -25,6 +28,11 @@
         </div>
       {{/if}}
     </div>
+
+<script src="{{asset 'infoBoxWording.js'}}"></script>
+<script src="{{asset 'dynamicWording.js'}}"></script>
+<div id="customDGStyle"></div>
+<div id="webWidget"></div>
   <!--<div class="nav-wrapper">
     <span class="icon-menu"></span>
     <nav class="user-nav" id="user-nav">
@@ -35,7 +43,26 @@
   </div>-->
   
   <!--Start of Zendesk Chat Script-->
-<script type="text/javascript" id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4">
+<script type="text/javascript">
+
+
+
+  $( ".widgetDigitec" ).remove();
+  
+      var WidgetURL;
+    if(window.location.hostname !="helpcenter.digitec.ch"){
+              $("#customDGStyle").html('<link href="{{asset 'galaxus-styles.css'}}" rel="stylesheet" type="text/css"/>')
+              $('[rel="shortcut icon"]').attr("href", "{{asset 'fav_galaxus.png'}}");
+              //$("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=18dfacef-9aec-49ae-bbe4-0bcd883ef859"/><//script>')
+                
+    }
+    else{
+              $("#customDGStyle").html('<link href="{{asset 'digitec-styles.css'}}" rel="stylesheet" type="text/css"/>')
+              $('[rel="shortcut icon"]').attr("href", "{{asset 'fav_digitec.png'}}");
+                    //$("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4"/><//script>')
+    }   
+  
+
 /* window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
 d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
 _.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
@@ -71,18 +98,21 @@ switch(portal){
               break;
 }
 
-$(document).ready(function()
+/*$(document).ready(function()
 {
     
   $('#ze-snippet').attr('src', 'https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4');  
-  /*if($('#ze-snippet').attr('src') != ''){
+  if($('#ze-snippet').attr('src') != ''){
     //$('#ze-snippet').on("error", function(){
         console.log('IF SRC')
         $(this).attr('src', 'https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4');
         setTimeout(check, 3000);
     
+  }
+  if($('#ze-snippet').attr('src') != 'https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4'){
+    $('#ze-snippet').attr('src', 'https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4');
+
   }*/
-  if($('#ze-snippet').attr('src') != 'https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4')
 
 
 });
