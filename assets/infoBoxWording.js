@@ -258,7 +258,11 @@ function fillInfoBoxWording(){
 
   //Level 0: Offre
       "Offre" : "inputOffer",
-      "outputOffer" : "Remarque : pour une offre, le volume de la commande doit être d'au moins " + offerte + ". Les prix indiqués dans notre boutique s'appliquent."
+      "outputOffer" : "Remarque : pour une offre, le volume de la commande doit être d'au moins " + offerte + ". Les prix indiqués dans notre boutique s'appliquent.";
+  //Feedback TEST
+        "outputFeedbackButtonText":"<br>Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br>",
+        "outputFeedbackHeader":"Vielen Dank für dein Feedback.",
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Bitte verwende das Formular lediglich für Feedback zum entsprechenden Helpcenterbeitrag. Für deine Kundenanfragen kannst du gerne das <a href='/requests/new'>Kontaktformular</a> verwenden.</div>"
 
       },
 
@@ -341,8 +345,13 @@ function fillInfoBoxWording(){
 
   //Level 0: Offerta
       "Offerta" : "inputOffer",
-      "outputOffer" : "Attenzione: per un'offerta, il volume dell'ordine deve essere di almeno " + offerte + ". Si applicano i prezzi indicati nel nostro negozio."
-      },
+      "outputOffer" : "Attenzione: per un'offerta, il volume dell'ordine deve essere di almeno " + offerte + ". Si applicano i prezzi indicati nel nostro negozio.",
+  //Feedback TEST
+        "outputFeedbackButtonText":"<br>Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br>",
+        "outputFeedbackHeader":"Vielen Dank für dein Feedback.",
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Bitte verwende das Formular lediglich für Feedback zum entsprechenden Helpcenterbeitrag. Für deine Kundenanfragen kannst du gerne das <a href='/requests/new'>Kontaktformular</a> verwenden.</div>"
+
+},
 
 
 
@@ -423,8 +432,13 @@ function fillInfoBoxWording(){
 
       //Level 0: Offer
       "Offer" : "inputOffer",
-      "outputOffer" : "Please note: For a quotation, the minimum order volume must be " + offerte + ". The prices quoted in our store apply."        
-        }
+      "outputOffer" : "Please note: For a quotation, the minimum order volume must be " + offerte + ". The prices quoted in our store apply.",        
+  //Feedback TEST
+        "outputFeedbackButtonText":"<br>TEST ENGWir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br>",
+        "outputFeedbackHeader":"TEST ENGVielen Dank für dein Feedback.",
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>TEST  ENGBitte verwende das Formular lediglich für Feedback zum entsprechenden Helpcenterbeitrag. Für deine Kundenanfragen kannst du gerne das <a href='/requests/new'>Kontaktformular</a> verwenden.</div>"
+
+}
     }
     
     console.log(infoBoxWording);
