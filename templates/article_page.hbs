@@ -226,7 +226,9 @@
 <script>
   console.log('SCRIPT');
 
-    var currentLanguage = $('html').attr('lang');
+  var infoBoxWording = fillInfoBoxWording(portal1, portal2);
+
+  var currentLanguage = $('html').attr('lang');
 	console.log(currentLanguage);
 	console.log(infoBoxWording[currentLanguage]);
 
