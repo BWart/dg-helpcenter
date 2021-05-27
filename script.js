@@ -495,7 +495,6 @@ function IsChatting(){
       }
 }
  
-  zE('webWidget', 'setLocale', getWidgetLanguage());
 
  function getWidgetLanguage(){
     var languageTag = 'de';
