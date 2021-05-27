@@ -617,12 +617,12 @@ a:hover, a:active, a:focus {
   max-width: 650px;
 }
 
-/*.article-vote[aria-selected="true"]{
+.article-vote[aria-selected="true"]{
   background-color: #444;
   color: #fff;
   text-decoration: none;
   border: 1px solid #444; 
-}*/
+}
 
 
 
