@@ -174,7 +174,7 @@ function fillInfoBoxWording(){
       "outputOffer" : "Offerten mit einem Auftragsvolumen von bis zu " + offerte + " werden nicht gepriced. Es gelten die Preisangaben auf unserem Shop.",
 
   //Feedback
-        "outputFeedbackButtonText":"<br>Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br>",
+        "outputFeedbackButtonText":"<br>Wir würden uns freuen, wenn Du uns ein Feedback geben könnten.<br><br>",
         "outputFeedbackHeader":"Vielen Dank für dein Feedback.",
         "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Bitte verwende das Formular lediglich für Feedback zum entsprechenden Helpcenterbeitrag. Für deine Kundenanfragen kannst du gerne das <a href='/requests/new'>Kontaktformular</a> verwenden.</div>"
 
