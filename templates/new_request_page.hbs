@@ -800,7 +800,24 @@ $('.chat-private').on("click", function () {
   
   var currentLanguage = $('html').attr('lang');
 	
-   var chatText = fillChatButtonText(); // Chatbutton Text ausgelagert in chatButtonText JS
+      chatText = {
+        de: {
+                'chatUs': 'Chatte mit uns',
+                'chatNotOnline' : 'Nicht verfügbar'
+        },
+        fr: {      
+                'chatUs': 'Chattez avec nous',
+                'chatNotOnline' : 'Non disponible'
+        },
+        it:{  
+                'chatUs': 'Chatta con noi',
+                'chatNotOnline' : 'Non disponibile'
+        },
+        'en-US': {
+                'chatUs': 'Chat with us',
+                'chatNotOnline' : 'Not available'
+        }
+    }
    
    return chatText[currentLanguage][buttonText];
   }
