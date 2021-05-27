@@ -506,4 +506,15 @@ function IsChatting(){
     }
     return languageTag;
   }
+
+  // opens Window for unread messages 
+zE('webWidget:on', 'chat:unreadMessages', function(number) {
+  openChat();
+ });
+
+   // Opens Chat in WebWidget
+   function openChat(){
+    zE('webWidget', 'show');
+  	document.getElementById('launcher').contentWindow.document.getElementById('Embed').getElementsByTagName('button')[0].click();
+  }
 });
