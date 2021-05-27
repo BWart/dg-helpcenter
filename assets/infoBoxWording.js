@@ -259,10 +259,10 @@ function fillInfoBoxWording(){
   //Level 0: Offre
       "Offre" : "inputOffer",
       "outputOffer" : "Remarque : pour une offre, le volume de la commande doit être d'au moins " + offerte + ". Les prix indiqués dans notre boutique s'appliquent.",
-  //Feedback TEST
-        "outputFeedbackButtonText":"<br>Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br>",
-        "outputFeedbackHeader":"Vielen Dank für dein Feedback.",
-        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Bitte verwende das Formular lediglich für Feedback zum entsprechenden Helpcenterbeitrag. Für deine Kundenanfragen kannst du gerne das <a href='/requests/new'>Kontaktformular</a> verwenden.</div>"
+  //Feedback
+        "outputFeedbackButtonText":"<br>Nous serions heureux si vous pouviez nous faire part de vos commentaires.<br><br>",
+        "outputFeedbackHeader":"Merci pour vos commentaires.",
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Veuillez utiliser le formulaire uniquement pour donner votre avis sur l'article correspondant du centre d'aide. Pour vos demandes de renseignements, vous pouvez utiliser le <a href='/requests/new'>formulaire de contact</a>.</div>"
 
       },
 
@@ -346,10 +346,10 @@ function fillInfoBoxWording(){
   //Level 0: Offerta
       "Offerta" : "inputOffer",
       "outputOffer" : "Attenzione: per un'offerta, il volume dell'ordine deve essere di almeno " + offerte + ". Si applicano i prezzi indicati nel nostro negozio.",
-  //Feedback TEST
-        "outputFeedbackButtonText":"<br>Wir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br>",
-        "outputFeedbackHeader":"Vielen Dank für dein Feedback.",
-        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Bitte verwende das Formular lediglich für Feedback zum entsprechenden Helpcenterbeitrag. Für deine Kundenanfragen kannst du gerne das <a href='/requests/new'>Kontaktformular</a> verwenden.</div>"
+  //Feedback
+        "outputFeedbackButtonText":"<br>Vi saremmo grati se poteste darci un feedback.<br><br>",
+        "outputFeedbackHeader":"Grazie per il vostro feedback.",
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Si prega di utilizzare il modulo solo per un feedback sul post corrispondente dell'helpcenter. Per le richieste dei vostri clienti potete usare il <a href='/requests/new'>modulo di contatto</a>.</div>"
 
 },
 
@@ -433,10 +433,10 @@ function fillInfoBoxWording(){
       //Level 0: Offer
       "Offer" : "inputOffer",
       "outputOffer" : "Please note: For a quotation, the minimum order volume must be " + offerte + ". The prices quoted in our store apply.",        
-  //Feedback TEST
-        "outputFeedbackButtonText":"<br>TEST ENGWir würden uns freuen, wenn Sie uns ein Feedback geben könnten.<br><br>",
-        "outputFeedbackHeader":"TEST ENGVielen Dank für dein Feedback.",
-        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>TEST  ENGBitte verwende das Formular lediglich für Feedback zum entsprechenden Helpcenterbeitrag. Für deine Kundenanfragen kannst du gerne das <a href='/requests/new'>Kontaktformular</a> verwenden.</div>"
+  //Feedback
+        "outputFeedbackButtonText":"<br>We would appreciate if you could give us some feedback.<br><br>",
+        "outputFeedbackHeader":"Thank you for your feedback.",
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Please use the form only for feedback on the corresponding helpcenter post. For your customer inquiries you can use the <a href='/requests/new'>contact form</a>.</div>"
 
 }
     }
