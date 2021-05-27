@@ -1509,11 +1509,11 @@ ul {
 }
 
 .article-vote-up::before {
-  /*content: "\2713";*/
+  content: "\2713";
 }
 
 .article-vote-down, .article-vote-down::before {
-  /*content: "\2715";*/
+  content: "\2715";
 }
 
 .article-more-questions {
