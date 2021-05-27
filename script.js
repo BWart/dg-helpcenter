@@ -408,6 +408,7 @@ function waitForChat () {
         checkForChatConnection();
         setZESettings();
         zE('webWidget', 'setLocale', getWidgetLanguage());
+        checkForUnreadMessages();
           }
           catch(e) {
     if(connections < 10){
@@ -507,11 +508,13 @@ function IsChatting(){
     return languageTag;
   }
 
-  // opens Window for unread messages 
-zE('webWidget:on', 'chat:unreadMessages', function(number) {
+
+// opens Window for unread messages 
+function checkForUnreadMessages(){
+  zE('webWidget:on', 'chat:unreadMessages', function(number) {
   openChat();
  });
-
+}
    // Opens Chat in WebWidget
    function openChat(){
     zE('webWidget', 'show');
