@@ -405,8 +405,9 @@ function waitForChat () {
   
     setTimeout(function(){ 
     try {
-            checkForChatConnection();
+        checkForChatConnection();
         setZESettings();
+        zE('webWidget', 'setLocale', getWidgetLanguage());
           }
           catch(e) {
     if(connections < 10){
@@ -504,4 +505,5 @@ function IsChatting(){
         languageTag = 'en'; 
     }
     return languageTag;
-}   
+  }
+});
