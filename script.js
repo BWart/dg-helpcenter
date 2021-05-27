@@ -314,7 +314,7 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
       ga('send', 'event', 'Vote', 'Not Helpful', path);
   });  
   
-  //Zopim integration
+ /* //Zopim integration
     
   zE('webWidget', 'setLocale', getWidgetLanguage());
   
@@ -396,4 +396,112 @@ function IsChatting(){
 }
   
 });
+*/
+//Zopim integration
+waitForChat();
+var connections = 0;
 
+function waitForChat () {
+  
+    setTimeout(function(){ 
+    try {
+            checkForChatConnection();
+        setZESettings();
+          }
+          catch(Exception e) {
+    if(connections < 10){
+            waitForChat();
+      connection++; 
+    }else{
+      console.log(e);
+    } 
+  }    
+  }, 
+    400);
+  }
+   
+ // Initial Settings of Widget
+
+function setZESettings(){
+
+ window.zESettings = {
+      webWidget: {
+        chat: {
+          suppress: false,
+          departments: {
+            enabled: []
+          },
+           title: {
+            '*': 'Chat with us',
+            fr: 'Chattez avec nous',
+            de: "Chatte mit uns",
+            it: "Chattata con noi"
+          },
+          prechatForm: {
+          greeting: {
+            '*': 'Please have your order, service or invoice number ready so that we can help you even faster.',
+            fr: "Veuillez préparer votre numéro de commande, de service ou de facture afin que nous puissions vous aider encore plus rapidement. ",
+            de: "Bitte halte deine Bestell-, Service- oder Rechnungsnummer bereit, damit wir dir noch schneller helfen können. ",
+            it: "Tieni pronto il tuo numero d'ordine, di servizio o di fattura in modo che possiamo aiutarti ancora più velocemente. "
+          }
+
+
+
+        },
+          offlineForm: {
+          greeting: {
+            '*': "We aren't online right now",
+            fr: "Nous ne sommes pas en ligne pour le moment",
+            en: "We aren't online right now",
+            de: "Wir sind im Moment nicht online",
+            it: "Non siamo online in questo momento"
+          }
+        }
+        },
+        contactForm: {
+          suppress: true
+        },
+        helpCenter: {
+          suppress: true
+        },
+        talk: {
+          suppress: true
+        },
+        answerBot: {
+          suppress: true
+        }
+      }
+    };
+}
+
+// Shows Chat if Is Chatting or Hides Chat else
+
+function checkForChatConnection(){
+  zE('webWidget:on', 'chat:connected', function() {
+    IsChatting();
+  });
+}
+
+
+function IsChatting(){
+ 
+    if(zE('webWidget:get', 'chat:isChatting')){
+      zE('webWidget', 'show');
+      return true;
+    }else{
+      zE('webWidget', 'hide');
+      return false;
+      }
+}
+ 
+  zE('webWidget', 'setLocale', getWidgetLanguage());
+
+ function getWidgetLanguage(){
+    var languageTag = 'de';
+    if($('html').attr('lang') != 'en-US'){
+        languageTag = $('html').attr('lang');
+    }else{
+        languageTag = 'en'; 
+    }
+    return languageTag;
+}   
