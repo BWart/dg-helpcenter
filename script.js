@@ -412,7 +412,7 @@ function waitForChat () {
           catch(e) {
     if(connections < 10){
             waitForChat();
-      connection++; 
+      connections++; 
     }else{
       console.log(e);
     } 
