@@ -408,7 +408,7 @@ function waitForChat () {
             checkForChatConnection();
         setZESettings();
           }
-          catch(Exception e) {
+          catch(e) {
     if(connections < 10){
             waitForChat();
       connection++; 
