@@ -1502,7 +1502,7 @@ ul {
   /* Yes/No label*/
 }
 
-.article-vote:focus{
+/*.article-vote:focus{
 }
 
 .article-vote:hover::before, .article-vote:hover::after,  {
@@ -1514,7 +1514,7 @@ ul {
 
 .article-vote-down, .article-vote-down::before {
   content: "\2715";
-}
+}*/
 
 .article-more-questions {
   margin: 10px 0 20px;
