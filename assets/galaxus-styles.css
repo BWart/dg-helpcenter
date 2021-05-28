@@ -618,10 +618,10 @@ a:hover, a:active, a:focus {
 }
 
 .article-vote[aria-selected="true"]{
-  background-color: #444;
-  color: #fff;
+  background-color: #eee;
+  color: #000;
   text-decoration: none;
-  border: 1px solid #444; 
+  border: 1px solid #eee; 
 }
 
 
