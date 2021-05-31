@@ -100,7 +100,7 @@
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
               {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
               <div id='downvoteText'></div>
-              <div id="Field"></div>
+              <div id="downvoteButton"></div>
             </div>
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
@@ -268,7 +268,7 @@
 
   $('.article-vote-down').on('click',function(){
         document.getElementById('downvoteText').innerHTML = infoBoxWording[currentLanguage]['outputFeedbackButtonText'];
-        document.getElementById('Field').innerHTML = '<button id="downvoteButton">Feedback</button>';
+        document.getElementById('downvoteButton').innerHTML = '<button id="downvoteButton">Feedback</button>';
   });
 
 
