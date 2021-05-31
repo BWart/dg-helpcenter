@@ -359,39 +359,27 @@ hideOrderNumber();
   var portal1 = window.location.hostname;
   var portal2 = window.location.hostname;
 
-  console.log(portal1);
-  console.log(portal2);
-
-
   //URL test
 
   if (window.location.hostname.indexOf("digitec.ch") >= 0) {
-    //alert("digitec.ch");
     portal1 = 'digitec.ch';
-    //console.log(portal1);
   }
   else if (window.location.hostname.indexOf("galaxus.ch") >= 0) {
-    //alert("galaxus.ch");
     portal1 = 'galaxus.ch';
   }
   else{
-    //alert("galaxus.de");
     portal1 = 'galaxus.de';
   }
 
   //Helpcenter URL test
 
   if (window.location.hostname.indexOf("helpcenter.digitec.ch") >= 0) {
-    //alert("helpcenter.digitec.ch");
     portal2 = 'helpcenter.digitec.ch';
-    //console.log(portal2);
   }
   else if (window.location.hostname.indexOf("helpcenter.galaxus.ch") >= 0) {
-    //alert("helpcenter.galaxus.ch");
     portal2 = 'helpcenter.galaxus.ch';
   }
   else{
-    //alert("helpcenter.galaxus.de");
     portal2 = 'helpcenter.galaxus.de';
   }
 
@@ -989,26 +977,18 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   if (sessionStorage.getItem("referrer")) {
     referrer = sessionStorage.getItem("referrer");
   }
-  console.log(referrer);
 
   var currentLanguage = $('html').attr('lang');
-	console.log(currentLanguage);
-	console.log(infoBoxWording[currentLanguage]);
-
 
   if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1') || $('#request_description').val() == '' && sessionStorage.getItem('Feedback').includes('1') ) { 
-      console.log('Contains Article');
       $('#HeaderID').html(infoBoxWording[currentLanguage]['outputFeedbackHeader'] + infoBoxWording[currentLanguage]['outputFeedbackBeschreibung']);
       $('.contactFormInfoText2').hide(); //Unterueberschrift
       $('.form-field:not(.request_ticket_form_id)').show(); // SchreibUns-Feld-Form mit beschreibung, grund usw
       $('#request_custom_fields_360014169819').val('webform_case_other_request_order'); //Grund der Anfrage setzen////
       $('.request_custom_fields_360014169819').hide(); // Grund der Anfrage verstecken
-      console.log($('.request_custom_fields_360014169819').val());
 
       $('.form-field.select.optional.request_ticket_form_id').hide(); //Kundengruppe Option
-
       $('.request_custom_fields_360007585419').hide(); // Auftragsnummer Feld
-      //$('#request_custom_fields_360007585419').val('1111'); // Auftragsnummer Feld Wert setzen
 
       $('label[for="request-attachments"]').hide(); //Anhang Drop Ueberschrift
       $('#upload-dropzone').hide(); //Anhang Drop 
@@ -1019,13 +999,11 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('input[name="request[subject]"]').prop("readonly",true); //Betreff nur lesbar nicht aenderbar ////
       $('input[name="request[subject]"]').hide(); // Betreff Feld
       $('#request_subject_label').hide();         // Betreff Betreff
-      console.log($('input[name="request[subject]"]').val());
       
 
       $('input[name="request[anonymous_requester_email]"]').val('feedback@dghelpcenter.ch');//Mail setzen////
       $('input[name="request[anonymous_requester_email]"]').hide(); //Mail Feld
       $('label[for="request_anonymous_requester_email"]').hide();   // Mail Betreff
-      console.log($('input[name="request[anonymous_requester_email]"]').val());
 
    }
   else{
@@ -1038,21 +1016,18 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
   switch(portal2){
       case'helpcenter.digitec.ch':
-             console.log('CHAT anzeigen digitech');
              break;
       case'helpcenter.galaxus.ch':
-              console.log('CHAT anzeigen galaxus.ch');
               break;
       case'helpcenter.galaxus.de':
               console.log('CHAT REMOVED galaxus.de');
-              //$('a[data-wording-key="chatUs"]').remove(); // Chat Button
-              //$('h4[data-wording-key="chat"]').remove(); // Chat Überschrift
+              $('a[data-wording-key="chatUs"]').remove(); // Chat Button
+              $('h4[data-wording-key="chat"]').remove(); // Chat Überschrift
               $('.contactButtonTableCellLeftLeftBorder').addClass('disabledborder'); // Linie neben "Telefon" entfernt weil "chat" entfernt
               $('.contactButtonTableCellLeft').addClass('borderright'); // Linie neben "kontaktformular" gesetzt weil nur da gebraucht
               $('p:contains("Chat")').html(''); // Chat Überschrift schmales Fenster oder Mobile entfernen
               break;
       default:
-              console.log('CHAT anzeigen DEFAULT');
               break;
     }
 

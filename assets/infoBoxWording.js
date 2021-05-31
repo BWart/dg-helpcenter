@@ -1,11 +1,7 @@
 function fillInfoBoxWording(){
-    //var portal1 = window.location.hostname;
-    //var portal2 = window.location.hostname;
-    
+  
     var shopURL = "";
     var helpcenterURL = "";
-    console.log("AAA"+portal1);
-    console.log("BBB"+portal2);
     
     var hp1 = "";
     var hp2 = "";
@@ -19,19 +15,15 @@ function fillInfoBoxWording(){
     switch (portal1){
             case 'digitec.ch':
                     shopURL = "https://www.digitec.ch/"; 
-                    console.log("sw1");
                     break;
             case 'galaxus.ch':
                     shopURL = "https://www.galaxus.ch/"; 
-                    console.log("sw2");
                     break;
             case 'galaxus.de':
                     shopURL = "https://www.galaxus.de/";
-                    console.log("sw3");
                     break;
             default: 
                     shopURL = "https://www.digitec.ch/";
-                    console.log("DEFAULT iBW 1");
                     break;
     }
 
@@ -48,8 +40,6 @@ function fillInfoBoxWording(){
                     hp3 = "/360000457949";
                     offerte = "CHF 5'000.-";
                     rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + helpcenterURL + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
-                                   
-                    console.log("sw4");
                     break;
             case 'helpcenter.galaxus.ch':
                     helpcenterURL = "https://helpcenter.galaxus.ch/hc/";
@@ -60,8 +50,6 @@ function fillInfoBoxWording(){
                     hp3 = "/360007333839";
                     offerte = "CHF 5'000.-";
                     rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + helpcenterURL + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
-                
-                    console.log("sw5");
                     break;
             case 'helpcenter.galaxus.de':
                     helpcenterURL = "https://helpcenter.galaxus.de/hc/";
@@ -72,9 +60,6 @@ function fillInfoBoxWording(){
                     hp3 = "/360016850820";
                     offerte = "EUR 2'000.-";
                     rck = "Du kannst von " + seite + " gekaufte Produkte innerhalb von 30 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
-
-                
-                    console.log("sw6");
                     break;
             default:
                     helpcenterURL = "https://helpcenter.digitec.ch/hc/";
@@ -85,13 +70,8 @@ function fillInfoBoxWording(){
                     hp3 = "/360000457949";
                     offerte = "CHF 5'000.-";
                     rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + helpcenterURL + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
-
-        
-                    console.log("DEFAULT iBW 2");
                     break;
     }
-
-    console.log("NACH SWITCHES");
       
     
     infoBoxWording = {
