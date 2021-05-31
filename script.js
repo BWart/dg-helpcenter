@@ -389,7 +389,6 @@ function checkForChatConnection(){
   zE('webWidget:on', 'chat:connected', function() {
     IsChatting();
   });
-  console.log('webwidget loaded');
 }
 
 

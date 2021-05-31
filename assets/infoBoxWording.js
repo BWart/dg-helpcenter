@@ -421,7 +421,6 @@ function fillInfoBoxWording(){
 }
     }
     
-    console.log(infoBoxWording);
     return infoBoxWording;
 
 }
