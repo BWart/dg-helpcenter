@@ -100,7 +100,7 @@
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
               {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
               <div id='downvoteText'></div>
-              <div id="downvoteButton"></div>
+              <div id="downvoteButtonField"></div>
             </div>
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
@@ -224,7 +224,7 @@
   </div>
 </div>
 <script>
-  
+
   //Get the Infobox Content based on Rule
   var portal1 = window.location.hostname;
   var portal2 = window.location.hostname;
@@ -268,7 +268,7 @@
 
   $('.article-vote-down').on('click',function(){
         document.getElementById('downvoteText').innerHTML = infoBoxWording[currentLanguage]['outputFeedbackButtonText'];
-        document.getElementById('downvoteButton').innerHTML = '<button id="downvoteButton">Feedback</button>';
+        document.getElementById('downvoteButtonField').innerHTML = '<button id="downvoteButton">Feedback</button>';
   });
 
 
