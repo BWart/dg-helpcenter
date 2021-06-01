@@ -514,6 +514,7 @@ html {
   color: #fff;
   background-color: #444;
   min-width: 90px;
+  max-width: 90px;
   display: inline-block;
   font-size: 12px;
   line-height: 2.34;
@@ -523,6 +524,7 @@ html {
   background-color: #565656;
   color: #fff;
   border: 1px solid #565656;
+  max-width: 90px;
 }
 
 #downvoteText{
