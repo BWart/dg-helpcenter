@@ -265,8 +265,10 @@
   sessionStorage.setItem('Feedback', 0);
 
   var url = window.location.href; 
+  $('#downvoteButton').hide();
 
   $('.article-vote-down').on('click',function(){
+        $('#downvoteButton').show();
         document.getElementById('downvoteText').innerHTML = infoBoxWording[currentLanguage]['outputFeedbackButtonText'];
         document.getElementById('downvoteButton').innerHTML = '<button id="downvoteButton">Feedback</button>';
   });
