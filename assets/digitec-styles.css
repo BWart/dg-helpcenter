@@ -509,7 +509,7 @@
 
 #downvoteButton{
   border-radius: 3px;
-  /*border: 1px solid #00559d;*/
+  border: 1px solid #00559d;
   color: #fff;
   background-color: #00559d;
   min-width: 90px;
