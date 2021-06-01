@@ -517,6 +517,8 @@
   display: inline-block;
   font-size: 12px;
   line-height: 2.34;
+  margin:0 auto;
+  display:block;
 }
 
 #downvoteButton:hover, #downvoteButton:focus{
@@ -524,6 +526,8 @@
   color: #ffffff;
   border: 1px solid #e60020;
   max-width: 90px;
+  margin:0 auto;
+  display:block;
 }
 
 #downvoteText{
