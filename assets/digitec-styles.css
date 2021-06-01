@@ -513,6 +513,7 @@
   color: #fff;
   background-color: #00559d;
   min-width: 90px;
+  max-width: 90px;
   display: inline-block;
   font-size: 12px;
   line-height: 2.34;
@@ -521,7 +522,8 @@
 #downvoteButton:hover, #downvoteButton:focus{
   background-color: #e60020;
   color: #ffffff;
-  /*border: 1px solid #e60020;*/
+  border: 1px solid #e60020;
+  max-width: 90px;
 }
 
 #downvoteText{
