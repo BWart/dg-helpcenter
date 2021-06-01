@@ -4157,7 +4157,7 @@ ul {
   margin: 0 5px;
 }
 
-#fbsenden{
+/*#fbsenden{
   margin-bottom: 50px;
   margin-top: 10px;
 }
@@ -4170,10 +4170,10 @@ ul {
   height: 150px;
   outline: none;
   padding: 0px 10px 10px;
-}
+}*/
 
 /*downvote*/
-/*
+
 #FeedbackVote{
   font-size: 32px;
   font-family: Gibson, sans-serif;
@@ -4201,16 +4201,11 @@ ul {
 }
 
 
-
 #FeedbackBox{
   box-sizing: border-box;
   max-width: 1160px;
   margin: 0 auto;
   min-height: 150px;
-}
-
-#hrefEinreichen{
-  color: #fff;
 }
 
 #HeaderID{
@@ -4220,4 +4215,429 @@ ul {
 #request_subject_label .no-after::after{
   content: '';
 }
-*/
+
+/*Ausgelagert alles außer Farben von digitech galaxus CSS*/
+
+.nesty-panel {
+  height: auto;
+  max-height: 250px;
+ }
+ 
+ header svg {
+   width: 90px;
+ }
+ 
+ .button--shop {
+   margin-top: 12px;
+ }
+ 
+ .button--zopim {
+   white-space: normal;
+ }
+
+ .button--zopim.inactive {
+  pointer-events: none;
+}
+
+.hidden {
+	display: none;
+}
+
+.footer{
+  margin-top: 50px;
+}
+
+.footer-side,
+.footer-center,
+.footer-inner{
+  margin: auto;
+}
+
+.footer-contact__title {
+	margin-bottom: 12px;
+  font-size: 15px;
+}
+ /* Ticket Form**/
+
+#request_custom_fields_360007967480_label, #request_custom_fields_360007967480 {
+  display: none;
+  }
+  
+  .contact-info{
+    padding-top: 10px;
+    font-weight: lighter;
+    clear:both
+  }
+  
+  .contactFormNote{
+    display:none; 
+    width:100%;
+    padding-top: 30px;
+  }
+
+  .contactFormText{
+    display:none; 
+    width:100%;
+    padding: 20px;
+  }
+
+  .contactFormTextNoBorder{
+    width:100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 35px;
+  }
+
+  .button-offline{
+  pointer-events: none;
+  }
+
+  .contactButtonTableCellFull{
+    width:100%;
+    padding-top:10px;
+    text-align:left;
+  }
+  
+  .contactButtonTableCellLeft{
+    width:33%;
+    padding-top:0px;
+    text-align:left;
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .contactButtonTableCellLeftLeftBorder{
+     width:33%;
+     padding-top:0px;
+     text-align:left;
+     padding-left:20px;
+     padding-right:20px;
+   }
+
+   .contactButtonTableCellLeftNoBorder{
+    width:33%;
+    padding-top:0px;
+    text-align:left;
+    padding-left:20px;
+    padding-right:20px;
+  }
+  
+  .contactButtonTableCellLeftBottomBorder{
+    width:33%;
+    padding-top:0px;
+    padding-bottom:10px;
+    text-align:left;
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .contactButtonTableCellLeftTopBorder{
+    width:33%;
+    padding-top:0px;
+    padding-bottom:0px;
+    text-align:left;
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .contactButtonTableCellCenter{
+    width:33%;
+    padding-top:0px;
+    text-align:center;
+    padding-left:10px;
+    padding-right:10px;
+  }
+  
+  .contactButtonTableCellRight{
+    width:33%;
+    padding-top:0px;
+    text-align:right;
+    padding-left:20px;
+  }
+  
+  .contactButtonTableCellGeneric{
+    width:33%;
+    padding-top:0px;
+    text-align:center;
+  }
+  
+  .contactButtonTableCellRightMobile{
+    width:66%;
+    padding-top:5px;
+    text-align:left;
+  }
+  
+  .contactData{
+    display: none;
+    width:100%;
+  }
+  
+  .contactDataTable{
+    width:100%;
+  }
+
+  .contactDataTableContent{
+    padding: 20px;
+    padding-left: 0px;
+  }
+
+  .buttonContactFormContact{
+    width: 30%;
+    float: right;
+    margin-top: 10px;
+  }
+  
+  .contactOption{
+    font-size: x-large;
+    font-weight: lighter;
+    float: left;
+  }
+
+  .recommendation{
+    font-weight: normal;
+    font-size: small;
+    display: inline-block;
+    vertical-align: center;
+    padding: 3px;
+    margin-left: 8px;
+  }
+
+  .mailRecommendation{
+    display: none;
+  }
+  
+  .phoneRecommendation{
+    display: none;
+  }
+
+  /* Footer */
+
+  .contactLink:hover{
+  	text-decoration: underline;
+  }
+
+  .contactLink{
+    font-size: large;
+  	font-weight: lighter;
+  }
+
+.contactLinkInfo{
+    font-size: x-large;
+  	font-weight: lighter;
+  }
+
+   /* Footer Popups Phone Number**/
+  
+   .phone-number {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .phone-number .popuptext {
+    visibility: hidden;
+    width: 160px;
+    text-align: center;
+    border-radius: 6px;
+    padding: 30px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+  }
+
+  .phone-number .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+  }
+
+  .phone-number .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+
+    /* Desktop Footer**/
+
+@media (min-width: 768px) {
+  .footer-inner {
+  	margin: auto;
+  }
+
+ 	.footer-side {
+    padding-right: 24px;
+		width: 20%;
+  }
+
+  .footer-center {
+    width: 80%;
+  }
+
+  .footer-contact {
+   	float: left;
+    width: 50%;
+  	margin: 0;
+    padding: 24px 0px;
+    visibility: hidden;
+  }
+
+  .footer-contact__title {
+  	font-size: 16px;
+    font-weight: 600;
+    font: inherit;
+  }
+
+  .footer-contact__private {
+    width: 40%;
+		float: right;
+    padding: 0px 0px 0px 24px;
+  }
+
+  .footer-contact__business {
+    width: 40%;
+		float: left;
+    font-size: 13px;
+    padding: 0px 0px 0px 24px;
+  }
+
+  .logoSvg {
+    width: 170px;
+  }
+
+  .body-border {
+  
+  }
+} 
+
+    /* Mobile Footer **/
+
+    @media (max-width: 767px) { 
+  
+      .footer-side {
+       padding-right: 24px;
+       width: 20%;
+     }
+       
+     .footer-contact {
+     visibility: hidden;
+   }
+   
+     .footer-center {
+       width: 80%;
+     }
+     
+     .footer-contact__private {
+       font-size: 13px;
+       padding-top: 24px;
+     }
+     
+     .footer-contact__business {
+       font-size: 13px;
+       padding-top: 24px;
+     
+     }
+
+     
+.logoSvg {
+  width: 170px;
+}
+
+.body-border {
+  
+}
+    
+.button-contact{
+  width: 100%;
+}
+}
+
+.sectorBand {
+  display: flex;
+  height: 10px;
+}
+
+.interriorBand {
+  flex: 1;
+}
+
+.householdBand {
+  flex: 1;
+}
+
+.sportsBand {
+  flex: 1;
+}
+
+.toysBand {
+  flex: 1;
+}
+
+.babyBand {
+  flex: 1;
+}
+
+.officeBand {
+  flex: 1;
+}
+
+body {
+  min-height: 100VH;
+}
+
+@media (min-width: 1360px){
+  body {
+    margin: 0 auto !important;
+		float: none !important;
+    width: 1360px;
+    display: table;
+  }
+}
+
+@media (max-width: 1359px){
+  body {
+    width: 100%;
+  }
+}
+
+html {
+  min-height: 100%;
+  margin-left: calc(100vw - 100%);
+  scroll-behavior: smooth;
+ }
+
+ /* aus style.css */
+
+ [role="button"]:active, .button:active.button[aria-selected="true"], [role="button"][aria-selected="true"]{
+  text-decoration: none;
+}
+
+#downvoteButton{
+  border-radius: 3px;
+  min-width: 90px;
+  max-width: 90px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 2.34;
+  margin:0 auto;
+  display:block;
+}
+
+#downvoteButton:hover, #downvoteButton:focus{
+  max-width: 90px;
+  margin:0 auto;
+  display:block;
+}
+
+.disabledborder {
+  border-left: none;
+}
