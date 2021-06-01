@@ -569,7 +569,7 @@ return dep;
   }
   
   
-  // Set Tag for Zopim 
+ // Set Tag for Zopim 
   function setZopimTag(){
     var tag = $('#request_custom_fields_360014169819').attr('value');
   	var oldTag = sessionStorage.getItem('requestReason');
@@ -578,14 +578,13 @@ return dep;
     if(!oldTag !== null){
       zE('webWidget', 'chat:removeTags', oldTag);      
    		}
-    zE('webWidget', 'chat:removeTags', 'de', 'fr', 'it', 'en');                                                      
-    zE('webWidget', 'chat:addTags', tag, languageTag);                                                                                                                                                                                
-    if(tag != 'webform_case_product_advice_consumer'){
-  		 zE('webWidget', 'chat:addTags', 'standard_request');
+    zE('webWidget', 'chat:removeTags', 'de', 'fr', 'it', 'en');                                                                                                
+    zE('webWidget', 'chat:addTags', tag, languageTag);                                                                                      
+  	if(tag != 'webform_case_product_advice_consumer'){  
+  		 zE('webWidget', 'chat:addTags', 'standard_request'); //Sets standard request Tag if no special Tag
   	}
-  
   	sessionStorage.setItem('requestReason', tag);
-  }            
+  }        
   
    function getLanguageTag(){
   	var languageTag = 'de';
