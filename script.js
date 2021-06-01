@@ -312,7 +312,7 @@ function waitForChat () {
   
     setTimeout(function(){ 
     try {
-        checkForChatConnection();
+        IsChatting();
         setZESettings();
         zE('webWidget', 'setLocale', getWidgetLanguage());
         checkForUnreadMessages();
@@ -384,13 +384,6 @@ function setZESettings(){
 }
 
 // Shows Chat if Is Chatting or Hides Chat else
-
-function checkForChatConnection(){
-  zE('webWidget:on', 'chat:connected', function() {
-    IsChatting();
-  });
-}
-
 
 function IsChatting(){
  
