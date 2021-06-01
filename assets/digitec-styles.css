@@ -30,13 +30,7 @@
    .contactFormText{
      border: 5px solid #00559d;
    }
-   
-.button-offline{
-  pointer-events: none;
-  color: #97bad7;
-  background-color: #ededed;
-}
-   
+
    .contactButtonTableCellLeftLeftBorder{
      border-left: solid 1px #D3D3D3;
    } 
@@ -212,9 +206,6 @@
      border: 8px solid #00559D;
    }
        
-   .button-contact{
-     width: 100%; 
-   }
    }
    
    body {
@@ -309,6 +300,11 @@
 .button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
   background:#e60021;
   color:#fff
+}
+
+.button-offline{
+  color: #97bad7;
+  background-color: #ededed;
 }
 
 #downvoteButton{
