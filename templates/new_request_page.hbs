@@ -113,56 +113,8 @@ function removeCategoryFromJson(json, categoryToRemove){
   }
   return JSON.stringify(json);
 }
-  
-//Removes galaxus Categorys for digitec  
-  
-var DYICategory = 'webform_case_product_advice_diy';
-var homeCategory = 'webform_case_product_advice_home';
-var productAdvice = getProductAdvice();
-  
-try {
-    var catJson = JSON.parse($('#request_custom_fields_360014169819').attr("data-tagger"));
-    $('#request_custom_fields_360014169819').attr("data-tagger", removeSecondCategoryFromJson(catJson, DYICategory, homeCategory, productAdvice));
-  }
-  catch (e) {
-}
-
-function removeSecondCategoryFromJson(json, DYICategory, homeCategory, productAdvice){   
-  for (var i = 0; i < json.length; i++){
-  	if(json[i].label == productAdvice){                                  
-    	for (var y = 0; y < json[i].options.length; y++){                                                     
-    		if (json[i].options[y].value == DYICategory || json[i].options[y].value == homeCategory){
-      		json[i].options.splice(y,1);
-  				y--;
-    		}
-  		}
-  	}
-  }  
-  return JSON.stringify(json);
-}  
-                                  
-function getProductAdvice(){  
-  	var currentLanguage = $('html').attr('lang');    
-    	switch(currentLanguage) {
-  	case 'de':
-    	return 'Produktberatung';
-    	break;
-  	case 'en-us':
-    	return 'Product information';
-    	break;
-  	case 'fr':
-    	return 'Conseil produits';
-    	break;
-    case 'it':
-    	return 'Consulenza prodotti';
-    	break;
-  	default:
-    	return 'Produktberatung';
-		}      
-  }                               
-
-  
-                                  
+ 
+                                 
 //Recommended Channel
 
 // ABC Split
