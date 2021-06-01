@@ -77,9 +77,6 @@ a {
   text-decoration: none;
 }
 
-a:hover, a:active, a:focus {
-  /*color: #094979;*/
-}
 
 input,
 textarea {
@@ -233,14 +230,6 @@ ul {
 }
 
 
-
-.button-contact2:hover {
-    /*background-color: #e60021;
-    border: 1px solid #565656;
-    color: #fff;*/
-    }
-
-
 [role="button"]:active, .button:active.button[aria-selected="true"], [role="button"][aria-selected="true"]{
   /*background-color: #d6e6f4;*/
   /*: #00559d;*/
@@ -254,8 +243,6 @@ ul {
   }
 }
 
-.button::after, [role="button"]::after {
-}
 
 .button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover {
   /*background-color: #e60020;*/
@@ -294,11 +281,6 @@ ul {
   margin-top: 10px;
   margin-bottom: 5px;
   font-size: 16px;
-}
-
-.button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
-  /*background:#e60021;*/
-  /*color:#fff*/
 }
 
 .button-large[disabled], input[type="submit"][disabled] {
@@ -1502,11 +1484,6 @@ ul {
   /* Yes/No label*/
 }
 
-.article-vote:focus{
-}
-
-.article-vote:hover::before, .article-vote:hover::after,  {
-}
 
 .article-vote-up::before {
   content: "\2713";
@@ -1720,7 +1697,6 @@ ul {
 }
 
 .comment-sorter {
-  display: inline-block;
   float: right;
 }
 
