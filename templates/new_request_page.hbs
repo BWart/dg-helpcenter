@@ -962,7 +962,9 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   else{
       
       sessionStorage.setItem('Feedback', 0);
+      console.log(currentLanguage);
       $('html').attr('lang') = currentLanguage;
+      console.log(currentLanguage);
         
   }
 
