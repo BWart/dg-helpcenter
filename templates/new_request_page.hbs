@@ -23,17 +23,17 @@
       <tr>
         <td class = 'contactButtonTableCellLeft'><h4 data-wording-key="email"></h4></td>
 				<td class = 'contactButtonTableCellLeftLeftBorder'><h4 data-wording-key="phone"></h4></td>
-				<td class = 'contactButtonTableCellLeftLeftBorder'><h4 data-wording-key="chat"></h4></td>
+				<td class = 'contactButtonTableCellLeftLeftBorder chatTableCell'><h4 data-wording-key="chat"></h4></td>
       </tr>
       <tr>
         <td class ='contactButtonTableCellLeft'><a class="button-contact contactFormWriteUs" data-wording-key="writeUs"></a></td>
         <td class ='contactButtonTableCellLeftLeftBorder'><div class="button-contact phone-number private-number private-customer" data-wording-key="callUsPrivate"></div>      <div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div></td>
-        <td class ='contactButtonTableCellLeftLeftBorder'><a class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></a></td>
+        <td class ='contactButtonTableCellLeftLeftBorder chatTableCell'><a class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></a></td>
       </tr>
       <tr>
         <td class ='contactButtonTableCellLeft'></td>
         <td class ='contactButtonTableCellLeftLeftBorder'><div class='contact-info private-customer' data-wording-key="openingHoursPrivate"></div>    <div class='contact-info business-customer' data-wording-key="openingHoursBusiness"></div></td>
-        <td class ='contactButtonTableCellLeftLeftBorder'></td>
+        <td class ='contactButtonTableCellLeftLeftBorder chatTableCell'></td>
       </tr>
         
     </table>
@@ -54,10 +54,10 @@
         <td class ='contactButtonTableCellLeftBottomBorder'><div class="button-contact phone-number private-number2 private-customer" data-wording-key="callUsPrivateMobile"></div>      <div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div></td>
       </tr>
       <tr>
-        <td class ='contactButtonTableCellLeftTopBorder'><p class="font1">Chat</p></td>
+        <td class ='contactButtonTableCellLeftTopBorder chatTableCell'><p class="font1">Chat</p></td>
       </tr>
       <tr>
-         <td class ='contactButtonTableCellLeftNoBorder'><a class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></a></td>
+         <td class ='contactButtonTableCellLeftNoBorder chatTableCell'><a class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></a></td>
       </tr>
 
     </table>
@@ -973,11 +973,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       case'helpcenter.galaxus.ch':
               break;
       case'helpcenter.galaxus.de':
-              $('a[data-wording-key="chatUs"]').remove(); // Chat Button
-              $('h4[data-wording-key="chat"]').remove(); // Chat Überschrift
-              $('.contactButtonTableCellLeftLeftBorder').addClass('disabledborder'); // Linie neben "Telefon" entfernt weil "chat" entfernt
-              $('.contactButtonTableCellLeft').addClass('borderright'); // Linie neben "kontaktformular" gesetzt weil nur da gebraucht
-              $('p:contains("Chat")').html(''); // Chat Überschrift schmales Fenster oder Mobile entfernen
+             	$('.chatTableCell').hide();
               break;
       default:
               break;
