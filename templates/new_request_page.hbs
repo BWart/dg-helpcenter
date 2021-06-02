@@ -78,8 +78,7 @@
 </div>
 
 <script>
-	console.log(currentLanguage);
-	console.log(infoBoxWording[currentLanguage]);
+
 var mobile = window.innerWidth < 767;
 
 var urlHash = window.location.hash.substring(1);
@@ -201,7 +200,8 @@ hideOrderNumber();
 		}
   }
 }
-  
+  	console.log(currentLanguage);
+
   //Shows Info for Request Reason
   
    var contactInfo = 0;
@@ -338,7 +338,8 @@ hideOrderNumber();
 
   var infoBoxWording = fillInfoBoxWording(portal1, portal2);
 
-
+	console.log(currentLanguage);
+	console.log(infoBoxWording[currentLanguage]);
   //Checks whether to hide order number
   function hideOrderNumber(){
   	if (reasonsForNoSubject.indexOf($('.request_custom_fields_360014169819' + ' a.nesty-input').text()) >= 0){
