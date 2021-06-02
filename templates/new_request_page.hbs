@@ -946,15 +946,17 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('input[name ="commit"]').show(); // Einreiche Button anzeigen
       $('#request_subject').text('Feedback Helpcenter');
 
-      $('input[name="request[subject]"]').val('Feedback Helpcenter'); //Betreff gesetzt ////
+      var betreffTitel = sessionStorage.getItem('articleHP');
+
+      $('input[name="request[subject]"]').val(betreffTitel); //Betreff gesetzt ////
       $('input[name="request[subject]"]').prop("readonly",true); //Betreff nur lesbar nicht aenderbar ////
       $('input[name="request[subject]"]').hide(); // Betreff Feld
       $('#request_subject_label').hide();         // Betreff Betreff
       
 
       $('input[name="request[anonymous_requester_email]"]').val('feedback.helpcenter@digitecgalaxus.ch');//Mail setzen////
-      $('input[name="request[anonymous_requester_email]"]').hide(); //Mail Feld
-      $('label[for="request_anonymous_requester_email"]').hide();   // Mail Betreff
+      //$('input[name="request[anonymous_requester_email]"]').hide(); //Mail Feld
+      //$('label[for="request_anonymous_requester_email"]').hide();   // Mail Betreff
 
    }
   else{
