@@ -23,17 +23,17 @@
       <tr>
         <td class = 'contactButtonTableCellLeft'><h4 data-wording-key="email"></h4></td>
 				<td class = 'contactButtonTableCellLeftLeftBorder'><h4 data-wording-key="phone"></h4></td>
-				<td class = 'contactButtonTableCellLeftLeftBorder private-customer'><h4 data-wording-key="chat"></h4></td>
+				<td class = 'contactButtonTableCellLeftLeftBorder'><h4 data-wording-key="chat"></h4></td>
       </tr>
       <tr>
         <td class ='contactButtonTableCellLeft'><a class="button-contact contactFormWriteUs" data-wording-key="writeUs"></a></td>
         <td class ='contactButtonTableCellLeftLeftBorder'><div class="button-contact phone-number private-number private-customer" data-wording-key="callUsPrivate"></div>      <div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div></td>
-        <td class ='contactButtonTableCellLeftLeftBorder private-customer'><a class="button-contact chat-private button-offline" data-wording-key="chatNotOnline"></a></td>
+        <td class ='contactButtonTableCellLeftLeftBorder'><a class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></a></td>
       </tr>
       <tr>
         <td class ='contactButtonTableCellLeft'></td>
         <td class ='contactButtonTableCellLeftLeftBorder'><div class='contact-info private-customer' data-wording-key="openingHoursPrivate"></div>    <div class='contact-info business-customer' data-wording-key="openingHoursBusiness"></div></td>
-        <td class ='contactButtonTableCellLeftLeftBorder private-customer'></td>
+        <td class ='contactButtonTableCellLeftLeftBorder'></td>
       </tr>
         
     </table>
@@ -54,10 +54,10 @@
         <td class ='contactButtonTableCellLeftBottomBorder'><div class="button-contact phone-number private-number2 private-customer" data-wording-key="callUsPrivateMobile"></div>      <div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div></td>
       </tr>
       <tr>
-        <td class ='contactButtonTableCellLeftTopBorder private-customer'><p class="font1">Chat</p></td>
+        <td class ='contactButtonTableCellLeftTopBorder'><p class="font1">Chat</p></td>
       </tr>
       <tr>
-         <td class ='contactButtonTableCellLeftNoBorder private-customer'><a class="button-contact chat-private button-offline" data-wording-key="chatNotOnline"></a></td>
+         <td class ='contactButtonTableCellLeftNoBorder'><a class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></a></td>
       </tr>
 
     </table>
@@ -562,7 +562,7 @@ return dep;
   
 // click Event for Chat Button
 
-$('.chat-private').on("click", function () {
+$('.button-chat').on("click", function () {
   openChat();
   }); 
   
@@ -607,13 +607,13 @@ $('.chat-private').on("click", function () {
   // CSS Change
   function setButtonVisbility(cssStatusChange){
     if(cssStatusChange == 'online'){
-      $(".chat-private").removeClass("button-offline");
-      $(".chat-private").html(getButtonText('chatUs'));
+      $(".button-chat").removeClass("button-offline");
+      $(".button-chat").html(getButtonText('chatUs'));
       $(".contactDataChat").show();
     } 
     if(cssStatusChange == 'offline'){
-      $(".chat-private").addClass("button-offline");
- 		  $(".chat-private").html(getButtonText('chatNotOnline'));
+      $(".button-chat").addClass("button-offline");
+ 		  $(".button-chat").html(getButtonText('chatNotOnline'));
     }
   }
   
