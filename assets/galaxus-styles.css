@@ -214,18 +214,18 @@ html {
 }
 
 
-/*a {
+a {
   color: #007bc8;
-}*/
+}
 
 a:hover, a:active, a:focus {
   color: #000;
 }
 
-/*select:focus {
+select:focus {
   border: 1px solid #0072ef;
 }
-*/
+
 
 /*CHAT*/
 
