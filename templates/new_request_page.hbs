@@ -957,13 +957,11 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('input[name="request[anonymous_requester_email]"]').val('feedback.helpcenter@digitecgalaxus.ch');//Mail setzen////
       $('input[name="request[anonymous_requester_email]"]').hide(); //Mail Feld
       $('label[for="request_anonymous_requester_email"]').hide();   // Mail Betreff
-
+      console.log(currentLanguage);
    }
   else{
       
       sessionStorage.setItem('Feedback', 0);
-      console.log(currentLanguage);
-      $('html').attr('lang') = currentLanguage;
       console.log(currentLanguage);
         
   }
