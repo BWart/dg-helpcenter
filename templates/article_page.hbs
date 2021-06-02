@@ -261,12 +261,13 @@
 
   //////////Wenn Downvote gedrueckt wird erscheint ein Feedback Knopf/////////
 
-  var h1Header = $('h1').text();
+  var h1Header = $('.article-title').text();
   console.log(h1Header);
+  console.log('h1Header');
 
   sessionStorage.clear();
   sessionStorage.setItem('Feedback', 0);
-  sessionStorage.setItem('articleHP', )
+  sessionStorage.setItem('articleHP');
 
   var url = window.location.href; 
   $('#downvoteButton').hide();
