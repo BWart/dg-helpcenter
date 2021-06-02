@@ -267,7 +267,8 @@
 
   sessionStorage.clear();
   sessionStorage.setItem('Feedback', 0);
-  sessionStorage.setItem('articleHP');
+  sessionStorage.setItem('articleHP', h1Header);
+  sessionStorage.getItem('articleHP');
 
   var url = window.location.href; 
   $('#downvoteButton').hide();
