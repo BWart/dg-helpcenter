@@ -930,6 +930,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
   }
 
   var currentLanguage = $('html').attr('lang');
+  console.log(currentLanguage);
 
   if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback').includes('1') || $('#request_description').val() == '' && sessionStorage.getItem('Feedback').includes('1') ) { 
       $('#HeaderID').html(infoBoxWording[currentLanguage]['outputFeedbackHeader'] + infoBoxWording[currentLanguage]['outputFeedbackBeschreibung']);
@@ -961,10 +962,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
    }
   else{
       
-      /*sessionStorage.setItem('Feedback', 0);
-      console.log(currentLanguage);*/
-      sessionStorage.clear();
-      localStorage.clear();
+      sessionStorage.setItem('Feedback', 0);
+      console.log(currentLanguage);
         
   }
 
