@@ -4512,6 +4512,10 @@ infoNoteBox{
     width: 170px;
   }
 
+  .body-border-galaxus {
+    border: none;
+  }
+
 } 
 
     /* Mobile Footer **/
@@ -4632,4 +4636,8 @@ html {
 
 .disabledborder {
   border-left: none;
+}
+
+.article-vote[aria-selected="true"]{
+  text-decoration: none;
 }
