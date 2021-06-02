@@ -948,7 +948,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
       var betreffTitel = sessionStorage.getItem('articleHeader');
 
-      $('input[name="request[subject]"]').val('Feedback - '+betreffTitel); //Betreff gesetzt ////
+      $('input[name="request[subject]"]').val('Feedback -'betreffTitel); //Betreff gesetzt ////
       $('input[name="request[subject]"]').prop("readonly",true); //Betreff nur lesbar nicht aenderbar ////
       //$('input[name="request[subject]"]').hide(); // Betreff Feld
       //$('#request_subject_label').hide();         // Betreff Betreff
