@@ -261,14 +261,14 @@
 
   //////////Wenn Downvote gedrueckt wird erscheint ein Feedback Knopf/////////
 
-  var h1Header = $('.article-title').text();
-  console.log(h1Header); //Artikelseite Überschrift
+  var h1Header = $('.article-title').text(); //Artikelseite Überschrift
+  console.log(h1Header); 
   console.log('h1Header');
 
   sessionStorage.clear();
   sessionStorage.setItem('Feedback', 0);
-  sessionStorage.setItem('articleHP', h1Header);
-  sessionStorage.getItem('articleHP');
+  sessionStorage.setItem('articleHeader', h1Header); //Ueberschrift Artikel
+  sessionStorage.getItem('articleHeader');
 
   var url = window.location.href; 
   $('#downvoteButton').hide();
