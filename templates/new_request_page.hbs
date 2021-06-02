@@ -366,8 +366,7 @@ hideOrderNumber();
          $('#request_description_label').html(descriptionLabel);                         
     }
   }
-  	console.log(currentLanguage);
-	console.log(infoBoxWording[currentLanguage]);
+  
   // ZOPIM Integration
   
   // Defines how many Users can See the Chat Button
@@ -962,8 +961,10 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
    }
   else{
       
-      sessionStorage.setItem('Feedback', 0);
-      console.log(currentLanguage);
+      /*sessionStorage.setItem('Feedback', 0);
+      console.log(currentLanguage);*/
+      sessionStorage.clear();
+      localStorage.clear();
         
   }
 
