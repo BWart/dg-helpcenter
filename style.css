@@ -966,6 +966,16 @@ ul {
   margin-top: 10px;
 }
 
+.blocks-item-inner-table-cell{
+  vertical-align:bottom;
+  padding-right:10px;
+  padding-top:2px;
+}
+
+.blocks-item-inner-table-cell-2{
+  vertical-align:center;
+}
+
 /***** Homepage *****/
 .section {
   margin-bottom: 10px;
