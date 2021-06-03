@@ -205,7 +205,6 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   // AB Split
   
   var group = getGroup();
-  console.log(group);
                   
 	function getGroup(){
     if(!localStorage.getItem('noSplit')){

@@ -242,9 +242,7 @@ hideOrderNumber();
   var isActive = 0;
   
   $('.contactFormWriteUs').on("click", function () {
-    console.log("kontaktformular anfang");
   	if(isActive == 0){
-      console.log("kontaktformular if");
 			//Hide Mail Subject Field
   		$('#request_subject').hide();
   		$('#request_subject_label').hide();
@@ -264,7 +262,6 @@ hideOrderNumber();
       isActive = 1;
 			mailFormOnly();
     }else{
-      console.log("kontaktformular anfang");
       $('.form-field').hide();
       $('.request_custom_fields_360014169819').hide();
       $('input[name ="commit"]').hide();
@@ -351,8 +348,6 @@ hideOrderNumber();
   //Update description and label
   function updateDescriptionAndLabel(descriptionTemplateText, descriptionLabel){
     var currentLanguage = $('html').attr('lang');
-	console.log(currentLanguage);
-	console.log(infoBoxWording[currentLanguage]);
     if (descriptionTemplateText == infoBoxWording[currentLanguage]['outputOtherRequest']){
     	$('#request_description').val('');
     }
@@ -421,17 +416,14 @@ function getPercentForLang(){
 function initialButtonChange(department){
 
   var dep = zE('webWidget:get', 'chat:department', department);
-  console.log('dep');
   if(dep.status == 'online'){
   	changeButtonVisibility(dep.status)
-  	console.log('InitialDepartmentStatus' + dep.status)
   	}
 }
   
   //Suppresses all other than Chat in the Widget and disables Departments
   
 function setChatWidgetOptions(){
-console.log('WebWidgetIsSet');
 var dep = getChatDepartment();
 
  zE('webWidget', 'updateSettings', {
@@ -480,7 +472,6 @@ suppress: true
 }
 }
 });
-console.log(window.zESettings);
 return dep;
 }
 
@@ -516,7 +507,6 @@ return dep;
   	default:
     	chatDepartment = 'Chat Private DE';
 	}
-  	console.log('Department' + chatDepartment);
     return chatDepartment; 
   }
   
@@ -552,7 +542,6 @@ return dep;
  
 	function listenDepartmentStatus(selectedDepartment){
     zE('webWidget:on', 'chat:departmentStatus', function(department) {
-  		console.log('department changed' + department.name);
     	if(department.name == selectedDepartment){
   			changeButtonVisibility(department.status); 
   		}
@@ -581,13 +570,11 @@ $('.button-chat').on("click", function () {
   function changeButtonNotChatting(){
   	setZopimTag(); 
   	if(!isChatting()){
-  		console.log("isnotChatting");
    		var selectedDepartment = setChatWidgetOptions();                                                                                        
     	initialButtonChange(selectedDepartment);                                                                                          
     	listenDepartmentStatus(selectedDepartment); 
   	}else{
   	setButtonVisbility('online');
-  	console.log("ischatting");
   	}
   }
   
@@ -793,7 +780,6 @@ function mailFormOnly(){
 		//$('.request_custom_fields_360014169819').hide()
     $('.contactDataTableContent').css({ "border-bottom": "0px solid #ddd" }); 
   
-	//console.log("REQUEST SUBJECT IS: " + localStorage.getItem("requestReason"));
 	hideOrderNumber();
   	contactInfo = 1;
     isActive = 1;
@@ -852,7 +838,6 @@ function isFormAttachmentRequired() {
 	if($(formDropdownClass + ' a.nesty-input').attr('aria-expanded') &&
 	($(formDropdownClass + ' a.nesty-input').text() === 'Ich habe ein äusserlich beschädigtes Produkt erhalten' || $(formDropdownClass + ' a.nesty-input').text() === "I've received an externally damaged product" || $(formDropdownClass + ' a.nesty-input').text() === "Ho ricevuto un prodotto danneggiato esternamente" || $(formDropdownClass + ' a.nesty-input').text() === "J'ai reçu un produit endommagé à l'extérieur")){
 		errorMessageId = currentLanguage + '1';
-		console.log("ID IS: " + errorMessageId);
 		attachmentErrorNotification = setErrorMessage();
 		attachmentErrorElt.text(attachmentErrorNotification);
 		return true;
@@ -860,7 +845,6 @@ function isFormAttachmentRequired() {
 	if($(formDropdownClass + ' a.nesty-input').attr('aria-expanded') &&
 	($(formDropdownClass + ' a.nesty-input').text() === 'Ich habe ein falsches Produkt erhalten' || $(formDropdownClass + ' a.nesty-input').text() === "I’ve received the wrong product" || $(formDropdownClass + ' a.nesty-input').text() === "Ho ricevuto un prodotto sbagliato" || $(formDropdownClass + ' a.nesty-input').text() === "J'ai reçu le mauvais produit")){
 		errorMessageId = currentLanguage + '2';
-		console.log("ID IS: " + errorMessageId);
 		attachmentErrorNotification = setErrorMessage();
 		attachmentErrorElt.text(attachmentErrorNotification);
 		return true;
