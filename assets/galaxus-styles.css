@@ -261,6 +261,15 @@ select:focus {
   border: 1px solid #eee; 
 }
 
-
-
-
+/*Search field*/
+.search input[type="search"] {
+  border: 1px solid #565656;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: #999;
+  height: 40px;
+  padding-left: 40px;
+  padding-right: 20px;
+  -webkit-appearance: none;
+  width: 100%;
+}

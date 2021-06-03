@@ -730,6 +730,18 @@ ul {
   position: relative;
 }
 
+.search input[type="search"] {
+  border: 0px;
+  border-radius: 30px;
+  box-sizing: border-box;
+  color: #999;
+  height: 40px;
+  padding-left: 40px;
+  padding-right: 20px;
+  -webkit-appearance: none;
+  width: 100%;
+}
+
 [dir="rtl"] .search input[type="search"] {
   padding-right: 40px;
   padding-left: 20px;
