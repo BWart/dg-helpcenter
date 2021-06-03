@@ -731,7 +731,7 @@ ul {
 }
 
 .search input[type="search"] {
-  border: 1px solid #565656;
+  border: 0px;
   border-radius: 30px;
   box-sizing: border-box;
   color: #999;
@@ -964,6 +964,16 @@ ul {
 
 .blocks-item-description:not(:empty) {
   margin-top: 10px;
+}
+
+.blocks-item-inner-table-cell{
+  vertical-align:bottom;
+  padding-right:10px;
+  padding-top:2px;
+}
+
+.blocks-item-inner-table-cell-2{
+  vertical-align:center;
 }
 
 /***** Homepage *****/

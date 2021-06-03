@@ -251,3 +251,62 @@ select:focus {
   color: #00559d;
   border: 1px solid #d6e6f4; 
 }
+
+
+/*Font changes for digitec*/
+@font-face {
+  font-family: 'Roboto', sans-serif;
+  src: url('roboto.eot'); /* IE9 Compat Modes */
+  src: url('roboto.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('roboto.woff') format('woff'), /* Modern Browsers */
+  url('roboto.ttf')  format('truetype'), /* Safari, Android, iOS */
+  url('roboto.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+body {
+  /*background-color: #ffffff;*/
+  color: #333333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+ /* font-weight: 400;*/
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin-top: 0;
+}
+
+.font1{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #333333;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+#FeedbackVote{
+  font-size: 32px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin-top: 0;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/*Search Box corners for digitec*/
+.search input[type="search"] {
+  border: 1px solid #565656;
+  border-radius: 0px;
+  box-sizing: border-box;
+  color: #999;
+  height: 40px;
+  padding-left: 40px;
+  padding-right: 20px;
+  -webkit-appearance: none;
+  width: 100%;
+}

@@ -2,7 +2,7 @@
   <div class="hero-inner">
     {{search submit=false instant=true class='search search-full'}}
   </div>
- <div class='searchBoxNote' style='top:0%; position: relative;' >
+ <div class='searchBoxNote' style='top:-5%; position: relative;' >
   	<a class='searchBoxText' data-wording-key='searchBoxText'></a>
   </div>
 </section> 
@@ -18,7 +18,7 @@
           {{#if ../has_multiple_categories}}
             <li class="blocks-item">
               <a href='{{url}}' class="blocks-item-link">
-                <h4 class="blocks-item-title">{{name}}</h4>
+                <div align="center"><table><tr><td class="blocks-item-inner-table-cell"></td><td class="blocks-item-inner-table-cell-2"><h4 class="blocks-item-title">{{name}}</h4></td></tr></table></div>
                 <p class="blocks-item-description">{{excerpt description}}</p>
               </a>
             </li>
@@ -73,6 +73,51 @@
     {{recent_activity}}
   </section>-->
 
-
+  <script>
+  var elements = document.getElementsByClassName('blocks-item-title');
+  var elements2 = document.getElementsByClassName('blocks-item-inner-table-cell');
+  var pixelheight = "24"
+  for (index = 0; index < elements.length; index++){
+		switch(elements[index].innerHTML.toString()){
+			case 'Bestellungen':
+			case 'Orders':
+			case 'Commandes':
+			case 'Ordini':
+				elements2[index].innerHTML = '<img src="{{asset 'shopping-cart.png'}}" height="' + pixelheight + 'px">';
+				break;
+      case 'Bezahlung':
+			case 'Payment':
+			case 'Paiement':
+			case 'Pagamento':
+				elements2[index].innerHTML = '<img src="{{asset 'orders-and-payment.png'}}" height="' + pixelheight + 'px">';
+				break;
+      case 'Rückgabe &amp; Gewährleistung':
+      case 'Garantie &amp; Rückgabe': 
+			case 'Warranty &amp; return':
+			case 'Garantie &amp; retour':
+			case 'Resi e garanzia':
+				elements2[index].innerHTML = '<img src="{{asset 'arrows.png'}}" height="' + pixelheight + 'px">';
+				break;
+			case 'Dienstleistungen &amp; Services': 
+			case 'Additional services':
+			case 'Prestations &amp; services':
+			case 'Prestazioni e servizi':
+				elements2[index].innerHTML = '<img src="{{asset 'wrench.png'}}" height="' + pixelheight + 'px">';
+				break;
+			case 'Kundenkonto': 
+			case 'Customer account':
+			case 'Compte client':
+			case 'Conto cliente':
+				elements2[index].innerHTML = '<img src="{{asset 'customer-account.png'}}" height="' + pixelheight + 'px">';
+				break;
+			case 'digitec connect':
+      case 'digitec connect ': 
+				elements2[index].innerHTML = '<img src="{{asset 'simcard.png'}}" height="' + pixelheight + 'px">';
+			default:
+				break;
+		}
+	}
+  
+</script>
 
 </div>
