@@ -2,7 +2,7 @@
   <div class="hero-inner">
     {{search submit=false instant=true class='search search-full'}}
   </div>
- <div class='searchBoxNote' style='top:0%; position: relative;' >
+ <div class='searchBoxNote' style='top:-5%; position: relative;' >
   	<a class='searchBoxText' data-wording-key='searchBoxText'></a>
   </div>
 </section> 
@@ -91,6 +91,7 @@
 			case 'Pagamento':
 				elements2[index].innerHTML = '<img src="{{asset 'orders-and-payment.png'}}" height="' + pixelheight + 'px">';
 				break;
+      case 'Rückgabe &amp; Gewährleistung':
       case 'Garantie &amp; Rückgabe': 
 			case 'Warranty &amp; return':
 			case 'Garantie &amp; retour':

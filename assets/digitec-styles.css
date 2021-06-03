@@ -297,3 +297,16 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
   padding: 0 5%;
 }
+
+/*Search Box corners for digitec*/
+.search input[type="search"] {
+  border: 1px solid #565656;
+  border-radius: 0px;
+  box-sizing: border-box;
+  color: #999;
+  height: 40px;
+  padding-left: 40px;
+  padding-right: 20px;
+  -webkit-appearance: none;
+  width: 100%;
+}
