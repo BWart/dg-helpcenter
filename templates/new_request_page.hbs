@@ -539,18 +539,16 @@ return dep;
 
   function getChatSkill(webFormCase, department){
     var skill;
-
     switch(true) {
-  	case (department === 'Chat Private De' && webFormCase === 'webform_case_product_advice_consumer'):
+  	case (department === 'Chat Private DE' && webFormCase === 'webform_case_product_advice_consumer'):
     	skill = 'chat_pe_consumer';
     	break;
-  	case (currentLanguage === 'fr' && webFormCase === 'webform_case_product_advice_home'):
+  	case (department === 'Chat Private DE' && webFormCase === 'webform_case_product_advice_home'):
     	skill = 'chat_pe_home';
     	break;
   	default:
     	skill = 'standard_request';
 	  }
-    console.log(skill);
     return skill;    
   }
   
@@ -584,7 +582,6 @@ $('.button-chat').on("click", function () {
   }
   
   function changeButtonNotChatting(){
-  	setZopimTag(); 
   	if(!isChatting()){
    		var selectedDepartment = setChatWidgetOptions();                                                                                        
     	initialButtonChange(selectedDepartment);                                                                                          
