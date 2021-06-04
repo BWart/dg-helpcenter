@@ -194,6 +194,18 @@
   border: 1px solid #e60020;
 }
 
+#downvoteButton2{
+  border: 1px solid #00559d;
+  color: #fff;
+  background-color: #00559d;
+}
+
+#downvoteButton2:hover, #downvoteButton2:focus{
+  background-color: #e60020;
+  color: #ffffff;
+  border: 1px solid #e60020;
+}
+
 #downvoteText{
   color: #00559d;
 }

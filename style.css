@@ -4617,7 +4617,7 @@ html {
 
  /* aus style.css */
 
-#downvoteButton{
+ #downvoteButton{
   border-radius: 3px;
   min-width: 90px;
   max-width: 90px;
@@ -4629,6 +4629,23 @@ html {
 }
 
 #downvoteButton:hover, #downvoteButton:focus{
+  max-width: 90px;
+  margin:0 auto;
+  display:block;
+}
+
+#downvoteButton2{
+  border-radius: 3px;
+  min-width: 90px;
+  max-width: 90px;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 2.34;
+  margin:0 auto;
+  display:block;
+}
+
+#downvoteButton2:hover, #downvoteButton2:focus{
   max-width: 90px;
   margin:0 auto;
   display:block;
