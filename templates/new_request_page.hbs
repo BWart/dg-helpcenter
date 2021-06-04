@@ -942,6 +942,10 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('input[name="request[anonymous_requester_email]"]').hide(); //Mail Feld
       $('label[for="request_anonymous_requester_email"]').hide();   // Mail Betreff
 
+      //Feedback Formular Label und Freitextfeld Template Text setzen
+      var currentLanguage = $('html').attr('lang');
+  		updateDescriptionAndLabel(infoBoxWording[currentLanguage]['outputFeedbackTextFieldTemplate'], infoBoxWording[currentLanguage]['outputFeedbackLabelPart1'] + betreffTitel + infoBoxWording[currentLanguage]['outputFeedbackLabelPart2'])
+
    }
   else{
       

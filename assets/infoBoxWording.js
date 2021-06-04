@@ -160,8 +160,10 @@ function fillInfoBoxWording(){
   //Feedback
         "outputFeedbackButtonText":"<br>Hast du Verbesserungsvorschläge für den Beitrag?<br><br>",
         "outputFeedbackHeader":"Vielen Dank für dein Feedback.",
-        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Bitte verwende das Formular lediglich für Feedback zum entsprechenden Helpcenterbeitrag. Für deine Kundenanfragen kannst du gerne das <a href='/requests/new'>Kontaktformular</a> verwenden.</div>"
-
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Bitte verwende das Formular lediglich für Feedback zum entsprechenden Helpcenterbeitrag. Für deine Kundenanfragen kannst du gerne das <a href='/requests/new'>Kontaktformular</a> verwenden.</div>",
+        "outputFeedbackLabelPart1":"Feedback zu Helpcenter Beitrag: ",
+        "outputFeedbackLabelPart2":"<br><b>Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!</b>",
+        "outputFeedbackTextFieldTemplate":""
       },
 
 
@@ -250,8 +252,10 @@ function fillInfoBoxWording(){
   //Feedback
         "outputFeedbackButtonText":"<br>Avez-vous des suggestions pour améliorer le poste ?<br><br>",
         "outputFeedbackHeader":"Merci pour vos commentaires.",
-        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Veuillez utiliser le formulaire uniquement pour donner votre avis sur l'article correspondant du centre d'aide. Pour vos demandes de renseignements, vous pouvez utiliser le <a href='/requests/new'>formulaire de contact</a>.</div>"
-
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Veuillez utiliser le formulaire uniquement pour donner votre avis sur l'article correspondant du centre d'aide. Pour vos demandes de renseignements, vous pouvez utiliser le <a href='/requests/new'>formulaire de contact</a>.</div>",
+        "outputFeedbackLabelPart1":"Feed-back sur le post du Helpcenter : ",
+        "outputFeedbackLabelPart2":"<br><b>Attention : Nous ne répondons pas aux demandes des clients via le formulaire de feed-back !>/b>",
+        "outputFeedbackTextFieldTemplate":""
       },
 
 
@@ -341,7 +345,10 @@ function fillInfoBoxWording(){
   //Feedback
         "outputFeedbackButtonText":"<br>Hai qualche suggerimento per migliorare il post?<br><br>",
         "outputFeedbackHeader":"Grazie per il vostro feedback.",
-        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Si prega di utilizzare il modulo solo per un feedback sul post corrispondente dell'helpcenter. Per le richieste dei vostri clienti potete usare il <a href='/requests/new'>modulo di contatto</a>.</div>"
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Si prega di utilizzare il modulo solo per un feedback sul post corrispondente dell'helpcenter. Per le richieste dei vostri clienti potete usare il <a href='/requests/new'>modulo di contatto</a>.</div>",
+        "outputFeedbackLabelPart1":"Feedback sul post dell'Helpcenter: ",
+        "outputFeedbackLabelPart2":"<br><b>Attenzione: non rispondiamo alle richieste dei clienti tramite il modulo di feedback!</b>",
+        "outputFeedbackTextFieldTemplate":""
 
 },
 
@@ -432,7 +439,10 @@ function fillInfoBoxWording(){
   //Feedback
         "outputFeedbackButtonText":"<br>Do you have any suggestions for improving the post?<br><br>",
         "outputFeedbackHeader":"Thank you for your feedback.",
-        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Please use the form only for feedback on the corresponding helpcenter post. For your customer inquiries you can use the <a href='/requests/new'>contact form</a>.</div>"
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText'>Please use the form only for feedback on the corresponding helpcenter post. For your customer inquiries you can use the <a href='/requests/new'>contact form</a>.</div>",
+        "outputFeedbackLabelPart1":"Feedback to Helpcenter post: ",
+        "outputFeedbackLabelPart2":"<br><b>Attention: Customer inquiries via the feedback form will not be answered!</b>",
+        "outputFeedbackTextFieldTemplate":""
 
 }
     }
