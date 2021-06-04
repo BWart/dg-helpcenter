@@ -511,20 +511,19 @@ return dep;
   }
   
   
- // Set Tag for Zopim 
+ // Set Tag & Skill for Zopim 
   function setZopimTag(){
     var tag = $('#request_custom_fields_360014169819').attr('value');
   	var oldTag = sessionStorage.getItem('requestReason');
   	var languageTag = getLanguageTag();
+    var dep = getChatDepartment();
+    var skill = getChatSkill(tag, dep);
   
     if(!oldTag !== null){
       zE('webWidget', 'chat:removeTags', oldTag);      
-   		}
+   	}
     zE('webWidget', 'chat:removeTags', 'de', 'fr', 'it', 'en');                                                                                                
-    zE('webWidget', 'chat:addTags', tag, languageTag);                                                                                      
-  	if(tag != 'webform_case_product_advice_consumer'){  
-  		 zE('webWidget', 'chat:addTags', 'standard_request'); //Sets standard request Tag if no special Tag
-  	}
+    zE('webWidget', 'chat:addTags', tag, languageTag, skill);                                                                                      
   	sessionStorage.setItem('requestReason', tag);
   }        
   
@@ -536,6 +535,23 @@ return dep;
   		languageTag = 'en'; 
   	}
   	return languageTag;
+  }
+
+  function getChatSkill(webFormCase, department){
+    var skill;
+
+    switch(true) {
+  	case (department === 'Chat Private De' && webFormCase === 'webform_case_product_advice_consumer'):
+    	skill = 'chat_pe_consumer';
+    	break;
+  	case (currentLanguage === 'fr' && webFormCase === 'webform_case_product_advice_home'):
+    	skill = 'chat_pe_home';
+    	break;
+  	default:
+    	skill = 'standard_request';
+	  }
+    console.log(skill);
+    return skill;    
   }
   
   // Hide or Shows Button if Status Changes
