@@ -363,7 +363,7 @@ function fillInfoBoxWording(){
         "The shipment status is «sent», but the parcel hasn’t arrived" : "inputShippingStatus",
         "outputShippingStatus": "We'll keep the delivery status updated in the <a href='" + shopURL + "Order' target='blank'>order overview</a> in your customer account. You’ll also find the tracking number of your parcel there.<br><br>Sometimes it takes a little longer for a parcel to arrive – or it may end up at your neighbour's. If it still hasn’t arrived after a few days, we’re happy to initiate an investigation.",
         "The shipment status is «sent», but the parcel hasn’t arrived descriptionTemplate" : "inputShippingStatusMailTemplate",
-        "outputShippingStatusMailTemplate" : "Which articles are missing:\nConsigment number:",
+        "outputShippingStatusMailTemplate" : "Which articles are missing:\nConsignment number:",
 
         "The shipment status is «ready for shipment». When will the order be sent?" : "inputReadyForShipment",
         "outputReadyForShipment" : "We don't ship the order until all your products are in the warehouse and «ready for shipment». If you need any items sooner, please <a href='" + helpcenterURL + "articles" + hp1 + "-How-do-I-arrange-partial-delivery-' target='blank'>activate partial delivery</a>.",
