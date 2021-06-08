@@ -160,7 +160,7 @@ function fillInfoBoxWording(){
   //Feedback
         "outputFeedbackButtonText":"<br>Hast du Verbesserungsvorschläge für den Beitrag?<br><br>",
         "outputFeedbackHeader":"Vielen Dank für dein Feedback.",
-        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'>Bitte verwende das Formular lediglich für Verbesserungsvorschläge zu unseren Beiträgen.<br>Leider können wir nicht auf dein Feedback antworten. Für deine Kundenanfragen kannst du gerne das <a href='/requests/new'>Kontaktformular</a> verwenden.</div>",
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'>Bitte verwende das Formular lediglich für Verbesserungsvorschläge zu unseren Beiträgen.<br>Leider können wir nicht auf dein Feedback antworten. Für deine Kundenanfragen kannst du gerne das <a href='/hc/requests/new'>Kontaktformular</a> verwenden.</div>",
         "outputFeedbackLabelPart1":"Feedback zu Helpcenter Beitrag: ",
         "outputFeedbackLabelPart2":"<br><b>Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!</b>",
         "outputFeedbackTextFieldTemplate":"",
