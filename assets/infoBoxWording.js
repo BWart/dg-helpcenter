@@ -163,7 +163,8 @@ function fillInfoBoxWording(){
         "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'>Bitte verwende das Formular lediglich für Verbesserungsvorschläge zu unseren Beiträgen.<br>Leider können wir nicht auf dien Feedback antworten. Für deine Kundenanfragen kannst du gerne das <a href='/requests/new'>Kontaktformular</a> verwenden.</div>",
         "outputFeedbackLabelPart1":"Feedback zu Helpcenter Beitrag: ",
         "outputFeedbackLabelPart2":"<br><b>Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!</b>",
-        "outputFeedbackTextFieldTemplate":""
+        "outputFeedbackTextFieldTemplate":"",
+        "feedbackThanks":"<h4>Vielen Dank für dein Feedback!</h4>"
       },
 
 
@@ -255,7 +256,8 @@ function fillInfoBoxWording(){
         "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'>Veuillez utiliser le formulaire uniquement pour suggérer des améliorations à nos articles.<br>Malheureusement, nous ne pouvons pas répondre à vos commentaires. Pour les demandes de vos clients, vous pouvez utiliser le <a href='/requests/new'>formulaire de contact</a>.</div>",
         "outputFeedbackLabelPart1":"Feed-back sur le post du Helpcenter : ",
         "outputFeedbackLabelPart2":"<br><b>Attention : Nous ne répondons pas aux demandes des clients via le formulaire de feed-back !>/b>",
-        "outputFeedbackTextFieldTemplate":""
+        "outputFeedbackTextFieldTemplate":"",
+        "feedbackThanks" :"<h4>Merci pour vos commentaires !</h4>"
       },
 
 
@@ -348,8 +350,8 @@ function fillInfoBoxWording(){
         "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'>Si prega di utilizzare il modulo solo per suggerire miglioramenti ai nostri post.<br>Purtroppo, non possiamo rispondere al tuo feedback. Per le richieste dei tuoi clienti puoi usare il <a href='/requests/new'>formulario di contatto</a>.</div>",
         "outputFeedbackLabelPart1":"Feedback sul post dell'Helpcenter: ",
         "outputFeedbackLabelPart2":"<br><b>Attenzione: non rispondiamo alle richieste dei clienti tramite il modulo di feedback!</b>",
-        "outputFeedbackTextFieldTemplate":""
-
+        "outputFeedbackTextFieldTemplate":"",
+        "feedbackThanks":"<h4>Grazie per il tuo feedback!</h4>"
 },
 
 
@@ -442,8 +444,8 @@ function fillInfoBoxWording(){
         "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'>Please use the form only to suggest improvements to our posts.<br>Unfortunately, we cannot respond to your feedback. For your customer inquiries, feel free to use the <a href='/requests/new'>contact form</a>.</div>",
         "outputFeedbackLabelPart1":"Feedback to Helpcenter post: ",
         "outputFeedbackLabelPart2":"<br><b>Attention: Customer inquiries via the feedback form will not be answered!</b>",
-        "outputFeedbackTextFieldTemplate":""
-
+        "outputFeedbackTextFieldTemplate":"",
+        "feedbackThanks":"<h4>Thank you for your feedback!</h4>"
 }
     }
     
