@@ -185,7 +185,8 @@ html {
 
 .button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
   background:#000;
-  color:#fff
+  color:#fff;
+  border: 1px solid #000;
 }
 
 .button-offline{

@@ -174,7 +174,8 @@
 
 .button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
   background:#e60021;
-  color:#fff
+  color:#fff;
+  border: 1px solid #e60020;
 }
 
 .button-offline{
