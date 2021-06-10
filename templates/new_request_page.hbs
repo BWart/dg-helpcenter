@@ -938,7 +938,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('.form-field.select.optional.request_ticket_form_id').hide(); //Kundengruppe Option
       $('.request_custom_fields_360007585419').hide(); // Auftragsnummer Feld
 
-      $('label[for="request-attachments"]').html(infoBoxWording[currentLanguage]['feedbackThanks']); //Anhang Drop Ueberschrift
+      $('label[for="request-attachments"]').hide(); //Anhang Drop Ueberschrift
       $('#upload-dropzone').hide(); //Anhang Drop 
       $('input[name ="commit"]').show(); // Einreiche Button anzeigen
       $('#request_subject').text('Feedback Helpcenter');
@@ -957,6 +957,8 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
       $('.request-form footer').css('margin-top', '0px')
   		$('.request-form footer').css('padding-top', '0px')
+  
+  		$('.request-form footer').prepend(infoBoxWording[currentLanguage]['feedbackThanks']);
 
       //Feedback Formular Label und Freitextfeld Template Text setzen
       var currentLanguage = $('html').attr('lang');
