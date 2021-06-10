@@ -177,11 +177,8 @@ ul {
 
 /***** Buttons *****/
 .button, [role="button"]{
-  /*border: 1px solid #00559d;;*/
   border-radius: 3px;
-  /*color: #fff;*/
   cursor: pointer;
-  /*background-color: #00559d;*/
   display: inline-block;
   font-size: 12px;
   line-height: 2.34;
@@ -196,11 +193,8 @@ ul {
 }
 
 .button-contact{ 
-  /*border: 1px solid #d6e6f4;*/
   border-radius: 3px;
-  /*color: #00559d;*/
   cursor: pointer;
-  /*background-color: #d6e6f4;*/
   display: inline-block;
   font-size: 12px;
   line-height: 2.34;
@@ -214,11 +208,8 @@ ul {
 }
 
 .button-contact2{ 
-  /*border: 1px solid #bebebe;*/
   border-radius: 3px;
-  /*color: #00559d;*/
   cursor: pointer;
-  /*background-color: #d6e4ef;*/
   display: inline-block;
   line-height: 2.34;
   padding: 2px 6px;
@@ -231,10 +222,7 @@ ul {
 
 
 [role="button"]:active, .button:active.button[aria-selected="true"], [role="button"][aria-selected="true"]{
-  /*background-color: #d6e6f4;*/
-  /*: #00559d;*/
   text-decoration: none;
-  /*border: 1px solid #d6e6f4;  */
 }
 
 @media (min-width: 768px) {
@@ -258,11 +246,9 @@ ul {
 .button-large, input[type="submit"] {
   border: 0;
   border-radius: 4px;
-  /*color:#fff;*/
   font-size: 14px;
   line-height: 2.72;
   min-width: 190px;
-  /*background:#00559d;*/
   padding: 0 1.9286em;
   width: 100%;
   border-color:transparent
@@ -1467,7 +1453,6 @@ ul {
 .article-votes {
   padding: 30px 0;
   text-align: center;
-  color: #00559d;
 }
 
 .article-votes-count {
