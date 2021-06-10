@@ -955,6 +955,9 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
       $('input[name="request[anonymous_requester_email]"]').hide(); //Mail Feld
       $('label[for="request_anonymous_requester_email"]').hide();   // Mail Betreff
 
+      $('.request-form footer').css('margin-top', '0px')
+  		$('.request-form footer').css('padding-top', '0px')
+
       //Feedback Formular Label und Freitextfeld Template Text setzen
       var currentLanguage = $('html').attr('lang');
   		updateDescriptionAndLabel(infoBoxWording[currentLanguage]['outputFeedbackTextFieldTemplate'], infoBoxWording[currentLanguage]['outputFeedbackLabelPart1'] + betreffTitel)

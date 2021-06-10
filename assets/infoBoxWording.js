@@ -159,8 +159,8 @@ function fillInfoBoxWording(){
 
   //Feedback
         "outputFeedbackButtonText":"<br>Hast du Verbesserungsvorschläge für den Beitrag?<br><br>",
-        "outputFeedbackHeader":"Vielen Dank für dein Feedback.",
-        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'>Bitte verwende das Formular lediglich für Verbesserungsvorschläge zu unseren Beiträgen.<br>Leider können wir nicht auf dein Feedback antworten. Für deine Kundenanfragen kannst du gerne das <a href='/hc/requests/new'>Kontaktformular</a> verwenden.</div>",
+        "outputFeedbackHeader":"Feedbackformular",
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'><h3>Hinweis</h3>Bitte verwende das Formular lediglich für Verbesserungsvorschläge zu unseren Beiträgen.<br>Leider können wir nicht auf dein Feedback antworten. Für deine Kundenanfragen kannst du gerne das <a href='/hc/requests/new'>Kontaktformular</a> verwenden.</div>",
         "outputFeedbackLabelPart1":"Feedback zu Helpcenter Beitrag: ",
         "outputFeedbackLabelPart2":"<br><b>Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!</b>",
         "outputFeedbackTextFieldTemplate":"",
@@ -252,7 +252,7 @@ function fillInfoBoxWording(){
         "outputOffer" : "Remarque : pour une offre, le volume de la commande doit être d'au moins " + offerte + ". Les prix indiqués dans notre boutique s'appliquent.",
   //Feedback
         "outputFeedbackButtonText":"<br>Avez-vous des suggestions pour améliorer le poste ?<br><br>",
-        "outputFeedbackHeader":"Merci pour vos commentaires.",
+        "outputFeedbackHeader":"Formulaire de commentaires",
         "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'>Veuillez utiliser le formulaire uniquement pour suggérer des améliorations à nos articles.<br>Malheureusement, nous ne pouvons pas répondre à vos commentaires. Pour les demandes de vos clients, vous pouvez utiliser le <a href='/requests/new'>formulaire de contact</a>.</div>",
         "outputFeedbackLabelPart1":"Feed-back sur le post du Helpcenter : ",
         "outputFeedbackLabelPart2":"<br><b>Attention : Nous ne répondons pas aux demandes des clients via le formulaire de feed-back !>/b>",
@@ -346,7 +346,7 @@ function fillInfoBoxWording(){
         "outputOffer" : "Attenzione: per un'offerta, il volume dell'ordine deve essere di almeno " + offerte + ". Si applicano i prezzi indicati nel nostro negozio.",
   //Feedback
         "outputFeedbackButtonText":"<br>Hai qualche suggerimento per migliorare il post?<br><br>",
-        "outputFeedbackHeader":"Grazie per il vostro feedback.",
+        "outputFeedbackHeader":"Modulo di feedback",
         "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'>Si prega di utilizzare il modulo solo per suggerire miglioramenti ai nostri post.<br>Purtroppo, non possiamo rispondere al tuo feedback. Per le richieste dei tuoi clienti puoi usare il <a href='/requests/new'>formulario di contatto</a>.</div>",
         "outputFeedbackLabelPart1":"Feedback sul post dell'Helpcenter: ",
         "outputFeedbackLabelPart2":"<br><b>Attenzione: non rispondiamo alle richieste dei clienti tramite il modulo di feedback!</b>",
@@ -440,7 +440,7 @@ function fillInfoBoxWording(){
         "outputOffer" : "Please note: For a quotation, the minimum order volume must be " + offerte + ". The prices quoted in our store apply.",        
   //Feedback
         "outputFeedbackButtonText":"<br>Do you have any suggestions for improving the post?<br><br>",
-        "outputFeedbackHeader":"Thank you for your feedback.",
+        "outputFeedbackHeader":"Feedback form",
         "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'>Please use the form only to suggest improvements to our posts.<br>Unfortunately, we cannot respond to your feedback. For your customer inquiries, feel free to use the <a href='/requests/new'>contact form</a>.</div>",
         "outputFeedbackLabelPart1":"Feedback to Helpcenter post: ",
         "outputFeedbackLabelPart2":"<br><b>Attention: Customer inquiries via the feedback form will not be answered!</b>",
