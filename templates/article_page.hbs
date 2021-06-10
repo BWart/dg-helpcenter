@@ -100,7 +100,7 @@
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
               {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
               <div id='downvoteText'></div>
-              <div id="downvoteButton" class='button'></div>
+              <div id="downvoteButton"></div>
             </div>
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
@@ -274,7 +274,7 @@
   $('.article-vote-down').on('click',function(){
         $('#downvoteButton').show();
         document.getElementById('downvoteText').innerHTML = infoBoxWording[currentLanguage]['outputFeedbackButtonText'];
-        document.getElementById('downvoteButton').innerHTML = '<button id="downvoteButton">Feedback</button>';
+        document.getElementById('downvoteButton').innerHTML = '<button id="downvoteButton" class='button'>Feedback</button>';
   });
 
   //Feedback Knopf - Link gesplittet und die Url zum Aufruf der new request page dran gehangen
