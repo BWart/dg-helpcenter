@@ -242,6 +242,10 @@ select:focus {
 
 /*CHAT*/
 
+.article-votes-question{
+  color: #333333;
+}
+
 .meshim_widget_widgets_TitleBar{
   color: #a0a0a0;
   background: #333333;
