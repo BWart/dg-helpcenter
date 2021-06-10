@@ -183,12 +183,6 @@
   background-color: #ededed;
 }
 
-#downvoteButton2:hover, #downvoteButton2:focus{
-  background-color: #e60020;
-  color: #ffffff;
-  border: 1px solid #e60020;
-}
-
 #downvoteText{
   color: #333333;
 }

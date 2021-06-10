@@ -194,30 +194,6 @@ html {
   background-color: #ededed;
 }
 
-#downvoteButton{
-  border: 1px solid #444;
-  color: #fff;
-  background-color: #444;
-}
-
-#downvoteButton:hover, #downvoteButton:focus{
-  background-color: #565656;
-  color: #fff;
-  border: 1px solid #565656;
-}
-
-#downvoteButton2{
-  border: 1px solid #444;
-  color: #fff;
-  background-color: #444;
-}
-
-#downvoteButton2:hover, #downvoteButton2:focus{
-  background-color: #565656;
-  color: #fff;
-  border: 1px solid #565656;
-}
-
 #downvoteText{
   color: #333333;
 }
