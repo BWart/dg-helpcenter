@@ -160,7 +160,7 @@ function fillInfoBoxWording(){
   //Feedback
         "outputFeedbackButtonText":"<br>Hast du Verbesserungsvorschläge für den Beitrag?<br><br>",
         "outputFeedbackHeader":"Feedbackformular",
-        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'><h3>Hinweis</h3>Bitte verwende das Formular lediglich für Verbesserungsvorschläge zu unseren Beiträgen.<br>Leider können wir nicht auf dein Feedback antworten. Für deine Kundenanfragen kannst du gerne das <a href='/hc/requests/new'>Kontaktformular</a> verwenden.</div>",
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'><h2>Hinweis</h2>Bitte verwende das Formular lediglich für Verbesserungsvorschläge zu unseren Beiträgen.<br>Leider können wir nicht auf dein Feedback antworten. Für deine Kundenanfragen kannst du gerne das <a href='/hc/requests/new'>Kontaktformular</a> verwenden.</div>",
         "outputFeedbackLabelPart1":"Feedback zu Helpcenter Beitrag: ",
         "outputFeedbackLabelPart2":"<br><b>Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!</b>",
         "outputFeedbackTextFieldTemplate":"",
@@ -253,7 +253,7 @@ function fillInfoBoxWording(){
   //Feedback
         "outputFeedbackButtonText":"<br>Avez-vous des suggestions pour améliorer le poste ?<br><br>",
         "outputFeedbackHeader":"Formulaire de commentaires",
-        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'><h3>Note</h3>Veuillez utiliser le formulaire uniquement pour suggérer des améliorations à nos articles.<br>Malheureusement, nous ne pouvons pas répondre à vos commentaires. Pour les demandes de vos clients, vous pouvez utiliser le <a href='/requests/new'>formulaire de contact</a>.</div>",
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'><h2>Note</h2>Veuillez utiliser le formulaire uniquement pour suggérer des améliorations à nos articles.<br>Malheureusement, nous ne pouvons pas répondre à vos commentaires. Pour les demandes de vos clients, vous pouvez utiliser le <a href='/requests/new'>formulaire de contact</a>.</div>",
         "outputFeedbackLabelPart1":"Feed-back sur le post du Helpcenter : ",
         "outputFeedbackLabelPart2":"<br><b>Attention : Nous ne répondons pas aux demandes des clients via le formulaire de feed-back !>/b>",
         "outputFeedbackTextFieldTemplate":"",
@@ -347,7 +347,7 @@ function fillInfoBoxWording(){
   //Feedback
         "outputFeedbackButtonText":"<br>Hai qualche suggerimento per migliorare il post?<br><br>",
         "outputFeedbackHeader":"Modulo di feedback",
-        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'><h3>Nota</h3>Si prega di utilizzare il modulo solo per suggerire miglioramenti ai nostri post.<br>Purtroppo, non possiamo rispondere al tuo feedback. Per le richieste dei tuoi clienti puoi usare il <a href='/requests/new'>formulario di contatto</a>.</div>",
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'><h2>Nota</h2>Si prega di utilizzare il modulo solo per suggerire miglioramenti ai nostri post.<br>Purtroppo, non possiamo rispondere al tuo feedback. Per le richieste dei tuoi clienti puoi usare il <a href='/requests/new'>formulario di contatto</a>.</div>",
         "outputFeedbackLabelPart1":"Feedback sul post dell'Helpcenter: ",
         "outputFeedbackLabelPart2":"<br><b>Attenzione: non rispondiamo alle richieste dei clienti tramite il modulo di feedback!</b>",
         "outputFeedbackTextFieldTemplate":"",
@@ -441,7 +441,7 @@ function fillInfoBoxWording(){
   //Feedback
         "outputFeedbackButtonText":"<br>Do you have any suggestions for improving the post?<br><br>",
         "outputFeedbackHeader":"Feedback form",
-        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'><h3>Note</h3>Please use the form only to suggest improvements to our posts.<br>Unfortunately, we cannot respond to your feedback. For your customer inquiries, feel free to use the <a href='/requests/new'>contact form</a>.</div>",
+        "outputFeedbackBeschreibung":"<br><div id = 'FeedbackText' class = 'contactFormText'><h2>Note</h2>Please use the form only to suggest improvements to our posts.<br>Unfortunately, we cannot respond to your feedback. For your customer inquiries, feel free to use the <a href='/requests/new'>contact form</a>.</div>",
         "outputFeedbackLabelPart1":"Feedback to Helpcenter post: ",
         "outputFeedbackLabelPart2":"<br><b>Attention: Customer inquiries via the feedback form will not be answered!</b>",
         "outputFeedbackTextFieldTemplate":"",
