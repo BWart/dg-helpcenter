@@ -234,7 +234,7 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   //Phone Number Tracking
   
 	$('.phone-number').on("click", function () {
-    ga('send', 'event', 'Opening Hours', 'Click Phone Button', customerType + ' ' + currentLanguage);
+    ga('send', 'event', 'Opening Hours', 'Click Phone Button', getCustomerType() + ' ' + currentLanguage);
     ga('send', 'event', 'Opening Hours', 'Click Phone/Mail/Chat Button', getCustomerType() + ' ' + currentLanguage);
     console.log('Phone ' + getCustomerType() + ' ' + currentLanguage);
   }) 
@@ -242,7 +242,7 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   //Contact Form Tracking
   
   $('.contactFormWriteUs').on("click", function () {
-    ga('send', 'event', 'Opening Hours', 'Click Mail Button', customerType + ' ' + currentLanguage);
+    ga('send', 'event', 'Opening Hours', 'Click Mail Button', getCustomerType() + ' ' + currentLanguage);
     ga('send', 'event', 'Opening Hours', 'Click Phone/Mail/Chat Button', getCustomerType() + ' ' + currentLanguage);
     console.log('Mail ' + getCustomerType() + ' ' + currentLanguage);
   }) 
@@ -250,7 +250,7 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   //Chat Tracking
   
   $('.button-chat').on("click", function () {
-    ga('send', 'event', 'Opening Hours', 'Click Chat Button', customerType + ' ' + currentLanguage);
+    ga('send', 'event', 'Opening Hours', 'Click Chat Button', getCustomerType() + ' ' + currentLanguage);
     ga('send', 'event', 'Opening Hours', 'Click Phone/Mail/Chat Button', getCustomerType() + ' ' + currentLanguage);
     console.log('Chat ' + getCustomerType() + ' ' + currentLanguage);
   }) 
