@@ -275,7 +275,7 @@ function waitForChat () {
   
   setTimeout(function(){ 
     try {
-      IsChatting();
+      isChatting();
       setZESettings();
       zE('webWidget', 'setLocale', getWidgetLanguage());
       checkForUnreadMessages();
