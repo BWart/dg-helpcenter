@@ -200,7 +200,7 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   
   
   //Event Tracking
-  var status = 'offline';
+  
   
   // AB Split
   
@@ -219,76 +219,40 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   function getRandomInt(max){
     return Math.floor(Math.random() * Math.floor(max));
   }
-  
-  function checkForAB(){
-   if(currentLanguage == 'de' && localStorage.getItem('isPrivateCustomer') == "1"){
-     return true;
-   }else{
-     return false;
-   }
+
+  function getCustomerType(){
+    var customerType = 'null' 
+    if(localStorage.getItem('noSplit') == 0){
+      customerType = 'business';
+    }else{
+      customerType = 'private';
+    }
+    return customerType;
   }
-  
-  //Total Clicks Tracking
-  
-  $('.buttonContactFormContact').on("click", function () {
-    if(checkForAB()){
-  		ga('send', 'event', 'Chat Test V2', 'Click Contact Button ' + status + ' ' + group, currentLanguage);
-    }
-  }) 
+    
   
   //Phone Number Tracking
   
-	$('.private-customer').on("click", function () {
-    if(checkForAB()){
-    	ga('send', 'event', 'Chat Test V2', 'Click Phone Button ' + status + ' ' + group, currentLanguage);
-      ga('send', 'event', 'Chat Test V2', 'Click Phone/Mail/Chat Button ' + status + ' ' + group, currentLanguage);
-    }
+	$('.phone-number').on("click", function () {
+    ga('send', 'event', 'Opening Hours', 'Click Phone Button', customerType + ' ' + currentLanguage);
+    ga('send', 'event', 'Opening Hours', 'Click Phone/Mail/Chat Button', getCustomerType() + ' ' + currentLanguage);
+    console.log('Phone ' + getCustomerType() + ' ' + currentLanguage);
   }) 
   
   //Contact Form Tracking
   
-  	$('.contactFormWriteUs').on("click", function () {
-  	if(checkForAB()){
-    	ga('send', 'event', 'Chat Test V2', 'Click Mail Button ' + status + ' ' + group, currentLanguage);
-      ga('send', 'event', 'Chat Test V2', 'Click Phone/Mail/Chat Button ' + status + ' ' + group, currentLanguage);
-      }
+  $('.contactFormWriteUs').on("click", function () {
+    ga('send', 'event', 'Opening Hours', 'Click Mail Button', customerType + ' ' + currentLanguage);
+    ga('send', 'event', 'Opening Hours', 'Click Phone/Mail/Chat Button', getCustomerType() + ' ' + currentLanguage);
+    console.log('Mail ' + getCustomerType() + ' ' + currentLanguage);
   }) 
   
   //Chat Tracking
   
-  	$('.chat-private').on("click", function () {
-      if(checkForAB()){
-    		ga('send', 'event', 'Chat Test V2', 'Click Chat Button ' + status + ' ' + group, currentLanguage);
-        ga('send', 'event', 'Chat Test V2', 'Click Phone/Mail/Chat Button ' + status + ' ' + group, currentLanguage);
-      }
-  }) 
-  
-  
-  // ************TicketForm2.0*************
-  
-  $('.buttonContactFormContact').on("click", function () {
-  		ga('send', 'event', 'TicketForm2.0', 'Click Contact Button', currentLanguage);
-  }) 
-  
-  //Phone Number Tracking
-  
-	$('.private-customer').on("click", function () {
-    	ga('send', 'event', 'TicketForm2.0', 'Click Phone Button', currentLanguage);
-      ga('send', 'event', 'TicketForm2.0', 'Click Phone/Mail/Chat Button', currentLanguage);
-  }) 
-  
-  //Contact Form Tracking
-  
-  	$('.contactFormWriteUs').on("click", function () {
-    	ga('send', 'event', 'TicketForm2.0', 'Click Mail Button', currentLanguage);
-      ga('send', 'event', 'TicketForm2.0', 'Click Phone/Mail/Chat Button', currentLanguage);
-  }) 
-  
-  //Chat Tracking
-  
-  	$('.chat-private').on("click", function () {
-    		ga('send', 'event', 'TicketForm2.0', 'Click Chat Button', currentLanguage);
-        ga('send', 'event', 'TicketForm2.0', 'Click Phone/Mail/Chat Button', currentLanguage);
+  $('.button-chat').on("click", function () {
+    ga('send', 'event', 'Opening Hours', 'Click Chat Button', customerType + ' ' + currentLanguage);
+    ga('send', 'event', 'Opening Hours', 'Click Phone/Mail/Chat Button', getCustomerType() + ' ' + currentLanguage);
+    console.log('Chat ' + getCustomerType() + ' ' + currentLanguage);
   }) 
   
   //Helpful-Button Tracking
@@ -309,21 +273,21 @@ var connections = 0;
 
 function waitForChat () {
   
-    setTimeout(function(){ 
+  setTimeout(function(){ 
     try {
-        IsChatting();
-        setZESettings();
-        zE('webWidget', 'setLocale', getWidgetLanguage());
-        checkForUnreadMessages();
-          }
-          catch(e) {
-    if(connections < 10){
-            waitForChat();
-      connections++; 
-    }else{
-      console.log(e);
-    } 
-  }    
+      IsChatting();
+      setZESettings();
+      zE('webWidget', 'setLocale', getWidgetLanguage());
+      checkForUnreadMessages();
+        }
+    catch(e) {
+      if(connections < 10){
+        waitForChat();
+        connections++; 
+      }else{
+        console.log(e);
+      } 
+    }    
   }, 
     400);
   }
@@ -377,26 +341,26 @@ function setZESettings(){
         },
         answerBot: {
           suppress: true
-        }
       }
-    };
+    }
+  };
 }
 
 // Shows Chat if Is Chatting or Hides Chat else
 
-function IsChatting(){
+function isChatting(){
  
-    if(zE('webWidget:get', 'chat:isChatting')){
-      zE('webWidget', 'show');
-      return true;
-    }else{
-      zE('webWidget', 'hide');
-      return false;
-      }
+  if(zE('webWidget:get', 'chat:isChatting')){
+    zE('webWidget', 'show');
+    return true;
+  }else{
+    zE('webWidget', 'hide');
+    return false;
+    }
 }
  
 
- function getWidgetLanguage(){
+  function getWidgetLanguage(){
     var languageTag = 'de';
     if($('html').attr('lang') != 'en-US'){
         languageTag = $('html').attr('lang');
@@ -408,14 +372,16 @@ function IsChatting(){
 
 
 // opens Window for unread messages 
-function checkForUnreadMessages(){
-  zE('webWidget:on', 'chat:unreadMessages', function(number) {
-  openChat();
- });
-}
-   // Opens Chat in WebWidget
-   function openChat(){
-    zE('webWidget', 'show');
-  	document.getElementById('launcher').contentWindow.document.getElementById('Embed').getElementsByTagName('button')[0].click();
+  function checkForUnreadMessages(){
+    zE('webWidget:on', 'chat:unreadMessages', function(number) {
+    openChat();
+    });
   }
+
+// Opens Chat in WebWidget
+function openChat(){
+  zE('webWidget', 'show');
+  document.getElementById('launcher').contentWindow.document.getElementById('Embed').getElementsByTagName('button')[0].click();
+  }
+
 });
