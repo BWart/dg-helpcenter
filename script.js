@@ -204,13 +204,16 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
     return customerType;
   }
     
+
+  function sendGARequestOpeningHours(action){
+    ga('send', 'event', 'Opening Hours', action, getCustomerType() + ' ' + currentLanguage);
+  }
   
   //Phone Number Tracking
   
 	$('.phone-number').on("click", function () {
     sendGARequestOpeningHours('Click Phone Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-    console.log('Phone ' + getCustomerType() + ' ' + currentLanguage);
   }) 
   
   //Contact Form Tracking
@@ -218,7 +221,6 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   $('.contactFormWriteUs').on("click", function () {
     sendGARequestOpeningHours('Click Mail Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-    console.log('Mail ' + getCustomerType() + ' ' + currentLanguage);
   }) 
   
   //Chat Tracking
@@ -226,13 +228,15 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   $('.button-chat').on("click", function () {
     sendGARequestOpeningHours('Click Chat Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-    console.log('Chat ' + getCustomerType() + ' ' + currentLanguage);
   }) 
 
 
-  function sendGARequestOpeningHours(action){
-    ga('send', 'event', 'Opening Hours', action, getCustomerType() + ' ' + currentLanguage);
-  }
+  // Request Reason Tracking
+
+  $('.request_custom_fields_360014169819').on("change",function() {
+    ga('send', 'event', 'Opening Hours', 'ShowsInfo', $('.request_custom_fields_360014169819' + ' a.nesty-input').text());                                                                                     
+  });
+
   
   //Helpful-Button Tracking
   
