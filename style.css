@@ -89,7 +89,7 @@ input {
   max-width: 100%;
   box-sizing: border-box;
   outline: none;
-  transition: border .12s ease-in-out;
+  transition: background-color .12s ease-in-out, border-color .12s ease-in-out, color .15s ease-in-out;
 }
 
 input:focus {
