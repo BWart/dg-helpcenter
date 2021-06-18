@@ -157,12 +157,12 @@ html {
 .button-contact2{
   color: #000;
   background-color: #eee;
-  border: 1px solid #bebebe;
+  border: 1px solid #eee;
 }
 
 .button-contact2:hover {
   background-color: #ddd;
-  border: 1px solid #565656;
+  border: 1px solid #ddd;
   color: #000;
 }
 
@@ -181,6 +181,7 @@ html {
 .button-large, input[type="submit"] {
   color: #fff;
   background-color: #444;
+  border: 1px solid #444;
 }
 
 .button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
