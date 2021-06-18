@@ -9,32 +9,6 @@ $(document).ready(function() {
   var chatBackColorOffline = '';
   var portal = window.location.hostname;
 
-// CHAT Farben
-
-  switch(portal){
-    case'helpcenter.digitec.ch':
-            chatcolor = '#00559D';
-            chatColorOffline = '#bebebe';
-            chatBackColorOffline = '#ededed';
-            break;
-    case'helpcenter.galaxus.ch':
-            chatcolor = '#333333';
-            chatColorOffline = '#bebebe';
-            chatBackColorOffline = '#ededed';
-            break;
-    case'helpcenter.galaxus.de':
-            chatcolor = '#333333';
-            chatColorOffline = '#bebebe';
-            chatBackColorOffline = '#ededed';
-            break;
-    default:
-            chatcolor = '#00559D';
-            chatColorOffline = '#bebebe';
-            chatBackColorOffline = '#ededed';
-            break;
-}
-
-
   switch ($('html').attr('lang')){
     case 'de':
       $('#query').attr('placeholder','Suche nach Hilfe und Lösungen');
@@ -222,7 +196,7 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
 
   function getCustomerType(){
     var customerType = 'null' 
-    if(localStorage.getItem('noSplit') == 0){
+    if(localStorage.getItem('isPrivateCustomer') == 0){
       customerType = 'business';
     }else{
       customerType = 'private';
@@ -234,26 +208,31 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   //Phone Number Tracking
   
 	$('.phone-number').on("click", function () {
-    ga('send', 'event', 'Opening Hours', 'Click Phone Button', getCustomerType() + ' ' + currentLanguage);
-    ga('send', 'event', 'Opening Hours', 'Click Phone/Mail/Chat Button', getCustomerType() + ' ' + currentLanguage);
+    sendGARequestOpeningHours('Click Phone Button');
+    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
     console.log('Phone ' + getCustomerType() + ' ' + currentLanguage);
   }) 
   
   //Contact Form Tracking
   
   $('.contactFormWriteUs').on("click", function () {
-    ga('send', 'event', 'Opening Hours', 'Click Mail Button', getCustomerType() + ' ' + currentLanguage);
-    ga('send', 'event', 'Opening Hours', 'Click Phone/Mail/Chat Button', getCustomerType() + ' ' + currentLanguage);
+    sendGARequestOpeningHours('Click Mail Button');
+    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
     console.log('Mail ' + getCustomerType() + ' ' + currentLanguage);
   }) 
   
   //Chat Tracking
   
   $('.button-chat').on("click", function () {
-    ga('send', 'event', 'Opening Hours', 'Click Chat Button', getCustomerType() + ' ' + currentLanguage);
-    ga('send', 'event', 'Opening Hours', 'Click Phone/Mail/Chat Button', getCustomerType() + ' ' + currentLanguage);
+    sendGARequestOpeningHours('Click Chat Button');
+    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
     console.log('Chat ' + getCustomerType() + ' ' + currentLanguage);
   }) 
+
+
+  function sendGARequestOpeningHours(action){
+    ga('send', 'event', 'Opening Hours', action, getCustomerType() + ' ' + currentLanguage);
+  }
   
   //Helpful-Button Tracking
   
