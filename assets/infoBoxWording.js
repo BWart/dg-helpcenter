@@ -104,6 +104,8 @@ function fillInfoBoxWording(){
 
         "Ich habe ein falsches Produkt erhalten" : "inputWrongProduct",
         "outputWrongProduct" : "Damit wir dein Anliegen rasch prüfen können, wäre es hilfreich, wenn du uns die Herstellernummer oder den EAN-Code des falsch erhaltenen Produkt mitteilen könntest. Die Angaben dazu findest du auf der Produktverpackung.",
+        "Ich habe ein falsches Produkt erhalten descriptionTemplate" : "inputWrongProductMailTemplate",
+        "outputWrongProductMailTemplate" : "Bitte beachte, dass wir nachfolgende Angaben zwingend benötigen.\nIch habe fälschlicherweise das folgende Produkt erhalten: \nMenge: \nEAN-Code (Strichcode auf der Verpackung): \nIch vermisse folgendes Produkt: ",
 
         "Meine Bestellung wurde nicht komplett geliefert" : "inputReceivedNotEverything",
         "outputReceivedNotEverything" : "Nicht alle Produkte kommen direkt ab unserem eigenen Lager. Produkte von unseren Partnern werden dir somit direkt und in einem separaten Paket zugestellt. in deinem Kundenkonto kannst du unter <a href='" + shopURL + "Order' target='blank'>Bestellungen</a> überprüfen, ob dein Paket bereits versendet wurde oder noch vorbereitet wird.",
@@ -198,6 +200,8 @@ function fillInfoBoxWording(){
 
         "J'ai reçu le mauvais produit" : "inputWrongProduct",
         "outputWrongProduct" : "Afin de pouvoir vérifier rapidement votre demande, il serait utile que vous nous communiquiez le numéro du fabricant ou le code EAN du produit reçu par erreur. Vous trouverez ces informations sur l'emballage du produit.",
+        "J'ai reçu le mauvais produit descriptionTemplate" : "inputWrongProductMailTemplate",
+        "outputWrongProductMailTemplate" : "Veuillez noter que les informations suivantes sont obligatoires.\nJ'ai reçu le produit suivant par erreur : \nQuantité : \nCode EAN (code barre sur l'emballage) : \nIl me manque le produit suivant : ",
 
         "Ma commande n'a pas été entièrement livrée" : "inputReceivedNotEverything",
         "outputReceivedNotEverything" : "Tous les produits ne proviennent pas directement de notre entrepôt. Les produits de nos partenaires vous sont donc livrés directement et dans un colis séparé. Dans votre compte client sous <a href='" + shopURL + "Order' target='blank'>commandes</a>, vous pouvez vérifier si votre colis a déjà été envoyé ou est encore en cours de préparation.",
@@ -292,6 +296,8 @@ function fillInfoBoxWording(){
 
         "Ho ricevuto un prodotto sbagliato" : "inputWrongProduct",
         "outputWrongProduct" : "Per poter verificare rapidamente la vostra richiesta, sarebbe utile che ci forniste il numero del produttore o il codice EAN del prodotto ricevuto in modo errato. Queste informazioni sono riportate sulla confezione del prodotto.",
+        "Ho ricevuto un prodotto sbagliato descriptionTemplate" : "inputWrongProductMailTemplate",
+        "outputWrongProductMailTemplate" : "Si prega di notare che le seguenti informazioni sono obbligatorie.\nHo ricevuto il seguente prodotto per errore: \nQuantità: \nCodice EAN (codice a barre sulla confezione): \nMi manca il seguente prodotto: ",
 
         "Il mio ordine non è stato consegnato completamente" : "inputReceivedNotEverything",
         "outputReceivedNotEverything" : "Non tutti i prodotti provengono direttamente dal nostro magazzino. I prodotti dei nostri partner ti vengono consegnati direttamente in un pacchetto separato. Nel menu <a href='" + shopURL + "Order' target='blank'>ordini</a> puoi anche vedere se il tuo pacco è già stato spedito o se è ancora in fase di preparazione.",
@@ -386,6 +392,8 @@ function fillInfoBoxWording(){
 
         "I’ve received the wrong product" : "inputWrongProduct",
         "outputWrongProduct" : "To be able to check your request quickly, it would be helpful if you could provide us with the manufacturer's number or the EAN code of the incorrectly received product. You can find this information on the product packaging.",
+        "I’ve received the wrong product descriptionTemplate" : "inputWrongProductMailTemplate",
+        "outputWrongProductMailTemplate" : "Please note that the following information is mandatory.\nI have received the following product by mistake: \nQuantity: \nEAN code (bar code on the packaging): \nI am missing the following product: ",
 
         "There are items missing in my order" : "inputReceivedNotEverything",
         "outputReceivedNotEverything" : "Not all products are sent from our warehouse. When an item comes from one of our partner suppliers, it'll be sent to you directly in a separate parcel. Go to <a href='" + shopURL + "Order' target='blank'>orders</a> in your customer account to find your order status to check if it has been shipped or if it's not been processed yet.",
