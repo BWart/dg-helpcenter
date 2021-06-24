@@ -927,7 +927,7 @@ setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
   var currentLanguage = $('html').attr('lang');
 
-  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback') != null || $('#request_description').val() == '' && sessionStorage.getItem('Feedback') != null) { 
+  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback') != 0 && sessionStorage.getItem('Feedback') != null || $('#request_description').val() == '' && sessionStorage.getItem('Feedback') != null) { 
       $('#HeaderID').html(infoBoxWording[currentLanguage]['outputFeedbackHeader'] + infoBoxWording[currentLanguage]['outputFeedbackBeschreibung']);
       $('.contactFormInfoText2').hide(); //Unterueberschrift
       $('.form-field:not(.request_ticket_form_id)').show(); // SchreibUns-Feld-Form mit beschreibung, grund usw
