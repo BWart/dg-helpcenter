@@ -70,7 +70,7 @@
   </h1>
 
   <div class="form" id="requestForm">
-    <h4 class = "contactFormInfoText2" data-wording-key="contactFormInfoText"></h4>
+    <h4 class = "contactFormText contactFormInfoText2" data-wording-key="contactFormInfoText"></h4>
     {{request_form}}
   </div>
 
@@ -78,6 +78,8 @@
 </div>
 
 <script>
+
+$('.contactFormInfoText2').show();
 
 var mobile = window.innerWidth < 767;
 
