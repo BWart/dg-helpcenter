@@ -263,3 +263,28 @@ select:focus {
   -webkit-appearance: none;
   width: 100%;
 }
+
+/*Make Links Red on mouseover*/
+.promoted-articles-item a:hover {
+  color: #124476;
+}
+
+.article-body a:hover{
+  color: #124476;
+}
+
+.breadcrumbs a:hover{
+  color: #124476;
+}
+
+.contactFormText a:hover{
+  color: #124476;
+}
+
+.article-sidebar a:hover{
+  color: #124476;
+}
+
+.article-list a:hover{
+  color: #124476;
+}
