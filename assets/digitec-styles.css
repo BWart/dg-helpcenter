@@ -300,3 +300,28 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-appearance: none;
   width: 100%;
 }
+
+/*Make Links Red on mouseover*/
+.promoted-articles-item a:hover {
+  color: #e60021;
+}
+
+.article-body a:hover{
+  color: #e60021;
+}
+
+.breadcrumbs a:hover{
+  color: #e60021;
+}
+
+.contactFormText a:hover{
+  color: #e60021;
+}
+
+.article-sidebar a:hover{
+  color: #e60021;
+}
+
+.article-list a:hover{
+  color: #e60021;
+}
