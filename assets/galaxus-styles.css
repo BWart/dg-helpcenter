@@ -285,6 +285,10 @@ select:focus {
   color: #124476;
 }
 
-.article-list a:hover{
+.section a:hover{
+  color: #124476;
+}
+
+.dropdown-toggle:hover{
   color: #124476;
 }
