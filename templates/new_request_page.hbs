@@ -606,11 +606,11 @@ $('.button-chat').on("click", function () {
 
   function changeRecommendedVisibility(status){
     if(status == 'online' && canSeeChatButton()){
-       $(".chatLabel").addClass("chatLabelVisible");
-        $(".recommendedChannel").show();
+      $(".chatLabel").addClass("chatLabelVisible");
+      $(".recommendedChannel").css('display' , '');
     } else{
-        $(".chatLabel").removeClass("chatLabelVisible");
-       $(".recommendedChannel").hide();
+      $(".chatLabel").removeClass("chatLabelVisible");
+      $(".recommendedChannel").css('display' , 'none');
     }
   }
   
