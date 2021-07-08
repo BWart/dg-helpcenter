@@ -4306,7 +4306,7 @@ infoNoteBox{
     font-size: 8px;
     width: 40%;
     text-align: center;
-    visibility: hidden;
+    display: none;
   }
   
   .chatLabelVisible{
