@@ -292,3 +292,8 @@ select:focus {
 .dropdown-toggle:hover{
   color: #124476;
 }
+
+.recommendedChannel{
+  border-color: #565656;
+  color: #565656;
+}

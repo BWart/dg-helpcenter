@@ -329,3 +329,8 @@ h1, h2, h3, h4, h5, h6 {
 .dropdown-toggle:hover{
   color: #e60021;
 }
+
+.recommendedChannel{
+  border-color: #00559d;
+  color: #00559d;
+}

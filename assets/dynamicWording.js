@@ -92,7 +92,8 @@ function filldynamicWording(){
         'searchBoxText' : '<h2><font color=#00000>Wie können wir dir helfen?</font></h2>', 
         'infoNoteText' : '<br>Aufgrund der aktuellen Wetter- bzw. Strassensituation ist mit Verspätungen bei der Paketzustellung durch die Post zu rechnen. Besten Dank für dein Verständnis<br>&nbsp;',
         'contactFormInfoText' : 'Suchst du unsere Kontaktangaben? Füll das Formular aus, damit wir dein Anliegen rasch bearbeiten können und wähle dann, ob du per Telefon, Chat oder via Formular mit uns in Kontakt treten willst.',
-        'chatNotOnline': 'Nicht verfügbar'
+        'chatNotOnline': 'Nicht verfügbar',
+        'recommendedChannel' : 'EMPFOHLEN'
         },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -123,7 +124,8 @@ function filldynamicWording(){
         'searchBoxText' : '<h2><font color=#00000>Comment pouvons-nous vous aider?</font></h2>',
         'infoNoteText' : '<br>En raison des conditions météorologiques et de la situation routière actuelles, il faut s\'attendre à des retards dans la livraison des colis par la Poste suisse. Merci de votre compréhension<br>&nbsp;',
         'contactFormInfoText' : 'Vous cherchez nos coordonnées ? Remplissez le formulaire afin que nous puissions traiter votre demande rapidement. Choisissez ensuite si vous souhaitez nous contacter par téléphone, par chat ou par formulaire.',
-        'chatNotOnline': 'Non disponible'
+        'chatNotOnline': 'Non disponible',
+        'recommendedChannel' : 'RECOMMANDE'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -154,7 +156,8 @@ function filldynamicWording(){
         'searchBoxText' : '<h2><font color=#00000>Come possiamo aiutarla?</font></h2>',
         'infoNoteText' : '<br>A causa dell\'attuale situazione meteorologica e stradale, si prevedono ritardi nella consegna dei pacchi da parte della Posta Svizzera. Grazie per la vostra comprensione<br>&nbsp;',
         'contactFormInfoText' : 'Stai cercando i nostri contatti? Compila il modulo in modo che possiamo elaborare rapidamente la tua richiesta e poi scegli se vuoi contattarci per telefono, chat o tramite modulo.',
-        'chatNotOnline': 'Non disponible'
+        'chatNotOnline': 'Non disponible',
+        'recommendedChannel' : 'RACCOMANDATO'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -185,7 +188,8 @@ function filldynamicWording(){
         'searchBoxText' : '<h2><font color=#00000>How can we help you?</font></h2>',
         'infoNoteText' : '<br>Due to the current weather and road situation, delays in parcel delivery by Swiss Post are to be expected. Thank you for your understanding<br>&nbsp;',
         'contactFormInfoText' : 'Are you looking for our contact details? Fill out the form so that we can quickly process your request and then choose whether you want to contact us by phone, chat or via form.',
-        'chatNotOnline': 'Not available'
+        'chatNotOnline': 'Not available',
+        'recommendedChannel' : 'RECOMMENDED'
         }
     }
   return dynamicWording;  

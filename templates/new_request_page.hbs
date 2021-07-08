@@ -23,7 +23,7 @@
       <tr>
         <td class = 'contactButtonTableCellLeft'><h4 data-wording-key="email"></h4></td>
 				<td class = 'contactButtonTableCellLeftLeftBorder'><h4 data-wording-key="phone"></h4></td>
-				<td class = 'contactButtonTableCellLeftLeftBorder chatTableCell'><h4 data-wording-key="chat"></h4></td>
+					<td class = 'contactButtonTableCellLeftLeftBorder chatTableCell'><h4 data-wording-key="chat"></h4> <div class="recommendedChannel" data-wording-key="recommendedChannel"></div> </td>
       </tr>
       <tr>
         <td class ='contactButtonTableCellLeft'><a class="button-contact contactFormWriteUs" data-wording-key="writeUs"></a></td>
@@ -556,7 +556,8 @@ return dep;
 	function listenDepartmentStatus(selectedDepartment){
     zE('webWidget:on', 'chat:departmentStatus', function(department) {
     	if(department.name == selectedDepartment){
-  			changeButtonVisibility(department.status); 
+  			changeButtonVisibility(department.status);
+        changeRecommendedVisibility(department.status); 
   		}
     });
   }
@@ -600,6 +601,16 @@ $('.button-chat').on("click", function () {
     } else{
        zE('webWidget', 'hide');
        setButtonVisbility('offline');
+    }
+  }
+
+  function changeRecommendedVisibility(status){
+    if(status == 'online' && canSeeChatButton()){
+       $(".chatLabel").addClass("chatLabelVisible");
+        $(".recommendedChannel").show();
+    } else{
+        $(".chatLabel").removeClass("chatLabelVisible");
+       $(".recommendedChannel").hide();
     }
   }
   
