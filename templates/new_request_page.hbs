@@ -607,7 +607,7 @@ $('.button-chat').on("click", function () {
   function changeRecommendedVisibility(status){
     if(status == 'online' && canSeeChatButton()){
       $(".chatLabel").addClass("chatLabelVisible");
-      $(".recommendedChannel").css('display' , '');
+      $(".recommendedChannel").css('display' , 'inline-block');
     } else{
       $(".chatLabel").removeClass("chatLabelVisible");
       $(".recommendedChannel").css('display' , 'none');
