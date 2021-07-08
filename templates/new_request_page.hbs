@@ -23,7 +23,7 @@
       <tr>
         <td class = 'contactButtonTableCellLeft'><h4 data-wording-key="email"></h4></td>
 				<td class = 'contactButtonTableCellLeftLeftBorder'><h4 data-wording-key="phone"></h4></td>
-				<td class = 'contactButtonTableCellLeftLeftBorder chatTableCell'><h4 data-wording-key="chat"></h4> <div class="recommendedChannel" data-wording-key="recommendedChannel"></div> </td>
+				<td class = 'contactButtonTableCellLeftLeftBorder chatTableCell'><h4 class='chatLabel' data-wording-key="chat"></h4> <div class="recommendedChannel" data-wording-key="recommendedChannel"></div> </td>
       </tr>
       <tr>
         <td class ='contactButtonTableCellLeft'><a class="button-contact contactFormWriteUs" data-wording-key="writeUs"></a></td>
@@ -557,7 +557,6 @@ return dep;
     zE('webWidget:on', 'chat:departmentStatus', function(department) {
     	if(department.name == selectedDepartment){
   			changeButtonVisibility(department.status);
-        changeRecommendedVisibility(department.status); 
   		}
     });
   }
@@ -603,16 +602,6 @@ $('.button-chat').on("click", function () {
        setButtonVisbility('offline');
     }
   }
-
-  function changeRecommendedVisibility(status){
-    if(status == 'online' && canSeeChatButton()){
-      $(".chatLabel").addClass("chatLabelVisible");
-      $(".recommendedChannel").css('display' , 'inline-block');
-    } else{
-      $(".chatLabel").removeClass("chatLabelVisible");
-      $(".recommendedChannel").css('display' , 'none');
-    }
-  }
   
   // CSS Change
   function setButtonVisbility(cssStatusChange){
@@ -620,10 +609,14 @@ $('.button-chat').on("click", function () {
       $(".button-chat").removeClass("button-offline");
       $(".button-chat").html(getButtonText('chatUs'));
       $(".contactDataChat").show();
+      $(".chatLabel").addClass("chatLabelVisible");
+      $(".recommendedChannel").css('display' , 'inline-block');
     } 
     if(cssStatusChange == 'offline'){
       $(".button-chat").addClass("button-offline");
  		  $(".button-chat").html(getButtonText('chatNotOnline'));
+      $(".chatLabel").removeClass("chatLabelVisible");
+      $(".recommendedChannel").css('display' , 'none');
     }
   }
   
