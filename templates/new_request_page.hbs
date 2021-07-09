@@ -65,8 +65,8 @@
   </div>
   </div>
   
-  <h1 class="Header" id="HeaderID">
-      {{t 'submit_a_request'}}{{#if follow_up}}<span class='follow-up-hint'>{{follow_up}}</span>{{/if}}
+  <h1 class="Header" id="HeaderID" data-wording-key="headerTitle">
+      <!--{{t 'submit_a_request'}}{{#if follow_up}}<span class='follow-up-hint'>{{follow_up}}</span>{{/if}}-->
   </h1>
 
   <div class="form" id="requestForm">
@@ -78,6 +78,10 @@
 </div>
 
 <script>
+
+var infoBoxWording = fillInfoBoxWording(portal1, portal2);
+//CHANGE HEADER TITLE
+//$('#HeaderID').html(infoBoxWording[currentLanguage]['headerTitle'];
 
 var mobile = window.innerWidth < 767;
 
@@ -330,8 +334,6 @@ hideOrderNumber();
   else{
     portal2 = 'helpcenter.galaxus.de';
   }
-
-  var infoBoxWording = fillInfoBoxWording(portal1, portal2);
 
 
   //Checks whether to hide order number

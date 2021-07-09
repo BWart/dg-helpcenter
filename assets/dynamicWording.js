@@ -91,7 +91,8 @@ function filldynamicWording(){
         'recommendedChannel' : 'Empfohlener Kanal',
         'searchBoxText' : '<h2><font color=#00000>Wie können wir dir helfen?</font></h2>', 
         'infoNoteText' : '<br>Aufgrund der aktuellen Wetter- bzw. Strassensituation ist mit Verspätungen bei der Paketzustellung durch die Post zu rechnen. Besten Dank für dein Verständnis<br>&nbsp;',
-        'contactFormInfoText' : 'Suchst du unsere Kontaktangaben? Füll das Formular aus, damit wir dein Anliegen rasch bearbeiten können und wähle dann, ob du per Telefon, Chat oder via Formular mit uns in Kontakt treten willst.',
+        'contactFormInfoText' : 'Per Chat, Telefon oder Kontaktformular - wähle nur deine Kundengruppe und den passenden Anfragegrund.',
+        'headerTitle' : 'Kontaktiere uns',
         'chatNotOnline': 'Nicht verfügbar',
         'recommendedChannel' : 'EMPFOHLEN'
         },
