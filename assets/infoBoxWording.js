@@ -166,10 +166,7 @@ function fillInfoBoxWording(){
         "outputFeedbackLabelPart1":"Feedback zu Helpcenter Beitrag: ",
         "outputFeedbackLabelPart2":"<br><b>Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!</b>",
         "outputFeedbackTextFieldTemplate":"",
-        "feedbackThanks":"<h4>Vielen Dank für dein Feedback!</h4>",
-
-  //HEADER TITLE
-        "headerTitle":"Kontaktiere uns"
+        "feedbackThanks":"<h4>Vielen Dank für dein Feedback!</h4>"
       },
 
 
