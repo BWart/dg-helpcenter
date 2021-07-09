@@ -4304,12 +4304,23 @@ infoNoteBox{
     border-width: 1px;
     font-weight: 700;
     font-size: 10px;
-    width: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: auto;
     text-align: center;
+    vertical-align: top;
     display: none;
-    margin-bottom: 8px;
     letter-spacing: 1px;
   }
+
+.chatMobile{
+  display: inline-block;
+}
+
+.recommendedChatMobile{
+  vertical-align: middle;
+  margin-left: 10px;
+}
   
   .chatLabelVisible{
     margin-bottom: 0px;
