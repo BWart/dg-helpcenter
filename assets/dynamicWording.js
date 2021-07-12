@@ -38,8 +38,8 @@ function filldynamicWording(){
       case'helpcenter.galaxus.de':
               uhrzeitPrivatkunde = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
               uhrzeitPrivatkundeMobile = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
-              uhrzeitFirmenkunde = "10:00 - 18:00";
-              uhrzeitFirmenkundeMobile = "10:00 - 18:00";
+              uhrzeitFirmenkunde = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
+              uhrzeitFirmenkundeMobile = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
 
               telPrivatkunde = "+4940334614747";
               telPrivatkundeText = "+49 (0)40 334 614 747";
