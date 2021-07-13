@@ -310,8 +310,6 @@ hideOrderNumber();
   var portal1 = window.location.hostname;
   var portal2 = window.location.hostname;
 
-  var infoBoxWording = fillInfoBoxWording(portal1, portal2);
-
   //URL test
 
   if (window.location.hostname.indexOf("digitec.ch") >= 0) {
@@ -335,6 +333,8 @@ hideOrderNumber();
   else{
     portal2 = 'helpcenter.galaxus.de';
   }
+
+  var infoBoxWording = fillInfoBoxWording(portal1, portal2);
 
 
   //Checks whether to hide order number
