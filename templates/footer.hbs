@@ -1,14 +1,14 @@
 <footer class="footer">
   <div class="footer-inner">
     <h2><a class='contactLinkInfo' data-wording-key="noAnswerFound"></a></h2>
-    <h4><button class="button-contact2" data-wording-key="contact"></button></h4>
+    <h4><a class="contactFormLink"><button class="button-contact2" data-wording-key="contact"></button></a></h4>
   </div>
 </footer>
 
 <script>
 //Special Link for Request Form digitec connect
 if(window.location.hostname == "helpcenter.connect.digitec.ch"){
-  $('.contactFormLink').attr("href", "/hc/de/requests/new?ticket_form_id=360002056120");
+  $('.contactFormLink').attr("href", "/hc/requests/new?ticket_form_id=360002056120");
 }else{
   $('.contactFormLink').attr("href", "/hc/requests/new");
 }
