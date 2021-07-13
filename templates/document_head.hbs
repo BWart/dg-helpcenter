@@ -13,7 +13,7 @@ link.setAttribute("type", "text/css");
 link.onload = showBody();
 	  
   var WidgetURL;
-  if(window.location.hostname !="helpcenter.digitec.ch"){
+  if(window.location.hostname !="helpcenter.digitec.ch" && window.location.hostname !="helpcenter.connect.digitec.ch"){
   	link.setAttribute("href", "{{asset 'galaxus-styles.css'}}");
     $('[rel="shortcut icon"]').attr("href", "{{asset 'fav_galaxus.png'}}");
     $("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4"/><//script>')
