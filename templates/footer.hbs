@@ -7,9 +7,9 @@
 
 <script>
 //Special Link for Request Form digitec connect
-if(window.location.hostname ="helpcenter.connect.digitec.ch"){
-  $('button-contact2').attr("href", "/hc/de/requests/new?ticket_form_id=360002056120");
+if(window.location.hostname == "helpcenter.connect.digitec.ch"){
+  $('.contactFormLink').attr("href", "/hc/de/requests/new?ticket_form_id=360002056120");
 }else{
-  $('button-contact2').attr("href", "/hc/requests/new");
+  $('.contactFormLink').attr("href", "/hc/requests/new");
 }
 </script>
