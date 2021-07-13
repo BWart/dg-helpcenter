@@ -79,7 +79,6 @@
 
 <script>
 
-var infoBoxWording = fillInfoBoxWording(portal1, portal2);
 //CHANGE HEADER TITLE
 //$('#HeaderID').html(infoBoxWording[currentLanguage]['headerTitle'];
 
@@ -310,6 +309,8 @@ hideOrderNumber();
   //Get the Infobox Content based on Rule
   var portal1 = window.location.hostname;
   var portal2 = window.location.hostname;
+
+  var infoBoxWording = fillInfoBoxWording(portal1, portal2);
 
   //URL test
 
