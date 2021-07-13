@@ -456,6 +456,10 @@ function fillInfoBoxWording(){
         "feedbackThanks":"<h4>Thank you for your feedback!</h4>"
 }
     }
+
+if (portal1 == 'galaxus.de'){
+      infoBoxWording['de']['outputNotWorking'] = "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales/service-cases/select-position' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "wiki/559' target='blank'>Gewährleistungsinformationen</a> sowie in unseren <a href='" + shopURL + "Wiki/478' target='blank'>AGBs</a>."
+}
     
     return infoBoxWording;
 
