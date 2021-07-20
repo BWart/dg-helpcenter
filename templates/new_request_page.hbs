@@ -8,8 +8,18 @@
   <h1 class="Header" id="HeaderID" data-wording-key="headerTitle">
       <!--{{t 'submit_a_request'}}{{#if follow_up}}<span class='follow-up-hint'>{{follow_up}}</span>{{/if}}-->
   </h1>
+  <button onclick="showFullMailForm()">showFullMailForm</button>
+  <button onclick="hideIntroText()">hideIntroText</button>
+  <button onclick="hideCustomerTypeDropdown()">customerTypeDropdown</button>
+  <button onclick="hideRequestReasonDropdown()">hideRequestReasonDropdown</button>
+  <button onclick="hideContactInfos()">hideContactInfos</button>
+  <button onclick="hideInfoText()">hideInfoText</button>
+  <button onclick="hidemailFormOrderNumber()">hidemailFormOrderNumber</button>
+  <button onclick="hidemailFormSubject()">hidemailFormSubject</button>
+  <button onclick="hidemailFormMessage()">hidemailFormMessage</button>
+  <button onclick="hidemailFormAttachments()">mailFormAttachments</button>
 
-  <div class="form" id="requestform">
+  <div class="form requestform" id="requestForm">
     <h4 class="contactFormInfoText2" data-wording-key="contactFormInfoText"></h4>
     <div class="contactFormNote">
       <div class="contactFormText">
@@ -70,9 +80,101 @@
       </table>
     </div>
     <!-- AUTOMATED FORM -->
+    {{request_form}}
   </div>
 </div>
 
 <script>
-  console.log(window.location.hostname)
+  //The form is fully hidden initially
+
+  //Set up all needed variables
+  var portal = window.location.hostname
+  var currentLanguage = $('html').attr('lang');
+  var introText = $('.contactFormInfoText2');
+  var customerTypeDropdown = $('.request_ticket_form_id');
+  var requestReasonDropdown = $('.request_custom_fields_360014169819');
+  var infoText = $('.contactFormText');
+  var contactInfos = $('.contactFormTextNoBorder');
+
+  //Whole Mail Form
+  var fullMailform = $('.requestform');
+  //Mailform fields, with label and Input field
+  var mailFormOrderNumberLabel = $('.request_custom_fields_360007585419');
+  var mailFormSubject = $('.request_subject');
+  var mailFormMessage = $('.request_description');
+  var mailFormAttachmentDropZone = $('#upload-dropzone');
+  var mailFormAttachmentLabel = $('label[for="request-attachments"]')
+  var commitButton = $('input[name ="commit"]')
+  //Mailform fields, labels and input fields separated
+  var mailFormSubjectLabel = $('.request_subject_label');
+  var mailFormSubjectTextField = $('.request_subject');
+  var mailFormMessageLabel = $('.request_description_label');
+  var mailFormMessageTextField = $('.request_description')
+
+
+  switch (portal){
+    case 'helpcenter.digitec.ch':
+      var requestReasonDropdown = $('.request_custom_fields_360014169819');
+      regularHelpcenter();
+      break;
+    case 'helpcenter.galaxus.ch':
+      var requestReasonDropdown = $('.request_custom_fields_360014169819');
+      regularHelpcenter();
+      break;
+    case 'helpcenter.galaxus.de':
+      requestReasonDropdown = $('.request_custom_fields_360014169819');
+      regularHelpcenter();
+      break;
+    case 'helpcenter.connect.digitec.ch':
+      connectHelpcenter();
+      break;
+    default:
+      requestReasonDropdown = $('.request_custom_fields_360014169819');
+      regularHelpcenter();
+      break;
+  }
+
+  function regularHelpcenter(){
+
+  }
+
+  function showFullMailForm(){
+  	fullMailform.show()
+  }
+
+  function hideCustomerTypeDropdown(){
+    customerTypeDropdown.hide()
+  }
+
+  function hideRequestReasonDropdown(){
+    requestReasonDropdown.hide()
+  }
+
+  function hideInfoText(){
+    infoText.hide();
+  }
+
+  function hideContactInfos(){
+    contactInfos.hide();
+  }
+
+  function hideIntroText(){
+    introText.hide();
+  }
+
+  function hidemailFormOrderNumber(){
+    mailFormOrderNumber.hide()
+  }
+
+  function hidemailFormSubject(){
+    mailFormSubjectLabel.hide();
+  }
+
+  function hidemailFormMessage(){
+    mailFormMessage.hide();
+  }
+
+  function hidemailFormAttachments(){
+    mailFormAttachments.hide();
+  }
 </script>
