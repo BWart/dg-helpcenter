@@ -148,12 +148,13 @@ function fillInfoBoxWording(){
         "outputCantLoginDescriptionLabel" : "Beschreibung<br>Hinweis: Für eine rasche Bearbeitung benötigen wir deine Kundennummer",
 
   //Level 0: Produktberatung
-        "Produktberatung" : "inputProductAdvice",
-        "Home & DIY" : "inputProductAdvice",
-        "IT & Gaming" : "inputProductAdvice", 
-        "Unterhaltungselektronik" : "inputProductAdvice",
-        "Foto & Video" : "inputProductAdvice",
-        "outputProductAdvice" : "Fragen zu einem bereits auf " + seite + " vorhandenen Produkt kannst du direkt auf der jeweiligen Produktseite verfassen. Unsere Community antwortet dir innerhalb von wenigen Stunden. Das Beste: alle profitieren von deinem Beitrag :-)",
+      "Computer und Zubehör" : "inputProductAdvice",
+      "Netzwerk und Server" : "inputProductAdvice",
+      "Unterhaltungselektronik und Smartphone" : "inputProductAdvice", 
+      "Fotografie und Drucker" : "inputProductAdvice",
+      "Haushalt und Sport" : "inputProductAdvice",
+      "Do it, Garden und alle weiteren Produkte" : "inputProductAdvice",
+      "outputProductAdvice" : "Fragen zu einem bereits auf " + seite + " vorhandenen Produkt kannst du direkt auf der jeweiligen Produktseite verfassen. Unsere Community antwortet dir innerhalb von wenigen Stunden. Das Beste: alle profitieren von deinem Beitrag :-)",
 
   //Level 0: Offerte
         "Offerte" : "inputOffer",
@@ -244,12 +245,13 @@ function fillInfoBoxWording(){
         "outputCantLoginDescriptionLabel" : "Description<br>Note : Pour un traitement rapide, nous avons besoin de votre numéro de client",
 
   //Level 0: Conseil produits
-        "Conseil produits" : "inputProductAdvice",
-        "Home & DIY" : "inputProductAdvice",
-        "Produits électroniques grand public" : "inputProductAdvice", 
-        "IT & Gaming" : "inputProductAdvice",
-        "Photo & Vidéo" : "inputProductAdvice",
-        "outputProductAdvice" : "Les questions concernant un produit déjà disponible sur " + seite + " peuvent être posées directement sur la page du produit concerné. Notre communauté vous répondra dans les heures qui suivent. La meilleure chose : tout le monde bénéficie de votre contribution :-)",
+      "Ordinateurs et accessoires" : "inputProductAdvice",
+      "Réseau et serveur" : "inputProductAdvice",
+      "Electronique grand public et smartphone" : "inputProductAdvice", 
+      "Photographie et imprimantes" : "inputProductAdvice",
+      "Ménage et sport" : "inputProductAdvice",
+      "Faites-le, jardin et tous les autres produits" : "inputProductAdvice",
+      "outputProductAdvice" : "Les questions concernant un produit déjà disponible sur " + seite + " peuvent être posées directement sur la page du produit concerné. Notre communauté vous répondra dans les heures qui suivent. La meilleure chose : tout le monde bénéficie de votre contribution :-)",
 
   //Level 0: Offre
         "Offre" : "inputOffer",
@@ -340,12 +342,13 @@ function fillInfoBoxWording(){
         "outputCantLoginDescriptionLabel" : "Descrizione<br>Nota: per una rapida elaborazione abbiamo bisogno del vostro numero cliente",
 
   //Level 0: Consigli sui prodotti
-        "Consulenza prodotti" : "inputProductAdvice",
-        "Home & DIY" : "inputProductAdvice",
-        "IT & Gaming" : "inputProductAdvice", 
-        "Elettronica di consumo" : "inputProductAdvice",
-        "Foto & Video" : "inputProductAdvice",
-        "outputProductAdvice" : "Le domande su un prodotto già disponibile su " + seite + " possono essere scritte direttamente sulla relativa pagina del prodotto. La nostra comunità vi risponderà entro poche ore. La cosa migliore: tutti beneficiano del vostro contributo :-)",
+      "Computer e accessori" : "inputProductAdvice",
+      "Rete e server" : "inputProductAdvice",
+      "Elettronica di consumo e smartphone" : "inputProductAdvice", 
+      "Fotografia e stampanti" : "inputProductAdvice",
+      "Casa e sport" : "inputProductAdvice",
+      "Do it, garden e tutti gli altri prodotti" : "inputProductAdvice",
+      "outputProductAdvice" : "Le domande su un prodotto già disponibile su " + seite + " possono essere scritte direttamente sulla relativa pagina del prodotto. La nostra comunità vi risponderà entro poche ore. La cosa migliore: tutti beneficiano del vostro contributo :-)",
 
   //Level 0: Offerta
         "Offerta" : "inputOffer",
@@ -436,12 +439,14 @@ function fillInfoBoxWording(){
         "outputCantLoginDescriptionLabel" : "Description<br>Note: For quick processing we need your customer number",
 
   //Level 0: Product advice
-        "Product information" : "inputProductAdvice",
-        "Home & DIY" : "inputProductAdvice",
-        "IT & Gaming" : "inputProductAdvice", 
-        "Consumer Electronics" : "inputProductAdvice",
-        "Photo & Video" : "inputProductAdvice",
-        "outputProductAdvice" : "You can enter questions about products that are already available on " + seite + " directly on its product page. Our Community answers within a few hours. Additionally: everyone benefits from your contribution :-)",
+      "Product information" : "inputProductAdvice",
+      "Computers and accessories" : "inputProductAdvice",
+      "Network and server" : "inputProductAdvice", 
+      "Consumer electronics and smartphone" : "inputProductAdvice",
+      "Photography and printer" : "inputProductAdvice",
+      "Household and sport" : "inputProductAdvice",
+      "Do it, garden and all other products" : "inputProductAdvice",
+      "outputProductAdvice" : "You can enter questions about products that are already available on " + seite + " directly on its product page. Our Community answers within a few hours. Additionally: everyone benefits from your contribution :-)",
 
       //Level 0: Offer
         "Offer" : "inputOffer",
