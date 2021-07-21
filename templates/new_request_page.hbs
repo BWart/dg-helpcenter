@@ -10,14 +10,28 @@
   </h1>
   <button onclick="showFullMailForm()">showFullMailForm</button>
   <button onclick="hideIntroText()">hideIntroText</button>
-  <button onclick="hideCustomerTypeDropdown()">customerTypeDropdown</button>
-  <button onclick="hideRequestReasonDropdown()">hideRequestReasonDropdown</button>
+  <button onclick="hideInfoTextField()">hideInfoTextField</button>
   <button onclick="hideContactInfos()">hideContactInfos</button>
-  <button onclick="hideInfoText()">hideInfoText</button>
-  <button onclick="hidemailFormOrderNumber()">hidemailFormOrderNumber</button>
-  <button onclick="hidemailFormSubject()">hidemailFormSubject</button>
-  <button onclick="hidemailFormMessage()">hidemailFormMessage</button>
-  <button onclick="hidemailFormAttachments()">mailFormAttachments</button>
+  <button onclick="hideCustomerTypeDropdown()">hideCustomerTypeDropdown</button>
+  <button onclick="hideRequestReasonDropdown()">hideRequestReasonDropdown</button>
+  <button onclick="hideMailFormOrderNumber()">hidemailFormOrderNumber</button>
+  <button onclick="hideMailFormSubject()">hidemailFormSubject</button>
+  <button onclick="hideMailFormMessage()">hidemailFormMessage</button>
+  <button onclick="hideMailFormAttachmentLabel()">hideMailFormAttachmentLabel</button>
+  <button onclick="hideMailFormAttachmentDropzone()">hideMailFormAttachmentDropzone</button>
+  <button onclick="hideCommitButton()">hideCommitButton</button>
+  <br><br>
+  <button onclick="hideMailFormSubjectLabel()">hideMailFormSubjectLabel</button>
+  <button onclick="hideMailFormSubjectTextField()">hideMailFormSubjectTextField</button>
+  <button onclick="hideMailFormMessageLabel()">hideMailFormMessageLabel</button>
+  <button onclick="hideMailFormMessageTextField()">hideMailFormMessageTextField</button>
+  <br>
+  <button onclick="fillMailFormSubjectLabel()">fillMailFormSubjectLabel</button>
+  <button onclick="fillMailFormSubjectTextField()">fillMailFormSubjectTextField</button>
+  <button onclick="fillMailFormMessageLabel()">fillMailFormMessageLabel</button>
+  <button onclick="fillMailFormMessageTextField()">fillMailFormMessageTextField</button>
+  <br>
+  <button onclick="readonlyMailFormSubjectTextField()">readonlyMailFormSubjectTextField</button>
 
   <div class="form requestform" id="requestForm">
     <h4 class="contactFormInfoText2" data-wording-key="contactFormInfoText"></h4>
@@ -89,55 +103,103 @@
 
   //Set up all needed variables
   var portal = window.location.hostname
+  var infoBoxWording = fillInfoBoxWording();
   var currentLanguage = $('html').attr('lang');
+  var header = $('#HeaderID');
+  var fullMailform = $('.requestform');  //Whole Mail Form
   var introText = $('.contactFormInfoText2');
   var customerTypeDropdown = $('.request_ticket_form_id');
-  var requestReasonDropdown = $('.request_custom_fields_360014169819');
-  var infoText = $('.contactFormText');
+  var requestReasonDropdown;
+  var requestReasonTag;
+  var infoTextField = $('.contactFormText');
   var contactInfos = $('.contactFormTextNoBorder');
+  var infoTextAndContactInfos = $('.contactFormNote');
+  var infoText = $('.contactFormTextInfo');
 
-  //Whole Mail Form
-  var fullMailform = $('.requestform');
   //Mailform fields, with label and Input field
-  var mailFormOrderNumberLabel = $('.request_custom_fields_360007585419');
+  var mailFormOrderNumberOrConnectPhoneNumber;  //Order number, not on digitec Connect
+  var mailFormConnectNumber;  //Phone number, digitec Connect only
   var mailFormSubject = $('.request_subject');
   var mailFormMessage = $('.request_description');
+  var commitButton = $('input[name ="commit"]');
+  //Mailform fields, labels and input fields separated
   var mailFormAttachmentDropZone = $('#upload-dropzone');
   var mailFormAttachmentLabel = $('label[for="request-attachments"]')
-  var commitButton = $('input[name ="commit"]')
-  //Mailform fields, labels and input fields separated
-  var mailFormSubjectLabel = $('.request_subject_label');
-  var mailFormSubjectTextField = $('.request_subject');
-  var mailFormMessageLabel = $('.request_description_label');
-  var mailFormMessageTextField = $('.request_description')
-
+  var mailFormSubjectLabel = $('#request_subject_label');
+  var mailFormSubjectTextField = $('#request_subject');
+  var mailFormMessageLabel = $('#request_description_label');
+  var mailFormMessageTextField = $('#request_description');
 
   switch (portal){
     case 'helpcenter.digitec.ch':
-      var requestReasonDropdown = $('.request_custom_fields_360014169819');
-      regularHelpcenter();
+      requestReasonDropdown = $('.request_custom_fields_360014169819');
+      mailFormOrderNumber = $('.request_custom_fields_360007585419');
+      requestReasonDropdownContents = $('#request_custom_fields_360014169819');
+      infoTextAndContactInfos.insertAfter(requestReasonDropdown);
+      regularHelpcenterEntryPoint();
       break;
     case 'helpcenter.galaxus.ch':
-      var requestReasonDropdown = $('.request_custom_fields_360014169819');
-      regularHelpcenter();
+      requestReasonDropdown = $('.request_custom_fields_360014169819');
+      mailFormOrderNumber = $('.request_custom_fields_360007585419');
+      regularHelpcenterEntryPoint();
       break;
     case 'helpcenter.galaxus.de':
       requestReasonDropdown = $('.request_custom_fields_360014169819');
-      regularHelpcenter();
+      mailFormOrderNumber = $('.request_custom_fields_360007585419');
+      regularHelpcenterEntryPoint();
       break;
     case 'helpcenter.connect.digitec.ch':
       connectHelpcenter();
       break;
     default:
       requestReasonDropdown = $('.request_custom_fields_360014169819');
-      regularHelpcenter();
+      mailFormOrderNumber = $('.request_custom_fields_360007585419');
+      regularHelpcenterEntryPoint();
       break;
   }
 
-  function regularHelpcenter(){
+  fullMailform.show();
 
+  function regularHelpcenterEntryPoint(){
+    introText.show();
+    customerTypeDropdown.show();
+    requestReasonDropdown.show();
+    infoTextField.hide();
+    contactInfos.hide();
+    mailFormOrderNumber.hide();
+    mailFormSubject.hide();
+    mailFormMessage.hide();
+    mailFormAttachmentDropZone.hide();
+    mailFormAttachmentLabel.hide();
+    commitButton.hide();
+  }
+  
+  requestReasonDropdown.on('change', function(){
+    if (requestReasonDropdownContents.attr('value') != ''){
+      onDropdownChange();
+    }
+  });
+
+  function onDropdownChange(){
+    requestReasonTag = requestReasonDropdownContents.attr('value');
+    console.log(requestReasonTag);
+    infoTextField.show();
+    infoText.html(infoBoxWording[currentLanguage][requestReasonTag])
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+  //FUNCTIONS FOR TEST BUTTONS
   function showFullMailForm(){
   	fullMailform.show()
   }
@@ -150,8 +212,8 @@
     requestReasonDropdown.hide()
   }
 
-  function hideInfoText(){
-    infoText.hide();
+  function hideInfoTextField(){
+    infoTextField.hide();
   }
 
   function hideContactInfos(){
@@ -162,19 +224,63 @@
     introText.hide();
   }
 
-  function hidemailFormOrderNumber(){
+  function hideMailFormOrderNumber(){
     mailFormOrderNumber.hide()
   }
 
-  function hidemailFormSubject(){
-    mailFormSubjectLabel.hide();
+  function hideMailFormSubject(){
+    mailFormSubject.hide();
   }
 
-  function hidemailFormMessage(){
+  function hideMailFormMessage(){
     mailFormMessage.hide();
   }
 
-  function hidemailFormAttachments(){
-    mailFormAttachments.hide();
+  function hideMailFormAttachmentLabel(){
+    mailFormAttachmentLabel.hide();
+  }
+
+  function hideMailFormAttachmentDropzone(){
+    mailFormAttachmentDropZone.hide();
+  }
+
+  function hideMailFormSubjectLabel(){
+    mailFormSubjectLabel.hide();
+  }
+
+  function hideMailFormSubjectTextField(){
+    mailFormSubjectTextField.hide();
+  }
+
+  function hideMailFormMessageLabel(){
+    mailFormMessageLabel.hide();
+  }
+
+  function hideMailFormMessageTextField(){
+    mailFormMessageTextField.hide();
+  }
+
+  function fillMailFormSubjectLabel(){
+    mailFormSubjectLabel.html('aaaa');
+  }
+
+  function fillMailFormSubjectTextField(){
+    mailFormSubjectTextField.val('aaaa');
+  }
+
+  function fillMailFormMessageLabel(){
+    mailFormMessageLabel.html('aaaa');
+  }
+
+  function fillMailFormMessageTextField(){
+    mailFormMessageTextField.val('aaaa');
+  }
+
+  function readonlyMailFormSubjectTextField(){
+    mailFormSubjectTextField.prop('readonly', true);
+  }
+
+  function hideCommitButton(){
+    commitButton.hide();
   }
 </script>
