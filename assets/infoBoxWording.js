@@ -65,9 +65,15 @@ function fillInfoBoxWording(){
                   rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + helpcenterURL + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
                   break;
     }
+
+    infoBoxWording = {
+      "webform_case_shipping_status" : {
+            de : "webform_case_shipping_status"
+      }
+    }
       
     
-      
+    /*  
     infoBoxWording = {
     //DEUTSCH
       de: {
@@ -456,10 +462,10 @@ function fillInfoBoxWording(){
             }
       }
 
-      if (portal == 'helpcenter.galaxus.de'){
-      infoBoxWording['de']['outputNotWorking'] = "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales/service-cases/select-position' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "wiki/5547' target='blank'>Gewährleistungsinformationen</a> sowie in unseren <a href='" + shopURL + "Wiki/478' target='blank'>AGBs</a>."
-      }  
-       
+      //if (portal == 'helpcenter.galaxus.de'){
+      //infoBoxWording['de']['outputNotWorking'] = "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales/service-cases/select-position' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "wiki/5547' target='blank'>Gewährleistungsinformationen</a> sowie in unseren <a href='" + shopURL + "Wiki/478' target='blank'>AGBs</a>."
+      //}  
+       */
       return infoBoxWording;
       
 }
