@@ -68,7 +68,10 @@ function fillInfoBoxWording(){
 
     infoBoxWording = {
       "webform_case_shipping_status" : {
-            de : "testtext"
+            de : "testtext",
+            fr : "testfr",
+            it : "testit",
+            en : "testen"
       }
     }
       
