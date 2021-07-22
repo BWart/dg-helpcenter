@@ -67,12 +67,27 @@ function fillInfoBoxWording(){
     }
 
     infoBoxWording = {
+      //LEVEL 0: Wo ist meine Bestellung?
       "webform_case_shipping_status" : {
             de : "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas länger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.",
             fr : "Dans l'<a href='" + shopURL + "Order' target='blank'>aperçu des commandes</a> de votre compte client, vous pouvez consulter les dernières informations relatives au statut de livraison de vos produits. Vous y trouverez également le numéro de suivi de votre colis.<br><br>Malheureusement, un colis peut parfois rester plus longtemps en cours d'acheminement ou atterrir chez le voisin. Si le colis n'arrive pas, même après quelques jours, nous serons heureux d'ouvrir une enquête.",
             it : "Trovi informazioni più dettagliate sullo stato di consegna dei tuoi articoli nel tuo conto cliente alla voce <a href='" + shopURL + "Order' target='blank'>ordini</a>. Trovi, inoltre, anche il numero di tracking del tuo pacco.<br><br>Purtroppo, a volte la consegna del pacco può avere ritardi oppure essere recapitato a un indirizzo errato. Se il pacco non dovesse arrivare dopo qualche giorno, avvieremo una ricerca.",
             en : "We'll keep the delivery status updated in the <a href='" + shopURL + "Order' target='blank'>order overview</a> in your customer account. You’ll also find the tracking number of your parcel there.<br><br>Sometimes it takes a little longer for a parcel to arrive – or it may end up at your neighbour's. If it still hasn’t arrived after a few days, we’re happy to initiate an investigation."
+      },
+      "webform_case_ready_for_shipment" : {
+            de : "Erst wenn alle Produkte deiner Bestellung versandbereit sind, wird die Bestellung versendet. Soll es schneller gehen kannst du eine <a href='" + helpcenterURL + "articles" + hp1 + "-Wie-löse-ich-eine-Teillieferung-aus-' target='blank'>kostenlose Teillieferung aktivieren</a>.",
+            fr : "La commande ne sera expédiée que lorsque tous les produits de votre commande seront prêts à être envoyés. Pour accélérer ce processus, vous pouvez activer la <a href='" + helpcenterURL + "articles" + hp1 + "-Comment-activer-une-livraison-partielle-' target='blank'>livraison partielle</a>.",
+            it : "Solo quando tutti i prodotti del tuo ordine saranno pronti per essere spediti, l'ordine verrà inviato. Se vuoi che sia più veloce, puoi attivare gratuitamente la <a href='" + helpcenterURL + "articles" + hp1 + "-Come-faccio-a-richiedere-una-consegna-parziale-' target='blank'>consegna parziale</a>.",
+            en : "We don't ship the order until all your products are in the warehouse and «ready for shipment». If you need any items sooner, please <a href='" + helpcenterURL + "articles" + hp1 + "-How-do-I-arrange-partial-delivery-' target='blank'>activate partial delivery</a>."
+      },
+      "webform_case_order_status" : {
+            de : "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.",
+            fr : "Dans l'<a href='" + shopURL + "Order' target='blank'>aperçu des commandes</a> de votre compte client, vous pouvez consulter les dernières informations relatives au statut de livraison de vos produits. Vous y trouverez également le numéro de suivi de votre colis.",
+            it : "Trovi informazioni più dettagliate sullo stato di consegna dei tuoi articoli nel tuo conto cliente alla voce <a href='" + shopURL + "Order' target='blank'>ordini</a>. Trovi, inoltre, anche il numero di tracking del tuo pacco.",
+            en : "We'll keep the delivery status updated in the <a href='" + shopURL + "Order' target='blank'>order overview</a> in your customer account. You’ll also find the tracking number of your parcel there."
       }
+      //LEVEL 0: Probleme mit einer Bestellung
+
     }
       
     
