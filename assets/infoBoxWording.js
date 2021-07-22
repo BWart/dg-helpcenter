@@ -68,10 +68,10 @@ function fillInfoBoxWording(){
 
     infoBoxWording = {
       "webform_case_shipping_status" : {
-            de : "testtext",
-            fr : "testfr",
-            it : "testit",
-            en : "testen"
+            de : "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas länger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.",
+            fr : "Dans l'<a href='" + shopURL + "Order' target='blank'>aperçu des commandes</a> de votre compte client, vous pouvez consulter les dernières informations relatives au statut de livraison de vos produits. Vous y trouverez également le numéro de suivi de votre colis.<br><br>Malheureusement, un colis peut parfois rester plus longtemps en cours d'acheminement ou atterrir chez le voisin. Si le colis n'arrive pas, même après quelques jours, nous serons heureux d'ouvrir une enquête.",
+            it : "Trovi informazioni più dettagliate sullo stato di consegna dei tuoi articoli nel tuo conto cliente alla voce <a href='" + shopURL + "Order' target='blank'>ordini</a>. Trovi, inoltre, anche il numero di tracking del tuo pacco.<br><br>Purtroppo, a volte la consegna del pacco può avere ritardi oppure essere recapitato a un indirizzo errato. Se il pacco non dovesse arrivare dopo qualche giorno, avvieremo una ricerca.",
+            en : "We'll keep the delivery status updated in the <a href='" + shopURL + "Order' target='blank'>order overview</a> in your customer account. You’ll also find the tracking number of your parcel there.<br><br>Sometimes it takes a little longer for a parcel to arrive – or it may end up at your neighbour's. If it still hasn’t arrived after a few days, we’re happy to initiate an investigation."
       }
     }
       
