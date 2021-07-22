@@ -101,8 +101,6 @@
 <script>
   //The form is fully hidden initially
 
-  console.log(fillInfoBoxWording());
-
   //Set up all needed variables
   var portal = window.location.hostname
   var infoBoxWording = fillInfoBoxWording();
@@ -187,7 +185,7 @@
     requestReasonTag = requestReasonDropdownContents.attr('value');
     console.log(requestReasonTag);
     infoTextField.show();
-    infoText.html(infoBoxWording)
+    infoText.html(infoBoxWording[requestReasonTag][currentLanguage])
   }
 
 
