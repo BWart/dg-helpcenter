@@ -8,34 +8,10 @@
   <h1 class="Header" id="HeaderID" data-wording-key="headerTitle">
       <!--{{t 'submit_a_request'}}{{#if follow_up}}<span class='follow-up-hint'>{{follow_up}}</span>{{/if}}-->
   </h1>
-  <!--
-  <button onclick="showFullMailForm()">showFullMailForm</button>
-  <button onclick="hideIntroText()">hideIntroText</button>
-  <button onclick="hideInfoTextField()">hideInfoTextField</button>
-  <button onclick="hideContactInfos()">hideContactInfos</button>
-  <button onclick="hideCustomerTypeDropdown()">hideCustomerTypeDropdown</button>
-  <button onclick="hideRequestReasonDropdown()">hideRequestReasonDropdown</button>
-  <button onclick="hideMailFormOrderNumber()">hidemailFormOrderNumber</button>
-  <button onclick="hideMailFormSubject()">hidemailFormSubject</button>
-  <button onclick="hideMailFormMessage()">hidemailFormMessage</button>
-  <button onclick="hideMailFormAttachmentLabel()">hideMailFormAttachmentLabel</button>
-  <button onclick="hideMailFormAttachmentDropzone()">hideMailFormAttachmentDropzone</button>
-  <button onclick="hideCommitButton()">hideCommitButton</button>
-  <br><br>
-  <button onclick="hideMailFormSubjectLabel()">hideMailFormSubjectLabel</button>
-  <button onclick="hideMailFormSubjectTextField()">hideMailFormSubjectTextField</button>
-  <button onclick="hideMailFormMessageLabel()">hideMailFormMessageLabel</button>
-  <button onclick="hideMailFormMessageTextField()">hideMailFormMessageTextField</button>
-  <br>
-  <button onclick="fillMailFormSubjectLabel()">fillMailFormSubjectLabel</button>
-  <button onclick="fillMailFormSubjectTextField()">fillMailFormSubjectTextField</button>
-  <button onclick="fillMailFormMessageLabel()">fillMailFormMessageLabel</button>
-  <button onclick="fillMailFormMessageTextField()">fillMailFormMessageTextField</button>
-  <br>
-  <button onclick="readonlyMailFormSubjectTextField()">readonlyMailFormSubjectTextField</button>
-  -->
+
   <div class="form requestform" id="requestForm">
     <h4 class="contactFormInfoText2" data-wording-key="contactFormInfoText"></h4>
+    <a class="button-contact backButton">go back</a>
     <div class="contactFormNote">
       <div class="contactFormText">
         <h2><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></h2>
@@ -208,6 +184,8 @@
     requestReasonTag = requestReasonDropdownContents.attr('value');
     console.log(requestReasonTag);
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
+    introText.hide();
+    customerTypeDropdown.hide();
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
     if (contactFormIsShown == 0) {
       contactInfos.show();
@@ -216,6 +194,7 @@
     }
   }  
 
+  //AKTIONEN IN DEN KONTAKTINFOS
   //Aktion bei Klick auf "Schreib uns" Button
     $('.contactFormWriteUs').on("click", function () {
       showContactForm();
@@ -234,116 +213,30 @@
       mailFormMailInput.show();
       commitButton.show();
     }
-
     //Aktionen bei Klick auf "Ruf uns an"
     $('.private-number').on("click", function () {
   	  var popup = document.getElementById("phoneNumberPrivate");
   	  popup.classList.toggle("show");
     }) 
     $('.private-number2').on("click", function () {
-  	  var popup = document.getElementById("phoneNumberPrivate");
+  	  var popup = document.getElementById("phoneNumberPrivateMobile");
   	  popup.classList.toggle("show");
     }) 
     $('.business-number').on("click", function () {
   	  var popup = document.getElementById("phoneNumberBusiness");
   	  popup.classList.toggle("show");
     })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //FUNCTIONS FOR TEST BUTTONS
-  function showFullMailForm(){
-  	fullMailform.show()
-  }
-
-  function hideCustomerTypeDropdown(){
-    customerTypeDropdown.hide()
-  }
-
-  function hideRequestReasonDropdown(){
-    requestReasonDropdown.hide()
-  }
-
-  function hideInfoTextField(){
-    infoTextField.hide();
-  }
-
-  function hideContactInfos(){
-    contactInfos.hide();
-  }
-
-  function hideIntroText(){
-    introText.hide();
-  }
-
-  function hideMailFormOrderNumber(){
-    mailFormOrderNumber.hide()
-  }
-
-  function hideMailFormSubject(){
-    mailFormSubject.hide();
-  }
-
-  function hideMailFormMessage(){
-    mailFormMessage.hide();
-  }
-
-  function hideMailFormAttachmentLabel(){
-    mailFormAttachmentLabel.hide();
-  }
-
-  function hideMailFormAttachmentDropzone(){
-    mailFormAttachmentDropZone.hide();
-  }
-
-  function hideMailFormSubjectLabel(){
-    mailFormSubjectLabel.hide();
-  }
-
-  function hideMailFormSubjectTextField(){
-    mailFormSubjectTextField.hide();
-  }
-
-  function hideMailFormMessageLabel(){
-    mailFormMessageLabel.hide();
-  }
-
-  function hideMailFormMessageTextField(){
-    mailFormMessageTextField.hide();
-  }
-
-  function fillMailFormSubjectLabel(){
-    mailFormSubjectLabel.html('aaaa');
-  }
-
-  function fillMailFormSubjectTextField(){
-    mailFormSubjectTextField.val('aaaa');
-  }
-
-  function fillMailFormMessageLabel(){
-    mailFormMessageLabel.html('aaaa');
-  }
-
-  function fillMailFormMessageTextField(){
-    mailFormMessageTextField.val('aaaa');
-  }
-
-  function readonlyMailFormSubjectTextField(){
-    mailFormSubjectTextField.prop('readonly', true);
-  }
-
-  function hideCommitButton(){
-    commitButton.hide();
-  }
+    $('.business-number2').on("click", function () {
+  	  var popup = document.getElementById("phoneNumberBusinessMobile");
+  	  popup.classList.toggle("show");
+    })
+    //Aktion bei Klick auf "Chat" 
+    //TODO: CHAT INTEGRIEREN
+    $('.button-chat').on("click", function () {
+      openChat();
+    }); 
+    //Aktion bei Klick auf back Button
+    $('.backButton').on("click", function (){
+      onDropdownChange();
+    })
 </script>
