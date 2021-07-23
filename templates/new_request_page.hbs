@@ -209,7 +209,7 @@
     console.log(requestReasonTag);
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
-    if (contactFormIsShown) {
+    if (contactFormIsShown == 0) {
       contactInfos.show();
       $('.' + customerType).show();
       infoTextField.show();
@@ -218,7 +218,6 @@
 
   //Aktion bei Klick auf "Schreib uns" Button
     $('.contactFormWriteUs').on("click", function () {
-      console.log('du hesch da voll druff klickt')
       showContactForm();
     })
     function showContactForm(){
@@ -235,6 +234,12 @@
       mailFormMailInput.show();
       commitButton.show();
     }
+
+    //Aktionen bei Klick auf "Ruf uns an"
+    $('.private-number').on("click", function () {
+  	  var popup = document.getElementById("phoneNumberPrivate");
+  	  popup.classList.toggle("show");
+    }) 
 
 
 
