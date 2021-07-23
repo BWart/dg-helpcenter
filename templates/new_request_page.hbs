@@ -8,6 +8,7 @@
   <h1 class="Header" id="HeaderID" data-wording-key="headerTitle">
       <!--{{t 'submit_a_request'}}{{#if follow_up}}<span class='follow-up-hint'>{{follow_up}}</span>{{/if}}-->
   </h1>
+  <!--
   <button onclick="showFullMailForm()">showFullMailForm</button>
   <button onclick="hideIntroText()">hideIntroText</button>
   <button onclick="hideInfoTextField()">hideInfoTextField</button>
@@ -32,7 +33,7 @@
   <button onclick="fillMailFormMessageTextField()">fillMailFormMessageTextField</button>
   <br>
   <button onclick="readonlyMailFormSubjectTextField()">readonlyMailFormSubjectTextField</button>
-
+  -->
   <div class="form requestform" id="requestForm">
     <h4 class="contactFormInfoText2" data-wording-key="contactFormInfoText"></h4>
     <div class="contactFormNote">
@@ -137,6 +138,9 @@
   var mailFormMessageLabel = $('#request_description_label');
   var mailFormMessageTextField = $('#request_description');
 
+  //Variable checkers
+  var contactFormIsShown = 0;
+
   //Kundentyp setzen
   if (fullLink.includes('39231')){
     customerType = 'private-customer'
@@ -203,18 +207,22 @@
   function onDropdownChange(){
     requestReasonTag = requestReasonDropdownContents.attr('value');
     console.log(requestReasonTag);
-    infoTextField.show();
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
-    contactInfos.show();
-    $('.' + customerType).show();
+    //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
+    if (contactFormIsShown) {
+      contactInfos.show();
+      $('.' + customerType).show();
+      infoTextField.show();
+    }
   }  
 
   //Aktion bei Klick auf "Schreib uns" Button
     $('.contactFormWriteUs').on("click", function () {
       console.log('du hesch da voll druff klickt')
-      showMailForm();
+      showContactForm();
     })
-    function showMailForm(){
+    function showContactForm(){
+      contactFormIsShown = 1;
       introText.hide();
       infoTextField.hide();
       contactInfos.hide();
