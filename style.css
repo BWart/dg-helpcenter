@@ -4651,3 +4651,15 @@ html {
 .article-vote[aria-selected="true"]{
   text-decoration: none;
 }
+
+@media (min-width: 768px) {
+  .hideOver768 {
+    display : none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hideUnder767 {
+    display : none;
+  }
+}
