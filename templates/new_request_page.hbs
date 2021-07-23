@@ -11,7 +11,7 @@
 
   <div class="form requestform" id="requestForm">
     <h4 class="contactFormInfoText2" data-wording-key="contactFormInfoText"></h4>
-    <a class="button-contact backButton">go back</a>
+    <a class="button-back">go back</a>
     <div class="contactFormNote">
       <div class="contactFormText">
         <h2><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></h2>
@@ -236,7 +236,8 @@
       openChat();
     }); 
     //Aktion bei Klick auf back Button
-    $('.backButton').on("click", function (){
+    $('.button-back').on("click", function (){
+      contactFormIsShown = 0;
       onDropdownChange();
     })
 </script>

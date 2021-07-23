@@ -148,6 +148,12 @@ html {
   background-color: #444;
 }
 
+.button-back{
+  color: #000;
+  background-color: #bebebe;
+  border: 1px solid #bebebe;
+}
+
 .button-contact{
   color: #000;
   background-color: #bebebe;
