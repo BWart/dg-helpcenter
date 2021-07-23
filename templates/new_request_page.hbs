@@ -127,6 +127,7 @@
   var mailFormConnectNumber;  //Phone number, digitec Connect only
   var mailFormSubject = $('.request_subject');
   var mailFormMessage = $('.request_description');
+  var mailFormMailInput = $('.request_anonymous_requester_email');
   var commitButton = $('input[name ="commit"]');
   //Mailform fields, labels and input fields separated
   var mailFormAttachmentDropZone = $('#upload-dropzone');
@@ -138,13 +139,13 @@
 
   //Kundentyp setzen
   if (fullLink.includes('39231')){
-    customerType = 'private'
+    customerType = 'private-customer'
   }
   if (fullLink.includes('360000554760')){
-    customerType = 'business'
+    customerType = 'business-customer'
   }
   if (fullLink.includes('360002056120')){
-    customerType = 'connect'
+    customerType = 'connect-customer'
   }
 
   switch (portal){
@@ -189,6 +190,7 @@
     mailFormMessage.hide();
     mailFormAttachmentDropZone.hide();
     mailFormAttachmentLabel.hide();
+    mailFormMailInput.hide();
     commitButton.hide();
   }
   
@@ -204,8 +206,13 @@
     infoTextField.show();
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     contactInfos.show();
-    privateContact.show();
+    $('.' + customerType).show();
   }  
+
+  //Aktion bei Klick auf "Schreib uns" Button
+    $('.contactFormWriteUs').on("click", function () {
+      console.log('du hesch da voll druff klickt')
+    }
 
 
 
