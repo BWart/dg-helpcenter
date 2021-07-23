@@ -116,6 +116,10 @@
   var infoTextField = $('.contactFormNote');
   var infoText = $('.contactFormTextInfo');
 
+  //business & private Kontaktangaben
+  var privateContact = $('.private-customer');
+  var businessContact = $('.business-customer')
+
   //Mailform fields, with label and Input field
   var mailFormOrderNumberOrConnectPhoneNumber;  //Order number, not on digitec Connect
   var mailFormConnectNumber;  //Phone number, digitec Connect only
@@ -187,6 +191,7 @@
     infoTextField.show();
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     contactInfos.show();
+    
   }
 
 
