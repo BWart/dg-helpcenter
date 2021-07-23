@@ -81,10 +81,10 @@
           <td class="contactButtonTableCellLeftBottomBorder"><a class="button-contact contactFormWriteUs" data-wording-key="writeUs"></a></td>
         </tr>
         <tr>
-          <td class="contactButtonTableCellLeftTopBorder"><div class="button-contact phone-number private-number2 private-customer" data-wording-key"callUsPrivateMobile"></div><div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div></td>
+          <td class="contactButtonTableCellLeftTopBorder"><p class="font1" data-wording-key="phone"></p></td>
         </tr>
         <tr>
-          <td class="contactButtonTableCellLeftBottomBorder"><div class="button-contact phone-number private-number2 private-customer" data-wording-key="callUsPrivateMobile"></div> <div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div></td>
+          <td class="contactButtonTableCellLeftBottomBorder"><div class="button-contact phone-number private-number private-customer" data-wording-key="callUsPrivateMobile"></div> <div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusinessMobile"></div></td>
         </tr>
         <tr>
           <td class="contactButtonTableCellLeftTopBorder chatTableCell"><p class="font1 chatMobile">Chat</p><div class="recommendedChannel recommendedChatMobile" data-wording-key="recommendedChannel"></div></td>
@@ -240,6 +240,10 @@
   	  var popup = document.getElementById("phoneNumberPrivate");
   	  popup.classList.toggle("show");
     }) 
+    $('.business-number').on("click", function () {
+  	  var popup = document.getElementById("phoneNumberBusiness");
+  	  popup.classList.toggle("show");
+    })
 
 
 
