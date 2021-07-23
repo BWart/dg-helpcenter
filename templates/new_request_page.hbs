@@ -212,6 +212,20 @@
   //Aktion bei Klick auf "Schreib uns" Button
     $('.contactFormWriteUs').on("click", function () {
       console.log('du hesch da voll druff klickt')
+      showMailForm();
+    })
+    function showMailForm(){
+      introText.hide();
+      infoTextField.hide();
+      contactInfos.hide();
+      customerTypeDropdown.hide();
+      mailFormOrderNumber.show();
+      mailFormSubject.show();
+      mailFormMessage.show();
+      mailFormAttachmentDropZone.show();
+      mailFormAttachmentLabel.show();
+      mailFormMailInput.show();
+      commitButton.show();
     }
 
 
