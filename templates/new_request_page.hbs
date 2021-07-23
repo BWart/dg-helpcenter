@@ -102,8 +102,10 @@
   //The form is fully hidden initially
 
   //Set up all needed variables
-  var portal = window.location.hostname
+  var portal = window.location.hostname;
+  var fullLink = window.locaiton.href;
   var infoBoxWording = fillInfoBoxWording();
+  var customerType;  //Für Privat, business oder connect
   var currentLanguage = $('html').attr('lang');
   var header = $('#HeaderID');
   var fullMailform = $('.requestform');  //Whole Mail Form
@@ -133,6 +135,17 @@
   var mailFormSubjectTextField = $('#request_subject');
   var mailFormMessageLabel = $('#request_description_label');
   var mailFormMessageTextField = $('#request_description');
+
+  //Kundentyp setzen
+  if (fullLink.includes('39231')){
+    customerType = 'private'
+  }
+  if (fullLink.includes('360000554760')){
+    customerType = 'business'
+  }
+  if (fullLink.includes('360002056120')){
+    customerType = 'connect'
+  }
 
   switch (portal){
     case 'helpcenter.digitec.ch':
@@ -179,20 +192,20 @@
     commitButton.hide();
   }
   
+  //Aktion bei Änderung des RequestReasonDropdown
   requestReasonDropdown.on('change', function(){
     if (requestReasonDropdownContents.attr('value') != ''){
       onDropdownChange();
     }
   });
-
   function onDropdownChange(){
     requestReasonTag = requestReasonDropdownContents.attr('value');
     console.log(requestReasonTag);
     infoTextField.show();
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     contactInfos.show();
-    
-  }
+    privateContact.show();
+  }  
 
 
 

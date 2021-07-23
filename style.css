@@ -4663,3 +4663,11 @@ html {
     display : none !important;
   }
 }
+
+.private-customer {
+  display:none;
+}
+
+.business-customer {
+  display:none;
+}
