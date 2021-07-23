@@ -11,7 +11,7 @@
 
   <div class="form requestform" id="requestForm">
     <h4 class="contactFormInfoText2" data-wording-key="contactFormInfoText"></h4>
-    <a class="button-back">go back</a>
+    <a class="button-back" data-wording-key="backButtonText"></a>
     <div class="contactFormNote">
       <div class="contactFormText">
         <h2><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></h2>
@@ -188,6 +188,13 @@
     customerTypeDropdown.hide();
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
     if (contactFormIsShown == 0) {
+      mailFormOrderNumber.hide();
+      mailFormSubject.hide();
+      mailFormMessage.hide();
+      mailFormAttachmentDropZone.hide();
+      mailFormAttachmentLabel.hide();
+      mailFormMailInput.hide();
+      commitButton.hide();
       contactInfos.show();
       $('.' + customerType).show();
       infoTextField.show();

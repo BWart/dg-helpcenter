@@ -94,7 +94,8 @@ function filldynamicWording(){
         'contactFormInfoText' : 'Per Chat, Telefon oder Kontaktformular - wähle nur deine Kundengruppe und den passenden Anfragegrund.',
         'headerTitle' : 'Kontaktiere uns',
         'chatNotOnline': 'Nicht verfügbar',
-        'recommendedChannel' : 'EMPFOHLEN'
+        'recommendedChannel' : 'EMPFOHLEN',
+        'backButtonText' : 'Zurück zur Kontaktauswahl'
         },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -127,7 +128,8 @@ function filldynamicWording(){
         'contactFormInfoText' : 'Par chat, téléphone ou formulaire - choisissez simplement votre groupe de clients et le motif de la demande.',
         'headerTitle' : 'Contactez-nous',
         'chatNotOnline': 'Non disponible',
-        'recommendedChannel' : 'RECOMMANDE'
+        'recommendedChannel' : 'RECOMMANDE',
+        'backButtonText' : 'Retour à la sélection des contacts'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -160,7 +162,8 @@ function filldynamicWording(){
         'contactFormInfoText' : 'Tramite telefono, chat o modulo di contatto – seleziona il tuo gruppo di clienti e il motivo della tua richiesta.',
         'headerTitle' : 'Contattaci',
         'chatNotOnline': 'Non disponible',
-        'recommendedChannel' : 'RACCOMANDATO'
+        'recommendedChannel' : 'RACCOMANDATO',
+        'backButtonText' : 'Torna alla selezione dei contatti'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -193,7 +196,8 @@ function filldynamicWording(){
         'contactFormInfoText' : 'By phone, chat or via form - just choose your customer group and the appropriate reason for inquiry.',
         'headerTitle' : 'Contact us',
         'chatNotOnline': 'Not available',
-        'recommendedChannel' : 'RECOMMENDED'
+        'recommendedChannel' : 'RECOMMENDED',
+        'backButtonText' : 'Back to contact selection'
         }
     }
   return dynamicWording;  
