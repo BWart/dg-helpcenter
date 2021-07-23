@@ -4654,12 +4654,12 @@ html {
 
 @media (min-width: 768px) {
   .hideOver768 {
-    display : none;
+    display : none !important;
   }
 }
 
 @media (max-width: 767px) {
   .hideUnder767 {
-    display : none;
+    display : none !important;
   }
 }
