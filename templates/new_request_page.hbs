@@ -94,6 +94,7 @@
   var contactInfos = $('.contactFormTextNoBorder');
   var infoTextField = $('.contactFormNote');
   var infoText = $('.contactFormTextInfo');
+  var backButton = $('.button-back');
 
   //business & private Kontaktangaben
   var privateContact = $('.private-customer');
@@ -163,6 +164,7 @@
     introText.show();
     customerTypeDropdown.show();
     requestReasonDropdown.show();
+    backButton.hide();
     infoTextField.hide();
     contactInfos.hide();
     mailFormOrderNumber.hide();
@@ -182,12 +184,15 @@
   });
   function onDropdownChange(){
     requestReasonTag = requestReasonDropdownContents.attr('value');
-    console.log(requestReasonTag);
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
+    mailFormSubjectTextField.val($('.request_custom_fields_360014169819' + ' a.nesty-input').text());  //TODO: VALUE FÜLLEN
+    console.log($('.request_custom_fields_360014169819' + ' a.nesty-input').text())
+    console.log(requestReasonDropdown)
     introText.hide();
     customerTypeDropdown.hide();
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
     if (contactFormIsShown == 0) {
+      backButton.hide();
       mailFormOrderNumber.hide();
       mailFormSubject.hide();
       mailFormMessage.hide();
@@ -208,6 +213,7 @@
     })
     function showContactForm(){
       contactFormIsShown = 1;
+      backButton.show();
       introText.hide();
       infoTextField.hide();
       contactInfos.hide();
