@@ -119,21 +119,21 @@
   var contactFormIsShown = 0;
 
   //Kundentyp setzen
-  if (fullLink.includes('39231')){
+    if($('.request_ticket_form_id' + ' a.nesty-input').text() === 'Privatkunden' || $('.request_ticket_form_id' + ' a.nesty-input').text() === 'Private customers' || $('.request_ticket_form_id' + ' a.nesty-input').text() === 'Clients privés' || $('.request_ticket_form_id' + ' a.nesty-input').text() === 'Clienti privati'){
     customerType = 'private-customer';
     // Removes Offers for Private Customers
-  var categoryToRemove = 'webform_case_offer';
-  try {
+    var categoryToRemove = 'webform_case_offer';
+    try {
       var catJson = JSON.parse($('#request_custom_fields_360014169819').attr("data-tagger"));
       $('#request_custom_fields_360014169819').attr("data-tagger", removeCategoryFromJson(catJson, categoryToRemove));
     }
     catch (e) {
     }
   }
-  if (fullLink.includes('360000554760')){
+  if($('.request_ticket_form_id' + ' a.nesty-input').text() === 'Firmenkunden' || $('.request_ticket_form_id' + ' a.nesty-input').text() === 'Business customers' || $('.request_ticket_form_id' + ' a.nesty-input').text() === 'Clients professionnels' || $('.request_ticket_form_id' + ' a.nesty-input').text() === 'Clienti commerciali'){
     customerType = 'business-customer'
   }
-  if (fullLink.includes('360002056120')){
+  if($('.request_ticket_form_id' + ' a.nesty-input').text() === 'digitec connect'){
     customerType = 'connect-customer'
   }
 
