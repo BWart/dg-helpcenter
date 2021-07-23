@@ -185,9 +185,7 @@
   function onDropdownChange(){
     requestReasonTag = requestReasonDropdownContents.attr('value');
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
-    mailFormSubjectTextField.val($('.request_custom_fields_360014169819' + ' a.nesty-input').text());  //TODO: VALUE FÜLLEN
-    console.log($('.request_custom_fields_360014169819' + ' a.nesty-input').text())
-    console.log(requestReasonDropdown)
+    mailFormSubjectTextField.val($('.request_custom_fields_360014169819' + ' a.nesty-input').text());  //Autofill Mail Subject
     introText.hide();
     customerTypeDropdown.hide();
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
