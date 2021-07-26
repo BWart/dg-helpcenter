@@ -249,11 +249,29 @@
   function onDropdownChange(){
     requestReasonTag = requestReasonDropdownContents.attr('value');
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
+    //Update Label and Template
     if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
       mailFormMessageTextField.val(infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate'])
+    } else {
+      mailFormMessageTextField.val('')
     }
     if (infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel']){
       mailFormMessageLabel.html(infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel'])
+    } else {
+      switch currentLanguage{
+        case 'de':
+          mailFormMessageLabel.html('Beschreibung'])
+          break;
+        case 'fr':
+          mailFormMessageLabel.html('Description'])
+          break;
+        case 'it':
+          mailFormMessageLabel.html('Descrizione'])
+          break;
+        case 'en-US':
+          mailFormMessageLabel.html('Description'])
+          break;
+      }
     }
     mailFormSubjectTextField.val($('.request_custom_fields_360014169819' + ' a.nesty-input').text());  //Autofill Mail Subject
     introText.hide();
