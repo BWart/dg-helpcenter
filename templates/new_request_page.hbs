@@ -119,50 +119,17 @@
   var contactFormIsShown = 0;
 
   //intial setup
-  setCustomerType();
   setPortalDependantVariables();
+  setCustomerType();
 
-  function setCustomerType(){
-    //Kundentyp setzen
-    customerType = sessionStorage.getItem('customerType');
-    if (fullLink.includes('39231')){
-      customerType = 'private-customer';
-      sessionStorage.setItem('customerType', customerType)
-      // Removes Offers for Private Customers
-      var categoryToRemove = 'webform_case_offer';
-      try {
-        var catJson = JSON.parse($('#request_custom_fields_360014169819').attr("data-tagger"));
-        $('#request_custom_fields_360014169819').attr("data-tagger", removeCategoryFromJson(catJson, categoryToRemove));
-      }
-      catch (e) {
-      }
-    }
-    if (fullLink.includes('360000554760')){
-      customerType = 'business-customer';
-      sessionStorage.setItem('customerType', customerType)
-    }
-    if (fullLink.includes('360002056120')){
-      customerType = 'connect-customer';
-      sessionStorage.setItem('customerType', customerType)
-    }
-  }
-
-  function removeCategoryFromJson(json, categoryToRemove){  	
-    for (var i = 0; i < json.length; i++){
-      if (json[i].value == categoryToRemove){
-        json.splice(i,1);
-      }
-    }
-  return JSON.stringify(json);
-  }
-
-  setPortalDependantVariables(){
+  function setPortalDependantVariables(){
     switch (portal){
       case 'helpcenter.digitec.ch':
         requestReasonDropdown = $('.request_custom_fields_360014169819');
         mailFormOrderNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
         infoTextField.insertAfter(requestReasonDropdown);
+        mailFormMailInput.insertAfter(requestReasonDropdown);
         contactInfos.insertAfter(infoTextField);
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
@@ -176,6 +143,7 @@
         mailFormOrderNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
         infoTextField.insertAfter(requestReasonDropdown);
+        mailFormMailInput.insertAfter(requestReasonDropdown);
         contactInfos.insertAfter(infoTextField);
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
@@ -189,6 +157,7 @@
         mailFormOrderNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
         infoTextField.insertAfter(requestReasonDropdown);
+        mailFormMailInput.insertAfter(requestReasonDropdown);
         contactInfos.insertAfter(infoTextField);
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
@@ -205,6 +174,7 @@
         mailFormOrderNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
         infoTextField.insertAfter(requestReasonDropdown);
+        mailFormMailInput.insertAfter(requestReasonDropdown);
         contactInfos.insertAfter(infoTextField);
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
@@ -214,6 +184,43 @@
         fullMailform.show();
         break;
     }
+  }
+
+  function setCustomerType(){
+    //Kundentyp setzen
+    customerType = sessionStorage.getItem('customerType');
+    if (fullLink.includes('39231')){
+      customerType = 'private-customer';
+      sessionStorage.setItem('customerType', customerType)
+    }
+    if (fullLink.includes('360000554760')){
+      customerType = 'business-customer';
+      sessionStorage.setItem('customerType', customerType)
+    }
+    if (fullLink.includes('360002056120')){
+      customerType = 'connect-customer';
+      sessionStorage.setItem('customerType', customerType)
+    }
+    if (customerType == 'private-customer'){
+      // Removes Offers for Private Customers
+      var categoryToRemove = 'webform_case_offer';
+      try {
+        var catJson = JSON.parse(requestReasonDropdownContents.attr("data-tagger"));
+        requestReasonDropdownContents.attr("data-tagger", removeCategoryFromJson(catJson, categoryToRemove));
+      }
+      catch (e) {
+      }
+    }
+    isFormAttachmentRequired();
+  }
+
+  function removeCategoryFromJson(json, categoryToRemove){  	
+    for (var i = 0; i < json.length; i++){
+      if (json[i].value == categoryToRemove){
+        json.splice(i,1);
+      }
+    }
+  return JSON.stringify(json);
   }
 
   function regularHelpcenterEntryPoint(){
@@ -230,6 +237,7 @@
     mailFormAttachmentLabel.hide();
     mailFormMailInput.hide();
     commitButton.hide();
+    isFormAttachmentRequired();
   }
   
   //Aktion bei Änderung des RequestReasonDropdown
@@ -241,6 +249,12 @@
   function onDropdownChange(){
     requestReasonTag = requestReasonDropdownContents.attr('value');
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
+    if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
+      mailFormMessageLabel.html(infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate'])
+    }
+    if (infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel']){
+      mailFormMessageLabel.html(infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel'])
+    }
     mailFormSubjectTextField.val($('.request_custom_fields_360014169819' + ' a.nesty-input').text());  //Autofill Mail Subject
     introText.hide();
     customerTypeDropdown.hide();
@@ -273,7 +287,7 @@
     contactInfos.hide();
     customerTypeDropdown.hide();
     mailFormOrderNumber.show();
-    mailFormSubject.show();
+    mailFormSubject.hide();
     mailFormMessage.show();
     mailFormAttachmentDropZone.show();
     mailFormAttachmentLabel.show();
@@ -343,6 +357,11 @@
   $('.request_custom_fields_360007967480').insertAfter('#request-attachments-pool');
   var attachmentErrorElt = $('.' + attachmentCheckboxField + ' .notification-error');
 
+        //requestReasonDropdown = $('.request_custom_fields_360014169819');
+        //mailFormOrderNumber = $('.request_custom_fields_360007585419');
+        //requestReasonDropdownContents = $('#request_custom_fields_360014169819');
+        //requestReasonTag = requestReasonDropdownContents.attr('value');
+
   // Clear or select checkbox according to dropdown and attachments:
   // Set Attachment checkbox if no attachments required, or if attachments are required and at least one is uploaded, otherwise clear it
   function setFormAttachmentCheckbox() {
@@ -359,8 +378,7 @@
 
   // Return true if dropdown option 'ABCD' is selected
   function isFormAttachmentRequired() {
-	  if($(formDropdownClass + ' a.nesty-input').attr('aria-expanded') &&
-	  ($(formDropdownClass + ' a.nesty-input').text() === 'Ich habe ein äusserlich beschädigtes Produkt erhalten' || $(formDropdownClass + ' a.nesty-input').text() === "I've received an externally damaged product" || $(formDropdownClass + ' a.nesty-input').text() === "Ho ricevuto un prodotto danneggiato esternamente" || $(formDropdownClass + ' a.nesty-input').text() === "J'ai reçu un produit endommagé à l'extérieur")){
+	  if(requestReasonTag == 'webform_case_damaged_product'){
 		  errorMessageId = currentLanguage + '1';
 		  attachmentErrorNotification = setErrorMessage();
 		  attachmentErrorElt.text(attachmentErrorNotification);
