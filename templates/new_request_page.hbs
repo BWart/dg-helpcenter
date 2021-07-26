@@ -134,6 +134,7 @@
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
+          onDropdownChange();
           showContactForm();
         }
         fullMailform.show();
@@ -148,6 +149,7 @@
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
+          onDropdownChange();
           showContactForm();
         }
         fullMailform.show();
@@ -162,6 +164,7 @@
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
+          onDropdownChange();
           showContactForm();
         }
         fullMailform.show();
@@ -179,6 +182,7 @@
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
+          onDropdownChange();
           showContactForm();
         }
         fullMailform.show();
@@ -258,18 +262,18 @@
     if (infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel']){
       mailFormMessageLabel.html(infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel'])
     } else {
-      switch currentLanguage{
+      switch (currentLanguage) {
         case 'de':
-          mailFormMessageLabel.html('Beschreibung'])
+          mailFormMessageLabel.html('Beschreibung')
           break;
         case 'fr':
-          mailFormMessageLabel.html('Description'])
+          mailFormMessageLabel.html('Description')
           break;
         case 'it':
-          mailFormMessageLabel.html('Descrizione'])
+          mailFormMessageLabel.html('Descrizione')
           break;
         case 'en-US':
-          mailFormMessageLabel.html('Description'])
+          mailFormMessageLabel.html('Description')
           break;
       }
     }
