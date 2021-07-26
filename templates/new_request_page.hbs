@@ -118,82 +118,103 @@
   //Variable checkers
   var contactFormIsShown = 0;
 
-  //Kundentyp setzen
-  customerType = sessionStorage.getItem('customerType');
-  if (fullLink.includes('39231')){
-    customerType = 'private-customer';
-    sessionStorage.setItem('customerType', customerType)
-    // Removes Offers for Private Customers
-    var categoryToRemove = 'webform_case_offer';
-    try {
-      var catJson = JSON.parse($('#request_custom_fields_360014169819').attr("data-tagger"));
-      $('#request_custom_fields_360014169819').attr("data-tagger", removeCategoryFromJson(catJson, categoryToRemove));
+  //intial setup
+  setCustomerType();
+  setPortalDependantVariables();
+
+  function setCustomerType(){
+    //Kundentyp setzen
+    customerType = sessionStorage.getItem('customerType');
+    if (fullLink.includes('39231')){
+      customerType = 'private-customer';
+      sessionStorage.setItem('customerType', customerType)
+      // Removes Offers for Private Customers
+      var categoryToRemove = 'webform_case_offer';
+      try {
+        var catJson = JSON.parse($('#request_custom_fields_360014169819').attr("data-tagger"));
+        $('#request_custom_fields_360014169819').attr("data-tagger", removeCategoryFromJson(catJson, categoryToRemove));
+      }
+      catch (e) {
+      }
     }
-    catch (e) {
+    if (fullLink.includes('360000554760')){
+      customerType = 'business-customer';
+      sessionStorage.setItem('customerType', customerType)
     }
-  }
-  if (fullLink.includes('360000554760')){
-    customerType = 'business-customer';
-    sessionStorage.setItem('customerType', customerType)
-  }
-  if (fullLink.includes('360002056120')){
-    customerType = 'connect-customer';
-    sessionStorage.setItem('customerType', customerType)
+    if (fullLink.includes('360002056120')){
+      customerType = 'connect-customer';
+      sessionStorage.setItem('customerType', customerType)
+    }
   }
 
   function removeCategoryFromJson(json, categoryToRemove){  	
-  for (var i = 0; i < json.length; i++){
-    if (json[i].value == categoryToRemove){
-      json.splice(i,1);
+    for (var i = 0; i < json.length; i++){
+      if (json[i].value == categoryToRemove){
+        json.splice(i,1);
+      }
+    }
+  return JSON.stringify(json);
+  }
+
+  setPortalDependantVariables(){
+    switch (portal){
+      case 'helpcenter.digitec.ch':
+        requestReasonDropdown = $('.request_custom_fields_360014169819');
+        mailFormOrderNumber = $('.request_custom_fields_360007585419');
+        requestReasonDropdownContents = $('#request_custom_fields_360014169819');
+        infoTextField.insertAfter(requestReasonDropdown);
+        contactInfos.insertAfter(infoTextField);
+        regularHelpcenterEntryPoint();
+        var linkEnd = fullLink.slice(-8);
+        if (linkEnd == 'requests'){
+          showContactForm();
+        }
+        fullMailform.show();
+        break;
+      case 'helpcenter.galaxus.ch':
+        requestReasonDropdown = $('.request_custom_fields_360014169819');
+        mailFormOrderNumber = $('.request_custom_fields_360007585419');
+        requestReasonDropdownContents = $('#request_custom_fields_360014169819');
+        infoTextField.insertAfter(requestReasonDropdown);
+        contactInfos.insertAfter(infoTextField);
+        regularHelpcenterEntryPoint();
+        var linkEnd = fullLink.slice(-8);
+        if (linkEnd == 'requests'){
+          showContactForm();
+        }
+        fullMailform.show();
+        break;
+      case 'helpcenter.galaxus.de':
+        requestReasonDropdown = $('.request_custom_fields_360014169819');
+        mailFormOrderNumber = $('.request_custom_fields_360007585419');
+        requestReasonDropdownContents = $('#request_custom_fields_360014169819');
+        infoTextField.insertAfter(requestReasonDropdown);
+        contactInfos.insertAfter(infoTextField);
+        regularHelpcenterEntryPoint();
+        var linkEnd = fullLink.slice(-8);
+        if (linkEnd == 'requests'){
+          showContactForm();
+        }
+        fullMailform.show();
+        break;
+      case 'helpcenter.connect.digitec.ch':
+        connectHelpcenter();
+        break;
+      default:
+        requestReasonDropdown = $('.request_custom_fields_360014169819');
+        mailFormOrderNumber = $('.request_custom_fields_360007585419');
+        requestReasonDropdownContents = $('#request_custom_fields_360014169819');
+        infoTextField.insertAfter(requestReasonDropdown);
+        contactInfos.insertAfter(infoTextField);
+        regularHelpcenterEntryPoint();
+        var linkEnd = fullLink.slice(-8);
+        if (linkEnd == 'requests'){
+          showContactForm();
+        }
+        fullMailform.show();
+        break;
     }
   }
-  return JSON.stringify(json);
-}
-
-  switch (portal){
-    case 'helpcenter.digitec.ch':
-      requestReasonDropdown = $('.request_custom_fields_360014169819');
-      mailFormOrderNumber = $('.request_custom_fields_360007585419');
-      requestReasonDropdownContents = $('#request_custom_fields_360014169819');
-      infoTextField.insertAfter(requestReasonDropdown);
-      contactInfos.insertAfter(infoTextField);
-      regularHelpcenterEntryPoint();
-      var linkEnd = fullLink.slice(-8);
-      console.log(linkEnd);
-      if (linkEnd == 'requests'){
-        showContactForm();
-      }
-      break;
-    case 'helpcenter.galaxus.ch':
-      requestReasonDropdown = $('.request_custom_fields_360014169819');
-      mailFormOrderNumber = $('.request_custom_fields_360007585419');
-      requestReasonDropdownContents = $('#request_custom_fields_360014169819');
-      infoTextField.insertAfter(requestReasonDropdown);
-      contactInfos.insertAfter(infoTextField);
-      regularHelpcenterEntryPoint();
-      break;
-    case 'helpcenter.galaxus.de':
-      requestReasonDropdown = $('.request_custom_fields_360014169819');
-      mailFormOrderNumber = $('.request_custom_fields_360007585419');
-      requestReasonDropdownContents = $('#request_custom_fields_360014169819');
-      infoTextField.insertAfter(requestReasonDropdown);
-      contactInfos.insertAfter(infoTextField);
-      regularHelpcenterEntryPoint();
-      break;
-    case 'helpcenter.connect.digitec.ch':
-      connectHelpcenter();
-      break;
-    default:
-      requestReasonDropdown = $('.request_custom_fields_360014169819');
-      mailFormOrderNumber = $('.request_custom_fields_360007585419');
-      requestReasonDropdownContents = $('#request_custom_fields_360014169819');
-      infoTextField.insertAfter(requestReasonDropdown);
-      contactInfos.insertAfter(infoTextField);
-      regularHelpcenterEntryPoint();
-      break;
-  }
-
-  fullMailform.show();
 
   function regularHelpcenterEntryPoint(){
     introText.show();
@@ -241,51 +262,170 @@
 
   //AKTIONEN IN DEN KONTAKTINFOS
   //Aktion bei Klick auf "Schreib uns" Button
-    $('.contactFormWriteUs').on("click", function () {
-      showContactForm();
-    })
-    function showContactForm(){
-      contactFormIsShown = 1;
-      backButton.show();
-      introText.hide();
-      infoTextField.hide();
-      contactInfos.hide();
-      customerTypeDropdown.hide();
-      mailFormOrderNumber.show();
-      mailFormSubject.show();
-      mailFormMessage.show();
-      mailFormAttachmentDropZone.show();
-      mailFormAttachmentLabel.show();
-      mailFormMailInput.show();
-      commitButton.show();
-    }
-    //Aktionen bei Klick auf "Ruf uns an"
-    $('.private-number').on("click", function () {
-  	  var popup = document.getElementById("phoneNumberPrivate");
-  	  popup.classList.toggle("show");
-    }) 
-    $('.private-number2').on("click", function () {
-  	  var popup = document.getElementById("phoneNumberPrivateMobile");
-  	  popup.classList.toggle("show");
-    }) 
-    $('.business-number').on("click", function () {
-  	  var popup = document.getElementById("phoneNumberBusiness");
-  	  popup.classList.toggle("show");
-    })
-    $('.business-number2').on("click", function () {
-  	  var popup = document.getElementById("phoneNumberBusinessMobile");
-  	  popup.classList.toggle("show");
-    })
-    //Aktion bei Klick auf "Chat" 
-    //TODO: CHAT INTEGRIEREN
-    $('.button-chat').on("click", function () {
-      openChat();
-    }); 
-    //Aktion bei Klick auf back Button
-    $('.button-back').on("click", function (){
-      contactFormIsShown = 0;
-      onDropdownChange();
-    })
+  $('.contactFormWriteUs').on("click", function () {
+    showContactForm();
+  })
+  function showContactForm(){
+    contactFormIsShown = 1;
+    backButton.show();
+    introText.hide();
+    infoTextField.hide();
+    contactInfos.hide();
+    customerTypeDropdown.hide();
+    mailFormOrderNumber.show();
+    mailFormSubject.show();
+    mailFormMessage.show();
+    mailFormAttachmentDropZone.show();
+    mailFormAttachmentLabel.show();
+    mailFormMailInput.show();
+    commitButton.show();
+  }
+  //Aktionen bei Klick auf "Ruf uns an"
+  $('.private-number').on("click", function () {
+    var popup = document.getElementById("phoneNumberPrivate");
+    popup.classList.toggle("show");
+  }) 
+  $('.private-number2').on("click", function () {
+   var popup = document.getElementById("phoneNumberPrivateMobile");
+   popup.classList.toggle("show");
+  }) 
+  $('.business-number').on("click", function () {
+    var popup = document.getElementById("phoneNumberBusiness");
+    popup.classList.toggle("show");
+  })
+  $('.business-number2').on("click", function () {
+    var popup = document.getElementById("phoneNumberBusinessMobile");
+  	popup.classList.toggle("show");
+  })
+  //Aktion bei Klick auf "Chat" 
+  //TODO: CHAT INTEGRIEREN
+  $('.button-chat').on("click", function () {
+    openChat();
+  }); 
+  //Aktion bei Klick auf back Button
+  $('.button-back').on("click", function (){
+    contactFormIsShown = 0;
+    onDropdownChange();
+  })
 
+
+
+    
+  // TICKET FORM ATTACHMENT CHANGES
+  
+  // Function to start observing node for mutations
+  var startObserveMutations = function (nodeSelector, options, callbackFunction) {
+    var node = document.querySelector(nodeSelector);
+    if (node) {
+      var observer = new MutationObserver(callbackFunction);
+      observer.observe(node, options);
+      return observer;
+    }
+  };
+  
+  // Callback function to execute when mutations in form attachments or dropdown are observed:
+  // clear or select Attachment checkbox according to dropdown
+  var mutationObservedForm = function (mutationsList) {
+	  mutationsList.forEach(function (mutation) {
+		  if (mutation.type == 'childList') {
+			  setFormAttachmentCheckbox();
+			  }
+	  });
+  };
+
+  // Define some variables for requiring form attachments
+  var errorMessageId = "";
+  var attachmentCheckboxField = 'request_custom_fields_360007967480';
+  var attachmentCheckboxId = '#' + attachmentCheckboxField;
+  var attachmentErrorNotification = setErrorMessage();
+  var formDropdownClass = '.request_custom_fields_360014169819';
+  var formObserveMutationOptions = { childList: true, subtree: true };
+  $('.request_custom_fields_360007967480').insertAfter('#request-attachments-pool');
+  var attachmentErrorElt = $('.' + attachmentCheckboxField + ' .notification-error');
+
+  // Clear or select checkbox according to dropdown and attachments:
+  // Set Attachment checkbox if no attachments required, or if attachments are required and at least one is uploaded, otherwise clear it
+  function setFormAttachmentCheckbox() {
+	  if (isFormAttachmentRequired()) {
+		  if ($('#request-attachments-pool .upload-item').length) {
+			  selectCheckbox(attachmentCheckboxId);
+		  }else {
+			  clearCheckbox(attachmentCheckboxId);
+		  }
+	  }else {
+		  selectCheckbox(attachmentCheckboxId);
+	  }
+  }
+
+  // Return true if dropdown option 'ABCD' is selected
+  function isFormAttachmentRequired() {
+	  if($(formDropdownClass + ' a.nesty-input').attr('aria-expanded') &&
+	  ($(formDropdownClass + ' a.nesty-input').text() === 'Ich habe ein äusserlich beschädigtes Produkt erhalten' || $(formDropdownClass + ' a.nesty-input').text() === "I've received an externally damaged product" || $(formDropdownClass + ' a.nesty-input').text() === "Ho ricevuto un prodotto danneggiato esternamente" || $(formDropdownClass + ' a.nesty-input').text() === "J'ai reçu un produit endommagé à l'extérieur")){
+		  errorMessageId = currentLanguage + '1';
+		  attachmentErrorNotification = setErrorMessage();
+		  attachmentErrorElt.text(attachmentErrorNotification);
+		  return true;
+	  }
+	  if($(formDropdownClass + ' a.nesty-input').attr('aria-expanded') &&
+	  ($(formDropdownClass + ' a.nesty-input').text() === 'Ich habe ein falsches Produkt erhalten' || $(formDropdownClass + ' a.nesty-input').text() === "I’ve received the wrong product" || $(formDropdownClass + ' a.nesty-input').text() === "Ho ricevuto un prodotto sbagliato" || $(formDropdownClass + ' a.nesty-input').text() === "J'ai reçu le mauvais produit")){
+		  errorMessageId = currentLanguage + '2';
+		  attachmentErrorNotification = setErrorMessage();
+		  attachmentErrorElt.text(attachmentErrorNotification);
+		  return true;
+	  }
+	  return false;
+  }
+
+  // Select checkbox
+  function selectCheckbox(eltselector) {
+	  $(eltselector).prop('checked', true);
+  }
+
+  // Clear checkbox
+  function clearCheckbox(eltselector) {
+	  $(eltselector).prop('checked', false);
+  }
+                                                                                              
+  // If attachment checkbox field exists, select it,
+  // and watch for changes to attachments and dropdown
+  if ($(attachmentCheckboxId).length) {
+	  selectCheckbox(attachmentCheckboxId);
+	  startObserveMutations('#request-attachments-pool', formObserveMutationOptions, mutationObservedForm);
+	  startObserveMutations(formDropdownClass, formObserveMutationOptions, mutationObservedForm);
+  }
+
+  // Adjust attachment error notification
+  if (true) {
+	  attachmentErrorNotification = setErrorMessage();
+	  attachmentErrorElt.text(attachmentErrorNotification);
+  }
+  
+  function setErrorMessage() {
+ 	  switch(errorMessageId) {
+  	  case 'de1':
+    	  return 'Um dein Anliegen schnellstmöglich zu lösen, ist ein Foto des Schadens erforderlich. Bitte füge deshalb eine entsprechende Datei hinzu.';
+  	  case 'fr1':
+    	  return 'Afin de résoudre votre demande le plus rapidement possible, une photo des dommages est nécessaire. Veuillez donc ajouter un fichier correspondant.';
+  	  case 'it1':
+    	  return 'Per risolvere la vostra richiesta nel più breve tempo possibile, è necessaria una foto del danno. Pertanto si prega di aggiungere un file corrispondente.';
+  	  case 'en-US1':
+    	  return 'In order to solve your request as quickly as possible, a photo of the damage is required. Therefore please add a corresponding file.';
+		  case 'de2':
+			  return 'Um dein Anliegen schnellstmöglich zu lösen, benötigen wir ein Foto des falsch erhaltenen Produkts. Bitte füge deshalb eine entsprechende Datei hinzu.';
+		  case 'fr2':
+			  return "Afin de résoudre votre problème le plus rapidement possible, nous avons besoin d'une photo du produit mal reçu. Veuillez donc joindre un fichier approprié.";
+		  case 'it2':
+			  return 'Al fine di risolvere il suo problema il più rapidamente possibile, abbiamo bisogno di una foto del prodotto ricevuto in modo errato. Pertanto, si prega di allegare un file appropriato.';
+		  case 'en-US2':
+			  return 'In order to resolve your issue as soon as possible, we need a photo of the incorrectly received product. Therefore, please attach an appropriate file.';
+  	  default:
+        return 'Um dein Anliegen möglichst effizient bearbeiten zu können, benötigen wir ein Foto des betroffenen Produktes. Bitte füge deshalb eine entsprechende Datei hinzu.';
+	  }
+  }
+
+  setFormAttachmentCheckbox();
+  clearCheckbox(attachmentCheckboxId);
+
+  setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
 </script>
