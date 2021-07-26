@@ -118,6 +118,11 @@
   //Variable checkers
   var contactFormIsShown = 0;
 
+  //List of tags to hide OrderNumber Input Field
+  var reasonsForNoOrderNumber = ["webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer",
+  "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy", "webform_case_delete_account", "webform_case_cant_login",
+  "webform_case_offer", "webform_case_no_bill"]
+
   //intial setup
   setPortalDependantVariables();
   setCustomerType();
@@ -294,6 +299,12 @@
       $('.' + customerType).show();
       infoTextField.show();
     }
+    //OrderNumber Feld verstecken wenn nicht benötigt
+    if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
+      mailFormOrderNumber.hide()
+    } else {
+      if (contactFormIsShown == 1) { mailFormOrderNumber.show() }
+    }
   }  
 
   //AKTIONEN IN DEN KONTAKTINFOS
@@ -315,6 +326,12 @@
     mailFormAttachmentLabel.show();
     mailFormMailInput.show();
     commitButton.show();
+    //OrderNumber Feld verstecken wenn nicht benötigt
+    if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
+      mailFormOrderNumber.hide();
+    } else {
+      mailFormOrderNumber.show();
+    }
   }
   //Aktionen bei Klick auf "Ruf uns an"
   $('.private-number').on("click", function () {
