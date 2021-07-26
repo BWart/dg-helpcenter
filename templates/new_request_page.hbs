@@ -400,14 +400,15 @@
 
   // Return true if dropdown option 'ABCD' is selected
   function isFormAttachmentRequired() {
-	  if(requestReasonTag == 'webform_case_damaged_product'){
+	  if($(formDropdownClass + ' a.nesty-input').attr('aria-expanded') && 
+    (requestReasonTag == 'webform_case_damaged_product')){
 		  errorMessageId = currentLanguage + '1';
 		  attachmentErrorNotification = setErrorMessage();
 		  attachmentErrorElt.text(attachmentErrorNotification);
 		  return true;
 	  }
 	  if($(formDropdownClass + ' a.nesty-input').attr('aria-expanded') &&
-	  ($(formDropdownClass + ' a.nesty-input').text() === 'Ich habe ein falsches Produkt erhalten' || $(formDropdownClass + ' a.nesty-input').text() === "I’ve received the wrong product" || $(formDropdownClass + ' a.nesty-input').text() === "Ho ricevuto un prodotto sbagliato" || $(formDropdownClass + ' a.nesty-input').text() === "J'ai reçu le mauvais produit")){
+	  (requestReasonTag == 'webform_case_wrong_product')){
 		  errorMessageId = currentLanguage + '2';
 		  attachmentErrorNotification = setErrorMessage();
 		  attachmentErrorElt.text(attachmentErrorNotification);
