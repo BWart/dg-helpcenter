@@ -158,15 +158,26 @@
       infoTextField.insertAfter(requestReasonDropdown);
       contactInfos.insertAfter(infoTextField);
       regularHelpcenterEntryPoint();
+      var linkEnd = fullLink.slice(-7);
+      console.log(linkEnd);
+      if (linkEnd == 'requests'){
+        showContactForm();
+      }
       break;
     case 'helpcenter.galaxus.ch':
       requestReasonDropdown = $('.request_custom_fields_360014169819');
       mailFormOrderNumber = $('.request_custom_fields_360007585419');
+      requestReasonDropdownContents = $('#request_custom_fields_360014169819');
+      infoTextField.insertAfter(requestReasonDropdown);
+      contactInfos.insertAfter(infoTextField);
       regularHelpcenterEntryPoint();
       break;
     case 'helpcenter.galaxus.de':
       requestReasonDropdown = $('.request_custom_fields_360014169819');
       mailFormOrderNumber = $('.request_custom_fields_360007585419');
+      requestReasonDropdownContents = $('#request_custom_fields_360014169819');
+      infoTextField.insertAfter(requestReasonDropdown);
+      contactInfos.insertAfter(infoTextField);
       regularHelpcenterEntryPoint();
       break;
     case 'helpcenter.connect.digitec.ch':
@@ -175,6 +186,9 @@
     default:
       requestReasonDropdown = $('.request_custom_fields_360014169819');
       mailFormOrderNumber = $('.request_custom_fields_360007585419');
+      requestReasonDropdownContents = $('#request_custom_fields_360014169819');
+      infoTextField.insertAfter(requestReasonDropdown);
+      contactInfos.insertAfter(infoTextField);
       regularHelpcenterEntryPoint();
       break;
   }
@@ -272,4 +286,6 @@
       contactFormIsShown = 0;
       onDropdownChange();
     })
+
+
 </script>
