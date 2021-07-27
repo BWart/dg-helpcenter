@@ -53,11 +53,12 @@ function filldynamicWording(){
 
               telPrivatkunde = "+41445759700";
               telPrivatkundeText = "+41 44 575 97 00";
+              break;
       default:
-              uhrzeitPrivatkunde = "09:00 - 18:00";
-              uhrzeitPrivatkundeMobile = "09:00 - 18:00";
-              uhrzeitFirmenkunde = "09:00 - 12:00<br>13:30 - 17:00";
-              uhrzeitFirmenkundeMobile = "09:00 - 12:00, 13:30 - 17:00";
+              uhrzeitPrivatkunde = "08:00 - 20:00";
+              uhrzeitPrivatkundeMobile = "08:00 - 20:00";
+              uhrzeitFirmenkunde = "08:00 - 20:00";
+              uhrzeitFirmenkundeMobile = "08:00 - 20:00";
 
               telPrivatkunde = "+41445759500";
               telPrivatkundeText = "+41 44 575 95 00";
