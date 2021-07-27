@@ -180,11 +180,20 @@
         fullMailform.show();
         break;
       case 'helpcenter.connect.digitec.ch':
+        introText.html(dynamicWording[currentLanguage]['contactFormInfoTextConnect']);
         requestReasonDropdown = $('.request_custom_fields_360021132800');
         requestReasonDropdownNesty = $('.request_custom_fields_360021132800' + ' a.nesty-input');
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360021132820');
-        requestReasonDropdownContents = $('#request_custom_fields_360021132820');
+        requestReasonDropdownContents = $('#request_custom_fields_360021132800');
+        infoTextField.insertAfter(requestReasonDropdown);
+        mailFormMailInput.insertAfter(requestReasonDropdown);
+        contactInfos.insertAfter(infoTextField);
         connectHelpcenterEntryPoint();
+        var linkEnd = fullLink.slice(-8);
+        if (linkEnd == 'requests'){
+          onDropdownChangeConnect();
+          showContactForm();
+        }
         fullMailform.show();
         break;
       default:
@@ -261,13 +270,30 @@
   }
 
   function connectHelpcenterEntryPoint(){
-    console.log('asdf')
+    introText.show();
+    customerTypeDropdown.hide();
+    requestReasonDropdown.show();
+    backButton.hide();
+    infoTextField.hide();
+    contactInfos.hide();
+    mailFormOrderNumberOrPhoneNumber.hide();
+    mailFormSubject.hide();
+    mailFormMessage.hide();
+    mailFormAttachmentDropZone.hide();
+    mailFormAttachmentLabel.hide();
+    mailFormMailInput.hide();
+    commitButton.hide();
+    isFormAttachmentRequired();
   }
   
   //Aktion bei Änderung des RequestReasonDropdown
   requestReasonDropdown.on('change', function(){
     if (requestReasonDropdownContents.attr('value') != ''){
-      onDropdownChange();
+      if (customerType == 'connect-customer'){
+        onDropdownChangeConnect();
+      } else {
+        onDropdownChange();
+      }
     }
   });
   function onDropdownChange(){
@@ -320,7 +346,61 @@
     } else {
       if (contactFormIsShown == 1) { mailFormOrderNumberOrPhoneNumber.show() }
     }
+  } 
+
+  function onDropdownChangeConnect(){
+    requestReasonTag = requestReasonDropdownContents.attr('value');
+    infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
+    //Update Label and Template
+    if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
+      mailFormMessageTextField.val(infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate'])
+    } else {
+      mailFormMessageTextField.val('')
+    }
+    if (infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel']){
+      mailFormMessageLabel.html(infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel'])
+    } else {
+      switch (currentLanguage) {
+        case 'de':
+          mailFormMessageLabel.html('Beschreibung')
+          break;
+        case 'fr':
+          mailFormMessageLabel.html('Description')
+          break;
+        case 'it':
+          mailFormMessageLabel.html('Descrizione')
+          break;
+        case 'en-US':
+          mailFormMessageLabel.html('Description')
+          break;
+      }
+    }
+    mailFormSubjectTextField.val(requestReasonDropdownNesty.text());  //Autofill Mail Subject
+    introText.hide();
+    customerTypeDropdown.hide();
+    //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
+    if (contactFormIsShown == 0) {
+      backButton.hide();
+      mailFormOrderNumberOrPhoneNumber.hide();
+      mailFormSubject.hide();
+      mailFormMessage.hide();
+      mailFormAttachmentDropZone.hide();
+      mailFormAttachmentLabel.hide();
+      mailFormMailInput.hide();
+      commitButton.hide();
+      contactInfos.show();
+      $('.' + customerType).show();
+      infoTextField.hide();
+    }
+    //OrderNumber Feld verstecken wenn nicht benötigt
+    if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
+      mailFormOrderNumberOrPhoneNumber.hide()
+    } else {
+      if (contactFormIsShown == 1) { mailFormOrderNumberOrPhoneNumber.show() }
+    }
   }  
+
+  
 
   //AKTIONEN IN DEN KONTAKTINFOS
   //Aktion bei Klick auf "Schreib uns" Button
