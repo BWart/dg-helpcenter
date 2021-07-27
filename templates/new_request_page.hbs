@@ -365,7 +365,6 @@
 
     
   // TICKET FORM ATTACHMENT CHANGES
-  
   // Function to start observing node for mutations
   var startObserveMutations = function (nodeSelector, options, callbackFunction) {
     var node = document.querySelector(nodeSelector);
@@ -395,11 +394,6 @@
   var formObserveMutationOptions = { childList: true, subtree: true };
   $('.request_custom_fields_360007967480').insertAfter('#request-attachments-pool');
   var attachmentErrorElt = $('.' + attachmentCheckboxField + ' .notification-error');
-
-        //requestReasonDropdown = $('.request_custom_fields_360014169819');
-        //mailFormOrderNumber = $('.request_custom_fields_360007585419');
-        //requestReasonDropdownContents = $('#request_custom_fields_360014169819');
-        //requestReasonTag = requestReasonDropdownContents.attr('value');
 
   // Clear or select checkbox according to dropdown and attachments:
   // Set Attachment checkbox if no attachments required, or if attachments are required and at least one is uploaded, otherwise clear it
@@ -459,31 +453,76 @@
   }
   
   function setErrorMessage() {
- 	  switch(errorMessageId) {
-  	  case 'de1':
-    	  return 'Um dein Anliegen schnellstmöglich zu lösen, ist ein Foto des Schadens erforderlich. Bitte füge deshalb eine entsprechende Datei hinzu.';
-  	  case 'fr1':
-    	  return 'Afin de résoudre votre demande le plus rapidement possible, une photo des dommages est nécessaire. Veuillez donc ajouter un fichier correspondant.';
-  	  case 'it1':
-    	  return 'Per risolvere la vostra richiesta nel più breve tempo possibile, è necessaria una foto del danno. Pertanto si prega di aggiungere un file corrispondente.';
-  	  case 'en-US1':
-    	  return 'In order to solve your request as quickly as possible, a photo of the damage is required. Therefore please add a corresponding file.';
-		  case 'de2':
-			  return 'Um dein Anliegen schnellstmöglich zu lösen, benötigen wir ein Foto des falsch erhaltenen Produkts. Bitte füge deshalb eine entsprechende Datei hinzu.';
-		  case 'fr2':
-			  return "Afin de résoudre votre problème le plus rapidement possible, nous avons besoin d'une photo du produit mal reçu. Veuillez donc joindre un fichier approprié.";
-		  case 'it2':
-			  return 'Al fine di risolvere il suo problema il più rapidamente possibile, abbiamo bisogno di una foto del prodotto ricevuto in modo errato. Pertanto, si prega di allegare un file appropriato.';
-		  case 'en-US2':
-			  return 'In order to resolve your issue as soon as possible, we need a photo of the incorrectly received product. Therefore, please attach an appropriate file.';
-  	  default:
-        return 'Um dein Anliegen möglichst effizient bearbeiten zu können, benötigen wir ein Foto des betroffenen Produktes. Bitte füge deshalb eine entsprechende Datei hinzu.';
-	  }
+  	return infoBoxWording["attachment-errors"][errorMessageId]
   }
 
   setFormAttachmentCheckbox();
   clearCheckbox(attachmentCheckboxId);
 
   setTimeout(function() { setFormAttachmentCheckbox() }, 500);
+
+
+
+
+  //////////////////////////Downvote-button Formular////////////////////////////
+
+  var referrer = '';
+  if (sessionStorage.getItem("referrer")) {
+    referrer = sessionStorage.getItem("referrer");
+  }
+
+  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback') != 0 && sessionStorage.getItem('Feedback') != null || $('#request_description').val() == '' && sessionStorage.getItem('Feedback') != null) { 
+      header.html(infoBoxWording['outputFeedbackHeader'][currentLanguage] + infoBoxWording['outputFeedbackBeschreibung'][currentLanguage]);
+      introText.hide(); //Unterueberschrift
+      $('.form-field:not(.request_ticket_form_id)').show(); // SchreibUns-Feld-Form mit beschreibung, grund usw
+      requestReasonDropdownContents.val('webform_case_other_request_order'); //Grund der Anfrage setzen////
+      requestReasonDropdown.hide(); // Grund der Anfrage verstecken
+
+      $('.form-field.select.optional.request_ticket_form_id').hide(); //Kundengruppe Option
+      mailFormOrderNumber.hide(); // Auftragsnummer Feld
+
+      mailFormAttachmentLabel.hide(); //Anhang Drop Ueberschrift
+      mailFormAttachmentDropZone.hide(); //Anhang Drop 
+      commitButton.show(); // Einreiche Button anzeigen
+      mailFormSubjectTextField.text('Feedback Helpcenter');
+
+      var betreffTitel = sessionStorage.getItem('articleHeader');
+
+      $('input[name="request[subject]"]').val('Feedback'+betreffTitel); //Betreff gesetzt ////
+      $('input[name="request[subject]"]').prop("readonly",true); //Betreff nur lesbar nicht aenderbar ////
+      $('input[name="request[subject]"]').hide(); // Betreff Feld
+      mailFormSubjectLabel.hide();         // Betreff Betreff
+      
+
+      $('input[name="request[anonymous_requester_email]"]').val('feedback.helpcenter@digitecgalaxus.ch');//Mail setzen////
+      $('input[name="request[anonymous_requester_email]"]').hide(); //Mail Feld
+      $('label[for="request_anonymous_requester_email"]').hide();   // Mail Betreff
+
+      $('.request-form footer').css('margin-top', '0px')
+  		$('.request-form footer').css('padding-top', '0px')
+  
+  		$('.request-form footer').prepend(infoBoxWording['feedbackThanks'][currentLanguage]);
+
+      //Feedback Formular Label und Freitextfeld Template Text setzen
+  		updateDescriptionAndLabel(infoBoxWording['outputFeedbackTextFieldTemplate'][currentLanguage], infoBoxWording['outputFeedbackLabelPart1'][currentLanguage] + betreffTitel)
+
+   }
+  else{
+      sessionStorage.removeItem('Feedback');
+  }
+
+  ////////////////////CHAT entfernen bei Galaxus DE///////////////////////////
+
+  switch(portal2){
+      case'helpcenter.digitec.ch':
+             break;
+      case'helpcenter.galaxus.ch':
+              break;
+      case'helpcenter.galaxus.de':
+             	$('.chatTableCell').hide();
+              break;
+      default:
+              break;
+    }
 
 </script>

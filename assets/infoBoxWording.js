@@ -265,6 +265,62 @@ function fillInfoBoxWording(){
             'fr' : "Remarque : pour une offre, le volume de la commande doit être d'au moins " + offerte + ". Les prix indiqués dans notre boutique s'appliquent.",
             'it' : "Attenzione: per un'offerta, il volume dell'ordine deve essere di almeno " + offerte + ". Si applicano i prezzi indicati nel nostro negozio.",
             'en-US' : "Please note: For a quotation, the minimum order volume must be " + offerte + ". The prices quoted in our store apply."
+      },
+
+      //Error-Meldungen für Attachment
+      "attachment-errors" : {
+            'de1' : 'Um dein Anliegen schnellstmöglich zu lösen, ist ein Foto des Schadens erforderlich. Bitte füge deshalb eine entsprechende Datei hinzu.',
+            'fr1' : 'Afin de résoudre votre demande le plus rapidement possible, une photo des dommages est nécessaire. Veuillez donc ajouter un fichier correspondant.',
+            'it1' : 'Per risolvere la vostra richiesta nel più breve tempo possibile, è necessaria una foto del danno. Pertanto si prega di aggiungere un file corrispondente.',
+            'en-US1' : 'In order to solve your request as quickly as possible, a photo of the damage is required. Therefore please add a corresponding file.',
+            'de2' : 'Um dein Anliegen schnellstmöglich zu lösen, benötigen wir ein Foto des falsch erhaltenen Produkts. Bitte füge deshalb eine entsprechende Datei hinzu.',
+            'fr2' : "Afin de résoudre votre problème le plus rapidement possible, nous avons besoin d'une photo du produit mal reçu. Veuillez donc joindre un fichier approprié.",
+            'it2' : 'Al fine di risolvere il suo problema il più rapidamente possibile, abbiamo bisogno di una foto del prodotto ricevuto in modo errato. Pertanto, si prega di allegare un file appropriato.',
+            'en-US2' : 'In order to resolve your issue as soon as possible, we need a photo of the incorrectly received product. Therefore, please attach an appropriate file.'
+      },
+
+      //Feedback Formular Texte
+      "outputFeedbackButtonText" : {
+            'de' : "<br>Hast du Verbesserungsvorschläge für den Beitrag?<br><br>",
+            'fr' : "<br>Avez-vous des suggestions pour améliorer le poste ?<br><br>",
+            'it' : "<br>Hai qualche suggerimento per migliorare il post?<br><br>",
+            'en-US' : "<br>Do you have any suggestions for improving the post?<br><br>"
+      },
+      "outputFeedbackHeader" : {
+            'de' : "Feedbackformular",
+            'fr' : "Formulaire de commentaires",
+            'it' : "Modulo di feedback",
+            'en-US' : "Feedback form" 
+      },
+      "outputFeedbackBeschreibung" : {
+            'de' : "<br><div id = 'FeedbackText' class = 'contactFormText'><h2>Hinweis</h2>Bitte verwende das Formular lediglich für Verbesserungsvorschläge zu unseren Beiträgen.<br>Leider können wir nicht auf dein Feedback antworten. Für deine Kundenanfragen kannst du gerne das <a href='/hc/requests/new'>Kontaktformular</a> verwenden.</div>",
+            'fr' : "<br><div id = 'FeedbackText' class = 'contactFormText'><h2>Note</h2>Veuillez utiliser le formulaire uniquement pour suggérer des améliorations à nos articles.<br>Malheureusement, nous ne pouvons pas répondre à vos commentaires. Pour les demandes de vos clients, vous pouvez utiliser le <a href='/requests/new'>formulaire de contact</a>.</div>",
+            'it' : "<br><div id = 'FeedbackText' class = 'contactFormText'><h2>Nota</h2>Si prega di utilizzare il modulo solo per suggerire miglioramenti ai nostri post.<br>Purtroppo, non possiamo rispondere al tuo feedback. Per le richieste dei tuoi clienti puoi usare il <a href='/requests/new'>formulario di contatto</a>.</div>",
+            'en-US' : "<br><div id = 'FeedbackText' class = 'contactFormText'><h2>Note</h2>Please use the form only to suggest improvements to our posts.<br>Unfortunately, we cannot respond to your feedback. For your customer inquiries, feel free to use the <a href='/requests/new'>contact form</a>.</div>", 
+      },
+      "outputFeedbackLabelPart1" : {
+            'de' : "Feedback zu Helpcenter Beitrag: ",
+            'fr' : "Feed-back sur le post du Helpcenter : ",
+            'it' : "Feedback sul post dell'Helpcenter: ",
+            'en-US' : "Feedback to Helpcenter post: " 
+      },
+      "outputFeedbackLabelPart2" : {
+            'de' : "<br><b>Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!</b>",
+            'fr' : "<br><b>Attention : Nous ne répondons pas aux demandes des clients via le formulaire de feed-back !</b>",
+            'it' : "<br><b>Attenzione: non rispondiamo alle richieste dei clienti tramite il modulo di feedback!</b>",
+            'en-US' : "<br><b>Attention: Customer inquiries via the feedback form will not be answered!</b>" 
+      },
+      "outputFeedbackTextFieldTemplate" : {
+            'de' : "",
+            'fr' : "",
+            'it' : "",
+            'en-US' : "" 
+      },
+      "feedbackThanks" : {
+            'de' : "<h4>Vielen Dank für dein Feedback!</h4>",
+            'fr' : "<h4>Merci pour vos commentaires !</h4>",
+            'it' : "<h4>Grazie per il tuo feedback!</h4>",
+            'en-US' : "<h4>Thank you for your feedback!</h4>"
       }
     }
 
