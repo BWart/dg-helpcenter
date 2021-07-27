@@ -10,7 +10,7 @@
   </h1>
 
   <div class="form requestform" id="requestForm">
-    <h4 class="contactFormInfoText2" data-wording-key="contactFormInfoText"></h4>
+    <h4 class="contactFormInfoTextClass" data-wording-key="contactFormInfoText"></h4>
     <a class="button-back" data-wording-key="backButtonText"></a>
     <div class="contactFormNote">
       <div class="contactFormText">
@@ -86,7 +86,7 @@
   var currentLanguage = $('html').attr('lang');
   var header = $('#HeaderID');
   var fullMailform = $('.requestform');  //Whole Mail Form
-  var introText = $('.contactFormInfoText2');
+  var introText = $('.contactFormInfoTextClass');
   var customerTypeDropdown = $('.request_ticket_form_id');
   var requestReasonDropdown;
   var requestReasonTag;
@@ -513,7 +513,7 @@
 
   ////////////////////CHAT entfernen bei Galaxus DE///////////////////////////
 
-  switch(portal2){
+  switch(portal){
       case'helpcenter.digitec.ch':
              break;
       case'helpcenter.galaxus.ch':

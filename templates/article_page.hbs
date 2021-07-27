@@ -226,35 +226,9 @@
 <script>
   
   //Get the Infobox Content based on Rule
-  var portal1 = window.location.hostname;
-  var portal2 = window.location.hostname;
+  var portal = window.location.hostname;
 
-  //URL test
-
-  if (window.location.hostname.indexOf("digitec.ch") >= 0) {
-    portal1 = 'digitec.ch';
-  }
-  else if (window.location.hostname.indexOf("galaxus.ch") >= 0) {
-    portal1 = 'galaxus.ch';
-  }
-  else{
-    portal1 = 'galaxus.de';
-  }
-
-
-  //Helpcenter URL test
-
-  if (window.location.hostname.indexOf("helpcenter.digitec.ch") >= 0) {
-    portal2 = 'helpcenter.digitec.ch';
-  }
-  else if (window.location.hostname.indexOf("helpcenter.galaxus.ch") >= 0) {
-    portal2 = 'helpcenter.galaxus.ch';
-  }
-  else{
-    portal2 = 'helpcenter.galaxus.de';
-  }
-
-  var infoBoxWording = fillInfoBoxWording(portal1, portal2);
+  var infoBoxWording = fillInfoBoxWording(portal);
   var currentLanguage = $('html').attr('lang');
 
 
@@ -273,7 +247,7 @@
 
   $('.article-vote-down').on('click',function(){
         $('#downvoteButton').show();
-        document.getElementById('downvoteText').innerHTML = infoBoxWording[currentLanguage]['outputFeedbackButtonText'];
+        document.getElementById('downvoteText').innerHTML = infoBoxWording['outputFeedbackButtonText'][currentLanguage];
         document.getElementById('downvoteButton').innerHTML = '<button id="downvoteButton" class="button">Feedback</button>';
   });
 
