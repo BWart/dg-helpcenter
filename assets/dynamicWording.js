@@ -22,7 +22,8 @@ function filldynamicWording(){
               telPrivatkunde = "+41445759500";
               telPrivatkundeText = "+41 44 575 95 00";
               telFirmenkunde = "+41445759600";
-              telFirmenkundeText = "+41 44 575 96 00";              
+              telFirmenkundeText = "+41 44 575 96 00";    
+
               break;
       case'helpcenter.galaxus.ch':
               uhrzeitPrivatkunde = "08:00 - 20:00";
@@ -46,6 +47,12 @@ function filldynamicWording(){
               telFirmenkunde = "+4940334614748";
               telFirmenkundeText = "+49 (0)40 334 614 748";                    
               break;
+      case'helpcenter.connect.digitec.ch':
+              uhrzeitPrivatkunde = "08:00 - 20:00";
+              uhrzeitPrivatkundeeMobile = "08:00 - 20:00";
+
+              telPrivatkunde = "+41445759700";
+              telPrivatkundeText = "+41 44 575 97 00";
       default:
               uhrzeitPrivatkunde = "09:00 - 18:00";
               uhrzeitPrivatkundeMobile = "09:00 - 18:00";
@@ -206,6 +213,10 @@ function filldynamicWording(){
         dynamicWording['fr']['contactFormInfoText'] = 'Par chat, téléphone ou formulaire de contact - choisissez simplement le motif de votre demande.'
         dynamicWording['it']['contactFormInfoText'] = 'Per chat, telefono o modulo di contatto - basta scegliere il motivo appropriato per la sua richiesta.'
         dynamicWording['en-US']['contactFormInfoText'] = 'By chat, phone or contact form - just choose the appropriate reason for your inquiry.'
+        dynamicWording['de']['questionNotAnswered'] = 'Wähle deinen Kontaktkanal',
+        dynamicWording['fr']['questionNotAnswered'] = 'Choisissez votre canal de contact',
+        dynamicWording['it']['questionNotAnswered'] = 'Scegli il tuo canale di contatto',
+        dynamicWording['en-US']['questionNotAnswered'] = 'Choose your contact channel'
     }
   return dynamicWording;  
 }
