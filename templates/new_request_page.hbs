@@ -106,7 +106,7 @@
   var businessContact = $('.business-customer')
 
   //Mailform fields, with label and Input field
-  var mailFormOrderNumberOrPhoneNumber;  //Order number, not on digitec Connect
+  var mailFormOrderNumberOrPhoneNumber;  //Order number, Phone on digitec Connect
   var mailFormSubject = $('.request_subject');
   var mailFormMessage = $('.request_description');
   var mailFormMailInput = $('.request_anonymous_requester_email');
@@ -456,10 +456,12 @@
   //Aktion bei Klick auf back Button
   $('.button-back').on("click", function (){
     contactFormIsShown = 0;
-    onDropdownChange();
+    if (customerType == 'connect-customer'){
+      onDropdownChangeConnect()
+    } else {
+      onDropdownChange();
+    }
   })
-
-
 
     
   // TICKET FORM ATTACHMENT CHANGES
