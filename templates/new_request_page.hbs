@@ -89,6 +89,7 @@
   var introText = $('.contactFormInfoTextClass');
   var customerTypeDropdown = $('.request_ticket_form_id');
   var requestReasonDropdown;
+  var requestReasonDropdownNesty;
   var requestReasonTag;
   var infoTextField = $('.contactFormText');
   var contactInfos = $('.contactFormTextNoBorder');
@@ -132,6 +133,7 @@
     switch (portal){
       case 'helpcenter.digitec.ch':
         requestReasonDropdown = $('.request_custom_fields_360014169819');
+        requestReasonDropdownNesty = $('.request_custom_fields_360014169819' + ' a.nesty-input');
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
         infoTextField.insertAfter(requestReasonDropdown);
@@ -147,6 +149,7 @@
         break;
       case 'helpcenter.galaxus.ch':
         requestReasonDropdown = $('.request_custom_fields_360014169819');
+        requestReasonDropdownNesty = $('.request_custom_fields_360014169819' + ' a.nesty-input');
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
         infoTextField.insertAfter(requestReasonDropdown);
@@ -162,6 +165,7 @@
         break;
       case 'helpcenter.galaxus.de':
         requestReasonDropdown = $('.request_custom_fields_360014169819');
+        requestReasonDropdownNesty = $('.request_custom_fields_360014169819' + ' a.nesty-input');
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
         infoTextField.insertAfter(requestReasonDropdown);
@@ -177,12 +181,15 @@
         break;
       case 'helpcenter.connect.digitec.ch':
         requestReasonDropdown = $('.request_custom_fields_360021132800');
+        requestReasonDropdownNesty = $('.request_custom_fields_360021132800' + ' a.nesty-input');
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360021132820');
         requestReasonDropdownContents = $('#request_custom_fields_360021132820');
         connectHelpcenterEntryPoint();
+        fullMailform.show();
         break;
       default:
         requestReasonDropdown = $('.request_custom_fields_360014169819');
+        requestReasonDropdownNesty = $('.request_custom_fields_360014169819' + ' a.nesty-input');
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
         infoTextField.insertAfter(requestReasonDropdown);
@@ -290,7 +297,7 @@
           break;
       }
     }
-    mailFormSubjectTextField.val($('.request_custom_fields_360014169819' + ' a.nesty-input').text());  //Autofill Mail Subject
+    mailFormSubjectTextField.val(requestReasonDropdownNesty.text());  //Autofill Mail Subject
     introText.hide();
     customerTypeDropdown.hide();
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt

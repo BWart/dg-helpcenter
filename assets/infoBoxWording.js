@@ -321,6 +321,32 @@ function fillInfoBoxWording(){
             'fr' : "<h4>Merci pour vos commentaires !</h4>",
             'it' : "<h4>Grazie per il tuo feedback!</h4>",
             'en-US' : "<h4>Thank you for your feedback!</h4>"
+      },
+
+      //LEVEL 0: Connect Tags
+      "webform_case_connect_customer" : {
+            'de' : "",
+            'fr' : "",
+            'it' : "",
+            'en-US' : "" 
+      },
+      "webform_case_connect_payment" : {
+            'de' : "",
+            'fr' : "",
+            'it' : "",
+            'en-US' : "" 
+      },
+      "webform_case_connect_technical" : {
+            'de' : "",
+            'fr' : "",
+            'it' : "",
+            'en-US' : "" 
+      },
+      "webform_case_connect_b2b" : {
+            'de' : "",
+            'fr' : "",
+            'it' : "",
+            'en-US' : "" 
       }
     }
 
