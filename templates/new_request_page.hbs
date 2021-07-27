@@ -10,7 +10,8 @@
   </h1>
 
   <div class="form requestform" id="requestForm">
-    <h4 class="contactFormInfoTextClass" data-wording-key="contactFormInfoText"></h4>
+    <h4 class="contactFormInfoTextClass regular" data-wording-key="contactFormInfoText"></h4>
+    <h4 class="contactFormInfoTextClass connect" data-wording-key="contactFormInfoTextConnect"></h4>
     <a class="button-back" data-wording-key="backButtonText"></a>
     <div class="contactFormNote">
       <div class="contactFormText">
@@ -180,7 +181,6 @@
         fullMailform.show();
         break;
       case 'helpcenter.connect.digitec.ch':
-        introText.html(dynamicWording[currentLanguage]['contactFormInfoTextConnect']);
         requestReasonDropdown = $('.request_custom_fields_360021132800');
         requestReasonDropdownNesty = $('.request_custom_fields_360021132800' + ' a.nesty-input');
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360021132820');

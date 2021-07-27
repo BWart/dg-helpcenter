@@ -92,7 +92,6 @@ function filldynamicWording(){
         'searchBoxText' : '<h2><font color=#00000>Wie können wir dir helfen?</font></h2>', 
         'infoNoteText' : '<br>Aufgrund der aktuellen Wetter- bzw. Strassensituation ist mit Verspätungen bei der Paketzustellung durch die Post zu rechnen. Besten Dank für dein Verständnis<br>&nbsp;',
         'contactFormInfoText' : 'Per Chat, Telefon oder Kontaktformular - wähle nur deine Kundengruppe und den passenden Anfragegrund.',
-        'contactFormInfoTextConnect' : 'Per Chat, Telefon oder Kontaktformular - wähle nur den passenden Anfragegrund.',
         'headerTitle' : 'Kontaktiere uns',
         'chatNotOnline': 'Nicht verfügbar',
         'recommendedChannel' : 'EMPFOHLEN',
@@ -127,7 +126,6 @@ function filldynamicWording(){
         'searchBoxText' : '<h2><font color=#00000>Comment pouvons-nous vous aider?</font></h2>',
         'infoNoteText' : '<br>En raison des conditions météorologiques et de la situation routière actuelles, il faut s\'attendre à des retards dans la livraison des colis par la Poste suisse. Merci de votre compréhension<br>&nbsp;',
         'contactFormInfoText' : 'Par chat, téléphone ou formulaire - choisissez simplement votre groupe de clients et le motif de la demande.',
-        'contactFormInfoTextConnect' : 'Par chat, téléphone ou formulaire de contact - choisissez simplement le motif de votre demande.',
         'headerTitle' : 'Contactez-nous',
         'chatNotOnline': 'Non disponible',
         'recommendedChannel' : 'RECOMMANDE',
@@ -162,7 +160,6 @@ function filldynamicWording(){
         'searchBoxText' : '<h2><font color=#00000>Come possiamo aiutarla?</font></h2>',
         'infoNoteText' : '<br>A causa dell\'attuale situazione meteorologica e stradale, si prevedono ritardi nella consegna dei pacchi da parte della Posta Svizzera. Grazie per la vostra comprensione<br>&nbsp;',
         'contactFormInfoText' : 'Tramite telefono, chat o modulo di contatto – seleziona il tuo gruppo di clienti e il motivo della tua richiesta.',
-        'contactFormInfoTextConnect' : 'Per chat, telefono o modulo di contatto - basta scegliere il motivo appropriato per la sua richiesta.',
         'headerTitle' : 'Contattaci',
         'chatNotOnline': 'Non disponible',
         'recommendedChannel' : 'RACCOMANDATO',
@@ -197,12 +194,18 @@ function filldynamicWording(){
         'searchBoxText' : '<h2><font color=#00000>How can we help you?</font></h2>',
         'infoNoteText' : '<br>Due to the current weather and road situation, delays in parcel delivery by Swiss Post are to be expected. Thank you for your understanding<br>&nbsp;',
         'contactFormInfoText' : 'By phone, chat or via form - just choose your customer group and the appropriate reason for inquiry.',
-        'contactFormInfoTextConnect' : 'By chat, phone or contact form - just choose the appropriate reason for your inquiry.',
         'headerTitle' : 'Contact us',
         'chatNotOnline': 'Not available',
         'recommendedChannel' : 'RECOMMENDED',
         'backButtonText' : 'Back to contact selection'
         }
+    }
+
+    if (window.location.hostname == 'helpcenter.connect.digitec.ch'){
+        dynamicWording['de']['contactFormInfoText'] = 'Per Chat, Telefon oder Kontaktformular - wähle nur den passenden Anfragegrund.'
+        dynamicWording['fr']['contactFormInfoText'] = 'Par chat, téléphone ou formulaire de contact - choisissez simplement le motif de votre demande.'
+        dynamicWording['it']['contactFormInfoText'] = 'Per chat, telefono o modulo di contatto - basta scegliere il motivo appropriato per la sua richiesta.'
+        dynamicWording['en-US']['contactFormInfoText'] = 'By chat, phone or contact form - just choose the appropriate reason for your inquiry.'
     }
   return dynamicWording;  
 }
