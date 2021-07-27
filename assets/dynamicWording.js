@@ -49,7 +49,7 @@ function filldynamicWording(){
               break;
       case'helpcenter.connect.digitec.ch':
               uhrzeitPrivatkunde = "08:00 - 20:00";
-              uhrzeitPrivatkundeeMobile = "08:00 - 20:00";
+              uhrzeitPrivatkundeMobile = "08:00 - 20:00";
 
               telPrivatkunde = "+41445759700";
               telPrivatkundeText = "+41 44 575 97 00";
