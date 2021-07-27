@@ -101,8 +101,7 @@
   var businessContact = $('.business-customer')
 
   //Mailform fields, with label and Input field
-  var mailFormOrderNumber;  //Order number, not on digitec Connect
-  var mailFormConnectNumber;  //Phone number, digitec Connect only
+  var mailFormOrderNumberOrPhoneNumber;  //Order number, not on digitec Connect
   var mailFormSubject = $('.request_subject');
   var mailFormMessage = $('.request_description');
   var mailFormMailInput = $('.request_anonymous_requester_email');
@@ -124,14 +123,16 @@
   "webform_case_offer", "webform_case_no_bill"]
 
   //intial setup
-  setPortalDependantVariables();
   setCustomerType();
+  setPortalDependantVariables();
+  checkForFeedbackForm();
+  removeChatFromDE();
 
   function setPortalDependantVariables(){
     switch (portal){
       case 'helpcenter.digitec.ch':
         requestReasonDropdown = $('.request_custom_fields_360014169819');
-        mailFormOrderNumber = $('.request_custom_fields_360007585419');
+        mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
         infoTextField.insertAfter(requestReasonDropdown);
         mailFormMailInput.insertAfter(requestReasonDropdown);
@@ -146,7 +147,7 @@
         break;
       case 'helpcenter.galaxus.ch':
         requestReasonDropdown = $('.request_custom_fields_360014169819');
-        mailFormOrderNumber = $('.request_custom_fields_360007585419');
+        mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
         infoTextField.insertAfter(requestReasonDropdown);
         mailFormMailInput.insertAfter(requestReasonDropdown);
@@ -161,7 +162,7 @@
         break;
       case 'helpcenter.galaxus.de':
         requestReasonDropdown = $('.request_custom_fields_360014169819');
-        mailFormOrderNumber = $('.request_custom_fields_360007585419');
+        mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
         infoTextField.insertAfter(requestReasonDropdown);
         mailFormMailInput.insertAfter(requestReasonDropdown);
@@ -175,11 +176,14 @@
         fullMailform.show();
         break;
       case 'helpcenter.connect.digitec.ch':
-        connectHelpcenter();
+        requestReasonDropdown = $('.request_custom_fields_360021132800');
+        mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360021132820');
+        requestReasonDropdownContents = $('#request_custom_fields_360021132820');
+        connectHelpcenterEntryPoint();
         break;
       default:
         requestReasonDropdown = $('.request_custom_fields_360014169819');
-        mailFormOrderNumber = $('.request_custom_fields_360007585419');
+        mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
         infoTextField.insertAfter(requestReasonDropdown);
         mailFormMailInput.insertAfter(requestReasonDropdown);
@@ -239,7 +243,7 @@
     backButton.hide();
     infoTextField.hide();
     contactInfos.hide();
-    mailFormOrderNumber.hide();
+    mailFormOrderNumberOrPhoneNumber.hide();
     mailFormSubject.hide();
     mailFormMessage.hide();
     mailFormAttachmentDropZone.hide();
@@ -247,6 +251,10 @@
     mailFormMailInput.hide();
     commitButton.hide();
     isFormAttachmentRequired();
+  }
+
+  function connectHelpcenterEntryPoint(){
+    console.log('asdf')
   }
   
   //Aktion bei Änderung des RequestReasonDropdown
@@ -288,7 +296,7 @@
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
     if (contactFormIsShown == 0) {
       backButton.hide();
-      mailFormOrderNumber.hide();
+      mailFormOrderNumberOrPhoneNumber.hide();
       mailFormSubject.hide();
       mailFormMessage.hide();
       mailFormAttachmentDropZone.hide();
@@ -301,9 +309,9 @@
     }
     //OrderNumber Feld verstecken wenn nicht benötigt
     if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
-      mailFormOrderNumber.hide()
+      mailFormOrderNumberOrPhoneNumber.hide()
     } else {
-      if (contactFormIsShown == 1) { mailFormOrderNumber.show() }
+      if (contactFormIsShown == 1) { mailFormOrderNumberOrPhoneNumber.show() }
     }
   }  
 
@@ -319,7 +327,7 @@
     infoTextField.hide();
     contactInfos.hide();
     customerTypeDropdown.hide();
-    mailFormOrderNumber.show();
+    mailFormOrderNumberOrPhoneNumber.show();
     mailFormSubject.hide();
     mailFormMessage.show();
     mailFormAttachmentDropZone.show();
@@ -328,9 +336,9 @@
     commitButton.show();
     //OrderNumber Feld verstecken wenn nicht benötigt
     if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
-      mailFormOrderNumber.hide();
+      mailFormOrderNumberOrPhoneNumber.hide();
     } else {
-      mailFormOrderNumber.show();
+      mailFormOrderNumberOrPhoneNumber.show();
     }
   }
   //Aktionen bei Klick auf "Ruf uns an"
@@ -465,13 +473,12 @@
 
 
   //////////////////////////Downvote-button Formular////////////////////////////
+  function checkForFeedbackForm(){
+    if (sessionStorage.getItem("referrer")) {
+      referrer = sessionStorage.getItem("referrer");
+    }
 
-  var referrer = '';
-  if (sessionStorage.getItem("referrer")) {
-    referrer = sessionStorage.getItem("referrer");
-  }
-
-  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback') != 0 && sessionStorage.getItem('Feedback') != null || $('#request_description').val() == '' && sessionStorage.getItem('Feedback') != null) { 
+    if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback') != 0 && sessionStorage.getItem('Feedback') != null || $('#request_description').val() == '' && sessionStorage.getItem('Feedback') != null) { 
       header.html(infoBoxWording['outputFeedbackHeader'][currentLanguage] + infoBoxWording['outputFeedbackBeschreibung'][currentLanguage]);
       introText.hide(); //Unterueberschrift
       $('.form-field:not(.request_ticket_form_id)').show(); // SchreibUns-Feld-Form mit beschreibung, grund usw
@@ -479,7 +486,7 @@
       requestReasonDropdown.hide(); // Grund der Anfrage verstecken
 
       $('.form-field.select.optional.request_ticket_form_id').hide(); //Kundengruppe Option
-      mailFormOrderNumber.hide(); // Auftragsnummer Feld
+      mailFormOrderNumberOrPhoneNumber.hide(); // Auftragsnummer Feld
 
       mailFormAttachmentLabel.hide(); //Anhang Drop Ueberschrift
       mailFormAttachmentDropZone.hide(); //Anhang Drop 
@@ -506,23 +513,23 @@
       //Feedback Formular Label und Freitextfeld Template Text setzen
   		updateDescriptionAndLabel(infoBoxWording['outputFeedbackTextFieldTemplate'][currentLanguage], infoBoxWording['outputFeedbackLabelPart1'][currentLanguage] + betreffTitel)
 
-   }
-  else{
-      sessionStorage.removeItem('Feedback');
-  }
-
-  ////////////////////CHAT entfernen bei Galaxus DE///////////////////////////
-
-  switch(portal){
-      case'helpcenter.digitec.ch':
-             break;
-      case'helpcenter.galaxus.ch':
-              break;
-      case'helpcenter.galaxus.de':
-             	$('.chatTableCell').hide();
-              break;
-      default:
-              break;
     }
-
+    else{
+      sessionStorage.removeItem('Feedback');
+    }
+  }
+  ////////////////////CHAT entfernen bei Galaxus DE///////////////////////////
+  function removeChatFromDE(){
+    switch(portal){
+      case'helpcenter.digitec.ch':
+        break;
+      case'helpcenter.galaxus.ch':
+        break;
+      case'helpcenter.galaxus.de':
+        $('.chatTableCell').hide();
+        break;
+      default:
+        break;
+    }
+  }
 </script>
