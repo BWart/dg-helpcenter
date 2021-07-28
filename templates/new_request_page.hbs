@@ -131,7 +131,7 @@
   setCustomerType();
   setPortalDependantVariables();
   checkForFeedbackForm();
-  removeChatFromDE();
+  removeChatFromDEAndConnect();
 
   function setPortalDependantVariables(){
     switch (portal){
@@ -581,15 +581,12 @@
     }
   }
   ////////////////////CHAT entfernen bei Galaxus DE///////////////////////////
-  function removeChatFromDE(){
+  function removeChatFromDEAndConnect(){
     switch(portal){
       case'helpcenter.digitec.ch':
-        break;
       case'helpcenter.galaxus.ch':
         break;
       case'helpcenter.galaxus.de':
-        $('.chatTableCell').hide();
-        break;
       case'helpcenter.connect.digitec.ch':
         $('.chatTableCell').hide();
         break;
