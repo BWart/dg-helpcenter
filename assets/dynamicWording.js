@@ -225,14 +225,21 @@ function filldynamicWording(){
     }
 
     if (window.location.hostname == 'helpcenter.connect.digitec.ch'){
-        dynamicWording['de']['contactFormInfoText'] = 'Per Chat, Telefon oder Kontaktformular - wähle nur den passenden Anfragegrund.'
-        dynamicWording['fr']['contactFormInfoText'] = 'Par chat, téléphone ou formulaire de contact - choisissez simplement le motif de votre demande.'
-        dynamicWording['it']['contactFormInfoText'] = 'Per chat, telefono o modulo di contatto - basta scegliere il motivo appropriato per la sua richiesta.'
-        dynamicWording['en-US']['contactFormInfoText'] = 'By chat, phone or contact form - just choose the appropriate reason for your inquiry.'
+        dynamicWording['de']['contactFormInfoText'] = 'Per Telefon oder Kontaktformular - wähle nur den passenden Anfragegrund.'
+        dynamicWording['fr']['contactFormInfoText'] = 'Par téléphone ou formulaire de contact - choisissez simplement le motif de votre demande.'
+        dynamicWording['it']['contactFormInfoText'] = 'Per telefono o modulo di contatto - basta scegliere il motivo appropriato per la sua richiesta.'
+        dynamicWording['en-US']['contactFormInfoText'] = 'By phone or contact form - just choose the appropriate reason for your inquiry.'
         dynamicWording['de']['questionNotAnswered'] = 'Wähle deinen Kontaktkanal',
         dynamicWording['fr']['questionNotAnswered'] = 'Choisissez votre canal de contact',
         dynamicWording['it']['questionNotAnswered'] = 'Scegli il tuo canale di contatto',
         dynamicWording['en-US']['questionNotAnswered'] = 'Choose your contact channel'
+    }
+    
+    if (window.location.hostname == 'helpcenter.galaxus.de'){
+        dynamicWording['de']['contactFormInfoText'] = 'Per Telefon oder Kontaktformular - wähle nur den passenden Anfragegrund.'
+        dynamicWording['fr']['contactFormInfoText'] = 'Par téléphone ou formulaire de contact - choisissez simplement le motif de votre demande.'
+        dynamicWording['it']['contactFormInfoText'] = 'Per telefono o modulo di contatto - basta scegliere il motivo appropriato per la sua richiesta.'
+        dynamicWording['en-US']['contactFormInfoText'] = 'By phone or contact form - just choose the appropriate reason for your inquiry.'
     }
   return dynamicWording;  
 }
