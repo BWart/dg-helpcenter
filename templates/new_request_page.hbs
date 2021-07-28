@@ -300,7 +300,8 @@
     }
   });
   function onDropdownChange(){
-    requestReasonTag = requestReasonDropdownContents.attr('value');
+    requestReasonTag = requestReasonDropdownContents.attr('value').replace('webform_', 'daWarMalWas');
+    console.log(requestReasonTag);
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     //Update Label and Template
     if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
