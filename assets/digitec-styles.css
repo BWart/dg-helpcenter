@@ -4,16 +4,14 @@
   font-family: Roboto;
   font-weight: 300;
   font-style: normal;
-  src: url("$assets-roboto-light-webfont-woff");
-  src: url("$assets-roboto-bold-webfont-woff") format('woff'), url("$assets-roboto-bold-webfont-woff2") format('woff2');
+  src: url("$assets-roboto-light-webfont-woff") format('woff'), url("$assets-roboto-light-webfont-woff2") format('woff2');
 }
 
 @font-face {
   font-family: Roboto;
   font-weight: 400;
   font-style: normal;
-  src: url("$assets-roboto-regular-webfont-woff");
-  src: url("$assets-roboto-bold-webfont-woff") format('woff'), url("$assets-roboto-bold-webfont-woff2") format('woff2');
+  src: url("$assets-roboto-regular-webfont-woff") format('woff'), url("$assets-roboto-regular-webfont-woff2") format('woff2');
 }
 
 
@@ -21,7 +19,7 @@
   font-family: Roboto;
   font-weight: 600;
   font-style: normal;
-  src: url("$assets-roboto-bold-webfont-woff") format('woff'), url("$assets-roboto-bold-webfont-woff2") format('woff2');
+  src: url("$assets-roboto-regular-webfont-woff") format('woff'), url("$assets-roboto-regular-webfont-woff2") format('woff2');
 }
 
 
