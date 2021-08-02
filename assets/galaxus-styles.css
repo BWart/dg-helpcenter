@@ -8,32 +8,32 @@
 /**/
 
 @font-face {
-  font-family: Gibson;
+  font-family: 'Gibson';
   font-weight: 300;
   font-style: normal;
   src: url("$assets-gibson-light-webfonthinted-eot");
-  src: url(//p3.zdassets.com/hc/theme_assets/657902/200100782/Gibson-Light-webfontHinted.eot?#iefix) format("embedded-opentype"),url("$assets-gibson-light-webfonthinted-woff") format("woff"),url("$assets-gibson-light-webfonthinted-ttf") format("truetype"),url("$assets-gibson-light-webfonthinted-svg") format("svg")
+  src: url("$assets-gibson-light-webfonthinted-eot?#iefix") format("embedded-opentype"),url("$assets-gibson-light-webfonthinted-woff") format("woff"),url("$assets-gibson-light-webfonthinted-ttf") format("truetype"),url("$assets-gibson-light-webfonthinted-svg") format("svg")
 }
 
 @font-face {
-  font-family: Gibson;
+  font-family: 'Gibson';
   font-weight: 400;
   font-style: normal;
   src: url("$assets-gibson-regular-webfont-eot");
-  src: url(//p3.zdassets.com/hc/theme_assets/657902/200100782/Gibson-Regular-webfont.eot?#iefix) format("embedded-opentype"),url("$assets-gibson-regular-webfont-woff") format("woff"),url("$assets-gibson-regular-webfont-ttf") format("truetype"),url("$assets-gibson-regular-webfont-svg") format("svg")
+  src: url("$assets-gibson-regular-webfont-eot?#iefix") format("embedded-opentype"),url("$assets-gibson-regular-webfont-woff") format("woff"),url("$assets-gibson-regular-webfont-ttf") format("truetype"),url("$assets-gibson-regular-webfont-svg") format("svg")
 }
 
 
 @font-face {
-  font-family: Gibson;
+  font-family: 'Gibson';
   font-weight: 600;
   font-style: normal;
   src: url("$assets-gibson-semibold-webfont-eot");
-  src: url(//p3.zdassets.com/hc/theme_assets/657902/200100782/Gibson-SemiBold-webfont.eot?#iefix) format("embedded-opentype"),url("$assets-gibson-semibold-webfont-woff") format("woff"),url("$assets-gibson-semibold-webfont-ttf") format("truetype"),url("$assets-gibson-semibold-webfont-svg") format("svg")
+  src: url('$assets-gibson-semibold-webfont-eot#iefix') format("embedded-opentype"),url("$assets-gibson-semibold-webfont-woff") format("woff"),url("$assets-gibson-semibold-webfont-ttf") format("truetype"),url("$assets-gibson-semibold-webfont-svg") format("svg")
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Gibson, sans-serif;
+  font-family: 'Gibson', sans-serif;
 }
 
 .button--zopim.inactive {
