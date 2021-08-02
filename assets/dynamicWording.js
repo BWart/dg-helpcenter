@@ -229,7 +229,7 @@ function filldynamicWording(){
         'recommendedChannel' : 'RECOMMENDED',
         'backButtonText' : 'Back to contact selection',
         'feedbackHeader' : 'Feedback form',
-        'feedbackDescription' : 'Please use the form only to suggest improvements to our posts.<br>Unfortunately, we cannot respond to your feedback. For your customer inquiries, feel free to use the <a href='/requests/new'>contact form</a>.<br>Attention: Customer inquiries via the feedback form will not be answered!'
+        'feedbackDescription' : 'Please use the form only to suggest improvements to our posts.<br>Unfortunately, we cannot respond to your feedback. For your customer inquiries, feel free to use the <a href="/requests/new">contact form</a>.<br>Attention: Customer inquiries via the feedback form will not be answered!'
         }
     }
 
