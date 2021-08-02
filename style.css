@@ -1,9 +1,53 @@
 @charset "UTF-8";
-/** Font */
-/*#007bc8*/
-/*#094979*/
- 
-/***** Base *****/
+
+@font-face {
+  font-family: 'Gibson';
+  font-weight: 300;
+  font-style: normal;
+  src: url("$assets-gibson-light-webfonthinted-eot");
+  src: url("$assets-gibson-light-webfonthinted-eot?#iefix") format("embedded-opentype"),url("$assets-gibson-light-webfonthinted-woff") format("woff"),url("$assets-gibson-light-webfonthinted-ttf") format("truetype"),url("$assets-gibson-light-webfonthinted-svg") format("svg")
+}
+
+@font-face {
+  font-family: 'Gibson';
+  font-weight: 400;
+  font-style: normal;
+  src: url("$assets-gibson-regular-webfont-eot");
+  src: url("$assets-gibson-regular-webfont-eot?#iefix") format("embedded-opentype"),url("$assets-gibson-regular-webfont-woff") format("woff"),url("$assets-gibson-regular-webfont-ttf") format("truetype"),url("$assets-gibson-regular-webfont-svg") format("svg")
+}
+
+
+@font-face {
+  font-family: 'Gibson';
+  font-weight: 600;
+  font-style: normal;
+  src: url("$assets-gibson-semibold-webfont-eot");
+  src: url('$assets-gibson-semibold-webfont-eot#iefix') format("embedded-opentype"),url("$assets-gibson-semibold-webfont-woff") format("woff"),url("$assets-gibson-semibold-webfont-ttf") format("truetype"),url("$assets-gibson-semibold-webfont-svg") format("svg")
+}
+
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-style: normal;
+  src: url("$assets-roboto-light-webfont-woff") format('woff'), url("$assets-roboto-light-webfont-woff2") format('woff2');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-style: normal;
+  src: url("$assets-roboto-regular-webfont-woff") format('woff'), url("$assets-roboto-regular-webfont-woff2") format('woff2');
+}
+
+
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 600;
+  font-style: normal;
+  src: url("$assets-roboto-regular-webfont-woff") format('woff'), url("$assets-roboto-regular-webfont-woff2") format('woff2');
+}
+
 * {
   box-sizing: border-box;
 }
