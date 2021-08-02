@@ -108,7 +108,7 @@ function filldynamicWording(){
         'recommendedChannel' : 'EMPFOHLEN',
         'backButtonText' : 'Zurück zur Kontaktauswahl',
         'feedbackHeader' : 'Feedbackformular',
-        'feedbackDescription' : 'Bitte verwende das Formular lediglich für Verbesserungsvorschläge zu unseren Beiträgen.<br>Leider können wir nicht auf dein Feedback antworten. Für deine Kundenanfragen kannst du gerne das <a href='/hc/requests/new'>Kontaktformular</a> verwenden.<br>Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!'
+        'feedbackDescription' : 'Bitte verwende das Formular lediglich für Verbesserungsvorschläge zu unseren Beiträgen.<br>Leider können wir nicht auf dein Feedback antworten. Für deine Kundenanfragen kannst du gerne das <a href="/hc/requests/new">Kontaktformular</a> verwenden.<br>Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!'
 
         },
         fr: {      
@@ -149,7 +149,7 @@ function filldynamicWording(){
         'recommendedChannel' : 'RECOMMANDE',
         'backButtonText' : 'Retour à la sélection des contacts',
         'feedbackHeader' : 'Formulaire de commentaires',
-        'feedbackDescription' : 'Veuillez utiliser le formulaire uniquement pour suggérer des améliorations à nos articles.<br>Malheureusement, nous ne pouvons pas répondre à vos commentaires. Pour les demandes de vos clients, vous pouvez utiliser le <a href='/requests/new'>formulaire de contact</a>.<br>Attention : Nous ne répondons pas aux demandes des clients via le formulaire de feed-back!'
+        'feedbackDescription' : 'Veuillez utiliser le formulaire uniquement pour suggérer des améliorations à nos articles.<br>Malheureusement, nous ne pouvons pas répondre à vos commentaires. Pour les demandes de vos clients, vous pouvez utiliser le <a href="/requests/new">formulaire de contact</a>.<br>Attention : Nous ne répondons pas aux demandes des clients via le formulaire de feed-back!'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -189,7 +189,7 @@ function filldynamicWording(){
         'recommendedChannel' : 'RACCOMANDATO',
         'backButtonText' : 'Torna alla selezione dei contatti',
         'feedbackHeader' : 'Modulo di feedback',
-        'feedbackDescription' : 'Si prega di utilizzare il modulo solo per suggerire miglioramenti ai nostri post.<br>Purtroppo, non possiamo rispondere al tuo feedback. Per le richieste dei tuoi clienti puoi usare il <a href='/requests/new'>formulario di contatto</a>.<br>Attenzione: non rispondiamo alle richieste dei clienti tramite il modulo di feedback!'
+        'feedbackDescription' : 'Si prega di utilizzare il modulo solo per suggerire miglioramenti ai nostri post.<br>Purtroppo, non possiamo rispondere al tuo feedback. Per le richieste dei tuoi clienti puoi usare il <a href="/requests/new">formulario di contatto</a>.<br>Attenzione: non rispondiamo alle richieste dei clienti tramite il modulo di feedback!'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
