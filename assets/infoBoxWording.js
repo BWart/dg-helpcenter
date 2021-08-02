@@ -305,22 +305,16 @@ function fillInfoBoxWording(){
             'en-US' : "Feedback to Helpcenter post: " 
       },
       "outputFeedbackLabelPart2" : {
-            'de' : "<br><b>Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!</b>",
-            'fr' : "<br><b>Attention : Nous ne répondons pas aux demandes des clients via le formulaire de feed-back !</b>",
-            'it' : "<br><b>Attenzione: non rispondiamo alle richieste dei clienti tramite il modulo di feedback!</b>",
-            'en-US' : "<br><b>Attention: Customer inquiries via the feedback form will not be answered!</b>" 
-      },
-      "outputFeedbackTextFieldTemplate" : {
-            'de' : "",
-            'fr' : "",
-            'it' : "",
-            'en-US' : "" 
+            'de' : "Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!",
+            'fr' : "Attention : Nous ne répondons pas aux demandes des clients via le formulaire de feed-back !",
+            'it' : "Attenzione: non rispondiamo alle richieste dei clienti tramite il modulo di feedback!",
+            'en-US' : "Attention: Customer inquiries via the feedback form will not be answered!" 
       },
       "feedbackThanks" : {
-            'de' : "<h4>Vielen Dank für dein Feedback!</h4>",
-            'fr' : "<h4>Merci pour vos commentaires !</h4>",
-            'it' : "<h4>Grazie per il tuo feedback!</h4>",
-            'en-US' : "<h4>Thank you for your feedback!</h4>"
+            'de' : "<Vielen Dank für dein Feedback!",
+            'fr' : "Merci pour vos commentaires !",
+            'it' : "Grazie per il tuo feedback!",
+            'en-US' : "Thank you for your feedback!"
       },
 
       //LEVEL 0: Connect Tags
