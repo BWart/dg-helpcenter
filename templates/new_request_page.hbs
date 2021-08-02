@@ -295,10 +295,10 @@
       }
     }
     mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
-    introText.hide();
     customerTypeDropdown.hide();
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
     if (contactFormIsShown == 0) {
+      introText.hide();
       backButton.hide();
       mailFormOrderNumberOrPhoneNumber.hide();
       mailFormSubject.hide();
