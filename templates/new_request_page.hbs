@@ -118,7 +118,7 @@
   var mailFormMessageTextField = $('#request_description');
 
   //Variable checkers
-  var contactFormIsShown = 0;
+  var contactFormIsShown = 0; // 0 Shows Infotext and 1 shows OrderNumber Field
 
   //List of tags to hide OrderNumber Input Field
   var reasonsForNoOrderNumber = ["webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer",
@@ -347,7 +347,6 @@
       }
     }
     mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
-    introText.hide();
     customerTypeDropdown.hide();
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
     if (contactFormIsShown == 0) {
@@ -362,6 +361,7 @@
       contactInfos.show();
       $('.' + customerType).show();
       infoTextField.hide();
+      introText.hide();
     }
     //OrderNumber Feld verstecken wenn nicht benötigt
     if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
@@ -530,47 +530,45 @@
   setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
 
-  //////////////////////////Downvote-button Formular////////////////////////////
+   //////////////////////////Downvote-button Formular////////////////////////////
   function checkForFeedbackForm(){
     if (sessionStorage.getItem("referrer")) {
       referrer = sessionStorage.getItem("referrer");
     }
-
-    if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback') != 0 && sessionStorage.getItem('Feedback') != null || $('#request_description').val() == '' && sessionStorage.getItem('Feedback') != null) { 
-  
-  // Bezeichnung des Helpcenter Artikels
-  var subjectTitel = sessionStorage.getItem('articleHeader');
-  
-  //Felder automatisch befüllen  
-  $('input[name="request[subject]"]').val('Feedback'+subjectTitel); //Betreff gesetzt ////
- // requestReasonDropdownContents.attr('value' , 'webform_case_other_request_order'); //Grund der Anfrage setzen////
-  $('input[name="request[anonymous_requester_email]"]').val('feedback.helpcenter@digitecgalaxus.ch');//Mail setzen////
-  mailFormMessageLabel.text(infoBoxWording['outputFeedbackLabelPart1'][currentLanguage] + subjectTitel);//Label des Mailformulars anhand des Helpcenter Artikels setzen////
-  
-  //Bezeichnung Formular und Introtext überschreiben
-  header.attr('data-wording-key', 'feedbackHeader');
-  introText.attr('data-wording-key', 'feedbackDescription');
-  
-  //Felder für Feedbackformular anzeigen/verstecken
-  $('.form-field:not(.request_ticket_form_id)').show();
-  customerTypeDropdown.hide();
-  requestReasonDropdown.hide();
-  mailFormOrderNumberOrPhoneNumber.hide();
-  mailFormSubject.hide();
-  contactInfos.hide();  
-  commitButton.show();
-
-  //Text vor dem Submittbutton mit CSS Anpassungen
-  $('.request-form footer').css('margin-top', '0px')
-  $('.request-form footer').css('padding-top', '0px')
-  $('.request-form footer').prepend(infoBoxWording['feedbackThanks'][currentLanguage]);
+  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback') != 0 && sessionStorage.getItem('Feedback') != null || $('#request_description').val() == '' && sessionStorage.getItem('Feedback') != null) {   
+    // Bezeichnung des Helpcenter Artikels
+    var subjectTitel = sessionStorage.getItem('articleHeader');
+    contactFormIsShown = 2; // 0 Shows Infotext and 1 shows OrderNumber field
     
-    }
+    //Felder automatisch befüllen 
+    $('#request_custom_fields_360014169819').attr('value' , 'webform_case_other_request_order'); //Grund der Anfrage setzen////
+    $('input[name="request[subject]"]').val('Feedback'+subjectTitel); //Betreff gesetzt //// 
+    $('input[name="request[anonymous_requester_email]"]').val('feedback.helpcenter@digitecgalaxus.ch');//Mail setzen////
+    mailFormMessageLabel.text(infoBoxWording['outputFeedbackLabelPart1'][currentLanguage] + subjectTitel);//Label des Mailformulars anhand des Helpcenter Artikels setzen////
+    
+    //Bezeichnung Formular und Introtext überschreiben
+    header.attr('data-wording-key', 'feedbackHeader');
+    introText.attr('data-wording-key', 'feedbackDescription');
+    
+    //Felder für Feedbackformular anzeigen/verstecken
+    $('.form-field:not(.request_ticket_form_id)').show();
+    requestReasonDropdown.hide();
+    mailFormSubject.hide();
+    commitButton.show();
+    mailFormMailInput.hide();
+    mailFormOrderNumberOrPhoneNumber.hide();
+      
+    $('.request-form footer').show();
+
+    //Text vor dem Submittbutton mit CSS Anpassungen
+    $('.request-form footer').css('margin-top', '0px')
+    $('.request-form footer').css('padding-top', '0px')
+    $('.request-form footer').prepend(infoBoxWording['feedbackThanks'][currentLanguage]);
+  }
     else{
       sessionStorage.removeItem('Feedback');
     }
   }
-
   
   ////////////////////CHAT entfernen bei Galaxus DE///////////////////////////
   function removeChatFromDEAndConnect(){

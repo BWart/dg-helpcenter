@@ -286,35 +286,17 @@ function fillInfoBoxWording(){
             'it' : "<br>Hai qualche suggerimento per migliorare il post?<br><br>",
             'en-US' : "<br>Do you have any suggestions for improving the post?<br><br>"
       },
-      "outputFeedbackHeader" : {
-            'de' : "Feedbackformular",
-            'fr' : "Formulaire de commentaires",
-            'it' : "Modulo di feedback",
-            'en-US' : "Feedback form" 
-      },
-      "outputFeedbackBeschreibung" : {
-            'de' : "<br><div id = 'FeedbackText' class = 'contactFormText'><h2>Hinweis</h2>Bitte verwende das Formular lediglich für Verbesserungsvorschläge zu unseren Beiträgen.<br>Leider können wir nicht auf dein Feedback antworten. Für deine Kundenanfragen kannst du gerne das <a href='/hc/requests/new'>Kontaktformular</a> verwenden.</div>",
-            'fr' : "<br><div id = 'FeedbackText' class = 'contactFormText'><h2>Note</h2>Veuillez utiliser le formulaire uniquement pour suggérer des améliorations à nos articles.<br>Malheureusement, nous ne pouvons pas répondre à vos commentaires. Pour les demandes de vos clients, vous pouvez utiliser le <a href='/requests/new'>formulaire de contact</a>.</div>",
-            'it' : "<br><div id = 'FeedbackText' class = 'contactFormText'><h2>Nota</h2>Si prega di utilizzare il modulo solo per suggerire miglioramenti ai nostri post.<br>Purtroppo, non possiamo rispondere al tuo feedback. Per le richieste dei tuoi clienti puoi usare il <a href='/requests/new'>formulario di contatto</a>.</div>",
-            'en-US' : "<br><div id = 'FeedbackText' class = 'contactFormText'><h2>Note</h2>Please use the form only to suggest improvements to our posts.<br>Unfortunately, we cannot respond to your feedback. For your customer inquiries, feel free to use the <a href='/requests/new'>contact form</a>.</div>", 
-      },
       "outputFeedbackLabelPart1" : {
             'de' : "Feedback zu Helpcenter Beitrag: ",
             'fr' : "Feed-back sur le post du Helpcenter : ",
             'it' : "Feedback sul post dell'Helpcenter: ",
             'en-US' : "Feedback to Helpcenter post: " 
       },
-      "outputFeedbackLabelPart2" : {
-            'de' : "Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!",
-            'fr' : "Attention : Nous ne répondons pas aux demandes des clients via le formulaire de feed-back !",
-            'it' : "Attenzione: non rispondiamo alle richieste dei clienti tramite il modulo di feedback!",
-            'en-US' : "Attention: Customer inquiries via the feedback form will not be answered!" 
-      },
       "feedbackThanks" : {
-            'de' : "<Vielen Dank für dein Feedback!",
-            'fr' : "Merci pour vos commentaires !",
-            'it' : "Grazie per il tuo feedback!",
-            'en-US' : "Thank you for your feedback!"
+            'de' : "Vielen Dank für dein Feedback!<br>",
+            'fr' : "Merci pour vos commentaires!<br>",
+            'it' : "Grazie per il tuo feedback!<br>",
+            'en-US' : "Thank you for your feedback!<br>"
       },
 
       //LEVEL 0: Connect Tags
