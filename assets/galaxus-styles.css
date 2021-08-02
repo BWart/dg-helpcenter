@@ -32,6 +32,10 @@
   src: url(//p3.zdassets.com/hc/theme_assets/657902/200100782/Gibson-SemiBold-webfont.eot?#iefix) format("embedded-opentype"),url("$assets-gibson-semibold-webfont-woff") format("woff"),url("$assets-gibson-semibold-webfont-ttf") format("truetype"),url("$assets-gibson-semibold-webfont-svg") format("svg")
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: Gibson, sans-serif;
+}
+
 .button--zopim.inactive {
 	border-color: #ddd;
   color: #ddd;
