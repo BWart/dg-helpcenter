@@ -142,8 +142,10 @@ function getChatDepartmentType(){
             default:
                 departmentType = 'Private ';
         }
+        console.log('end of the switch')
         return departmentType; 
     }else{
+        console.log('its in private')
         return 'Private';
     }
 }
