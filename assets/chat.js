@@ -78,6 +78,7 @@ function getWebWidgetSettings(){
             }
         }
     }
+    console.log(zeSettings);
     return zeSettings;
 }
 
@@ -92,7 +93,7 @@ function getChatDepartment(){
 
 // Dictionary wo die HTML Sprache für Department und allgemein zurückgibt
 function getChatLanguage(type){
-    var chatLanguage ={
+    var chatLanguage = {
         de: {
             'language' : 'de',
             'department' : 'DE'
@@ -111,9 +112,11 @@ function getChatLanguage(type){
         }
     }
     if(!currentLanguage !== null){
+        console.log('its in the correct spot');
         console.log(chatLanguage[currentLanguage][type])
         return chatLanguage[currentLanguage][type];
     }else{
+        console.log('its in the wrong spot');
         console.log(chatLanguage['de'][type])
         return chatLanguage['de'][type];
     }
@@ -121,6 +124,7 @@ function getChatLanguage(type){
 
 // Gibt den Kundentyp für das Chat Department anhand des Kundentyps im Kuntaktformular zurück
 function getChatDepartmentType(){
+    console.log('getChatDepartmentType');
     if(!customerType !== null){
         var departmentType;
         switch(customerType) {

@@ -138,8 +138,6 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   
 	////////////////////////////////////////////////////////////Dynamic Wording////////////////////////////////////////////////////////////////////
   
- 	var currentLanguage = $('html').attr('lang');
-
   var dynamicWording = filldynamicWording();
   
   var currentLanguage = $('html').attr('lang');
