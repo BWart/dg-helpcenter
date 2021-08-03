@@ -94,7 +94,6 @@ function getChatDepartment(){
 // Dictionary wo die HTML Sprache für Department und allgemein zurückgibt
 function getChatLanguage(type){
     console.log('getChatLanguage');
-    console.log(currentLanguage)
     var chatLanguage = {
         de: {
             'language' : 'de',
