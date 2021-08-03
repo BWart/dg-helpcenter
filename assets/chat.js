@@ -113,7 +113,7 @@ function getChatLanguage(type){
             'department' : 'EN'
         }
     }
-    if(!currentLanguage !== null){
+    if(typeof currentLanguage != 'undefined'){
         console.log('its in the correct spot');
         console.log(chatLanguage[currentLanguage][type])
         return chatLanguage[currentLanguage][type];
