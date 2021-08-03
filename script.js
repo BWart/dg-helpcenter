@@ -4,10 +4,6 @@
 
 $(document).ready(function() {
 
-  var chatcolor = '';
-  var chatColorOffline = '';
-  var chatBackColorOffline = '';
-  var portal = window.location.hostname;
 
   switch ($('html').attr('lang')){
     case 'de':
