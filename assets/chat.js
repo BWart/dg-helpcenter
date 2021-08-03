@@ -2,7 +2,7 @@
 function waitForChat(){
     window.addEventListener('load', function() {
         zE('webWidget:on', 'chat:connected', function() {
-           console.log("ChatConnected")
+           console.log("waitForChat")
            changeWebWidgetSetting(true);
            openWidgetForUnreadMessages();
            hideWidgetWhenMinimized();
@@ -19,6 +19,7 @@ function waitForChat(){
 
 // Updated die Widget Settings - Update Soll nur bei Dropdown Change im Request Form passieren. Ansonsten soll die Einstellung nicht überschrieben werden
 function changeWebWidgetSetting(initialLoad){
+    console.log('changeWebWidgetSetting')
     if(initialLoad){
         window.zESettings = getWebWidgetSettings(); // Widget Settings Initiales Setup
     }else{
@@ -29,8 +30,8 @@ function changeWebWidgetSetting(initialLoad){
 
 // Definiert die Widget Settings
 function getWebWidgetSettings(){
+    console.log('getWebWidgetSettings')
     var dep = getChatDepartment();
-
     var zeSettings = {
         webWidget: {
             chat: {
@@ -80,12 +81,12 @@ function getWebWidgetSettings(){
     return zeSettings;
 }
 
-
 /////////////////////////////////////////////////////////////Departments///////////////////////////////////////////////////////////////////////////
 
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
-    console.log('Chat ' + getChatDepartmentType() + getChatDepartmentLanguage());
+    console.log('getChatDepartment');
+    console.log('thedepartmentis: ' + getChatDepartmentType() + getChatDepartmentLanguage())
     return 'Chat ' + getChatDepartmentType() + getChatDepartmentLanguage(); 
 }
 
@@ -110,8 +111,10 @@ function getChatLanguage(type){
         }
     }
     if(currentLangauge != null){
+        console.log(chatLanguage[currentLanguage][type])
         return chatLanguage[currentLanguage][type];
     }else{
+        console.log(chatLanguage['de'][type])
         return chatLanguage['de'][type];
     }
 }
@@ -120,7 +123,6 @@ function getChatLanguage(type){
 function getChatDepartmentType(){
     if(customerType != null){
         var departmentType;
-        
         switch(customerType) {
             case ('private-customer'):
             departmentType = 'Private ';
@@ -140,13 +142,11 @@ function getChatDepartmentType(){
     }
 }
   
-
 ///////////////////////////////////////////////////////////New Request Page Events/////////////////////////////////////////////////////////////
-
 
 function updateChatConnectionAfterDropdownChange(){
     if(!isChatting()){
-        var chatDepartment = getChatDepartment()    ;                                                                                 
+        var chatDepartment = getChatDepartment();                                                                                 
         checkDepartmentforInitialButtonChange(chatDepartment);                                                                                          
         listenDepartmentStatus(chatDepartment); 
     }else{
@@ -154,12 +154,23 @@ function updateChatConnectionAfterDropdownChange(){
     }
 }
 
-function updateChatConnectionAfterDropdownChange(department){
-    var dep = zE('webWidget:get', 'chat:department', department);
+function checkDepartmentforInitialButtonChange(selectedDepartment){
+    var dep = zE('webWidget:get', 'chat:department', selectedDepartment);
     if(dep.status == 'online'){
         showChatButton();
+    }
+}
+
+
+// Hide or Shows Button if Status Changes
+ 
+function listenDepartmentStatus(selectedDepartment){
+    zE('webWidget:on', 'chat:departmentStatus', function(department) {
+        if(department.name == selectedDepartment){
+            changeButtonVisibility(department.status);
         }
-  }
+    });
+}
 
 // Shows Chat button if anyone is available and inside opening hours
   
@@ -170,21 +181,6 @@ function changeButtonVisibility(status){
         hideChatButton();
     }
   }
-
-  // Hide or Shows Button if Status Changes
- 
-function listenDepartmentStatus(selectedDepartment){
-    zE('webWidget:on', 'chat:departmentStatus', function(department) {
-        if(department.name == selectedDepartment){
-            changeButtonVisibility();
-            if(department.status == 'online'){
-                showChatButton();
-            }else{
-                hideChatButton();
-            }
-        }
-    });
-}
 
 // CSS Change für Chat Button Offline
 function hideChatButton(){
@@ -204,11 +200,8 @@ function showChatButton(){
     $(".recommendedChannel").css('display' , 'inline-block');
 }
 
-
 function getButtonText(buttonText){
-  
     var currentLanguage = $('html').attr('lang');
-      
         chatText = {
           de: {
                   'chatUs': 'Chatte mit uns',
@@ -227,14 +220,10 @@ function getButtonText(buttonText){
                   'chatNotOnline' : 'Not available'
         }
     }
-     
     return chatText[currentLanguage][buttonText];
 }
 
-
 /////////////////////////////////////////////////////////////////Zopim Tags/////////////////////////////////////////////////////////////////////////
-
-
 
 function checkForTagChanges(){
     var oldWebformCase = sessionStorage.getItem('requestReason');
@@ -245,25 +234,23 @@ function checkForTagChanges(){
     sessionStorage.setItem('requestReason', webformCase);
     var skill = getChatSkill(webformCase);
     var languageTag = getChatLanguage('language');
-
     removeZopimTags(['de', 'fr', 'it', 'en']); // entfernt initial alle Sprachen
     removeZopimTags(['chat_pe_consumer', 'standard_request', 'chat_pe_home']); // entfernt initial alle Skills
     setZopimTags([webformCase, languageTag, skill]);
 }
 
-
 // Setzt den Chat Tag - Einzeln oder Array
 function setZopimTags(tags){                                                                  
     zE('webWidget', 'chat:addTags', tags);                                                                                      
-  }
+}
   
-  // Entfernt Tags - Einzelne oder Array
-  function removeZopimTags(tags){
+// Entfernt Tags - Einzelne oder Array
+function removeZopimTags(tags){
     zE('webWidget', 'chat:removeTags', tags);
-  }
+}
 
-  // Setzt für definierte Anfragegründe spezifische Skills und retourniert ansonsten den Standardskill
-  function getChatSkill(webFormCase){
+// Setzt für definierte Anfragegründe spezifische Skills und retourniert ansonsten den Standardskill
+function getChatSkill(webFormCase){
     var skill;
     var department = getChatDepartment();
 
@@ -276,12 +263,9 @@ function setZopimTags(tags){
     	break;
   	default:
     	skill = 'standard_request';
-	  }
+	}
     return skill;    
-  }
-
-
-
+}
 
 //////////////////////////////////////////////////////////Global Chat Funktionen////////////////////////////////////////////////////////////////
 
