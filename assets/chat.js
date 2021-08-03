@@ -86,8 +86,8 @@ function getWebWidgetSettings(){
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
     console.log('getChatDepartment');
-    console.log('thedepartmentis: ' + getChatDepartmentType() + getChatDepartmentLanguage())
-    return 'Chat ' + getChatDepartmentType() + getChatDepartmentLanguage(); 
+    console.log('thedepartmentis: ' + getChatDepartmentType() + getChatLanguage(department))
+    return 'Chat ' + getChatDepartmentType() + getChatLanguage(department); 
 }
 
 // Dictionary wo die HTML Sprache für Department und allgemein zurückgibt
