@@ -126,6 +126,7 @@ function getChatLanguage(type){
 
 // Gibt den Kundentyp für das Chat Department anhand des Kundentyps im Kuntaktformular zurück
 function getChatDepartmentType(){
+    try{
     console.log('getChatDepartmentType');
     console.log(!customerType !== null)
     console.log(customerType !== null)
@@ -151,6 +152,9 @@ function getChatDepartmentType(){
         console.log('its in private')
         return 'Private';
     }
+}catch(e){
+    console.log(e);
+}
 }
   
 ///////////////////////////////////////////////////////////New Request Page Events/////////////////////////////////////////////////////////////
