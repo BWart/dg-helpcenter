@@ -110,7 +110,7 @@ function getChatLanguage(type){
             'department' : 'EN'
         }
     }
-    if(currentLangauge != null){
+    if(!currentLanguage !== null){
         console.log(chatLanguage[currentLanguage][type])
         return chatLanguage[currentLanguage][type];
     }else{
@@ -121,7 +121,7 @@ function getChatLanguage(type){
 
 // Gibt den Kundentyp für das Chat Department anhand des Kundentyps im Kuntaktformular zurück
 function getChatDepartmentType(){
-    if(customerType != null){
+    if(!customerType !== null){
         var departmentType;
         switch(customerType) {
             case ('private-customer'):
