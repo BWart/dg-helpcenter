@@ -128,10 +128,7 @@ function getChatLanguage(type){
 function getChatDepartmentType(){
     try{
     console.log('getChatDepartmentType');
-    console.log(!customerType !== null)
-    console.log(customerType !== null)
-    console.log(!customerType == null)
-    if(!customerType !== null){
+    if(typeof customerType != 'undefined'){
         var departmentType;
         switch(customerType) {
             case ('private-customer'):
