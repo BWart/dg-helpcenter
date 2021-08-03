@@ -260,6 +260,7 @@
   //Aktion bei Änderung des RequestReasonDropdown
   requestReasonDropdown.on('change', function(){
     if (requestReasonDropdownContents.attr('value') != ''){
+      updateChatConnectionAfterDropdownChange();
       if (customerType == 'connect-customer'){
         onDropdownChangeConnect();
       } else {
@@ -267,6 +268,8 @@
       }
     }
   });
+
+  
   function onDropdownChange(){
     requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
@@ -399,6 +402,14 @@
       mailFormOrderNumberOrPhoneNumber.show();
     }
   }
+
+  //Aktion bei Click auf den Chat Button 
+
+  $('.button-chat').on("click", function () {
+  setZopimTag();
+  openChat();
+  }); 
+
   //Aktionen bei Klick auf "Ruf uns an"
   $('.private-number').on("click", function () {
     var popup = document.getElementById("phoneNumberPrivate");

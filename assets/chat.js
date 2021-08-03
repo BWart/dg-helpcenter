@@ -1,24 +1,30 @@
+// Hauptfunktion, wartet bis chat geladen ist und ruft danach die anderen Funktionen auf
 function waitForChat(){
     window.addEventListener('load', function() {
         zE('webWidget:on', 'chat:connected', function() {
            console.log("ChatConnected")
-           changeWebWidgetSetting('set');
+           changeWebWidgetSetting(true);
+           openWidgetForUnreadMessages();
+           hideWidgetWhenMinimized();
+           if(isChatting){
+               openChat();
+           }else{
+               hideChat();
+           }
         });
     })
 }
 
-
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
 
-// Wechselt widget anhand des Typs (Set & Update)
-function changeWebWidgetSetting(type){
-    console.log('beforwebwidgetsettings')
-    console.log(getWebWidgetSettings())
-    if (type == 'set'){
-        window.zESettings = getWebWidgetSettings();
+// Updated die Widget Settings - Update Soll nur bei Dropdown Change im Request Form passieren. Ansonsten soll die Einstellung nicht überschrieben werden
+function changeWebWidgetSetting(initialLoad){
+    if(initialLoad){
+        window.zESettings = getWebWidgetSettings(); // Widget Settings Initiales Setup
     }else{
-        zE('webWidget', 'updateSettings', getWebWidgetSettings());
+        zE('webWidget', 'updateSettings', getWebWidgetSettings()); // Widget Settings Update
     }
+    zE('webWidget', 'setLocale', getChatLanguage(language)); // Setzt die Widget Sprache
 }
 
 // Definiert die Widget Settings
@@ -80,47 +86,233 @@ function getWebWidgetSettings(){
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
     console.log('Chat ' + getChatDepartmentType() + getChatDepartmentLanguage());
-    return 'Chat ' + getChatDepartmentType() + getChatDepartmentLanguage();
-  }
+    return 'Chat ' + getChatDepartmentType() + getChatDepartmentLanguage(); 
+}
 
-// Gibt die Sprache des Chat Departments anhand der HTML Sprache zurück
-function getChatDepartmentLanguage(){
-    switch(currentLanguage) {
-        case ('de'):
-          chatDepartment = 'DE';
-          break;
-        case ('fr'):
-          chatDepartment = 'FR';
-          break;
-        case ('it'):
-          chatDepartment = 'IT';
-          break;
-        case ('en-US'):
-          chatDepartment = 'EN';
-          break;
-        default:
-          chatDepartment = 'DE';
-      }
-      return chatDepartment; 
+// Dictionary wo die HTML Sprache für Department und allgemein zurückgibt
+function getChatLanguage(type){
+    var chatLanguage ={
+        de: {
+            'language' : 'de',
+            'department' : 'DE'
+        },  
+        fr: {
+            'language' : 'fr',
+            'department' : 'FR'
+        },
+        it: {
+            'language' : 'it',
+            'department' : 'IT'
+        },
+        'en-US': {
+            'language' : 'en',
+            'department' : 'EN'
+        }
+    }
+    if(currentLangauge != null){
+        return chatLanguage[currentLanguage][type];
+    }else{
+        return chatLanguage['de'][type];
+    }
 }
 
 // Gibt den Kundentyp für das Chat Department anhand des Kundentyps im Kuntaktformular zurück
 function getChatDepartmentType(){
-    var departmentType;
-    
-    switch(customerType) {
-        case ('private-customer'):
-          departmentType = 'Private ';
-          break;
-        case ('business-customer'):
-            departmentType = 'Business ';
-          break;
-        case ('connect-customer'):
-            departmentType = 'Connect ';
-          break;
-        default:
+    if(customerType != null){
+        var departmentType;
+        
+        switch(customerType) {
+            case ('private-customer'):
             departmentType = 'Private ';
-      }
-      return departmentType; 
+            break;
+            case ('business-customer'):
+                departmentType = 'Business ';
+            break;
+            case ('connect-customer'):
+                departmentType = 'Connect ';
+            break;
+            default:
+                departmentType = 'Private ';
+        }
+        return departmentType; 
+    }else{
+        return 'Private';
+    }
+}
+  
+
+///////////////////////////////////////////////////////////New Request Page Events/////////////////////////////////////////////////////////////
+
+
+function updateChatConnectionAfterDropdownChange(){
+    if(!isChatting()){
+        var chatDepartment = getChatDepartment()    ;                                                                                 
+        checkDepartmentforInitialButtonChange(chatDepartment);                                                                                          
+        listenDepartmentStatus(chatDepartment); 
+    }else{
+        showChatButton();
+    }
+}
+
+function updateChatConnectionAfterDropdownChange(department){
+    var dep = zE('webWidget:get', 'chat:department', department);
+    if(dep.status == 'online'){
+        showChatButton();
+        }
+  }
+
+// Shows Chat button if anyone is available and inside opening hours
+  
+function changeButtonVisibility(status){
+    if(status == 'online'){
+        showChatButton();
+    }else{
+        hideChatButton();
+    }
+  }
+
+  // Hide or Shows Button if Status Changes
+ 
+function listenDepartmentStatus(selectedDepartment){
+    zE('webWidget:on', 'chat:departmentStatus', function(department) {
+        if(department.name == selectedDepartment){
+            changeButtonVisibility();
+            if(department.status == 'online'){
+                showChatButton();
+            }else{
+                hideChatButton();
+            }
+        }
+    });
+}
+
+// CSS Change für Chat Button Offline
+function hideChatButton(){
+    $(".button-chat").removeClass("button-offline");
+    $(".button-chat").html(getButtonText('chatUs'));
+    $(".contactDataChat").show();
+    $(".chatLabel").addClass("chatLabelVisible");
+    $(".recommendedChannel").css('display' , 'inline-block');
+}
+
+// CSS Change für Chat Button Offline
+function showChatButton(){
+    $(".button-chat").removeClass("button-offline");
+    $(".button-chat").html(getButtonText('chatUs'));
+    $(".contactDataChat").show();
+    $(".chatLabel").addClass("chatLabelVisible");
+    $(".recommendedChannel").css('display' , 'inline-block');
+}
+
+
+function getButtonText(buttonText){
+  
+    var currentLanguage = $('html').attr('lang');
+      
+        chatText = {
+          de: {
+                  'chatUs': 'Chatte mit uns',
+                  'chatNotOnline' : 'Nicht verfügbar'
+          },
+          fr: {      
+                  'chatUs': 'Chattez avec nous',
+                  'chatNotOnline' : 'Non disponible'
+          },
+          it:{  
+                  'chatUs': 'Chatta con noi',
+                  'chatNotOnline' : 'Non disponibile'
+          },
+          'en-US': {
+                  'chatUs': 'Chat with us',
+                  'chatNotOnline' : 'Not available'
+        }
+    }
+     
+    return chatText[currentLanguage][buttonText];
+}
+
+
+/////////////////////////////////////////////////////////////////Zopim Tags/////////////////////////////////////////////////////////////////////////
+
+
+
+function checkForTagChanges(){
+    var oldWebformCase = sessionStorage.getItem('requestReason');
+    if(!oldWebformCase !== null){
+        removeZopimTags(oldWebformCase);// Wenn das Dropdown gewechselt wird, ist der "alte" Webform Case noch im Session Storage vorhanden und muss beim Chat entfernt werden   
+    }
+    var webformCase = requestReasonDropdownContents.attr('value');
+    sessionStorage.setItem('requestReason', webformCase);
+    var skill = getChatSkill(webformCase);
+    var languageTag = getChatLanguage('language');
+
+    removeZopimTags(['de', 'fr', 'it', 'en']); // entfernt initial alle Sprachen
+    removeZopimTags(['chat_pe_consumer', 'standard_request', 'chat_pe_home']); // entfernt initial alle Skills
+    setZopimTags([webformCase, languageTag, skill]);
+}
+
+
+// Setzt den Chat Tag - Einzeln oder Array
+function setZopimTags(tags){                                                                  
+    zE('webWidget', 'chat:addTags', tags);                                                                                      
+  }
+  
+  // Entfernt Tags - Einzelne oder Array
+  function removeZopimTags(tags){
+    zE('webWidget', 'chat:removeTags', tags);
+  }
+
+  // Setzt für definierte Anfragegründe spezifische Skills und retourniert ansonsten den Standardskill
+  function getChatSkill(webFormCase){
+    var skill;
+    var department = getChatDepartment();
+
+    switch(true) {
+  	case (department === 'Chat Private DE' && webFormCase === 'webform_case_product_advice_consumer'):
+    	skill = 'chat_pe_consumer';
+    	break;
+  	case (department === 'Chat Private DE' && webFormCase === 'webform_case_product_advice_home'):
+    	skill = 'chat_pe_home';
+    	break;
+  	default:
+    	skill = 'standard_request';
+	  }
+    return skill;    
+  }
+
+
+
+
+//////////////////////////////////////////////////////////Global Chat Funktionen////////////////////////////////////////////////////////////////
+
+function openWidgetForUnreadMessages(){
+    zE('webWidget:on', 'chat:unreadMessages', function(number) {
+        openChat();
+    });
+}
+
+function hideWidgetWhenMinimized(){
+    zE('webWidget:on', 'userEvent', function(event) {
+        if(event.action == 'Web Widget Minimised'){
+            zE('webWidget', 'hide');
+        }
+    });
+}
+
+function isChatting(){
+    if(zE('webWidget:get', 'chat:isChatting')){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function openChat(){
+    zE('webWidget', 'show');
+    document.getElementById('launcher').contentWindow.document.getElementById('Embed').getElementsByTagName('button')[0].click();
+}
+
+function hideChat(){
+    zE('webWidget', 'hide');
 }
 
