@@ -3,7 +3,6 @@ function waitForChat(){
     console.log('bevoreeventlistener')
     window.addEventListener('load', function() {
         console.log('ineventlistener')
-        zE('webWidget:on', 'chat:connected', function() {
             console.log('inchatconnected')
             changeWebWidgetSettingInitial();
             openWidgetForUnreadMessages();
@@ -13,7 +12,6 @@ function waitForChat(){
             }else{
                 hideChat();
             }
-        });
     })
 }
 
