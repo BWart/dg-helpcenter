@@ -3,7 +3,7 @@ function waitForChat(){
     if(isPagedFullyLoaded()){
         runInitialChatSetup();  
     }else {
-        window.addEventListener('load', function() {
+        document.addEventListener('load', function() {
             zE('webWidget:on', 'chat:connected', function() {  
                 runInitialChatSetup()
             });
