@@ -263,12 +263,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  margin-top: 0;
-}
-
 .font1{
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
