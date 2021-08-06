@@ -213,6 +213,7 @@ function updateChatConnectionAfterDropdownChange(){
 
 function checkDepartmentforInitialButtonChange(selectedDepartment){
     var dep = zE('webWidget:get', 'chat:department', selectedDepartment);
+    console.log('Department Status:::::::::::::::::' + dep.status)
     if(dep.status == 'online'){
         showChatButton();
     }
@@ -223,6 +224,7 @@ function checkDepartmentforInitialButtonChange(selectedDepartment){
  
 function listenDepartmentStatus(selectedDepartment){
     zE('webWidget:on', 'chat:departmentStatus', function(department) {
+        console.log('Status Changed::::::::::::::::::::::' + dep.status)
         if(department.name == selectedDepartment){
             changeButtonVisibility(department.status);
         }

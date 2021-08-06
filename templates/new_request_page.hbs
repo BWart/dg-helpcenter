@@ -128,7 +128,7 @@
   //intial setup
   setPortalDependantVariables();
   setCustomerType();
-  checkForFeedbackForm();
+  //checkForFeedbackForm();
 
   function setPortalDependantVariables(){
     switch (portal){
@@ -264,8 +264,13 @@
       } else {
         onDropdownChange();
       }
-      removeChatBasedOnRequestType();
-      updateChatConnectionAfterDropdownChange();
+      try {
+        removeChatBasedOnRequestType();
+        updateChatConnectionAfterDropdownChange();
+      }
+      catch (e) {
+        console.log(e); 
+      } 
     }
   });
 
@@ -574,6 +579,8 @@
 
 
    //////////////////////////Downvote-button Formular////////////////////////////
+
+   /*
   function checkForFeedbackForm(){
     if (sessionStorage.getItem("referrer")) {
       referrer = sessionStorage.getItem("referrer");
@@ -584,8 +591,12 @@
     contactFormIsShown = 2; // 0 Shows Infotext and 1 shows OrderNumber field
     
     //Felder automatisch befüllen 
-    $('#request_custom_fields_360014169819').attr('value' , 'webform_case_other_request_order'); //Grund der Anfrage setzen////
-    $('input[name="request[subject]"]').val('Feedback'+subjectTitel); //Betreff gesetzt //// 
+    window.addEventListener('load', function() {
+      zE('webWidget:on', 'chat:connected', function() {
+        requestReasonDropdownContents.attr('value' , 'webform_case_other_request_order'); //Grund der Anfrage setzen////
+      });
+    })
+    $('input[name="request[subject]"]').val('Feedback'); //Betreff gesetzt //// 
     $('input[name="request[anonymous_requester_email]"]').val('feedback.helpcenter@digitecgalaxus.ch');//Mail setzen////
     mailFormMessageLabel.text(infoBoxWording['outputFeedbackLabelPart1'][currentLanguage] + subjectTitel);//Label des Mailformulars anhand des Helpcenter Artikels setzen////
     
@@ -608,15 +619,17 @@
     $('.request-form footer').css('margin-top', '0px')
     $('.request-form footer').css('padding-top', '0px')
     $('.request-form footer').prepend(infoBoxWording['feedbackThanks'][currentLanguage]);
+    sessionStorage.removeItem('Feedback');
   }
     else{
       sessionStorage.removeItem('Feedback');
     }
   }
+  */
   
   ////////////////////CHAT Table Cell entfernen///////////////////////////
 
-  // Entfernt ChatTabeCell, wenn bedigungen erfüllt sind
+  // Entfernt ChatTabeCell, wenn Bedigungen erfüllt sind
   function removeChatBasedOnRequestType(){
     console.log('removeChatBasedOnRequestType');
     console.log('germanorconnect '+ isGermanyOrConnect());
@@ -650,7 +663,8 @@
   //Deaktiviert den Chat für einige Anfragegründe bei B2B
   function isBusinessRequestReasonWithoutChat(){
     console.log(requestReasonTag);
-    if(requestReasonTag == 'webform_case_offer' || (requestReasonTag == 'webform_case_delete_account' && customerType == 'business-Customer')){
+    console.log(customerType)
+    if(requestReasonTag == 'webform_case_offer' || (requestReasonTag == 'webform_case_delete_account' && customerType == 'business-customer')){
       return true;
     }else {
       return false;
