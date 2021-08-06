@@ -592,9 +592,7 @@
     
     //Felder automatisch befüllen 
     window.addEventListener('load', function() {
-      zE('webWidget:on', 'chat:connected', function() {
-        requestReasonDropdownContents.attr('value' , 'webform_case_other_request_order'); //Grund der Anfrage setzen////
-      });
+      requestReasonDropdownContents.attr('value' , 'webform_case_other_request_order'); //Grund der Anfrage setzen////
     })
     $('input[name="request[subject]"]').val('Feedback'); //Betreff gesetzt //// 
     $('input[name="request[anonymous_requester_email]"]').val('feedback.helpcenter@digitecgalaxus.ch');//Mail setzen////
@@ -631,9 +629,6 @@
 
   // Entfernt ChatTabeCell, wenn Bedigungen erfüllt sind
   function removeChatBasedOnRequestType(){
-    console.log('removeChatBasedOnRequestType');
-    console.log('germanorconnect '+ isGermanyOrConnect());
-    console.log('specialbusiness '+ isBusinessRequestReasonWithoutChat());
     if(isGermanyOrConnect() || isBusinessRequestReasonWithoutChat()){
       $('.chatTableCell').hide();
     }else{
@@ -662,8 +657,6 @@
 
   //Deaktiviert den Chat für einige Anfragegründe bei B2B
   function isBusinessRequestReasonWithoutChat(){
-    console.log(requestReasonTag);
-    console.log(customerType)
     if(requestReasonTag == 'webform_case_offer' || (requestReasonTag == 'webform_case_delete_account' && customerType == 'business-customer')){
       return true;
     }else {

@@ -1,17 +1,14 @@
 // Hauptfunktion, wartet bis chat geladen ist und ruft danach die anderen Funktionen auf
 function waitForChat(){
-    console.log('bevoreeventlistener')
     window.addEventListener('load', function() {
-        console.log('ineventlistener')
-            console.log('inchatconnected')
-            changeWebWidgetSettingInitial();
-            openWidgetForUnreadMessages();
-            hideWidgetWhenMinimized();
-            if(isChatting()){
-                openChat();
-            }else{
-                hideChat();
-            }
+        changeWebWidgetSettingInitial();
+        openWidgetForUnreadMessages();
+        hideWidgetWhenMinimized();
+        if(isChatting()){
+            openChat();
+        }else{
+            hideChat();
+        }
     })
 }
 
@@ -85,7 +82,6 @@ function getWebWidgetSettings(){
 
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
-    console.log('DEPARTMENT::::::::::::Chat ' + getChatDepartmentType()+ ' ' + getChatDepartmentLanguage());
     return 'Chat ' + getChatDepartmentType()+ ' ' + getChatDepartmentLanguage(); 
 }
 
@@ -214,7 +210,6 @@ function updateChatConnectionAfterDropdownChange(){
 
 function checkDepartmentforInitialButtonChange(selectedDepartment){
     var dep = zE('webWidget:get', 'chat:department', selectedDepartment);
-    console.log('Department Status:::::::::::::::::' + dep.status)
     if(dep.status == 'online'){
         showChatButton();
     }
@@ -225,7 +220,6 @@ function checkDepartmentforInitialButtonChange(selectedDepartment){
  
 function listenDepartmentStatus(selectedDepartment){
     zE('webWidget:on', 'chat:departmentStatus', function(department) {
-        console.log('Status Changed::::::::::::::::::::::' + dep.status)
         if(department.name == selectedDepartment){
             changeButtonVisibility(department.status);
         }
@@ -296,7 +290,6 @@ function checkForTagChanges(){
     removeZopimTags(['de', 'fr', 'it', 'en']); // entfernt initial alle Sprachen
     removeZopimTags(['chat_pe_consumer', 'standard_request', 'chat_pe_home']); // entfernt initial alle Skills
     setZopimTags([requestReasonTag, languageTag, skill]); // Alle neuen Tags werden gesetzt
-    console.log("Chat Tags:::::::::::::::" + requestReasonTag + languageTag + skill);
 }
 
 // Setzt den Chat Tag - Einzeln oder Array
