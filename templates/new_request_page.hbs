@@ -47,7 +47,7 @@
         <tr>
           <td class="contactButtonTableCellLeft"></td>
           <td class="contactButtonTableCellLeftLeftBorder"><div class="contact-info private-customer connect-customer" data-wording-key="openingHoursPrivate"></div><div class="contact-info business-customer" data-wording-key="openingHoursBusiness"></div></td>
-          <td class="contactButtonTableCellLeftLeftBorder chatTableCell"><div class="contact-info private-customer connect-customer" data-wording-key="openingHoursPrivate"></div></td>
+          <td class="contactButtonTableCellLeftLeftBorder chatTableCell"><div class="contact-info private-customer connect-customer" data-wording-key="openingHoursPrivate"></div><div class="contact-info business-customer" data-wording-key="openingHoursBusiness"></div></td></td>
         </tr>
       </table>
       <!-- MOBILE TABLE -->
@@ -126,10 +126,9 @@
   "webform_case_offer", "webform_case_no_bill"]
 
   //intial setup
-  setCustomerType();
   setPortalDependantVariables();
+  setCustomerType();
   checkForFeedbackForm();
-  removeChatFromDEAndConnect();
 
   function setPortalDependantVariables(){
     switch (portal){
@@ -208,7 +207,7 @@
         var catJson = JSON.parse(requestReasonDropdownContents.attr("data-tagger"));
         requestReasonDropdownContents.attr("data-tagger", removeCategoryFromJson(catJson, categoryToRemove));
       }
-      catch (e) {
+      catch (e) { // Initial wird das Formular immer geladen ohne Kundentyp und deshalb hier etwas unschön gecatcht. Funktionalität ist jedoch nicht kritisch 
       }
     }
     isFormAttachmentRequired();
@@ -260,12 +259,13 @@
   //Aktion bei Änderung des RequestReasonDropdown
   requestReasonDropdown.on('change', function(){
     if (requestReasonDropdownContents.attr('value') != ''){
-      updateChatConnectionAfterDropdownChange();
       if (customerType == 'connect-customer'){
         onDropdownChangeConnect();
       } else {
         onDropdownChange();
       }
+      removeChatBasedOnRequestType();
+      updateChatConnectionAfterDropdownChange();
     }
   });
 
@@ -403,13 +403,6 @@
     }
   }
 
-  //Aktion bei Click auf den Chat Button 
-
-  $('.button-chat').on("click", function () {
-  setZopimTag();
-  openChat();
-  }); 
-
   //Aktionen bei Klick auf "Ruf uns an"
   $('.private-number').on("click", function () {
     var popup = document.getElementById("phoneNumberPrivate");
@@ -428,8 +421,8 @@
   	popup.classList.toggle("show");
   })
   //Aktion bei Klick auf "Chat" 
-  //TODO: CHAT INTEGRIEREN
   $('.button-chat').on("click", function () {
+    checkForTagChanges();
     openChat();
   }); 
   //Aktion bei Klick auf back Button
@@ -541,6 +534,45 @@
   setTimeout(function() { setFormAttachmentCheckbox() }, 500);
 
 
+
+
+
+  ///////////////////////////////////////////////////////////////////////////////Event Tracking/////////////////////////////////////////////////////
+
+  
+  function sendGARequestOpeningHours(action){
+    ga('send', 'event', 'Opening Hours', action, customerType + ' ' + currentLanguage);
+  }
+  
+  //Phone Number Tracking
+  
+	$('.phone-number').on("click", function () {
+    sendGARequestOpeningHours('Click Phone Button');
+    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
+  }) 
+  
+  //Contact Form Tracking
+  
+  $('.contactFormWriteUs').on("click", function () {
+    sendGARequestOpeningHours('Click Mail Button');
+    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
+  }) 
+  
+  //Chat Tracking
+  
+  $('.button-chat').on("click", function () {
+    sendGARequestOpeningHours('Click Chat Button');
+    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
+  }) 
+
+
+  // Request Reason Tracking
+
+  $('.request_custom_fields_360014169819').on("change",function() {
+    ga('send', 'event', 'Opening Hours', 'ShowsInfo', $('.request_custom_fields_360014169819' + ' a.nesty-input').text());                                                                                     
+  });
+
+
    //////////////////////////Downvote-button Formular////////////////////////////
   function checkForFeedbackForm(){
     if (sessionStorage.getItem("referrer")) {
@@ -582,18 +614,46 @@
     }
   }
   
-  ////////////////////CHAT entfernen bei Galaxus DE///////////////////////////
-  function removeChatFromDEAndConnect(){
+  ////////////////////CHAT Table Cell entfernen///////////////////////////
+
+  // Entfernt ChatTabeCell, wenn bedigungen erfüllt sind
+  function removeChatBasedOnRequestType(){
+    console.log('removeChatBasedOnRequestType');
+    console.log('germanorconnect '+ isGermanyOrConnect());
+    console.log('specialbusiness '+ isBusinessRequestReasonWithoutChat());
+    if(isGermanyOrConnect() || isBusinessRequestReasonWithoutChat()){
+      $('.chatTableCell').hide();
+    }else{
+      $('.chatTableCell').show();
+    }
+  }
+
+  // Deaktiviert den Chat für Connect und Germany
+  function isGermanyOrConnect(){
+    var hideChat;
     switch(portal){
       case'helpcenter.digitec.ch':
       case'helpcenter.galaxus.ch':
+        hideChat = false;
         break;
       case'helpcenter.galaxus.de':
       case'helpcenter.connect.digitec.ch':
-        $('.chatTableCell').hide();
+        hideChat = true;
         break;
       default:
+        hideChat = false;
         break;
+    }
+    return hideChat;
+  }
+
+  //Deaktiviert den Chat für einige Anfragegründe bei B2B
+  function isBusinessRequestReasonWithoutChat(){
+    console.log(requestReasonTag);
+    if(requestReasonTag == 'webform_case_offer' || (requestReasonTag == 'webform_case_delete_account' && customerType == 'business-Customer')){
+      return true;
+    }else {
+      return false;
     }
   }
 </script>

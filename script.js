@@ -160,50 +160,8 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
       this.blur();
   });  
   
-  
-  
-  
-  
-  ///////////////////////////////////////////////////////////////////////////////Event Tracking/////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////Article Tracking//////////////////////////////////////////////////////////////////////////////////
 
-  // set initial Customer Type  
-  if(!localStorage.getItem('isPrivateCustomer') === null){
-    localStorage.setItem('isPrivateCustomer', "0");
-  }
-
-  function sendGARequestOpeningHours(action){
-    ga('send', 'event', 'Opening Hours', action, getCustomerType() + ' ' + currentLanguage);
-  }
-  
-  //Phone Number Tracking
-  
-	$('.phone-number').on("click", function () {
-    sendGARequestOpeningHours('Click Phone Button');
-    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-  }) 
-  
-  //Contact Form Tracking
-  
-  $('.contactFormWriteUs').on("click", function () {
-    sendGARequestOpeningHours('Click Mail Button');
-    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-  }) 
-  
-  //Chat Tracking
-  
-  $('.button-chat').on("click", function () {
-    sendGARequestOpeningHours('Click Chat Button');
-    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-  }) 
-
-
-  // Request Reason Tracking
-
-  $('.request_custom_fields_360014169819').on("change",function() {
-    ga('send', 'event', 'Opening Hours', 'ShowsInfo', $('.request_custom_fields_360014169819' + ' a.nesty-input').text());                                                                                     
-  });
-
-  
   //Helpful-Button Tracking
   
   $('.article-vote-up').on('click', function(e) {
@@ -216,9 +174,7 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
       ga('send', 'event', 'Vote', 'Not Helpful', path);
   });  
   
-
 ///////////////////////////////////////////////////////////////////////Zopim Integration/////////////////////////////////////////////////////////////////
 //Zopim integration Ausgelagert in Chat.js
-waitForChat();
-
+  waitForChat();
 });

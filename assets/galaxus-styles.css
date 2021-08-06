@@ -131,7 +131,8 @@ body {
 }
 
 html {
-  background-color: #d1d3d4; 
+  background-color: #d1d3d4;
+  font-family: 'Gibson', sans-serif; 
 }
 
 /* aus style.css */

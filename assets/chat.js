@@ -2,15 +2,14 @@
 function waitForChat(){
     window.addEventListener('load', function() {
         zE('webWidget:on', 'chat:connected', function() {
-           console.log("waitForChat")
-           changeWebWidgetSetting(true);
-           openWidgetForUnreadMessages();
-           hideWidgetWhenMinimized();
-           if(isChatting){
-               openChat();
-           }else{
-               hideChat();
-           }
+            changeWebWidgetSettingInitial();
+            openWidgetForUnreadMessages();
+            hideWidgetWhenMinimized();
+            if(isChatting()){
+                openChat();
+            }else{
+                hideChat();
+            }
         });
     })
 }
@@ -18,19 +17,19 @@ function waitForChat(){
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
 
 // Updated die Widget Settings - Update Soll nur bei Dropdown Change im Request Form passieren. Ansonsten soll die Einstellung nicht überschrieben werden
-function changeWebWidgetSetting(initialLoad){
-    console.log('changeWebWidgetSetting')
-    if(initialLoad){
-        window.zESettings = getWebWidgetSettings(); // Widget Settings Initiales Setup
-    }else{
-        zE('webWidget', 'updateSettings', getWebWidgetSettings()); // Widget Settings Update
-    }
-    zE('webWidget', 'setLocale', getChatLanguage(language)); // Setzt die Widget Sprache
+function changeWebWidgetSettingInitial(){
+    window.zESettings = getWebWidgetSettings(); // Widget Settings Initiales Setup
+    zE('webWidget', 'setLocale', getLanguage()); // Setzt die Widget Sprache   
 }
+
+function changeWebWidgetSettingsOnChange(){
+    zE('webWidget', 'updateSettings', getWebWidgetSettings());
+    zE('webWidget', 'setLocale', getLanguage()); // Setzt die Widget Sprache
+}
+
 
 // Definiert die Widget Settings
 function getWebWidgetSettings(){
-    console.log('getWebWidgetSettings')
     var dep = getChatDepartment();
     var zeSettings = {
         webWidget: {
@@ -78,7 +77,6 @@ function getWebWidgetSettings(){
             }
         }
     }
-    console.log(zeSettings);
     return zeSettings;
 }
 
@@ -86,72 +84,119 @@ function getWebWidgetSettings(){
 
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
-    console.log('getChatDepartment');
-    console.log('thedepartmentis: ' + getChatDepartmentType() + getChatLanguage('department'))
-    return 'Chat ' + getChatDepartmentType() + getChatLanguage('department'); 
+    console.log('DEPARTMENT::::::::::::Chat ' + getChatDepartmentType()+ ' ' + getChatDepartmentLanguage());
+    return 'Chat ' + getChatDepartmentType()+ ' ' + getChatDepartmentLanguage(); 
 }
 
-// Dictionary wo die HTML Sprache für Department und allgemein zurückgibt
-function getChatLanguage(type){
-    console.log('getChatLanguage');
-    var chatLanguage = {
-        de: {
-            'language' : 'de',
-            'department' : 'DE'
-        },  
-        fr: {
-            'language' : 'fr',
-            'department' : 'FR'
-        },
-        it: {
-            'language' : 'it',
-            'department' : 'IT'
-        },
-        'en-US': {
-            'language' : 'en',
-            'department' : 'EN'
-        }
+//Gets language and changes to uppercase
+function getChatDepartmentLanguage(){
+    var chatDepartmentLanguage = getLanguage();
+    return chatDepartmentLanguage.toUpperCase();
+}
+
+//Normalisiert die HTML Sprache
+function getLanguage(){
+    var normalizedLanguage;
+    switch($('html').attr('lang')) {
+        case ('de'):
+            normalizedLanguage = 'de';
+            break;
+        case ('fr'):
+            normalizedLanguage = 'fr';
+            break;
+        case ('it'):
+            normalizedLanguage = 'it';
+            break;
+        case ('en-US'):
+            normalizedLanguage = 'en';
+            break;
+        default:
+            normalizedLanguage = 'de';
     }
-    if(typeof currentLanguage != 'undefined'){
-        console.log('its in the correct spot');
-        console.log(chatLanguage[currentLanguage][type])
-        return chatLanguage[currentLanguage][type];
-    }else{
-        console.log('its in the wrong spot');
-        console.log(chatLanguage['de'][type])
-        return chatLanguage['de'][type];
-    }
+    return normalizedLanguage;
 }
 
 // Gibt den Kundentyp für das Chat Department anhand des Kundentyps im Kuntaktformular zurück
 function getChatDepartmentType(){
-    try{
-    console.log('getChatDepartmentType');
     if(typeof customerType != 'undefined'){
+        var businessCustomerDepartment = getBusinessCustomerDepartment();
         var departmentType;
         switch(customerType) {
             case ('private-customer'):
-            departmentType = 'Private ';
-            break;
+                departmentType = 'Private';
+                break;
             case ('business-customer'):
-                departmentType = 'Business ';
-            break;
+                departmentType = businessCustomerDepartment;
+                break;
             case ('connect-customer'):
-                departmentType = 'Connect ';
-            break;
+                departmentType = 'Connect';
+                break;
             default:
-                departmentType = 'Private ';
+                departmentType = 'Private';
         }
-        console.log('end of the switch')
         return departmentType; 
     }else{
-        console.log('its in private')
         return 'Private';
     }
-}catch(e){
-    console.log(e);
 }
+
+
+//SpecialRoutingForBusinessCustomers Deutsch - Produktberatungen gehen zu den Privatkunden/PE sowie alle Chats nach 17:00
+function getBusinessCustomerDepartment(){
+    if(getLanguage() == 'de'){
+        if(isInBusinessChatHours()){
+            return getBusinessChatDepartmentCheckedForProductAdvice();
+        }else{
+            return 'Private';
+        }
+    }else{
+        return 'Business';
+    }
 }
+
+
+// Gibt Privatkunde zurück, insofern Produktberatung und ansonsten Business
+function getBusinessChatDepartmentCheckedForProductAdvice(){
+    var businessCustomerDepartment;
+    if(typeof requestReasonTag != 'undefined'){
+        switch(requestReasonTag) {
+            case ('webform_case_product_advice_it'):
+                businessCustomerDepartment = 'Private';
+                break;
+            case ('webform_case_product_advice_network'):
+                businessCustomerDepartment = 'Private';
+                break;
+            case ('webform_case_product_advice_consumer'):
+                businessCustomerDepartment = 'Private';
+                break;
+            case ('webform_case_product_advice_photo'):
+                businessCustomerDepartment = 'Private';
+                break;
+            case ('webform_case_product_advice_home'):
+                businessCustomerDepartment = 'Private';
+                break;
+            case ('webform_case_product_advice_diy'):
+                businessCustomerDepartment = 'Private';
+                break;
+            default:
+                businessCustomerDepartment = 'Business';
+        }
+        return businessCustomerDepartment;
+    }else{
+        return ('Business');
+    }   
+}
+
+//Returns true when hours < 17
+function isInBusinessChatHours(){
+    var today = new Date();
+    if(today.getHours()< 17){
+        return true;
+    }else{
+        return false;
+    }   
+}
+
   
 ///////////////////////////////////////////////////////////New Request Page Events/////////////////////////////////////////////////////////////
 
@@ -159,7 +204,8 @@ function updateChatConnectionAfterDropdownChange(){
     if(!isChatting()){
         var chatDepartment = getChatDepartment();                                                                                 
         checkDepartmentforInitialButtonChange(chatDepartment);                                                                                          
-        listenDepartmentStatus(chatDepartment); 
+        listenDepartmentStatus(chatDepartment);
+        changeWebWidgetSettingsOnChange(); 
     }else{
         showChatButton();
     }
@@ -211,8 +257,8 @@ function showChatButton(){
     $(".recommendedChannel").css('display' , 'inline-block');
 }
 
+//Gibt den Text für den ChatButton im Kontaktforumar zurück offen/geschlossen
 function getButtonText(buttonText){
-    var currentLanguage = $('html').attr('lang');
         chatText = {
           de: {
                   'chatUs': 'Chatte mit uns',
@@ -226,12 +272,12 @@ function getButtonText(buttonText){
                   'chatUs': 'Chatta con noi',
                   'chatNotOnline' : 'Non disponibile'
           },
-          'en-US': {
+          en: {
                   'chatUs': 'Chat with us',
                   'chatNotOnline' : 'Not available'
         }
     }
-    return chatText[currentLanguage][buttonText];
+    return chatText[getLanguage()][buttonText];
 }
 
 /////////////////////////////////////////////////////////////////Zopim Tags/////////////////////////////////////////////////////////////////////////
@@ -241,13 +287,13 @@ function checkForTagChanges(){
     if(!oldWebformCase !== null){
         removeZopimTags(oldWebformCase);// Wenn das Dropdown gewechselt wird, ist der "alte" Webform Case noch im Session Storage vorhanden und muss beim Chat entfernt werden   
     }
-    var webformCase = requestReasonDropdownContents.attr('value');
-    sessionStorage.setItem('requestReason', webformCase);
-    var skill = getChatSkill(webformCase);
-    var languageTag = getChatLanguage('language');
+    sessionStorage.setItem('requestReason', requestReasonTag);
+    var skill = getChatSkill(requestReasonTag);
+    var languageTag = getLanguage();
     removeZopimTags(['de', 'fr', 'it', 'en']); // entfernt initial alle Sprachen
     removeZopimTags(['chat_pe_consumer', 'standard_request', 'chat_pe_home']); // entfernt initial alle Skills
-    setZopimTags([webformCase, languageTag, skill]);
+    setZopimTags([requestReasonTag, languageTag, skill]); // Alle neuen Tags werden gesetzt
+    console.log("Chat Tags:::::::::::::::" + requestReasonTag + languageTag + skill);
 }
 
 // Setzt den Chat Tag - Einzeln oder Array
@@ -266,19 +312,19 @@ function getChatSkill(webFormCase){
     var department = getChatDepartment();
 
     switch(true) {
-  	case (department === 'Chat Private DE' && webFormCase === 'webform_case_product_advice_consumer'):
+  	case ('Chat Private DE' && webFormCase === 'webform_case_product_advice_consumer'):
     	skill = 'chat_pe_consumer';
-    	break;
+        break;
   	case (department === 'Chat Private DE' && webFormCase === 'webform_case_product_advice_home'):
     	skill = 'chat_pe_home';
-    	break;
+        break;
   	default:
     	skill = 'standard_request';
 	}
     return skill;    
 }
 
-//////////////////////////////////////////////////////////Global Chat Funktionen////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////Globale Chat Funktionen////////////////////////////////////////////////////////////////
 
 function openWidgetForUnreadMessages(){
     zE('webWidget:on', 'chat:unreadMessages', function(number) {
