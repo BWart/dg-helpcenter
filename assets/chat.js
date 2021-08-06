@@ -1,17 +1,33 @@
 // Hauptfunktion, wartet bis chat geladen ist und ruft danach die anderen Funktionen auf
 function waitForChat(){
-    window.addEventListener('load', function() {
-        zE('webWidget:on', 'chat:connected', function() {
-            changeWebWidgetSettingInitial();
-            openWidgetForUnreadMessages();
-            hideWidgetWhenMinimized();
-            if(isChatting()){
-                openChat();
-            }else{
-                hideChat();
-            }
-        });
-    })
+    if(isPagedFullyLoaded()){
+        runInitialChatSetup();  
+    }else {
+        window.addEventListener('load', function() {
+            zE('webWidget:on', 'chat:connected', function() {  
+                runInitialChatSetup()
+            });
+        })
+    }
+}
+
+function runInitialChatSetup(){
+    changeWebWidgetSettingInitial();
+    openWidgetForUnreadMessages();
+    hideWidgetWhenMinimized();
+    if(isChatting()){
+        openChat();
+    }else{
+        hideChat();
+    }
+}
+
+function isPagedFullyLoaded(){
+    if (document.readyState === "complete") {
+        return true;
+    }else {
+        return false;
+      }
 }
 
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
