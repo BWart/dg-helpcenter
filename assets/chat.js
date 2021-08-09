@@ -6,7 +6,6 @@ function waitForChat(){
         changeWebWidgetSettingInitial();
         openWidgetForUnreadMessages();
         hideWidgetWhenMinimized();
-        updateChatTagsAfterReconnect();
         if(isChatting()){
             openChat();
         }else{
@@ -27,13 +26,6 @@ function changeWebWidgetSettingsOnChange(){
     zE('webWidget', 'updateSettings', getWebWidgetSettings());
     zE('webWidget', 'setLocale', getLanguage()); // Setzt die Widget Sprache
 }
-
-function updateChatTagsAfterReconnect(){
-    zE('webWidget:on', 'chat:connected', function() {
-        console.log('successfully connected to Zendesk Chat!');
-    });
-}
-
 
 // Definiert die Widget Settings
 function getWebWidgetSettings(){
@@ -247,11 +239,10 @@ function changeButtonVisibility(status){
 
 // CSS Change für Chat Button Offline
 function hideChatButton(){
-    $(".button-chat").removeClass("button-offline");
-    $(".button-chat").html(getButtonText('chatUs'));
-    $(".contactDataChat").show();
-    $(".chatLabel").addClass("chatLabelVisible");
-    $(".recommendedChannel").css('display' , 'inline-block');
+    $(".button-chat").addClass("button-offline");
+ 	$(".button-chat").html(getButtonText('chatNotOnline'));
+    $(".chatLabel").removeClass("chatLabelVisible");
+    $(".recommendedChannel").css('display' , 'none');
 }
 
 // CSS Change für Chat Button Offline
@@ -288,27 +279,45 @@ function getButtonText(buttonText){
 
 /////////////////////////////////////////////////////////////////Zopim Tags/////////////////////////////////////////////////////////////////////////
 
+//Nach dem Klick auf den Chat Button werden vorhandene Skills entfernt und neue gesetzt
 function checkForTagChanges(){
+    var skill = getChatSkill(requestReasonTag);
+    removeOldWebformCaseTag(skill);
+    removeOldTags();
+    addNewZopimTags(skill)    
+}
+
+//Entfert Tags für Sprache sowie Skills -> Es sind danach keine Tags mehr vorhanden und können neu gesetzt werden
+function removeOldTags(){
+    removeZopimTags(['de', 'fr', 'it', 'en']); // entfernt initial alle Sprachen
+    removeZopimTags(['chat_pe_consumer', 'standard_request', 'chat_pe_home']); // entfernt initial alle Skills
+}
+
+//Fügt die neuen Tags für Skill, WebformCase und Sprache hinzu.
+function addNewZopimTags(skill){
+    var languageTag = getLanguage();
+    setZopimTags([skill, languageTag, skill]); // Alle neuen Tags werden gesetzt
+}
+
+// Wenn ein Webform Case im Session Storage vorhanden ist, wird dieser von den Chat Tags entfernt -> Wenn User die Auswahl im Dropdown ändern, sind ansonsten mehrere Tags vorhanden
+function removeOldWebformCaseTag(skill){
     var oldWebformCase = sessionStorage.getItem('requestReason');
     if(!oldWebformCase !== null){
         removeZopimTags(oldWebformCase);// Wenn das Dropdown gewechselt wird, ist der "alte" Webform Case noch im Session Storage vorhanden und muss beim Chat entfernt werden   
     }
-    sessionStorage.setItem('requestReason', requestReasonTag);
-    var skill = getChatSkill(requestReasonTag);
-    var languageTag = getLanguage();
-    removeZopimTags(['de', 'fr', 'it', 'en']); // entfernt initial alle Sprachen
-    removeZopimTags(['chat_pe_consumer', 'standard_request', 'chat_pe_home']); // entfernt initial alle Skills
-    setZopimTags([requestReasonTag, languageTag, skill]); // Alle neuen Tags werden gesetzt
+    sessionStorage.setItem('requestReason', skill);
 }
 
 // Setzt den Chat Tag - Einzeln oder Array
 function setZopimTags(tags){                                                                  
-    zE('webWidget', 'chat:addTags', tags);                                                                                      
+    zE('webWidget', 'chat:addTags', tags); 
+    console.log('set ' +tags);                                                                                     
 }
   
 // Entfernt Tags - Einzelne oder Array
 function removeZopimTags(tags){
     zE('webWidget', 'chat:removeTags', tags);
+    console.log('removed ' +tags);    
 }
 
 // Setzt für definierte Anfragegründe spezifische Skills und retourniert ansonsten den Standardskill
@@ -327,6 +336,22 @@ function getChatSkill(webFormCase){
     	skill = 'standard_request';
 	}
     return skill;    
+}
+
+// Gibt Callback, wenn der Chat gestartet wird und ruft den Event Listener für den Chat Recconect auf
+function setEventListernerForChatStart(){
+    zE('webWidget:on', 'chat:start', function() {
+        console.log('chatHasStarted');
+        setTagsAtReconnect();
+    });
+}
+
+//Setzt die Tags, wenn der Chat neu verbunden wird
+function setTagsAtReconnect(){
+    zE('webWidget:on', 'chat:connected', function() {
+        console.log('chatHasReconnected')
+        checkForTagChanges();
+    });
 }
 
 //////////////////////////////////////////////////////////Globale Chat Funktionen////////////////////////////////////////////////////////////////
