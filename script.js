@@ -4,6 +4,12 @@
 
 $(document).ready(function() {
 
+  //Weiterleitung Connect Section
+  if ( window.location.href.indexOf('360004879819')) {
+    window.location.href = 'https://helpcenter.connect.digitec.ch/hc/articles/4404356800402';
+   }
+
+
 
   switch ($('html').attr('lang')){
     case 'de':
