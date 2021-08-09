@@ -1,9 +1,12 @@
 // Hauptfunktion, wartet bis chat geladen ist und ruft danach die anderen Funktionen auf
 function waitForChat(){
+    console.log('iswaitingforchat')
     window.addEventListener('load', function() {
+        console.log('WidgetLoaded');
         changeWebWidgetSettingInitial();
         openWidgetForUnreadMessages();
         hideWidgetWhenMinimized();
+        updateChatTagsAfterReconnect();
         if(isChatting()){
             openChat();
         }else{
@@ -23,6 +26,12 @@ function changeWebWidgetSettingInitial(){
 function changeWebWidgetSettingsOnChange(){
     zE('webWidget', 'updateSettings', getWebWidgetSettings());
     zE('webWidget', 'setLocale', getLanguage()); // Setzt die Widget Sprache
+}
+
+function updateChatTagsAfterReconnect(){
+    zE('webWidget:on', 'chat:connected', function() {
+        console.log('successfully connected to Zendesk Chat!');
+    });
 }
 
 

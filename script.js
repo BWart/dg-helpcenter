@@ -6,7 +6,7 @@ $(document).ready(function() {
 
   //Weiterleitung Connect Section
 
-  if( window.location.href.indexOf('360004879819') > -1) {
+  if(window.location.href.indexOf('sections/360004879819') > -1) {
     window.location.href = 'https://helpcenter.connect.digitec.ch/hc/articles/4404356800402';
   }
 
