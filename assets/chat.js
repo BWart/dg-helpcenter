@@ -281,7 +281,7 @@ function getButtonText(buttonText){
 function checkForTagChanges(){
     removeOldWebformCaseTag();
     removeOldTags();
-    addNewZopimTags(skill)    
+    addNewZopimTags();    
 }
 
 //Entfert Tags für Sprache sowie Skills -> Es sind danach keine Tags mehr vorhanden und können neu gesetzt werden
@@ -291,7 +291,7 @@ function removeOldTags(){
 }
 
 //Fügt die neuen Tags für Skill, WebformCase und Sprache hinzu.
-function addNewZopimTags(skill){
+function addNewZopimTags(){
     var languageTag = getLanguage();
     var skill = getChatSkill(requestReasonTag);
     setZopimTags([skill, languageTag, requestReasonTag]); // Alle neuen Tags werden gesetzt
