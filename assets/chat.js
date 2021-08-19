@@ -186,6 +186,9 @@ function getBusinessChatDepartmentCheckedForProductAdvice(){
 //Returns true when hours < 17
 function isInBusinessChatHours(){
     var today = new Date();
+    if((today.getHours() == 16 && today.getMinutes() >= 55)){
+        return false;
+    }
     if(today.getHours()< 17){
         return true;
     }else{
