@@ -6,6 +6,7 @@ function fillInfoBoxWording(){
     var hp1 = "";
     var hp2 = "";
     var hp3 = "";
+    var hp4 = "";
     var offerte = "";
 
     var rck = "";
@@ -25,6 +26,8 @@ function fillInfoBoxWording(){
                   hp1 = "/115005646225";
                   hp2 = "/360012370979";
                   hp3 = "/360000457949";
+                  hp4 = "/360010272859";
+
                   offerte = "CHF 5'000.-";
                   rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + helpcenterURL + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
                   break;
@@ -37,6 +40,8 @@ function fillInfoBoxWording(){
                   hp1 = "/360007334359";
                   hp2 = "/360012372239";
                   hp3 = "/360007333839";
+                  hp4 = "/360010180420";
+
                   offerte = "CHF 5'000.-";
                   rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + helpcenterURL + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
                   break;
@@ -49,6 +54,8 @@ function fillInfoBoxWording(){
                   hp1 = "/360008216899";
                   hp2 = "";
                   hp3 = "/360016850820";
+                  hp4 = "/360010273099"
+
                   offerte = "EUR 2'000.-";
                   rck = "Du kannst von " + seite + " gekaufte Produkte innerhalb von 30 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
                   break;
@@ -61,6 +68,8 @@ function fillInfoBoxWording(){
                   hp1 = "/115005646225";
                   hp2 = "/360012370979";
                   hp3 = "/360000457949";
+                  hp4 = "/360010272859";
+
                   offerte = "CHF 5'000.-";
                   rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + helpcenterURL + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
                   break;
@@ -165,6 +174,12 @@ function fillInfoBoxWording(){
             'fr' : "Sous la rubrique « <a href='" + shopURL + "ServiceCase/List' target='blank'>Tous les retours</a> », vous trouverez une vue d'ensemble et le statut actuel de tous les retours et demandes de garantie que vous avez soumis.",
             'it' : "Sotto <a href='" + shopURL + "ServiceCase/List' target='blank'>tutti i resi</a> trovi una panoramica e lo stato attuale di tutti i resi e le richieste di garanzia da te presentate.",
             'en-US' : "Go to <a href='" + shopURL + "ServiceCase/List' target='blank'>all returns</a> to find an overview and the current status of all your returns and warranty cases."
+      },
+      "webform_case_creditnote" : {
+            'de' : "Alle deine offenen und eingelösten Gutschriften findest du <a href='" + shopURL + "invoice/listcreditnotes' target='blank'>hier</a>. Du kannst diese <a href='" + helpcenterURL + "articles" + hp3 + "' target='blank'>rückerstatten lassen</a> oder direkt in einer neuen Bestellung <a href='" + helpcenterURL + "articles" + hp4 + "' target='blank'>einlösen</a>.",
+            'fr' : "Vous pouvez trouver tous vos crédits ouverts et échangés <a href='" + shopURL + "invoice/listcreditnotes' target='blank'>ici</a>. Vous pouvez vous les <a href='" + helpcenterURL + "articles" + hp3 + "' target='blank'>faire rembourser</a> ou les <a href='" + helpcenterURL + "articles" + hp4 + "' target='blank'>échanger</a> directement contre une nouvelle commande.",
+            'it' : "Puoi trovare tutti i tuoi crediti aperti e riscattati <a href='" + shopURL + "invoice/listcreditnotes' target='blank'>qui</a>. Potete farveli <a href='" + helpcenterURL + "articles" + hp3 + "' target='blank'>rimborsare</a> o <a href='" + helpcenterURL + "articles" + hp4 + "' target='blank'>riscattarli</a>direttamente per un nuovo ordine.",
+            'en-US' : "You can find all your open and redeemed credits <a href='" + shopURL + "invoice/listcreditnotes' target='blank'>here</a>. You can have them <a href='" + helpcenterURL + "articles" + hp3 + "' target='blank'>refunded</a> or <a href='" + helpcenterURL + "articles" + hp4 + "' target='blank'>redeem</a> them directly in a new order."
       },
 
       //LEVEL 0: Zahlungen, Mahnungen und Rückestattungen
