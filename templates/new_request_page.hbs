@@ -11,7 +11,8 @@
 
   <div class="form requestform" id="requestForm">
     <h4 class="contactFormInfoTextClass regular" data-wording-key="contactFormInfoText"></h4>
-    <a class="button-back" data-wording-key="backButtonText"></a>
+    <!--<a class="button-back" data-wording-key="backButtonText"></a>-->
+    <a class="text-back">&lt; <font data-wording-key="backButtonText"></font></a>
     <div class="contactFormNote">
       <div class="contactFormText">
         <h2><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></h2>
@@ -97,7 +98,7 @@
   var contactInfos = $('.contactFormTextNoBorder');
   var infoTextField = $('.contactFormNote');
   var infoText = $('.contactFormTextInfo');
-  var backButton = $('.button-back');
+  var backButton = $('.text-back');
 
   //business & private Kontaktangaben
   var privateContact = $('.private-customer');
@@ -432,7 +433,7 @@
     setEventListernerForChatStart();
   }); 
   //Aktion bei Klick auf back Button
-  $('.button-back').on("click", function (){
+  $('.text-back').on("click", function (){
     contactFormIsShown = 0;
     if (customerType == 'connect-customer'){
       onDropdownChangeConnect()
