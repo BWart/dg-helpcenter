@@ -380,8 +380,6 @@
     }
   }  
 
-  
-
   //AKTIONEN IN DEN KONTAKTINFOS
   //Aktion bei Klick auf "Schreib uns" Button
   $('.contactFormWriteUs').on("click", function () {
@@ -631,23 +629,31 @@
 
   // Entfernt ChatTabeCell, wenn Bedigungen erfüllt sind
   function removeChatBasedOnRequestType(){
-    if(isGermanyOrConnect() || isBusinessRequestReasonWithoutChat()){
+    if(isGermany() || isBusinessRequestReasonWithoutChat() || isConnectWithoutChat()){
       $('.chatTableCell').hide();
     }else{
       $('.chatTableCell').show();
     }
   }
 
+  function isConnectWithoutChat(){
+    if(customerType == 'connect-customer' && currentLanguage != 'fr'){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
   // Deaktiviert den Chat für Connect und Germany
-  function isGermanyOrConnect(){
+  function isGermany(){
     var hideChat;
     switch(portal){
       case'helpcenter.digitec.ch':
       case'helpcenter.galaxus.ch':
+      case'helpcenter.connect.digitec.ch':
         hideChat = false;
         break;
       case'helpcenter.galaxus.de':
-      case'helpcenter.connect.digitec.ch':
         hideChat = true;
         break;
       default:

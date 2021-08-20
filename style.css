@@ -4313,7 +4313,7 @@ infoNoteBox{
   }
 
   .button-offline{
-  pointer-events: none;
+    pointer-events: none;
   }
 
   .contactButtonTableCellFull{

@@ -125,7 +125,7 @@ function getChatDepartmentType(){
                 departmentType = businessCustomerDepartment;
                 break;
             case ('connect-customer'):
-                departmentType = 'Connect';
+                departmentType = 'Private';
                 break;
             default:
                 departmentType = 'Private';
@@ -229,7 +229,6 @@ function listenDepartmentStatus(selectedDepartment){
 }
 
 // Shows Chat button if anyone is available and inside opening hours
-  
 function changeButtonVisibility(status){
     if(status == 'online'){
         showChatButton();
@@ -290,7 +289,7 @@ function checkForTagChanges(){
 //Entfert Tags für Sprache sowie Skills -> Es sind danach keine Tags mehr vorhanden und können neu gesetzt werden
 function removeOldTags(){
     removeZopimTags(['de', 'fr', 'it', 'en']); // entfernt initial alle Sprachen
-    removeZopimTags(['chat_pe_consumer', 'standard_request', 'chat_pe_home']); // entfernt initial alle Skills
+    removeZopimTags(['chat_pe_consumer', 'standard_request', 'chat_pe_home', 'chat_connect']); // entfernt initial alle Skills
 }
 
 //Fügt die neuen Tags für Skill, WebformCase und Sprache hinzu.
@@ -311,7 +310,7 @@ function removeOldWebformCaseTag(){
 
 // Setzt den Chat Tag - Einzeln oder Array
 function setZopimTags(tags){                                                                  
-    zE('webWidget', 'chat:addTags', tags);                                                                                     
+    zE('webWidget', 'chat:addTags', tags);                                                                                    
 }
   
 // Entfernt Tags - Einzelne oder Array
@@ -329,6 +328,9 @@ function getChatSkill(webFormCase){
         break;
   	case (department === 'Chat Private DE' && webFormCase === 'webform_case_product_advice_home'):
     	skill = 'chat_pe_home';
+        break;
+    case(customerType == 'connect-customer'):
+        skill = 'chat_connect'
         break;
   	default:
     	skill = 'standard_request';
