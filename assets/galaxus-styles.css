@@ -2,6 +2,40 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Gibson', sans-serif;
 }
 
+/*Make Links Red on mouseover*/
+.promoted-articles-item a:hover {
+  color: #124476;
+}
+
+.article-body a:hover{
+  color: #124476;
+}
+
+.breadcrumbs a:hover{
+  color: #124476;
+}
+
+.contactFormText a:hover{
+  color: #124476;
+}
+
+.article-sidebar a:hover{
+  color: #124476;
+}
+
+.section a:hover{
+  color: #124476;
+}
+
+.dropdown-toggle:hover{
+  color: #124476;
+}
+
+.requestform a:hover{
+  color: #124476;
+  cursor: pointer;
+}
+
 .button--zopim.inactive {
 	border-color: #ddd;
   color: #ddd;
@@ -264,40 +298,6 @@ select:focus {
   padding-right: 20px;
   -webkit-appearance: none;
   width: 100%;
-}
-
-/*Make Links Red on mouseover*/
-.promoted-articles-item a:hover {
-  color: #124476;
-}
-
-.article-body a:hover{
-  color: #124476;
-}
-
-.breadcrumbs a:hover{
-  color: #124476;
-}
-
-.contactFormText a:hover{
-  color: #124476;
-}
-
-.article-sidebar a:hover{
-  color: #124476;
-}
-
-.section a:hover{
-  color: #124476;
-}
-
-.dropdown-toggle:hover{
-  color: #124476;
-}
-
-.requestform a:hover{
-  color: #124476;
-  cursor: pointer;
 }
 
 .recommendedChannel{

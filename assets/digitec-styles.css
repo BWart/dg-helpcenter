@@ -5,6 +5,41 @@ h1, h2, h3, h4, h5, h6 {
 
 /* custom DG styles **/
 
+
+/*Make Links Red on mouseover*/
+.promoted-articles-item a:hover {
+  color: #e60021;
+}
+
+.article-body a:hover{
+  color: #e60021;
+}
+
+.breadcrumbs a:hover{
+  color: #e60021;
+}
+
+.contactFormText a:hover{
+  color: #e60021;
+}
+
+.article-sidebar a:hover{
+  color: #e60021;
+}
+
+.section a:hover{
+  color: #e60021;
+}
+
+.dropdown-toggle:hover{
+  color: #e60021;
+}
+
+.requestform a:hover{
+  color: #e60021;
+  cursor: pointer;
+}
+
    stickyNoteText{
      color: #000000 !important;
    }
@@ -147,7 +182,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #d6e6f4;
 }
 
-.button-contact{
+.bcontactutton-{
   color: #00559d;
   background-color: #d6e6f4;
   border: 1px solid #d6e6f4;
@@ -293,40 +328,6 @@ body {
   padding-right: 20px;
   -webkit-appearance: none;
   width: 100%;
-}
-
-/*Make Links Red on mouseover*/
-.promoted-articles-item a:hover {
-  color: #e60021;
-}
-
-.article-body a:hover{
-  color: #e60021;
-}
-
-.breadcrumbs a:hover{
-  color: #e60021;
-}
-
-.contactFormText a:hover{
-  color: #e60021;
-}
-
-.article-sidebar a:hover{
-  color: #e60021;
-}
-
-.section a:hover{
-  color: #e60021;
-}
-
-.dropdown-toggle:hover{
-  color: #e60021;
-}
-
-.requestform a:hover{
-  color: #e60021;
-  cursor: pointer;
 }
 
 .recommendedChannel{
