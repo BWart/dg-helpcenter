@@ -13,58 +13,69 @@ function filldynamicWording(){
 
 
     switch(portal){
-      case'helpcenter.digitec.ch':
-              uhrzeitPrivatkunde = "08:00 - 20:00";
-              uhrzeitPrivatkundeMobile = "08:00 - 20:00";
-              uhrzeitFirmenkunde = "08:00 - 20:00";
-              uhrzeitFirmenkundeMobile = "08:00 - 20:00";
+        case'helpcenter.digitec.ch':
+                uhrzeitPrivatkunde = "08:00 - 20:00";
+                uhrzeitPrivatkundeMobile = "08:00 - 20:00";
+                uhrzeitFirmenkunde = "08:00 - 20:00";
+                uhrzeitFirmenkundeMobile = "08:00 - 20:00";
 
-              telPrivatkunde = "+41445759500";
-              telPrivatkundeText = "+41 44 575 95 00";
-              telFirmenkunde = "+41445759600";
-              telFirmenkundeText = "+41 44 575 96 00";    
+                telPrivatkunde = "+41445759500";
+                telPrivatkundeText = "+41 44 575 95 00";
+                telFirmenkunde = "+41445759600";
+                telFirmenkundeText = "+41 44 575 96 00";    
 
-              break;
-      case'helpcenter.galaxus.ch':
-              uhrzeitPrivatkunde = "08:00 - 20:00";
-              uhrzeitPrivatkundeMobile = "08:00 - 20:00";
-              uhrzeitFirmenkunde = "08:00 - 20:00";
-              uhrzeitFirmenkundeMobile = "08:00 - 20:00";
+                break;
+        case'helpcenter.galaxus.ch':
+                uhrzeitPrivatkunde = "08:00 - 20:00";
+                uhrzeitPrivatkundeMobile = "08:00 - 20:00";
+                uhrzeitFirmenkunde = "08:00 - 20:00";
+                uhrzeitFirmenkundeMobile = "08:00 - 20:00";
 
-              telPrivatkunde = "+41445759800";
-              telPrivatkundeText = "+41 44 575 98 00";
-              telFirmenkunde = "+41445759900";
-              telFirmenkundeText = "+41 44 575 99 00";                
-              break;
-      case'helpcenter.galaxus.de':
-              uhrzeitPrivatkunde = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
-              uhrzeitPrivatkundeMobile = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
-              uhrzeitFirmenkunde = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
-              uhrzeitFirmenkundeMobile = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
+                telPrivatkunde = "+41445759800";
+                telPrivatkundeText = "+41 44 575 98 00";
+                telFirmenkunde = "+41445759900";
+                telFirmenkundeText = "+41 44 575 99 00";                
+                break;
+        case'helpcenter.galaxus.de':
+                uhrzeitPrivatkunde = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
+                uhrzeitPrivatkundeMobile = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
+                uhrzeitFirmenkunde = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
+                uhrzeitFirmenkundeMobile = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
 
-              telPrivatkunde = "+4940334614747";
-              telPrivatkundeText = "+49 (0)40 334 614 747";
-              telFirmenkunde = "+4940334614748";
-              telFirmenkundeText = "+49 (0)40 334 614 748";                    
-              break;
-      case'helpcenter.connect.digitec.ch':
-              uhrzeitPrivatkunde = "08:00 - 20:00";
-              uhrzeitPrivatkundeMobile = "08:00 - 20:00";
+                telPrivatkunde = "+4940334614747";
+                telPrivatkundeText = "+49 (0)40 334 614 747";
+                telFirmenkunde = "+4940334614748";
+                telFirmenkundeText = "+49 (0)40 334 614 748";                    
+                break;
+        case'helpcenter.digitec.at':
+                uhrzeitPrivatkunde = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";  //TODO: Galaxus AT Öffnungszeiten prüfen
+                uhrzeitPrivatkundeMobile = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";  //TODO: Galaxus AT Öffnungszeiten prüfen
+                uhrzeitFirmenkunde = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";  //TODO: Galaxus AT Öffnungszeiten prüfen
+                uhrzeitFirmenkundeMobile = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";  //TODO: Galaxus AT Öffnungszeiten prüfen
 
-              telPrivatkunde = "+41445759700";
-              telPrivatkundeText = "+41 44 575 97 00";
-              break;
-      default:
-              uhrzeitPrivatkunde = "08:00 - 20:00";
-              uhrzeitPrivatkundeMobile = "08:00 - 20:00";
-              uhrzeitFirmenkunde = "08:00 - 20:00";
-              uhrzeitFirmenkundeMobile = "08:00 - 20:00";
+                telPrivatkunde = "+4312345678901";  //TODO: Tel-Nr. Galaxus AT prüfen
+                telPrivatkundeText = "+43 (0)12 345 678 901";  //TODO: Tel-Nr. Galaxus AT prüfen
+                telFirmenkunde = "+4312345678901";  //TODO: Tel-Nr. Galaxus AT prüfen
+                telFirmenkundeText = "+43 (0)12 345 678 901";  //TODO: Tel-Nr. Galaxus AT prüfen
+                break;
+        case'helpcenter.connect.digitec.ch':
+                uhrzeitPrivatkunde = "08:00 - 20:00";
+                uhrzeitPrivatkundeMobile = "08:00 - 20:00";
 
-              telPrivatkunde = "+41445759500";
-              telPrivatkundeText = "+41 44 575 95 00";
-              telFirmenkunde = "+41445759600";
-              telFirmenkundeText = "+41 44 575 96 00";             
-              break;
+                telPrivatkunde = "+41445759700";
+                telPrivatkundeText = "+41 44 575 97 00";
+                break;
+        default:
+                uhrzeitPrivatkunde = "08:00 - 20:00";
+                uhrzeitPrivatkundeMobile = "08:00 - 20:00";
+                uhrzeitFirmenkunde = "08:00 - 20:00";
+                uhrzeitFirmenkundeMobile = "08:00 - 20:00";
+
+                telPrivatkunde = "+41445759500";
+                telPrivatkundeText = "+41 44 575 95 00";
+                telFirmenkunde = "+41445759600";
+                telFirmenkundeText = "+41 44 575 96 00";             
+                break;
     }
 
 
@@ -244,7 +255,7 @@ function filldynamicWording(){
         dynamicWording['en-US']['questionNotAnswered'] = 'Choose your contact channel'
     }
     
-    if (window.location.hostname == 'helpcenter.galaxus.de'){
+    if (window.location.hostname == 'helpcenter.galaxus.de' || window.location.hostname == 'helpcenter.galaxus.at'){
         dynamicWording['de']['contactFormInfoText'] = 'Per Telefon oder Kontaktformular - wähle nur den passenden Anfragegrund.'
         dynamicWording['fr']['contactFormInfoText'] = 'Par téléphone ou formulaire de contact - choisissez simplement le motif de votre demande.'
         dynamicWording['it']['contactFormInfoText'] = 'Per telefono o modulo di contatto - basta scegliere il motivo appropriato per la sua richiesta.'
