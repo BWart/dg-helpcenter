@@ -251,7 +251,7 @@ function showChatButton(){
     $(".button-chat").html(getButtonText('chatUs'));
     $(".contactDataChat").show();
     $(".chatLabel").addClass("chatLabelVisible");
-    $(".recommendedChannel").css('display' , 'none'); //inline-block
+    $(".recommendedChannel").css('display' , 'inline-block');
 }
 
 //Gibt den Text für den ChatButton im Kontaktforumar zurück offen/geschlossen
