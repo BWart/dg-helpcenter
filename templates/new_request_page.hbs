@@ -8,19 +8,68 @@
   <h1 class="Header" id="HeaderID" data-wording-key="headerTitle">
       <!--{{t 'submit_a_request'}}{{#if follow_up}}<span class='follow-up-hint'>{{follow_up}}</span>{{/if}}-->
   </h1>
-
+  
   <div class="form requestform" id="requestForm">
-    <h4 class="contactFormInfoTextClass regular" data-wording-key="contactFormInfoText"></h4>
+    <font class="contactFormInfoTextClass regular" data-wording-key="contactFormInfoText"></font>
     <!--<a class="button-back" data-wording-key="backButtonText"></a>-->
     <a class="text-back">&lt; <font data-wording-key="backButtonText"></font></a>
     <div class="contactFormNote">
       <div class="contactFormText">
-        <h2><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></h2>
-        <h4><div class="contactFormTextInfo"></div></h4>
+        <b><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></b>
+        <div class="contactFormTextInfo"></div>
         <!--<h4></h4>-->
       </div>
     </div>
     {{chat}}
+
+
+    <!-- PROGRESS BAR TESTING -->
+
+    <table style="border-collapse:separate" class="progressTable">
+        <tr>
+            <td class="circle2">&#10003</td>
+            <td style="padding-left:10px; max-width:100%;"><b>Wähle deine Kundengruppe</b></td>
+        </tr>
+        <tr class="tablespacer">
+            <td></td>
+        </tr>
+        <tr>
+            <td class="line"><div class="line" style="min-height:30px"></div></td>
+            <td style="padding-left:10px;padding-bottom:20px;padding-top:15px"><div id="inserter"></div></td>
+        </tr>
+        <tr class="tablespacer">
+            <td></td>
+        </tr>
+        <tr>
+            <td class="circle">2</td>
+            <td style="padding-left:10px"><b>Wähle deinen Anfragegrund</b></td>
+        </tr>
+        <tr class="tablespacer">
+            <td></td>
+        </tr>
+        <tr>
+            <td class="line" ><div class="line" style="min-height:30px"></div></td>
+            <td style="padding-left:10px;padding-bottom:20px;padding-top:15px"><div id="inserter2"></div></td>
+        </tr>
+        <tr class="tablespacer">
+            <td></td>
+        </tr>
+        <tr>
+            <td class="circle">3</td>
+            <td style="padding-left:10px"><b>Din Papi bstellt au gern bi eus</b></td>
+        </tr>
+        <tr class="tablespacer">
+            <td></td>
+        </tr>
+        <tr>
+            <td class="line" ><div class="line" style="min-height:0px"></div></td>
+            <td style="padding-left:10px">
+              <div id="inserter3" style="float:left;margin-right:20px;width:30%"><img src="{{asset 'chatIcon.png'}}" height="20px"><br><b>Chat</b><br>ja chat halt mal mit eus, gaht imfall am schnellschte</b><br><br><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></div>
+              <div style="float:left;margin-right:20px;width:30%"><img src="{{asset 'mailIcon.png'}}" height="14px"><br><b>Kontaktformular</b><br>Schriibsch eus es Mail a a a a a<br><br><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></div>
+              <div style="float:left;margin-right:20px;width:30%"><img src="{{asset 'phoneIcon.png'}}" height="14px"><br><b>Telefon</b><br>Redsch mit eus a a a a a a a a a a a a a a a<br><br><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></div>
+        </tr>
+    </table>
+
 
     <!-- CONTACT FORM TABLES -->
     <div class="contactFormTextNoBorder">
@@ -100,6 +149,11 @@
   var infoText = $('.contactFormTextInfo');
   var backButton = $('.text-back');
 
+  //TODO: Integrate new variables properly
+  var customerTypeDropdownLabel = $('[for=request_issue_type_select]');
+  var contactOptions= $('.request-form');
+  var requestReasonDropdownLabel = $('#request_custom_fields_360014169819_label')
+
   //business & private Kontaktangaben
   var privateContact = $('.private-customer');
   var businessContact = $('.business-customer')
@@ -143,6 +197,12 @@
         infoTextField.insertAfter(requestReasonDropdown);
         mailFormMailInput.insertAfter(requestReasonDropdown);
         contactInfos.insertAfter(infoTextField);
+        customerTypeDropdown.insertBefore(document.getElementById('inserter'));
+        requestReasonDropdown.insertBefore(document.getElementById('inserter2'));
+        //contactOptions.insertBefore(document.getElementById('inserter3'))
+        infoTextField.insertAfter(requestReasonDropdown);
+        customerTypeDropdownLabel.hide()
+        requestReasonDropdownLabel.hide()
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
@@ -242,7 +302,7 @@
 
   function connectHelpcenterEntryPoint(){
     introText.show();
-    customerTypeDropdown.hide();
+    //customerTypeDropdown.hide();
     requestReasonDropdown.show();
     backButton.hide();
     infoTextField.hide();
@@ -304,7 +364,7 @@
       }
     }
     mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
-    customerTypeDropdown.hide();
+    //customerTypeDropdown.hide();
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
     if (contactFormIsShown == 0) {
       introText.hide();
@@ -356,7 +416,7 @@
       }
     }
     mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
-    customerTypeDropdown.hide();
+    //customerTypeDropdown.hide();
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
     if (contactFormIsShown == 0) {
       backButton.hide();
@@ -391,7 +451,7 @@
     introText.hide();
     infoTextField.hide();
     contactInfos.hide();
-    customerTypeDropdown.hide();
+    //customerTypeDropdown.hide();
     mailFormOrderNumberOrPhoneNumber.show();
     mailFormSubject.hide();
     mailFormMessage.show();

@@ -54,7 +54,7 @@
 
 body {
   color: #333333;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   min-height: 100VH;
@@ -87,6 +87,11 @@ h3 {
 
 h4 {
   font-size: 16px;
+}
+
+h6 {
+  font-size: 14px;
+  margin-bottom: 15px;
 }
 
 a {
@@ -424,15 +429,16 @@ ul {
 }
 
 .form-field .nesty-input {
-  border-radius: 4px;
+  border-radius: 0px;
   height: 40px;
   line-height: 40px;
   outline: none;
   vertical-align: middle;
 }
 
+
 .form-field .nesty-input:focus {
-  border: 1px solid #0072ef;
+  /*border: 1px solid #0072ef;*/
   text-decoration: none;
 }
 
@@ -4297,12 +4303,12 @@ infoNoteBox{
   
   .contactFormNote{
     width:100%;
-    padding-top: 30px;
+    padding-top: 20px;
   }
 
   .contactFormText{
     width:100%;
-    padding: 20px;
+    padding: 0px;
   }
 
   .contactFormTextNoBorder{
@@ -4326,7 +4332,7 @@ infoNoteBox{
     width:33%;
     padding-top:0px;
     text-align:left;
-    padding-left:20px;
+    padding-left:41px;
     padding-right:20px;
   }
 
@@ -4368,7 +4374,7 @@ infoNoteBox{
     width:33%;
     padding-top:0px;
     text-align:left;
-    padding-left:20px;
+    padding-left:41px;
     padding-right:20px;
   }
   
@@ -4698,4 +4704,51 @@ html {
 
 .business-customer {
   display:none;
+}
+
+
+
+/* PROGRESS BAR TESTING */
+.circle {
+  background: rgb(255, 255, 255);
+  border: solid 2px;
+  border-color: #00559d;
+  border-radius: 50%;
+  width: 31px;
+  height: 27px;
+  line-height: 27px;
+  text-align:center;
+  vertical-align:center;
+  color: #00559d;
+}
+
+.circle2 {
+  background: #00559d;
+  border-color: white;
+  border-radius: 50%;
+  width: 31px;
+  height: 31px;
+  line-height: 31px;
+  text-align:center;
+  vertical-align:center;
+  color: #ffffff;
+}
+
+.line {
+  height:100%;
+  line-height:100%;
+  background-image: linear-gradient(#00559d, #00559d);
+  background-size: 1px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.tablespacer{
+  height:5px;
+}
+
+.progressTable {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 400px;
 }
