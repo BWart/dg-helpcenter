@@ -13,19 +13,12 @@
     <font class="contactFormInfoTextClass regular" data-wording-key="contactFormInfoText"></font>
     <!--<a class="button-back" data-wording-key="backButtonText"></a>-->
     <a class="text-back">&lt; <font data-wording-key="backButtonText"></font></a>
-    <div class="contactFormNote">
-      <div class="contactFormText">
-        <b><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></b>
-        <div class="contactFormTextInfo"></div>
-        <!--<h4></h4>-->
-      </div>
-    </div>
     {{chat}}
 
 
     <!-- PROGRESS BAR TESTING -->
 
-    <table style="border-collapse:separate" class="progressTable">
+    <table style="border-collapse:separate;padding-top:20px" class="progressTable">
         <tr>
             <td class="circle2">&#10003</td>
             <td style="padding-left:10px; max-width:100%;"><b>Wähle deine Kundengruppe</b></td>
@@ -49,7 +42,17 @@
         </tr>
         <tr>
             <td class="line" ><div class="line" style="min-height:30px"></div></td>
-            <td style="padding-left:10px;padding-bottom:20px;padding-top:15px"><div id="inserter2"></div></td>
+            <td style="padding-left:10px;padding-bottom:20px;padding-top:15px">
+              <div id="inserter2">
+                <div class="contactFormNote">
+                  <div class="contactFormText">
+                    <b><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></b>
+                    <div class="contactFormTextInfo"></div>
+                    <!--<h4></h4>-->
+                  </div>
+                </div>
+              </div>
+            </td>
         </tr>
         <tr class="tablespacer">
             <td></td>
@@ -63,10 +66,35 @@
         </tr>
         <tr>
             <td class="line" ><div class="line" style="min-height:0px"></div></td>
-            <td style="padding-left:10px">
+            <td style="padding-left:10px;padding-top:10px">
+              <table width="100%" border="0px solid">
+                <tr>
+                  <td width="33%" style="padding-right:20px"><img src="{{asset 'chatIcon.png'}}" height="20px"></td>
+                  <td width="33%" style="padding-right:10px;padding-left:10px"><img src="{{asset 'mailIcon.png'}}" height="20px"></td>
+                  <td width="33%" style="padding-left:20px"><img src="{{asset 'phoneIcon.png'}}" height="20px"></td>
+                </tr>
+                <tr>
+                  <td style="padding-right:20px"><b>Chat</b></td>
+                  <td style="padding-right:10px;padding-left:10px"><b>Kontaktformular</b></td>
+                  <td style="padding-left:20px"><b>Telefon</b></td>
+                </tr>
+                <tr>
+                  <td style="padding-right:20px;vertical-align:top">Mo - Fr:&nbsp;&nbsp; 08:00 - 20:00<br>Sa:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09:00 - 14:00</td>
+                  <td style="padding-right:10px;padding-left:10px;vertical-align:top">Wir antworten innerhalb von 1-2 Tagen</td>
+                  <td style="padding-left:20px;vertical-align:top">Montag bis Freitag 08:00 bis 20:00 Uhr.</td>
+                </tr>
+                <tr>
+                  <td style="padding-right:20px;padding-top:10px"><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></td>
+                  <td style="padding-right:10px;padding-left:10px;padding-top:10px"><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></td>
+                  <td style="padding-left:20px;padding-top:10px"><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></td>
+                </tr>
+              </table>
+              <!--
               <div id="inserter3" style="float:left;margin-right:20px;width:30%"><img src="{{asset 'chatIcon.png'}}" height="20px"><br><b>Chat</b><br>ja chat halt mal mit eus, gaht imfall am schnellschte</b><br><br><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></div>
               <div style="float:left;margin-right:20px;width:30%"><img src="{{asset 'mailIcon.png'}}" height="14px"><br><b>Kontaktformular</b><br>Schriibsch eus es Mail a a a a a<br><br><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></div>
               <div style="float:left;margin-right:20px;width:30%"><img src="{{asset 'phoneIcon.png'}}" height="14px"><br><b>Telefon</b><br>Redsch mit eus a a a a a a a a a a a a a a a<br><br><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></div>
+              -->
+            </td>
         </tr>
     </table>
 
