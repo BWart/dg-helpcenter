@@ -4738,4 +4738,6 @@ html {
   table-layout: fixed;
   width: 100%;
   min-width: 40px;
+  border-collapse: separate;
+  padding-bottom: 50px;
 }
