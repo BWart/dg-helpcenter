@@ -2,9 +2,19 @@ function filldynamicWording(){
     var portal = window.location.hostname;
 
     var uhrzeitPrivatkunde = "";
+    var uhrzeitPrivatkunde2 = "";
     var uhrzeitFirmenkunde = "";
+    var uhrzeitFirmenkunde2 = "";
     var uhrzeitPrivatkundeMobile = "";
     var uhrzeitFirmenkundeMobile = "";
+    var tagePrivatkunde = "";
+    var tagePrivatkunde2 = "";
+    var tagePrivatkunde2Mobile = "";
+    var tageFirmenkunde = "";
+    var tageFirmenkunde2 = "";
+    var tageFirmenkunde2Mobile = "";
+    var commaMultipleHoursPrivateCustomers = "";
+    var commaMultipleHoursBusinessCustomers = "";
 
     var telPrivatkunde = "";
     var telFirmenkunde = "";
@@ -14,10 +24,18 @@ function filldynamicWording(){
 
     switch(portal){
         case'helpcenter.digitec.ch':
+                tagePrivatkunde = "Mo - Fr:";
+                tagePrivatkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2Mobile = "";  //WICHTIG: KEIN leading <br> wenn befüllt
+                tageFirmenkunde = "Mo - Fr:";
+                tageFirmenkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2Mobile = "";  //WICHTIG: KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
-                uhrzeitPrivatkundeMobile = "08:00 - 20:00";
+                uhrzeitPrivatkunde2 = "";
                 uhrzeitFirmenkunde = "08:00 - 20:00";
-                uhrzeitFirmenkundeMobile = "08:00 - 20:00";
+                uhrzeitFirmenkunde2 = "";
+                commaMultipleHoursPrivateCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
+                commaMultipleHoursBusinessCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 telPrivatkunde = "+41445759500";
                 telPrivatkundeText = "+41 44 575 95 00";
@@ -26,10 +44,18 @@ function filldynamicWording(){
 
                 break;
         case'helpcenter.galaxus.ch':
+                tagePrivatkunde = "Mo - Fr:";
+                tagePrivatkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2Mobile = "";  //WICHTIG: KEIN leading <br> wenn befüllt
+                tageFirmenkunde = "Mo - Fr:";
+                tageFirmenkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2Mobile = "";  //WICHTIG: KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
-                uhrzeitPrivatkundeMobile = "08:00 - 20:00";
+                uhrzeitPrivatkunde2 = "";
                 uhrzeitFirmenkunde = "08:00 - 20:00";
-                uhrzeitFirmenkundeMobile = "08:00 - 20:00";
+                uhrzeitFirmenkunde2 = "";
+                commaMultipleHoursPrivateCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
+                commaMultipleHoursBusinessCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 telPrivatkunde = "+41445759800";
                 telPrivatkundeText = "+41 44 575 98 00";
@@ -37,10 +63,18 @@ function filldynamicWording(){
                 telFirmenkundeText = "+41 44 575 99 00";                
                 break;
         case'helpcenter.galaxus.de':
-                uhrzeitPrivatkunde = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
-                uhrzeitPrivatkundeMobile = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
-                uhrzeitFirmenkunde = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
-                uhrzeitFirmenkundeMobile = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";
+                tagePrivatkunde = "Mo - Fr:";
+                tagePrivatkunde2 = "<br>Sa:";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2Mobile = "Sa:";  //WICHTIG: KEIN leading <br> wenn befüllt
+                tageFirmenkunde = "Mo - Fr:";
+                tageFirmenkunde2 = "<br>Sa:";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2Mobile = "Sa:";  //WICHTIG: KEIN leading <br> wenn befüllt
+                uhrzeitPrivatkunde = "08:00 - 20:00";
+                uhrzeitPrivatkunde2 = "09:00 - 14:00";
+                uhrzeitFirmenkunde = "08:00 - 20:00";
+                uhrzeitFirmenkunde2 = "09:00 - 14:00";
+                commaMultipleHoursPrivateCustomers = ", ";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
+                commaMultipleHoursBusinessCustomers = ", ";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 telPrivatkunde = "+4940334614747";
                 telPrivatkundeText = "+49 (0)40 334 614 747";
@@ -59,22 +93,36 @@ function filldynamicWording(){
                 telFirmenkundeText = "+43 (0)12 345 678 901";  //TODO: Tel-Nr. Galaxus AT prüfen
                 break;
         case'helpcenter.connect.digitec.ch':
+                tagePrivatkunde = "Mo - Fr:";
+                tagePrivatkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde = "Mo - Fr:";
+                tageFirmenkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
-                uhrzeitPrivatkundeMobile = "08:00 - 20:00";
+                uhrzeitPrivatkunde2 = "";
+                uhrzeitFirmenkunde = "08:00 - 20:00";
+                uhrzeitFirmenkunde2 = "";
+                commaMultipleHoursPrivateCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
+                commaMultipleHoursBusinessCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 telPrivatkunde = "+41445759700";
                 telPrivatkundeText = "+41 44 575 97 00";
                 break;
         default:
+                tagePrivatkunde = "Mo - Fr:";
+                tagePrivatkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde = "Mo - Fr:";
+                tageFirmenkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
-                uhrzeitPrivatkundeMobile = "08:00 - 20:00";
+                uhrzeitPrivatkunde2 = "";
                 uhrzeitFirmenkunde = "08:00 - 20:00";
-                uhrzeitFirmenkundeMobile = "08:00 - 20:00";
+                uhrzeitFirmenkunde2 = "";
+                commaMultipleHoursPrivateCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
+                commaMultipleHoursBusinessCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 telPrivatkunde = "+41445759500";
                 telPrivatkundeText = "+41 44 575 95 00";
                 telFirmenkunde = "+41445759600";
-                telFirmenkundeText = "+41 44 575 96 00";             
+                telFirmenkundeText = "+41 44 575 96 00";   
                 break;
     }
 
@@ -91,22 +139,28 @@ function filldynamicWording(){
         'callUsBusiness' : 'Ruf uns an <a class="popuptext" id="phoneNumberBusiness" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'callUsBusinessMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Schon gewusst:',
-        'openingHoursPrivate' : 'Mo - Fr:<br>' + uhrzeitPrivatkunde + '',
-        'openingHoursPrivateMobile' : 'Telefon <font size = "2px">(Mo - Fr: ' + uhrzeitPrivatkundeMobile + '</font>)',
-        'openingHoursBusiness' : 'Mo - Fr:<br>' + uhrzeitFirmenkunde +'',
-        'openingHoursBusinessMobile' : 'Telefon <font size = "2px">(Mo - Fr: ' + uhrzeitFirmenkundeMobile + ')</font>',
+        'openingDaysPrivate' : tagePrivatkunde,
+        'openingHoursPrivate' : uhrzeitPrivatkunde,
+        'openingDaysPrivate2' : tagePrivatkunde2,
+        'openingDaysPrivate2Mobile' : tagePrivatkunde2Mobile,
+        'openingHoursPrivate2' : uhrzeitPrivatkunde2,
+        'openingDaysBusiness' : tageFirmenkunde,
+        'openingHoursBusiness' : uhrzeitFirmenkunde,
+        'openingDaysBusiness2' : tageFirmenkunde2,
+        'openingDaysBusiness2Mobile' : tageFirmenkunde2Mobile,
+        'openingHoursBusiness2' : uhrzeitFirmenkunde2,
         'phone' : 'Telefon',
         'chat' : 'Chat',
         'email' : 'Kontaktformular',
+        'emailDescription' : "Wir antworten innerhalb von 1-2 Tagen",
         'reactionMail' : 'Reaktionszeit: 1 Arbeitstag',
         'contact' : 'Kontaktiere uns',
         'questionNotAnswered' : 'Deine Frage ist nicht beantwortet?',
         'noAnswerFound' : 'Keine passende Antwort gefunden?',
         'writeUs' : 'Schreib uns',
         'openingHoursChat' : 'Mo - Fr:<br>' + uhrzeitPrivatkunde + '',
-        'openingHoursChatMobile' : 'Chat <font size = "2px">(Mo - Fr: ' + uhrzeitPrivatkundeMobile + '</font>)',
         'openingHoursChatBusiness' : 'Mo - Fr:<br>' + uhrzeitFirmenkunde + '',
-        'openingHoursChatBusinessMobile' : 'Chat <font size = "2px">(Mo - Fr: ' + uhrzeitFirmenkundeMobile + '</font>)',
+        'openingHoursChatBusinessMobile' : '<b>Chat</b> <font size = "2px">(Mo - Fr: ' + uhrzeitFirmenkundeMobile + '</font>)',
         'placeholder' : '&nbsp;',
         'placeholder2' : '&nbsp;',
         'waitingTime' : 'Wartezeit: 15 Min',
@@ -119,8 +173,14 @@ function filldynamicWording(){
         'recommendedChannel' : 'EMPFOHLEN',
         'backButtonText' : 'Zurück zur Kontaktauswahl',
         'feedbackHeader' : 'Feedbackformular',
-        'feedbackDescription' : 'Bitte verwende das Formular lediglich für Verbesserungsvorschläge zu unseren Beiträgen.<br>Leider können wir nicht auf dein Feedback antworten. Für deine Kundenanfragen kannst du gerne das <a href="/hc/requests/new">Kontaktformular</a> verwenden.<br>Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!'
-
+        'feedbackDescription' : 'Bitte verwende das Formular lediglich für Verbesserungsvorschläge zu unseren Beiträgen.<br>Leider können wir nicht auf dein Feedback antworten. Für deine Kundenanfragen kannst du gerne das <a href="/hc/requests/new">Kontaktformular</a> verwenden.<br>Achtung: Auf Kundenanfragen über das Feedbackformular wird nicht geantwortet!',
+        'chooseCustomerGroup' : 'Wähle deine Kundengruppe',
+        'chooseRequestReason' : 'Wähle deinen Anfragegrund',
+        'contactOptions' : 'Deine Kontaktmöglichkeiten',
+        'chatLanguage' : 'Sprache:',
+        'chatLanguage2' : 'Deutsch',
+        'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
+        'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers
         },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -144,7 +204,7 @@ function filldynamicWording(){
         'noAnswerFound' : 'Vous n\'avez pas trouvé la bonne réponse ?',
         'writeUs' : 'Ecrivez-nous',
         'openingHoursChat' : 'Lu - Ve :<br>' + uhrzeitPrivatkunde + '',
-        'openingHoursChatMobile' : 'Chat <font size = "2px">(Lu - Ve: ' + uhrzeitPrivatkundeMobile + '</font>)',
+        'openingHoursChatMobile' : '&nbsp;&nbsp;Chat <font size = "2px">(Lu - Ve: ' + uhrzeitPrivatkundeMobile + '</font>)',
         'openingHoursChatBusiness' : 'Lu - Ve:<br>' + uhrzeitFirmenkunde + '',
         'openingHoursChatBusinessMobile' : 'Chat <font size = "2px">(Lu - Ve: ' + uhrzeitFirmenkundeMobile + '</font>)',
         'openingHoursChat' : '&nbsp;',

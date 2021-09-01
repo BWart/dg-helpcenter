@@ -4374,8 +4374,17 @@ infoNoteBox{
     width:33%;
     padding-top:0px;
     text-align:left;
-    padding-left:41px;
-    padding-right:20px;
+    padding-left:0px;
+    padding-right:00px;
+  }
+
+  .contactButtonTableCellLeftNoBorderBottomPadding{
+    width:33%;
+    padding-top:0px;
+    text-align:left;
+    padding-left:0px;
+    padding-right:00px;
+    padding-bottom:20px
   }
   
   .contactButtonTableCellLeftBottomBorder{
@@ -4698,6 +4707,18 @@ html {
   }
 }
 
+@media (max-width: 650px) {
+  .hideUnder650 {
+    display : none !important;
+  }
+}
+
+@media (min-width: 651px) {
+  .hideOver651 {
+    display : none !important;
+  }
+}
+
 .private-customer {
   display:none;
 }
@@ -4709,7 +4730,7 @@ html {
 
 
 /* PROGRESS BAR TESTING */
-.circle {
+.circleOpenStep {
   background: rgb(255, 255, 255);
   border: solid 2px;
   border-color: #00559d;
@@ -4722,7 +4743,7 @@ html {
   color: #00559d;
 }
 
-.circle2 {
+.circleStepCompleted {
   background: #00559d;
   border-color: white;
   border-radius: 50%;
@@ -4750,5 +4771,5 @@ html {
 .progressTable {
   table-layout: fixed;
   width: 100%;
-  min-width: 400px;
+  min-width: 40px;
 }

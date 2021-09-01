@@ -12,16 +12,15 @@
   <div class="form requestform" id="requestForm">
     <font class="contactFormInfoTextClass regular" data-wording-key="contactFormInfoText"></font>
     <!--<a class="button-back" data-wording-key="backButtonText"></a>-->
-    <a class="text-back">&lt; <font data-wording-key="backButtonText"></font></a>
     {{chat}}
 
 
-    <!-- PROGRESS BAR TESTING -->
+    <!-- PROGRESS BAR TESTING &#10003 -->
 
-    <table style="border-collapse:separate;padding-top:20px" class="progressTable">
+    <table style="border-collapse:separate;padding-top:0px" class="progressTable">
         <tr>
-            <td class="circle2">&#10003</td>
-            <td style="padding-left:10px; max-width:100%;"><b>Wähle deine Kundengruppe</b></td>
+            <td class="circleOpenStep" id="circle1">1</td>
+            <td style="padding-left:10px; max-width:100%;"><b data-wording-key="chooseCustomerGroup"></b></td>
         </tr>
         <tr class="tablespacer">
             <td></td>
@@ -34,8 +33,8 @@
             <td></td>
         </tr>
         <tr>
-            <td class="circle">2</td>
-            <td style="padding-left:10px"><b>Wähle deinen Anfragegrund</b></td>
+            <td class="circleOpenStep" id="circle2">2</td>
+            <td style="padding-left:10px"><b data-wording-key="chooseRequestReason"></b></td>
         </tr>
         <tr class="tablespacer">
             <td></td>
@@ -43,13 +42,12 @@
         <tr>
             <td class="line" ><div class="line" style="min-height:30px"></div></td>
             <td style="padding-left:10px;padding-bottom:20px;padding-top:15px">
-              <div id="inserter2">
-                <div class="contactFormNote">
-                  <div class="contactFormText">
-                    <b><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></b>
-                    <div class="contactFormTextInfo"></div>
-                    <!--<h4></h4>-->
-                  </div>
+              <div id="inserter2"></div>
+              <div class="contactFormNote">
+                <div class="contactFormText">
+                  <b><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></b>
+                  <div class="contactFormTextInfo"></div>
+                  <!--<h4></h4>-->
                 </div>
               </div>
             </td>
@@ -58,37 +56,91 @@
             <td></td>
         </tr>
         <tr>
-            <td class="circle">3</td>
-            <td style="padding-left:10px"><b>Din Papi bstellt au gern bi eus</b></td>
+            <td class="circleOpenStep" id="circle3">3</td>
+            <td style="padding-left:10px"><b data-wording-key="contactOptions"></b></td>
         </tr>
         <tr class="tablespacer">
             <td></td>
         </tr>
         <tr>
-            <td class="line" ><div class="line" style="min-height:0px"></div></td>
-            <td style="padding-left:10px;padding-top:10px">
-              <table width="100%" border="0px solid">
+            <td class="line" ><div class="line" style="min-height:30px"></div></td>
+            <td style="padding-left:10px;padding-top:0px">
+
+              <!-- DESKTOP CONTACT TABLE -->
+              <table width="100%" border="0px solid" class="contactInfos hideUnder650">
                 <tr>
-                  <td width="33%" style="padding-right:20px"><img src="{{asset 'chatIcon.png'}}" height="20px"></td>
+                  <td width="33%" style="padding-right:20px" class="chatTableCell"><img src="{{asset 'chatIcon.png'}}" height="20px"><div class="recommendedChannel" data-wording-key="recommendedChannel" style="float:right"></div></td>
                   <td width="33%" style="padding-right:10px;padding-left:10px"><img src="{{asset 'mailIcon.png'}}" height="20px"></td>
                   <td width="33%" style="padding-left:20px"><img src="{{asset 'phoneIcon.png'}}" height="20px"></td>
                 </tr>
                 <tr>
-                  <td style="padding-right:20px"><b>Chat</b></td>
-                  <td style="padding-right:10px;padding-left:10px"><b>Kontaktformular</b></td>
-                  <td style="padding-left:20px"><b>Telefon</b></td>
+                  <td style="padding-right:20px" class="chatTableCell"><b data-wording-key="chat"></b></td>
+                  <td style="padding-right:10px;padding-left:10px"><b data-wording-key="email"></b></td>
+                  <td style="padding-left:20px"><b data-wording-key="phone"></b></td>
                 </tr>
                 <tr>
-                  <td style="padding-right:20px;vertical-align:top">Mo - Fr:&nbsp;&nbsp; 08:00 - 20:00<br>Sa:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 09:00 - 14:00</td>
-                  <td style="padding-right:10px;padding-left:10px;vertical-align:top">Wir antworten innerhalb von 1-2 Tagen</td>
-                  <td style="padding-left:20px;vertical-align:top">Montag bis Freitag 08:00 bis 20:00 Uhr.</td>
+                  <td style="padding-right:20px;vertical-align:top" class="chatTableCell"><font data-wording-key="openingDaysPrivate"></font><font style="float:right" data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font style="float:right" data-wording-key="openingHoursPrivate2"></font><br><font data-wording-key="chatLanguage"></font><font style="float:right;" data-wording-key="chatLanguage2"></font></td>
+                  <td style="padding-right:10px;padding-left:10px;vertical-align:top"><font data-wording-key="emailDescription"></td>
+                  <td style="padding-left:20px;vertical-align:top"><font data-wording-key="openingDaysPrivate"></font><font style="float:right" data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font style="float:right" data-wording-key="openingHoursPrivate2"></font></td>
                 </tr>
                 <tr>
-                  <td style="padding-right:20px;padding-top:10px"><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></td>
-                  <td style="padding-right:10px;padding-left:10px;padding-top:10px"><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></td>
-                  <td style="padding-left:20px;padding-top:10px"><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></td>
+                  <td style="padding-right:20px;padding-top:10px" class="chatTableCell"><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></td>
+                  <td style="padding-right:10px;padding-left:10px;padding-top:10px"><div class="button-contact contactFormWriteUs" data-wording-key="writeUs"></div></div></td>
+                  <td style="padding-left:20px;padding-top:10px">
+                    <div class="button-contact phone-number private-number private-customer connect-customer" data-wording-key="callUsPrivate"></div>
+                    <div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div>
+                  </td>
+                  <div id="inserter3"></div>
                 </tr>
               </table>
+
+              <!-- MOBILE CONTACT TABLE -->
+              <table class="contactInfos hideOver651" border="0">
+                <tr style="height:0px"></tr>
+                <tr>
+                  <td class="contactButtonTableCellLeftNoBorder chatTableCell">
+                    <img src="{{asset 'chatIcon.png'}}" height="16px">
+                    <b><font data-wording-key="chat"></font></b>
+                    <font class="chatMobile private-customer connect-customer" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font>
+                    <font class="chatMobile business-customer" data-wording-key="openingDaysBusiness"></font>
+                    <div class="recommendedChannel recommendedChatMobile" data-wording-key="recommendedChannel" style="float:right;"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="contactButtonTableCellLeftNoBorderBottomPadding chatTableCell">
+                    <div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="contactButtonTableCellLeftNoBorder">
+                    <img src="{{asset 'mailIcon.png'}}" height="16px">
+                    <b><font data-wording-key="email"></font></b>
+                    <font style="font-size: 11px;"><font>&nbsp;&nbsp;&nbsp;<font data-wording-key="emailDescription"></font></font>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="contactButtonTableCellLeftNoBorderBottomPadding">
+                    <div class="button-contact contactFormWriteUs" data-wording-key="writeUs"></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="contactButtonTableCellLeftNoBorder">
+                    <img src="{{asset 'phoneIcon.png'}}" height="16px">
+                    <b><font data-wording-key="phone"></font></b>
+                    <font class="chatMobile private-customer connect-customer" style="font-size: 11px;">&nbsp;&nbsp;&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font>
+                    <font class="chatMobile business-customer" data-wording-key="openingDaysBusiness"></font>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="contactButtonTableCellLeftNoBorder">
+                    <div class="button-contact phone-number private-number2 private-customer connect-customer" data-wording-key="callUsPrivateMobile"></div>
+                    <div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div>
+                  </td>
+                </tr>
+              </table>
+
+              <h5><a class="text-back">&lt; <font data-wording-key="backButtonText"></font></a></h5>
+              {{request_form}}
               <!--
               <div id="inserter3" style="float:left;margin-right:20px;width:30%"><img src="{{asset 'chatIcon.png'}}" height="20px"><br><b>Chat</b><br>ja chat halt mal mit eus, gaht imfall am schnellschte</b><br><br><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></div>
               <div style="float:left;margin-right:20px;width:30%"><img src="{{asset 'mailIcon.png'}}" height="14px"><br><b>Kontaktformular</b><br>Schriibsch eus es Mail a a a a a<br><br><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></div>
@@ -100,13 +152,14 @@
 
 
     <!-- CONTACT FORM TABLES -->
+    <!--
     <div class="contactFormTextNoBorder">
       <table>
         <tr>
           <td class="contactButtonTableCellLeftNoBorder" border="0"><h2><div data-wording-key="questionNotAnswered"></div></h2></td>
         </tr>
       </table>
-      <!-- DESKTOP TABLE -->
+      <!-- DESKTOP TABLE --><!--
       <table class="contactFormTextNoBorder nomobile hideUnder767" border="0">
         <tr style="height:0px"></tr>
         <tr>
@@ -128,7 +181,7 @@
           <td class="contactButtonTableCellLeftLeftBorder chatTableCell"><div class="contact-info private-customer connect-customer" data-wording-key="openingHoursPrivate"></div><div class="contact-info business-customer" data-wording-key="openingHoursBusiness"></div></td></td>
         </tr>
       </table>
-      <!-- MOBILE TABLE -->
+      <!-- MOBILE TABLE --><!--
       <table class="contactFormTextNoBorder mobile hideOver768" border="0">
         <tr style="height:0px"></tr>
         <tr>
@@ -151,8 +204,8 @@
         </tr>
       </table>
     </div>
+    -->
     <!-- AUTOMATED FORM -->
-    {{request_form}}
   </div>
 </div>
 
@@ -172,10 +225,14 @@
   var requestReasonDropdown;
   var requestReasonDropdownNesty;
   var requestReasonTag;
-  var contactInfos = $('.contactFormTextNoBorder');
+  var contactInfos = $('.contactInfos');
   var infoTextField = $('.contactFormNote');
   var infoText = $('.contactFormTextInfo');
   var backButton = $('.text-back');
+  var tehForm = $('.request-form');
+  var circleOne = document.getElementById('circle1');
+  var circleTwo = document.getElementById('circle2');
+  var circleThree = document.getElementById('circle3')
 
   //TODO: Integrate new variables properly
   var customerTypeDropdownLabel = $('[for=request_issue_type_select]');
@@ -218,17 +275,23 @@
       case 'helpcenter.digitec.ch':
       case 'helpcenter.galaxus.ch':
       case 'helpcenter.galaxus.de':
+        if (fullLink.slice(-3) != 'new'){
+          circleOne.classList.remove('circleOpenStep');
+          circleOne.classList.add('circleStepCompleted');
+          circleOne.innerHTML = '&#10003';
+        }
         requestReasonDropdown = $('.request_custom_fields_360014169819');
         requestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
-        infoTextField.insertAfter(requestReasonDropdown);
+        //infoTextField.insertAfter(requestReasonDropdown);
         mailFormMailInput.insertAfter(requestReasonDropdown);
-        contactInfos.insertAfter(infoTextField);
+        //contactInfos.insertAfter(infoTextField);
         customerTypeDropdown.insertBefore(document.getElementById('inserter'));
         requestReasonDropdown.insertBefore(document.getElementById('inserter2'));
         //contactOptions.insertBefore(document.getElementById('inserter3'))
-        infoTextField.insertAfter(requestReasonDropdown);
+        //infoTextField.insertAfter(requestReasonDropdown);
+        tehForm.hide()
         customerTypeDropdownLabel.hide()
         requestReasonDropdownLabel.hide()
         regularHelpcenterEntryPoint();
@@ -244,9 +307,9 @@
         requestReasonDropdownNesty = '.request_custom_fields_360021132800' + ' a.nesty-input';
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360021132820');
         requestReasonDropdownContents = $('#request_custom_fields_360021132800');
-        infoTextField.insertAfter(requestReasonDropdown);
+        //infoTextField.insertAfter(requestReasonDropdown);
         mailFormMailInput.insertAfter(requestReasonDropdown);
-        contactInfos.insertAfter(infoTextField);
+        //contactInfos.insertAfter(infoTextField);
         connectHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
@@ -260,9 +323,9 @@
         requestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
-        infoTextField.insertAfter(requestReasonDropdown);
+        //infoTextField.insertAfter(requestReasonDropdown);
         mailFormMailInput.insertAfter(requestReasonDropdown);
-        contactInfos.insertAfter(infoTextField);
+        //contactInfos.insertAfter(infoTextField);
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
@@ -365,6 +428,12 @@
 
   
   function onDropdownChange(){
+    circleOne.classList.remove('circleOpenStep');
+    circleOne.classList.add('circleStepCompleted');
+    circleOne.innerHTML = '&#10003';
+    circleTwo.classList.remove('circleOpenStep');
+    circleTwo.classList.add('circleStepCompleted');
+    circleTwo.innerHTML = '&#10003';
     requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     //Update Label and Template
@@ -395,7 +464,7 @@
     //customerTypeDropdown.hide();
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
     if (contactFormIsShown == 0) {
-      introText.hide();
+      //introText.hide();
       backButton.hide();
       mailFormOrderNumberOrPhoneNumber.hide();
       mailFormSubject.hide();
@@ -405,6 +474,7 @@
       mailFormMailInput.hide();
       commitButton.hide();
       contactInfos.show();
+      tehForm.hide();
       $('.' + customerType).show();
       infoTextField.show();
     }
@@ -456,9 +526,10 @@
       mailFormMailInput.hide();
       commitButton.hide();
       contactInfos.show();
+      tehForm.hide();
       $('.' + customerType).show();
       infoTextField.hide();
-      introText.hide();
+      //introText.hide();
     }
     //OrderNumber Feld verstecken wenn nicht benötigt
     if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
@@ -475,9 +546,10 @@
   })
   function showContactForm(){
     contactFormIsShown = 1;
+    tehForm.show();
     backButton.show();
-    introText.hide();
-    infoTextField.hide();
+    //introText.hide();
+    //infoTextField.hide();
     contactInfos.hide();
     //customerTypeDropdown.hide();
     mailFormOrderNumberOrPhoneNumber.show();
@@ -718,6 +790,8 @@
   // Entfernt ChatTabeCell, wenn Bedigungen erfüllt sind
   function removeChatBasedOnRequestType(){
     if(isGermany() || isBusinessRequestReasonWithoutChat() || isConnectWithoutChat()){
+    //if (true) {
+      console.log('enter')
       $('.chatTableCell').hide();
     }else{
       $('.chatTableCell').show();
