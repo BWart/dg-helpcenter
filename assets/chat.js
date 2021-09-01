@@ -1,6 +1,7 @@
 // Hauptfunktion, wartet bis chat geladen ist und ruft danach die anderen Funktionen auf
 function waitForChat(){
     window.addEventListener('load', function() {
+        console.log('TADAAAA')
         changeWebWidgetSettingInitial();
         openWidgetForUnreadMessages();
         hideWidgetWhenMinimized();
@@ -241,7 +242,6 @@ function changeButtonVisibility(status){
 function hideChatButton(){
     $(".button-chat").addClass("button-offline");
  	$(".button-chat").html(getButtonText('chatNotOnline'));
-    $(".chatLabel").removeClass("chatLabelVisible");
     $(".recommendedChannel").css('display' , 'none');
 }
 
@@ -249,8 +249,6 @@ function hideChatButton(){
 function showChatButton(){
     $(".button-chat").removeClass("button-offline");
     $(".button-chat").html(getButtonText('chatUs'));
-    $(".contactDataChat").show();
-    $(".chatLabel").addClass("chatLabelVisible");
     $(".recommendedChannel").css('display' , 'inline-block');
 }
 
