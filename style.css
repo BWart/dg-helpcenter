@@ -4730,40 +4730,6 @@ html {
 
 
 /* PROGRESS BAR TESTING */
-.circleOpenStep {
-  background: rgb(255, 255, 255);
-  border: solid 2px;
-  border-color: #00559d;
-  border-radius: 50%;
-  width: 31px;
-  height: 27px;
-  line-height: 27px;
-  text-align:center;
-  vertical-align:center;
-  color: #00559d;
-}
-
-.circleStepCompleted {
-  background: #00559d;
-  border-color: white;
-  border-radius: 50%;
-  width: 31px;
-  height: 31px;
-  line-height: 31px;
-  text-align:center;
-  vertical-align:center;
-  color: #ffffff;
-}
-
-.line {
-  height:100%;
-  line-height:100%;
-  background-image: linear-gradient(#00559d, #00559d);
-  background-size: 1px 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
 .tablespacer{
   height:5px;
 }
