@@ -300,10 +300,10 @@ function filldynamicWording(){
     }
     
     if (window.location.hostname == 'helpcenter.galaxus.de' || window.location.hostname == 'helpcenter.galaxus.at'){
-        dynamicWording['de']['contactFormInfoText'] = 'Per Telefon oder Kontaktformular - wähle nur den passenden Anfragegrund.'
-        dynamicWording['fr']['contactFormInfoText'] = 'Par téléphone ou formulaire de contact - choisissez simplement le motif de votre demande.'
-        dynamicWording['it']['contactFormInfoText'] = 'Per telefono o modulo di contatto - basta scegliere il motivo appropriato per la sua richiesta.'
-        dynamicWording['en-US']['contactFormInfoText'] = 'By phone or contact form - just choose the appropriate reason for your inquiry.'
+        dynamicWording['de']['contactFormInfoText'] = 'Per Telefon oder Kontaktformular - wähle nur deine Kundengruppe und den passenden Anfragegrund.'
+        dynamicWording['fr']['contactFormInfoText'] = 'Par téléphone ou formulaire de contact - choisissez simplement votre groupe de clients et le motif de la demande.'
+        dynamicWording['it']['contactFormInfoText'] = 'Per telefono o modulo di contatto - seleziona il tuo gruppo di clienti e il motivo della tua richiesta.'
+        dynamicWording['en-US']['contactFormInfoText'] = 'By phone or contact form - just choose your customer group and the appropriate reason for inquiry.'
         dynamicWording['de']['openingDaysPrivate2'] = '<br>Sa: '
         dynamicWording['fr']['openingDaysPrivate2'] = '<br>:Sa: '
         dynamicWording['it']['openingDaysPrivate2'] = 'Sab: '
