@@ -7,12 +7,6 @@ function filldynamicWording(){
     var uhrzeitFirmenkunde2 = "";
     var uhrzeitPrivatkundeMobile = "";
     var uhrzeitFirmenkundeMobile = "";
-    var tagePrivatkunde = "";
-    var tagePrivatkunde2 = "";
-    var tagePrivatkunde2Mobile = "";
-    var tageFirmenkunde = "";
-    var tageFirmenkunde2 = "";
-    var tageFirmenkunde2Mobile = "";
     var commaMultipleHoursPrivateCustomers = "";
     var commaMultipleHoursBusinessCustomers = "";
 
@@ -24,12 +18,6 @@ function filldynamicWording(){
 
     switch(portal){
         case'helpcenter.digitec.ch':
-                tagePrivatkunde = "Mo - Fr:";
-                tagePrivatkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
-                tagePrivatkunde2Mobile = "";  //WICHTIG: KEIN leading <br> wenn befüllt
-                tageFirmenkunde = "Mo - Fr:";
-                tageFirmenkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
-                tageFirmenkunde2Mobile = "";  //WICHTIG: KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
                 uhrzeitFirmenkunde = "08:00 - 20:00";
@@ -44,12 +32,6 @@ function filldynamicWording(){
 
                 break;
         case'helpcenter.galaxus.ch':
-                tagePrivatkunde = "Mo - Fr:";
-                tagePrivatkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
-                tagePrivatkunde2Mobile = "";  //WICHTIG: KEIN leading <br> wenn befüllt
-                tageFirmenkunde = "Mo - Fr:";
-                tageFirmenkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
-                tageFirmenkunde2Mobile = "";  //WICHTIG: KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
                 uhrzeitFirmenkunde = "08:00 - 20:00";
@@ -63,12 +45,6 @@ function filldynamicWording(){
                 telFirmenkundeText = "+41 44 575 99 00";                
                 break;
         case'helpcenter.galaxus.de':
-                tagePrivatkunde = "Mo - Fr:";
-                tagePrivatkunde2 = "<br>Sa:";  //WICHTIG: braucht leading <br> wenn befüllt
-                tagePrivatkunde2Mobile = "Sa:";  //WICHTIG: KEIN leading <br> wenn befüllt
-                tageFirmenkunde = "Mo - Fr:";
-                tageFirmenkunde2 = "<br>Sa:";  //WICHTIG: braucht leading <br> wenn befüllt
-                tageFirmenkunde2Mobile = "Sa:";  //WICHTIG: KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "09:00 - 14:00";
                 uhrzeitFirmenkunde = "08:00 - 20:00";
@@ -93,10 +69,6 @@ function filldynamicWording(){
                 telFirmenkundeText = "+43 (0)12 345 678 901";  //TODO: Tel-Nr. Galaxus AT prüfen
                 break;
         case'helpcenter.connect.digitec.ch':
-                tagePrivatkunde = "Mo - Fr:";
-                tagePrivatkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
-                tageFirmenkunde = "Mo - Fr:";
-                tageFirmenkunde2 = "";  //WICHTIG: braucht leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
                 uhrzeitFirmenkunde = "08:00 - 20:00";
@@ -139,21 +111,21 @@ function filldynamicWording(){
         'callUsBusiness' : 'Ruf uns an <a class="popuptext" id="phoneNumberBusiness" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'callUsBusinessMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Schon gewusst:',
-        'openingDaysPrivate' : tagePrivatkunde,
+        'openingDaysPrivate' : 'Mo - Fr: ',
         'openingHoursPrivate' : uhrzeitPrivatkunde,
-        'openingDaysPrivate2' : tagePrivatkunde2,
-        'openingDaysPrivate2Mobile' : tagePrivatkunde2Mobile,
+        'openingDaysPrivate2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
+        'openingDaysPrivate2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
         'openingHoursPrivate2' : uhrzeitPrivatkunde2,
-        'openingDaysBusiness' : tageFirmenkunde,
+        'openingDaysBusiness' : 'Mo - Fr: ',
         'openingHoursBusiness' : uhrzeitFirmenkunde,
-        'openingDaysBusiness2' : tageFirmenkunde2,
-        'openingDaysBusiness2Mobile' : tageFirmenkunde2Mobile,
+        'openingDaysBusiness2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
+        'openingDaysBusiness2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
         'openingHoursBusiness2' : uhrzeitFirmenkunde2,
         'phone' : 'Telefon',
         'chat' : 'Chat',
         'email' : 'Kontaktformular',
-        'emailDescription' : "Wir antworten innerhalb<br>von 1-2 Werktagen",
-        'emailDescriptionMobile' : "Wir antworten innerhalb von 1-2 Werktagen",
+        'emailDescription' : "Reaktionszeit: 1-2 Tage",
+        'emailDescriptionMobile' : "Reaktionszeit: 1-2 Tage",
         'contact' : 'Kontaktiere uns',
         'questionNotAnswered' : 'Deine Frage ist nicht beantwortet?',
         'noAnswerFound' : 'Keine passende Antwort gefunden?',
@@ -161,7 +133,7 @@ function filldynamicWording(){
         'recommendedChannel' : 'Empfohlener Kanal',
         'searchBoxText' : '<h2><font color=#00000>Wie können wir dir helfen?</font></h2>', 
         'infoNoteText' : '<br>Aufgrund der aktuellen Wetter- bzw. Strassensituation ist mit Verspätungen bei der Paketzustellung durch die Post zu rechnen. Besten Dank für dein Verständnis<br>&nbsp;',
-        'contactFormInfoText' : 'Per Chat, Telefon oder Kontaktformular - wähle nur deine Kundengruppe und den passenden Anfragegrund.<br><br>',
+        'contactFormInfoText' : 'Per Chat, Telefon oder Kontaktformular - wähle nur deine Kundengruppe und den passenden Anfragegrund.',
         'headerTitle' : 'Kontaktiere uns',
         'chatNotOnline': 'Nicht verfügbar',
         'recommendedChannel' : 'EMPFOHLEN',
@@ -185,21 +157,21 @@ function filldynamicWording(){
         'callUsBusiness' : 'Appelez-nous <a class="popuptext" id="phoneNumberBusiness" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'callUsBusinessMobile' : 'Appelez-nous <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Le saviez-vous :',
-        'openingDaysPrivate' : tagePrivatkunde,
+        'openingDaysPrivate' : 'Lu - Ve: ',
         'openingHoursPrivate' : uhrzeitPrivatkunde,
-        'openingDaysPrivate2' : tagePrivatkunde2,
-        'openingDaysPrivate2Mobile' : tagePrivatkunde2Mobile,
+        'openingDaysPrivate2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
+        'openingDaysPrivate2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
         'openingHoursPrivate2' : uhrzeitPrivatkunde2,
-        'openingDaysBusiness' : tageFirmenkunde,
+        'openingDaysBusiness' : 'Lu - Ve: ',
         'openingHoursBusiness' : uhrzeitFirmenkunde,
-        'openingDaysBusiness2' : tageFirmenkunde2,
-        'openingDaysBusiness2Mobile' : tageFirmenkunde2Mobile,
+        'openingDaysBusiness2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
+        'openingDaysBusiness2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
         'openingHoursBusiness2' : uhrzeitFirmenkunde2,
         'phone' : 'Téléphone',
         'chat' : 'Chat',
         'email' : 'Formulaire de contact',
-        'emailDescription' : "Nous répondons dans un délai de 1 à 2 jours ouvrables",
-        'emailDescriptionMobile' : "Nous répondons dans un délai de 1 à 2 jours ouvrables",
+        'emailDescription' : "Réponse : 1-2 jours",
+        'emailDescriptionMobile' : "Réponse : 1-2 jours",
         'contact' : 'Contactez-nous',
         'questionNotAnswered' : 'Pas trouvé votre réponse ?',
         'noAnswerFound' : 'Vous n\'avez pas trouvé la bonne réponse ?',
@@ -231,21 +203,21 @@ function filldynamicWording(){
         'callUsBusiness' : 'Chiamaci <a class="popuptext" id="phoneNumberBusiness"" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'callUsBusinessMobile' : 'Chiamaci <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Lo sapevi:',
-        'openingDaysPrivate' : tagePrivatkunde,
+        'openingDaysPrivate' : 'Lun - Ven: ',
         'openingHoursPrivate' : uhrzeitPrivatkunde,
-        'openingDaysPrivate2' : tagePrivatkunde2,
-        'openingDaysPrivate2Mobile' : tagePrivatkunde2Mobile,
+        'openingDaysPrivate2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
+        'openingDaysPrivate2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
         'openingHoursPrivate2' : uhrzeitPrivatkunde2,
-        'openingDaysBusiness' : tageFirmenkunde,
+        'openingDaysBusiness' : 'Lun - Ven: ',
         'openingHoursBusiness' : uhrzeitFirmenkunde,
-        'openingDaysBusiness2' : tageFirmenkunde2,
-        'openingDaysBusiness2Mobile' : tageFirmenkunde2Mobile,
+        'openingDaysBusiness2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
+        'openingDaysBusiness2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
         'openingHoursBusiness2' : uhrzeitFirmenkunde2,
         'phone' : 'Telefono',
         'chat' : 'Chat',
         'email' : 'Modulo di contatto',
-        'emailDescription' : "Rispondiamo entro 1-2 giorni",
-        'emailDescriptionMobile' : "Rispondiamo entro 1-2 giorni",
+        'emailDescription' : "Risposta: 1-2 giorni",
+        'emailDescriptionMobile' : "Risposta: 1-2 giorni",
         'contact' : 'Contattaci',
         'questionNotAnswered' : 'Non risolve il tuo problema?',
         'noAnswerFound' : 'Non hai trovato la risposta giusta?',
@@ -277,21 +249,21 @@ function filldynamicWording(){
         'callUsBusiness' : 'Call us <a class="popuptext" id="phoneNumberBusiness"" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'callUsBusinessMobile' : 'Call us <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Did you know:',
-        'openingDaysPrivate' : tagePrivatkunde,
+        'openingDaysPrivate' : 'Mo - Fr: ',
         'openingHoursPrivate' : uhrzeitPrivatkunde,
-        'openingDaysPrivate2' : tagePrivatkunde2,
-        'openingDaysPrivate2Mobile' : tagePrivatkunde2Mobile,
+        'openingDaysPrivate2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
+        'openingDaysPrivate2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
         'openingHoursPrivate2' : uhrzeitPrivatkunde2,
-        'openingDaysBusiness' : tageFirmenkunde,
+        'openingDaysBusiness' : 'Mo - Fr: ',
         'openingHoursBusiness' : uhrzeitFirmenkunde,
-        'openingDaysBusiness2' : tageFirmenkunde2,
-        'openingDaysBusiness2Mobile' : tageFirmenkunde2Mobile,
+        'openingDaysBusiness2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
+        'openingDaysBusiness2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
         'openingHoursBusiness2' : uhrzeitFirmenkunde2,
         'phone' : 'Phone',
         'chat' : 'Chat',
         'email' : 'Contact form',
-        'emailDescription' : "We reply within 1-2 days",
-        'emailDescriptionMobile' : "We reply within 1-2 days",
+        'emailDescription' : "Response time: 1-2 days",
+        'emailDescriptionMobile' : "Response time: 1-2 days",
         'contact' : 'Contact us',
         'questionNotAnswered' : 'Your question is not answered?',
         'noAnswerFound' : 'Can\'t find what you\'re looking for?',
@@ -308,7 +280,7 @@ function filldynamicWording(){
         'feedbackDescription' : 'Please use the form only to suggest improvements to our posts.<br>Unfortunately, we cannot respond to your feedback. For your customer inquiries, feel free to use the <a href="/requests/new">contact form</a>.<br>Attention: Customer inquiries via the feedback form will not be answered!',
         'chooseCustomerGroup' : 'Choose your customer group',
         'chooseRequestReason' : 'Choose your reason for request',
-        'contactOptions' : 'Deine Your contact options',
+        'contactOptions' : 'Your contact options',
         'chatLanguage' : 'Language:',
         'chatLanguage2' : 'English',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,

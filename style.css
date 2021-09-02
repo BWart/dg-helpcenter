@@ -440,6 +440,11 @@ ul {
 .form-field .nesty-input:focus {
   /*border: 1px solid #0072ef;*/
   text-decoration: none;
+  color:#333333; 
+}
+
+.form-field .nesty-input:hover {
+  color:#333333;
 }
 
 .form-field textarea {
@@ -4309,6 +4314,8 @@ infoNoteBox{
   .contactFormText{
     width:100%;
     padding: 0px;
+    border: 2px solid;
+    padding: 9px;
   }
 
   .contactFormTextNoBorder{
