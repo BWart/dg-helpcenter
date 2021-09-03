@@ -29,10 +29,6 @@ h1, h2, h3, h4, h5, h6 {
    }
       
    /* Ticket Form**/
-      
-   .contactFormText{
-     border: 5px solid #00559d;
-   }
 
    .contactButtonTableCellLeftLeftBorder{
      border-left: solid 1px #D3D3D3;
@@ -119,13 +115,6 @@ h1, h2, h3, h4, h5, h6 {
    }
        
    }
-   
-   body {
-     background-color: #ffffff;
-     color: #333333;
-     
-   }
-
    
    html {
      background-color: #d1d3d4;
@@ -250,17 +239,6 @@ select:focus {
   background-color: #d6e6f4;
   color: #00559d;
   border: 1px solid #d6e6f4; 
-}
-
-
-body {
-  /*background-color: #ffffff;*/
-  color: #333333;
-  font-family: 'Roboto', sans-serif;
-  font-size: 15px;
- /* font-weight: 400;*/
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
 }
 
 .font1{
