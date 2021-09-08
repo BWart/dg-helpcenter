@@ -249,7 +249,7 @@ function hideChatButton(){
 function showChatButton(){
     $(".button-chat").removeClass("button-offline");
     $(".button-chat").html(getButtonText('chatUs'));
-    $(".recommendedChannel").css('display' , 'inline-block');
+    $(".recommendedChannel").css('display' , 'none'); none // inline-block
 }
 
 //Gibt den Text für den ChatButton im Kontaktforumar zurück offen/geschlossen
