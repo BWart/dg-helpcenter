@@ -238,19 +238,6 @@ function changeButtonVisibility(status){
     }
   }
 
-// CSS Change für Chat Button Offline
-function hideChatButton(){
-    $(".button-chat").addClass("button-offline");
- 	$(".button-chat").html(getButtonText('chatNotOnline'));
-    $(".recommendedChannel").css('display' , 'none');
-}
-
-// CSS Change für Chat Button Offline
-function showChatButton(){
-    $(".button-chat").removeClass("button-offline");
-    $(".button-chat").html(getButtonText('chatUs'));
-    $(".recommendedChannel").css('display' , 'none'); none // inline-block
-}
 
 //Gibt den Text für den ChatButton im Kontaktforumar zurück offen/geschlossen
 function getButtonText(buttonText){

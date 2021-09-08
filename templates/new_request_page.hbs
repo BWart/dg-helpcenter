@@ -57,7 +57,7 @@
         </tr>
         <tr>
             <td class="circleOpenStep" id="circle3">3</td>
-            <td style="padding-left:10px"><b data-wording-key="contactOptions"></b></td>
+            <td style="padding-left:10px"><b data-wording-key="contactOptions" class="circle3Title"></b><b data-wording-key="email" class="circle3Title2"></b></td>
         </tr>
         <tr class="tablespacer">
             <td></td>
@@ -69,28 +69,28 @@
               <!-- DESKTOP CONTACT TABLE -->
               <table width="100%" class="contactInfos hideUnder650" id="desktopContactTable">
                 <tr>
-                  <td width="33%" style="padding-right:20px;padding-top:15px" class="chatTableCell"><img src="{{asset 'chatIcon.png'}}" height="20px">&nbsp;&nbsp;<div class="recommendedChannel" data-wording-key="recommendedChannel" style=""></div></td>
-                  <td width="33%" style="padding-right:10px;padding-left:10px;padding-top:15px"><img src="{{asset 'mailIcon.png'}}" height="20px"></td>
-                  <td width="33%" style="padding-left:20px;padding-top:15px"><img src="{{asset 'phoneIcon.png'}}" height="20px"></td>
+                  <td width="33%" style="padding-right:20px;padding-top:15px" class="chatTableCell"><div id="mailIconCellContent"><img src="{{asset 'mailIcon.png'}}" height="20px"></div><div id="row1cell1inserter"></div></td>
+                  <td width="33%" style="padding-right:10px;padding-left:10px;padding-top:15px"><div id="phoneIconCellContent"><img src="{{asset 'phoneIcon.png'}}" height="20px"></div><div id="row1cell2inserter"></div></td>
+                  <td width="33%" style="padding-left:20px;padding-top:15px"><div id="chatIconCellContent"><img src="{{asset 'chatIcon.png'}}" height="20px">&nbsp;&nbsp;<div class="recommendedChannel" data-wording-key="recommendedChannel" style=""></div></div><div id="row1cell3inserter"></div></td>
                 </tr>
                 <tr>
-                  <td style="padding-right:20px" class="chatTableCell"><b data-wording-key="chat"></b>&nbsp;&nbsp;</td>
-                  <td style="padding-right:10px;padding-left:10px"><b data-wording-key="email"></b></td>
-                  <td style="padding-left:20px"><b data-wording-key="phone"></b></td>
+                  <td style="padding-right:20px" class="chatTableCell"><div id="mailTitleCellContent"><b data-wording-key="email"></b></div><div id="row2cell1inserter"></div></td>
+                  <td style="padding-right:10px;padding-left:10px"><div id="phoneTitleCellContent"><b data-wording-key="phone"></b></div><div id="row2cell2inserter"></div></td>
+                  <td style="padding-left:20px"><div id="chatTitleCellContent"><b data-wording-key="chat"></b></div><div id="row2cell3inserter"></div></td>
                 </tr>
                 <tr>
-                  <td style="padding-right:20px;vertical-align:top" class="chatTableCell"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font><!--<br><font data-wording-key="chatLanguage"></font><font data-wording-key="chatLanguage2"></font>--></td>
-                  <td style="padding-right:10px;padding-left:10px;vertical-align:top"><font data-wording-key="emailDescription"></td>
-                  <td style="padding-left:20px;vertical-align:top"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font></td>
+                  <td style="padding-right:20px;vertical-align:top" class="chatTableCell"><div id="mailTextCellContent"><font data-wording-key="emailDescription"></div><div id="row3cell1inserter"></div></td>
+                  <td style="padding-right:10px;padding-left:10px;vertical-align:top"><div id="phoneTextCellContent"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font></div><div id="row3cell2inserter"></div></td>
+                  <td style="padding-left:20px;vertical-align:top"><div id="chatTextCellContent"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font><!--<br><font data-wording-key="chatLanguage"></font><font data-wording-key="chatLanguage2"></font>--></div><div id="row3cell3inserter"></div></td>
                 </tr>
                 <tr>
-                  <td style="padding-right:20px;padding-top:10px" class="chatTableCell"><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></td>
-                  <td style="padding-right:10px;padding-left:10px;padding-top:10px"><div class="button-contact contactFormWriteUs" data-wording-key="writeUs"></div></div></td>
-                  <td style="padding-left:20px;padding-top:10px">
+                  <td style="padding-right:20px;padding-top:10px" class="chatTableCell"><div id="mailButtonCellContent"><div class="button-contact contactFormWriteUs" data-wording-key="writeUs"></div></div></div><div id="row4cell1inserter"></div></td>
+                  <td style="padding-right:10px;padding-left:10px;padding-top:10px"><div id="phoneButtonCellContent">
                     <div class="button-contact phone-number private-number private-customer connect-customer" data-wording-key="callUsPrivate"></div>
                     <div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div>
+                    </div><div id="row4cell2inserter"></div></td>
+                  <td style="padding-left:20px;padding-top:10px"><div id="chatButtonCellContent"><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></div><div id="row4cell3inserter"></div>
                   </td>
-                  <div id="inserter3"></div>
                 </tr>
               </table>
 
@@ -99,42 +99,60 @@
                 <tr style="height:0px"></tr>
                 <tr>
                   <td class="contactButtonTableCellLeftNoBorder chatTableCell" style="padding-top:15px">
-                    <img src="{{asset 'chatIcon.png'}}" height="16px">
-                    <b><font data-wording-key="chat"></font></b>
-                    <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font>
-                    <font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusiness"></font> <font data-wording-key="openingHoursBusiness"></font><font data-wording-key="commaMultipleHoursBusinessCustomers"></font><font data-wording-key="openingDaysBusiness2Mobile"></font> <font data-wording-key="openingHoursBusiness2"></font></font>
-                    <div class="recommendedChannel" data-wording-key="recommendedChannel" style="float:right;"></div>
+                    <div id="mobileMailCell1Content">
+                      <img src="{{asset 'mailIcon.png'}}" height="16px">
+                      <b><font data-wording-key="email"></font></b>
+                      <font style="font-size: 11px;">&nbsp;<font data-wording-key="emailDescriptionMobile"></font></font>
+                    </div>
+                    <div id="mobileInserter1"></div>
                   </td>
                 </tr>
                 <tr>
                   <td class="contactButtonTableCellLeftNoBorderBottomPadding chatTableCell">
-                    <div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div>
+                    <div id="mobileMailCell2Content">
+                      <div class="button-contact contactFormWriteUs" data-wording-key="writeUs"></div>
+                    </div>
+                    <div id="mobileInserter2"></div>
                   </td>
                 </tr>
                 <tr>
                   <td class="contactButtonTableCellLeftNoBorder">
-                    <img src="{{asset 'mailIcon.png'}}" height="16px">
-                    <b><font data-wording-key="email"></font></b>
-                    <font style="font-size: 11px;"><font>&nbsp;<font data-wording-key="emailDescriptionMobile"></font></font>
+                    <div id="mobilePhoneCell1Content">
+                      <img src="{{asset 'phoneIcon.png'}}" height="16px">
+                      <b><font data-wording-key="phone"></font></b>
+                      <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font>
+                      <font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusiness"></font> <font data-wording-key="openingHoursBusiness"></font><font data-wording-key="commaMultipleHoursBusinessCustomers"></font><font data-wording-key="openingDaysBusiness2Mobile"></font> <font data-wording-key="openingHoursBusiness2"></font></font>
+                    </div>
+                    <div id="mobileInserter3"></div>
                   </td>
                 </tr>
                 <tr>
                   <td class="contactButtonTableCellLeftNoBorderBottomPadding">
-                    <div class="button-contact contactFormWriteUs" data-wording-key="writeUs"></div>
+                    <div id="mobilePhoneCell2Content">
+                      <div class="button-contact phone-number private-number2 private-customer connect-customer" data-wording-key="callUsPrivateMobile"></div>
+                      <div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div>
+                    </div>
+                    <div id="mobileInserter4"></div>
                   </td>
                 </tr>
                 <tr>
                   <td class="contactButtonTableCellLeftNoBorder">
-                    <img src="{{asset 'phoneIcon.png'}}" height="16px">
-                    <b><font data-wording-key="phone"></font></b>
-                    <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font>
-                    <font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusiness"></font> <font data-wording-key="openingHoursBusiness"></font><font data-wording-key="commaMultipleHoursBusinessCustomers"></font><font data-wording-key="openingDaysBusiness2Mobile"></font> <font data-wording-key="openingHoursBusiness2"></font></font>
+                    <div id="mobileChatCell1Content">
+                      <img src="{{asset 'chatIcon.png'}}" height="16px">
+                      <b><font data-wording-key="chat"></font></b>
+                      <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font>
+                      <font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusiness"></font> <font data-wording-key="openingHoursBusiness"></font><font data-wording-key="commaMultipleHoursBusinessCustomers"></font><font data-wording-key="openingDaysBusiness2Mobile"></font> <font data-wording-key="openingHoursBusiness2"></font></font>
+                      <div class="recommendedChannel" data-wording-key="recommendedChannel" style="float:right;"></div>
+                    </div>
+                    <div id="mobileInserter5"></div>
                   </td>
                 </tr>
                 <tr>
                   <td class="contactButtonTableCellLeftNoBorder">
-                    <div class="button-contact phone-number private-number2 private-customer connect-customer" data-wording-key="callUsPrivateMobile"></div>
-                    <div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div>
+                    <div id="mobileChatCell2Content">
+                      <div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div>
+                    </div>
+                    <div id="mobileInserter6"></div>
                   </td>
                 </tr>
               </table>
@@ -179,6 +197,8 @@
   var circleOne = document.getElementById('circle1');
   var circleTwo = document.getElementById('circle2');
   var circleThree = document.getElementById('circle3')
+  var circleThreeTitle = $('.circle3Title');
+  var circleThreeTitleTwo = $('.circle3Title2')
 
   //TODO: Integrate new variables properly
   var customerTypeDropdownLabel = $('[for=request_issue_type_select]');
@@ -236,6 +256,7 @@
         requestForm.hide()
         customerTypeDropdownLabel.hide()
         requestReasonDropdownLabel.hide()
+        circleThreeTitleTwo.hide()
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
@@ -245,10 +266,12 @@
         fullMailform.show();
         break;
       case 'helpcenter.connect.digitec.ch':
-      if (fullLink.slice(-3) != 'new'){
+        if (fullLink.slice(-3) != 'new'){
           circleOne.classList.remove('circleOpenStep');
           circleOne.classList.add('circleStepCompleted');
           circleOne.innerHTML = '&#10003';
+        } else {
+          window.location.replace('https://helpcenter.connect.digitec.ch/hc/requests/new?ticket_form_id=360002056120');
         }
         requestReasonDropdown = $('.request_custom_fields_360021132800');
         requestReasonDropdownNesty = '.request_custom_fields_360021132800' + ' a.nesty-input';
@@ -260,13 +283,13 @@
         //requestForm.hide()
         customerTypeDropdownLabel.hide()
         requestReasonDropdownLabel.hide()
+        circleThreeTitleTwo.hide()
         $('.connectHide').hide()
         circleTwo.innerHTML = '1';
         circleThree.innerHTML = '2';
         connectHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
-          console.log('ENTEEEEEEEEEEEEER')
           //setTimeout(() => { onDropdownChangeConnect(); }, 2000);
           onDropdownChangeConnect();
           showContactForm();
@@ -274,13 +297,22 @@
         fullMailform.show();
         break;
       default:
+        if (fullLink.slice(-3) != 'new'){
+          circleOne.classList.remove('circleOpenStep');
+          circleOne.classList.add('circleStepCompleted');
+          circleOne.innerHTML = '&#10003';
+        }
         requestReasonDropdown = $('.request_custom_fields_360014169819');
         requestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
-        //infoTextField.insertAfter(requestReasonDropdown);
         mailFormMailInput.insertAfter(requestReasonDropdown);
-        //contactInfos.insertAfter(infoTextField);
+        customerTypeDropdown.insertBefore(document.getElementById('inserter'));
+        requestReasonDropdown.insertBefore(document.getElementById('inserter2'));
+        requestForm.hide()
+        customerTypeDropdownLabel.hide()
+        requestReasonDropdownLabel.hide()
+        circleThreeTitleTwo.hide()
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
@@ -447,8 +479,8 @@
     circleTwo.classList.remove('circleOpenStep');
     circleTwo.classList.add('circleStepCompleted');
     circleTwo.innerHTML = '&#10003';
-    console.log(requestReasonTag)
-    console.log(requestReasonDropdownContents.attr('value'))
+    //console.log(requestReasonTag)
+    //console.log(requestReasonDropdownContents.attr('value'))
     //requestReasonTag = requestReasonDropdownContents.attr('value')//.replace('//duplicate', '');
     requestReasonTag = "webform_case_shipping_status"
     //infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
@@ -512,6 +544,8 @@
     showContactForm();
   })
   function showContactForm(){
+    circleThreeTitle.hide();
+    circleThreeTitleTwo.show();
     contactFormIsShown = 1;
     requestForm.show();
     backButton.show();
@@ -560,6 +594,8 @@
   //Aktion bei Klick auf back Button
   $('.text-back').on("click", function (){
     contactFormIsShown = 0;
+    circleThreeTitle.show();
+    circleThreeTitleTwo.hide();
     if (customerType == 'connect-customer'){
       onDropdownChangeConnect()
     } else {
@@ -803,4 +839,48 @@
       return false;
     }
   }
+
+
+  // CSS Change für Chat Button Offline
+  function hideChatButton(){
+    $(".button-chat").addClass("button-offline");
+ 	  $(".button-chat").html(getButtonText('chatNotOnline'));
+    $(".recommendedChannel").css('display' , 'none');
+  }
+
+// CSS Change für Chat Button Online
+function showChatButton(){
+    $(".button-chat").removeClass("button-offline");
+    $(".button-chat").html(getButtonText('chatUs'));
+    $(".recommendedChannel").css('display' , 'inline-block');
+    swapContactOptions();
+}
+
+function swapContactOptions(checker){
+    $('#chatIconCellContent').insertBefore($('#row1cell1inserter'));
+    $('#mailIconCellContent').insertBefore($('#row1cell2inserter'));
+    $('#phoneIconCellContent').insertBefore($('#row1cell3inserter'));
+
+    $('#chatTitleCellContent').insertBefore($('#row2cell1inserter'));
+    $('#mailTitleCellContent').insertBefore($('#row2cell2inserter'));
+    $('#phoneTitleCellContent').insertBefore($('#row2cell3inserter'));
+
+    $('#chatTextCellContent').insertBefore($('#row3cell1inserter'));
+    $('#mailTextCellContent').insertBefore($('#row3cell2inserter'));
+    $('#phoneTextCellContent').insertBefore($('#row3cell3inserter'));
+
+    $('#chatButtonCellContent').insertBefore($('#row4cell1inserter'));
+    $('#mailButtonCellContent').insertBefore($('#row4cell2inserter'));
+    $('#phoneButtonCellContent').insertBefore($('#row4cell3inserter'));
+
+    $('#mobileChatCell1Content').insertBefore($('#mobileInserter1'));
+    $('#mobileChatCell2Content').insertBefore($('#mobileInserter2'));
+
+    $('#mobileMailCell1Content').insertBefore($('#mobileInserter3'));
+    $('#mobileMailCell2Content').insertBefore($('#mobileInserter4'));
+
+    $('#mobilePhoneCell1Content').insertBefore($('#mobileInserter5'));
+    $('#mobilePhoneCell2Content').insertBefore($('#mobileInserter6'));
+}
+
 </script>
