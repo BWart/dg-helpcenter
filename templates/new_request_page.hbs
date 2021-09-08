@@ -69,22 +69,22 @@
               <!-- DESKTOP CONTACT TABLE -->
               <table width="100%" class="contactInfos hideUnder650" id="desktopContactTable">
                 <tr>
-                  <td width="33%" style="padding-right:20px;padding-top:15px" class="chatTableCell"><div id="mailIconCellContent"><img src="{{asset 'mailIcon.png'}}" height="20px"></div><div id="row1cell1inserter"></div></td>
+                  <td width="33%" style="padding-right:20px;padding-top:15px"><div id="mailIconCellContent"><img src="{{asset 'mailIcon.png'}}" height="20px"></div><div id="row1cell1inserter"></div></td>
                   <td width="33%" style="padding-right:10px;padding-left:10px;padding-top:15px"><div id="phoneIconCellContent"><img src="{{asset 'phoneIcon.png'}}" height="20px"></div><div id="row1cell2inserter"></div></td>
                   <td width="33%" style="padding-left:20px;padding-top:15px"><div id="chatIconCellContent"><img src="{{asset 'chatIcon.png'}}" height="20px">&nbsp;&nbsp;<div class="recommendedChannel" data-wording-key="recommendedChannel" style=""></div></div><div id="row1cell3inserter"></div></td>
                 </tr>
                 <tr>
-                  <td style="padding-right:20px" class="chatTableCell"><div id="mailTitleCellContent"><b data-wording-key="email"></b></div><div id="row2cell1inserter"></div></td>
+                  <td style="padding-right:20px"><div id="mailTitleCellContent"><b data-wording-key="email"></b></div><div id="row2cell1inserter"></div></td>
                   <td style="padding-right:10px;padding-left:10px"><div id="phoneTitleCellContent"><b data-wording-key="phone"></b></div><div id="row2cell2inserter"></div></td>
                   <td style="padding-left:20px"><div id="chatTitleCellContent"><b data-wording-key="chat"></b></div><div id="row2cell3inserter"></div></td>
                 </tr>
                 <tr>
-                  <td style="padding-right:20px;vertical-align:top" class="chatTableCell"><div id="mailTextCellContent"><font data-wording-key="emailDescription"></div><div id="row3cell1inserter"></div></td>
+                  <td style="padding-right:20px;vertical-align:top"><div id="mailTextCellContent"><font data-wording-key="emailDescription"></div><div id="row3cell1inserter"></div></td>
                   <td style="padding-right:10px;padding-left:10px;vertical-align:top"><div id="phoneTextCellContent"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font></div><div id="row3cell2inserter"></div></td>
                   <td style="padding-left:20px;vertical-align:top"><div id="chatTextCellContent"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font><!--<br><font data-wording-key="chatLanguage"></font><font data-wording-key="chatLanguage2"></font>--></div><div id="row3cell3inserter"></div></td>
                 </tr>
                 <tr>
-                  <td style="padding-right:20px;padding-top:10px" class="chatTableCell"><div id="mailButtonCellContent"><div class="button-contact contactFormWriteUs" data-wording-key="writeUs"></div></div></div><div id="row4cell1inserter"></div></td>
+                  <td style="padding-right:20px;padding-top:10px"><div id="mailButtonCellContent"><div class="button-contact contactFormWriteUs" data-wording-key="writeUs"></div></div></div><div id="row4cell1inserter"></div></td>
                   <td style="padding-right:10px;padding-left:10px;padding-top:10px"><div id="phoneButtonCellContent">
                     <div class="button-contact phone-number private-number private-customer connect-customer" data-wording-key="callUsPrivate"></div>
                     <div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div>
@@ -98,7 +98,7 @@
               <table class="contactInfos hideOver651" border="0">
                 <tr style="height:0px"></tr>
                 <tr>
-                  <td class="contactButtonTableCellLeftNoBorder chatTableCell" style="padding-top:15px">
+                  <td class="contactButtonTableCellLeftNoBorder" style="padding-top:15px">
                     <div id="mobileMailCell1Content">
                       <img src="{{asset 'mailIcon.png'}}" height="16px">
                       <b><font data-wording-key="email"></font></b>
@@ -108,7 +108,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td class="contactButtonTableCellLeftNoBorderBottomPadding chatTableCell">
+                  <td class="contactButtonTableCellLeftNoBorderBottomPadding">
                     <div id="mobileMailCell2Content">
                       <div class="button-contact contactFormWriteUs" data-wording-key="writeUs"></div>
                     </div>
@@ -794,15 +794,17 @@
   function removeChatBasedOnRequestType(){
     if(isGermany() || isBusinessRequestReasonWithoutChat() || isConnectWithoutChat()){
     //if (true) {
-      $('.chatTableCell').hide();
+      hideChatCells();
+      //$('.chatTableCell').hide();
       var temp = document.getElementById('desktopContactTable');
-      temp.setAttribute('width', '400px')
+      //temp.setAttribute('width', '400px')
     }else{
-      $('.chatTableCell').show();
+      //$('.chatTableCell').show();
       var temp = document.getElementById('desktopContactTable');
-      temp.setAttribute('width', '100%')
+      //temp.setAttribute('width', '100%')
     }
   }
+
 
   function isConnectWithoutChat(){
     if(customerType == 'connect-customer' && currentLanguage != 'fr'){
@@ -848,15 +850,16 @@
     $(".recommendedChannel").css('display' , 'none');
   }
 
-// CSS Change für Chat Button Online
-function showChatButton(){
+  // CSS Change für Chat Button Online
+  function showChatButton(){
     $(".button-chat").removeClass("button-offline");
     $(".button-chat").html(getButtonText('chatUs'));
     $(".recommendedChannel").css('display' , 'inline-block');
     swapContactOptions();
-}
+  }
 
-function swapContactOptions(checker){
+  function swapContactOptions(){
+    console.log('entering swap')
     $('#chatIconCellContent').insertBefore($('#row1cell1inserter'));
     $('#mailIconCellContent').insertBefore($('#row1cell2inserter'));
     $('#phoneIconCellContent').insertBefore($('#row1cell3inserter'));
@@ -881,6 +884,45 @@ function swapContactOptions(checker){
 
     $('#mobilePhoneCell1Content').insertBefore($('#mobileInserter5'));
     $('#mobilePhoneCell2Content').insertBefore($('#mobileInserter6'));
-}
+
+    removeChatBasedOnRequestType();
+  }
+
+  function hideChatCells(){
+    console.log('entering hide')
+    $('#phoneIconCellContent').insertBefore($('#row1cell1inserter'));
+    $('#mailIconCellContent').insertBefore($('#row1cell2inserter'));
+    $('#chatIconCellContent').insertBefore($('#row1cell3inserter'));
+
+    $('#phoneTitleCellContent').insertBefore($('#row2cell1inserter'));
+    $('#mailTitleCellContent').insertBefore($('#row2cell2inserter'));
+    $('#chatTitleCellContent').insertBefore($('#row2cell3inserter'));
+
+    $('#phoneTextCellContent').insertBefore($('#row3cell1inserter'));
+    $('#mailTextCellContent').insertBefore($('#row3cell2inserter'));
+    $('#chatTextCellContent').insertBefore($('#row3cell3inserter'));
+
+    $('#phoneButtonCellContent').insertBefore($('#row4cell1inserter'));
+    $('#mailButtonCellContent').insertBefore($('#row4cell2inserter'));
+    $('#chatButtonCellContent').insertBefore($('#row4cell3inserter'));
+
+    $('#mobilePhoneCell1Content').insertBefore($('#mobileInserter1'));
+    $('#mobilePhoneCell2Content').insertBefore($('#mobileInserter2'));
+
+    $('#mobileMailCell1Content').insertBefore($('#mobileInserter3'));
+    $('#mobileMailCell2Content').insertBefore($('#mobileInserter4'));
+
+    $('#mobileChatCell1Content').insertBefore($('#mobileInserter5'));
+    $('#mobileChatCell2Content').insertBefore($('#mobileInserter6'));
+
+    $('#chatIconCellContent').hide();
+    $('#chatTitleCellContent').hide();
+    $('#chatTextCellContent').hide();
+    $('#chatButtonCellContent').hide();
+    $('#mobileChatCell1Content').hide();
+    $('#mobileChatCell2Content').hide();
+  }
+
+
 
 </script>
