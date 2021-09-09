@@ -55,7 +55,7 @@ function filldynamicWording(){
                 telPrivatkunde = "+4940334614747";
                 telPrivatkundeText = "+49 (0)40 334 614 747";
                 telFirmenkunde = "+4940334614748";
-                telFirmenkundeText = "+49 (0)40 334 614 748";                    
+                telFirmenkundeText = "+49 (0)40 334 614 748";
                 break;
         case'helpcenter.digitec.at':
                 uhrzeitPrivatkunde = "08:00 - 20:00<br>Sa:<br>09:00 - 14:00";  //TODO: Galaxus AT Öffnungszeiten prüfen
