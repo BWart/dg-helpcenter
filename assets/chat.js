@@ -1,7 +1,6 @@
 // Hauptfunktion, wartet bis chat geladen ist und ruft danach die anderen Funktionen auf
 function waitForChat(){
     window.addEventListener('load', function() {
-        console.log('TADAAAA')
         changeWebWidgetSettingInitial();
         openWidgetForUnreadMessages();
         hideWidgetWhenMinimized();
@@ -82,6 +81,7 @@ function getWebWidgetSettings(){
 
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
+    console.log('Chat DEPARTMENT-------------' + getChatDepartmentType()+ ' ' + getChatDepartmentLanguage())
     return 'Chat ' + getChatDepartmentType()+ ' ' + getChatDepartmentLanguage(); 
 }
 
@@ -113,25 +113,48 @@ function getLanguage(){
     return normalizedLanguage;
 }
 
-// Gibt den Kundentyp für das Chat Department anhand des Kundentyps im Kuntaktformular zurück
+//Department Type wird anhand der Domain gesetzt
 function getChatDepartmentType(){
-    if(typeof customerType != 'undefined'){
-        var businessCustomerDepartment = getBusinessCustomerDepartment();
-        var departmentType;
-        switch(customerType) {
-            case ('private-customer'):
-                departmentType = 'Private';
+    var href = window.location.hostname;
+    var chatDepartmentType;
+    switch(href){
+        case('helpcenter.digitec.ch'):
+            chatDepartmentType = getDGChatDepartment();
+            break;
+        case('helpcenter.galaxus.ch'):
+            chatDepartmentType = getDGChatDepartment();
+            break;
+        case('helpcenter.connect.digitec.ch'):
+            chatDepartmentType = 'Connect';
+            break;
+        case('helpcenter.galaxus.de'):
+            chatDepartmentType = 'Ger'
+            break;
+        default:
+            chatDepartmentType = 'Private';
+    }
+    return chatDepartmentType;
+}
+
+//Unterteilung zwischen PE, Private & Business
+function getDGChatDepartmentType(){
+    lang = getLanguage();
+    var DGChatDepartmentType;
+    if(typeof customerType != 'undefined' && typeof requestReasonTag != 'undefinied'){
+        switch(true){
+            case(requestReasonTag == 'webform_case_product_advice_consumer' && lang == 'de'):
+                DGChatDepartmentType = 'PeConsumer';
                 break;
-            case ('business-customer'):
-                departmentType = businessCustomerDepartment;
+            case(requestReasonTag == 'webform_case_product_advice_home' && lang == 'de'):
+                DGChatDepartmentType = 'PeHome';
                 break;
-            case ('connect-customer'):
-                departmentType = 'Private';
+            case(customerType == 'business-customer' && lang == 'de'):
+                DGChatDepartmentType = getBusinessCustomerDepartment();
                 break;
             default:
-                departmentType = 'Private';
+                chatDepartmentType = 'Private';
         }
-        return departmentType; 
+        return chatDepartmenType;  
     }else{
         return 'Private';
     }
@@ -140,48 +163,11 @@ function getChatDepartmentType(){
 
 //SpecialRoutingForBusinessCustomers Deutsch - Produktberatungen gehen zu den Privatkunden/PE sowie alle Chats nach 17:00
 function getBusinessCustomerDepartment(){
-    if(getLanguage() == 'de'){
-        if(isInBusinessChatHours()){
-            return getBusinessChatDepartmentCheckedForProductAdvice();
-        }else{
-            return 'Private';
-        }
-    }else{
+    if(isInBusinessChatHours()){
         return 'Business';
-    }
-}
-
-
-// Gibt Privatkunde zurück, insofern Produktberatung und ansonsten Business
-function getBusinessChatDepartmentCheckedForProductAdvice(){
-    var businessCustomerDepartment;
-    if(typeof requestReasonTag != 'undefined'){
-        switch(requestReasonTag) {
-            case ('webform_case_product_advice_it'):
-                businessCustomerDepartment = 'Private';
-                break;
-            case ('webform_case_product_advice_network'):
-                businessCustomerDepartment = 'Private';
-                break;
-            case ('webform_case_product_advice_consumer'):
-                businessCustomerDepartment = 'Private';
-                break;
-            case ('webform_case_product_advice_photo'):
-                businessCustomerDepartment = 'Private';
-                break;
-            case ('webform_case_product_advice_home'):
-                businessCustomerDepartment = 'Private';
-                break;
-            case ('webform_case_product_advice_diy'):
-                businessCustomerDepartment = 'Private';
-                break;
-            default:
-                businessCustomerDepartment = 'Business';
-        }
-        return businessCustomerDepartment;
     }else{
-        return ('Business');
-    }   
+        return 'Private';
+    }
 }
 
 //Returns true when hours < 17
@@ -274,14 +260,12 @@ function checkForTagChanges(){
 //Entfert Tags für Sprache sowie Skills -> Es sind danach keine Tags mehr vorhanden und können neu gesetzt werden
 function removeOldTags(){
     removeZopimTags(['de', 'fr', 'it', 'en']); // entfernt initial alle Sprachen
-    removeZopimTags(['chat_pe_consumer', 'standard_request', 'chat_pe_home', 'chat_connect']); // entfernt initial alle Skills
 }
 
 //Fügt die neuen Tags für Skill, WebformCase und Sprache hinzu.
 function addNewZopimTags(){
     var languageTag = getLanguage();
-    var skill = getChatSkill(requestReasonTag);
-    setZopimTags([skill, languageTag, requestReasonTag]); // Alle neuen Tags werden gesetzt
+    setZopimTags([languageTag, requestReasonTag]); // Alle neuen Tags werden gesetzt
 }
 
 // Wenn ein Webform Case im Session Storage vorhanden ist, wird dieser von den Chat Tags entfernt -> Wenn User die Auswahl im Dropdown ändern, sind ansonsten mehrere Tags vorhanden
@@ -301,26 +285,6 @@ function setZopimTags(tags){
 // Entfernt Tags - Einzelne oder Array
 function removeZopimTags(tags){
     zE('webWidget', 'chat:removeTags', tags);  
-}
-
-// Setzt für definierte Anfragegründe spezifische Skills und retourniert ansonsten den Standardskill
-function getChatSkill(webFormCase){
-    var skill;
-    var department = getChatDepartment();
-    switch(true) {
-  	case ('Chat Private DE' && webFormCase === 'webform_case_product_advice_consumer'):
-    	skill = 'chat_pe_consumer';
-        break;
-  	case (department === 'Chat Private DE' && webFormCase === 'webform_case_product_advice_home'):
-    	skill = 'chat_pe_home';
-        break;
-    case(customerType == 'connect-customer'):
-        skill = 'chat_connect'
-        break;
-  	default:
-    	skill = 'standard_request';
-	}
-    return skill;    
 }
 
 // Gibt Callback, wenn der Chat gestartet wird und ruft den Event Listener für den Chat Recconect auf
