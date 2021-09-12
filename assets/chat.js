@@ -152,9 +152,9 @@ function getDGChatDepartmentType(){
                 DGChatDepartmentType = getBusinessCustomerDepartment();
                 break;
             default:
-                chatDepartmentType = 'Private';
+                DGChatDepartmentType = 'Private';
         }
-        return chatDepartmenType;  
+        return DGChatDepartmentType;  
     }else{
         return 'Private';
     }
