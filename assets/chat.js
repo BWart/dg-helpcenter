@@ -119,10 +119,10 @@ function getChatDepartmentType(){
     var chatDepartmentType;
     switch(href){
         case('helpcenter.digitec.ch'):
-            chatDepartmentType = getDGChatDepartment();
+            chatDepartmentType = getDGChatDepartmentType();
             break;
         case('helpcenter.galaxus.ch'):
-            chatDepartmentType = getDGChatDepartment();
+            chatDepartmentType = getDGChatDepartmentType();
             break;
         case('helpcenter.connect.digitec.ch'):
             chatDepartmentType = 'Connect';
@@ -149,7 +149,7 @@ function getDGChatDepartmentType(){
                 DGChatDepartmentType = 'PeHome';
                 break;
             case(customerType == 'business-customer' && lang == 'de'):
-                DGChatDepartmentType = getBusinessCustomerDepartment();
+                DGChatDepartmentType = getBusinessCustomerDepartmentType();
                 break;
             default:
                 DGChatDepartmentType = 'Private';
@@ -162,7 +162,7 @@ function getDGChatDepartmentType(){
 
 
 //SpecialRoutingForBusinessCustomers Deutsch - Produktberatungen gehen zu den Privatkunden/PE sowie alle Chats nach 17:00
-function getBusinessCustomerDepartment(){
+function getBusinessCustomerDepartmentType(){
     if(isInBusinessChatHours()){
         return 'Business';
     }else{
