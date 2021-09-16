@@ -476,10 +476,9 @@
     circleTwo.classList.remove('circleOpenStep');
     circleTwo.classList.add('circleStepCompleted');
     circleTwo.innerHTML = '&#10003';
-    //console.log(requestReasonTag)
-    //console.log(requestReasonDropdownContents.attr('value'))
-    //requestReasonTag = requestReasonDropdownContents.attr('value')//.replace('//duplicate', '');
-    requestReasonTag = "webform_case_shipping_status"
+  
+    requestReasonTag = requestReasonDropdownContents.attr('value');
+  
     //infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     //Update Label and Template
     if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
