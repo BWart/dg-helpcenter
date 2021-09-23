@@ -50,9 +50,9 @@ function filldynamicWording(){
                 commaMultipleHoursBusinessCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 //Chat
-                uhrzeitPrivatkundeChat = "08:00 - Privat";
+                uhrzeitPrivatkundeChat = "08:00 - 20:00";
                 uhrzeitPrivatkunde2Chat = "";
-                uhrzeitFirmenkundeChat = "08:00 - Firma";
+                uhrzeitFirmenkundeChat = "08:00 - 20:00";
                 uhrzeitFirmenkunde2Chat = "";
                 commaMultipleHoursPrivateCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
                 commaMultipleHoursBusinessCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
