@@ -1,14 +1,70 @@
 function filldynamicWording(){
     var portal = window.location.hostname;
 
+    //Variabeln Öffnungszeiten Telefon
     var uhrzeitPrivatkunde = "";
     var uhrzeitPrivatkunde2 = "";
+    var tagePrivatkundeDE = "";
+    var tagePrivatkundeFR = "";
+    var tagePrivatkundeIT = "";
+    var tagePrivatkundeEN = "";
+    var tagePrivatkunde2DE = "";
+    var tagePrivatkunde2FR = "";
+    var tagePrivatkunde2IT = "";
+    var tagePrivatkunde2EN = "";
+    var tagePrivatkunde2MobileDE = "";
+    var tagePrivatkunde2MobileFR = "";
+    var tagePrivatkunde2MobileIT = "";
+    var tagePrivatkunde2MobileEN = "";
     var uhrzeitFirmenkunde = "";
     var uhrzeitFirmenkunde2 = "";
-    var uhrzeitPrivatkundeMobile = "";
-    var uhrzeitFirmenkundeMobile = "";
+    var tageFirmenkundeDE = "";
+    var tageFirmenkundeFR = "";
+    var tageFirmenkundeIT = "";
+    var tageFirmenkundeEN = "";
+    var tageFirmenkunde2DE = "";
+    var tageFirmenkunde2FR = "";
+    var tageFirmenkunde2IT = "";
+    var tageFirmenkunde2EN = "";
+    var tageFirmenkunde2MobileDE = "";
+    var tageFirmenkunde2MobileFR = "";
+    var tageFirmenkunde2MobileIT = "";
+    var tageFirmenkunde2MobileEN = "";
     var commaMultipleHoursPrivateCustomers = "";
     var commaMultipleHoursBusinessCustomers = "";
+
+    //Variabeln Öffnungszeiten Chat
+    var uhrzeitPrivatkundeChat = "";
+    var uhrzeitPrivatkunde2Chat = "";
+    var tagePrivatkundeChatDE = "";
+    var tagePrivatkundeChatFR = "";
+    var tagePrivatkundeChatIT = "";
+    var tagePrivatkundeChatEN = "";
+    var tagePrivatkunde2ChatDE = "";
+    var tagePrivatkunde2ChatFR = "";
+    var tagePrivatkunde2ChatIT = "";
+    var tagePrivatkunde2ChatEN = "";
+    var tagePrivatkunde2ChatMobileDE = "";
+    var tagePrivatkunde2ChatMobileFR = "";
+    var tagePrivatkunde2ChatMobileIT = "";
+    var tagePrivatkunde2ChatMobileEN = "";
+    var uhrzeitFirmenkundeChat = "";
+    var uhrzeitFirmenkunde2Chat = "";
+    var tageFirmenkundeChatDE = "";
+    var tageFirmenkundeChatFR = "";
+    var tageFirmenkundeChatIT = "";
+    var tageFirmenkundeChatEN = "";
+    var tageFirmenkunde2ChatDE = "";
+    var tageFirmenkunde2ChatFR = "";
+    var tageFirmenkunde2ChatIT = "";
+    var tageFirmenkunde2ChatEN = "";
+    var tageFirmenkunde2ChatMobileDE = "";
+    var tageFirmenkunde2ChatMobileFR = "";
+    var tageFirmenkunde2ChatMobileIT = "";
+    var tageFirmenkunde2ChatMobileEN = "";
+    var commaMultipleHoursPrivateCustomersChat = "";
+    var commaMultipleHoursBusinessCustomersChat = "";
+
 
     var telPrivatkunde = "";
     var telFirmenkunde = "";
@@ -19,16 +75,64 @@ function filldynamicWording(){
     switch(portal){
         case'helpcenter.digitec.ch':
                 //Telefon
+                tagePrivatkundeDE = "Mo - Fr: "; 
+                tagePrivatkundeFR = "Lu - Ve: "; 
+                tagePrivatkundeIT = "Lun - Ven: "; 
+                tagePrivatkundeEN = "Mo - Fr: "; 
+                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2MobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
+                tageFirmenkundeDE = "Mo - Fr: ";
+                tageFirmenkundeFR = "Lu - Ve: ";
+                tageFirmenkundeIT = "Lun - Ven: ";
+                tageFirmenkundeEN = "Mo - Fr: ";
+                tageFirmenkunde2DE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2FR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2IT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2EN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2MobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2MobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2MobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2MobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitFirmenkunde = "08:00 - 20:00";
                 uhrzeitFirmenkunde2 = "";
                 commaMultipleHoursPrivateCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
                 commaMultipleHoursBusinessCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 //Chat
+                tagePrivatkundeChatDE = "Mo - Fr: ";
+                tagePrivatkundeChatFR = "Lu - Ve: ";
+                tagePrivatkundeChatIT = "Lun - Ven: ";
+                tagePrivatkundeChatEN = "Mo - Fr: ";
+                tagePrivatkunde2ChatDE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatFR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatIT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatEN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkundeChat = "08:00 - 20:00";
                 uhrzeitPrivatkunde2Chat = "";
+                tageFirmenkundeChatDE = "Mo - Fr: ";
+                tageFirmenkundeChatFR = "Lu - Ve: ";
+                tageFirmenkundeChatIT = "Lun - Ven: ";
+                tageFirmenkundeChatEN = "Mo - Fr: ";
+                tageFirmenkunde2ChatDE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatFR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatIT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatEN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitFirmenkundeChat = "08:00 - 20:00";
                 uhrzeitFirmenkunde2Chat = "";
                 commaMultipleHoursPrivateCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
@@ -38,20 +142,67 @@ function filldynamicWording(){
                 telPrivatkundeText = "+41 44 575 95 00";
                 telFirmenkunde = "+41445759600";
                 telFirmenkundeText = "+41 44 575 96 00";    
-
                 break;
         case'helpcenter.galaxus.ch':
                 //Telefon
+                tagePrivatkundeDE = "Mo - Fr: "; 
+                tagePrivatkundeFR = "Lu - Ve: "; 
+                tagePrivatkundeIT = "Lun - Ven: "; 
+                tagePrivatkundeEN = "Mo - Fr: "; 
+                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2MobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
+                tageFirmenkundeDE = "Mo - Fr: ";
+                tageFirmenkundeFR = "Lu - Ve: ";
+                tageFirmenkundeIT = "Lun - Ven: ";
+                tageFirmenkundeEN = "Mo - Fr: ";
+                tageFirmenkunde2DE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2FR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2IT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2EN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2MobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2MobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2MobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2MobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitFirmenkunde = "08:00 - 20:00";
                 uhrzeitFirmenkunde2 = "";
                 commaMultipleHoursPrivateCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
                 commaMultipleHoursBusinessCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 //Chat
+                tagePrivatkundeChatDE = "Mo - Fr: ";
+                tagePrivatkundeChatFR = "Lu - Ve: ";
+                tagePrivatkundeChatIT = "Lun - Ven: ";
+                tagePrivatkundeChatEN = "Mo - Fr: ";
+                tagePrivatkunde2ChatDE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatFR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatIT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatEN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkundeChat = "08:00 - 20:00";
                 uhrzeitPrivatkunde2Chat = "";
+                tageFirmenkundeChatDE = "Mo - Fr: ";
+                tageFirmenkundeChatFR = "Lu - Ve: ";
+                tageFirmenkundeChatIT = "Lun - Ven: ";
+                tageFirmenkundeChatEN = "Mo - Fr: ";
+                tageFirmenkunde2ChatDE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatFR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatIT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatEN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitFirmenkundeChat = "08:00 - 20:00";
                 uhrzeitFirmenkunde2Chat = "";
                 commaMultipleHoursPrivateCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
@@ -64,16 +215,64 @@ function filldynamicWording(){
                 break;
         case'helpcenter.galaxus.de':
                 //Telefon
+                tagePrivatkundeDE = "Mo - Fr: "; 
+                tagePrivatkundeFR = "Lu - Ve: "; 
+                tagePrivatkundeIT = "Lun - Ven: "; 
+                tagePrivatkundeEN = "Mo - Fr: "; 
+                tagePrivatkunde2DE = "<br>Sa: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2FR = "<br>Sa: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2IT = "<br>Sab: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2EN = "<br>Sa: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2MobileDE = "Sa: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileFR = "Sa: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileIT = "Sab: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileEN = "Sa: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "09:00 - 14:00";
+                tageFirmenkundeDE = "Mo - Fr: ";
+                tageFirmenkundeFR = "Lu - Ve: ";
+                tageFirmenkundeIT = "Lun - Ven: ";
+                tageFirmenkundeEN = "Mo - Fr: ";
+                tageFirmenkunde2DE = "<br>Sa: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2FR = "<br>Sa: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2IT = "<br>Sab: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2EN = "<br>Sa: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2DE = "Sa: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2FR = "Sa: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2IT = "Sab: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2EN = "Sa: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitFirmenkunde = "08:00 - 20:00";
                 uhrzeitFirmenkunde2 = "09:00 - 14:00";
                 commaMultipleHoursPrivateCustomers = ", ";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
                 commaMultipleHoursBusinessCustomers = ", ";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 //Chat
+                tagePrivatkundeChatDE = ""; 
+                tagePrivatkundeChatFR = ""; 
+                tagePrivatkundeChatIT = ""; 
+                tagePrivatkundeChatEN = ""; 
+                tagePrivatkunde2ChatDE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatFR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatIT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatEN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkundeChat = "";
                 uhrzeitPrivatkunde2Chat = "";
+                tageFirmenkundeChatDE = "";
+                tageFirmenkundeChatFR = "";
+                tageFirmenkundeChatIT = "";
+                tageFirmenkundeChatEN = "";
+                tageFirmenkunde2ChatDE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatFR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatIT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatEN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitFirmenkundeChat = "";
                 uhrzeitFirmenkunde2Chat = "";
                 commaMultipleHoursPrivateCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
@@ -86,18 +285,66 @@ function filldynamicWording(){
                 break;
         case'helpcenter.digitec.at':
                 //Telefon
+                tagePrivatkundeDE = "Mo - Fr: "; 
+                tagePrivatkundeFR = "Lu - Ve: "; 
+                tagePrivatkundeIT = "Lun - Ven: "; 
+                tagePrivatkundeEN = "Mo - Fr: "; 
+                tagePrivatkunde2DE = "<br>Sa: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2FR = "<br>Sa: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2IT = "<br>Sab: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2EN = "<br>Sa: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2MobileDE = "Sa: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileFR = "Sa: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileIT = "Sab: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileEN = "Sa: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
-                uhrzeitPrivatkundeMobile = "09:00 - 14:00";
+                uhrzeitPrivatkunde2 = "09:00 - 14:00";
+                tageFirmenkundeDE = "Mo - Fr: ";
+                tageFirmenkundeFR = "Lu - Ve: ";
+                tageFirmenkundeIT = "Lun - Ven: ";
+                tageFirmenkundeEN = "Mo - Fr: ";
+                tageFirmenkunde2DE = "<br>Sa: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2FR = "<br>Sa: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2IT = "<br>Sab: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2EN = "<br>Sa: ";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2DE = "Sa: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2FR = "Sa: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2IT = "Sab: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2EN = "Sa: ";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitFirmenkunde = "08:00 - 20:00";
-                uhrzeitFirmenkundeMobile = "09:00 - 14:00";
+                uhrzeitFirmenkunde2 = "09:00 - 14:00";
                 commaMultipleHoursPrivateCustomers = ", ";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
                 commaMultipleHoursBusinessCustomers = ", ";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 //Chat
-                uhrzeitPrivatkunde = "";
-                uhrzeitPrivatkundeMobile = "";
-                uhrzeitFirmenkunde = "";
-                uhrzeitFirmenkundeMobile = "";
+                tagePrivatkundeChatDE = ""; 
+                tagePrivatkundeChatFR = ""; 
+                tagePrivatkundeChatIT = ""; 
+                tagePrivatkundeChatEN = ""; 
+                tagePrivatkunde2ChatDE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatFR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatIT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatEN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                uhrzeitPrivatkundeChat = "";
+                uhrzeitPrivatkunde2Chat = "";
+                tageFirmenkundeChatDE = "";
+                tageFirmenkundeChatFR = "";
+                tageFirmenkundeChatIT = "";
+                tageFirmenkundeChatEN = "";
+                tageFirmenkunde2ChatDE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatFR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatIT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatEN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                uhrzeitFirmenkundeChat = "";
+                uhrzeitFirmenkunde2 = "";
                 commaMultipleHoursPrivateCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
                 commaMultipleHoursBusinessCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
@@ -108,36 +355,134 @@ function filldynamicWording(){
                 break;
         case'helpcenter.connect.digitec.ch':
                 //Telefon
+                tagePrivatkundeDE = "Mo - Fr: "; 
+                tagePrivatkundeFR = "Lu - Ve: "; 
+                tagePrivatkundeIT = "Lun - Ven: "; 
+                tagePrivatkundeEN = "Mo - Fr: "; 
+                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2MobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
+                tageFirmenkundeDE = "Mo - Fr: ";
+                tageFirmenkundeFR = "Lu - Ve: ";
+                tageFirmenkundeIT = "Lun - Ven: ";
+                tageFirmenkundeEN = "Mo - Fr: ";
+                tageFirmenkunde2DE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2FR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2IT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2EN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2MobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2MobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2MobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2MobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitFirmenkunde = "08:00 - 20:00";
                 uhrzeitFirmenkunde2 = "";
                 commaMultipleHoursPrivateCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
                 commaMultipleHoursBusinessCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 //Chat
+                tagePrivatkundeChatDE = "Mo - Fr: ";
+                tagePrivatkundeChatFR = "Lu - Ve: ";
+                tagePrivatkundeChatIT = "Lun - Ven: ";
+                tagePrivatkundeChatEN = "Mo - Fr: ";
+                tagePrivatkunde2ChatDE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatFR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatIT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatEN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkundeChat = "08:00 - 20:00";
                 uhrzeitPrivatkunde2Chat = "";
+                tageFirmenkundeChatDE = "Mo - Fr: ";
+                tageFirmenkundeChatFR = "Lu - Ve: ";
+                tageFirmenkundeChatIT = "Lun - Ven: ";
+                tageFirmenkundeChatEN = "Mo - Fr: ";
+                tageFirmenkunde2ChatDE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatFR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatIT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatEN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitFirmenkundeChat = "08:00 - 20:00";
                 uhrzeitFirmenkunde2Chat = "";
                 commaMultipleHoursPrivateCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
                 commaMultipleHoursBusinessCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 telPrivatkunde = "+41445759700";
-                telPrivatkundeText = "+41 44 575 97 00";
+                telPrivatkundeText = "+41 41 44 575 97 00";
+                telFirmenkunde = "+41445759700";
+                telFirmenkundeText = "+41 44 575 97 00";    
                 break;
         default:
                 //Telefon
+                tagePrivatkundeDE = "Mo - Fr: "; 
+                tagePrivatkundeFR = "Lu - Ve: "; 
+                tagePrivatkundeIT = "Lun - Ven: "; 
+                tagePrivatkundeEN = "Mo - Fr: "; 
+                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2MobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2MobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
+                tageFirmenkundeDE = "Mo - Fr: ";
+                tageFirmenkundeFR = "Lu - Ve: ";
+                tageFirmenkundeIT = "Lun - Ven: ";
+                tageFirmenkundeEN = "Mo - Fr: ";
+                tageFirmenkunde2DE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2FR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2IT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2EN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2MobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2MobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2MobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2MobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitFirmenkunde = "08:00 - 20:00";
                 uhrzeitFirmenkunde2 = "";
                 commaMultipleHoursPrivateCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
                 commaMultipleHoursBusinessCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 //Chat
+                tagePrivatkundeChatDE = "Mo - Fr: ";
+                tagePrivatkundeChatFR = "Lu - Ve: ";
+                tagePrivatkundeChatIT = "Lun - Ven: ";
+                tagePrivatkundeChatEN = "Mo - Fr: ";
+                tagePrivatkunde2ChatDE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatFR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatIT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatEN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tagePrivatkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitPrivatkundeChat = "08:00 - 20:00";
                 uhrzeitPrivatkunde2Chat = "";
+                tageFirmenkundeChatDE = "Mo - Fr";
+                tageFirmenkundeChatFR = "Lu - Ve";
+                tageFirmenkundeChatIT = "Lun - Ven";
+                tageFirmenkundeChatEN = "Mo - Fr";
+                tageFirmenkunde2ChatDE = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatFR = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatIT = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatEN = "";  //WICHTIG: braucht leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileDE = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
+                tageFirmenkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 uhrzeitFirmenkundeChat = "08:00 - 20:00";
                 uhrzeitFirmenkunde2Chat = "";
                 commaMultipleHoursPrivateCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
@@ -147,7 +492,6 @@ function filldynamicWording(){
                 telPrivatkundeText = "+41 44 575 95 00";
                 telFirmenkunde = "+41445759600";
                 telFirmenkundeText = "+41 44 575 96 00";    
-
                 break;
     }
 
@@ -165,26 +509,26 @@ function filldynamicWording(){
         'callUsBusinessMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Schon gewusst:',
         //Öffnungszeiten Telefon
-        'openingDaysPrivate' : 'Mo - Fr: ',
+        'openingDaysPrivate' : tagePrivatkundeDE,
         'openingHoursPrivate' : uhrzeitPrivatkunde,
-        'openingDaysPrivate2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysPrivate2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysPrivate2' : tagePrivatkunde2DE,
+        'openingDaysPrivate2Mobile' : tagePrivatkunde2MobileDE,
         'openingHoursPrivate2' : uhrzeitPrivatkunde2,
-        'openingDaysBusiness' : 'Mo - Fr: ',
+        'openingDaysBusiness' : tageFirmenkundeDE,
         'openingHoursBusiness' : uhrzeitFirmenkunde,
-        'openingDaysBusiness2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysBusiness2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysBusiness2' : tageFirmenkunde2DE,
+        'openingDaysBusiness2Mobile' : tageFirmenkunde2MobileDE,
         'openingHoursBusiness2' : uhrzeitFirmenkunde2,
         //Öffnungszeiten Chat
-        'openingDaysPrivateChat' : 'Mo - Fr: ',
+        'openingDaysPrivateChat' : tagePrivatkundeChatDE,
         'openingHoursPrivateChat' : uhrzeitPrivatkundeChat,
-        'openingDaysPrivate2Chat' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysPrivate2MobileChat' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysPrivate2Chat' : tagePrivatkunde2ChatDE,
+        'openingDaysPrivate2MobileChat' : tagePrivatkunde2ChatMobileDE,
         'openingHoursPrivate2Chat' : uhrzeitPrivatkunde2Chat,
-        'openingDaysBusinessChat' : 'Mo - Fr: ',
+        'openingDaysBusinessChat' : tageFirmenkundeChatDE,
         'openingHoursBusinessChat' : uhrzeitFirmenkundeChat,
-        'openingDaysBusiness2Chat' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysBusiness2MobileChat' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysBusiness2Chat' : tageFirmenkunde2ChatDE,
+        'openingDaysBusiness2MobileChat' : tageFirmenkunde2ChatMobileDE,
         'openingHoursBusiness2Chat' : uhrzeitFirmenkunde2Chat,
         'phone' : 'Telefon',
         'chat' : 'Chat',
@@ -223,26 +567,26 @@ function filldynamicWording(){
         'callUsBusinessMobile' : 'Appelez-nous <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Le saviez-vous :',
         //Öffnungszeiten Telefon
-        'openingDaysPrivate' : 'Lu - Ve: ',
+        'openingDaysPrivate' : tagePrivatkundeFR,
         'openingHoursPrivate' : uhrzeitPrivatkunde,
-        'openingDaysPrivate2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysPrivate2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysPrivate2' : tagePrivatkunde2FR,
+        'openingDaysPrivate2Mobile' : tagePrivatkunde2MobileFR,
         'openingHoursPrivate2' : uhrzeitPrivatkunde2,
-        'openingDaysBusiness' : 'Lu - Ve: ',
+        'openingDaysBusiness' : tageFirmenkundeFR,
         'openingHoursBusiness' : uhrzeitFirmenkunde,
-        'openingDaysBusiness2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysBusiness2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysBusiness2' : tageFirmenkunde2FR,
+        'openingDaysBusiness2Mobile' : tageFirmenkunde2MobileFR,
         'openingHoursBusiness2' : uhrzeitFirmenkunde2,
         //Öffnungszeiten Chat
-        'openingDaysPrivateChat' : 'Lu - Ve: ',
+        'openingDaysPrivateChat' : tagePrivatkundeChatFR,
         'openingHoursPrivateChat' : uhrzeitPrivatkundeChat,
-        'openingDaysPrivate2Chat' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysPrivate2MobileChat' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysPrivate2Chat' : tagePrivatkunde2ChatFR,
+        'openingDaysPrivate2MobileChat' : tagePrivatkunde2ChatMobileFR,
         'openingHoursPrivate2Chat' : uhrzeitPrivatkunde2Chat,
-        'openingDaysBusinessChat' : 'Lu - Ve: ',
+        'openingDaysBusinessChat' : tageFirmenkundeChatFR,
         'openingHoursBusinessChat' : uhrzeitFirmenkundeChat,
-        'openingDaysBusiness2Chat' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysBusiness2MobileChat' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysBusiness2Chat' : tageFirmenkunde2ChatFR,
+        'openingDaysBusiness2MobileChat' : tageFirmenkunde2ChatMobileFR,
         'openingHoursBusiness2Chat' : uhrzeitFirmenkunde2Chat,
         'phone' : 'Téléphone',
         'chat' : 'Chat',
@@ -281,26 +625,26 @@ function filldynamicWording(){
         'callUsBusinessMobile' : 'Chiamaci <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Lo sapevi:',
         //Öffnungszeiten Telefon
-        'openingDaysPrivate' : 'Lun - Ven: ',
+        'openingDaysPrivate' : tagePrivatkundeIT,
         'openingHoursPrivate' : uhrzeitPrivatkunde,
-        'openingDaysPrivate2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysPrivate2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysPrivate2' : tagePrivatkunde2IT,
+        'openingDaysPrivate2Mobile' : tagePrivatkunde2MobileIT,
         'openingHoursPrivate2' : uhrzeitPrivatkunde2,
-        'openingDaysBusiness' : 'Lun - Ven: ',
+        'openingDaysBusiness' : tageFirmenkundeIT,
         'openingHoursBusiness' : uhrzeitFirmenkunde,
-        'openingDaysBusiness2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysBusiness2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysBusiness2' : tageFirmenkunde2IT,
+        'openingDaysBusiness2Mobile' : tageFirmenkunde2MobileIT,
         'openingHoursBusiness2' : uhrzeitFirmenkunde2,
         //Öffnungszeiten Chat
-        'openingDaysPrivateChat' : 'Lun - Ven: ',
+        'openingDaysPrivateChat' : tagePrivatkundeChatIT,
         'openingHoursPrivateChat' : uhrzeitPrivatkundeChat,
-        'openingDaysPrivate2Chat' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysPrivate2MobileChat' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysPrivate2Chat' : tagePrivatkunde2ChatIT,
+        'openingDaysPrivate2MobileChat' : tagePrivatkunde2ChatMobileIT,
         'openingHoursPrivate2Chat' : uhrzeitPrivatkunde2Chat,
-        'openingDaysBusinessChat' : 'Lun - Ven: ',
+        'openingDaysBusinessChat' : tageFirmenkundeChatIT,
         'openingHoursBusinessChat' : uhrzeitFirmenkundeChat,
-        'openingDaysBusiness2Chat' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysBusiness2MobileChat' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysBusiness2Chat' : tageFirmenkunde2ChatIT,
+        'openingDaysBusiness2MobileChat' : tageFirmenkunde2ChatMobileIT,
         'openingHoursBusiness2Chat' : uhrzeitFirmenkunde2Chat,
         'phone' : 'Telefono',
         'chat' : 'Chat',
@@ -339,26 +683,26 @@ function filldynamicWording(){
         'callUsBusinessMobile' : 'Call us <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'contactFormNoteTitel' : 'Did you know:',
         //Öffnungszeiten Telefon
-        'openingDaysPrivate' : 'Mo - Fr: ',
+        'openingDaysPrivate' : tagePrivatkundeEN,
         'openingHoursPrivate' : uhrzeitPrivatkunde,
-        'openingDaysPrivate2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysPrivate2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysPrivate2' : tagePrivatkunde2EN,
+        'openingDaysPrivate2Mobile' : tagePrivatkunde2MobileEN,
         'openingHoursPrivate2' : uhrzeitPrivatkunde2,
-        'openingDaysBusiness' : 'Mo - Fr: ',
+        'openingDaysBusiness' : tageFirmenkundeEN,
         'openingHoursBusiness' : uhrzeitFirmenkunde,
-        'openingDaysBusiness2' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysBusiness2Mobile' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysBusiness2' : tageFirmenkunde2EN,
+        'openingDaysBusiness2Mobile' : tageFirmenkunde2MobileEN,
         'openingHoursBusiness2' : uhrzeitFirmenkunde2,
         //Öffnungszeiten Chat
-        'openingDaysPrivateChat' : 'Mo - Fr: ',
+        'openingDaysPrivateChat' : tagePrivatkundeChatEN,
         'openingHoursPrivateChat' : uhrzeitPrivatkundeChat,
-        'openingDaysPrivate2Chat' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysPrivate2MobileChat' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysPrivate2Chat' : tagePrivatkunde2ChatEN,
+        'openingDaysPrivate2MobileChat' : tagePrivatkunde2ChatMobileEN,
         'openingHoursPrivate2Chat' : uhrzeitPrivatkunde2Chat,
-        'openingDaysBusinessChat' : 'Mo - Fr: ',
+        'openingDaysBusinessChat' : tageFirmenkundeChatEN,
         'openingHoursBusinessChat' : uhrzeitFirmenkundeChat,
-        'openingDaysBusiness2Chat' : '',  //WICHTIG: braucht leading <br> wenn befüllt
-        'openingDaysBusiness2MobileChat' : '',  //WICHTIG: KEIN leading <br> wenn befüllt
+        'openingDaysBusiness2Chat' : tageFirmenkunde2ChatEN,
+        'openingDaysBusiness2MobileChat' : tageFirmenkunde2ChatMobileEN,
         'openingHoursBusiness2Chat' : uhrzeitFirmenkunde2Chat,
         'phone' : 'Phone',
         'chat' : 'Chat',
