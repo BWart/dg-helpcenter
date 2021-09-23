@@ -80,8 +80,20 @@
                 </tr>
                 <tr>
                   <td style="padding-right:20px;vertical-align:top"><div id="mailTextCellContent"><font data-wording-key="emailDescription"></div><div id="row3cell1inserter"></div></td>
-                  <td style="padding-right:10px;padding-left:10px;vertical-align:top"><div id="phoneTextCellContent"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font></div><div id="row3cell2inserter"></div></td>
-                  <td style="padding-left:20px;vertical-align:top"><div id="chatTextCellContent"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font><!--<br><font data-wording-key="chatLanguage"></font><font data-wording-key="chatLanguage2"></font>--></div><div id="row3cell3inserter"></div></td>
+                  <td style="padding-right:10px;padding-left:10px;vertical-align:top">
+                    <div id="phoneTextCellContent">
+                      <div class="private-customer connect-customer"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font></div>
+                      <div class="business-customer"><font data-wording-key="openingDaysBusiness"></font><font data-wording-key="openingHoursBusiness"></font><font data-wording-key="openingDaysBusiness2"></font><font data-wording-key="openingHoursBusiness2"></font></div>
+                    </div>
+                    <div id="row3cell2inserter"></div>
+                  </td>
+                  <td style="padding-left:20px;vertical-align:top">
+                    <div id="chatTextCellContent">
+                      <div class="private-customer connect-customer"><font data-wording-key="openingDaysPrivateChat"></font><font data-wording-key="openingHoursPrivateChat"></font><font data-wording-key="openingDaysPrivate2Chat"></font><font data-wording-key="openingHoursPrivate2Chat"></font><!--<br><font data-wording-key="chatLanguage"></font><font data-wording-key="chatLanguage2"></font>--></div>
+                      <div class="business-customer"><font data-wording-key="openingDaysBusinessChat"></font><font data-wording-key="openingHoursBusinessChat"></font><font data-wording-key="openingDaysBusiness2Chat"></font><font data-wording-key="openingHoursBusiness2Chat"></font><!--<br><font data-wording-key="chatLanguage"></font><font data-wording-key="chatLanguage2"></font>--></div>
+                    </div>
+                    <div id="row3cell3inserter"></div>
+                  </td>
                 </tr>
                 <tr>
                   <td style="padding-right:20px;padding-top:10px"><div id="mailButtonCellContent"><div class="button-contact contactFormWriteUs" data-wording-key="writeUs"></div></div></div><div id="row4cell1inserter"></div></td>
@@ -140,8 +152,8 @@
                     <div id="mobileChatCell1Content">
                       <img src="{{asset 'chatIcon.png'}}" height="16px">
                       <b><font data-wording-key="chat"></font></b>
-                      <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font>
-                      <font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusiness"></font> <font data-wording-key="openingHoursBusiness"></font><font data-wording-key="commaMultipleHoursBusinessCustomers"></font><font data-wording-key="openingDaysBusiness2Mobile"></font> <font data-wording-key="openingHoursBusiness2"></font></font>
+                      <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivateChat"></font> <font data-wording-key="openingHoursPrivateChat"></font><font data-wording-key="commaMultipleHoursPrivateCustomersChat"></font><font data-wording-key="openingDaysPrivate2MobileChat"></font> <font data-wording-key="openingHoursPrivate2Chat"></font></font>
+                      <font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusinessChat"></font> <font data-wording-key="openingHoursBusinessChat"></font><font data-wording-key="commaMultipleHoursBusinessCustomersChat"></font><font data-wording-key="openingDaysBusiness2MobileChat"></font> <font data-wording-key="openingHoursBusiness2Chat"></font></font>
                       <div class="recommendedChannel" data-wording-key="recommendedChannel" style="float:right;"></div>
                     </div>
                     <div id="mobileInserter5"></div>
@@ -817,9 +829,10 @@
       case'helpcenter.digitec.ch':
       case'helpcenter.galaxus.ch':
       case'helpcenter.connect.digitec.ch':
+      case'helpcenter.galaxus.de':
         hideChat = false;
         break;
-      case'helpcenter.galaxus.de':
+      case'helpcenter.galaxus.at':
         hideChat = true;
         break;
       default:

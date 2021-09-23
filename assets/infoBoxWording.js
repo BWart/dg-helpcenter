@@ -62,24 +62,23 @@ function fillInfoBoxWording(){
                     hp3 = "/360016850820";
                     hp4 = "/360010273099";
                     hp5 = "";
-                    hp6 = "/360008142500";
+                    hp6 = "/360010182760";
   
                     offerte = "EUR 2'000.-";
                     rck = "Du kannst von " + seite + " gekaufte Produkte innerhalb von 30 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
                     break;
               case 'helpcenter.galaxus.at':
-                    //TODO: Galaxus AT Helpcenter Links überprüfen
                     shopURL = "https://www.galaxus.at/"
   
                     helpcenterURL = "https://helpcenter.galaxus.at/hc/";
                     seite = "Galaxus";
   
-                    hp1 = "";  //TODO: Galaxus AT Helpcenter Links einfügen
-                    hp2 = "";  //TODO: Galaxus AT Helpcenter Links einfügen
-                    hp3 = "";  //TODO: Galaxus AT Helpcenter Links einfügen
-                    hp4 = "";  //TODO: Galaxus AT Helpcenter Links einfügen
-                    hp5 = "";  //TODO: Galaxus AT Helpcenter Links einfügen
-                    hp6 = "";  //TODO: Galaxus AT Helpcenter Links einfügen
+                    hp1 = "/4403441880850";
+                    hp2 = "";
+                    hp3 = "/4407053718930";  
+                    hp4 = "/4407061056530";
+                    hp5 = "";
+                    hp6 = "/4407011198994";
   
                     offerte = "EUR 2'000.-";
                     rck = "Du kannst von " + seite + " gekaufte Produkte innerhalb von 30 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
