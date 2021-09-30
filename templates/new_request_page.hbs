@@ -411,13 +411,6 @@
       } else {
         onDropdownChange();
       }
-      try {
-        removeChatBasedOnRequestType();
-        updateChatConnectionAfterDropdownChange();
-      }
-      catch (e) {
-        console.log(e); 
-      } 
     }
   });
 
@@ -480,6 +473,13 @@
     } else {
       if (contactFormIsShown == 1) { mailFormOrderNumberOrPhoneNumber.show() }
     }
+    try {
+        removeChatBasedOnRequestType();
+        updateChatConnectionAfterDropdownChange();
+      }
+      catch (e) {
+        console.log(e); 
+      } 
   } 
 
   function onDropdownChangeConnect(){
@@ -540,6 +540,13 @@
     } else {
       if (contactFormIsShown == 1) { mailFormOrderNumberOrPhoneNumber.show() }
     }
+    try {
+        removeChatBasedOnRequestType();
+        updateChatConnectionAfterDropdownChange();
+      }
+      catch (e) {
+        console.log(e); 
+      } 
   }  
 
   commitButton.on("click", function(){
