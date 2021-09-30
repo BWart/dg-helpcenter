@@ -244,9 +244,42 @@
   "webform_case_offer", "webform_case_no_bill"]
 
   //intial setup
+  //Callback checker
+  let isCallback = 0; //Checker whether we are in a Callback Form
+  setCallback();  //Test Callback
+  //removeCallback();
   setPortalDependantVariables();
   setCustomerType();
   //checkForFeedbackForm();
+
+  function setCallback(){
+    isCallback = 1;
+    var phoneTitleDesktop = document.getElementById('phoneTitleCellContent');
+    var phoneTextDesktop = document.getElementById('phoneTextCellContent');
+    var phoneButtonDesktop = document.getElementById('phoneButtonCellContent');
+    phoneTitleDesktop.innerHTML = '<b data-wording-key="callback"></b>'
+    phoneTextDesktop.innerHTML = '<font data-wording-key="callbackText"></font>'
+    phoneButtonDesktop.innerHTML = '<div class="button-contact callback" data-wording-key="callback"></div>'
+
+    var phoneTitleMobile = document.getElementById('mobilePhoneCell1Content');
+    var phoneButtonMobile = document.getElementById('mobilePhoneCell2Content');
+    phoneTitleMobile.innerHTML = '<img src="{{asset 'phoneIcon.png'}}" height="16px"> <b><font data-wording-key="callback"></font></b> <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="callbackText"></font>'
+    phoneButtonMobile.innerHTML = '<div class="button-contact callback" data-wording-key="callback"></div>'
+  }
+  function removeCallback(){
+    isCallback = 0;
+    var phoneTitleDesktop = document.getElementById('phoneTitleCellContent');
+    var phoneTextDesktop = document.getElementById('phoneTextCellContent');
+    var phoneButtonDesktop = document.getElementById('phoneButtonCellContent');
+    phoneTitleDesktop.innerHTML = '<b data-wording-key="phone"></b>'
+    phoneTextDesktop.innerHTML = '<div class="private-customer connect-customer"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font></div><div class="business-customer"><font data-wording-key="openingDaysBusiness"></font><font data-wording-key="openingHoursBusiness"></font><font data-wording-key="openingDaysBusiness2"></font><font data-wording-key="openingHoursBusiness2"></font></div>'
+    phoneButtonDesktop.innerHTML = '<div class="button-contact phone-number private-number private-customer connect-customer" data-wording-key="callUsPrivate"></div><div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div>'
+
+    var phoneTitleMobile = document.getElementById('mobilePhoneCell1Content');
+    var phoneButtonMobile = document.getElementById('mobilePhoneCell2Content');
+    phoneTitleMobile.innerHTML = '<img src="{{asset 'phoneIcon.png'}}" height="16px"><b><font data-wording-key="phone"></font></b><font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font><font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusiness"></font> <font data-wording-key="openingHoursBusiness"></font><font data-wording-key="commaMultipleHoursBusinessCustomers"></font><font data-wording-key="openingDaysBusiness2Mobile"></font> <font data-wording-key="openingHoursBusiness2"></font></font>'
+    phoneButtonMobile.innerHTML = '<div class="button-contact phone-number private-number2 private-customer connect-customer" data-wording-key="callUsPrivateMobile"></div><div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div>'
+  }
 
   function setPortalDependantVariables(){
     switch (portal){
@@ -411,13 +444,6 @@
       } else {
         onDropdownChange();
       }
-      try {
-        removeChatBasedOnRequestType();
-        updateChatConnectionAfterDropdownChange();
-      }
-      catch (e) {
-        console.log(e); 
-      } 
     }
   });
 
@@ -480,6 +506,13 @@
     } else {
       if (contactFormIsShown == 1) { mailFormOrderNumberOrPhoneNumber.show() }
     }
+    try {
+        removeChatBasedOnRequestType();
+        updateChatConnectionAfterDropdownChange();
+      }
+      catch (e) {
+        console.log(e); 
+      } 
   } 
 
   function onDropdownChangeConnect(){
@@ -540,6 +573,13 @@
     } else {
       if (contactFormIsShown == 1) { mailFormOrderNumberOrPhoneNumber.show() }
     }
+    try {
+        removeChatBasedOnRequestType();
+        updateChatConnectionAfterDropdownChange();
+      }
+      catch (e) {
+        console.log(e); 
+      } 
   }  
 
   commitButton.on("click", function(){
@@ -550,6 +590,9 @@
   //Aktion bei Klick auf "Schreib uns" Button
   $('.contactFormWriteUs').on("click", function () {
     showContactForm();
+  })
+  $('.callback').on("click", function () {
+    showContactFormCallback();
   })
   function showContactForm(){
     circleThreeTitle.hide();
@@ -574,6 +617,9 @@
     } else {
       mailFormOrderNumberOrPhoneNumber.show();
     }
+  }
+  function showContactFormCallback() {
+    showContactForm();
   }
 
   //Aktionen bei Klick auf "Ruf uns an"

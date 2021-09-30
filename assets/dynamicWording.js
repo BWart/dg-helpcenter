@@ -555,7 +555,9 @@ function filldynamicWording(){
         'chatLanguage' : 'Sprache:',
         'chatLanguage2' : 'Deutsch',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
-        'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers
+        'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
+        'callback' : 'Callback',
+        'callbackText' : 'Wir rufen dich an, sobald ein Agent frei ist.'
         },
         fr: {      
         'privateCustomers' : 'Clients privés',
