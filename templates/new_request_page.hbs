@@ -666,11 +666,21 @@
 
   // Return true if dropdown option 'ABCD' is selected
   function isFormAttachmentRequired() {
+    var attachString = mailFormAttachmentLabel.html();
+      if (attachString.includes('<font color="red">*</font>')){
+        attachString = attachString.substring(0, attachString.length - 26);
+      }
+      mailFormAttachmentLabel.html(attachString);
 	  if($(formDropdownClass + ' a.nesty-input').attr('aria-expanded') && 
     (requestReasonTag == 'webform_case_damaged_product')){
 		  errorMessageId = currentLanguage + '1';
 		  attachmentErrorNotification = setErrorMessage();
 		  attachmentErrorElt.text(attachmentErrorNotification);
+      var attachString = mailFormAttachmentLabel.html();
+      if (!attachString.includes('<font color="red">*</font>')){
+        attachString += '<font color="red">*</font>';
+      }
+      mailFormAttachmentLabel.html(attachString);
 		  return true;
 	  }
 	  if($(formDropdownClass + ' a.nesty-input').attr('aria-expanded') &&
@@ -678,6 +688,11 @@
 		  errorMessageId = currentLanguage + '2';
 		  attachmentErrorNotification = setErrorMessage();
 		  attachmentErrorElt.text(attachmentErrorNotification);
+      var attachString = mailFormAttachmentLabel.html();
+      if (!attachString.includes('<font color="red">*</font>')){
+        attachString += '<font color="red">*</font>';
+      }
+      mailFormAttachmentLabel.html(attachString);
 		  return true;
 	  }
 	  return false;
