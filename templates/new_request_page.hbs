@@ -75,15 +75,20 @@
                 </tr>
                 <tr>
                   <td style="padding-right:20px"><div id="mailTitleCellContent"><b data-wording-key="email"></b></div><div id="row2cell1inserter"></div></td>
-                  <td style="padding-right:10px;padding-left:10px"><div id="phoneTitleCellContent"><b data-wording-key="phone"></b></div><div id="row2cell2inserter"></div></td>
+                  <td style="padding-right:10px;padding-left:10px"><div id="phoneTitleCellContent"><div class="nocallback"><b data-wording-key="phone"></b></div><div class="callback"><b data-wording-key="callback"></b></div></div><div id="row2cell2inserter"></div></td>
                   <td style="padding-left:20px"><div id="chatTitleCellContent"><b data-wording-key="chat"></b></div><div id="row2cell3inserter"></div></td>
                 </tr>
                 <tr>
                   <td style="padding-right:20px;vertical-align:top"><div id="mailTextCellContent"><font data-wording-key="emailDescription"></div><div id="row3cell1inserter"></div></td>
                   <td style="padding-right:10px;padding-left:10px;vertical-align:top">
                     <div id="phoneTextCellContent">
-                      <div class="private-customer connect-customer"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font></div>
-                      <div class="business-customer"><font data-wording-key="openingDaysBusiness"></font><font data-wording-key="openingHoursBusiness"></font><font data-wording-key="openingDaysBusiness2"></font><font data-wording-key="openingHoursBusiness2"></font></div>
+                      <div class="nocallback">
+                        <div class="private-customer connect-customer"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font></div>
+                        <div class="business-customer"><font data-wording-key="openingDaysBusiness"></font><font data-wording-key="openingHoursBusiness"></font><font data-wording-key="openingDaysBusiness2"></font><font data-wording-key="openingHoursBusiness2"></font></div>
+                      </div>
+                      <div class="callback">
+                        <font data-wording-key="callbackText"></font>
+                      </div>
                     </div>
                     <div id="row3cell2inserter"></div>
                   </td>
@@ -97,10 +102,17 @@
                 </tr>
                 <tr>
                   <td style="padding-right:20px;padding-top:10px"><div id="mailButtonCellContent"><div class="button-contact contactFormWriteUs" data-wording-key="writeUs"></div></div></div><div id="row4cell1inserter"></div></td>
-                  <td style="padding-right:10px;padding-left:10px;padding-top:10px"><div id="phoneButtonCellContent">
-                    <div class="button-contact phone-number private-number private-customer connect-customer" data-wording-key="callUsPrivate"></div>
-                    <div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div>
-                    </div><div id="row4cell2inserter"></div></td>
+                  <td style="padding-right:10px;padding-left:10px;padding-top:10px">
+                    <div id="phoneButtonCellContent">
+                      <div class="nocallback">
+                        <div class="button-contact phone-number private-number private-customer connect-customer" data-wording-key="callUsPrivate"></div>
+                        <div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div>
+                      </div>
+                      <div class="callback">
+                        <div class="button-contact callbackbutton" data-wording-key="callback"></div>
+                      </div>
+                    </div>
+                    <div id="row4cell2inserter"></div></td>
                   <td style="padding-left:20px;padding-top:10px"><div id="chatButtonCellContent"><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></div><div id="row4cell3inserter"></div>
                   </td>
                 </tr>
@@ -130,10 +142,17 @@
                 <tr>
                   <td class="contactButtonTableCellLeftNoBorder">
                     <div id="mobilePhoneCell1Content">
-                      <img src="{{asset 'phoneIcon.png'}}" height="16px">
-                      <b><font data-wording-key="phone"></font></b>
-                      <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font>
-                      <font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusiness"></font> <font data-wording-key="openingHoursBusiness"></font><font data-wording-key="commaMultipleHoursBusinessCustomers"></font><font data-wording-key="openingDaysBusiness2Mobile"></font> <font data-wording-key="openingHoursBusiness2"></font></font>
+                      <div class="nocallback">
+                        <img src="{{asset 'phoneIcon.png'}}" height="16px">
+                        <b><font data-wording-key="phone"></font></b>
+                        <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font>
+                        <font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusiness"></font> <font data-wording-key="openingHoursBusiness"></font><font data-wording-key="commaMultipleHoursBusinessCustomers"></font><font data-wording-key="openingDaysBusiness2Mobile"></font> <font data-wording-key="openingHoursBusiness2"></font></font>
+                      </div>
+                      <div class="callback">
+                        <img src="{{asset 'phoneIcon.png'}}" height="16px">
+                        <b><font data-wording-key="callback"></font></b>
+                        <font style="font-size: 11px;">&nbsp;<font data-wording-key="callbackText"></font>
+                      </div>
                     </div>
                     <div id="mobileInserter3"></div>
                   </td>
@@ -141,8 +160,13 @@
                 <tr>
                   <td class="contactButtonTableCellLeftNoBorderBottomPadding">
                     <div id="mobilePhoneCell2Content">
-                      <div class="button-contact phone-number private-number2 private-customer connect-customer" data-wording-key="callUsPrivateMobile"></div>
-                      <div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div>
+                      <div class="nocallback">
+                        <div class="button-contact phone-number private-number2 private-customer connect-customer" data-wording-key="callUsPrivateMobile"></div>
+                        <div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div>
+                      </div>
+                      <div class="callback">
+                        <div class="button-contact callbackbutton" data-wording-key="callback"></div>
+                      </div>
                     </div>
                     <div id="mobileInserter4"></div>
                   </td>
@@ -243,42 +267,26 @@
   "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy", "webform_case_delete_account", "webform_case_cant_login",
   "webform_case_offer", "webform_case_no_bill"]
 
+  //List of tags for callback
+  var reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status"]
+
   //intial setup
   //Callback checker
   let isCallback = 0; //Checker whether we are in a Callback Form
-  setCallback();  //Test Callback
-  //removeCallback();
+  removeCallback();
   setPortalDependantVariables();
   setCustomerType();
   //checkForFeedbackForm();
 
   function setCallback(){
     isCallback = 1;
-    var phoneTitleDesktop = document.getElementById('phoneTitleCellContent');
-    var phoneTextDesktop = document.getElementById('phoneTextCellContent');
-    var phoneButtonDesktop = document.getElementById('phoneButtonCellContent');
-    phoneTitleDesktop.innerHTML = '<b data-wording-key="callback"></b>'
-    phoneTextDesktop.innerHTML = '<font data-wording-key="callbackText"></font>'
-    phoneButtonDesktop.innerHTML = '<div class="button-contact callback" data-wording-key="callback"></div>'
-
-    var phoneTitleMobile = document.getElementById('mobilePhoneCell1Content');
-    var phoneButtonMobile = document.getElementById('mobilePhoneCell2Content');
-    phoneTitleMobile.innerHTML = '<img src="{{asset 'phoneIcon.png'}}" height="16px"> <b><font data-wording-key="callback"></font></b> <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="callbackText"></font>'
-    phoneButtonMobile.innerHTML = '<div class="button-contact callback" data-wording-key="callback"></div>'
+    $('.callback').show();
+    $('.nocallback').hide();
   }
   function removeCallback(){
     isCallback = 0;
-    var phoneTitleDesktop = document.getElementById('phoneTitleCellContent');
-    var phoneTextDesktop = document.getElementById('phoneTextCellContent');
-    var phoneButtonDesktop = document.getElementById('phoneButtonCellContent');
-    phoneTitleDesktop.innerHTML = '<b data-wording-key="phone"></b>'
-    phoneTextDesktop.innerHTML = '<div class="private-customer connect-customer"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font></div><div class="business-customer"><font data-wording-key="openingDaysBusiness"></font><font data-wording-key="openingHoursBusiness"></font><font data-wording-key="openingDaysBusiness2"></font><font data-wording-key="openingHoursBusiness2"></font></div>'
-    phoneButtonDesktop.innerHTML = '<div class="button-contact phone-number private-number private-customer connect-customer" data-wording-key="callUsPrivate"></div><div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div>'
-
-    var phoneTitleMobile = document.getElementById('mobilePhoneCell1Content');
-    var phoneButtonMobile = document.getElementById('mobilePhoneCell2Content');
-    phoneTitleMobile.innerHTML = '<img src="{{asset 'phoneIcon.png'}}" height="16px"><b><font data-wording-key="phone"></font></b><font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font><font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusiness"></font> <font data-wording-key="openingHoursBusiness"></font><font data-wording-key="commaMultipleHoursBusinessCustomers"></font><font data-wording-key="openingDaysBusiness2Mobile"></font> <font data-wording-key="openingHoursBusiness2"></font></font>'
-    phoneButtonMobile.innerHTML = '<div class="button-contact phone-number private-number2 private-customer connect-customer" data-wording-key="callUsPrivateMobile"></div><div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div>'
+    $('.callback').hide();
+    $('.nocallback').show();
   }
 
   function setPortalDependantVariables(){
@@ -449,6 +457,13 @@
 
   
   function onDropdownChange(){
+    requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
+    if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+      setCallback();
+    }
+    else {
+      removeCallback();
+    }
     resetContactOptions();
     circleOne.classList.remove('circleOpenStep');
     circleOne.classList.add('circleStepCompleted');
@@ -456,7 +471,6 @@
     circleTwo.classList.remove('circleOpenStep');
     circleTwo.classList.add('circleStepCompleted');
     circleTwo.innerHTML = '&#10003';
-    requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     //Update Label and Template
     if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
@@ -483,10 +497,15 @@
       }
     }
     mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
+    if (isCallback == 1){
+      mailFormSubjectTextField.val('CALLBACK: ' + $(requestReasonDropdownNesty).text());  //Autofill Mail Subject
+    }
     //customerTypeDropdown.hide();
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
-    if (contactFormIsShown == 0) {
+    if (contactFormIsShown == 0 || contactFormIsShown == 1) {
       //introText.hide();
+      circleThreeTitle.show();
+      circleThreeTitleTwo.hide();
       backButton.hide();
       mailFormOrderNumberOrPhoneNumber.hide();
       mailFormSubject.hide();
@@ -591,7 +610,7 @@
   $('.contactFormWriteUs').on("click", function () {
     showContactForm();
   })
-  $('.callback').on("click", function () {
+  $('.callbackbutton').on("click", function () {
     showContactFormCallback();
   })
   function showContactForm(){
@@ -619,7 +638,28 @@
     }
   }
   function showContactFormCallback() {
-    showContactForm();
+    circleThreeTitle.hide();
+    circleThreeTitleTwo.show();
+    contactFormIsShown = 1;
+    requestForm.show();
+    backButton.show();
+    //introText.hide();
+    //infoTextField.hide();
+    contactInfos.hide();
+    //customerTypeDropdown.hide();
+    mailFormOrderNumberOrPhoneNumber.show();
+    mailFormSubject.hide();
+    mailFormMessage.show();
+    mailFormAttachmentDropZone.show();
+    mailFormAttachmentLabel.show();
+    mailFormMailInput.show();
+    commitButton.show();
+    //OrderNumber Feld verstecken wenn nicht benötigt
+    if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
+      mailFormOrderNumberOrPhoneNumber.hide();
+    } else {
+      mailFormOrderNumberOrPhoneNumber.show();
+    }
   }
 
   //Aktionen bei Klick auf "Ruf uns an"
