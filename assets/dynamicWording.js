@@ -283,7 +283,7 @@ function filldynamicWording(){
                 telFirmenkunde = "+4940334614748";
                 telFirmenkundeText = "+49 (0)40 334 614 748";
                 break;
-        case'helpcenter.digitec.at':
+        case'helpcenter.galaxus.at':
                 //Telefon
                 tagePrivatkundeDE = "Mo - Fr: "; 
                 tagePrivatkundeFR = "Lu - Ve: "; 
