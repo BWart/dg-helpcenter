@@ -203,6 +203,7 @@
   var requestReasonDropdown;
   var requestReasonDropdownNesty;
   var requestReasonTag;
+  var phoneNumberInputField;
   var contactInfos = $('.contactInfos');
   var infoTextField = $('.contactFormNote');
   var infoText = $('.contactFormTextInfo');
@@ -249,6 +250,7 @@
   fallbackText.hide();
   setPortalDependantVariables();
   setCustomerType();
+  phoneNumberInputField.hide();
   //checkForFeedbackForm();
 
   function setPortalDependantVariables(){
@@ -262,6 +264,7 @@
           circleOne.classList.add('circleStepCompleted');
           circleOne.innerHTML = '&#10003';
         }
+        phoneNumberInputField = $('.request_custom_fields_360021132820');
         requestReasonDropdown = $('.request_custom_fields_360014169819');
         requestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
