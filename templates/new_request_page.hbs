@@ -180,7 +180,9 @@
 </div>
 <script>
 
-  function myFunction(){
+  function commitButtonPressed(){
+    sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
+    console.log(sessionStorage.getItem('mailFormMessageTextFieldText'))
     requestReasonDropdown.insertBefore(mailFormMailInput);
     customerTypeDropdown.insertBefore(mailFormMailInput);
     requestReasonDropdown.hide()
@@ -423,7 +425,14 @@
     circleTwo.classList.remove('circleOpenStep');
     circleTwo.classList.add('circleStepCompleted');
     circleTwo.innerHTML = '&#10003';
-    requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
+    console.log('1')
+    if (requestReasonDropdownContents.attr('value') == null){
+      console.log('2')
+      requestReasonTag = 'none'
+    } else {
+      console.log('3')
+      requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
+    }
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     //Update Label and Template
     if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
@@ -550,7 +559,7 @@
   }  
 
   commitButton.on("click", function(){
-    myFunction();
+    commitButtonPressed();
   })
 
   //AKTIONEN IN DEN KONTAKTINFOS
@@ -996,5 +1005,8 @@
     $('#mobileChatCell1Content').insertBefore($('#mobileInserter5'));
     $('#mobileChatCell2Content').insertBefore($('#mobileInserter6'));
   }
+
+  console.log('asdf')
+  console.log(mailFormSubjectTextField.val())
 
 </script>
