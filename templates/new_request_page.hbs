@@ -57,7 +57,11 @@
         </tr>
         <tr>
             <td class="circleOpenStep" id="circle3">3</td>
-            <td style="padding-left:10px"><b data-wording-key="contactOptions" class="circle3Title"></b><b data-wording-key="email" class="circle3Title2"></b></td>
+            <td style="padding-left:10px">
+              <b data-wording-key="contactOptions" class="circle3Title"></b>
+              <b data-wording-key="email" class="circle3Title2"></b>
+              <b data-wording-key="callback" class="circle3Title3"></b>
+            </td>
         </tr>
         <tr class="tablespacer">
             <td></td>
@@ -194,11 +198,12 @@
               </table>
 
               <h5><a class="text-back">&lt; <font data-wording-key="backButtonText"></font></a></h5>
+              <font class="text-back-callback regular" data-wording-key="callbackContactFormInfo"></font><font class="text-back-callback regular"><br><br></font>
               {{request_form}}
-
             </td>
         </tr>
     </table>
+    <button onclick="myFunction()">asdf</button>
      
   </div>
 </div>
@@ -209,6 +214,8 @@
     customerTypeDropdown.insertBefore(mailFormMailInput);
     requestReasonDropdown.hide()
     customerTypeDropdown.hide()
+    console.log(commitButton)
+    commitButton.click();
   }
   //The form is fully hidden initially
 
@@ -225,16 +232,19 @@
   var requestReasonDropdown;
   var requestReasonDropdownNesty;
   var requestReasonTag;
+  var phoneNumberInputField;
   var contactInfos = $('.contactInfos');
   var infoTextField = $('.contactFormNote');
   var infoText = $('.contactFormTextInfo');
   var backButton = $('.text-back');
+  var callbackContactFormInfo = $('.text-back-callback');
   var requestForm = $('.request-form');
   var circleOne = document.getElementById('circle1');
   var circleTwo = document.getElementById('circle2');
   var circleThree = document.getElementById('circle3')
   var circleThreeTitle = $('.circle3Title');
   var circleThreeTitleTwo = $('.circle3Title2')
+  var circleThreeTitleThree = $('.circle3Title3')
 
   //TODO: Integrate new variables properly
   var customerTypeDropdownLabel = $('[for=request_issue_type_select]');
@@ -273,9 +283,11 @@
   //intial setup
   //Callback checker
   let isCallback = 0; //Checker whether we are in a Callback Form
+  callbackContactFormInfo.hide();
   removeCallback();
   setPortalDependantVariables();
   setCustomerType();
+  phoneNumberInputField.hide();
   //checkForFeedbackForm();
 
   function setCallback(){
@@ -294,11 +306,13 @@
       case 'helpcenter.digitec.ch':
       case 'helpcenter.galaxus.ch':
       case 'helpcenter.galaxus.de':
+      case 'helpcenter.galaxus.at':
         if (fullLink.slice(-3) != 'new'){
           circleOne.classList.remove('circleOpenStep');
           circleOne.classList.add('circleStepCompleted');
           circleOne.innerHTML = '&#10003';
         }
+        phoneNumberInputField = $('.request_custom_fields_360021132820');
         requestReasonDropdown = $('.request_custom_fields_360014169819');
         requestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
@@ -310,6 +324,7 @@
         customerTypeDropdownLabel.hide()
         requestReasonDropdownLabel.hide()
         circleThreeTitleTwo.hide()
+        circleThreeTitleThree.hide();
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
@@ -362,6 +377,7 @@
         customerTypeDropdownLabel.hide()
         requestReasonDropdownLabel.hide()
         circleThreeTitleTwo.hide()
+        circleThreeTitleThree.hide();
         regularHelpcenterEntryPoint();
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
@@ -471,6 +487,7 @@
     circleTwo.classList.remove('circleOpenStep');
     circleTwo.classList.add('circleStepCompleted');
     circleTwo.innerHTML = '&#10003';
+    phoneNumberInputField.hide();
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     //Update Label and Template
     if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
@@ -506,6 +523,7 @@
       //introText.hide();
       circleThreeTitle.show();
       circleThreeTitleTwo.hide();
+      circleThreeTitleThree.hide();
       backButton.hide();
       mailFormOrderNumberOrPhoneNumber.hide();
       mailFormSubject.hide();
@@ -638,8 +656,10 @@
     }
   }
   function showContactFormCallback() {
+    phoneNumberInputField.show();
+    callbackContactFormInfo.show();
     circleThreeTitle.hide();
-    circleThreeTitleTwo.show();
+    circleThreeTitleThree.show();
     contactFormIsShown = 1;
     requestForm.show();
     backButton.show();
@@ -649,9 +669,6 @@
     //customerTypeDropdown.hide();
     mailFormOrderNumberOrPhoneNumber.show();
     mailFormSubject.hide();
-    mailFormMessage.show();
-    mailFormAttachmentDropZone.show();
-    mailFormAttachmentLabel.show();
     mailFormMailInput.show();
     commitButton.show();
     //OrderNumber Feld verstecken wenn nicht benötigt
@@ -687,9 +704,12 @@
   }); 
   //Aktion bei Klick auf back Button
   $('.text-back').on("click", function (){
+    phoneNumberInputField.hide();
+    callbackContactFormInfo.hide();
     contactFormIsShown = 0;
     circleThreeTitle.show();
     circleThreeTitleTwo.hide();
+    circleThreeTitleThree.hide();
     if (customerType == 'connect-customer'){
       onDropdownChangeConnect()
     } else {

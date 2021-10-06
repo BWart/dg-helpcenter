@@ -557,7 +557,8 @@ function filldynamicWording(){
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
         'callback' : 'Callback',
-        'callbackText' : 'Wir rufen dich an, sobald ein Agent frei ist.'
+        'callbackText' : 'Wir rufen dich an, sobald ein Agent frei ist.',
+        'callbackContactFormInfo' : 'Wir rufen dich innerhalb von 5 Minuten an. Mit deiner E-Mailadresse und deiner Auftragsnummer können wir deine Anfrage noch schneller bearbeiten. Der Rückruf ist natürlich kostenlos für dich.'
         },
         fr: {      
         'privateCustomers' : 'Clients privés',
