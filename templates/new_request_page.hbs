@@ -181,7 +181,7 @@
 <script>
 
   function commitButtonPressed(){
-    sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
+    localStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
     requestReasonDropdown.insertBefore(mailFormMailInput);
     customerTypeDropdown.insertBefore(mailFormMailInput);
     requestReasonDropdown.hide()
@@ -256,6 +256,7 @@
       case 'helpcenter.digitec.ch':
       case 'helpcenter.galaxus.ch':
       case 'helpcenter.galaxus.de':
+      case 'helpcenter.galaxus.at':
         if (fullLink.slice(-3) != 'new'){
           circleOne.classList.remove('circleOpenStep');
           circleOne.classList.add('circleStepCompleted');
@@ -277,7 +278,7 @@
         if (linkEnd == 'requests'){
           onDropdownChange();
           showContactForm();
-          mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
+          mailFormMessageTextField.val(localStorage.getItem('mailFormMessageTextFieldText'));
         }
         fullMailform.show();
         break;
@@ -305,6 +306,7 @@
           //setTimeout(() => { onDropdownChangeConnect(); }, 2000);
           onDropdownChangeConnect();
           showContactForm();
+          mailFormMessageTextField.val(localStorage.getItem('mailFormMessageTextFieldText'));
         }
         fullMailform.show();
         break;
@@ -330,6 +332,7 @@
         if (linkEnd == 'requests'){
           onDropdownChange();
           showContactForm();
+          mailFormMessageTextField.val(localStorage.getItem('mailFormMessageTextFieldText'));
         }
         fullMailform.show();
         break;
