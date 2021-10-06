@@ -555,7 +555,8 @@ function filldynamicWording(){
         'chatLanguage' : 'Sprache:',
         'chatLanguage2' : 'Deutsch',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
-        'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers
+        'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
+        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
         },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -613,7 +614,8 @@ function filldynamicWording(){
         'chatLanguage' : 'Langue:',
         'chatLanguage2' : 'Français',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
-        'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers
+        'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
+        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -671,7 +673,8 @@ function filldynamicWording(){
         'chatLanguage' : 'Lingua:',
         'chatLanguage2' : 'Italiano',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
-        'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers
+        'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
+        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -729,7 +732,8 @@ function filldynamicWording(){
         'chatLanguage' : 'Language:',
         'chatLanguage2' : 'English',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
-        'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers
+        'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
+        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
         }
     }
 

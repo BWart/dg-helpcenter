@@ -10,7 +10,7 @@
   </h1>
   
   <div class="form requestform" id="requestForm">
-    <font class="contactFormInfoTextClass regular" data-wording-key="contactFormInfoText"></font><br><br>
+    <font class="contactFormInfoTextClass regular" data-wording-key="contactFormInfoText"></font><font class="fallbackInfoText regular" data-wording-key="fallbackInfoText"></font><br><br>
     <!-- AUTOMATED CHAT -->
     {{chat}}
 
@@ -182,7 +182,6 @@
 
   function commitButtonPressed(){
     sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
-    console.log(sessionStorage.getItem('mailFormMessageTextFieldText'))
     requestReasonDropdown.insertBefore(mailFormMailInput);
     customerTypeDropdown.insertBefore(mailFormMailInput);
     requestReasonDropdown.hide()
@@ -199,6 +198,7 @@
   var header = $('#HeaderID');
   var fullMailform = $('.requestform');  //Whole Mail Form
   var introText = $('.contactFormInfoTextClass');
+  var fallbackText = $('.fallbackInfoText');
   var customerTypeDropdown = $('.request_ticket_form_id');
   var requestReasonDropdown;
   var requestReasonDropdownNesty;
@@ -246,6 +246,7 @@
   "webform_case_offer", "webform_case_no_bill"]
 
   //intial setup
+  fallbackText.hide();
   setPortalDependantVariables();
   setCustomerType();
   //checkForFeedbackForm();
@@ -276,6 +277,7 @@
         if (linkEnd == 'requests'){
           onDropdownChange();
           showContactForm();
+          mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
         }
         fullMailform.show();
         break;
@@ -425,12 +427,10 @@
     circleTwo.classList.remove('circleOpenStep');
     circleTwo.classList.add('circleStepCompleted');
     circleTwo.innerHTML = '&#10003';
-    console.log('1')
     if (requestReasonDropdownContents.attr('value') == null){
-      console.log('2')
-      requestReasonTag = 'none'
+      fallbackExit();
+      return;
     } else {
-      console.log('3')
       requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
     }
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
@@ -1008,5 +1008,11 @@
 
   console.log('asdf')
   console.log(mailFormSubjectTextField.val())
+
+  function fallbackExit(){
+    introText.hide();
+    fallbackText.show();
+    //$('.progressTable').hide();
+  }
 
 </script>
