@@ -91,7 +91,7 @@
                         <div class="business-customer"><font data-wording-key="openingDaysBusiness"></font><font data-wording-key="openingHoursBusiness"></font><font data-wording-key="openingDaysBusiness2"></font><font data-wording-key="openingHoursBusiness2"></font></div>
                       </div>
                       <div class="callback">
-                        <font data-wording-key="callbackText"></font>
+                        <font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font>
                       </div>
                     </div>
                     <div id="row3cell2inserter"></div>
@@ -111,9 +111,10 @@
                       <div class="nocallback">
                         <div class="button-contact phone-number private-number private-customer connect-customer" data-wording-key="callUsPrivate"></div>
                         <div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div>
+                        <div class="button-contact phone-number phone-number-callback callback-number" data-wording-key="callUsCallback"></div>
                       </div>
                       <div class="callback">
-                        <div class="button-contact callbackbutton" data-wording-key="callback"></div>
+                        <div class="button-contact callbackbutton" data-wording-key="callbackText"></div>
                       </div>
                     </div>
                     <div id="row4cell2inserter"></div></td>
@@ -155,7 +156,7 @@
                       <div class="callback">
                         <img src="{{asset 'phoneIcon.png'}}" height="16px">
                         <b><font data-wording-key="callback"></font></b>
-                        <font style="font-size: 11px;">&nbsp;<font data-wording-key="callbackText"></font>
+                        <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font>
                       </div>
                     </div>
                     <div id="mobileInserter3"></div>
@@ -167,9 +168,10 @@
                       <div class="nocallback">
                         <div class="button-contact phone-number private-number2 private-customer connect-customer" data-wording-key="callUsPrivateMobile"></div>
                         <div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div>
+                        <div class="button-contact phone-number phone-number-callback callback-number2" data-wording-key="callUsCallbackMobile"></div>
                       </div>
                       <div class="callback">
-                        <div class="button-contact callbackbutton" data-wording-key="callback"></div>
+                        <div class="button-contact callbackbutton" data-wording-key="callbackText"></div>
                       </div>
                     </div>
                     <div id="mobileInserter4"></div>
@@ -203,13 +205,33 @@
             </td>
         </tr>
     </table>
-    <button onclick="myFunction()">asdf</button>
+    <button onclick="testFunction()">clear group</button>
      
   </div>
 </div>
 <script>
 
-  function myFunction(){
+  //Callback AB Test
+  if (localStorage.getItem('callbackGroup') == null){
+    console.log('ENTERING RAND')
+    var randomNumber = Math.random()
+    if (randomNumber < 0.5){
+      localStorage.setItem('callbackGroup',  1)
+    } else {
+      localStorage.setItem('callbackGroup', 0)
+    }
+  }
+  console.log(localStorage.getItem('callbackGroup'))
+
+  function testFunction(){
+    localStorage.removeItem('callbackGroup')
+  }
+
+  function commitButtonClickedAction(){
+    if (sessionStorage.getItem('isCallbackContactForm') == 1){
+      mailFormSubjectTextField.val("WEBFORM CALLBACK " + $(requestReasonDropdownNesty).text());
+      mailFormMessageTextField.val("Phone: " +  $('input[name ="request[custom_fields][360021132820]"]').val() + "\nOrder Number: " + $('input[name ="request[custom_fields][360007585419]"]').val())
+    }
     requestReasonDropdown.insertBefore(mailFormMailInput);
     customerTypeDropdown.insertBefore(mailFormMailInput);
     requestReasonDropdown.hide()
@@ -232,7 +254,7 @@
   var requestReasonDropdown;
   var requestReasonDropdownNesty;
   var requestReasonTag;
-  var phoneNumberInputField;
+  var phoneNumberInputFieldAndLabel;
   var contactInfos = $('.contactInfos');
   var infoTextField = $('.contactFormNote');
   var infoText = $('.contactFormTextInfo');
@@ -282,21 +304,29 @@
 
   //intial setup
   //Callback checker
-  let isCallback = 0; //Checker whether we are in a Callback Form
   callbackContactFormInfo.hide();
   removeCallback();
   setPortalDependantVariables();
   setCustomerType();
-  phoneNumberInputField.hide();
   //checkForFeedbackForm();
 
-  function setCallback(){
-    isCallback = 1;
+  function setCallbackGroupA(){
+    sessionStorage.setItem('isCallbackGroupA', 1);
+    sessionStorage.setItem('isCallbackGroupB', 0);
     $('.callback').show();
     $('.nocallback').hide();
   }
+  function setCallbackGroupB(){
+    sessionStorage.setItem('isCallbackGroupA', 0);
+    sessionStorage.setItem('isCallbackGroupB', 1);
+    $('.phone-number').hide()
+    $('.phone-number-callback').show();
+  }
   function removeCallback(){
-    isCallback = 0;
+    sessionStorage.setItem('isCallbackGroupA', 0);
+    sessionStorage.setItem('isCallbackGroupB', 0);
+    //$('.phone-number').show()
+    $('.phone-number-callback').hide();
     $('.callback').hide();
     $('.nocallback').show();
   }
@@ -312,7 +342,8 @@
           circleOne.classList.add('circleStepCompleted');
           circleOne.innerHTML = '&#10003';
         }
-        phoneNumberInputField = $('.request_custom_fields_360021132820');
+        phoneNumberInputFieldAndLabel = $('.request_custom_fields_360021132820');
+        phoneNumberInputFieldAndLabel.hide();
         requestReasonDropdown = $('.request_custom_fields_360014169819');
         requestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
@@ -329,7 +360,12 @@
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
           onDropdownChange();
-          showContactForm();
+          if (sessionStorage.getItem('isCallbackContactForm') == 1){
+            showContactFormCallback();
+          } else {
+            showContactForm();
+          }
+          phoneNumberInputFieldAndLabel.show();
         }
         fullMailform.show();
         break;
@@ -382,7 +418,11 @@
         var linkEnd = fullLink.slice(-8);
         if (linkEnd == 'requests'){
           onDropdownChange();
-          showContactForm();
+          if (sessionStorage.getItem('isCallbackContactForm') == 1){
+            showContactFormCallback();
+          } else {
+            showContactForm();
+          }
         }
         fullMailform.show();
         break;
@@ -474,12 +514,6 @@
   
   function onDropdownChange(){
     requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
-    if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
-      setCallback();
-    }
-    else {
-      removeCallback();
-    }
     resetContactOptions();
     circleOne.classList.remove('circleOpenStep');
     circleOne.classList.add('circleStepCompleted');
@@ -487,7 +521,7 @@
     circleTwo.classList.remove('circleOpenStep');
     circleTwo.classList.add('circleStepCompleted');
     circleTwo.innerHTML = '&#10003';
-    phoneNumberInputField.hide();
+    phoneNumberInputFieldAndLabel.hide();
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     //Update Label and Template
     if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
@@ -514,9 +548,6 @@
       }
     }
     mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
-    if (isCallback == 1){
-      mailFormSubjectTextField.val('CALLBACK: ' + $(requestReasonDropdownNesty).text());  //Autofill Mail Subject
-    }
     //customerTypeDropdown.hide();
     //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
     if (contactFormIsShown == 0 || contactFormIsShown == 1) {
@@ -550,6 +581,13 @@
       catch (e) {
         console.log(e); 
       } 
+    if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch') && localStorage.getItem('callbackGroup') == 1 && currentLanguage == 'de' && customerType == 'private-customer'){
+      setCallbackGroupA();
+    } else if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch') && localStorage.getItem('callbackGroup') == 0 && currentLanguage == 'de' && customerType == 'private-customer') {
+      setCallbackGroupB();
+    } else {
+      removeCallback();
+    }
   } 
 
   function onDropdownChangeConnect(){
@@ -620,7 +658,7 @@
   }  
 
   commitButton.on("click", function(){
-    myFunction();
+    commitButtonClickedAction();
   })
 
   //AKTIONEN IN DEN KONTAKTINFOS
@@ -632,6 +670,7 @@
     showContactFormCallback();
   })
   function showContactForm(){
+    sessionStorage.setItem('isCallbackContactForm', 0);
     circleThreeTitle.hide();
     circleThreeTitleTwo.show();
     contactFormIsShown = 1;
@@ -656,7 +695,8 @@
     }
   }
   function showContactFormCallback() {
-    phoneNumberInputField.show();
+    sessionStorage.setItem('isCallbackContactForm', 1);
+    phoneNumberInputFieldAndLabel.show();
     callbackContactFormInfo.show();
     circleThreeTitle.hide();
     circleThreeTitleThree.show();
@@ -671,12 +711,6 @@
     mailFormSubject.hide();
     mailFormMailInput.show();
     commitButton.show();
-    //OrderNumber Feld verstecken wenn nicht benötigt
-    if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
-      mailFormOrderNumberOrPhoneNumber.hide();
-    } else {
-      mailFormOrderNumberOrPhoneNumber.show();
-    }
   }
 
   //Aktionen bei Klick auf "Ruf uns an"
@@ -696,6 +730,14 @@
     var popup = document.getElementById("phoneNumberBusinessMobile");
   	popup.classList.toggle("show");
   })
+  $('.callback-number').on("click", function () {
+    var popup = document.getElementById("phoneNumberCallback");
+    popup.classList.toggle("show");
+  })
+  $('.callback-number2').on("click", function () {
+    var popup = document.getElementById("phoneNumberCallbackMobile");
+    popup.classList.toggle("show");
+  })
   //Aktion bei Klick auf "Chat" 
   $('.button-chat').on("click", function () {
     checkForTagChanges();
@@ -704,7 +746,7 @@
   }); 
   //Aktion bei Klick auf back Button
   $('.text-back').on("click", function (){
-    phoneNumberInputField.hide();
+    phoneNumberInputFieldAndLabel.hide();
     callbackContactFormInfo.hide();
     contactFormIsShown = 0;
     circleThreeTitle.show();
@@ -846,6 +888,8 @@
     sendGARequestOpeningHours('Click Chat Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
   }) 
+
+
 
 
   // Request Reason Tracking

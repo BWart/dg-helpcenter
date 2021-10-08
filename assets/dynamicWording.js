@@ -70,6 +70,8 @@ function filldynamicWording(){
     var telFirmenkunde = "";
     var telPrivatkundeText = "";
     var telFirmenkundeText = "";
+    var telCallbackKunde = "";
+    var telCallbackKundeText = "";
 
 
     switch(portal){
@@ -142,6 +144,8 @@ function filldynamicWording(){
                 telPrivatkundeText = "+41 44 575 95 00";
                 telFirmenkunde = "+41445759600";
                 telFirmenkundeText = "+41 44 575 96 00";    
+                telCallbackKunde = "+41445759504";
+                telCallbackKundeText = "+41 44 575 95 04";
                 break;
         case'helpcenter.galaxus.ch':
                 //Telefon
@@ -211,7 +215,9 @@ function filldynamicWording(){
                 telPrivatkunde = "+41445759800";
                 telPrivatkundeText = "+41 44 575 98 00";
                 telFirmenkunde = "+41445759900";
-                telFirmenkundeText = "+41 44 575 99 00";                
+                telFirmenkundeText = "+41 44 575 99 00";  
+                telCallbackKunde = "+41445759505";
+                telCallbackKundeText = "+41 44 575 95 05";              
                 break;
         case'helpcenter.galaxus.de':
                 //Telefon
@@ -282,6 +288,8 @@ function filldynamicWording(){
                 telPrivatkundeText = "+49 (0)40 334 614 747";
                 telFirmenkunde = "+4940334614748";
                 telFirmenkundeText = "+49 (0)40 334 614 748";
+                telCallbackKunde = '';
+                telCallbackKundeText = '';
                 break;
         case'helpcenter.digitec.at':
                 //Telefon
@@ -352,6 +360,8 @@ function filldynamicWording(){
                 telPrivatkundeText = "+43 800 017 837";
                 telFirmenkunde = "+43800017837";
                 telFirmenkundeText = "+43 800 017 837";
+                telCallbackKunde = '';
+                telCallbackKundeText = '';
                 break;
         case'helpcenter.connect.digitec.ch':
                 //Telefon
@@ -421,7 +431,9 @@ function filldynamicWording(){
                 telPrivatkunde = "+41445759700";
                 telPrivatkundeText = "+41 41 44 575 97 00";
                 telFirmenkunde = "+41445759700";
-                telFirmenkundeText = "+41 44 575 97 00";    
+                telFirmenkundeText = "+41 44 575 97 00";
+                telCallbackKunde = '+41445759504';
+                telCallbackKundeText = '+41 44 575 95 04';
                 break;
         default:
                 //Telefon
@@ -491,7 +503,9 @@ function filldynamicWording(){
                 telPrivatkunde = "+41445759500";
                 telPrivatkundeText = "+41 44 575 95 00";
                 telFirmenkunde = "+41445759600";
-                telFirmenkundeText = "+41 44 575 96 00";    
+                telFirmenkundeText = "+41 44 575 96 00";
+                telCallbackKunde = "+41445759504";
+                telCallbackKundeText = "+41 44 575 95 04";
                 break;
     }
 
@@ -507,6 +521,8 @@ function filldynamicWording(){
         'callUsPrivateMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
         'callUsBusiness' : 'Ruf uns an <a class="popuptext" id="phoneNumberBusiness" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'callUsBusinessMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
+        'callUsCallback' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallback" href="tel:' + telCallbackKunde + '">' + telCallbackKundeText + '</a>',
+        'callUsCallbackMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallbackMobile" href="tel:' + telCallbackKunde + '">' + telCallbackKundeText + '</a>',
         'contactFormNoteTitel' : 'Schon gewusst:',
         //Öffnungszeiten Telefon
         'openingDaysPrivate' : tagePrivatkundeDE,
@@ -556,8 +572,8 @@ function filldynamicWording(){
         'chatLanguage2' : 'Deutsch',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'callback' : 'Callback',
-        'callbackText' : 'Wir rufen dich an, sobald ein Agent frei ist.',
+        'callback' : 'Rückruf',
+        'callbackText' : 'Wir rufen dich an',
         'callbackContactFormInfo' : 'Wir rufen dich innerhalb von 5 Minuten an. Mit deiner E-Mailadresse und deiner Auftragsnummer können wir deine Anfrage noch schneller bearbeiten. Der Rückruf ist natürlich kostenlos für dich.'
         },
         fr: {      
@@ -568,6 +584,8 @@ function filldynamicWording(){
         'callUsPrivateMobile' : 'Appelez-nous <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
         'callUsBusiness' : 'Appelez-nous <a class="popuptext" id="phoneNumberBusiness" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'callUsBusinessMobile' : 'Appelez-nous <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
+        'callUsCallback' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallback" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+        'callUsCallbackMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallbackMobile" href="tel:' + telCallbackKunde + '">' + telCallbackKundeText + '</a>',
         'contactFormNoteTitel' : 'Le saviez-vous :',
         //Öffnungszeiten Telefon
         'openingDaysPrivate' : tagePrivatkundeFR,
@@ -626,6 +644,8 @@ function filldynamicWording(){
         'callUsPrivateMobile' : 'Chiamaci <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
         'callUsBusiness' : 'Chiamaci <a class="popuptext" id="phoneNumberBusiness"" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'callUsBusinessMobile' : 'Chiamaci <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
+        'callUsCallback' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallback" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+        'callUsCallbackMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallbackMobile" href="tel:' + telCallbackKunde + '">' + telCallbackKundeText + '</a>',
         'contactFormNoteTitel' : 'Lo sapevi:',
         //Öffnungszeiten Telefon
         'openingDaysPrivate' : tagePrivatkundeIT,
@@ -684,6 +704,8 @@ function filldynamicWording(){
         'callUsPrivateMobile' : 'Call us <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
         'callUsBusiness' : 'Call us <a class="popuptext" id="phoneNumberBusiness"" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'callUsBusinessMobile' : 'Call us <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
+        'callUsCallback' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallback" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+        'callUsCallbackMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallbackMobile" href="tel:' + telCallbackKunde + '">' + telCallbackKundeText + '</a>',
         'contactFormNoteTitel' : 'Did you know:',
         //Öffnungszeiten Telefon
         'openingDaysPrivate' : tagePrivatkundeEN,
