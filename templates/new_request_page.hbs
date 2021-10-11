@@ -181,7 +181,7 @@
 <script>
 
   function commitButtonPressed(){
-    localStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
+    sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
     requestReasonDropdown.insertBefore(mailFormMailInput);
     customerTypeDropdown.insertBefore(mailFormMailInput);
     requestReasonDropdown.hide()
@@ -281,7 +281,7 @@
         if (linkEnd == 'requests'){
           onDropdownChange();
           showContactForm();
-          mailFormMessageTextField.val(localStorage.getItem('mailFormMessageTextFieldText'));
+          mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
         }
         fullMailform.show();
         break;
@@ -309,7 +309,7 @@
           //setTimeout(() => { onDropdownChangeConnect(); }, 2000);
           onDropdownChangeConnect();
           showContactForm();
-          mailFormMessageTextField.val(localStorage.getItem('mailFormMessageTextFieldText'));
+          mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
         }
         fullMailform.show();
         break;
@@ -335,7 +335,7 @@
         if (linkEnd == 'requests'){
           onDropdownChange();
           showContactForm();
-          mailFormMessageTextField.val(localStorage.getItem('mailFormMessageTextFieldText'));
+          mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
         }
         fullMailform.show();
         break;
