@@ -227,6 +227,7 @@
   //}
 
   function commitButtonClickedAction(){
+    sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
     if (sessionStorage.getItem('isCallbackContactForm') == 1){
       mailFormSubjectTextField.val("WEBFORM CALLBACK " + $(requestReasonDropdownNesty).text());
       mailFormMessageTextField.val("Phone: " +  $('input[name ="request[custom_fields][360021132820]"]').val() + "\nOrder Number: " + $('input[name ="request[custom_fields][360007585419]"]').val())
@@ -366,6 +367,7 @@
             showContactForm();
           }
           phoneNumberInputFieldAndLabel.show();
+          mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
         }
         fullMailform.show();
         break;
@@ -393,6 +395,7 @@
           //setTimeout(() => { onDropdownChangeConnect(); }, 2000);
           onDropdownChangeConnect();
           showContactForm();
+          mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
         }
         fullMailform.show();
         break;
@@ -423,6 +426,7 @@
           } else {
             showContactForm();
           }
+          mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
         }
         fullMailform.show();
         break;
