@@ -884,6 +884,12 @@
 	$('.phone-number').on("click", function () {
     sendGARequestOpeningHours('Click Phone Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
+    if (sessionStorage.getItem('isCallbackGroupA') == 1){
+        sendGARequestOpeningHours('Callback Group A: Click Phone Button');
+    }
+    if (sessionStorage.getItem('isCallbackGroupB') == 1){
+        sendGARequestOpeningHours('Callback Group B: Click Phone Button');
+    }
   }) 
   
   //Contact Form Tracking
@@ -891,6 +897,12 @@
   $('.contactFormWriteUs').on("click", function () {
     sendGARequestOpeningHours('Click Mail Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
+    if (sessionStorage.getItem('isCallbackGroupA') == 1){
+        sendGARequestOpeningHours('Callback Group A: Click Mail Button');
+    }
+    if (sessionStorage.getItem('isCallbackGroupB') == 1){
+        sendGARequestOpeningHours('Callback Group B: Click Mail Button');
+    }
   }) 
   
   //Chat Tracking
@@ -898,7 +910,18 @@
   $('.button-chat').on("click", function () {
     sendGARequestOpeningHours('Click Chat Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
+    if (sessionStorage.getItem('isCallbackGroupA') == 1){
+        sendGARequestOpeningHours('Callback Group A: Click Chat Button');
+    }
+    if (sessionStorage.getItem('isCallbackGroupB') == 1){
+        sendGARequestOpeningHours('Callback Group B: Click Chat Button');
+    }
   }) 
+
+  // Callback Tracking
+  $('.callbackbutton').on("click", function () {
+    sendGARequestOpeningHours('Callback Group A: Click Callback Button');
+  })
 
 
 
