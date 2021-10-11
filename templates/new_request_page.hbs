@@ -205,7 +205,6 @@
             </td>
         </tr>
     </table>
-    <button onclick="testFunction()">clear group</button>
      
   </div>
 </div>
@@ -223,9 +222,9 @@
   }
   console.log(localStorage.getItem('callbackGroup'))
 
-  function testFunction(){
-    localStorage.removeItem('callbackGroup')
-  }
+  //function testFunction(){
+  //  localStorage.removeItem('callbackGroup')
+  //}
 
   function commitButtonClickedAction(){
     if (sessionStorage.getItem('isCallbackContactForm') == 1){
@@ -290,6 +289,7 @@
   var mailFormSubjectTextField = $('#request_subject');
   var mailFormMessageLabel = $('#request_description_label');
   var mailFormMessageTextField = $('#request_description');
+  var mailFormMailInputLabel = $('label[for="request_anonymous_requester_email"]')
 
   //Variable checkers
   var contactFormIsShown = 0; // 0 Shows Infotext and 1 shows OrderNumber Field
@@ -588,6 +588,7 @@
     } else {
       removeCallback();
     }
+    callbackContactFormInfo.hide();
   } 
 
   function onDropdownChangeConnect(){
@@ -693,6 +694,9 @@
     } else {
       mailFormOrderNumberOrPhoneNumber.show();
     }
+    if (mailFormMailInputLabel.html() == 'E-Mail-Adresse (von deinem Benutzerkonto)'){
+        mailFormMailInputLabel.html('E-Mail-Adresse');
+    }
   }
   function showContactFormCallback() {
     sessionStorage.setItem('isCallbackContactForm', 1);
@@ -711,6 +715,9 @@
     mailFormSubject.hide();
     mailFormMailInput.show();
     commitButton.show();
+    if (mailFormMailInputLabel.html() != 'E-Mail-Adresse (von deinem Benutzerkonto)'){
+        mailFormMailInputLabel.html('E-Mail-Adresse (von deinem Benutzerkonto)');
+    }
   }
 
   //Aktionen bei Klick auf "Ruf uns an"
