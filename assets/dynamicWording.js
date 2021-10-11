@@ -247,7 +247,7 @@ function filldynamicWording(){
                 commaMultipleHoursBusinessCustomers = ", ";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 //Chat
-                tagePrivatkundeChatDE = ""; 
+                tagePrivatkundeChatDE = "Mo - Fr: "; 
                 tagePrivatkundeChatFR = ""; 
                 tagePrivatkundeChatIT = ""; 
                 tagePrivatkundeChatEN = ""; 
@@ -259,9 +259,9 @@ function filldynamicWording(){
                 tagePrivatkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tagePrivatkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tagePrivatkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
-                uhrzeitPrivatkundeChat = "";
+                uhrzeitPrivatkundeChat = "08:00 - 20:00";
                 uhrzeitPrivatkunde2Chat = "";
-                tageFirmenkundeChatDE = "";
+                tageFirmenkundeChatDE = "Mo - Fr: ";
                 tageFirmenkundeChatFR = "";
                 tageFirmenkundeChatIT = "";
                 tageFirmenkundeChatEN = "";
@@ -273,7 +273,7 @@ function filldynamicWording(){
                 tageFirmenkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tageFirmenkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tageFirmenkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
-                uhrzeitFirmenkundeChat = "";
+                uhrzeitFirmenkundeChat = "08:00 - 20:00";
                 uhrzeitFirmenkunde2Chat = "";
                 commaMultipleHoursPrivateCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
                 commaMultipleHoursBusinessCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
@@ -317,7 +317,7 @@ function filldynamicWording(){
                 commaMultipleHoursBusinessCustomers = ", ";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 //Chat
-                tagePrivatkundeChatDE = ""; 
+                tagePrivatkundeChatDE = "Mo - Fr: "; 
                 tagePrivatkundeChatFR = ""; 
                 tagePrivatkundeChatIT = ""; 
                 tagePrivatkundeChatEN = ""; 
@@ -329,9 +329,9 @@ function filldynamicWording(){
                 tagePrivatkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tagePrivatkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tagePrivatkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
-                uhrzeitPrivatkundeChat = "";
+                uhrzeitPrivatkundeChat = "08:00 - 20:00";
                 uhrzeitPrivatkunde2Chat = "";
-                tageFirmenkundeChatDE = "";
+                tageFirmenkundeChatDE = "Mo - Fr: ";
                 tageFirmenkundeChatFR = "";
                 tageFirmenkundeChatIT = "";
                 tageFirmenkundeChatEN = "";
@@ -343,10 +343,10 @@ function filldynamicWording(){
                 tageFirmenkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tageFirmenkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tageFirmenkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
-                uhrzeitFirmenkundeChat = "";
-                uhrzeitFirmenkunde2 = "";
-                commaMultipleHoursPrivateCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
-                commaMultipleHoursBusinessCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
+                uhrzeitFirmenkundeChat = "08:00 - 20:00";
+                uhrzeitFirmenkunde2Chat = "";
+                commaMultipleHoursPrivateCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
+                commaMultipleHoursBusinessCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 telPrivatkunde = "+43800017837";
                 telPrivatkundeText = "+43 800 017 837";

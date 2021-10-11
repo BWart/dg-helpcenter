@@ -128,6 +128,7 @@ function getChatDepartmentType(){
             chatDepartmentType = 'Connect';
             break;
         case('helpcenter.galaxus.de'):
+        case('helpcenter.galaxus.at'):
             chatDepartmentType = 'Ger'
             break;
         default:
