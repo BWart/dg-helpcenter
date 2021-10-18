@@ -92,6 +92,7 @@
                       </div>
                       <div class="callback">
                         <font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font>
+                        <!--<br><font data-wording-key="callbackTime"></font>-->
                       </div>
                     </div>
                     <div id="row3cell2inserter"></div>
@@ -114,8 +115,8 @@
                         <div class="button-contact phone-number phone-number-callback callback-number" data-wording-key="callUsCallback"></div>
                       </div>
                       <div class="callback">
-                        <!--<div class="button-contact callbackbutton" data-wording-key="callbackText"></div>-->
-                        <div class="button-contact callbackbutton-offline button-offline" data-wording-key="chatNotOnline"></div>
+                        <div class="button-contact callbackbutton" data-wording-key="callbackText"></div>
+                        <!--<div class="button-contact callbackbutton-offline button-offline" data-wording-key="chatNotOnline"></div>-->
                       </div>
                     </div>
                     <div id="row4cell2inserter"></div></td>
@@ -157,7 +158,7 @@
                       <div class="callback">
                         <img src="{{asset 'phoneIcon.png'}}" height="16px">
                         <b><font data-wording-key="callback"></font></b>
-                        <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font>
+                        <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font>,&nbsp;<font data-wording-key="callbackTime"></font></font>
                       </div>
                     </div>
                     <div id="mobileInserter3"></div>
@@ -172,8 +173,8 @@
                         <div class="button-contact phone-number phone-number-callback callback-number2" data-wording-key="callUsCallbackMobile"></div>
                       </div>
                       <div class="callback">
-                        <!--<div class="button-contact callbackbutton" data-wording-key="callbackText"></div>-->
-                        <div class="button-contact callbackbutton-offline button-offline" data-wording-key="chatNotOnline"></div>
+                        <div class="button-contact callbackbutton" data-wording-key="callbackText"></div>
+                        <!--<div class="button-contact callbackbutton-offline button-offline" data-wording-key="chatNotOnline"></div>-->
                       </div>
                     </div>
                     <div id="mobileInserter4"></div>
@@ -887,10 +888,10 @@
     sendGARequestOpeningHours('Click Phone Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
     if (sessionStorage.getItem('isCallbackGroupA') == 1){
-        //sendGARequestOpeningHours('Callback Group A: Click Phone Button');
+        sendGARequestOpeningHours('Callback Group A: Click Phone Button');
     }
     if (sessionStorage.getItem('isCallbackGroupB') == 1){
-        //sendGARequestOpeningHours('Callback Group B: Click Phone Button');
+        sendGARequestOpeningHours('Callback Group B: Click Phone Button');
     }
   }) 
   
@@ -900,10 +901,10 @@
     sendGARequestOpeningHours('Click Mail Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
     if (sessionStorage.getItem('isCallbackGroupA') == 1){
-        //sendGARequestOpeningHours('Callback Group A: Click Mail Button');
+        sendGARequestOpeningHours('Callback Group A: Click Mail Button');
     }
     if (sessionStorage.getItem('isCallbackGroupB') == 1){
-        //sendGARequestOpeningHours('Callback Group B: Click Mail Button');
+        sendGARequestOpeningHours('Callback Group B: Click Mail Button');
     }
   }) 
   
@@ -913,16 +914,16 @@
     sendGARequestOpeningHours('Click Chat Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
     if (sessionStorage.getItem('isCallbackGroupA') == 1){
-        //sendGARequestOpeningHours('Callback Group A: Click Chat Button');
+        sendGARequestOpeningHours('Callback Group A: Click Chat Button');
     }
     if (sessionStorage.getItem('isCallbackGroupB') == 1){
-        //sendGARequestOpeningHours('Callback Group B: Click Chat Button');
+        sendGARequestOpeningHours('Callback Group B: Click Chat Button');
     }
   }) 
 
   // Callback Tracking
   $('.callbackbutton').on("click", function () {
-    //sendGARequestOpeningHours('Callback Group A: Click Callback Button');
+    sendGARequestOpeningHours('Callback Group A: Click Callback Button');
   })
 
 
