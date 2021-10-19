@@ -212,10 +212,10 @@
   </div>
 </div>
 <script>
-
+    changeButtonsBasedOnOpeningHours();
   //Callback AB Test
   if (localStorage.getItem('callbackGroup') == null){
-    console.log('ENTERING RAND')
+    //console.log('ENTERING RAND')
     var randomNumber = Math.random()
     if (randomNumber < 0.5){
       localStorage.setItem('callbackGroup',  1)
@@ -239,7 +239,6 @@
     customerTypeDropdown.insertBefore(mailFormMailInput);
     requestReasonDropdown.hide()
     customerTypeDropdown.hide()
-    console.log(commitButton)
     commitButton.click();
   }
   //The form is fully hidden initially
@@ -520,6 +519,7 @@
 
   
   function onDropdownChange(){
+    changeButtonsBasedOnOpeningHours();
     requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
     resetContactOptions();
     circleOne.classList.remove('circleOpenStep');
@@ -887,10 +887,10 @@
 	$('.phone-number').on("click", function () {
     sendGARequestOpeningHours('Click Phone Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-    if (sessionStorage.getItem('isCallbackGroupA') == 1){
+    if (sessionStorage.getItem('isCallbackGroupA') == 1 && checkForOpeningHours()){
         sendGARequestOpeningHours('Callback Group A: Click Phone Button');
     }
-    if (sessionStorage.getItem('isCallbackGroupB') == 1){
+    if (sessionStorage.getItem('isCallbackGroupB') == 1 && checkForOpeningHours()){
         sendGARequestOpeningHours('Callback Group B: Click Phone Button');
     }
   }) 
@@ -900,10 +900,10 @@
   $('.contactFormWriteUs').on("click", function () {
     sendGARequestOpeningHours('Click Mail Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-    if (sessionStorage.getItem('isCallbackGroupA') == 1){
+    if (sessionStorage.getItem('isCallbackGroupA') == 1 && checkForOpeningHours()){
         sendGARequestOpeningHours('Callback Group A: Click Mail Button');
     }
-    if (sessionStorage.getItem('isCallbackGroupB') == 1){
+    if (sessionStorage.getItem('isCallbackGroupB') == 1 && checkForOpeningHours()){
         sendGARequestOpeningHours('Callback Group B: Click Mail Button');
     }
   }) 
@@ -913,17 +913,19 @@
   $('.button-chat').on("click", function () {
     sendGARequestOpeningHours('Click Chat Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-    if (sessionStorage.getItem('isCallbackGroupA') == 1){
+    if (sessionStorage.getItem('isCallbackGroupA') == 1 && checkForOpeningHours()){
         sendGARequestOpeningHours('Callback Group A: Click Chat Button');
     }
-    if (sessionStorage.getItem('isCallbackGroupB') == 1){
+    if (sessionStorage.getItem('isCallbackGroupB') == 1 && checkForOpeningHours()){
         sendGARequestOpeningHours('Callback Group B: Click Chat Button');
     }
   }) 
 
   // Callback Tracking
   $('.callbackbutton').on("click", function () {
-    sendGARequestOpeningHours('Callback Group A: Click Callback Button');
+    if (checkForOpeningHours()){
+        sendGARequestOpeningHours('Callback Group A: Click Callback Button');
+    }
   })
 
 
@@ -1160,4 +1162,31 @@
     $('#mobileChatCell2Content').insertBefore($('#mobileInserter6'));
   }
 
+  function checkForOpeningHours(){
+    const d = new Date();
+    var dayOfWeek = d.getUTCDay()
+    var currentUTChour = d.getUTCHours()
+    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTChour >= 6 && currentUTChour <= 18) {
+        return true;
+    }
+    else {
+        return false;
+    }
+  }
+
+  function changeButtonsBasedOnOpeningHours(){
+      var tempbuttons = $(".callbackbutton")
+      if (checkForOpeningHours) {
+        tempbuttons.removeClass("button-offline");
+        for (i = 0; i < tempbuttons.length; i++){
+            tempbuttons[i].setAttribute('data-wording-key', 'callbackText')
+        }
+      }
+      else {
+        tempbuttons.addClass("button-offline");
+        for (i = 0; i < tempbuttons.length; i++){
+            tempbuttons[i].setAttribute('data-wording-key', 'chatNotOnline')
+        }
+      }
+  }
 </script>
