@@ -1166,7 +1166,7 @@
     const d = new Date();
     var dayOfWeek = d.getUTCDay()
     var currentUTChour = d.getUTCHours()
-    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTChour >= 6 && currentUTChour <= 18) {
+    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTChour >= 6 && currentUTChour < 18) {
         return true;
     }
     else {
