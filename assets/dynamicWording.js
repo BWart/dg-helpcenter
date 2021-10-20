@@ -574,7 +574,7 @@ function filldynamicWording(){
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
         'callback' : 'Rückruf',
         'callbackText' : 'Wir rufen dich an',
-        'callbackContactFormInfo' : 'Wir rufen dich innerhalb von 5 Minuten an. Mit deiner E-Mailadresse und deiner Auftragsnummer können wir deine Anfrage noch schneller bearbeiten. Der Rückruf ist natürlich kostenlos für dich.',
+        'callbackContactFormInfo' : 'Wir rufen dich innerhalb von 3 Minuten an. Mit deiner E-Mailadresse und deiner Auftragsnummer können wir deine Anfrage noch schneller bearbeiten. Der Rückruf ist natürlich kostenlos für dich.',
         'callbackTime' : 'Reaktionszeit: 3 min'
         },
         fr: {      
