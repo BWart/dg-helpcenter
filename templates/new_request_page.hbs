@@ -1177,16 +1177,13 @@
 
   function changeButtonsBasedOnOpeningHours(){
       var tempbuttons = $(".callbackbutton")
-      console.log("11")
-      if (checkForOpeningHours) {
-          console.log("22")
+      if (checkForOpeningHours()) {
         tempbuttons.removeClass("button-offline");
         for (i = 0; i < tempbuttons.length; i++){
             tempbuttons[i].setAttribute('data-wording-key', 'callbackText')
         }
       }
       else {
-          console.log("33")
         tempbuttons.addClass("button-offline");
         for (i = 0; i < tempbuttons.length; i++){
             tempbuttons[i].setAttribute('data-wording-key', 'chatNotOnline')
