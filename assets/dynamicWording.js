@@ -575,7 +575,7 @@ function filldynamicWording(){
         'callback' : 'Rückruf',
         'callbackText' : 'Wir rufen dich an',
         'callbackContactFormInfo' : 'Wir rufen dich innerhalb von 5 Minuten an. Mit deiner E-Mailadresse und deiner Auftragsnummer können wir deine Anfrage noch schneller bearbeiten. Der Rückruf ist natürlich kostenlos für dich.',
-        'callbackTime' : 'Reaktionszeit: 3min'
+        'callbackTime' : 'Reaktionszeit: 3 min'
         },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -636,7 +636,7 @@ function filldynamicWording(){
         'chatLanguage2' : 'Français',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'callbackTime' : 'Reaktionszeit: 3min'
+        'callbackTime' : 'Reaktionszeit: 3 min'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -697,7 +697,7 @@ function filldynamicWording(){
         'chatLanguage2' : 'Italiano',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'callbackTime' : 'Reaktionszeit: 3min'
+        'callbackTime' : 'Reaktionszeit: 3 min'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -758,7 +758,7 @@ function filldynamicWording(){
         'chatLanguage2' : 'English',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'callbackTime' : 'Reaktionszeit: 3min'
+        'callbackTime' : 'Reaktionszeit: 3 min'
         }
     }
 
