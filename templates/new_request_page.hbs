@@ -208,7 +208,7 @@
             </td>
         </tr>
     </table>
-     
+     <button onclick="commitButtonClickedAction()">Testbutton</button>
   </div>
 </div>
 <script>
@@ -232,14 +232,17 @@
   function commitButtonClickedAction(){
     sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
     if (sessionStorage.getItem('isCallbackContactForm') == 1){
-      mailFormSubjectTextField.val("WEBFORM CALLBACK " + $(requestReasonDropdownNesty).text());
+      var otherRequest = ""
+      if (requestReasonTag.includes('webform_case_other_request_')) {
+          otherRequest = requestReasonTag.split('_')[4]
+      }
+      mailFormSubjectTextField.val("WEBFORM CALLBACK " + $(requestReasonDropdownNesty).text() + " " + otherRequest);
       mailFormMessageTextField.val("Phone: " +  $('input[name ="request[custom_fields][360021132820]"]').val() + "\nOrder Number: " + $('input[name ="request[custom_fields][360007585419]"]').val())
     }
     requestReasonDropdown.insertBefore(mailFormMailInput);
     customerTypeDropdown.insertBefore(mailFormMailInput);
     requestReasonDropdown.hide()
     customerTypeDropdown.hide()
-    commitButton.click();
   }
   //The form is fully hidden initially
 
@@ -303,8 +306,7 @@
   "webform_case_offer", "webform_case_no_bill"]
 
   //List of tags for callback
-  var reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status"]
-
+var reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product", "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_return", "webform_case_creditnote", "webform_case_refund", "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_delete_account", "webform_case_cant_login", "webform_case_other_request_payment", "webform_case_other_request_account"]
   //intial setup
   //Callback checker
   callbackContactFormInfo.hide();
@@ -889,10 +891,10 @@
     sendGARequestOpeningHours('Click Phone Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
     if (sessionStorage.getItem('isCallbackGroupA') == 1 && checkForOpeningHours()){
-        sendGARequestOpeningHours('Callback Group A: Click Phone Button');
+        //sendGARequestOpeningHours('Callback Group A: Click Phone Button');
     }
     if (sessionStorage.getItem('isCallbackGroupB') == 1 && checkForOpeningHours()){
-        sendGARequestOpeningHours('Callback Group B: Click Phone Button');
+        //sendGARequestOpeningHours('Callback Group B: Click Phone Button');
     }
   }) 
   
@@ -902,10 +904,10 @@
     sendGARequestOpeningHours('Click Mail Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
     if (sessionStorage.getItem('isCallbackGroupA') == 1 && checkForOpeningHours()){
-        sendGARequestOpeningHours('Callback Group A: Click Mail Button');
+        //sendGARequestOpeningHours('Callback Group A: Click Mail Button');
     }
     if (sessionStorage.getItem('isCallbackGroupB') == 1 && checkForOpeningHours()){
-        sendGARequestOpeningHours('Callback Group B: Click Mail Button');
+        //sendGARequestOpeningHours('Callback Group B: Click Mail Button');
     }
   }) 
   
@@ -915,17 +917,17 @@
     sendGARequestOpeningHours('Click Chat Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
     if (sessionStorage.getItem('isCallbackGroupA') == 1 && checkForOpeningHours()){
-        sendGARequestOpeningHours('Callback Group A: Click Chat Button');
+        //sendGARequestOpeningHours('Callback Group A: Click Chat Button');
     }
     if (sessionStorage.getItem('isCallbackGroupB') == 1 && checkForOpeningHours()){
-        sendGARequestOpeningHours('Callback Group B: Click Chat Button');
+        //sendGARequestOpeningHours('Callback Group B: Click Chat Button');
     }
   }) 
 
   // Callback Tracking
   $('.callbackbutton').on("click", function () {
     if (checkForOpeningHours()){
-        sendGARequestOpeningHours('Callback Group A: Click Callback Button');
+        //sendGARequestOpeningHours('Callback Group A: Click Callback Button');
     }
   })
 
