@@ -10,7 +10,7 @@
   </h1>
   
   <div class="form requestform" id="requestForm">
-    <font class="contactFormInfoTextClass regular" data-wording-key="contactFormInfoText"></font><br><br>
+    <font class="contactFormInfoTextClass regular" data-wording-key="contactFormInfoText"></font><font class="fallbackInfoText regular" data-wording-key="fallbackInfoText"></font><br><br>
     <!-- AUTOMATED CHAT -->
     {{chat}}
 
@@ -47,7 +47,6 @@
                 <div class="contactFormText">
                   <b><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></b>
                   <div class="contactFormTextInfo"></div>
-                  <!--<h4></h4>-->
                 </div>
               </div>
             </td>
@@ -208,10 +207,11 @@
             </td>
         </tr>
     </table>
-     <button onclick="commitButtonClickedAction()">Testbutton</button>
   </div>
 </div>
+
 <script>
+
     changeButtonsBasedOnOpeningHours();
   //Callback AB Test
   if (localStorage.getItem('callbackGroup') == null){
@@ -224,10 +224,6 @@
     }
   }
   console.log(localStorage.getItem('callbackGroup'))
-
-  //function testFunction(){
-  //  localStorage.removeItem('callbackGroup')
-  //}
 
   function commitButtonClickedAction(){
     sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
@@ -244,8 +240,8 @@
     requestReasonDropdown.hide()
     customerTypeDropdown.hide()
   }
-  //The form is fully hidden initially
 
+  //The form is fully hidden initially
   //Set up all needed variables
   var portal = window.location.hostname;
   var fullLink = window.location.href;
@@ -255,6 +251,7 @@
   var header = $('#HeaderID');
   var fullMailform = $('.requestform');  //Whole Mail Form
   var introText = $('.contactFormInfoTextClass');
+  var fallbackText = $('.fallbackInfoText');
   var customerTypeDropdown = $('.request_ticket_form_id');
   var requestReasonDropdown;
   var requestReasonDropdownNesty;
@@ -306,9 +303,13 @@
   "webform_case_offer", "webform_case_no_bill"]
 
   //List of tags for callback
-var reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product", "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_return", "webform_case_creditnote", "webform_case_refund", "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_delete_account", "webform_case_cant_login", "webform_case_other_request_payment", "webform_case_other_request_account"]
-  //intial setup
-  //Callback checker
+  var reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product",
+  "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_return", "webform_case_creditnote", "webform_case_refund",
+  "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_delete_account", "webform_case_cant_login",
+  "webform_case_other_request_payment", "webform_case_other_request_account"]
+  
+  //initial setup + Callback checker
+  fallbackText.hide();
   callbackContactFormInfo.hide();
   removeCallback();
   setPortalDependantVariables();
@@ -522,7 +523,12 @@ var reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_fo
   
   function onDropdownChange(){
     changeButtonsBasedOnOpeningHours();
-    requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
+    if (requestReasonDropdownContents.attr('value') == null){
+      fallbackExit();
+      return;
+    } else {
+      requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
+    }
     resetContactOptions();
     circleOne.classList.remove('circleOpenStep');
     circleOne.classList.add('circleStepCompleted');
@@ -608,7 +614,12 @@ var reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_fo
     circleTwo.classList.add('circleStepCompleted');
     circleTwo.innerHTML = '&#10003';
   
-    requestReasonTag = requestReasonDropdownContents.attr('value');
+    if (requestReasonDropdownContents.attr('value') == null){
+      fallbackExit();
+      return;
+    } else {
+      requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
+    }
   
     //infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     //Update Label and Template
@@ -1163,6 +1174,12 @@ var reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_fo
 
     $('#mobileChatCell1Content').insertBefore($('#mobileInserter5'));
     $('#mobileChatCell2Content').insertBefore($('#mobileInserter6'));
+  }
+
+  function fallbackExit(){
+    introText.hide();
+    fallbackText.show();
+    //$('.progressTable').hide();
   }
 
   function checkForOpeningHours(){

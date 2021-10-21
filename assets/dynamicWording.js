@@ -575,7 +575,8 @@ function filldynamicWording(){
         'callback' : 'Rückruf',
         'callbackText' : 'Wir rufen dich an',
         'callbackContactFormInfo' : 'Wir rufen dich innerhalb von 3 Minuten an. Mit deiner E-Mailadresse und deiner Auftragsnummer können wir deine Anfrage noch schneller bearbeiten. Der Rückruf ist natürlich kostenlos für dich.',
-        'callbackTime' : 'Reaktionszeit: 3 min'
+        'callbackTime' : 'Reaktionszeit: 3 min',
+        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
         },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -636,7 +637,8 @@ function filldynamicWording(){
         'chatLanguage2' : 'Français',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'callbackTime' : 'Reaktionszeit: 3 min'
+        'callbackTime' : 'Reaktionszeit: 3 min',
+        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -697,7 +699,8 @@ function filldynamicWording(){
         'chatLanguage2' : 'Italiano',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'callbackTime' : 'Reaktionszeit: 3 min'
+        'callbackTime' : 'Reaktionszeit: 3 min',
+        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -758,7 +761,8 @@ function filldynamicWording(){
         'chatLanguage2' : 'English',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'callbackTime' : 'Reaktionszeit: 3 min'
+        'callbackTime' : 'Reaktionszeit: 3 min',
+        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
         }
     }
 
