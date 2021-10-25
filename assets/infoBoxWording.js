@@ -377,5 +377,3 @@ function fillInfoBoxWording(){
    
         return infoBoxWording;
   }
-  
-  

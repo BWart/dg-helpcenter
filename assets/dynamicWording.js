@@ -253,7 +253,7 @@ function filldynamicWording(){
                 commaMultipleHoursBusinessCustomers = ", ";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 //Chat
-                tagePrivatkundeChatDE = ""; 
+                tagePrivatkundeChatDE = "Mo - Fr: "; 
                 tagePrivatkundeChatFR = ""; 
                 tagePrivatkundeChatIT = ""; 
                 tagePrivatkundeChatEN = ""; 
@@ -265,9 +265,9 @@ function filldynamicWording(){
                 tagePrivatkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tagePrivatkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tagePrivatkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
-                uhrzeitPrivatkundeChat = "";
+                uhrzeitPrivatkundeChat = "08:00 - 20:00";
                 uhrzeitPrivatkunde2Chat = "";
-                tageFirmenkundeChatDE = "";
+                tageFirmenkundeChatDE = "Mo - Fr: ";
                 tageFirmenkundeChatFR = "";
                 tageFirmenkundeChatIT = "";
                 tageFirmenkundeChatEN = "";
@@ -279,7 +279,7 @@ function filldynamicWording(){
                 tageFirmenkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tageFirmenkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tageFirmenkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
-                uhrzeitFirmenkundeChat = "";
+                uhrzeitFirmenkundeChat = "08:00 - 20:00";
                 uhrzeitFirmenkunde2Chat = "";
                 commaMultipleHoursPrivateCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
                 commaMultipleHoursBusinessCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
@@ -325,7 +325,7 @@ function filldynamicWording(){
                 commaMultipleHoursBusinessCustomers = ", ";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 //Chat
-                tagePrivatkundeChatDE = ""; 
+                tagePrivatkundeChatDE = "Mo - Fr: "; 
                 tagePrivatkundeChatFR = ""; 
                 tagePrivatkundeChatIT = ""; 
                 tagePrivatkundeChatEN = ""; 
@@ -337,9 +337,9 @@ function filldynamicWording(){
                 tagePrivatkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tagePrivatkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tagePrivatkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
-                uhrzeitPrivatkundeChat = "";
+                uhrzeitPrivatkundeChat = "08:00 - 20:00";
                 uhrzeitPrivatkunde2Chat = "";
-                tageFirmenkundeChatDE = "";
+                tageFirmenkundeChatDE = "Mo - Fr: ";
                 tageFirmenkundeChatFR = "";
                 tageFirmenkundeChatIT = "";
                 tageFirmenkundeChatEN = "";
@@ -351,7 +351,7 @@ function filldynamicWording(){
                 tageFirmenkunde2ChatMobileFR = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tageFirmenkunde2ChatMobileIT = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
                 tageFirmenkunde2ChatMobileEN = "";  //WICHTIG: braucht KEIN leading <br> wenn befüllt
-                uhrzeitFirmenkundeChat = "";
+                uhrzeitFirmenkundeChat = "08:00 - 20:00";
                 uhrzeitFirmenkunde2 = "";
                 commaMultipleHoursPrivateCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
                 commaMultipleHoursBusinessCustomers = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
@@ -576,7 +576,7 @@ function filldynamicWording(){
         'callbackText' : 'Wir rufen dich an',
         'callbackContactFormInfo' : 'Wir rufen dich innerhalb von 3 Minuten an. Mit deiner E-Mailadresse und deiner Auftragsnummer können wir deine Anfrage noch schneller bearbeiten. Der Rückruf ist natürlich kostenlos für dich.',
         'callbackTime' : 'Reaktionszeit: 3 min',
-        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
+        'fallbackInfoText' : 'Etwas ist schiefgelaufen! Bitte öffne das Formular über den "Kontaktiere uns" Button zuunterst auf der Seite erneut.'
         },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -586,8 +586,8 @@ function filldynamicWording(){
         'callUsPrivateMobile' : 'Appelez-nous <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
         'callUsBusiness' : 'Appelez-nous <a class="popuptext" id="phoneNumberBusiness" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'callUsBusinessMobile' : 'Appelez-nous <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
-        'callUsCallback' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallback" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
-        'callUsCallbackMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallbackMobile" href="tel:' + telCallbackKunde + '">' + telCallbackKundeText + '</a>',
+        'callUsCallback' : 'Appelez-nous <a class="popuptext" id="phoneNumberCallback" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+        'callUsCallbackMobile' : 'Appelez-nous <a class="popuptext" id="phoneNumberCallbackMobile" href="tel:' + telCallbackKunde + '">' + telCallbackKundeText + '</a>',
         'contactFormNoteTitel' : 'Le saviez-vous :',
         //Öffnungszeiten Telefon
         'openingDaysPrivate' : tagePrivatkundeFR,
@@ -637,8 +637,11 @@ function filldynamicWording(){
         'chatLanguage2' : 'Français',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'callbackTime' : 'Reaktionszeit: 3 min',
-        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
+        'callback' : 'Rappel',
+        'callbackText' : 'Nous vous appelons',
+        'callbackContactFormInfo' : 'Nous vous appellerons dans les 3 minutes. Avec votre adresse électronique et votre numéro de commande, nous pouvons traiter votre demande encore plus rapidement. Bien entendu, le rappel est gratuit pour vous.',
+        'callbackTime' : 'Temps de réponse : 3 min',
+        'fallbackInfoText' : 'Quelque chose a mal tourné ! Veuillez rouvrir le formulaire en utilisant le bouton "Nous contacter" en bas de la page.'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -648,8 +651,8 @@ function filldynamicWording(){
         'callUsPrivateMobile' : 'Chiamaci <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
         'callUsBusiness' : 'Chiamaci <a class="popuptext" id="phoneNumberBusiness"" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'callUsBusinessMobile' : 'Chiamaci <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
-        'callUsCallback' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallback" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
-        'callUsCallbackMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallbackMobile" href="tel:' + telCallbackKunde + '">' + telCallbackKundeText + '</a>',
+        'callUsCallback' : 'Chiamaci <a class="popuptext" id="phoneNumberCallback" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+        'callUsCallbackMobile' : 'Chiamaci <a class="popuptext" id="phoneNumberCallbackMobile" href="tel:' + telCallbackKunde + '">' + telCallbackKundeText + '</a>',
         'contactFormNoteTitel' : 'Lo sapevi:',
         //Öffnungszeiten Telefon
         'openingDaysPrivate' : tagePrivatkundeIT,
@@ -699,8 +702,11 @@ function filldynamicWording(){
         'chatLanguage2' : 'Italiano',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'callbackTime' : 'Reaktionszeit: 3 min',
-        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
+        'callback' : 'Richiamo',
+        'callbackText' : 'Ti chiamiamo',
+        'callbackContactFormInfo' : 'Vi chiameremo entro 3 minuti. Con il tuo indirizzo e-mail e il tuo numero d\'ordine, possiamo elaborare la tua richiesta ancora più velocemente. Naturalmente, il richiamo è gratuito per voi.',
+        'callbackTime' : 'Tempo di risposta: 3 min',
+        'fallbackInfoText' : 'Qualcosa è andato storto! Si prega di riaprire il modulo utilizzando il pulsante "Contattaci" in fondo alla pagina.'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -710,8 +716,8 @@ function filldynamicWording(){
         'callUsPrivateMobile' : 'Call us <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
         'callUsBusiness' : 'Call us <a class="popuptext" id="phoneNumberBusiness"" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
         'callUsBusinessMobile' : 'Call us <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
-        'callUsCallback' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallback" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
-        'callUsCallbackMobile' : 'Ruf uns an <a class="popuptext" id="phoneNumberCallbackMobile" href="tel:' + telCallbackKunde + '">' + telCallbackKundeText + '</a>',
+        'callUsCallback' : 'Call us <a class="popuptext" id="phoneNumberCallback" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+        'callUsCallbackMobile' : 'Call us <a class="popuptext" id="phoneNumberCallbackMobile" href="tel:' + telCallbackKunde + '">' + telCallbackKundeText + '</a>',
         'contactFormNoteTitel' : 'Did you know:',
         //Öffnungszeiten Telefon
         'openingDaysPrivate' : tagePrivatkundeEN,
@@ -761,7 +767,10 @@ function filldynamicWording(){
         'chatLanguage2' : 'English',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'callbackTime' : 'Reaktionszeit: 3 min',
+        'callback' : 'Callback',
+        'callbackText' : 'We call you',
+        'callbackContactFormInfo' : 'We will call you within 3 minutes. With your email address and your order number, we can process your request even faster. The callback is of course free of charge for you.',
+        'callbackTime' : 'Response time: 3 min',
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
         }
     }
