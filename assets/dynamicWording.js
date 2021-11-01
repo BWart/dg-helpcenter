@@ -429,7 +429,7 @@ function filldynamicWording(){
                 commaMultipleHoursBusinessCustomersChat = "";  //mit ', ' befüllen, wenn separate Öffnungszeiten für mehrere Tage vorhanden
 
                 telPrivatkunde = "+41445759700";
-                telPrivatkundeText = "+41 41 44 575 97 00";
+                telPrivatkundeText = "+41 44 575 97 00";
                 telFirmenkunde = "+41445759700";
                 telFirmenkundeText = "+41 44 575 97 00";
                 telCallbackKunde = '+41445759504';
