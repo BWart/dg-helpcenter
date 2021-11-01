@@ -10,7 +10,7 @@
   </h1>
   
   <div class="form requestform" id="requestForm">
-    <font class="contactFormInfoTextClass regular" data-wording-key="contactFormInfoText"></font><font class="fallbackInfoText regular" data-wording-key="fallbackInfoText"></font><font class='dummyElem'></font><br><br>
+    <font class="contactFormInfoTextClass regular" data-wording-key="contactFormInfoText"></font><font class="fallbackInfoText regular" data-wording-key="fallbackInfoText"></font><br><br>
     <!-- AUTOMATED CHAT -->
     {{chat}}
 
@@ -376,7 +376,6 @@
         fullMailform.show();
         break;
       case 'helpcenter.connect.digitec.ch':
-        phoneNumberInputFieldAndLabel = $('.dummyElem');
         if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/') {
           window.location.replace('https://helpcenter.connect.digitec.ch/hc/requests/new?ticket_form_id=360002056120');
         }
