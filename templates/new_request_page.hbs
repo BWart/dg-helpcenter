@@ -313,7 +313,9 @@
   removeCallback();
   setPortalDependantVariables();
   setCustomerType();
-  phoneNumberInputFieldAndLabel.hide();
+  if (portal != 'connect.digitec.ch'){
+        phoneNumberInputFieldAndLabel.hide();
+    }
   //checkForFeedbackForm();
 
   function setCallbackGroupA(){
@@ -410,7 +412,9 @@
           circleOne.innerHTML = '&#10003';
         }
         phoneNumberInputFieldAndLabel = $('.request_custom_fields_360021132820');
-        phoneNumberInputFieldAndLabel.hide();
+        if (portal != 'connect.digitec.ch'){
+            phoneNumberInputFieldAndLabel.hide();
+        }
         requestReasonDropdown = $('.request_custom_fields_360014169819');
         requestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
@@ -536,7 +540,9 @@
     circleTwo.classList.remove('circleOpenStep');
     circleTwo.classList.add('circleStepCompleted');
     circleTwo.innerHTML = '&#10003';
-    phoneNumberInputFieldAndLabel.hide();
+    if (portal != 'connect.digitec.ch'){
+        phoneNumberInputFieldAndLabel.hide();
+    }
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     //Update Label and Template
     if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
@@ -732,7 +738,9 @@
   }
   function showContactFormCallback() {
     sessionStorage.setItem('isCallbackContactForm', 1);
-    phoneNumberInputFieldAndLabel.show();
+    if (portal != 'connect.digitec.ch'){
+        phoneNumberInputFieldAndLabel.show();
+    }
     callbackContactFormInfo.show();
     circleThreeTitle.hide();
     circleThreeTitleThree.show();
@@ -785,7 +793,9 @@
   }); 
   //Aktion bei Klick auf back Button
   $('.text-back').on("click", function (){
-    phoneNumberInputFieldAndLabel.hide();
+    if (portal != 'connect.digitec.ch'){
+        phoneNumberInputFieldAndLabel.hide();
+    }
     callbackContactFormInfo.hide();
     contactFormIsShown = 0;
     circleThreeTitle.show();
