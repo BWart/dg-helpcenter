@@ -313,9 +313,7 @@
   removeCallback();
   setPortalDependantVariables();
   setCustomerType();
-  if (portal != 'connect.digitec.ch'){
-        phoneNumberInputFieldAndLabel.hide();
-    }
+  phoneNumberInputFieldAndLabel.hide();
   //checkForFeedbackForm();
 
   function setCallbackGroupA(){
@@ -378,6 +376,7 @@
         fullMailform.show();
         break;
       case 'helpcenter.connect.digitec.ch':
+        phoneNumberInputFieldAndLabel = $('.request_custom_fields_360021132820');
         if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/') {
           window.location.replace('https://helpcenter.connect.digitec.ch/hc/requests/new?ticket_form_id=360002056120');
         }
@@ -412,9 +411,7 @@
           circleOne.innerHTML = '&#10003';
         }
         phoneNumberInputFieldAndLabel = $('.request_custom_fields_360021132820');
-        if (portal != 'connect.digitec.ch'){
-            phoneNumberInputFieldAndLabel.hide();
-        }
+        phoneNumberInputFieldAndLabel.hide();
         requestReasonDropdown = $('.request_custom_fields_360014169819');
         requestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
         mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
@@ -540,9 +537,7 @@
     circleTwo.classList.remove('circleOpenStep');
     circleTwo.classList.add('circleStepCompleted');
     circleTwo.innerHTML = '&#10003';
-    if (portal != 'connect.digitec.ch'){
-        phoneNumberInputFieldAndLabel.hide();
-    }
+    phoneNumberInputFieldAndLabel.hide();
     infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
     //Update Label and Template
     if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
@@ -738,9 +733,7 @@
   }
   function showContactFormCallback() {
     sessionStorage.setItem('isCallbackContactForm', 1);
-    if (portal != 'connect.digitec.ch'){
-        phoneNumberInputFieldAndLabel.show();
-    }
+    phoneNumberInputFieldAndLabel.show();
     callbackContactFormInfo.show();
     circleThreeTitle.hide();
     circleThreeTitleThree.show();
@@ -793,9 +786,7 @@
   }); 
   //Aktion bei Klick auf back Button
   $('.text-back').on("click", function (){
-    if (portal != 'connect.digitec.ch'){
-        phoneNumberInputFieldAndLabel.hide();
-    }
+    phoneNumberInputFieldAndLabel.hide();
     callbackContactFormInfo.hide();
     contactFormIsShown = 0;
     circleThreeTitle.show();
