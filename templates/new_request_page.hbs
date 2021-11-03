@@ -66,7 +66,7 @@
             <td></td>
         </tr>
         <tr>
-            <td class="line" ><div class="line" style="min-height:30px"></div></td>
+            <td class="line"><div class="line" style="min-height:30px"></div></td>
             <td style="padding-left:10px;padding-top:0px">
 
               <!-- DESKTOP CONTACT TABLE -->
@@ -206,6 +206,7 @@
               {{request_form}}
             </td>
         </tr>
+        <tr></tr>
     </table>
   </div>
 </div>
@@ -343,7 +344,7 @@
       case 'helpcenter.galaxus.ch':
       case 'helpcenter.galaxus.de':
       case 'helpcenter.galaxus.at':
-        if (fullLink.slice(-3) != 'new'){
+        if (fullLink.slice(-3) != 'new' || fullLink.slice(-4) == 'new/'){
           circleOne.classList.remove('circleOpenStep');
           circleOne.classList.add('circleStepCompleted');
           circleOne.innerHTML = '&#10003';
@@ -352,7 +353,7 @@
         phoneNumberInputFieldAndLabel.hide();
         requestReasonDropdown = $('.request_custom_fields_360014169819');
         requestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
-        mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
+        mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360021132820');
         requestReasonDropdownContents = $('#request_custom_fields_360014169819');
         mailFormMailInput.insertAfter(requestReasonDropdown);
         customerTypeDropdown.insertBefore(document.getElementById('inserter'));
@@ -376,20 +377,22 @@
         fullMailform.show();
         break;
       case 'helpcenter.connect.digitec.ch':
+        phoneNumberInputFieldAndLabel = $('.request_custom_fields_360021132820');
         if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/') {
           window.location.replace('https://helpcenter.connect.digitec.ch/hc/requests/new?ticket_form_id=360002056120');
         }
         requestReasonDropdown = $('.request_custom_fields_360021132800');
         requestReasonDropdownNesty = '.request_custom_fields_360021132800' + ' a.nesty-input';
-        mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360021132820');
+        mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
         requestReasonDropdownContents = $('#request_custom_fields_360021132800');
         mailFormMailInput.insertAfter(requestReasonDropdown);
         customerTypeDropdown.insertBefore(document.getElementById('inserter'));
         requestReasonDropdown.insertBefore(document.getElementById('inserter2'));
-        //requestForm.hide()
+        requestForm.hide()
         customerTypeDropdownLabel.hide()
         requestReasonDropdownLabel.hide()
         circleThreeTitleTwo.hide()
+        circleThreeTitleThree.hide();
         $('.connectHide').hide()
         circleTwo.innerHTML = '1';
         circleThree.innerHTML = '2';
@@ -404,7 +407,7 @@
         fullMailform.show();
         break;
       default:
-        if (fullLink.slice(-3) != 'new'){
+        if (fullLink.slice(-3) != 'new' || fullLink.slice(-4) == 'new/'){
           circleOne.classList.remove('circleOpenStep');
           circleOne.classList.add('circleStepCompleted');
           circleOne.innerHTML = '&#10003';
@@ -713,7 +716,6 @@
     //infoTextField.hide();
     contactInfos.hide();
     //customerTypeDropdown.hide();
-    mailFormOrderNumberOrPhoneNumber.show();
     mailFormSubject.hide();
     mailFormMessage.show();
     mailFormAttachmentDropZone.show();
