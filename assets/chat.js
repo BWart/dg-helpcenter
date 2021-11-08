@@ -158,7 +158,7 @@ function getDGChatDepartmentType(){
             case(requestReasonTag == 'webform_case_product_advice_it' && isInPEChatHours() && lang == 'de'):
                 DGChatDepartmentType = 'PeIt'
                 break;
-            case(requestReasonTag == 'webform_case_product_advice_network' && lang == 'de'):
+            case(requestReasonTag == 'webform_case_product_advice_network' && isInPEChatHours() && lang == 'de'):
                 DGChatDepartmentType = 'PeNetwork'
                 break;
             case(customerType == 'business-customer' && lang == 'de'):
