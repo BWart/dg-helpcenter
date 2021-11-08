@@ -128,6 +128,7 @@ function getChatDepartmentType(){
             chatDepartmentType = 'Connect';
             break;
         case('helpcenter.galaxus.de'):
+        case('helpcenter.galaxus.at'):
             chatDepartmentType = 'Ger'
             break;
         default:
@@ -142,11 +143,23 @@ function getDGChatDepartmentType(){
     var DGChatDepartmentType;
     if(typeof customerType != 'undefined' && typeof requestReasonTag != 'undefinied'){
         switch(true){
-            case(requestReasonTag == 'webform_case_product_advice_consumer' && lang == 'de'):
+            case(requestReasonTag == 'webform_case_product_advice_consumer' && isInPEChatHours() && lang == 'de'):
                 DGChatDepartmentType = 'PeConsumer';
                 break;
-            case(requestReasonTag == 'webform_case_product_advice_home' && lang == 'de'):
+            case(requestReasonTag == 'webform_case_product_advice_photo' && isInPEChatHours() && lang == 'de'):
+                DGChatDepartmentType = 'PePhoto'
+                break;
+            case(requestReasonTag == 'webform_case_product_advice_home' && isInPEChatHours() && lang == 'de'):
                 DGChatDepartmentType = 'PeHome';
+                break;
+            case(requestReasonTag == 'webform_case_product_advice_diy' && isInPEChatHours() && lang == 'de'):
+                DGChatDepartmentType = 'PeDiy'
+                break;
+            case(requestReasonTag == 'webform_case_product_advice_it' && isInPEChatHours() && lang == 'de'):
+                DGChatDepartmentType = 'PeIt'
+                break;
+            case(requestReasonTag == 'webform_case_product_advice_network' && lang == 'de'):
+                DGChatDepartmentType = 'PeNetwork'
                 break;
             case(customerType == 'business-customer' && lang == 'de'):
                 DGChatDepartmentType = getBusinessCustomerDepartmentType();
@@ -170,7 +183,7 @@ function getBusinessCustomerDepartmentType(){
     }
 }
 
-//Returns true when hours < 17
+//Returns true before 16:55
 function isInBusinessChatHours(){
     var today = new Date();
     if((today.getHours() == 16 && today.getMinutes() >= 55)){
@@ -181,6 +194,19 @@ function isInBusinessChatHours(){
     }else{
         return false;
     }   
+}
+
+//Returns true before 17:55
+function isInPEChatHours(){
+    var today = new Date();
+    if((today.getHours() == 17 && today.getMinutes() >=55)){
+        return false;
+    }
+    if(today.getHours() < 18){
+        return true;
+    } else {
+        return false;
+    }
 }
 
   
