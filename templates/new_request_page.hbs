@@ -303,10 +303,11 @@
   "webform_case_offer", "webform_case_no_bill"]
 
   //List of tags for callback
-  var reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product",
-  "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_return", "webform_case_creditnote", "webform_case_refund",
-  "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_delete_account", "webform_case_cant_login",
-  "webform_case_other_request_payment", "webform_case_other_request_account"]
+  var reasonsForCallback = [];
+  //var reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product",
+  //"webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_return", "webform_case_creditnote", "webform_case_refund",
+  //"webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_delete_account", "webform_case_cant_login",
+  //"webform_case_other_request_payment", "webform_case_other_request_account"]
   
   //initial setup + Callback checker
   fallbackText.hide();
@@ -1081,7 +1082,7 @@
   // CSS Change für Chat Button Offline
   function hideChatButton(){
     $(".button-chat").addClass("button-offline");
- 	  $(".button-chat").html(getButtonText('chatNotOnline'));
+ 	$(".button-chat").html(getButtonText('chatNotOnline'));
     $(".recommendedChannel").css('display' , 'none');
   }
 
