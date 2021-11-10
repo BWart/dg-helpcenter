@@ -141,13 +141,25 @@ function getChatDepartmentType(){
 function getDGChatDepartmentType(){
     lang = getLanguage();
     var DGChatDepartmentType;
-    if(typeof customerType != 'undefined' && typeof requestReasonTag != 'undefinied'){
+    if(typeof customerType != 'undefined' && typeof requestReasonTag != 'undefined'){
         switch(true){
-            case(requestReasonTag == 'webform_case_product_advice_consumer' && lang == 'de'):
+            case(requestReasonTag == 'webform_case_product_advice_it' && isInPEChatHours() && lang == 'de'):
+                DGChatDepartmentType = 'PeIt'
+                break;
+            case(requestReasonTag == 'webform_case_product_advice_network' && isInPEChatHours() && lang == 'de'):
+                DGChatDepartmentType = 'PeNetwork'
+                break;
+            case(requestReasonTag == 'webform_case_product_advice_consumer' && isInPEChatHours() && lang == 'de'):
                 DGChatDepartmentType = 'PeConsumer';
                 break;
-            case(requestReasonTag == 'webform_case_product_advice_home' && lang == 'de'):
+            case(requestReasonTag == 'webform_case_product_advice_photo' && isInPEChatHours() && lang == 'de'):
+                DGChatDepartmentType = 'PePhoto'
+                break;
+            case(requestReasonTag == 'webform_case_product_advice_home' && isInPEChatHours() && lang == 'de'):
                 DGChatDepartmentType = 'PeHome';
+                break;
+            case(requestReasonTag == 'webform_case_product_advice_diy' && isInPEChatHours() && lang == 'de'):
+                DGChatDepartmentType = 'PeDiy'
                 break;
             case(customerType == 'business-customer' && lang == 'de'):
                 DGChatDepartmentType = getBusinessCustomerDepartmentType();
@@ -171,7 +183,7 @@ function getBusinessCustomerDepartmentType(){
     }
 }
 
-//Returns true when hours < 17
+//Returns true before 16:55
 function isInBusinessChatHours(){
     var today = new Date();
     if((today.getHours() == 16 && today.getMinutes() >= 55)){
@@ -184,10 +196,24 @@ function isInBusinessChatHours(){
     }   
 }
 
+//Returns true before 17:55
+function isInPEChatHours(){
+    var today = new Date();
+    if((today.getHours() == 17 && today.getMinutes() >=55)){
+        return false;
+    }
+    if(today.getHours() < 18){
+        return true;
+    } else {
+        return false;
+    }
+}
+
   
 ///////////////////////////////////////////////////////////New Request Page Events/////////////////////////////////////////////////////////////
 
 function updateChatConnectionAfterDropdownChange(){
+    console.log('ENTER updateChatConnectionAfterDropdownChange')
     if(!isChatting()){
         var chatDepartment = getChatDepartment();                                                                                 
         checkDepartmentforInitialButtonChange(chatDepartment);                                                                                          
@@ -199,9 +225,12 @@ function updateChatConnectionAfterDropdownChange(){
 }
 
 function checkDepartmentforInitialButtonChange(selectedDepartment){
+    console.log('ENTER checkDepartmentforInitialButtonChange')
     var dep = zE('webWidget:get', 'chat:department', selectedDepartment);
     if(dep.status == 'online'){
         showChatButton();
+    } else {
+        hideChatButton();
     }
 }
 
@@ -218,9 +247,12 @@ function listenDepartmentStatus(selectedDepartment){
 
 // Shows Chat button if anyone is available and inside opening hours
 function changeButtonVisibility(status){
+    console.log('ENTERING changeButtonVisibility Part 1')
     if(status == 'online'){
+        console.log('ENTERING changeButtonVisibility Part 2 : online')
         showChatButton();
     }else{
+        console.log('ENTERING changeButtonVisibility Part 2 : else')
         hideChatButton();
     }
   }
@@ -334,4 +366,3 @@ function openChat(){
 function hideChat(){
     zE('webWidget', 'hide');
 }
-

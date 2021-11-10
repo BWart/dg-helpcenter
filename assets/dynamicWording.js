@@ -556,7 +556,8 @@ function filldynamicWording(){
         'chatLanguage2' : 'Deutsch',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
+        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
+        'contactNow' : 'Jetzt kontaktieren'
         },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -615,7 +616,8 @@ function filldynamicWording(){
         'chatLanguage2' : 'Français',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
+        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
+        'contactNow' : 'Contacter maintenant'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -674,7 +676,8 @@ function filldynamicWording(){
         'chatLanguage2' : 'Italiano',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
+        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
+        'contactNow' : 'Contatta ora'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -733,7 +736,8 @@ function filldynamicWording(){
         'chatLanguage2' : 'English',
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
-        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.'
+        'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
+        'contactNow' : 'Contact now'
         }
     }
 
