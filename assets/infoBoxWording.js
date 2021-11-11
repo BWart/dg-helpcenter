@@ -11,12 +11,10 @@ function fillInfoBoxWording(){
       var hp6 = "";
       var offerte = "";
   
-      var rck = "";
       var seite = "";
   
       // Hostname korrekt in der JSON in den Links hinterlegen
       // Helpcenter Links richtig hinterlegen (Helpcenter-spezifische-Nummern); var "hp"
-      // Textänderung bei Rückgabe - Ich möchte ein Produkt zurückgeben - weil bei Galaxus.de der Beitrag nicht existiert; var "rck"
       // Beitrag Seitennamen werden dynamisch angepasst, var "seite"
       switch (portal){
               case 'helpcenter.digitec.ch':
@@ -33,7 +31,6 @@ function fillInfoBoxWording(){
                     hp6 = "/115005646085";
   
                     offerte = "CHF 5'000.-";
-                    rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + helpcenterURL + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
                     break;
               case 'helpcenter.galaxus.ch':
                     shopURL = "https://www.galaxus.ch/";
@@ -49,7 +46,6 @@ function fillInfoBoxWording(){
                     hp6 = "/360007334059";
   
                     offerte = "CHF 5'000.-";
-                    rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + helpcenterURL + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
                     break;
               case 'helpcenter.galaxus.de':
                     shopURL = "https://www.galaxus.de/";
@@ -65,7 +61,6 @@ function fillInfoBoxWording(){
                     hp6 = "/360010182760";
   
                     offerte = "EUR 2'000.-";
-                    rck = "Du kannst von " + seite + " gekaufte Produkte innerhalb von 30 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
                     break;
               case 'helpcenter.galaxus.at':
                     shopURL = "https://www.galaxus.at/"
@@ -81,7 +76,6 @@ function fillInfoBoxWording(){
                     hp6 = "/4407011198994";
   
                     offerte = "EUR 2'000.-";
-                    rck = "Du kannst von " + seite + " gekaufte Produkte innerhalb von 30 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
                     break;
               default:
                     shopURL = "https://www.digitec.ch/";
@@ -97,7 +91,6 @@ function fillInfoBoxWording(){
                     hp6 = "/115005646085";
   
                     offerte = "CHF 5'000.-";
-                    rck = "Du kannst direkt von " + seite + " gekaufte Produkte innerhalb von 30 Tagen, oder von einem <a href='" + helpcenterURL + "articles" + hp2 + "-Angebote-von-Drittanbietern' target='blank'>Drittanbieter</a> gekaufte Produkte während 14 Tagen nach dem Erhalt zurückgeben. Du kannst in deinem Kundenkonto direkt deine <a href='" + shopURL + "after-sales' target='blank'>Rückgabe erfassen</a>.";
                     break;
       }
   
@@ -190,10 +183,10 @@ function fillInfoBoxWording(){
   
         //LEVEL 0: Rückgabe
         "webform_case_return" : {
-              'de' : "" + rck + "",
-              'fr' : "Les produits achetés directement chez " + seite + " peuvent être retournés dans les 30 jours, ceux achetés auprès d'un <a href='" + helpcenterURL + "articles" + hp2 + "-Offres-de-fournisseur-tiers' target='blank'>fournisseur tiers</a>, dans les 14 jours suivant leur réception. Vous pouvez <a href='" + shopURL + "after-sales' target='blank'>enregistrer un retour</a> directement dans votre compte client.",
-              'it' : "Puoi restituire gli articoli acquistati direttamente da " + seite + " entro 30 giorni dal ricevimento, mentre gli articoli acquistati da un <a href='" + helpcenterURL + "articles" + hp2 + "-Offerte-da-parte-di-terzi' target='blank'>fornitore terzo</a> entro 14 giorni dal ricevimento. Puoi registrare il <a href='" + shopURL + "after-sales' target='blank'>reso</a> direttamente nel tuo conto cliente.",
-              'en-US' : "You have 30 days to return products sold by " + seite + " and 14 days to return items sold by <a href='" + helpcenterURL + "articles" + hp2 + "-Buying-from-third-party-sellers' target='blank'>third parties</a> from the day you received them. <a href='" + shopURL + "after-sales' target='blank'>Register returns</a> in your customer account."
+            'de' : "Für bereits bestellte Produkte findest du sämtliche Informationen zu den Rückgabefristen in deinem Kundenkonto unter <a href='" + shopURL + "/order' target='blank'>Bestellungen</a> oder auf der <a href='" + shopURL + "return' target='blank'>Rückgabeseite</a>. Die Rückgabefristen gelten ab Versand- bzw. Abholdatum.",
+            'de' : "Pour les produits que vous avez déjà commandés, vous trouverez toutes les informations relatives aux délais de retour dans votre compte client sur la page de <a href='" + shopURL + "/order' target='blank'>commande</a> ou de <a href='" + shopURL + "return' target='blank'>retour</a>. Les délais de retour s'appliquent à partir de la date d'expédition ou d'enlèvement.",
+            'de' : "Per i prodotti che ha già ordinato, può trovare tutte le informazioni sui periodi di restituzione nel suo account cliente nella pagina dell'<a href='" + shopURL + "/order' target='blank'>ordine</a> o della <a href='" + shopURL + "return' target='blank'>restituzione</a>. I termini di restituzione sono validi a partire dalla data di spedizione o di ritiro.",
+            'de' : "For products that you have already ordered, you can find all the information about the return periods in your customer account on the <a href='" + shopURL + "/order' target='blank'>order</a> or <a href='" + shopURL + "return' target='blank'>return</a> page. The return periods apply from the date of dispatch or collection."
         },
         "webform_case_return_status" : {
               'de' : "Unter <a href='" + shopURL + "ServiceCase/List' target='blank'>\"Alle Rücksendungen\"</a> findest du eine Übersicht und den aktuellen Status zu allen von dir eingereichten Rückgaben und Garantiefällen.",
