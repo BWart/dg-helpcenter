@@ -1061,7 +1061,7 @@ function swapContactOptionsForHiddenContactForm(){
   }
 
   function hideContactFormForPE(){
-      if (reasonsForNoContactForm.indexOf(requestReasonTag) >= 0 && !isInPEChatHours()){
+      if (reasonsForNoContactForm.indexOf(requestReasonTag) >= 0 && isInPEChatHours()){
           swapContactOptionsForHiddenContactForm();
           $('#mailIconCellContent').hide();
           $('#mailTitleCellContent').hide();
