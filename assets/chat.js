@@ -189,7 +189,7 @@ function isInBusinessChatHours(){
     if((today.getHours() == 16 && today.getMinutes() >= 55)){
         return false;
     }
-    if(today.getHours()< 17){
+    if(today.getHours()< 17 && today.getHours() > 7){
         return true;
     }else{
         return false;
@@ -202,7 +202,7 @@ function isInPEChatHours(){
     if((today.getHours() == 17 && today.getMinutes() >=55)){
         return false;
     }
-    if(today.getHours() < 18){
+    if(today.getHours() < 18 && today.getHours() > 7){
         return true;
     } else {
         return false;

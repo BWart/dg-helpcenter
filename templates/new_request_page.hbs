@@ -248,6 +248,9 @@
   "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy", "webform_case_delete_account", "webform_case_cant_login",
   "webform_case_offer", "webform_case_no_bill"]
 
+  var reasonsForNoContactForm = ["webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer",
+  "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy"]
+
   //intial setup
   fallbackText.hide();
   setPortalDependantVariables();
@@ -415,7 +418,6 @@
   
   //Aktion bei Änderung des RequestReasonDropdown
   requestReasonDropdown.on('change', function(){
-      console.log('REQ REASON DDOWN CHANGED')
     if (requestReasonDropdownContents.attr('value') != ''){
       if (customerType == 'connect-customer'){
         onDropdownChangeConnect();
@@ -483,6 +485,7 @@
       $('.' + customerType).show();
       infoTextField.show();
     }
+    hideContactFormForPE();
     //OrderNumber Feld verstecken wenn nicht benötigt
     if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
       mailFormOrderNumberOrPhoneNumber.hide()
@@ -496,6 +499,7 @@
       catch (e) {
         console.log(e); 
       } 
+    hideContactFormForPE();
   } 
 
   function onDropdownChangeConnect(){
@@ -905,7 +909,6 @@
 
   // CSS Change für Chat Button Offline
   function hideChatButton(){
-      console.log("ENTERING HIDECHATBUTTON")
     $(".button-chat").addClass("button-offline");
  	$(".button-chat").html(getButtonText('chatNotOnline'));
     $(".recommendedChannel").css('display' , 'none');
@@ -914,7 +917,6 @@
 
   // CSS Change für Chat Button Online
   function showChatButton(){
-    console.log("ENTERING SHOWCHATBUTTON")
     $(".button-chat").removeClass("button-offline");
     $(".button-chat").html(getButtonText('chatUs'));
     $(".recommendedChannel").css('display' , 'inline-block');
@@ -922,7 +924,6 @@
   }
 
   function swapContactOptions(){
-    //console.log('entering swap')
     $('#chatIconCellContent').insertBefore($('#row1cell1inserter'));
     $('#mailIconCellContent').insertBefore($('#row1cell2inserter'));
     $('#phoneIconCellContent').insertBefore($('#row1cell3inserter'));
@@ -959,7 +960,6 @@
   }
 
   function hideChatCells(){
-    //console.log('entering hide')
     $('#phoneIconCellContent').insertBefore($('#row1cell1inserter'));
     $('#mailIconCellContent').insertBefore($('#row1cell2inserter'));
     $('#chatIconCellContent').insertBefore($('#row1cell3inserter'));
@@ -1027,10 +1027,58 @@
     $('#mobileChatCell2Content').insertBefore($('#mobileInserter6'));
   }
 
+function swapContactOptionsForHiddenContactForm(){
+    $('#chatIconCellContent').insertBefore($('#row1cell1inserter'));
+    $('#mailIconCellContent').insertBefore($('#row1cell3inserter'));
+    $('#phoneIconCellContent').insertBefore($('#row1cell2inserter'));
+
+    $('#chatTitleCellContent').insertBefore($('#row2cell1inserter'));
+    $('#mailTitleCellContent').insertBefore($('#row2cell3inserter'));
+    $('#phoneTitleCellContent').insertBefore($('#row2cell2inserter'));
+
+    $('#chatTextCellContent').insertBefore($('#row3cell1inserter'));
+    $('#mailTextCellContent').insertBefore($('#row3cell3inserter'));
+    $('#phoneTextCellContent').insertBefore($('#row3cell2inserter'));
+
+    $('#chatButtonCellContent').insertBefore($('#row4cell1inserter'));
+    $('#mailButtonCellContent').insertBefore($('#row4cell3inserter'));
+    $('#phoneButtonCellContent').insertBefore($('#row4cell2inserter'));
+
+    $('#mobileChatCell1Content').insertBefore($('#mobileInserter1'));
+    $('#mobileChatCell2Content').insertBefore($('#mobileInserter2'));
+
+    $('#mobileMailCell1Content').insertBefore($('#mobileInserter5'));
+    $('#mobileMailCell2Content').insertBefore($('#mobileInserter6'));
+
+    $('#mobilePhoneCell1Content').insertBefore($('#mobileInserter3'));
+    $('#mobilePhoneCell2Content').insertBefore($('#mobileInserter4'));
+  }
+
   function fallbackExit(){
     introText.hide();
     fallbackText.show();
     //$('.progressTable').hide();
+  }
+
+  function hideContactFormForPE(){
+      if (reasonsForNoContactForm.indexOf(requestReasonTag) >= 0 && !isInPEChatHours()){
+          swapContactOptionsForHiddenContactForm();
+          $('#mailIconCellContent').hide();
+          $('#mailTitleCellContent').hide();
+          $('#mailTextCellContent').hide();
+          $('#mailButtonCellContent').hide();   
+          $('#mobileMailCell1Content').hide();       
+          $('#mobileMailCell2Content').hide();   
+          removeChatBasedOnRequestType();    
+      } else {
+          $('#mailIconCellContent').show();
+          $('#mailTitleCellContent').show();
+          $('#mailTextCellContent').show();
+          $('#mailButtonCellContent').show();    
+          $('#mobileMailCell1Content').show();       
+          $('#mobileMailCell2Content').show();   
+          removeChatBasedOnRequestType();    
+      }
   }
 
 </script>
