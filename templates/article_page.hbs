@@ -225,6 +225,18 @@
 </div>
 <script>
 
+    var makebuttons = $('.makebutton')
+
+    for (var i=0; i<makebuttons.length; i++){
+        tempstring = makebuttons[i].innerHTML
+        tempElems = tempstring.split('||')
+        newString = ""
+        if(tempElems[1] == 'BUTTON' && tempElems[3] == 'LINK'){
+            newString = "<a href='" + tempElems[4] + "' target='blank'><div class='button-contact-article'>" + tempElems[2] + "</div></a>"
+        }
+        makebuttons[i].innerHTML = newString;
+    }
+
 
   //////////////////////////////////////////////////////////Fedback Formular///////////////////////////////////////////////////////////////////////////
   

@@ -180,7 +180,6 @@
      
   </div>
 </div>
-<script type="text/javascript" src="https://www.thereset.ch/test.js"></script>
 <script>
 
   function commitButtonPressed(){
@@ -1061,7 +1060,7 @@ function swapContactOptionsForHiddenContactForm(){
   }
 
   function hideContactFormForPE(){
-      if (reasonsForNoContactForm.indexOf(requestReasonTag) >= 0 && isInPEChatHours()){
+      if (reasonsForNoContactForm.indexOf(requestReasonTag) >= 0 && isInPEChatHours() && (portal == 'helpcenter.digitec.ch' || 'helpcenter.galaxus.ch')){
           swapContactOptionsForHiddenContactForm();
           $('#mailIconCellContent').hide();
           $('#mailTitleCellContent').hide();

@@ -248,6 +248,21 @@ ul {
   -webkit-touch-callout: none;
 }
 
+.button-contact-article{ 
+    border-radius: 3px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 2.34;
+    padding: 2px 30px;
+    text-align: center;
+    transition: background-color .12s ease-in-out, border-color .12s ease-in-out, color .15s ease-in-out;
+    user-select: none;
+    color: #FFFFFF;
+    white-space: nowrap;
+    -webkit-touch-callout: none;
+  }
+
 .button-contact2{ 
   border-radius: 3px;
   cursor: pointer;

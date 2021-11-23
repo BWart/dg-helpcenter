@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #d6e6f4;
 }
 
-.button-contact{
+.button-contact, .button-contact-article{
   color: #00559d;
   background-color: #d6e6f4;
   border: 1px solid #d6e6f4;
@@ -160,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #d6e6f4;  
 }
 
-.button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover, .button-back:hover {
+.button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover, .button-back:hover, .button-contact-article:hover {
   background-color: #e60020;
   color: #ffffff;
   border: 1px solid #e60020;

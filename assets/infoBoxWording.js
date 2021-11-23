@@ -189,10 +189,10 @@ function fillInfoBoxWording(){
             'en-US' : "For products that you have already ordered, you can find all the information about the return periods in your customer account on the <a href='" + shopURL + "order' target='blank'>order</a> or <a href='" + shopURL + "return' target='blank'>return</a> page. The return periods apply from the date of dispatch or collection."
         },
         "webform_case_return_status" : {
-              'de' : "Unter <a href='" + shopURL + "ServiceCase/List' target='blank'>\"Alle Rücksendungen\"</a> findest du eine Übersicht und den aktuellen Status zu allen von dir eingereichten Rückgaben und Garantiefällen.",
-              'fr' : "Sous la rubrique « <a href='" + shopURL + "ServiceCase/List' target='blank'>Tous les retours</a> », vous trouverez une vue d'ensemble et le statut actuel de tous les retours et demandes de garantie que vous avez soumis.",
-              'it' : "Sotto <a href='" + shopURL + "ServiceCase/List' target='blank'>tutti i resi</a> trovi una panoramica e lo stato attuale di tutti i resi e le richieste di garanzia da te presentate.",
-              'en-US' : "Go to <a href='" + shopURL + "ServiceCase/List' target='blank'>all returns</a> to find an overview and the current status of all your returns and warranty cases."
+              'de' : "Unter <a href='" + shopURL + "after-sales/service-cases' target='blank'>\"Alle Rücksendungen\"</a> findest du eine Übersicht und den aktuellen Status zu allen von dir eingereichten Rückgaben und Garantiefällen.",
+              'fr' : "Sous la rubrique « <a href='" + shopURL + "after-sales/service-cases' target='blank'>Tous les retours</a> », vous trouverez une vue d'ensemble et le statut actuel de tous les retours et demandes de garantie que vous avez soumis.",
+              'it' : "Sotto <a href='" + shopURL + "after-sales/service-cases' target='blank'>tutti i resi</a> trovi una panoramica e lo stato attuale di tutti i resi e le richieste di garanzia da te presentate.",
+              'en-US' : "Go to <a href='" + shopURL + "after-sales/service-cases' target='blank'>all returns</a> to find an overview and the current status of all your returns and warranty cases."
         },
         "webform_case_creditnote" : {
               'de' : "Alle deine offenen und eingelösten Gutschriften findest du <a href='" + shopURL + "invoice/listcreditnotes' target='blank'>hier</a>. Du kannst diese <a href='" + helpcenterURL + "articles" + hp3 + "' target='blank'>rückerstatten lassen</a> oder direkt in einer neuen Bestellung <a href='" + helpcenterURL + "articles" + hp4 + "' target='blank'>einlösen</a>.",
