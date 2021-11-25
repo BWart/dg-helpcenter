@@ -86,7 +86,7 @@
                     <div id="phoneTextCellContent">
                       <div class="private-customer connect-customer"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font></div>
                       <div class="business-customer"><font data-wording-key="openingDaysBusiness"></font><font data-wording-key="openingHoursBusiness"></font><font data-wording-key="openingDaysBusiness2"></font><font data-wording-key="openingHoursBusiness2"></font></div>
-                      <div class="waittime" data-wording-key="callWaitTimeDesktop"></div>
+                      <div class="callWaitTimeOnly"><div class="waittime" data-wording-key="callWaitTimeDesktop"></div></div>
                     </div>
                     <div id="row3cell2inserter"></div>
                   </td>
@@ -94,7 +94,7 @@
                     <div id="chatTextCellContent">
                       <div class="private-customer connect-customer"><font data-wording-key="openingDaysPrivateChat"></font><font data-wording-key="openingHoursPrivateChat"></font><font data-wording-key="openingDaysPrivate2Chat"></font><font data-wording-key="openingHoursPrivate2Chat"></font><!--<br><font data-wording-key="chatLanguage"></font><font data-wording-key="chatLanguage2"></font>--></div>
                       <div class="business-customer"><font data-wording-key="openingDaysBusinessChat"></font><font data-wording-key="openingHoursBusinessChat"></font><font data-wording-key="openingDaysBusiness2Chat"></font><font data-wording-key="openingHoursBusiness2Chat"></font><!--<br><font data-wording-key="chatLanguage"></font><font data-wording-key="chatLanguage2"></font>--></div>
-                      <div class="waittime" data-wording-key="chatWaitTimeDesktop"></div>
+                      <div class="chatWaitTimeOnly"><div class="waittime" data-wording-key="chatWaitTimeDesktop"></div></div>
                     </div>
                     <div id="row3cell3inserter"></div>
                   </td>
@@ -138,7 +138,7 @@
                       <b><font data-wording-key="phone"></font></b>
                       <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font>
                       <font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusiness"></font> <font data-wording-key="openingHoursBusiness"></font><font data-wording-key="commaMultipleHoursBusinessCustomers"></font><font data-wording-key="openingDaysBusiness2Mobile"></font> <font data-wording-key="openingHoursBusiness2"></font></font>
-                      <font class="waittime" style="font-size: 11px;" data-wording-key="callWaitTimeMobile"></font>
+                      <font class="callWaitTimeOnly"><font class="waittime" style="font-size: 11px;" data-wording-key="callWaitTimeMobile"></font></font>
                     </div>
                     <div id="mobileInserter3"></div>
                   </td>
@@ -159,7 +159,7 @@
                       <b><font data-wording-key="chat"></font></b>
                       <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivateChat"></font> <font data-wording-key="openingHoursPrivateChat"></font><font data-wording-key="commaMultipleHoursPrivateCustomersChat"></font><font data-wording-key="openingDaysPrivate2MobileChat"></font> <font data-wording-key="openingHoursPrivate2Chat"></font></font>
                       <font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusinessChat"></font> <font data-wording-key="openingHoursBusinessChat"></font><font data-wording-key="commaMultipleHoursBusinessCustomersChat"></font><font data-wording-key="openingDaysBusiness2MobileChat"></font> <font data-wording-key="openingHoursBusiness2Chat"></font></font>
-                      <font class="waittime" style="font-size: 11px;" data-wording-key="chatWaitTimeMobile"></font>
+                      <font class="chatWaitTimeOnly"><font class="waittime" style="font-size: 11px;" data-wording-key="chatWaitTimeMobile"></font></font>
                       <div class="recommendedChannel" data-wording-key="recommendedChannel" style="float:right;"></div>
                     </div>
                     <div id="mobileInserter5"></div>
@@ -220,6 +220,8 @@
   var circleThreeTitle = $('.circle3Title');
   var circleThreeTitleTwo = $('.circle3Title2');
   var waitTimes = $('.waittime');
+  var chatWaitTimes = $('.chatWaitTimeOnly');
+  var callWaitTimes = $('.chatWaitTimeOnly');
 
   //TODO: Integrate new variables properly
   var customerTypeDropdownLabel = $('[for=request_issue_type_select]');
@@ -256,6 +258,7 @@
   "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy"]
 
   //intial setup
+  chatWaitTimes.hide();
   fallbackText.hide();
   setPortalDependantVariables();
   setCustomerType();
@@ -676,7 +679,6 @@
 
 function setWaitTimes(){
     waitTimes.hide();
-    console.log('ENTERING SHOWWAITTIMES')
     const d = new Date();
     var dayOfWeek = d.getUTCDay();
     var currentUTCHour = d.getUTCHours();
@@ -697,9 +699,7 @@ function setWaitTimes(){
             }
         }
     } else {
-        console.log('ENTERING 1')
         if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTCHour >=7 && currentUTCHour < 19){
-            console.log('ENTERING 2')
             if (customerType == 'connect-customer'){
                 switch(currentLanguage){
                     case 'de':
@@ -772,20 +772,15 @@ function setWaitTimes(){
                         break;
                 }
             } else {
-                console.log('ENTERING 3')
                 switch (currentLanguage) {
                     case 'de':
                         if (isInPEChatHours){
                             if (requestReasonTag.includes('webform_case_product_advice_')){
-                                console.log('ENTERING PE CHECKS')
                                 var lastIndex = requestReasonTag.lastIndexOf('_');
                                 var splitstring = requestReasonTag.substring(lastIndex, requestReasonTag.length)
                                 var lastpart = splitstring.substring(1, splitstring.length)
                                 var lastpartCapitalized = lastpart.charAt(0).toUpperCase() + lastpart.substring(1, lastpart.length)
-                                console.log(lastpartCapitalized)
                                 if (lastpartCapitalized.includes('It') || lastpartCapitalized.includes('Network')){
-                                    console.log('ENTERING RELEVANT IF')
-                                    console.log(chatWaitTimes['pe'+lastpartCapitalized+'DE'])
                                     setWaitTime(chatWaitTimes['pe'+lastpartCapitalized+'DE'], callWaitTimes['peItNetwork'])
                                 } else if (lastpartCapitalized.includes('Consumer') || lastpartCapitalized.includes('Photo')){
                                     setWaitTime(chatWaitTimes['pe'+lastpartCapitalized+'DE'], callWaitTimes['peConsumerPhoto'])
@@ -818,10 +813,13 @@ function setWaitTimes(){
 }
 
   function setWaitTime(chatSeconds, callSeconds){
-      console.log(chatWaitTimes['peItDE'])
+      if (chatSeconds > 329){
+          $(".recommendedChannel").css('display' , 'none');
+      } else {
+          $(".recommendedChannel").css('display' , 'inline-block');
+      }
       chatElements = $('.chatWaitTime')
       callElements = $('.callWaitTime')
-      console.log('CHATSECONDS: ' + String(chatSeconds))
       changeWaitTimeHTML(chatSeconds, chatElements)
       changeWaitTimeHTML(callSeconds, callElements)
       waitTimes.show();
@@ -1139,6 +1137,7 @@ function setWaitTimes(){
     $(".button-chat").addClass("button-offline");
  	$(".button-chat").html(getButtonText('chatNotOnline'));
     $(".recommendedChannel").css('display' , 'none');
+    chatWaitTimes.hide();
     resetContactOptions();
   }
 
@@ -1147,6 +1146,7 @@ function setWaitTimes(){
     $(".button-chat").removeClass("button-offline");
     $(".button-chat").html(getButtonText('chatUs'));
     $(".recommendedChannel").css('display' , 'inline-block');
+    chatWaitTimes.show();
     swapContactOptions();
   }
 
