@@ -203,7 +203,6 @@ function isInPEChatHours(){
         return false;
     }
     if(today.getUTCHours() < 17 && today.getUTCHours() > 6){
-        console.log('PE CHAT IS OPEN')
         return true;
     } else {
         return false;
