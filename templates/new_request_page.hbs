@@ -86,6 +86,7 @@
                     <div id="phoneTextCellContent">
                       <div class="private-customer connect-customer"><font data-wording-key="openingDaysPrivate"></font><font data-wording-key="openingHoursPrivate"></font><font data-wording-key="openingDaysPrivate2"></font><font data-wording-key="openingHoursPrivate2"></font></div>
                       <div class="business-customer"><font data-wording-key="openingDaysBusiness"></font><font data-wording-key="openingHoursBusiness"></font><font data-wording-key="openingDaysBusiness2"></font><font data-wording-key="openingHoursBusiness2"></font></div>
+                      <div class="waittime" data-wording-key="callWaitTimeDesktop"></div>
                     </div>
                     <div id="row3cell2inserter"></div>
                   </td>
@@ -93,6 +94,7 @@
                     <div id="chatTextCellContent">
                       <div class="private-customer connect-customer"><font data-wording-key="openingDaysPrivateChat"></font><font data-wording-key="openingHoursPrivateChat"></font><font data-wording-key="openingDaysPrivate2Chat"></font><font data-wording-key="openingHoursPrivate2Chat"></font><!--<br><font data-wording-key="chatLanguage"></font><font data-wording-key="chatLanguage2"></font>--></div>
                       <div class="business-customer"><font data-wording-key="openingDaysBusinessChat"></font><font data-wording-key="openingHoursBusinessChat"></font><font data-wording-key="openingDaysBusiness2Chat"></font><font data-wording-key="openingHoursBusiness2Chat"></font><!--<br><font data-wording-key="chatLanguage"></font><font data-wording-key="chatLanguage2"></font>--></div>
+                      <div class="waittime" data-wording-key="chatWaitTimeDesktop"></div>
                     </div>
                     <div id="row3cell3inserter"></div>
                   </td>
@@ -212,9 +214,10 @@
   var requestForm = $('.request-form');
   var circleOne = document.getElementById('circle1');
   var circleTwo = document.getElementById('circle2');
-  var circleThree = document.getElementById('circle3')
+  var circleThree = document.getElementById('circle3');
   var circleThreeTitle = $('.circle3Title');
-  var circleThreeTitleTwo = $('.circle3Title2')
+  var circleThreeTitleTwo = $('.circle3Title2');
+  var waitTimes = $('.waittime');
 
   //TODO: Integrate new variables properly
   var customerTypeDropdownLabel = $('[for=request_issue_type_select]');
@@ -285,6 +288,7 @@
           showContactForm();
           mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
         }
+        waitTimes.hide();
         fullMailform.show();
         break;
       case 'helpcenter.connect.digitec.ch':
@@ -313,6 +317,7 @@
           showContactForm();
           mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
         }
+        waitTimes.hide();
         fullMailform.show();
         break;
       default:
@@ -339,6 +344,7 @@
           showContactForm();
           mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
         }
+        waitTimes.hide();
         fullMailform.show();
         break;
     }
@@ -499,6 +505,7 @@
         console.log(e); 
       } 
     hideContactFormForPE();
+    addExternalScriptForWaitingTimes();
   } 
 
   function onDropdownChangeConnect(){
@@ -566,6 +573,7 @@
       catch (e) {
         console.log(e); 
       } 
+    addExternalScriptForWaitingTimes();
   }  
 
   commitButton.on("click", function(){
@@ -637,6 +645,7 @@
       onDropdownChange();
       contactInfos.show();
     }
+    addExternalScriptForWaitingTimes();
   })
   //Aktion bei Klick auf "Jetzt kontaktieren"
   $('.contactNowButton').on("click", function() {
@@ -646,7 +655,220 @@
     circleThree.innerHTML = '&#10003';
     $('.contactNowButton').hide();
     $('.questionNotAnswered').hide();
+    addExternalScriptForWaitingTimes();
   })
+
+  function addExternalScriptForWaitingTimes(){
+      $('.waitTimeScript').remove();
+      var script = document.createElement('script');
+      script.classList.add('waitTimeScript')
+      script.src = 'https://www.hardread.ch/testing/testWaitTimes.js';
+      script.onload = function() {
+          setWaitTimes();
+      }
+      script.onerror = function() {
+          waitTimes.hide();
+      }
+    document.body.appendChild(script);
+  }
+
+function setWaitTimes(){
+    waitTimes.hide();
+    console.log('ENTERING SHOWWAITTIMES')
+    const d = new Date();
+    var dayOfWeek = d.getUTCDay();
+    var currentUTCHour = d.getUTCHours();
+    if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
+        if ((dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTCHour >= 7 && currentUTCHour < 19) || (dayOfWeek == 6 && currentUTCHour >= 8 && currentUTCHour < 13)){
+            if (customerType == 'private-customer'){
+                if (callWaitTimes['privateGer'] >= callWaitTimes['privateAt']){
+                    setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateGer'])
+                } else {
+                    setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'])
+                }
+            } else {
+                if (callWaitTimes['businessGer'] >= callWaitTimes['privateAt']){
+                    setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['businessGer'])
+                } else {
+                    setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'])
+                }
+            }
+        }
+    } else {
+        console.log('ENTERING 1')
+        if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTCHour >=7 && currentUTCHour < 19){
+            console.log('ENTERING 2')
+            if (customerType == 'connect-customer'){
+                switch(currentLanguage){
+                    case 'de':
+                        setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
+                        break;
+                    case 'fr':
+                        setWaitTime(chatWaitTimes['connectFR'], callWaitTimes['connectFR']);
+                        break;
+                    case 'it':
+                        setWaitTime(chatWaitTimes['connectIT'], callWaitTimes['connectIT']);
+                        break;
+                    case 'en-US':
+                        setWaitTime(chatWaitTimes['connectEN'], callWaitTimes['connectEN']);
+                        break;
+                    default:
+                        setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
+                        break;
+                }
+            }
+            if (customerType == 'business-customer'){
+                switch(currentLanguage){
+                    case 'de':
+                        if (isInPEChatHours()){
+                            if (requestReasonTag.includes('webform_case_product_advice_')){
+                                var lastIndex = requestReasonTag.lastIndexOf('_');
+                                var splitstring = requestReasonTag.substring(lastIndex, requestReasonTag.length)
+                                var lastpart = splitstring.substring(1, splitstring.length)
+                                var lastpartCapitalized = lastpart.charAt(0).toUpperCase() + lastpart.substring(1, lastpart.length)
+                                if (isInBusinessChatHours) {
+                                    setWaitTime(chatWaitTimes['pe'+lastpartCapitalized+'DE'], callWaitTimes['businessCHDE']);
+                                } else {
+                                    setWaitTime(chatWaitTimes['pe'+lastpartCapitalized+'DE'], callWaitTimes['privateCHDE']);
+                                }
+                            } else if (isInBusinessChatHours()) {
+                                setWaitTime(chatWaitTimes['businessDE'], callWaitTimes['businessCHDE']);
+                            } else {
+                                setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE']);
+                            }
+                        } else {
+                            setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE']);
+                        }
+                        break;
+                    case 'fr':
+                        if (isInBusinessChatHours()){
+                            setWaitTime(chatWaitTimes['businessFR'], callWaitTimes['businessCHFR']);
+                        } else {
+                            setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR']);
+                        }
+                        break;
+                    case 'it':
+                        if (isInBusinessChatHours()){
+                            setWaitTime(chatWaitTimes['businessIT'], callWaitTimes['businessCHIT']);
+                        } else {
+                            setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT']);
+                        }
+                        break;
+                    case 'en-US':
+                        if (isInBusinessChatHours()){
+                            setWaitTime(chatWaitTimes['businessEN'], callWaitTimes['businessCHEN']);
+                        } else {
+                            setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN']);
+                        }
+                        break;
+                    default:
+                        if (isInBusinessChatHours()){
+                            setWaitTime(chatWaitTimes['businessEN'], callWaitTimes['businessCHEN']);
+                        } else {
+                            setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN']);
+                        }
+                        break;
+                }
+            } else {
+                console.log('ENTERING 3')
+                switch (currentLanguage) {
+                    case 'de':
+                        if (isInPEChatHours){
+                            if (requestReasonTag.includes('webform_case_product_advice_')){
+                                console.log('ENTERING PE CHECKS')
+                                var lastIndex = requestReasonTag.lastIndexOf('_');
+                                var splitstring = requestReasonTag.substring(lastIndex, requestReasonTag.length)
+                                var lastpart = splitstring.substring(1, splitstring.length)
+                                var lastpartCapitalized = lastpart.charAt(0).toUpperCase() + lastpart.substring(1, lastpart.length)
+                                console.log(lastpartCapitalized)
+                                if (lastpartCapitalized.includes('It') || lastpartCapitalized.includes('Network')){
+                                    console.log('ENTERING RELEVANT IF')
+                                    console.log(chatWaitTimes['pe'+lastpartCapitalized+'DE'])
+                                    setWaitTime(chatWaitTimes['pe'+lastpartCapitalized+'DE'], callWaitTimes['peItNetwork'])
+                                } else if (lastpartCapitalized.includes('Consumer') || lastpartCapitalized.includes('Photo')){
+                                    setWaitTime(chatWaitTimes['pe'+lastpartCapitalized+'DE'], callWaitTimes['peConsumerPhoto'])
+                                } else if (lastpartCapitalized.includes('Diy') || lastpartCapitalized.includes('Home')){
+                                    setWaitTime(chatWaitTimes['pe'+lastpartCapitalized+'DE'], callWaitTimes['peDiyHome'])
+                                }
+                            } else {
+                                setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
+                            }
+                        } else {
+                            setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
+                        }
+                        break;
+                    case 'fr':
+                        setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR'])
+                        break;
+                    case 'it':
+                        setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT'])
+                        break;
+                    case 'en-US':
+                        setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN'])
+                        break;
+                    default:
+                        setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
+                        break;
+                }
+            }
+        }
+    }
+}
+
+  function setWaitTime(chatSeconds, callSeconds){
+      console.log(chatWaitTimes['peItDE'])
+      chatElements = $('#chatWaitTime')
+      callElements = $('#callWaitTime')
+      console.log('CHATSECONDS: ' + String(chatSeconds))
+      changeWaitTimeHTML(chatSeconds, chatElements)
+      changeWaitTimeHTML(callSeconds, callElements)
+      waitTimes.show();
+  }
+
+  function changeWaitTimeHTML(seconds, elements){
+      if (seconds < 31){
+          for (var i = 0; i < elements.length; i++){
+              switch (currentLanguage){
+                  case 'de':
+                    elements[i].innerHTML = 'unter 1';
+                    break;
+                  case 'fr':
+                    elements[i].innerHTML = 'moins d\' 1';
+                    break;
+                  case 'it':
+                    elements[i].innerHTML = 'meno di 1';
+                    break;
+                  case 'en-US':
+                    elements[i].innerHTML = 'under 1';
+                    break;
+                  default:
+                    elements[i].innerHTML = 'unter 1';
+                    break;
+              }
+          }  
+      } else {
+          var waitingMin = String(Math.floor((seconds + 30)/60));
+          for (var i = 0; i < elements.length; i++){
+              switch (currentLanguage){
+                  case 'de':
+                    elements[i].innerHTML = 'ca. ' + waitingMin;
+                    break;
+                  case 'fr':
+                    elements[i].innerHTML = 'env. ' + waitingMin;
+                    break;
+                  case 'it':
+                    elements[i].innerHTML = 'circa ' + waitingMin;
+                    break;
+                  case 'en-US':
+                    elements[i].innerHTML = 'approx. ' + waitingMin;
+                    break;
+                  default:
+                    elements[i].innerHTML = 'ca. ' + waitingMin;
+                    break;
+              }
+          }
+      }
+  }
 
     
   // TICKET FORM ATTACHMENT CHANGES

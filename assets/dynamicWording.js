@@ -557,7 +557,11 @@ function filldynamicWording(){
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
-        'contactNow' : 'Jetzt kontaktieren'
+        'contactNow' : 'Jetzt kontaktieren',
+        'chatWaitTimeDesktop': 'Wartezeit: <font id="chatWaitTime"></font> min',
+        'callWaitTimeDesktop': 'Wartezeit: <font id="callWaitTime"></font> min',
+        'chatWaitTimeMobile': ', Wartezeit: <font id="chatWaitTime"></font> min',
+        'callWaitTimeMobile': ', Wartezeit: <font id="callWaitTime"></font> min'
         },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -617,7 +621,11 @@ function filldynamicWording(){
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
-        'contactNow' : 'Contacter maintenant'
+        'contactNow' : 'Contacter maintenant',
+        'chatWaitTimeDesktop': 'Attente: <font id="chatWaitTime"></font> min',
+        'callWaitTimeDesktop': 'Attente: <font id="callWaitTime"></font> min',
+        'chatWaitTimeMobile': ', Attente: <font id="chatWaitTime"></font> min',
+        'callWaitTimeMobile': ', Attente: <font id="callWaitTime"></font> min'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -677,7 +685,11 @@ function filldynamicWording(){
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
-        'contactNow' : 'Contatta ora'
+        'contactNow' : 'Contatta ora',
+        'chatWaitTimeDesktop': 'Attesa: <font id="chatWaitTime"></font> min',
+        'callWaitTimeDesktop': 'Attesa: <font id="callWaitTime"></font> min',
+        'chatWaitTimeMobile': ', Attesa: <font id="chatWaitTime"></font> min',
+        'callWaitTimeMobile': ', Attesa: <font id="callWaitTime"></font> min'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -737,7 +749,11 @@ function filldynamicWording(){
         'commaMultipleHoursPrivateCustomers' : commaMultipleHoursPrivateCustomers,
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
-        'contactNow' : 'Contact now'
+        'contactNow' : 'Contact now',
+        'chatWaitTimeDesktop': 'Waiting: <font id="chatWaitTime"></font> min',
+        'callWaitTimeDesktop': 'Waiting: <font id="callWaitTime"></font> min',
+        'chatWaitTimeMobile': ', Waiting: <font id="chatWaitTime"></font> min',
+        'callWaitTimeMobile': ', Waiting: <font id="callWaitTime"></font> min'
         }
     }
 
