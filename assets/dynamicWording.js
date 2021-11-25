@@ -558,10 +558,10 @@ function filldynamicWording(){
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
         'contactNow' : 'Jetzt kontaktieren',
-        'chatWaitTimeDesktop': 'Wartezeit: <font id="chatWaitTime"></font> min',
-        'callWaitTimeDesktop': 'Wartezeit: <font id="callWaitTime"></font> min',
-        'chatWaitTimeMobile': ', Wartezeit: <font id="chatWaitTime"></font> min',
-        'callWaitTimeMobile': ', Wartezeit: <font id="callWaitTime"></font> min'
+        'chatWaitTimeDesktop': 'Wartezeit: <font class="chatWaitTime"></font> min',
+        'callWaitTimeDesktop': 'Wartezeit: <font class="callWaitTime"></font> min',
+        'chatWaitTimeMobile': ', Wartezeit: <font class="chatWaitTime"></font> min',
+        'callWaitTimeMobile': ', Wartezeit: <font class="callWaitTime"></font> min'
         },
         fr: {      
         'privateCustomers' : 'Clients privés',

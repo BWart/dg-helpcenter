@@ -138,6 +138,7 @@
                       <b><font data-wording-key="phone"></font></b>
                       <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivate"></font> <font data-wording-key="openingHoursPrivate"></font><font data-wording-key="commaMultipleHoursPrivateCustomers"></font><font data-wording-key="openingDaysPrivate2Mobile"></font> <font data-wording-key="openingHoursPrivate2"></font></font>
                       <font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusiness"></font> <font data-wording-key="openingHoursBusiness"></font><font data-wording-key="commaMultipleHoursBusinessCustomers"></font><font data-wording-key="openingDaysBusiness2Mobile"></font> <font data-wording-key="openingHoursBusiness2"></font></font>
+                      <font class="waittime" style="font-size: 11px;" data-wording-key="callWaitTimeMobile"></font>
                     </div>
                     <div id="mobileInserter3"></div>
                   </td>
@@ -158,6 +159,7 @@
                       <b><font data-wording-key="chat"></font></b>
                       <font class="private-customer connect-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysPrivateChat"></font> <font data-wording-key="openingHoursPrivateChat"></font><font data-wording-key="commaMultipleHoursPrivateCustomersChat"></font><font data-wording-key="openingDaysPrivate2MobileChat"></font> <font data-wording-key="openingHoursPrivate2Chat"></font></font>
                       <font class="business-customer" style="font-size: 11px;">&nbsp;<font data-wording-key="openingDaysBusinessChat"></font> <font data-wording-key="openingHoursBusinessChat"></font><font data-wording-key="commaMultipleHoursBusinessCustomersChat"></font><font data-wording-key="openingDaysBusiness2MobileChat"></font> <font data-wording-key="openingHoursBusiness2Chat"></font></font>
+                      <font class="waittime" style="font-size: 11px;" data-wording-key="chatWaitTimeMobile"></font>
                       <div class="recommendedChannel" data-wording-key="recommendedChannel" style="float:right;"></div>
                     </div>
                     <div id="mobileInserter5"></div>
@@ -662,7 +664,7 @@
       $('.waitTimeScript').remove();
       var script = document.createElement('script');
       script.classList.add('waitTimeScript')
-      script.src = 'https://www.hardread.ch/testing/testWaitTimes.js';
+      script.src = 'https://www.hardread.ch/testing/waitTimes.js';
       script.onload = function() {
           setWaitTimes();
       }
@@ -817,8 +819,8 @@ function setWaitTimes(){
 
   function setWaitTime(chatSeconds, callSeconds){
       console.log(chatWaitTimes['peItDE'])
-      chatElements = $('#chatWaitTime')
-      callElements = $('#callWaitTime')
+      chatElements = $('.chatWaitTime')
+      callElements = $('.callWaitTime')
       console.log('CHATSECONDS: ' + String(chatSeconds))
       changeWaitTimeHTML(chatSeconds, chatElements)
       changeWaitTimeHTML(callSeconds, callElements)
@@ -1023,6 +1025,10 @@ function setWaitTimes(){
     ga('send', 'event', 'Opening Hours', 'ShowsInfo', $('.request_custom_fields_360014169819' + ' a.nesty-input').text());                                                                                     
   });
 
+  //Contact now button tracking
+  $('.contactNowButton').on("click", function () {
+      sendGARequestOpeningHours('Click Contact Now Button');
+  })
 
    //////////////////////////Downvote-button Formular////////////////////////////
 
