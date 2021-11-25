@@ -622,10 +622,10 @@ function filldynamicWording(){
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
         'contactNow' : 'Contacter maintenant',
-        'chatWaitTimeDesktop': 'Attente: <font id="chatWaitTime"></font> min',
-        'callWaitTimeDesktop': 'Attente: <font id="callWaitTime"></font> min',
-        'chatWaitTimeMobile': ', Attente: <font id="chatWaitTime"></font> min',
-        'callWaitTimeMobile': ', Attente: <font id="callWaitTime"></font> min'
+        'chatWaitTimeDesktop': 'Attente: <font class="chatWaitTime"></font> min',
+        'callWaitTimeDesktop': 'Attente: <font class="callWaitTime"></font> min',
+        'chatWaitTimeMobile': ', Attente: <font class="chatWaitTime"></font> min',
+        'callWaitTimeMobile': ', Attente: <font class="callWaitTime"></font> min'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -686,10 +686,10 @@ function filldynamicWording(){
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
         'contactNow' : 'Contatta ora',
-        'chatWaitTimeDesktop': 'Attesa: <font id="chatWaitTime"></font> min',
-        'callWaitTimeDesktop': 'Attesa: <font id="callWaitTime"></font> min',
-        'chatWaitTimeMobile': ', Attesa: <font id="chatWaitTime"></font> min',
-        'callWaitTimeMobile': ', Attesa: <font id="callWaitTime"></font> min'
+        'chatWaitTimeDesktop': 'Attesa: <font class="chatWaitTime"></font> min',
+        'callWaitTimeDesktop': 'Attesa: <font class="callWaitTime"></font> min',
+        'chatWaitTimeMobile': ', Attesa: <font class="chatWaitTime"></font> min',
+        'callWaitTimeMobile': ', Attesa: <font class="callWaitTime"></font> min'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -750,10 +750,10 @@ function filldynamicWording(){
         'commaMultipleHoursBusinessCustomers' : commaMultipleHoursBusinessCustomers,
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
         'contactNow' : 'Contact now',
-        'chatWaitTimeDesktop': 'Waiting: <font id="chatWaitTime"></font> min',
-        'callWaitTimeDesktop': 'Waiting: <font id="callWaitTime"></font> min',
-        'chatWaitTimeMobile': ', Waiting: <font id="chatWaitTime"></font> min',
-        'callWaitTimeMobile': ', Waiting: <font id="callWaitTime"></font> min'
+        'chatWaitTimeDesktop': 'Waiting: <font class="chatWaitTime"></font> min',
+        'callWaitTimeDesktop': 'Waiting: <font class="callWaitTime"></font> min',
+        'chatWaitTimeMobile': ', Waiting: <font class="chatWaitTime"></font> min',
+        'callWaitTimeMobile': ', Waiting: <font class="callWaitTime"></font> min'
         }
     }
 
