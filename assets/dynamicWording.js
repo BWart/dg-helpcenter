@@ -34,10 +34,10 @@ function filldynamicWording(){
     switch(portal){
         case'helpcenter.digitec.ch':
                 //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr: "; 
-                tagePrivatkundeFR = "Lu - Ve: "; 
-                tagePrivatkundeIT = "Lun - Ven: "; 
-                tagePrivatkundeEN = "Mo - Fr: "; 
+                tagePrivatkundeDE = "Mo - Fr "; 
+                tagePrivatkundeFR = "Lu - Ve "; 
+                tagePrivatkundeIT = "Lun - Ven "; 
+                tagePrivatkundeEN = "Mo - Fr "; 
                 tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
@@ -52,10 +52,10 @@ function filldynamicWording(){
                 break;
         case'helpcenter.galaxus.ch':
                 //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr: "; 
-                tagePrivatkundeFR = "Lu - Ve: "; 
-                tagePrivatkundeIT = "Lun - Ven: "; 
-                tagePrivatkundeEN = "Mo - Fr: "; 
+                tagePrivatkundeDE = "Mo - Fr "; 
+                tagePrivatkundeFR = "Lu - Ve "; 
+                tagePrivatkundeIT = "Lun - Ven "; 
+                tagePrivatkundeEN = "Mo - Fr "; 
                 tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
@@ -70,14 +70,14 @@ function filldynamicWording(){
                 break;
         case'helpcenter.galaxus.de':
                 //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr: "; 
-                tagePrivatkundeFR = "Lu - Ve: "; 
-                tagePrivatkundeIT = "Lun - Ven: "; 
-                tagePrivatkundeEN = "Mo - Fr: "; 
-                tagePrivatkunde2DE = " | Sa: ";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkundeDE = "Mo - Fr "; 
+                tagePrivatkundeFR = "Lu - Ve "; 
+                tagePrivatkundeIT = "Lun - Ven "; 
+                tagePrivatkundeEN = "Mo - Fr "; 
+                tagePrivatkunde2DE = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "09:00 - 14:00";
 
@@ -88,14 +88,14 @@ function filldynamicWording(){
                 break;
         case'helpcenter.galaxus.at':
                 //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr: "; 
-                tagePrivatkundeFR = "Lu - Ve: "; 
-                tagePrivatkundeIT = "Lun - Ven: "; 
-                tagePrivatkundeEN = "Mo - Fr: "; 
-                tagePrivatkunde2DE = " | Sa: ";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkundeDE = "Mo - Fr "; 
+                tagePrivatkundeFR = "Lu - Ve "; 
+                tagePrivatkundeIT = "Lun - Ven "; 
+                tagePrivatkundeEN = "Mo - Fr "; 
+                tagePrivatkunde2DE = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "09:00 - 14:00";
 
@@ -106,10 +106,10 @@ function filldynamicWording(){
                 break;
         case'helpcenter.connect.digitec.ch':
                 //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr: "; 
-                tagePrivatkundeFR = "Lu - Ve: "; 
-                tagePrivatkundeIT = "Lun - Ven: "; 
-                tagePrivatkundeEN = "Mo - Fr: "; 
+                tagePrivatkundeDE = "Mo - Fr "; 
+                tagePrivatkundeFR = "Lu - Ve "; 
+                tagePrivatkundeIT = "Lun - Ven "; 
+                tagePrivatkundeEN = "Mo - Fr "; 
                 tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
@@ -124,10 +124,10 @@ function filldynamicWording(){
                 break;
         default:
                 //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr: "; 
-                tagePrivatkundeFR = "Lu - Ve: "; 
-                tagePrivatkundeIT = "Lun - Ven: "; 
-                tagePrivatkundeEN = "Mo - Fr: "; 
+                tagePrivatkundeDE = "Mo - Fr "; 
+                tagePrivatkundeFR = "Lu - Ve "; 
+                tagePrivatkundeIT = "Lun - Ven "; 
+                tagePrivatkundeEN = "Mo - Fr "; 
                 tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
