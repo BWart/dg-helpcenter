@@ -1,5 +1,6 @@
 // Hauptfunktion, wartet bis chat geladen ist und ruft danach die anderen Funktionen auf
 function waitForChat(){
+    console.log('CALLING WAITFORCHAT')
     window.addEventListener('load', function() {
         changeWebWidgetSettingInitial();
         openWidgetForUnreadMessages();
@@ -219,6 +220,7 @@ function updateChatConnectionAfterDropdownChange(){
         checkDepartmentforInitialButtonChange(chatDepartment);                                                                                          
         listenDepartmentStatus(chatDepartment);
         changeWebWidgetSettingsOnChange(); 
+        //TODO: Test with changeButtonVisibility()
     }else{
         showChatButton();
     }
