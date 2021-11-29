@@ -74,7 +74,7 @@ function filldynamicWording(){
                 tagePrivatkundeFR = "Lu - Ve: "; 
                 tagePrivatkundeIT = "Lun - Ven: "; 
                 tagePrivatkundeEN = "Mo - Fr: "; 
-                tagePrivatkunde2DE = " | Sa";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2DE = " | Sa: ";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
@@ -92,7 +92,7 @@ function filldynamicWording(){
                 tagePrivatkundeFR = "Lu - Ve: "; 
                 tagePrivatkundeIT = "Lun - Ven: "; 
                 tagePrivatkundeEN = "Mo - Fr: "; 
-                tagePrivatkunde2DE = " | Sa";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2DE = " | Sa: ";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
