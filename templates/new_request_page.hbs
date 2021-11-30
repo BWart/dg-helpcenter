@@ -503,7 +503,7 @@
       }
       catch (e) {
         console.log(e); 
-        ga('send', 'event', 'Chat', 'Error', e);
+        ga('send', 'event', 'Errors', 'ChatLoad', str(e));
       } 
     hideContactFormForPE();
     addExternalScriptForWaitingTimes();
@@ -573,7 +573,7 @@
       }
       catch (e) {
         console.log(e); 
-        ga('send', 'event', 'Chat', 'Error', e);
+        ga('send', 'event', 'Errors', 'ChatLoad', str(e));
       } 
     addExternalScriptForWaitingTimes();
   }  
@@ -680,7 +680,12 @@ function setWaitTimes(){
     const d = new Date();
     var dayOfWeek = d.getUTCDay();
     var currentUTCHour = d.getUTCHours();
-    if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
+    const dateFromExternalScript = new Date(createTimeStampUTC)
+    const currentUTCDate = new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds())
+    const diffSeconds = Math.abs((currentUTCDate - dateFromExternalScript)/1000)
+    if (diffSeconds > 299){
+        waitTimes.hide()
+    } else if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
         if ((dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTCHour >= 7 && currentUTCHour < 19) || (dayOfWeek == 6 && currentUTCHour >= 8 && currentUTCHour < 13)){
             if (customerType == 'private-customer'){
                 if (callWaitTimes['privateGer'] >= callWaitTimes['privateAt']){
@@ -1156,7 +1161,7 @@ function setClosed(){
   }
 
   function swapContactOptions(){
-      console.log('ENTER SWAP')
+      //console.log('ENTER SWAP')
     $('#chatIconCellContent').insertBefore($('#row1cell1inserter'));
     $('#mailIconCellContent').insertBefore($('#row1cell2inserter'));
     $('#phoneIconCellContent').insertBefore($('#row1cell3inserter'));
@@ -1193,7 +1198,7 @@ function setClosed(){
   }
 
   function hideChatCells(){
-      console.log('ENTER HIDE')
+      //console.log('ENTER HIDE')
     $('#phoneIconCellContent').insertBefore($('#row1cell1inserter'));
     $('#mailIconCellContent').insertBefore($('#row1cell2inserter'));
     $('#chatIconCellContent').insertBefore($('#row1cell3inserter'));
@@ -1228,7 +1233,7 @@ function setClosed(){
   }
 
   function resetContactOptions(){
-      console.log('ENTER RESET')
+      //console.log('ENTER RESET')
     $('#chatIconCellContent').show();
     $('#chatTitleCellContent').show();
     $('#chatTextCellContent').show();
@@ -1263,7 +1268,7 @@ function setClosed(){
   }
 
 function swapContactOptionsForHiddenContactForm(){
-    console.log('ENTER SWAP2')
+    //console.log('ENTER SWAP2')
     $('#chatIconCellContent').insertBefore($('#row1cell1inserter'));
     $('#mailIconCellContent').insertBefore($('#row1cell3inserter'));
     $('#phoneIconCellContent').insertBefore($('#row1cell2inserter'));

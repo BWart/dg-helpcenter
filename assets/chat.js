@@ -214,7 +214,6 @@ function isInPEChatHours(){
 ///////////////////////////////////////////////////////////New Request Page Events/////////////////////////////////////////////////////////////
 
 function updateChatConnectionAfterDropdownChange(){
-    console.log('ENTER updateChatConnectionAfterDropdownChange')
     if(!isChatting()){
         var chatDepartment = getChatDepartment();                                                                                 
         checkDepartmentforInitialButtonChange(chatDepartment);                                                                                          
@@ -227,7 +226,6 @@ function updateChatConnectionAfterDropdownChange(){
 }
 
 function checkDepartmentforInitialButtonChange(selectedDepartment){
-    console.log('ENTER checkDepartmentforInitialButtonChange')
     var dep = zE('webWidget:get', 'chat:department', selectedDepartment);
     if(dep.status == 'online'){
         showChatButton();
