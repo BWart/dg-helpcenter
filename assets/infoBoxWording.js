@@ -29,6 +29,7 @@ function fillInfoBoxWording(){
                     hp4 = "/360010272859";
                     hp5 = "/360012795199";
                     hp6 = "/115005646085";
+                    hp7 = "/360000452549";
   
                     offerte = "CHF 5'000.-";
                     break;
@@ -44,6 +45,7 @@ function fillInfoBoxWording(){
                     hp4 = "/360010180420";
                     hp5 = "/360012690580";
                     hp6 = "/360007334059";
+                    hp7 = "/360014471940";
   
                     offerte = "CHF 5'000.-";
                     break;
@@ -59,6 +61,7 @@ function fillInfoBoxWording(){
                     hp4 = "/360010273099";
                     hp5 = "";
                     hp6 = "/360010182760";
+                    hp7 = "/360008226499";
   
                     offerte = "EUR 2'000.-";
                     break;
@@ -74,6 +77,7 @@ function fillInfoBoxWording(){
                     hp4 = "/4407061056530";
                     hp5 = "";
                     hp6 = "/4407011198994";
+                    hp7 = "/4407007830674";
   
                     offerte = "EUR 2'000.-";
                     break;
@@ -89,6 +93,7 @@ function fillInfoBoxWording(){
                     hp4 = "/360010272859";
                     hp5 = "/360012795199";
                     hp6 = "/115005646085";
+                    hp7 = "/360000452549";
   
                     offerte = "CHF 5'000.-";
                     break;
@@ -159,10 +164,10 @@ function fillInfoBoxWording(){
               'en-US' : "Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + shopURL + "after-sales/service-cases/select-position' target='blank'>report a defect</a>.<br><br>Damage caused by incorrect use is not covered by the warranty. For more information, see our <a href='" + shopURL + "wiki/559' target='blank'>warranty policy</a> and our <a href='" + shopURL + "Wiki/478' target='blank'>terms and conditions</a>."
         },
         "webform_case_wrong_product" : {
-              'de' : "Damit wir dein Anliegen rasch prüfen können, stelle uns die Herstellernummer oder den EAN-Code (Strichcode) des falsch erhaltenen Produkt zur Verfügung. Die Angaben dazu findest du auf der Produktverpackung.",
-              'fr' : "Afin que nous puissions vérifier rapidement votre demande, veuillez nous fournir le numéro du fabricant ou le code EAN (code-barres) du produit reçu de manière incorrecte. Vous trouverez ces informations sur l'emballage du produit.",
-              'it' : "Affinché possiamo controllare rapidamente la sua richiesta, la preghiamo di fornirci il numero del produttore o il codice EAN (codice a barre) del prodotto ricevuto in modo errato. Troverete le informazioni sulla confezione del prodotto.",
-              'en-US' : "To enable us to quickly check your request, please provide us with the manufacturer number or EAN code (barcode) of the incorrectly received product. You can find the information on the product packaging.",
+              'de' : "Damit wir dein Anliegen rasch prüfen können, stelle uns die Herstellernummer oder den EAN-Code (Strichcode) des falsch erhaltenen Produkt zur Verfügung. Die Angaben dazu findest du auf der Produktverpackung.<br>Weitere Informationen zum EAN-Code findest du <a href='" + helpcenterURL + "articles" + hp7 + "' target='blank'>hier</a>.",
+              'fr' : "Afin que nous puissions vérifier rapidement votre demande, veuillez nous fournir le numéro du fabricant ou le code EAN (code-barres) du produit reçu de manière incorrecte. Vous trouverez ces informations sur l'emballage du produit.<br>Vous trouverez plus d'informations sur le code EAN <a href='" + helpcenterURL + "articles" + hp7 + "' target='blank'>ici</a>.",
+              'it' : "Affinché possiamo controllare rapidamente la sua richiesta, la preghiamo di fornirci il numero del produttore o il codice EAN (codice a barre) del prodotto ricevuto in modo errato. Troverete le informazioni sulla confezione del prodotto.<br>Puoi trovare maggiori informazioni sul codice EAN <a href='" + helpcenterURL + "articles" + hp7 + "' target='blank'>qui</a>.",
+              'en-US' : "To enable us to quickly check your request, please provide us with the manufacturer number or EAN code (barcode) of the incorrectly received product. You can find the information on the product packaging. You can find more information about the EAN-code <a href='" + helpcenterURL + "articles" + hp7 + "' target='blank'>here</a>.",
               'deMailTemplate' : "Bitte beachte, dass wir nachfolgende Angaben zwingend benötigen.\nIch habe fälschlicherweise das folgende Produkt erhalten: \nMenge: \nEAN-Code (Strichcode auf der Verpackung): \nIch vermisse folgendes Produkt: ",
               'frMailTemplate' : "Veuillez noter que les informations suivantes sont obligatoires.\nJ'ai reçu le produit suivant par erreur : \nQuantité : \nCode EAN (code barre sur l'emballage) : \nIl me manque le produit suivant : ",
               'itMailTemplate' : "Si prega di notare che le seguenti informazioni sono obbligatorie.\nHo ricevuto il seguente prodotto per errore: \nQuantità: \nCodice EAN (codice a barre sulla confezione): \nMi manca il seguente prodotto: ",
@@ -367,7 +372,14 @@ function fillInfoBoxWording(){
         infoBoxWording['webform_case_order_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.";
         infoBoxWording['webform_case_payment_reminder']['de'] = "Es kann bis zu fünf Werktage dauern, bis deine Zahlung in unserem System verbucht wird. Deshalb kann es sein, dass sich die Mahnung/Zahlungserinnerung mit deiner Zahlung überschnitten hat. In diesem Fall kannst du die Mahnung ignorieren.<br>Weitere Möglichkeiten woran es liegen kann findest du unter <a href='" + helpcenterURL + "articles" + hp6 + "' target='blank'>Warum habe ich eine Zahlungserinnerung erhalten, obwohl ich bezahlt habe?</a>.";
         }  
-   
+      if (customerType == 'business-customer') {
+        infoBoxWording['webform_case_delete_account']['de'] = 'Nachdem dein Konto gelöscht wurde, hast du keinen Zugriff mehr auf deine elektronischen Kaufbelege und andere Unterlagen. Wir empfehlen dir daher, eine Kopie der noch benötigten Formulare zu drucken oder abzuspeichern, bevor du dein Konto löschen lässt.<br><br>Kontaktiere unseren Kundendienst, um die Löschung deines Kontos einzuleiten.';
+        infoBoxWording['webform_case_delete_account']['fr'] = "Une fois votre compte supprimé, vous n'aurez plus accès à vos reçus électroniques et autres documents. De ce fait, nous vous recommandons d'imprimer ou de sauvegarder une copie des formulaires dont vous avez encore besoin avant de supprimer votre compte.<br><br>Contactez notre service clientèle pour entamer la suppression de votre compte.";
+        infoBoxWording['webform_case_delete_account']['it'] = 'Una volta eliminato il conto, non avrai più accesso alle tue ricevute e documenti elettronici. Pertanto, consigliamo di stamparne o salvare una copia delle ricevute e dei moduli prima di cancellare il tuo conto in maniera definitiva.<br><br>Contatta il nostro servizio clienti per avviare la cancellazione del tuo account.';
+        infoBoxWording['webform_case_delete_account']['en-US'] = 'Once your account is deleted, you will no longer have access to your sales receipts and other documents. That’s why we recommend making a copy (printing out a hard copy or saving an electronic one) before you ask us to delete your account.<br><br>Contact our customer service to initiate the deletion of your account.';
+    }
+
+
         return infoBoxWording;
   }
   

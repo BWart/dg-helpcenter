@@ -684,7 +684,7 @@ function setWaitTimes(){
     const currentUTCDate = new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds())
     const diffSeconds = Math.abs((currentUTCDate - dateFromExternalScript)/1000)
     if (diffSeconds > 299){
-        waitTimes.hide()
+        waitTimes.hide();
     } else if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
         if ((dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTCHour >= 7 && currentUTCHour < 19) || (dayOfWeek == 6 && currentUTCHour >= 8 && currentUTCHour < 13)){
             if (customerType == 'private-customer'){
@@ -827,6 +827,7 @@ function setClosed(){
       if (chatSeconds > 329){
           $(".recommendedChannel").css('display' , 'none');
       } else {
+          $(".recommendedChannel").css('display' , 'inline-block');
       }
       var chatElements = $('.chatWaitTime')
       var callElements = $('.callWaitTime')
