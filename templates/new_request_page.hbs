@@ -504,7 +504,7 @@
       }
       catch (e) {
         console.log(e); 
-        ga('send', 'event', 'Errors', 'ChatLoad', str(e));
+        ga('send', 'event', 'Errors', 'ChatLoad', String(e));
       } 
     hideContactFormForPE();
     addExternalScriptForWaitingTimes();
@@ -574,7 +574,7 @@
       }
       catch (e) {
         console.log(e); 
-        ga('send', 'event', 'Errors', 'ChatLoad', str(e));
+        ga('send', 'event', 'Errors', 'ChatLoad', String(e));
       } 
     addExternalScriptForWaitingTimes();
   }  
