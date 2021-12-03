@@ -815,6 +815,11 @@ ul {
   left: 15px;
 }
 
+::placeholder {
+    opacity: 1;
+    color: rgb(187, 187, 187);
+}
+
 [dir="rtl"] .search::before {
   right: 15px;
   left: auto;

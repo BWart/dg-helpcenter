@@ -576,6 +576,7 @@
         console.log(e); 
         ga('send', 'event', 'Errors', 'ChatLoad', String(e));
       } 
+    contactNowClicked();
     addExternalScriptForWaitingTimes();
   }  
 
@@ -653,6 +654,10 @@
 
   //Aktion bei Klick auf "Jetzt kontaktieren"
   $('.contactNowButton').on("click", function() {
+    contactNowClicked();
+  })
+
+  function contactNowClicked(){
     contactInfos.show();
     circleThree.classList.remove('circleOpenStep');
     circleThree.classList.add('circleStepCompleted');
@@ -660,7 +665,7 @@
     $('.contactNowButton').hide();
     $('.questionNotAnswered').hide();
     addExternalScriptForWaitingTimes();
-  })
+  }
 
   function addExternalScriptForWaitingTimes(){
       $('.waitTimeScript').remove();
@@ -826,9 +831,10 @@ function setClosed(){
 
   function setWaitTime(chatSeconds, callSeconds){
       if (chatSeconds > 329){
+          console.log('WaitTimeTooLong')
           $(".recommendedChannel").css('display' , 'none');
       } else {
-          $(".recommendedChannel").css('display' , 'inline-block');
+          console.log('WaitTimeTooShort')
       }
       var chatElements = $('.chatWaitTime')
       var callElements = $('.callWaitTime')
@@ -1091,7 +1097,7 @@ function setClosed(){
 
   // Entfernt ChatTabeCell, wenn Bedigungen erfüllt sind
   function removeChatBasedOnRequestType(){
-    if(isGermany() || isBusinessRequestReasonWithoutChat() || isConnectWithoutChat()){
+    if(isGermany() || isBusinessRequestReasonWithoutChat()){
     //if (true) {
       hideChatCells();
       //$('.chatTableCell').hide();
@@ -1101,15 +1107,6 @@ function setClosed(){
       //$('.chatTableCell').show();
       var temp = document.getElementById('desktopContactTable');
       //temp.setAttribute('width', '100%')
-    }
-  }
-
-
-  function isConnectWithoutChat(){
-    if(customerType == 'connect-customer' && currentLanguage != 'fr' && currentLanguage != 'de'){
-      return true;
-    }else{
-      return false;
     }
   }
 
@@ -1146,6 +1143,7 @@ function setClosed(){
 
   // CSS Change für Chat Button Offline
   function hideChatButton(){
+      console.log('HIDECHATBUTTON')
     $(".button-chat").addClass("button-offline");
  	$(".button-chat").html(getButtonText('chatNotOnline'));
     $(".recommendedChannel").css('display' , 'none');
@@ -1155,6 +1153,7 @@ function setClosed(){
 
   // CSS Change für Chat Button Online
   function showChatButton(){
+      console.log('SHOWCHATBUTTON')
     $(".button-chat").removeClass("button-offline");
     $(".button-chat").html(getButtonText('chatUs'));
     $(".recommendedChannel").css('display' , 'inline-block');

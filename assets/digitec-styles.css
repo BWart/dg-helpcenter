@@ -351,3 +351,9 @@ select:focus {
 .contactFormText {
   border-color: #00559d;
 }
+
+#query {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: Roboto, Arial, sans-serif;
+}

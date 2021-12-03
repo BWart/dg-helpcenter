@@ -135,6 +135,7 @@ function getChatDepartmentType(){
         default:
             chatDepartmentType = 'Private';
     }
+    return 'Testgroup'
     return chatDepartmentType;
 }
 
