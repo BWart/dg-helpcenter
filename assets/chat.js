@@ -1,6 +1,5 @@
 // Hauptfunktion, wartet bis chat geladen ist und ruft danach die anderen Funktionen auf
 function waitForChat(){
-    console.log('CALLING WAITFORCHAT')
     window.addEventListener('load', function() {
         changeWebWidgetSettingInitial();
         openWidgetForUnreadMessages();
@@ -247,12 +246,12 @@ function listenDepartmentStatus(selectedDepartment){
 
 // Shows Chat button if anyone is available and inside opening hours
 function changeButtonVisibility(status){
-    console.log('ENTERING changeButtonVisibility Part 1')
+    //console.log('ENTERING changeButtonVisibility Part 1')
     if(status == 'online'){
-        console.log('ENTERING changeButtonVisibility Part 2 : online')
+        //console.log('ENTERING changeButtonVisibility Part 2 : online')
         showChatButton();
     }else{
-        console.log('ENTERING changeButtonVisibility Part 2 : else')
+        //console.log('ENTERING changeButtonVisibility Part 2 : else')
         hideChatButton();
     }
   }
