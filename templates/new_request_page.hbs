@@ -182,11 +182,13 @@
 <script>
 
   function commitButtonPressed(){
+    sendGARequestOpeningHours('ContactForm Commit clicked');
     sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
     requestReasonDropdown.insertBefore(mailFormMailInput);
     customerTypeDropdown.insertBefore(mailFormMailInput);
     requestReasonDropdown.hide()
     customerTypeDropdown.hide()
+
   }
   //The form is fully hidden initially
 
@@ -508,6 +510,7 @@
       } 
     hideContactFormForPE();
     addExternalScriptForWaitingTimes();
+    contactNowClicked();
   } 
 
   function onDropdownChangeConnect(){
@@ -659,11 +662,11 @@
 
   function contactNowClicked(){
     contactInfos.show();
-    circleThree.classList.remove('circleOpenStep');
-    circleThree.classList.add('circleStepCompleted');
-    circleThree.innerHTML = '&#10003';
+    //circleThree.classList.remove('circleOpenStep');
+    //circleThree.classList.add('circleStepCompleted');
+    //circleThree.innerHTML = '&#10003';
     $('.contactNowButton').hide();
-    $('.questionNotAnswered').hide();
+    //$('.questionNotAnswered').hide();
     addExternalScriptForWaitingTimes();
   }
 
