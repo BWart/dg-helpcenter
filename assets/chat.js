@@ -199,6 +199,9 @@ function isInBusinessChatHours(){
 //Returns true before 17:55
 function isInPEChatHours(){
     var today = new Date();
+    if (today.getUTCDay() < 1 || today.getUTCDay() > 5){
+        return false;
+    }
     if((today.getUTCHours() == 16 && today.getMinutes() >=55)){
         return false;
     }
