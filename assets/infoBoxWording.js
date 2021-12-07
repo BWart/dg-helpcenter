@@ -338,22 +338,22 @@ function fillInfoBoxWording(){
           'en-US' : "<br>Thank you for your suggestion for improvement.<br><br>"
     },
     "outputRadiobuttonFeedback1" : {
-          'de' : "Die Informationen sind falsch oder verwirrend.",
-          'fr' : "Les informations sont erronées ou confuses.",
-          'it' : "Le informazioni sono sbagliate o confuse.",
-          'en-US' : "The information is incorrect or confusing."
+          'de' : " Die Informationen sind falsch oder verwirrend.",
+          'fr' : " Les informations sont erronées ou confuses.",
+          'it' : " Le informazioni sono sbagliate o confuse.",
+          'en-US' : " The information is incorrect or confusing."
     },
     "outputRadiobuttonFeedback2" : {
-          'de' : "Die Informationen sind unvollständig.",
-          'fr' : "L'information est incomplète.",
-          'it' : "Le informazioni sono incomplete.",
-          'en-US' : "The information is incomplete."
+          'de' : " Die Informationen sind unvollständig.",
+          'fr' : " L'information est incomplète.",
+          'it' : " Le informazioni sono incomplete.",
+          'en-US' : " The information is incomplete."
     },
     "outputRadiobuttonFeedback3" : {
-          'de' : "Ich wünsche mir einen besseren Service.",
-          'fr' : "J'aimerais voir un meilleur service.",
-          'it' : "Vorrei vedere un servizio migliore.",
-          'en-US' : "I would like to see better service."
+          'de' : " Ich wünsche mir einen besseren Service.",
+          'fr' : " J'aimerais voir un meilleur service.",
+          'it' : " Vorrei vedere un servizio migliore.",
+          'en-US' : " I would like to see better service."
     },
     "outputButtonFeedback" : {
           'de' : "Senden",
