@@ -407,13 +407,14 @@ function fillInfoBoxWording(){
         infoBoxWording['webform_case_shipping_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas länger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.";
         infoBoxWording['webform_case_order_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.";
         infoBoxWording['webform_case_payment_reminder']['de'] = "Es kann bis zu fünf Werktage dauern, bis deine Zahlung in unserem System verbucht wird. Deshalb kann es sein, dass sich die Mahnung/Zahlungserinnerung mit deiner Zahlung überschnitten hat. In diesem Fall kannst du die Mahnung ignorieren.<br>Weitere Möglichkeiten woran es liegen kann findest du unter <a href='" + helpcenterURL + "articles" + hp6 + "' target='blank'>Warum habe ich eine Zahlungserinnerung erhalten, obwohl ich bezahlt habe?</a>.";
-        }  
+        }
+      if (typeof customerType !== 'undefined') {  
       if (customerType == 'business-customer') {
         infoBoxWording['webform_case_delete_account']['de'] = 'Nachdem dein Konto gelöscht wurde, hast du keinen Zugriff mehr auf deine elektronischen Kaufbelege und andere Unterlagen. Wir empfehlen dir daher, eine Kopie der noch benötigten Formulare zu drucken oder abzuspeichern, bevor du dein Konto löschen lässt.<br><br>Kontaktiere unseren Kundendienst, um die Löschung deines Kontos einzuleiten.';
         infoBoxWording['webform_case_delete_account']['fr'] = "Une fois votre compte supprimé, vous n'aurez plus accès à vos reçus électroniques et autres documents. De ce fait, nous vous recommandons d'imprimer ou de sauvegarder une copie des formulaires dont vous avez encore besoin avant de supprimer votre compte.<br><br>Contactez notre service clientèle pour entamer la suppression de votre compte.";
         infoBoxWording['webform_case_delete_account']['it'] = 'Una volta eliminato il conto, non avrai più accesso alle tue ricevute e documenti elettronici. Pertanto, consigliamo di stamparne o salvare una copia delle ricevute e dei moduli prima di cancellare il tuo conto in maniera definitiva.<br><br>Contatta il nostro servizio clienti per avviare la cancellazione del tuo account.';
         infoBoxWording['webform_case_delete_account']['en-US'] = 'Once your account is deleted, you will no longer have access to your sales receipts and other documents. That’s why we recommend making a copy (printing out a hard copy or saving an electronic one) before you ask us to delete your account.<br><br>Contact our customer service to initiate the deletion of your account.';
-    }
+    }}
 
 
         return infoBoxWording;
