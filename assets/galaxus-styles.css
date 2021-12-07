@@ -287,9 +287,9 @@ select:focus {
 }
 
 .article-vote[aria-selected="true"]{
-  background-color: #eee;
+  background-color: #ddd;
   color: #000;
-  border: 1px solid #eee; 
+  border: 1px solid #ddd; 
 }
 
 /*Search field*/
