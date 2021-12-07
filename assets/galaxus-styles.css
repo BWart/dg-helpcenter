@@ -128,10 +128,24 @@ html {
 /* aus style.css */
 
 
-.button, [role="button"]{
+/*.button, [role="button"]{
   border: 1px solid #444;
   color: #fff;
   background-color: #444;
+}*/
+
+.button{
+  border: 1px solid #eee;
+  color: #000;
+  background-color: #eee;
+}
+
+.button[disabled]{
+  background-color: #ddd;
+  /*drüber war schon*/
+  color: #999;
+  border: 1px solid #ddd;
+  pointer-events:none;
 }
 
 .button-back{
@@ -164,24 +178,59 @@ html {
   border: 1px solid #bebebe;  
 }
 
-.button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover, .button-back:hover, .button-contact-article:hover {
+/*.button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover, .button-back:hover {
   background-color: #565656;
   color: #fff;
   border: 1px solid #565656;
+}*/
+
+.button:hover, .button:focus, [role="button"]:hover, [role="button"]:focus, .button[aria-selected="true"]:hover, .button[aria-selected="true"]:focus, .button[aria-selected="true"]:active, [role="button"][aria-selected="true"]:hover, [role="button"][aria-selected="true"]:focus, [role="button"][aria-selected="true"]:active, .button-contact:hover, .button-back:hover {
+  background-color: #ddd;
+  color: #000;
+  border: 1px solid #ddd;
 }
 
-.button-large, input[type="submit"] {
+/*.button-large, input[type="submit"] {
   color: #fff;
   background-color: #444;
   border: 1px solid #444;
+}*/
+
+.button-large, input[type="submit"] {
+  color: #000;
+  background-color: #eee;
+  border: 1px solid #eee;
 }
 
-.button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
+/*.button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
   background:#000;
   color:#fff;
   border: 1px solid #000;
+}*/
+
+.button-large:hover, .button-large:active, .button-large:focus, input[type="submit"]:hover, input[type="submit"]:active, input[type="submit"]:focus {
+  background:#ddd;
+  color:#000;
+  border: 1px solid #ddd;
 }
 
+/*//////////////////////////////////////////////////////////////////////////*/
+/*.button-large[disabled], input[type="submit"][disabled] {
+  background-color: #ddd;
+  drüber war schon
+  border: 1px solid #eee;
+  pointer-events:none;
+}*/
+
+.button-large[disabled], input[type="submit"][disabled] {
+  background-color: #ddd;
+  /*drüber war schon*/
+  color: #999;
+  border: 1px solid #ddd;
+  pointer-events:none;
+}
+
+/*/////////////////*/
 .button-offline{
   color: #bebebe;
   background-color: #ededed;

@@ -99,9 +99,12 @@
             <div class="article-votes-controls" role='radiogroup'>
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
               {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
-              <div id='downvoteText'></div>
-              <div id="downvoteButton"></div>
             </div>
+              <div id='upvoteText'></div>
+              <div id='downvoteText'></div>
+              <div id="downvoteText2"></div>
+              <div id="downvoteCheckradio"></div>
+              <input type="button" value="" style="width: auto" class="button" id="submitFeedback" disabled="disabled" aria-selected="false"/>
             <small class="article-votes-count">
               {{vote 'label' class='article-vote-label'}}
             </small>
@@ -240,16 +243,190 @@
 
   //////////////////////////////////////////////////////////Fedback Formular///////////////////////////////////////////////////////////////////////////
   
-  /*
-  
+ 
   //Get the Infobox Content based on Rule
   var portal = window.location.hostname;
 
   var infoBoxWording = fillInfoBoxWording(portal);
   var currentLanguage = $('html').attr('lang');
+  //console.log(currentLanguage);
+
+  //Übersetzungen in Variablen speichern
+  var rb1= infoBoxWording['outputRadiobuttonFeedback1'][currentLanguage];
+  var rb2= infoBoxWording['outputRadiobuttonFeedback2'][currentLanguage];
+  var rb3= infoBoxWording['outputRadiobuttonFeedback3'][currentLanguage];
+  var btn= infoBoxWording['outputButtonFeedback'][currentLanguage];
+
+  var checkedRadiobutton;
+  $('#submitFeedback').hide();
+
+
+  //Wenn bereits berwetung abgegeben aber Seite neu aufgerufen wird & wenn negatives feedback abgegeben wurde
+  if ( sessionStorage.getItem('Feedback') == 3 && $('.article-vote-up').attr('aria-selected') == "true") {
+      $('#downvoteText2').hide(); // text der angezeigt ist wenn bereits downvote feedack abgegeben wurde und Seite neu besucht
+      $('#upvoteText').show();
+      
+      //console.log("currentLanguageUpVotetBefore");
+      document.getElementById('upvoteText').innerHTML= infoBoxWording['outputUpvoteFeedbackButtonText'][currentLanguage];
+
+      sessionStorage.setItem('Feedback', 3);
+      sessionStorage.getItem('Feedback');
+} 
+else if( sessionStorage.getItem('Feedback') == 1 && $('.article-vote-down').attr('aria-selected') == "true"){
+      /*$('#submitFeedback').data('clicked', 'yes') && */
+      $('#upvoteText').hide();
+      $('#downvoteText2').show();
+
+      //console.log("currentLanguageDownVotetBefore");
+      document.getElementById('downvoteText2').innerHTML= infoBoxWording['outputDownvoteFeedbackButtonText2'][currentLanguage];
+      //console.log('window reload session getItem value 1');
+
+      sessionStorage.setItem('Feedback', 1);
+      sessionStorage.getItem('Feedback');
+    
+} 
+  else if(sessionStorage.getItem('Feedback') == 2){
+      $('.article-vote-down').attr('aria-selected', 'true');
+}
+  else if(sessionStorage.getItem('Feedback') == 0){
+      $('.article-vote-down').attr('aria-selected', 'false');
+}
+else if($('.article-vote-up').attr('aria-selected') == "false" && $('.article-vote-down').attr('aria-selected') == "false"){
+      sessionStorage.setItem('Feedback', 0);
+      sessionStorage.getItem('Feedback');
+}
+  else {
+      $('#downvoteText2').hide();
+      $('#upvoteText').hide(); 
+}
 
 
 
+///////////Seiten reload
+      $(window).on('load', function(){
+        // your logic here
+        if(sessionStorage.getItem('Feedback') == 2){
+          $('.article-vote-down').attr('aria-selected', 'false');
+          sessionStorage.setItem('Feedback', 0);
+        }
+ 
+      });
+
+///////////////////////////////////aria nach nein drücken reload nein drücken macht sich selber false
+
+
+$('.article-vote-up').on('click',function(){
+      //console.log("upvote click");
+      ga("send", "event", "Feedback Radiobutton", "Positives Feedback", label);
+      $("#submitFeedback").prop("disabled", true);
+
+      $('#downvoteText').hide();
+      $('#downvoteCheckradio').hide();
+      $('#upvoteText').show();
+      $('#downvoteText2').hide();
+      $('#submitFeedback').hide();
+
+      //console.log(currentLanguage);
+      document.getElementById('upvoteText').innerHTML= infoBoxWording['outputUpvoteFeedbackButtonText'][currentLanguage];
+      sessionStorage.setItem('Feedback', 3);
+      sessionStorage.getItem('Feedback');
+});
+
+
+  $('.article-vote-down').on('click',function(){
+      //console.log("downvote click");
+
+      $('#upvoteText').hide();
+      $('#downvoteText').show();
+      $('#downvoteCheckradio').show();
+      $('#downvoteText2').hide();
+      $('#submitFeedback').show();
+
+
+      document.getElementById('downvoteText').innerHTML = infoBoxWording['outputDownvoteFeedbackButtonText'][currentLanguage];
+      document.getElementById('downvoteCheckradio').innerHTML = '<form name="formRadiobuttons" id="formRadiobuttons" onsubmit="return validate(); return false" style="display: inline-block" ><p style="text-align:left;"><input type="radio" name="radiobuttons" value="r1">'+ rb1 +'</input><br><input type="radio" name="radiobuttons" value="r2">' + rb2 +'</input><br><input type="radio" name="radiobuttons" value="r3">' + rb3 + '</input></p><br><br></form>';
+      /*onsubmit="return validate()"*/
+
+      $("input[type='radio']").change(function () {$("#submitFeedback").prop("disabled", false);});
+      $('#submitFeedback').val(btn);
+
+      //console.log('vor arial down');
+      $('.article-vote-down').attr('aria-selected', 'true');
+
+      sessionStorage.setItem('Feedback', 2);
+      sessionStorage.getItem('Feedback');
+      //console.log('downvote');
+  });
+
+    //console.log('vor submit');
+
+    //URL Thema für GA ->label
+    var url = window.location.pathname.split('/');
+    var label= url[4];
+    //console.log(label);
+
+  ////////Submit Button zum Feedback abgeben mit GA
+  $('#submitFeedback').on('click',function(){
+       //console.log("google analytics");
+       validate();
+       ga("send", "event", "Feedback Radiobutton", checkedRadiobutton, label);
+
+       console.log(label);
+       console.log(checkedRadiobutton);
+
+      $('#upvoteText').hide();
+      $('#downvoteText2').show();
+      $('#downvoteText').hide();
+      $('#downvoteCheckradio').hide();
+      $('#upvoteText').hide();
+      $('#submitFeedback').hide();
+
+      document.getElementById('downvoteText2').innerHTML= infoBoxWording['outputDownvoteFeedbackButtonText2'][currentLanguage];
+      //console.log('submit clicked');
+
+      sessionStorage.setItem('Feedback', 1);
+      sessionStorage.getItem('Feedback');
+  });
+
+
+  //wenn radiobutton geklickt wird, wird validiert welche Option und in das GA gepackt und
+  function validate(){
+    var valid=false;
+    var arr = document.formRadiobuttons.radiobuttons;
+
+    for(var i=0; i<arr.length;i++){
+      if(arr[i].checked){
+        //console.log(i);
+        valid=true;
+        break;
+      }
+    }
+    if(valid){
+        sessionStorage.setItem('Feedback', 1);
+        if(i == 0){
+            //console.log(rb1);
+            checkedRadiobutton=rb1;
+        }
+        else if(i ==1){
+            //console.log(rb2);
+            checkedRadiobutton=rb2;
+        }
+        else{ 
+            //console.log(rb3);
+            checkedRadiobutton=rb3;
+        }
+    }
+    else{
+        sessionStorage.setItem('Feedback', 0);
+        /*$('.article-vote-down').attr('aria-selected', 'false');*/
+        return false;
+    }
+  };
+
+
+
+  /*
+  
   //////////Wenn Downvote gedrueckt wird erscheint ein Feedback Knopf/////////
 
   var h1Header = $('.article-title').text(); //Artikelseite Überschrift

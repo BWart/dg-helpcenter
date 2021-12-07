@@ -319,24 +319,60 @@ function fillInfoBoxWording(){
         },
   
         //Feedback Formular Texte
-        "outputFeedbackButtonText" : {
-              'de' : "<br>Hast du Verbesserungsvorschläge für den Beitrag?<br><br>",
-              'fr' : "<br>Avez-vous des suggestions pour améliorer le poste ?<br><br>",
-              'it' : "<br>Hai qualche suggerimento per migliorare il post?<br><br>",
-              'en-US' : "<br>Do you have any suggestions for improving the post?<br><br>"
-        },
-        "outputFeedbackLabelPart1" : {
-              'de' : "Feedback zu Helpcenter Beitrag: ",
-              'fr' : "Feed-back sur le post du Helpcenter : ",
-              'it' : "Feedback sul post dell'Helpcenter: ",
-              'en-US' : "Feedback to Helpcenter post: " 
-        },
-        "feedbackThanks" : {
-              'de' : "Vielen Dank für dein Feedback!<br>",
-              'fr' : "Merci pour vos commentaires!<br>",
-              'it' : "Grazie per il tuo feedback!<br>",
-              'en-US' : "Thank you for your feedback!<br>"
-        },
+        "outputUpvoteFeedbackButtonText" : {
+            'de' : "<br>Vielen Dank für Dein Feedback.<br><br>",
+            'fr' : "<br>Merci pour vos commentaires.<br><br>",
+            'it' : "<br>Grazie per il vostro feedback.<br><br>",
+            'en-US' : "<br>Thank you for your feedback.<br><br>"
+      },
+      "outputDownvoteFeedbackButtonText" : {
+          'de' : "<br>Warum war die Information nicht hilfreich?<br><br>",
+          'fr' : "<br>Pourquoi les informations n'ont-elles pas été utiles ?<br><br>",
+          'it' : "<br>Perché le informazioni non sono state utili?<br><br>",
+          'en-US' : "<br>Why was the information not helpful?<br><br>"
+    },
+    "outputDownvoteFeedbackButtonText2" : {
+          'de' : "<br>Vielen Dank für deinen Verbesserungsvorschlag.<br><br>",
+          'fr' : "<br>Merci pour votre suggestion d'amélioration.<br><br>",
+          'it' : "<br>Grazie per il vostro suggerimento di miglioramento.<br><br>",
+          'en-US' : "<br>Thank you for your suggestion for improvement.<br><br>"
+    },
+    "outputRadiobuttonFeedback1" : {
+          'de' : "Die Informationen sind falsch oder verwirrend.",
+          'fr' : "Les informations sont erronées ou confuses.",
+          'it' : "Le informazioni sono sbagliate o confuse.",
+          'en-US' : "The information is incorrect or confusing."
+    },
+    "outputRadiobuttonFeedback2" : {
+          'de' : "Die Informationen sind unvollständig.",
+          'fr' : "L'information est incomplète.",
+          'it' : "Le informazioni sono incomplete.",
+          'en-US' : "The information is incomplete."
+    },
+    "outputRadiobuttonFeedback3" : {
+          'de' : "Ich wünsche mir einen besseren Service.",
+          'fr' : "J'aimerais voir un meilleur service.",
+          'it' : "Vorrei vedere un servizio migliore.",
+          'en-US' : "I would like to see better service."
+    },
+    "outputButtonFeedback" : {
+          'de' : "Senden",
+          'fr' : "Envoyer",
+          'it' : "Invia",
+          'en-US' : "Send"
+    },
+      "outputFeedbackLabelPart1" : {
+            'de' : "Feedback zu Helpcenter Beitrag: ",
+            'fr' : "Feed-back sur le post du Helpcenter : ",
+            'it' : "Feedback sul post dell'Helpcenter: ",
+            'en-US' : "Feedback to Helpcenter post: " 
+      },
+      "feedbackThanks" : {
+            'de' : "Vielen Dank für dein Feedback!<br>",
+            'fr' : "Merci pour vos commentaires!<br>",
+            'it' : "Grazie per il tuo feedback!<br>",
+            'en-US' : "Thank you for your feedback!<br>"
+      },
   
         //LEVEL 0: Connect Tags
         "webform_case_connect_customer" : {

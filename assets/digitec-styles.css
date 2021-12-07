@@ -124,10 +124,24 @@ h1, h2, h3, h4, h5, h6 {
 /* aus style.css */
 
 
-.button, [role="button"]{
+/*.button, [role="button"]{
   border: 1px solid #00559d;
   color: #fff;
   background-color: #00559d;
+}*/
+
+.button{
+  border: 1px solid #d6e6f4;
+  color: #00559d;
+  background-color: #d6e6f4;
+}
+
+.button[disabled]{
+  background-color: #d6e4ef;
+  /*drüber war schon*/
+  color: #a6c0d6;
+  border: 1px solid #d6e4ef;
+  pointer-events:none;
 }
 
 .button-back{
@@ -234,11 +248,17 @@ select:focus {
 #hrefEinreichen{
   color: #fff;
 }
-
-.article-vote[aria-selected="true"]{
+/*///////////////////////////////////////////*/
+/*.article-vote[aria-selected="true"]{
   background-color: #d6e6f4;
   color: #00559d;
   border: 1px solid #d6e6f4; 
+}*/
+
+.article-vote[aria-selected="true"]{
+  background-color: #00559d;
+  color: #fff;
+  border: 1px solid #00559d; 
 }
 
 .font1{
