@@ -187,7 +187,8 @@ function filldynamicWording(){
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
         'contactNow' : 'Jetzt kontaktieren',
         'chatWaitTime': 'Wartezeit <font class="chatWaitTime"></font> min',
-        'callWaitTime': 'Wartezeit <font class="callWaitTime"></font> min'
+        'callWaitTime': 'Wartezeit <font class="callWaitTime"></font> min',
+        'toShop' : '<a href="https://www.digitec.ch/" target="blank">Zum Shop</a>'
         },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -230,7 +231,8 @@ function filldynamicWording(){
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
         'contactNow' : 'Contacter maintenant',
         'chatWaitTime': 'Réponse en <font class="chatWaitTime"></font> min',
-        'callWaitTime': 'Réponse en <font class="callWaitTime"></font> min'
+        'callWaitTime': 'Réponse en <font class="callWaitTime"></font> min',
+        'toShop' : '<a href="https://www.digitec.ch/" target="blank">Vers le Shop</a>'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -273,7 +275,8 @@ function filldynamicWording(){
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
         'contactNow' : 'Contatta ora',
         'chatWaitTime': 'Risposta in <font class="chatWaitTime"></font> min',
-        'callWaitTime': 'Risposta in <font class="callWaitTime"></font> min'
+        'callWaitTime': 'Risposta in <font class="callWaitTime"></font> min',
+        'toShop' : '<a href="https://www.digitec.ch/" target="blank">Al Shop</a>'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -315,8 +318,9 @@ function filldynamicWording(){
         'chatLanguage2' : 'English',
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
         'contactNow' : 'Contact now',
-        'chatWaitTime': 'Answer in <font class="chatWaitTime"></font> min',
-        'callWaitTime': 'Answer in <font class="callWaitTime"></font> min'
+        'chatWaitTime': 'Reply time <font class="chatWaitTime"></font> min',
+        'callWaitTime': 'Reply time <font class="callWaitTime"></font> min',
+        'toShop' : '<a href="https://www.digitec.ch/" target="blank">To Shop</a>'
         }
     }
 

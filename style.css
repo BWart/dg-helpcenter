@@ -844,7 +844,7 @@ ul {
 
 .hero-inner {
   position: relative;
-  top: 50%;
+  top: 60%;
   transform: translateY(-50%);
   max-width: 610px;
   margin: 0 auto;
@@ -4735,6 +4735,18 @@ html {
     display : none !important;
   }
 }
+
+@media (min-width: 426px) {
+    .hideOver426 {
+      display : none !important;
+    }
+  }
+  
+  @media (max-width: 425px) {
+    .hideUnder425 {
+      display : none !important;
+    }
+  }
 
 @media (max-width: 650px) {
   .hideUnder650 {
