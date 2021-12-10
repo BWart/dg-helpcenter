@@ -1011,7 +1011,11 @@ function setClosed(){
 
   
   function sendGARequestOpeningHours(action){
-    ga('send', 'event', 'Opening Hours', action, customerType + ' ' + currentLanguage);
+      if(requestReasonTag.includes('webform_case_product_advice_') && currentLanguage == 'de') {
+          ga('send', 'event', 'Opening Hours', 'PE ' + action, customerType + ' ' + currentLanguage);
+      } else {
+          ga('send', 'event', 'Opening Hours', action, customerType + ' ' + currentLanguage);
+      }
   }
   
   //Phone Number Tracking

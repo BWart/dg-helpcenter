@@ -329,10 +329,31 @@ function filldynamicWording(){
         dynamicWording['fr']['contactFormInfoText'] = 'Par téléphone ou formulaire de contact - choisissez simplement le motif de votre demande.'
         dynamicWording['it']['contactFormInfoText'] = 'Per telefono o modulo di contatto - basta scegliere il motivo appropriato per la sua richiesta.'
         dynamicWording['en-US']['contactFormInfoText'] = 'By phone or contact form - just choose the appropriate reason for your inquiry.'
-        dynamicWording['de']['questionNotAnswered'] = 'Wähle deinen Kontaktkanal',
-        dynamicWording['fr']['questionNotAnswered'] = 'Choisissez votre canal de contact',
-        dynamicWording['it']['questionNotAnswered'] = 'Scegli il tuo canale di contatto',
+        dynamicWording['de']['questionNotAnswered'] = 'Wähle deinen Kontaktkanal'
+        dynamicWording['fr']['questionNotAnswered'] = 'Choisissez votre canal de contact'
+        dynamicWording['it']['questionNotAnswered'] = 'Scegli il tuo canale di contatto'
         dynamicWording['en-US']['questionNotAnswered'] = 'Choose your contact channel'
+    }
+
+    if (window.location.hostname == 'helpcenter.galaxus.ch'){
+        dynamicWording['de']['toShop'] = '<a href="https://www.galaxus.ch/" target="blank">Zum Shop</a>'
+        dynamicWording['fr']['toShop'] = '<a href="https://www.galaxus.ch/" target="blank">Vers le Shop</a>'
+        dynamicWording['it']['toShop'] = '<a href="https://www.galaxus.ch/" target="blank">Al Shop</a>'
+        dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.ch/" target="blank">To Shop</a>'
+    }
+
+    if (window.location.hostname == 'helpcenter.galaxus.de'){
+        dynamicWording['de']['toShop'] = '<a href="https://www.galaxus.de/" target="blank">Zum Shop</a>'
+        dynamicWording['fr']['toShop'] = '<a href="https://www.galaxus.de/" target="blank">Vers le Shop</a>'
+        dynamicWording['it']['toShop'] = '<a href="https://www.galaxus.de/" target="blank">Al Shop</a>'
+        dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.de/" target="blank">To Shop</a>'
+    }
+
+    if (window.location.hostname == 'helpcenter.galaxus.at'){
+        dynamicWording['de']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">Zum Shop</a>'
+        dynamicWording['fr']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">Vers le Shop</a>'
+        dynamicWording['it']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">Al Shop</a>'
+        dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">To Shop</a>'
     }
     
     if (window.location.hostname == 'helpcenter.galaxus.de' || window.location.hostname == 'helpcenter.galaxus.at'){
