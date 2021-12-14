@@ -95,8 +95,8 @@
         
         {{#with article}}
           <div class="article-votes">
-            <span class="article-votes-question">{{t 'was_this_article_helpful'}}</span>
-            <div class="article-votes-controls" role='radiogroup'>
+            <span class="article-votes-question" id="helpfulFB">{{t 'was_this_article_helpful'}}</span>
+            <div class="article-votes-controls" role='radiogroup' id="radiogruppe">
               {{vote 'up' role='radio' class='button article-vote article-vote-up'}}
               {{vote 'down' role='radio' class='button article-vote article-vote-down'}}
             </div>
@@ -249,22 +249,26 @@
 
   var infoBoxWording = fillInfoBoxWording(portal);
   var currentLanguage = $('html').attr('lang');
-  //console.log(currentLanguage);
+  console.log(currentLanguage);
+  console.log(infoBoxWording);
 
   //Übersetzungen in Variablen speichern
   var rb1= infoBoxWording['outputRadiobuttonFeedback1'][currentLanguage];
   var rb2= infoBoxWording['outputRadiobuttonFeedback2'][currentLanguage];
   var rb3= infoBoxWording['outputRadiobuttonFeedback3'][currentLanguage];
+  var rb4= infoBoxWording['outputRadiobuttonFeedback4'][currentLanguage];
   var btn= infoBoxWording['outputButtonFeedback'][currentLanguage];
 
   var checkedRadiobutton;
   $('#submitFeedback').hide();
-
+ 
 
   //Wenn bereits berwetung abgegeben aber Seite neu aufgerufen wird & wenn negatives feedback abgegeben wurde
   if ( sessionStorage.getItem('Feedback') == 3 && $('.article-vote-up').attr('aria-selected') == "true") {
       $('#downvoteText2').hide(); // text der angezeigt ist wenn bereits downvote feedack abgegeben wurde und Seite neu besucht
       $('#upvoteText').show();
+      $('#radiogruppe').hide();
+      $('#helpfulFB').hide();
       
       //console.log("currentLanguageUpVotetBefore");
       document.getElementById('upvoteText').innerHTML= infoBoxWording['outputUpvoteFeedbackButtonText'][currentLanguage];
@@ -276,6 +280,8 @@ else if( sessionStorage.getItem('Feedback') == 1 && $('.article-vote-down').attr
       /*$('#submitFeedback').data('clicked', 'yes') && */
       $('#upvoteText').hide();
       $('#downvoteText2').show();
+      $('#radiogruppe').hide();
+      $('#helpfulFB').hide();
 
       //console.log("currentLanguageDownVotetBefore");
       document.getElementById('downvoteText2').innerHTML= infoBoxWording['outputDownvoteFeedbackButtonText2'][currentLanguage];
@@ -289,17 +295,31 @@ else if( sessionStorage.getItem('Feedback') == 1 && $('.article-vote-down').attr
       $('.article-vote-down').attr('aria-selected', 'true');
 }
   else if(sessionStorage.getItem('Feedback') == 0){
+      $('#radiogruppe').show();
+      $('#helpfulFB').show();
+
       $('.article-vote-down').attr('aria-selected', 'false');
 }
 else if($('.article-vote-up').attr('aria-selected') == "false" && $('.article-vote-down').attr('aria-selected') == "false"){
+      $('#radiogruppe').show();
+      $('#helpfulFB').show();
+      
       sessionStorage.setItem('Feedback', 0);
       sessionStorage.getItem('Feedback');
 }
   else {
+      $('#radiogruppe').show();
+      $('#helpfulFB').show();
+
       $('#downvoteText2').hide();
       $('#upvoteText').hide(); 
 }
 
+
+    //URL Thema für GA ->label
+    var url = window.location.pathname.split('/');
+    var label= url[4];
+    console.log(label);
 
 
 ///////////Seiten reload
@@ -320,6 +340,9 @@ $('.article-vote-up').on('click',function(){
       ga("send", "event", "Feedback Radiobutton", "Positives Feedback", label);
       $("#submitFeedback").prop("disabled", true);
 
+      $('#radiogruppe').hide();
+      $('#helpfulFB').hide();
+
       $('#downvoteText').hide();
       $('#downvoteCheckradio').hide();
       $('#upvoteText').show();
@@ -336,6 +359,9 @@ $('.article-vote-up').on('click',function(){
   $('.article-vote-down').on('click',function(){
       //console.log("downvote click");
 
+      $('#radiogruppe').hide();
+      $('#helpfulFB').hide();
+
       $('#upvoteText').hide();
       $('#downvoteText').show();
       $('#downvoteCheckradio').show();
@@ -344,7 +370,7 @@ $('.article-vote-up').on('click',function(){
 
 
       document.getElementById('downvoteText').innerHTML = infoBoxWording['outputDownvoteFeedbackButtonText'][currentLanguage];
-      document.getElementById('downvoteCheckradio').innerHTML = '<form name="formRadiobuttons" id="formRadiobuttons" onsubmit="return validate(); return false" style="display: inline-block" ><p style="text-align:left;"><input type="radio" name="radiobuttons" value="r1">'+ rb1 +'</input><br><input type="radio" name="radiobuttons" value="r2">' + rb2 +'</input><br><input type="radio" name="radiobuttons" value="r3">' + rb3 + '</input></p><br><br></form>';
+      document.getElementById('downvoteCheckradio').innerHTML = '<form name="formRadiobuttons" id="formRadiobuttons" onsubmit="return validate(); return false" style="display: inline-block" ><p style="text-align:left;"><input type="radio" name="radiobuttons" value="r1">'+ rb1 +'</input><br><input type="radio" name="radiobuttons" value="r2">' + rb2 +'</input><br><input type="radio" name="radiobuttons" value="r3">' + rb3 + '</input><br><input type="radio" name="radiobuttons" value="r4">' + rb4 +'</input></p><br><br></form>';
       /*onsubmit="return validate()"*/
 
       $("input[type='radio']").change(function () {$("#submitFeedback").prop("disabled", false);});
@@ -359,11 +385,6 @@ $('.article-vote-up').on('click',function(){
   });
 
     //console.log('vor submit');
-
-    //URL Thema für GA ->label
-    var url = window.location.pathname.split('/');
-    var label= url[4];
-    //console.log(label);
 
   ////////Submit Button zum Feedback abgeben mit GA
   $('#submitFeedback').on('click',function(){
@@ -396,7 +417,7 @@ $('.article-vote-up').on('click',function(){
 
     for(var i=0; i<arr.length;i++){
       if(arr[i].checked){
-        //console.log(i);
+        console.log(i);
         valid=true;
         break;
       }
@@ -411,9 +432,13 @@ $('.article-vote-up').on('click',function(){
             //console.log(rb2);
             checkedRadiobutton=rb2;
         }
-        else{ 
+        else if(i ==2){
             //console.log(rb3);
             checkedRadiobutton=rb3;
+        }
+        else{ 
+            //console.log(rb4);
+            checkedRadiobutton=rb4;
         }
     }
     else{

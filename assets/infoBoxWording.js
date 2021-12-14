@@ -320,16 +320,16 @@ function fillInfoBoxWording(){
   
         //Feedback Formular Texte
         "outputUpvoteFeedbackButtonText" : {
-            'de' : "<br>Vielen Dank für Dein Feedback.<br><br>",
-            'fr' : "<br>Merci pour vos commentaires.<br><br>",
-            'it' : "<br>Grazie per il vostro feedback.<br><br>",
-            'en-US' : "<br>Thank you for your feedback.<br><br>"
+            'de' : "Vielen Dank für Dein Feedback.<br><br>",
+            'fr' : "Merci pour vos commentaires.<br><br>",
+            'it' : "Grazie per il vostro feedback.<br><br>",
+            'en-US' : "Thank you for your feedback.<br><br>"
       },
       "outputDownvoteFeedbackButtonText" : {
-          'de' : "<br>Warum war die Information nicht hilfreich?<br><br>",
-          'fr' : "<br>Pourquoi les informations n'ont-elles pas été utiles ?<br><br>",
-          'it' : "<br>Perché le informazioni non sono state utili?<br><br>",
-          'en-US' : "<br>Why was the information not helpful?<br><br>"
+          'de' : "Warum war die Information nicht hilfreich?<br><br>",
+          'fr' : "Pourquoi les informations n'ont-elles pas été utiles ?<br><br>",
+          'it' : "Perché le informazioni non sono state utili?<br><br>",
+          'en-US' : "Why was the information not helpful?<br><br>"
     },
     "outputDownvoteFeedbackButtonText2" : {
           'de' : "<br>Vielen Dank für deinen Verbesserungsvorschlag.<br><br>",
@@ -354,6 +354,12 @@ function fillInfoBoxWording(){
           'fr' : " J'aimerais voir un meilleur service.",
           'it' : " Vorrei vedere un servizio migliore.",
           'en-US' : " I would like to see better service."
+    },
+    "outputRadiobuttonFeedback4" : {
+          'de' : " Es gibt einen fehlerhaften Link, ein fehlendes Bild oder einen Tippfehler.",
+          'fr' : " Il y a un lien brisé, une image manquante ou une faute de frappe.",
+          'it' : " C'è un link rotto, un'immagine mancante o un errore di battitura.",
+          'en-US' : " There is a broken link, missing image, or typo."
     },
     "outputButtonFeedback" : {
           'de' : "Senden",
