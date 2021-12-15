@@ -50,7 +50,7 @@
                   <!--<h4></h4>-->
                 </div>
                 <div class ="questionNotAnswered" data-wording-key="questionNotAnswered"></div>
-                <div class="button-contact contactNowButton" data-wording-key="contactNow" style="width:150px;margin-top:10px"></div>
+                <div class="button-contact contactNowButton" data-wording-key="contactNow" style="width:150px;margin-top:0px"></div>
               </div>
             </td>
         </tr>
@@ -865,7 +865,28 @@ function setClosed(){
                     break;
               }
           }  
-      } else {
+      } else if (seconds > 630) {
+          for (var i = 0; i < elements.length; i++){
+              switch(currentLanguage){
+                  case 'de':
+                    elements[i].innerHTML = 'min. ' + waitingMin;
+                    break;
+                  case 'fr':
+                    elements[i].innerHTML = 'min. ' + waitingMin;
+                    break;
+                  case 'it':
+                    elements[i].innerHTML = 'min. ' + waitingMin;
+                    break;
+                  case 'en-US':
+                    elements[i].innerHTML = 'min. ' + waitingMin;
+                    break;
+                  default:
+                    elements[i].innerHTML = 'min. ' + waitingMin;
+                    break;
+              }
+          }
+        }
+          {
           var waitingMin = String(Math.floor((seconds + 30)/60));
           for (var i = 0; i < elements.length; i++){
               switch (currentLanguage){
