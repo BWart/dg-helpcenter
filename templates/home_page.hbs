@@ -1,12 +1,9 @@
-<!--<div class="container ticketsubmitconfirmation">
+<div class="container ticketsubmitconfirmation">
 <div class="form">
-<h2 style="margin-top:50px">Vielen Dank für deine Anfrage!</h2>
-Deine Anfrage wurde erfolgreich übermittelt.<br>
-<br>
-Wir senden dir eine Kopie deiner Anfrage an <b>maxmuster@muster.com</b>. Falls sich dein Anliegen in der Zwischenzeit geklärt hat, antworte mit #closeticket auf die E-Mail.<br>
-<br>
-<a href="www.helpcenter.galaxus.ch" id="asdflöasöodf">Zurück zum Helpcenter</a>
-  </div></div>-->
+<h2 style="margin-top:50px" data-wording-key="ticketSubmitConfirmationTitle"></h2>
+<font data-wording-key="ticketSubmintConfirmationTextPt1"></font><b id="dgCustomerEmail">asdf</b><font data-wording-key="ticketSubmintConfirmationTextPt2"></font>
+<font id="backToHelpcenter"></font>
+</div></div>
 
 <section class="section hero" style="margin-bottom:0px">
   <div class="hero-inner">
@@ -85,21 +82,20 @@ Wir senden dir eine Kopie deiner Anfrage an <b>maxmuster@muster.com</b>. Falls s
 
   <script>
   var fullLink = window.location.href;
+  $('.ticketsubmitconfirmation').hide();
   
   //?return_to=%2Fhc%2Frequests
-  //if (fullLink.includes('requests')){
-  /*if(true){
-      var page = document.querySelectorAll('[role="main"]');
-      console.log(page[0])
-      //page[0].hide();
-      //page[0].innerHTML = ""
+  if (fullLink.includes('requests') && sessionStorage.getItem('dgCustomerEmail') !== null){
+  //if(true){
+      $('#dgCustomerEmail')[0].innerHTML = sessionStorage.getItem('dgCustomerEmail')
+      $('#backToHelpcenter')[0].innerHTML = "<a href='/hc' data-wording-key='backToHelpcenter'>"
       var container = $('.container')
       var hero = $('.hero')
       container.hide()
       hero.hide();
       $('.ticketsubmitconfirmation').show();
-      $('.breadcrumbs').show();
-  }*/
+      sessionStorage.removeItem('dgCustomerEmail');
+  }
 
   var elements = document.getElementsByClassName('blocks-item-title');
   var elements2 = document.getElementsByClassName('blocks-item-inner-table-cell');
