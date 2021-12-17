@@ -190,8 +190,9 @@ function filldynamicWording(){
         'callWaitTime': 'Wartezeit <font class="callWaitTime"></font> min',
         'toShop' : '<a href="https://www.digitec.ch/" target="blank">Zum Shop</a>',
         'ticketSubmitConfirmationTitle' : 'Vielen Dank für deine Anfrage!',
-        'ticketSubmintConfirmationTextPt1' : 'Deine Anfrage wurde erfolgreich übermittelt.<br><br>Wir senden dir eine Kopie deiner Anfrage an ',
-        'ticketSubmintConfirmationTextPt2' : '. Falls sich dein Anliegen in der Zwischenzeit geklärt hat, antworte mit #closeticket auf die E-Mail.<br><br>',
+        'ticketSubmintConfirmationTextPt1' : '&#10003 Deine Anfrage wurde erfolgreich übermittelt.<br><br>',
+        'ticketSubmintConfirmationTextPt2' : 'Wir senden dir eine Kopie deiner Anfrage an ',
+        'ticketSubmintConfirmationTextPt3' : '. Falls sich dein Anliegen in der Zwischenzeit geklärt hat, antworte mit #closeticket auf die E-Mail.<br><br>',
         'backToHelpcenter': 'Zurück zum Helpcenter'
         },
         fr: {      
@@ -238,8 +239,9 @@ function filldynamicWording(){
         'callWaitTime': 'Réponse en <font class="callWaitTime"></font> min',
         'toShop' : '<a href="https://www.digitec.ch/" target="blank">Vers le Shop</a>',
         'ticketSubmitConfirmationTitle' : 'Merci pour votre demande !',
-        'ticketSubmintConfirmationTextPt1' : 'Votre demande a été transmise avec succès.<br><br>Nous vous enverrons une copie de votre demande à ',
-        'ticketSubmintConfirmationTextPt2' : '. Si votre demande a été résolue entre-temps, répondez à l\'e-mail avec #closeticket.<br><br>',
+        'ticketSubmintConfirmationTextPt1' : '&#10003 Votre demande a été transmise avec succès.<br><br>',
+        'ticketSubmintConfirmationTextPt2' : 'Nous vous enverrons une copie de votre demande à ',
+        'ticketSubmintConfirmationTextPt3' : '. Si votre demande a été résolue entre-temps, répondez à l\'e-mail avec #closeticket.<br><br>',
         'backToHelpcenter': 'Retour au Helpcenter'
         },
         it: {
@@ -286,8 +288,9 @@ function filldynamicWording(){
         'callWaitTime': 'Risposta in <font class="callWaitTime"></font> min',
         'toShop' : '<a href="https://www.digitec.ch/" target="blank">Al Shop</a>',
         'ticketSubmitConfirmationTitle' : 'Grazie per la tua richiesta!',
-        'ticketSubmintConfirmationTextPt1' : 'La tua richiesta è stata inviata con successo.<br><br>Vi invieremo una copia della vostra richiesta a ',
-        'ticketSubmintConfirmationTextPt2' : '. Se la tua richiesta è stata risolta nel frattempo, rispondi all\'email con #closeticket.<br><br>',
+        'ticketSubmintConfirmationTextPt1' : '&#10003 La tua richiesta è stata inviata con successo.<br><br>',
+        'ticketSubmintConfirmationTextPt2' : 'Vi invieremo una copia della vostra richiesta a ',
+        'ticketSubmintConfirmationTextPt3' : '. Se la tua richiesta è stata risolta nel frattempo, rispondi all\'email con #closeticket.<br><br>',
         'backToHelpcenter': 'Ritorna al Centro assistenza'
         },
         'en-US': {
@@ -334,8 +337,9 @@ function filldynamicWording(){
         'callWaitTime': 'Reply time <font class="callWaitTime"></font> min',
         'toShop' : '<a href="https://www.digitec.ch/" target="blank">To Shop</a>',
         'ticketSubmitConfirmationTitle' : 'Thank you for your request!',
-        'ticketSubmintConfirmationTextPt1' : 'Your request has been successfully submitted.<br><br>We will send you a copy of your request to ',
-        'ticketSubmintConfirmationTextPt2' : '. If your request has been resolved in the meantime, reply to the email with #closeticket.<br><br>',
+        'ticketSubmintConfirmationTextPt1' : '&#10003 Your request has been successfully submitted.<br><br>',
+        'ticketSubmintConfirmationTextPt2' : 'We will send you a copy of your request to ',
+        'ticketSubmintConfirmationTextPt3' : '. If your request has been resolved in the meantime, reply to the email with #closeticket.<br><br>',
         'backToHelpcenter': 'Back to the Helpcenter'
         }
     }

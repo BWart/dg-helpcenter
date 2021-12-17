@@ -1,7 +1,7 @@
 <div class="container ticketsubmitconfirmation">
 <div class="form">
 <h2 style="margin-top:50px" data-wording-key="ticketSubmitConfirmationTitle"></h2>
-<font data-wording-key="ticketSubmintConfirmationTextPt1"></font><b id="dgCustomerEmail">asdf</b><font data-wording-key="ticketSubmintConfirmationTextPt2"></font>
+<font style="color:#218521" data-wording-key="ticketSubmintConfirmationTextPt1"></font><font data-wording-key="ticketSubmintConfirmationTextPt2"></font><b id="dgCustomerEmail">asdf</b><font data-wording-key="ticketSubmintConfirmationTextPt3"></font>
 <font id="backToHelpcenter"></font>
 </div></div>
 
@@ -85,8 +85,8 @@
   $('.ticketsubmitconfirmation').hide();
   
   //?return_to=%2Fhc%2Frequests
-  if (fullLink.includes('requests') && sessionStorage.getItem('dgCustomerEmail') !== null){
-  //if(true){
+  //if (fullLink.includes('requests') && sessionStorage.getItem('dgCustomerEmail') !== null){
+  if(true){
       $('#dgCustomerEmail')[0].innerHTML = sessionStorage.getItem('dgCustomerEmail')
       $('#backToHelpcenter')[0].innerHTML = "<a href='/hc' data-wording-key='backToHelpcenter'>"
       var container = $('.container')
