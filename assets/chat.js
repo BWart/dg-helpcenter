@@ -155,12 +155,12 @@ function getDGChatDepartmentType(){
             //case(requestReasonTag == 'webform_case_product_advice_photo' && isInPEChatHours() && lang == 'de'):
             //    DGChatDepartmentType = 'PePhoto'
             //    break;
-            //case(requestReasonTag == 'webform_case_product_advice_home' && isInPEChatHours() && lang == 'de'):
-            //    DGChatDepartmentType = 'PeHome';
-            //    break;
-            //case(requestReasonTag == 'webform_case_product_advice_diy' && isInPEChatHours() && lang == 'de'):
-            //    DGChatDepartmentType = 'PeDiy'
-            //    break;
+            case(requestReasonTag == 'webform_case_product_advice_home' && isInPEChatHours() && lang == 'de'):
+                DGChatDepartmentType = 'PeHome';
+                break;
+            case(requestReasonTag == 'webform_case_product_advice_diy' && isInPEChatHours() && lang == 'de'):
+                DGChatDepartmentType = 'PeDiy'
+                break;
             case(customerType == 'business-customer' && lang == 'de'):
                 DGChatDepartmentType = getBusinessCustomerDepartmentType();
                 break;
