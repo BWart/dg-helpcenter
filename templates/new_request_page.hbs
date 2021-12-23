@@ -701,7 +701,7 @@ function setWaitTimes(){
     const dateFromExternalScript = new Date(createTimeStampUTC)
     const currentUTCDate = new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds())
     const diffSeconds = Math.abs((currentUTCDate - dateFromExternalScript)/1000)
-    if (diffSeconds > 299){
+    if (diffSeconds > 299 || isHoliday()){
         waitTimes.hide();
     } else if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
         if ((dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTCHour >= 7 && currentUTCHour < 19) || (dayOfWeek == 6 && currentUTCHour >= 8 && currentUTCHour < 13)){
@@ -900,19 +900,19 @@ function setClosed(){
           for (var i = 0; i < elements.length; i++){
               switch (currentLanguage){
                   case 'de':
-                    elements[i].innerHTML = 'ca. ' + waitingMin;
+                    elements[i].innerHTML = ' ' + waitingMin;
                     break;
                   case 'fr':
-                    elements[i].innerHTML = 'env. ' + waitingMin;
+                    elements[i].innerHTML = ' ' + waitingMin;
                     break;
                   case 'it':
-                    elements[i].innerHTML = 'ca. ' + waitingMin;
+                    elements[i].innerHTML = ' ' + waitingMin;
                     break;
                   case 'en-US':
-                    elements[i].innerHTML = 'approx. ' + waitingMin;
+                    elements[i].innerHTML = ' ' + waitingMin;
                     break;
                   default:
-                    elements[i].innerHTML = 'ca. ' + waitingMin;
+                    elements[i].innerHTML = ' ' + waitingMin;
                     break;
               }
           }
