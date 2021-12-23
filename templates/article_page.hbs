@@ -337,7 +337,9 @@ else if($('.article-vote-up').attr('aria-selected') == "false" && $('.article-vo
 
 $('.article-vote-up').on('click',function(){
       //console.log("upvote click");
-      ga("send", "event", "Feedback Radiobutton", "Positives Feedback", label);
+      if(gaSend){
+        ga("send", "event", "Feedback Radiobutton", "Positives Feedback", label);
+      }
       $("#submitFeedback").prop("disabled", true);
 
       $('#radiogruppe').hide();
@@ -390,8 +392,9 @@ $('.article-vote-up').on('click',function(){
   $('#submitFeedback').on('click',function(){
        //console.log("google analytics");
        validate();
-       ga("send", "event", "Feedback Radiobutton", checkedRadiobutton, label);
-
+       if(gaSend){
+        ga("send", "event", "Feedback Radiobutton", checkedRadiobutton, label);
+       }
        console.log(label);
        console.log(checkedRadiobutton);
 
