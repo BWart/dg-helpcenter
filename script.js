@@ -171,12 +171,16 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   
   $('.article-vote-up').on('click', function(e) {
       var path = window.location.pathname;
-      ga('send', 'event', 'Vote', 'Helpful', path);
+      if(gaSend){
+          ga('send', 'event', 'Vote', 'Helpful', path);
+      }
   });
   
   $('.article-vote-down').on('click', function(e) {
       var path = window.location.pathname;
-      ga('send', 'event', 'Vote', 'Not Helpful', path);
+      if(gaSend){
+          ga('send', 'event', 'Vote', 'Not Helpful', path);
+      }
   });  
   
 ///////////////////////////////////////////////////////////////////////Zopim Integration/////////////////////////////////////////////////////////////////

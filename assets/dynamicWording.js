@@ -25,6 +25,17 @@ function filldynamicWording(){
     var tagePrivatkunde2ChatEN = "";
     var tagePrivatkunde2ChatMobileDE = "";
 
+    //Variabeln Feirtage, WICHTIG: Brauchen leading <br>
+    var holidayDE = '';
+    var holidayFR = '';
+    var holidayIT = '';
+    var holidayEN = '';
+
+    var privacynoticeDE = '';
+    var privacynoticeEN = '';
+    var privacynoticeFR = '';
+    var privacynoticeIT = '';
+
     var telPrivatkunde = "";
     var telFirmenkunde = "";
     var telPrivatkundeText = "";
@@ -44,6 +55,14 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
+                holidayDE = '<br>24.12.21: Ab 16:00 Uhr geschlossen';
+                holidayFR = '<br>24.12.21 : Fermé à partir de 16h00';
+                holidayIT = '<br>24.12.21: Chiuso dalle 16:00';
+                holidayEN = '<br>24.12.21: Closed from 16:00';
+                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
+                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
+                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
+                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacy statement</a>';
 
                 telPrivatkunde = "+41445759500";
                 telPrivatkundeText = "+41 44 575 95 00";
@@ -62,6 +81,14 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
+                holidayDE = '<br>24.12.21: Ab 16:00 Uhr geschlossen';
+                holidayFR = '<br>24.12.21 : Fermé à partir de 16h00';
+                holidayIT = '<br>24.12.21: Chiuso dalle 16:00';
+                holidayEN = '<br>24.12.21: Closed from 16:00';
+                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
+                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
+                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
+                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Privacy statement</a>';
 
                 telPrivatkunde = "+41445759800";
                 telPrivatkundeText = "+41 44 575 98 00";
@@ -80,6 +107,14 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "09:00 - 14:00";
+                holidayDE = '<br>24.12.21: Ab 16:00 Uhr geschlossen<br>25.12.21: Geschlossen';
+                holidayFR = '<br>24.12.21 : Fermé à partir de 16h00<br>25.12.21 : Fermé';
+                holidayIT = '<br>24.12.21: Chiuso dalle 16:00<br>25.12.21: Chiuso';
+                holidayEN = '<br>24.12.21: Closed from 16:00<br>25.12.21: Closed';
+                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Datenschutzerklärung</a>';
+                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Déclaration de protection des données</a>';
+                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
+                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Privacy statement</a>';
 
                 telPrivatkunde = "+4940334614747";
                 telPrivatkundeText = "+49 (0)40 334 614 747";
@@ -98,6 +133,14 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "09:00 - 14:00";
+                holidayDE = '<br>24.12.21: Ab 16:00 Uhr geschlossen<br>25.12.21: Geschlossen';
+                holidayFR = '<br>24.12.21 : Fermé à partir de 16h00<br>25.12.21 : Fermé';
+                holidayIT = '<br>24.12.21: Chiuso dalle 16:00<br>25.12.21: Chiuso';
+                holidayEN = '<br>24.12.21: Closed from 16:00<br>25.12.21: Closed';
+                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Datenschutzerklärung</a>';
+                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Déclaration de protection des données</a>';
+                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
+                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Privacy statement</a>';
 
                 telPrivatkunde = "+43800017837";
                 telPrivatkundeText = "+43 800 017 837";
@@ -116,6 +159,14 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
+                holidayDE = '<br>24.12.21: Ab 16:00 Uhr geschlossen';
+                holidayFR = '<br>24.12.21 : Fermé à partir de 16h00';
+                holidayIT = '<br>24.12.21: Chiuso dalle 16:00';
+                holidayEN = '<br>24.12.21: Closed from 16:00';
+                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
+                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
+                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
+                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacy statement</a>';
 
                 telPrivatkunde = "+41445759700";
                 telPrivatkundeText = "+41 44 575 97 00";
@@ -134,6 +185,14 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
+                holidayDE = '<br>24.12.21: Ab 16:00 Uhr geschlossen';
+                holidayFR = '<br>24.12.21 : Fermé à partir de 16h00';
+                holidayIT = '<br>24.12.21: Chiuso dalle 16:00';
+                holidayEN = '<br>24.12.21: Closed from 16:00';
+                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
+                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
+                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
+                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacy statement</a>';
 
                 telPrivatkunde = "+41445759800";
                 telPrivatkundeText = "+41 44 575 98 00";
@@ -193,8 +252,10 @@ function filldynamicWording(){
         'ticketSubmintConfirmationTextPt1' : '&#10003 Deine Anfrage wurde erfolgreich übermittelt.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'Wir senden dir eine Kopie deiner Anfrage an ',
         'ticketSubmintConfirmationTextPt3' : '. Falls sich dein Anliegen in der Zwischenzeit geklärt hat, antworte mit #closeticket auf die E-Mail.<br><br>',
-        'backToHelpcenter': 'Zurück zum Helpcenter'
-        },
+        'backToHelpcenter' : 'Zurück zum Helpcenter',
+        'holidays' : holidayDE,
+        'privacynotice' : privacynoticeDE
+    },
         fr: {      
         'privateCustomers' : 'Clients privés',
         'businessCustomers' : 'Clients professionnels',
@@ -242,7 +303,9 @@ function filldynamicWording(){
         'ticketSubmintConfirmationTextPt1' : '&#10003 Votre demande a été transmise avec succès.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'Nous vous enverrons une copie de votre demande à ',
         'ticketSubmintConfirmationTextPt3' : '. Si votre demande a été résolue entre-temps, répondez à l\'e-mail avec #closeticket.<br><br>',
-        'backToHelpcenter': 'Retour au Helpcenter'
+        'backToHelpcenter': 'Retour au Helpcenter',
+        'holidays' : holidayFR,
+        'privacynotice' : privacynoticeFR
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -291,7 +354,9 @@ function filldynamicWording(){
         'ticketSubmintConfirmationTextPt1' : '&#10003 La tua richiesta è stata inviata con successo.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'Vi invieremo una copia della vostra richiesta a ',
         'ticketSubmintConfirmationTextPt3' : '. Se la tua richiesta è stata risolta nel frattempo, rispondi all\'email con #closeticket.<br><br>',
-        'backToHelpcenter': 'Ritorna al Centro assistenza'
+        'backToHelpcenter': 'Ritorna al Centro assistenza',
+        'holidays' : holidayIT,
+        'privacynotice' : privacynoticeIT
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -340,7 +405,9 @@ function filldynamicWording(){
         'ticketSubmintConfirmationTextPt1' : '&#10003 Your request has been successfully submitted.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'We will send you a copy of your request to ',
         'ticketSubmintConfirmationTextPt3' : '. If your request has been resolved in the meantime, reply to the email with #closeticket.<br><br>',
-        'backToHelpcenter': 'Back to the Helpcenter'
+        'backToHelpcenter': 'Back to the Helpcenter',
+        'holidays' : holidayEN,
+        'privacynotice' : privacynoticeEN
         }
     }
 

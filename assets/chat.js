@@ -189,7 +189,7 @@ function isInBusinessChatHours(){
     if((today.getUTCHours() == 15 && today.getMinutes() >= 55)){
         return false;
     }
-    if(today.getUTCHours() < 17 && today.getUTCHours() > 6){
+    if(today.getUTCHours() < 16 && today.getUTCHours() > 6){
         return true;
     }else{
         return false;
@@ -211,6 +211,15 @@ function isInPEChatHours(){
         return false;
     }
 }
+
+//Returns true or false for holidays
+function isHoliday(){
+    var today = new Date();
+    var utcDay = today.getUTCDay;
+    var utcHour = today.getUTCHours;
+    return false;
+}
+
 
   
 ///////////////////////////////////////////////////////////New Request Page Events/////////////////////////////////////////////////////////////

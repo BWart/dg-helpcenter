@@ -71,7 +71,11 @@
               <!-- DESKTOP CONTACT TABLE -->
               <table width="100%" class="contactInfos hideUnder650" id="desktopContactTable">
                 <tr>
-                    <td colspan="3"><font data-wording-key="openingDays"></font><font data-wording-key="openingHours"></font><font data-wording-key="openingDays2"></font><font data-wording-key="openingHours2"></font></td>
+                    <td colspan="3">
+                        <font data-wording-key="openingDays"></font><font data-wording-key="openingHours"></font>
+                        <font data-wording-key="openingDays2"></font><font data-wording-key="openingHours2"></font>
+                        <font data-wording-key="holidays"></font>
+                    </td>
                 </tr>
                 <tr>
                   <td width="33%" style="padding-right:20px;padding-top:15px"><div id="mailIconCellContent"><img src="{{asset 'mailIcon.png'}}" height="20px"></div><div id="row1cell1inserter"></div></td>
@@ -507,7 +511,9 @@
       }
       catch (e) {
         console.log(e); 
-        ga('send', 'event', 'Errors', 'ChatLoad', String(e));
+        if(gaSend){
+            ga('send', 'event', 'Errors', 'ChatLoad', String(e));
+        }
       } 
     hideContactFormForPE();
     addExternalScriptForWaitingTimes();
@@ -578,7 +584,9 @@
       }
       catch (e) {
         console.log(e); 
-        ga('send', 'event', 'Errors', 'ChatLoad', String(e));
+        if(gaSend){
+            ga('send', 'event', 'Errors', 'ChatLoad', String(e));
+        }
       } 
     contactNowClicked();
     addExternalScriptForWaitingTimes();
@@ -978,7 +986,7 @@ function setClosed(){
       mailFormAttachmentLabel.html(attachString);
 		  return true;
 	  }
-	  if($(formDropdownClass + ' a.nesty-input').attr('aria-expanded') && (requestReasonTag == 'webform_case_wrong_product')){
+	  /*if($(formDropdownClass + ' a.nesty-input').attr('aria-expanded') && (requestReasonTag == 'webform_case_wrong_product')){
 		  errorMessageId = currentLanguage + '2';
 		  attachmentErrorNotification = setErrorMessage();
 		  attachmentErrorElt.text(attachmentErrorNotification);
@@ -988,7 +996,7 @@ function setClosed(){
       }
       mailFormAttachmentLabel.html(attachString);
 		  return true;
-	  }
+	  }*/
 	  return false;
   }
 
@@ -1033,16 +1041,18 @@ function setClosed(){
 
   
   function sendGARequestOpeningHours(action){
-      if(requestReasonTag.includes('webform_case_product_advice_') && currentLanguage == 'de') {
-          ga('send', 'event', 'Opening Hours', 'PE ' + action, customerType + ' ' + currentLanguage);
-      } else {
-          ga('send', 'event', 'Opening Hours', action, customerType + ' ' + currentLanguage);
+      if(gaSend){
+        if(requestReasonTag.includes('webform_case_product_advice_') && currentLanguage == 'de') {
+            ga('send', 'event', 'Opening Hours', 'PE ' + action, customerType + ' ' + currentLanguage);
+        } else {
+            ga('send', 'event', 'Opening Hours', action, customerType + ' ' + currentLanguage);
+        }
       }
   }
   
   //Phone Number Tracking
   
-	$('.phone-number').on("click", function () {
+  $('.phone-number').on("click", function () {
     sendGARequestOpeningHours('Click Phone Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
   }) 
@@ -1065,7 +1075,9 @@ function setClosed(){
   // Request Reason Tracking
 
   $('.request_custom_fields_360014169819').on("change",function() {
-    ga('send', 'event', 'Opening Hours', 'ShowsInfo', $('.request_custom_fields_360014169819' + ' a.nesty-input').text());                                                                                     
+      if(gaSend){
+          ga('send', 'event', 'Opening Hours', 'ShowsInfo', $('.request_custom_fields_360014169819' + ' a.nesty-input').text());                                                                                     
+      }
   });
 
   //Contact now button tracking
