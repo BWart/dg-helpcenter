@@ -220,7 +220,7 @@ function isHoliday(){
     if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
         return true;
     } else{
-        return false;
+        return true;
     }
 }
 
