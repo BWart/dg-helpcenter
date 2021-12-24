@@ -217,7 +217,11 @@ function isHoliday(){
     var today = new Date();
     var utcDay = today.getUTCDay;
     var utcHour = today.getUTCHours;
-    return false;
+    if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
+        return true;
+    } else{
+        return false;
+    }
 }
 
 
