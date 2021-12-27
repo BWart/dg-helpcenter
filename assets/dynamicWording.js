@@ -55,10 +55,10 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
-                holidayDE = '<br>24.12.21: Ab 16:00 Uhr geschlossen';
-                holidayFR = '<br>24.12.21 : Fermé à partir de 16h00';
-                holidayIT = '<br>24.12.21: Chiuso dalle 16:00';
-                holidayEN = '<br>24.12.21: Closed from 16:00';
+                holidayDE = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayFR = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayIT = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayEN = ''; //WICHTIG: braucht leading <br> wenn befüllt
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
@@ -81,10 +81,10 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
-                holidayDE = '<br>24.12.21: Ab 16:00 Uhr geschlossen';
-                holidayFR = '<br>24.12.21 : Fermé à partir de 16h00';
-                holidayIT = '<br>24.12.21: Chiuso dalle 16:00';
-                holidayEN = '<br>24.12.21: Closed from 16:00';
+                holidayDE = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayFR = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayIT = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayEN = ''; //WICHTIG: braucht leading <br> wenn befüllt
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
@@ -107,10 +107,10 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "09:00 - 14:00";
-                holidayDE = '<br>24.12.21: Ab 14:00 Uhr geschlossen<br>25.12.21: Geschlossen';
-                holidayFR = '<br>24.12.21 : Fermé à partir de 14h00<br>25.12.21 : Fermé';
-                holidayIT = '<br>24.12.21: Chiuso dalle 14:00<br>25.12.21: Chiuso';
-                holidayEN = '<br>24.12.21: Closed from 14:00<br>25.12.21: Closed';
+                holidayDE = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayFR = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayIT = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayEN = ''; //WICHTIG: braucht leading <br> wenn befüllt
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
@@ -133,10 +133,10 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "09:00 - 14:00";
-                holidayDE = '<br>24.12.21: Ab 14:00 Uhr geschlossen<br>25.12.21: Geschlossen';
-                holidayFR = '<br>24.12.21 : Fermé à partir de 14h00<br>25.12.21 : Fermé';
-                holidayIT = '<br>24.12.21: Chiuso dalle 14:00<br>25.12.21: Chiuso';
-                holidayEN = '<br>24.12.21: Closed from 14:00<br>25.12.21: Closed';
+                holidayDE = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayFR = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayIT = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayEN = ''; //WICHTIG: braucht leading <br> wenn befüllt
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
@@ -159,10 +159,10 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
-                holidayDE = '<br>24.12.21: Ab 16:00 Uhr geschlossen';
-                holidayFR = '<br>24.12.21 : Fermé à partir de 16h00';
-                holidayIT = '<br>24.12.21: Chiuso dalle 16:00';
-                holidayEN = '<br>24.12.21: Closed from 16:00';
+                holidayDE = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayFR = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayIT = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayEN = ''; //WICHTIG: braucht leading <br> wenn befüllt
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
@@ -185,10 +185,10 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
-                holidayDE = '<br>24.12.21: Ab 16:00 Uhr geschlossen';
-                holidayFR = '<br>24.12.21 : Fermé à partir de 16h00';
-                holidayIT = '<br>24.12.21: Chiuso dalle 16:00';
-                holidayEN = '<br>24.12.21: Closed from 16:00';
+                holidayDE = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayFR = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayIT = ''; //WICHTIG: braucht leading <br> wenn befüllt
+                holidayEN = ''; //WICHTIG: braucht leading <br> wenn befüllt
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
