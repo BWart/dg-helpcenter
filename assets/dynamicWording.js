@@ -25,12 +25,6 @@ function filldynamicWording(){
     var tagePrivatkunde2ChatEN = "";
     var tagePrivatkunde2ChatMobileDE = "";
 
-    //Variabeln Feirtage, WICHTIG: Brauchen leading <br>
-    var holidayDE = '';
-    var holidayFR = '';
-    var holidayIT = '';
-    var holidayEN = '';
-
     var privacynoticeDE = '';
     var privacynoticeEN = '';
     var privacynoticeFR = '';
@@ -55,10 +49,6 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
-                holidayDE = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayFR = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayIT = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayEN = ''; //WICHTIG: braucht leading <br> wenn befüllt
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
@@ -81,10 +71,6 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
-                holidayDE = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayFR = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayIT = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayEN = ''; //WICHTIG: braucht leading <br> wenn befüllt
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
@@ -107,10 +93,6 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "09:00 - 14:00";
-                holidayDE = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayFR = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayIT = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayEN = ''; //WICHTIG: braucht leading <br> wenn befüllt
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
@@ -133,10 +115,6 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "09:00 - 14:00";
-                holidayDE = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayFR = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayIT = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayEN = ''; //WICHTIG: braucht leading <br> wenn befüllt
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
@@ -159,10 +137,6 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
-                holidayDE = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayFR = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayIT = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayEN = ''; //WICHTIG: braucht leading <br> wenn befüllt
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
@@ -185,10 +159,6 @@ function filldynamicWording(){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 20:00";
                 uhrzeitPrivatkunde2 = "";
-                holidayDE = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayFR = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayIT = ''; //WICHTIG: braucht leading <br> wenn befüllt
-                holidayEN = ''; //WICHTIG: braucht leading <br> wenn befüllt
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
@@ -253,7 +223,6 @@ function filldynamicWording(){
         'ticketSubmintConfirmationTextPt2' : 'Wir senden dir eine Kopie deiner Anfrage an ',
         'ticketSubmintConfirmationTextPt3' : '. Falls sich dein Anliegen in der Zwischenzeit geklärt hat, antworte mit #closeticket auf die E-Mail.<br><br>',
         'backToHelpcenter' : 'Zurück zum Helpcenter',
-        'holidays' : holidayDE,
         'privacynotice' : privacynoticeDE
     },
         fr: {      
@@ -304,7 +273,6 @@ function filldynamicWording(){
         'ticketSubmintConfirmationTextPt2' : 'Nous vous enverrons une copie de votre demande à ',
         'ticketSubmintConfirmationTextPt3' : '. Si votre demande a été résolue entre-temps, répondez à l\'e-mail avec #closeticket.<br><br>',
         'backToHelpcenter': 'Retour au Helpcenter',
-        'holidays' : holidayFR,
         'privacynotice' : privacynoticeFR
         },
         it: {
@@ -355,7 +323,6 @@ function filldynamicWording(){
         'ticketSubmintConfirmationTextPt2' : 'Vi invieremo una copia della vostra richiesta a ',
         'ticketSubmintConfirmationTextPt3' : '. Se la tua richiesta è stata risolta nel frattempo, rispondi all\'email con #closeticket.<br><br>',
         'backToHelpcenter': 'Ritorna al Centro assistenza',
-        'holidays' : holidayIT,
         'privacynotice' : privacynoticeIT
         },
         'en-US': {
@@ -406,7 +373,6 @@ function filldynamicWording(){
         'ticketSubmintConfirmationTextPt2' : 'We will send you a copy of your request to ',
         'ticketSubmintConfirmationTextPt3' : '. If your request has been resolved in the meantime, reply to the email with #closeticket.<br><br>',
         'backToHelpcenter': 'Back to the Helpcenter',
-        'holidays' : holidayEN,
         'privacynotice' : privacynoticeEN
         }
     }
@@ -466,5 +432,6 @@ function filldynamicWording(){
         dynamicWording['en-US']['openingDaysBusiness2Mobile'] = 'Sa: '
  
     }
+
   return dynamicWording;  
 }

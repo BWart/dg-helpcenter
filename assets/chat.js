@@ -214,14 +214,32 @@ function isInPEChatHours(){
 
 //Returns true or false for holidays
 function isHoliday(){
-    var today = new Date();
-    var utcDay = today.getUTCDay;
-    var utcHour = today.getUTCHours;
-    if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
-        return false;
-    } else{
-        return false;
+    var portalChooser = '';
+    switch(portal){
+        case 'helpcenter.digitec.ch':
+        case 'helpcenter.galaxus.ch':
+        case 'helpcenter.connect.digitec.ch':
+          portalChooser = 'ch'
+          break;
+        case 'helpcenter.galaxus.de':
+        case 'helpcenter.galaxus.at':
+          portalChooser = 'eu'
+          break;
+        default:
+          portalChooser = 'ch'
+          break;
     }
+    const d = new Date();
+    datestring = String(d.getUTCFullYear()) + '-' + String(d.getUTCMonth() + 1) + '-' + String(d.getUTCDate()) + ' ' + String(d.getUTCHours()) + ':' + String(d.getUTCMinutes()) + ':' + String(d.getUTCSeconds())
+    const utc_timestamp = Date.parse(datestring)
+    var stampslist = hideWaitingTimes[portalChooser]
+    checker = false;
+    stampslist.forEach((stampset) => {
+        if (utc_timestamp > Date.parse(stampset[0]) && utc_timestamp < Date.parse(stampset[1])){
+            checker = true;
+        }
+    })
+    return checker;
 }
 
 

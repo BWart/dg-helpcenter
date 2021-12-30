@@ -74,7 +74,7 @@
                     <td colspan="3">
                         <font data-wording-key="openingDays"></font><font data-wording-key="openingHours"></font>
                         <font data-wording-key="openingDays2"></font><font data-wording-key="openingHours2"></font>
-                        <font data-wording-key="holidays"></font>
+                        <font id="holidaysDesktop"></font>
                     </td>
                 </tr>
                 <tr>
@@ -115,7 +115,15 @@
 
               <!-- MOBILE CONTACT TABLE -->
               <table class="contactInfos hideOver651" border="0">
-                <tr style="height:0px"><td colspan="3"><font data-wording-key="openingDays"></font><font data-wording-key="openingHours"></font><font data-wording-key="openingDays2"></font><font data-wording-key="openingHours2"></font></td></tr>
+                <tr style="height:0px">
+                    <td colspan="3">
+                        <font data-wording-key="openingDays"></font>
+                        <font data-wording-key="openingHours"></font>
+                        <font data-wording-key="openingDays2"></font>
+                        <font data-wording-key="openingHours2"></font>
+                        <font id="holidaysMobile"></font>
+                    </td>
+                </tr>
                 <tr>
                   <td class="contactButtonTableCellLeftNoBorder" style="padding-top:15px">
                     <div id="mobileMailCell1Content">
@@ -264,6 +272,7 @@
   fallbackText.hide();
   setPortalDependantVariables();
   setCustomerType();
+  fillHoliday(currentLanguage);
   //checkForFeedbackForm();
 
   function setPortalDependantVariables(){
@@ -1359,5 +1368,33 @@ function swapContactOptionsForHiddenContactForm(){
           removeChatBasedOnRequestType();    
       }
   }
+
+  function fillHoliday(lang){
+      var portalChooser = '';
+      switch(portal){
+          case 'helpcenter.digitec.ch':
+          case 'helpcenter.galaxus.ch':
+          case 'helpcenter.connect.digitec.ch':
+            portalChooser = 'ch'
+            break;
+          case 'helpcenter.galaxus.de':
+          case 'helpcenter.galaxus.at':
+            portalChooser = 'eu'
+            break;
+          default:
+            portalChooser = 'ch'
+            break;
+      }
+      const d = new Date();
+      datestring = String(d.getUTCFullYear()) + '-' + String(d.getUTCMonth() + 1) + '-' + String(d.getUTCDate()) + ' ' + String(d.getUTCHours()) + ':' + String(d.getUTCMinutes()) + ':' + String(d.getUTCSeconds())
+      const utc_timestamp = Date.parse(datestring)
+      var stampslist = showHolidays[portalChooser]
+      stampslist.forEach((stampset) => {
+          if (utc_timestamp > Date.parse(stampset[0]) && utc_timestamp < Date.parse(stampset[1])){
+              var tempstring = textToDisplay[stampset[2]][lang]
+              $('#holidaysDesktop')[0].innerHTML = tempstring
+          }
+      })
+    }
 
 </script>
