@@ -194,6 +194,7 @@
 <script>
 
   function commitButtonPressed(){
+    mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
     sendGARequestOpeningHours('ContactForm Commit clicked');
     sessionStorage.setItem('dgCustomerEmail', $('input[name="request[anonymous_requester_email]"]').val());
     sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
@@ -281,7 +282,7 @@
       case 'helpcenter.galaxus.ch':
       case 'helpcenter.galaxus.de':
       case 'helpcenter.galaxus.at':
-        if (fullLink.slice(-3) != 'new'){
+        if (fullLink.slice(-3) != 'new' || fullLink.slice(-4) == 'new/'){
           circleOne.classList.remove('circleOpenStep');
           circleOne.classList.add('circleStepCompleted');
           circleOne.innerHTML = '&#10003';
