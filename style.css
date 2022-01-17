@@ -4781,3 +4781,38 @@ html {
   border-collapse: separate;
   padding-bottom: 50px;
 }
+
+/*Banner*/
+
+.bannerInfo {
+  background: #f67858;
+  float: none;
+}
+
+.bannerInfo__content {
+  padding: 16px;
+  max-width: 500px;
+  margin-left: 35%;
+  margin-right: 35%;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  
+}
+
+#bannerInfo__text {
+  /*flex-grow: 1;*/
+  line-height: 1.4;
+  font-family: "Quicksand", sans-serif;
+}
+
+.bannerInfo__close, .bannerInfo__edit {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#bannerInfo__text, .bannerInfo__edit,
+.bannerInfo__close > span {
+  color: #ffffff;
+}

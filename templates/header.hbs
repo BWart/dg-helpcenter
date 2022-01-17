@@ -36,6 +36,33 @@
     {{user_info}}
   </div>-->
 
+</header>
+
+    <div class="bannerInfo">
+    <div class="bannerInfo__content">
+      <img src="http://localhost:4567/guide/assets/infoiconBannerWhite.png">
+      &nbsp;&nbsp;
+      <div id="bannerInfo__text" class="bannerInfo__Classtext" contenteditable="false">
+      </div>
+      <!--<button class="bannerInfo__close" id="bannerInfo__closeID" type="button">
+        <span class="material-icons">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          x
+        </span>
+      </button>-->
+      <!--<button id="editBanner" class="bannerInfo__edit" type="button">
+        <span class="material-icons" id="bannerButtonText">
+          edit
+        </span>
+      </button>
+            <button id="saveBanner" class="bannerInfo__save" type="button">
+        <span class="material-icons" id="bannerButtonText">
+          save
+        </span>
+      </button>-->
+    </div>
+  </div>
+
 <script type="text/javascript" >
 
 //href -> Link dynamisch nach Hostname ersetzen;
@@ -78,5 +105,42 @@ switch(portal){
               gaSend = false;
               break;
 }
+
+/****************banner****************/
+
+var currentLanguage = $('html').attr('lang');
+console.log(currentLanguage);
+
+var topBannerWording = fillTopBannerWording();
+
+var headingBannerDGCH=topBannerWording['outputHeadingBannerDGCH'][currentLanguage];
+var textBannerDGCH=topBannerWording['outputTextBannerDGCH'][currentLanguage];
+var headingBannerGLCH=topBannerWording['outputHeadingBannerGLCH'][currentLanguage];
+var textBannerGLCH=topBannerWording['outputTextBannerGLCH'][currentLanguage];
+var headingBannerGLDE=topBannerWording['outputHeadingBannerGLDE'][currentLanguage];
+var textBannerGLDE=topBannerWording['outputTextBannerGLDE'][currentLanguage];
+var headingBannerGLDAT=topBannerWording['outputHeadingBannerGLAT'][currentLanguage];
+var textBannerGLAT=topBannerWording['outputTextBannerGLAT'][currentLanguage];
+
+console.log(topBannerWording);
+
+
+//Je nach Domain unterschiedliche Banner
+if(window.location.hostname =="helpcenter.digitec.ch"){
+  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerDGCH + ":</strong><br> " + textBannerDGCH;
+}
+else if(window.location.hostname =="helpcenter.galaxus.ch"){
+  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerGLCH + ":</strong><br> " + textBannerGLCH;
+}
+else if(window.location.hostname =="helpcenter.galaxus.de"){
+  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerGLDE + ":</strong><br> " + textBannerGLDE;
+}
+else if(window.location.hostname =="helpcenter.galaxus.at"){
+  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerGLAT + ":</strong><br> " + textBannerGLAT;
+}
+else{ /*Digitec ist Else*/
+    document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerDGCH + ":</strong><br> " + textBannerDGCH;
+}
+
 </script>
-</header>
+
