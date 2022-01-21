@@ -44,10 +44,10 @@ function getWebWidgetSettings(){
                 },
                 prechatForm: {
                     greeting: {
-                        '*': 'Please have your order, service or invoice number ready so that we can help you even faster.',
-                        fr: "Veuillez préparer votre numéro de commande, de service ou de facture afin que nous puissions vous aider encore plus rapidement. ",
-                        de: "Bitte halte deine Bestell-, Service- oder Rechnungsnummer bereit, damit wir dir noch schneller helfen können. ",
-                        it: "Tieni pronto il tuo numero d'ordine, di servizio o di fattura in modo che possiamo aiutarti ancora più velocemente. "
+                        '*': "So that we can help you quickly, please let us know your order or invoice number.",
+                        fr: "Pour que nous puissions vous aider rapidement, veuillez nous communiquer votre numéro de commande ou de facture.",
+                        de: "Damit wir dir rasch helfen können, teile uns bitte deine Auftrags- oder Rechnungsnummer mit. ",
+                        it: "Per potervi aiutare rapidamente, vi preghiamo di comunicarci il vostro numero d'ordine o di fattura."
                     }
                 },
                 offlineForm: {
