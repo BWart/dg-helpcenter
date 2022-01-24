@@ -520,7 +520,7 @@
       if (contactFormIsShown == 1) { mailFormOrderNumberOrPhoneNumber.show() }
     }
     //Längere Wartezeit im Mail Feld
-    if (reasonsForLongerMailWaitTime.indexOf(requestReasonTag) >= 0 && languagesForLongerMailWaitTime.indexOf(currentLanguage) >= 0) {
+    if (reasonsForLongerMailWaitTime.indexOf(requestReasonTag) >= 0 && languagesForLongerMailWaitTime.indexOf(currentLanguage) >= 0 && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
         for (var i = 0; i < mailWaitTimes.length; i++){
             mailWaitTimes[i].innerHTML = 'ca. 6'
         }
