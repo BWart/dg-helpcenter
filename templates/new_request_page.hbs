@@ -268,6 +268,9 @@
   var reasonsForNoContactForm = ["webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer",
   "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy"]
 
+  var reasonsForLongerMailWaitTime = ["webform_case_product_advice_it", "webform_case_product_advice_network"]
+  var languagesForLongerMailWaitTime = ["de"]
+
   //intial setup
   chatWaitTimesDOMElements.hide();
   fallbackText.hide();
@@ -452,6 +455,7 @@
 
   
   function onDropdownChange(){
+    var mailWaitTimes = $('.mailWaitTime');
     resetContactOptions();
     circleOne.classList.remove('circleOpenStep');
     circleOne.classList.add('circleStepCompleted');
@@ -514,6 +518,16 @@
       mailFormOrderNumberOrPhoneNumber.hide()
     } else {
       if (contactFormIsShown == 1) { mailFormOrderNumberOrPhoneNumber.show() }
+    }
+    //Längere Wartezeit im Mail Feld
+    if (reasonsForLongerMailWaitTime.indexOf(requestReasonTag) >= 0 && languagesForLongerMailWaitTime.indexOf(currentLanguage) >= 0) {
+        for (var i = 0; i < mailWaitTimes.length; i++){
+            mailWaitTimes[i].innerHTML = 'ca. 6'
+        }
+    } else {
+        for (var i = 0; i < mailWaitTimes.length; i++){
+            mailWaitTimes[i].innerHTML = '1-2'
+        }
     }
     try {
         removeChatBasedOnRequestType();
