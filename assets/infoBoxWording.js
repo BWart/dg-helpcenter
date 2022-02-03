@@ -188,10 +188,10 @@ function fillInfoBoxWording(){
   
         //LEVEL 0: Rückgabe
         "webform_case_return" : {
-            'de' : "Die Rückgabe für ein Produkt kannst du direkt in deinem Kundenkonto unter <a href='" + shopURL + "order' target='blank'>Bestellungen</a> oder auf der <a href='" + shopURL + "/after-sales' target='blank'>Rückgabeseite</a> erfassen.",
-            'fr' : "Vous pouvez saisir le retour d'un produit directement dans votre compte client sous les <a href='" + shopURL + "order' target='blank'>commandes</a> ou sur la <a href='" + shopURL + "/after-sales' target='blank'>page des retours</a>.",
-            'it' : "Puoi inserire il reso di un prodotto direttamente nel tuo account cliente sotto gli <a href='" + shopURL + "order' target='blank'>ordini</a> o nella <a href='" + shopURL + "/after-sales' target='blank'>pagina dei resi</a>.",
-            'en-US' : "You can enter the return for a product directly in your customer account under <a href='" + shopURL + "order' target='blank'>orders</a> or on the <a href='" + shopURL + "/after-sales' target='blank'>returns page</a>."
+            'de' : "Die Rückgabe für ein Produkt kannst du direkt in deinem Kundenkonto unter <a href='" + shopURL + "order' target='blank'>Bestellungen</a> oder auf der <a href='" + shopURL + "after-sales' target='blank'>Rückgabeseite</a> erfassen.",
+            'fr' : "Vous pouvez saisir le retour d'un produit directement dans votre compte client sous les <a href='" + shopURL + "order' target='blank'>commandes</a> ou sur la <a href='" + shopURL + "after-sales' target='blank'>page des retours</a>.",
+            'it' : "Puoi inserire il reso di un prodotto direttamente nel tuo account cliente sotto gli <a href='" + shopURL + "order' target='blank'>ordini</a> o nella <a href='" + shopURL + "after-sales' target='blank'>pagina dei resi</a>.",
+            'en-US' : "You can enter the return for a product directly in your customer account under <a href='" + shopURL + "order' target='blank'>orders</a> or on the <a href='" + shopURL + "after-sales' target='blank'>returns page</a>."
         },
         "webform_case_return_status" : {
               'de' : "Unter <a href='" + shopURL + "after-sales/service-cases' target='blank'>\"Alle Rücksendungen\"</a> findest du eine Übersicht und den aktuellen Status zu allen von dir eingereichten Rückgaben und Garantiefällen.",
