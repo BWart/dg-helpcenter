@@ -188,10 +188,10 @@ function fillInfoBoxWording(){
   
         //LEVEL 0: Rückgabe
         "webform_case_return" : {
-            'de' : "Für bereits bestellte Produkte findest du sämtliche Informationen zu den Rückgabefristen in deinem Kundenkonto unter <a href='" + shopURL + "order' target='blank'>Bestellungen</a> oder auf der <a href='" + shopURL + "return' target='blank'>Rückgabeseite</a>. Die Rückgabefristen gelten ab Versand- bzw. Abholdatum.",
-            'fr' : "Pour les produits que vous avez déjà commandés, vous trouverez toutes les informations relatives aux délais de retour dans votre compte client sur la page de <a href='" + shopURL + "order' target='blank'>commande</a> ou de <a href='" + shopURL + "return' target='blank'>retour</a>. Les délais de retour s'appliquent à partir de la date d'expédition ou d'enlèvement.",
-            'it' : "Per i prodotti che ha già ordinato, può trovare tutte le informazioni sui periodi di restituzione nel suo account cliente nella pagina dell'<a href='" + shopURL + "order' target='blank'>ordine</a> o della <a href='" + shopURL + "return' target='blank'>restituzione</a>. I termini di restituzione sono validi a partire dalla data di spedizione o di ritiro.",
-            'en-US' : "For products that you have already ordered, you can find all the information about the return periods in your customer account on the <a href='" + shopURL + "order' target='blank'>order</a> or <a href='" + shopURL + "return' target='blank'>return</a> page. The return periods apply from the date of dispatch or collection."
+            'de' : "Die Rückgabe für ein Produkt kannst du direkt in deinem Kundenkonto unter <a href='" + shopURL + "order' target='blank'>Bestellungen</a> oder auf der <a href='" + shopURL + "/after-sales' target='blank'>Rückgabeseite</a> erfassen.",
+            'fr' : "Vous pouvez saisir le retour d'un produit directement dans votre compte client sous les <a href='" + shopURL + "order' target='blank'>commandes</a> ou sur la <a href='" + shopURL + "/after-sales' target='blank'>page des retours</a>.",
+            'it' : "Puoi inserire il reso di un prodotto direttamente nel tuo account cliente sotto gli <a href='" + shopURL + "order' target='blank'>ordini</a> o nella <a href='" + shopURL + "/after-sales' target='blank'>pagina dei resi</a>.",
+            'en-US' : "You can enter the return for a product directly in your customer account under <a href='" + shopURL + "order' target='blank'>orders</a> or on the <a href='" + shopURL + "/after-sales' target='blank'>returns page</a>."
         },
         "webform_case_return_status" : {
               'de' : "Unter <a href='" + shopURL + "after-sales/service-cases' target='blank'>\"Alle Rücksendungen\"</a> findest du eine Übersicht und den aktuellen Status zu allen von dir eingereichten Rückgaben und Garantiefällen.",
