@@ -312,9 +312,6 @@
         fullMailform.show();
         break;
       case 'helpcenter.connect.digitec.ch':
-        if (currentLanguage != 'de'){
-            hidePhoneCells();
-        }
         if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/') {
           window.location.replace('https://helpcenter.connect.digitec.ch/hc/requests/new?ticket_form_id=360002056120');
         }
@@ -1227,7 +1224,7 @@ function setClosed(){
   }
 
   function swapContactOptions(){
-      //console.log('ENTER SWAP')
+    //console.log('ENTER SWAP')
     $('#chatIconCellContent').insertBefore($('#row1cell1inserter'));
     $('#mailIconCellContent').insertBefore($('#row1cell2inserter'));
     $('#phoneIconCellContent').insertBefore($('#row1cell3inserter'));
@@ -1264,7 +1261,7 @@ function setClosed(){
   }
 
   function hideChatCells(){
-      //console.log('ENTER HIDE')
+    //console.log('ENTER HIDE')
     $('#phoneIconCellContent').insertBefore($('#row1cell1inserter'));
     $('#mailIconCellContent').insertBefore($('#row1cell2inserter'));
     $('#chatIconCellContent').insertBefore($('#row1cell3inserter'));
@@ -1299,7 +1296,7 @@ function setClosed(){
   }
 
   function resetContactOptions(){
-      //console.log('ENTER RESET')
+    //console.log('ENTER RESET')
     $('#chatIconCellContent').show();
     $('#chatTitleCellContent').show();
     $('#chatTextCellContent').show();
@@ -1331,6 +1328,10 @@ function setClosed(){
 
     $('#mobileChatCell1Content').insertBefore($('#mobileInserter5'));
     $('#mobileChatCell2Content').insertBefore($('#mobileInserter6'));
+
+    if (currentLanguage != 'de' && portal == "helpcenter.connect.digitec.ch"){
+        hidePhoneCells();
+    }
   }
 
 function swapContactOptionsForHiddenContactForm(){
@@ -1389,6 +1390,31 @@ function swapContactOptionsForHiddenContactForm(){
   }
 
   function hidePhoneCells(){
+    $('#chatIconCellContent').insertBefore($('#row1cell2inserter'));
+    $('#mailIconCellContent').insertBefore($('#row1cell1inserter'));
+    $('#phoneIconCellContent').insertBefore($('#row1cell3inserter'));
+
+    $('#chatTitleCellContent').insertBefore($('#row2cell2inserter'));
+    $('#mailTitleCellContent').insertBefore($('#row2cell1inserter'));
+    $('#phoneTitleCellContent').insertBefore($('#row2cell3inserter'));
+
+    $('#chatTextCellContent').insertBefore($('#row3cell2inserter'));
+    $('#mailTextCellContent').insertBefore($('#row3cell1inserter'));
+    $('#phoneTextCellContent').insertBefore($('#row3cell3inserter'));
+
+    $('#chatButtonCellContent').insertBefore($('#row4cell2inserter'));
+    $('#mailButtonCellContent').insertBefore($('#row4cell1inserter'));
+    $('#phoneButtonCellContent').insertBefore($('#row4cell3inserter'));
+
+    $('#mobileChatCell1Content').insertBefore($('#mobileInserter3'));
+    $('#mobileChatCell2Content').insertBefore($('#mobileInserter4'));
+
+    $('#mobileMailCell1Content').insertBefore($('#mobileInserter1'));
+    $('#mobileMailCell2Content').insertBefore($('#mobileInserter2'));
+
+    $('#mobilePhoneCell1Content').insertBefore($('#mobileInserter5'));
+    $('#mobilePhoneCell2Content').insertBefore($('#mobileInserter6'));
+
     $('#phoneIconCellContent').hide();
     $('#phoneTitleCellContent').hide();
     $('#phoneTextCellContent').hide();
