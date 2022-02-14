@@ -143,12 +143,12 @@ function getDGChatDepartmentType(){
     var DGChatDepartmentType;
     if(typeof customerType != 'undefined' && typeof requestReasonTag != 'undefined'){
         switch(true){
-            //case(requestReasonTag == 'webform_case_product_advice_it' && isInPEChatHours() && lang == 'de'):
-            //    DGChatDepartmentType = 'PeIt'
-            //    break;
-            //case(requestReasonTag == 'webform_case_product_advice_network' && isInPEChatHours() && lang == 'de'):
-            //    DGChatDepartmentType = 'PeNetwork'
-            //    break;
+            case(requestReasonTag == 'webform_case_product_advice_it' && isInPEChatHours() && lang == 'de'):
+                DGChatDepartmentType = 'PeIt'
+                break;
+            case(requestReasonTag == 'webform_case_product_advice_network' && isInPEChatHours() && lang == 'de'):
+                DGChatDepartmentType = 'PeNetwork'
+                break;
             //case(requestReasonTag == 'webform_case_product_advice_consumer' && isInPEChatHours() && lang == 'de'):
             //    DGChatDepartmentType = 'PeConsumer';
             //    break;
@@ -161,7 +161,7 @@ function getDGChatDepartmentType(){
             case(requestReasonTag == 'webform_case_product_advice_diy' && isInPEChatHours() && lang == 'de'):
                 DGChatDepartmentType = 'PeDiy'
                 break;
-            case(customerType == 'business-customer' && lang == 'de'):
+            case(customerType == 'business-customer' && (lang == 'de' || lang == 'fr' || lang =='en')):
                 DGChatDepartmentType = getBusinessCustomerDepartmentType();
                 break;
             default:

@@ -135,7 +135,7 @@ function filldynamicWording(){
                 tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                uhrzeitPrivatkunde = "08:00 - 19:00";
+                uhrzeitPrivatkunde = "08:00 - 17:00";
                 uhrzeitPrivatkunde2 = "";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';

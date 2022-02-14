@@ -312,6 +312,9 @@
         fullMailform.show();
         break;
       case 'helpcenter.connect.digitec.ch':
+        if (currentLanguage != 'de'){
+            hideCallCells();
+        }
         if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/') {
           window.location.replace('https://helpcenter.connect.digitec.ch/hc/requests/new?ticket_form_id=360002056120');
         }
@@ -1383,6 +1386,15 @@ function swapContactOptionsForHiddenContactForm(){
           $('#mobileMailCell2Content').show();   
           removeChatBasedOnRequestType();    
       }
+  }
+
+  function hidePhoneCells(){
+    $('#phoneIconCellContent').hide();
+    $('#phoneTitleCellContent').hide();
+    $('#phoneTextCellContent').hide();
+    $('#phoneButtonCellContent').hide();
+    $('#mobilePhoneCell1Content').hide();
+    $('#mobilePhoneCell2Content').hide();
   }
 
   function fillHoliday(lang){
