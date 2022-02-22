@@ -1,3 +1,14 @@
+<head>
+  <meta charset="utf-8">
+  <title id="seitenTitel">Helpcenter</title>
+  <meta name="description" content="Du brauchst Hilfe? Auf unserem Helpcenter beantworten wir deine Fragen rund um Bestellungen, Gutscheine, Gutschriften, Versand und Rückgabe.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+
+
+
 <section class="section hero" style="margin-bottom:0px">
   <div class="hero-inner">
     {{search submit=false instant=true class='search search-full'}}
@@ -150,6 +161,16 @@
 				break;
 		}
 	}
+
+/////////////TITLE/////////////////
+
+  if(window.location.hostname !="helpcenter.digitec.ch" && window.location.hostname !="helpcenter.connect.digitec.ch"){
+    $("#seitenTitel").prop('title', 'Galaxus Helpcenter');
+    $("#seitenTitel").html('Galaxus Helpcenter');
+  }else{
+    $("#seitenTitel").prop('title', 'digitec Helpcenter');
+    $("#seitenTitel").html('digitec Helpcenter');
+  }
   
 </script>
 

@@ -106,44 +106,67 @@ switch(portal){
               break;
 }
 
+
+
+var currentLanguage = $('html').attr('lang');
+var topBannerWording = fillTopBannerWording();
+
+/*console.log(currentLanguage);*/
+
+var headingBannerCH=topBannerWording['outputHeadingBannerCH'][currentLanguage];
+var textBannerCH=topBannerWording['outputTextBannerCH'][currentLanguage];
+var headingBannerDE=topBannerWording['outputHeadingBannerDE'][currentLanguage];
+var textBannerDE=topBannerWording['outputTextBannerDE'][currentLanguage];
+var headingBannerAT=topBannerWording['outputHeadingBannerAT'][currentLanguage];
+var textBannerAT=topBannerWording['outputTextBannerAT'][currentLanguage];
+
+/*console.log(topBannerWording);
+console.log(window.location.hostname);*/
+
+
 /****************banner****************/
 
 /////////////////////Banner Einschalten/Auschalten///////////////////
-var bannerSwitch="false"; //true=an, false=aus
+var bannerSwitch; //true=an, false=aus, FÜR ALLE DOMAINS
+
+if(window.location.hostname =="helpcenter.digitec.ch" || window.location.hostname =="helpcenter.galaxus.ch"){ //SCHWEIZ
+  if(currentLanguage =='de'){ //CH DEUTSCH
+    bannerSwitch="false";
+  }else if(currentLanguage =='fr'){ //CH FRANZÖSISCH
+    bannerSwitch="false";
+  }else if(currentLanguage =='it'){ //CH ITALIENISCH
+    bannerSwitch="false";
+  }else if(currentLanguage =='en-US'){ //CH ENGLISCH
+    bannerSwitch="false";
+  }
+  else { //Rest
+    bannerSwitch="false";
+  }
+}
+else if(window.location.hostname =="helpcenter.galaxus.de"){ //DEUTSCHLAND
+  bannerSwitch="false";
+}
+else if(window.location.hostname =="helpcenter.galaxus.at"){ //ÖSTERREICH
+  bannerSwitch="false";
+}
+else{ //Rest
+  bannerSwitch="false";
+}
 ////////////////////////////////////////////////////////////////////
-
-var currentLanguage = $('html').attr('lang');
-console.log(currentLanguage);
-
-var topBannerWording = fillTopBannerWording();
-
-var headingBannerDGCH=topBannerWording['outputHeadingBannerDGCH'][currentLanguage];
-var textBannerDGCH=topBannerWording['outputTextBannerDGCH'][currentLanguage];
-var headingBannerGLCH=topBannerWording['outputHeadingBannerGLCH'][currentLanguage];
-var textBannerGLCH=topBannerWording['outputTextBannerGLCH'][currentLanguage];
-var headingBannerGLDE=topBannerWording['outputHeadingBannerGLDE'][currentLanguage];
-var textBannerGLDE=topBannerWording['outputTextBannerGLDE'][currentLanguage];
-var headingBannerGLDAT=topBannerWording['outputHeadingBannerGLAT'][currentLanguage];
-var textBannerGLAT=topBannerWording['outputTextBannerGLAT'][currentLanguage];
-
-//console.log(topBannerWording);
 
 
 //Je nach Domain unterschiedliche Banner
-if(window.location.hostname =="helpcenter.digitec.ch"){
-  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerDGCH + ":</strong><br> " + textBannerDGCH;
-}
-else if(window.location.hostname =="helpcenter.galaxus.ch"){
-  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerGLCH + ":</strong><br> " + textBannerGLCH;
+if(window.location.hostname =="helpcenter.digitec.ch" || window.location.hostname =="helpcenter.galaxus.ch"){
+  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerCH + ":</strong><br> " + textBannerCH;
 }
 else if(window.location.hostname =="helpcenter.galaxus.de"){
-  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerGLDE + ":</strong><br> " + textBannerGLDE;
+  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerDE + ":</strong><br> " + textBannerDE;
 }
 else if(window.location.hostname =="helpcenter.galaxus.at"){
-  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerGLAT + ":</strong><br> " + textBannerGLAT;
+  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerAT + ":</strong><br> " + textBannerAT;
 }
 else{ /*Digitec ist Else*/
-    document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerDGCH + ":</strong><br> " + textBannerDGCH;
+    document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerCH + ":</strong><br> " + textBannerCH;
 }
 
 if(bannerSwitch == "true"){
