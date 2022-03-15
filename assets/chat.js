@@ -149,12 +149,12 @@ function getDGChatDepartmentType(){
             case(requestReasonTag == 'webform_case_product_advice_network' && isInPEChatHours() && lang == 'de'):
                 DGChatDepartmentType = 'PeNetwork'
                 break;
-            //case(requestReasonTag == 'webform_case_product_advice_consumer' && isInPEChatHours() && lang == 'de'):
-            //    DGChatDepartmentType = 'PeConsumer';
-            //    break;
-            //case(requestReasonTag == 'webform_case_product_advice_photo' && isInPEChatHours() && lang == 'de'):
-            //    DGChatDepartmentType = 'PePhoto'
-            //    break;
+            case(requestReasonTag == 'webform_case_product_advice_consumer' && isInPEChatHours() && lang == 'de'):
+                DGChatDepartmentType = 'PeConsumer';
+                break;
+            case(requestReasonTag == 'webform_case_product_advice_photo' && isInPEChatHours() && lang == 'de'):
+                DGChatDepartmentType = 'PePhoto'
+                break;
             case(requestReasonTag == 'webform_case_product_advice_home' && isInPEChatHours() && lang == 'de'):
                 DGChatDepartmentType = 'PeHome';
                 break;
