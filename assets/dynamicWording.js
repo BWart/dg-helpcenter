@@ -378,10 +378,6 @@ function filldynamicWording(){
     }
 
     if (window.location.hostname == 'helpcenter.connect.digitec.ch'){
-        dynamicWording['de']['contactFormInfoText'] = 'Per Telefon oder Kontaktformular - wähle nur den passenden Anfragegrund.'
-        dynamicWording['fr']['contactFormInfoText'] = 'Par téléphone ou formulaire de contact - choisissez simplement le motif de votre demande.'
-        dynamicWording['it']['contactFormInfoText'] = 'Per telefono o modulo di contatto - basta scegliere il motivo appropriato per la sua richiesta.'
-        dynamicWording['en-US']['contactFormInfoText'] = 'By phone or contact form - just choose the appropriate reason for your inquiry.'
         dynamicWording['de']['questionNotAnswered'] = 'Wähle deinen Kontaktkanal'
         dynamicWording['fr']['questionNotAnswered'] = 'Choisissez votre canal de contact'
         dynamicWording['it']['questionNotAnswered'] = 'Scegli il tuo canale di contatto'
@@ -407,30 +403,6 @@ function filldynamicWording(){
         dynamicWording['fr']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">Vers le Shop</a>'
         dynamicWording['it']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">Al Shop</a>'
         dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">To Shop</a>'
-    }
-    
-    if (window.location.hostname == 'helpcenter.galaxus.de' || window.location.hostname == 'helpcenter.galaxus.at'){
-        dynamicWording['de']['contactFormInfoText'] = 'Per Telefon oder Kontaktformular - wähle nur deine Kundengruppe und den passenden Anfragegrund.'
-        dynamicWording['fr']['contactFormInfoText'] = 'Par téléphone ou formulaire de contact - choisissez simplement votre groupe de clients et le motif de la demande.'
-        dynamicWording['it']['contactFormInfoText'] = 'Per telefono o modulo di contatto - seleziona il tuo gruppo di clienti e il motivo della tua richiesta.'
-        dynamicWording['en-US']['contactFormInfoText'] = 'By phone or contact form - just choose your customer group and the appropriate reason for inquiry.'
-        dynamicWording['de']['openingDaysPrivate2'] = '<br>Sa: '
-        dynamicWording['fr']['openingDaysPrivate2'] = '<br>:Sa: '
-        dynamicWording['it']['openingDaysPrivate2'] = 'Sab: '
-        dynamicWording['en-US']['openingDaysPrivate2'] = 'Sa: '
-        dynamicWording['de']['openingDaysPrivate2Mobile'] = 'Sa: '
-        dynamicWording['fr']['openingDaysPrivate2Mobile'] = 'Sa: '
-        dynamicWording['it']['openingDaysPrivate2Mobile'] = 'Sab: '
-        dynamicWording['en-US']['openingDaysPrivate2Mobile'] = 'Sa: '
-        dynamicWording['de']['openingDaysBusiness2'] = '<br>Sa: '
-        dynamicWording['fr']['openingDaysBusiness2'] = '<br>:Sa: '
-        dynamicWording['it']['openingDaysBusiness2'] = 'Sab: '
-        dynamicWording['en-US']['openingDaysBusiness2'] = 'Sa: '
-        dynamicWording['de']['openingDaysBusiness2Mobile'] = 'Sa: '
-        dynamicWording['fr']['openingDaysBusiness2Mobile'] = 'Sa: '
-        dynamicWording['it']['openingDaysBusiness2Mobile'] = 'Sab: '
-        dynamicWording['en-US']['openingDaysBusiness2Mobile'] = 'Sa: '
- 
     }
 
   return dynamicWording;  
