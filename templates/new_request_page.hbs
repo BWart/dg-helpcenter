@@ -1225,9 +1225,6 @@ function setClosed(){
 
   function swapContactOptions(){
     //console.log('ENTER SWAP')
-    if (currentLanguage != 'de' && portal == "helpcenter.connect.digitec.ch"){
-        hidePhoneCells();
-    }
 
     $('#chatIconCellContent').insertBefore($('#row1cell1inserter'));
     $('#phoneIconCellContent').insertBefore($('#row1cell2inserter'));
@@ -1260,6 +1257,10 @@ function setClosed(){
     $('#chatButtonCellContent').show();
     $('#mobileChatCell1Content').show();
     $('#mobileChatCell2Content').show();
+
+    if (currentLanguage != 'de' && portal == "helpcenter.connect.digitec.ch"){
+        hidePhoneCells();
+    }
   }
 
   function hideChatCells(){
