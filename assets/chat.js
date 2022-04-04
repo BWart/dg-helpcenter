@@ -186,10 +186,10 @@ function getBusinessCustomerDepartmentType(){
 //Returns true before 16:55
 function isInBusinessChatHours(){
     var today = new Date();
-    if((today.getUTCHours() == 15 && today.getMinutes() >= 55)){
+    if((today.getUTCHours() == 14 && today.getMinutes() >= 55)){
         return false;
     }
-    if(today.getUTCHours() < 16 && today.getUTCHours() > 6){
+    if(today.getUTCHours() < 15 && today.getUTCHours() > 5){
         return true;
     }else{
         return false;
@@ -202,10 +202,10 @@ function isInPEChatHours(){
     if (today.getUTCDay() < 1 || today.getUTCDay() > 5){
         return false;
     }
-    if((today.getUTCHours() == 16 && today.getMinutes() >=55)){
+    if((today.getUTCHours() == 15 && today.getMinutes() >=55)){
         return false;
     }
-    if(today.getUTCHours() < 17 && today.getUTCHours() > 6){
+    if(today.getUTCHours() < 16 && today.getUTCHours() > 6){
         return true;
     } else {
         return false;

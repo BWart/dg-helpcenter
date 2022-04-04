@@ -728,7 +728,7 @@ function setWaitTimes(){
     if (diffSeconds > 299 || isHoliday()){
         waitTimes.hide();
     } else if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
-        if ((dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTCHour >= 7 && currentUTCHour < 19) || (dayOfWeek == 6 && currentUTCHour >= 8 && currentUTCHour < 16)){
+        if ((dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTCHour >= 6 && currentUTCHour < 18) || (dayOfWeek == 6 && currentUTCHour >= 7 && currentUTCHour < 15)){
             if (customerType == 'private-customer'){
                 if (callWaitTimes['privateGer'] >= callWaitTimes['privateAt']){
                     setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateGer'])
@@ -746,7 +746,7 @@ function setWaitTimes(){
             setClosed();
         }
     } else {
-        if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTCHour >=7 && currentUTCHour < 16){
+        if (dayOfWeek >= 1 && dayOfWeek <= 6 && currentUTCHour >=6 && currentUTCHour < 15){
             if (customerType == 'connect-customer'){
                 switch(currentLanguage){
                     case 'de':
