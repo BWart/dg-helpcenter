@@ -339,6 +339,9 @@
         }
         waitTimes.hide();
         fullMailform.show();
+        if (currentLanguage != 'de' && portal == "helpcenter.connect.digitec.ch"){
+          hidePhoneCells();
+        }
         break;
       default:
         if (fullLink.slice(-3) != 'new'){
