@@ -720,149 +720,185 @@
     document.body.appendChild(script);
   }
 
-function setWaitTimes(){
+  function setWaitTimes() {
     waitTimes.hide();
     const d = new Date();
     var dayOfWeek = d.getUTCDay();
     var currentUTCHour = d.getUTCHours();
     const dateFromExternalScript = new Date(createTimeStampUTC)
     const currentUTCDate = new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds())
-    const diffSeconds = Math.abs((currentUTCDate - dateFromExternalScript)/1000)
-    if (diffSeconds > 299 || isHoliday()){
-        waitTimes.hide();
-    } else if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
-        if ((dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTCHour >= 6 && currentUTCHour < 18) || (dayOfWeek == 6 && currentUTCHour >= 7 && currentUTCHour < 15)){
-            if (customerType == 'private-customer'){
-                if (callWaitTimes['privateGer'] >= callWaitTimes['privateAt']){
-                    setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateGer'])
-                } else {
-                    setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'])
-                }
-            } else {
-                if (callWaitTimes['businessGer'] >= callWaitTimes['privateAt']){
-                    setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['businessGer'])
-                } else {
-                    setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'])
-                }
-            }
+    const diffSeconds = Math.abs((currentUTCDate - dateFromExternalScript) / 1000)
+    if (diffSeconds > 299 || isHoliday()) {
+      waitTimes.hide();
+    } else if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at') {
+      if ((dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTCHour >= 6 && currentUTCHour < 18) || (dayOfWeek == 6 && currentUTCHour >= 7 && currentUTCHour < 15)) {
+        if (customerType == 'private-customer') {
+          if (callWaitTimes['privateGer'] >= callWaitTimes['privateAt']) {
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateGer'])
+          } else {
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'])
+          }
         } else {
-            setClosed();
+          if (callWaitTimes['businessGer'] >= callWaitTimes['privateAt']) {
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['businessGer'])
+          } else {
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'])
+          }
         }
+      } else {
+        setClosed();
+      }
     } else {
-        if (dayOfWeek >= 1 && dayOfWeek <= 6 && currentUTCHour >=6 && currentUTCHour < 15){
-            if (customerType == 'connect-customer'){
-                switch(currentLanguage){
-                    case 'de':
-                        setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
-                        break;
-                    case 'fr':
-                        setWaitTime(chatWaitTimes['connectFR'], callWaitTimes['connectFR']);
-                        break;
-                    case 'it':
-                        setWaitTime(chatWaitTimes['connectIT'], callWaitTimes['connectIT']);
-                        break;
-                    case 'en-US':
-                        setWaitTime(chatWaitTimes['connectEN'], callWaitTimes['connectEN']);
-                        break;
-                    default:
-                        setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
-                        break;
-                }
-            }
-            if (customerType == 'business-customer'){
-                switch(currentLanguage){
-                    case 'de':
-                        if (isInPEChatHours()){
-                            if (requestReasonTag.includes('webform_case_product_advice_')){
-                                var lastIndex = requestReasonTag.lastIndexOf('_');
-                                var splitstring = requestReasonTag.substring(lastIndex, requestReasonTag.length)
-                                var lastpart = splitstring.substring(1, splitstring.length)
-                                var lastpartCapitalized = lastpart.charAt(0).toUpperCase() + lastpart.substring(1, lastpart.length)
-                                if (isInBusinessChatHours) {
-                                    setWaitTime(chatWaitTimes['pe'+lastpartCapitalized+'DE'], callWaitTimes['businessCHDE']);
-                                } else {
-                                    setWaitTime(chatWaitTimes['pe'+lastpartCapitalized+'DE'], callWaitTimes['privateCHDE']);
-                                }
-                            } else if (isInBusinessChatHours()) {
-                                setWaitTime(chatWaitTimes['businessDE'], callWaitTimes['businessCHDE']);
-                            } else {
-                                setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE']);
-                            }
-                        } else {
-                            setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE']);
-                        }
-                        break;
-                    case 'fr':
-                        if (isInBusinessChatHours()){
-                            setWaitTime(chatWaitTimes['businessFR'], callWaitTimes['businessCHFR']);
-                        } else {
-                            setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR']);
-                        }
-                        break;
-                    case 'it':
-                        if (isInBusinessChatHours()){
-                            setWaitTime(chatWaitTimes['businessIT'], callWaitTimes['businessCHIT']);
-                        } else {
-                            setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT']);
-                        }
-                        break;
-                    case 'en-US':
-                        if (isInBusinessChatHours()){
-                            setWaitTime(chatWaitTimes['businessEN'], callWaitTimes['businessCHEN']);
-                        } else {
-                            setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN']);
-                        }
-                        break;
-                    default:
-                        if (isInBusinessChatHours()){
-                            setWaitTime(chatWaitTimes['businessEN'], callWaitTimes['businessCHEN']);
-                        } else {
-                            setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN']);
-                        }
-                        break;
-                }
-            } else {
-                switch (currentLanguage) {
-                    case 'de':
-                        if (isInPEChatHours){
-                            if (requestReasonTag.includes('webform_case_product_advice_')){
-                                var lastIndex = requestReasonTag.lastIndexOf('_');
-                                var splitstring = requestReasonTag.substring(lastIndex, requestReasonTag.length)
-                                var lastpart = splitstring.substring(1, splitstring.length)
-                                var lastpartCapitalized = lastpart.charAt(0).toUpperCase() + lastpart.substring(1, lastpart.length)
-                                if (lastpartCapitalized.includes('It') || lastpartCapitalized.includes('Network')){
-                                    setWaitTime(chatWaitTimes['pe'+lastpartCapitalized+'DE'], callWaitTimes['peItNetwork'])
-                                } else if (lastpartCapitalized.includes('Consumer') || lastpartCapitalized.includes('Photo')){
-                                    setWaitTime(chatWaitTimes['pe'+lastpartCapitalized+'DE'], callWaitTimes['peConsumerPhoto'])
-                                } else if (lastpartCapitalized.includes('Diy') || lastpartCapitalized.includes('Home')){
-                                    setWaitTime(chatWaitTimes['pe'+lastpartCapitalized+'DE'], callWaitTimes['peDiyHome'])
-                                }
-                            } else {
-                                setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
-                            }
-                        } else {
-                            setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
-                        }
-                        break;
-                    case 'fr':
-                        setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR'])
-                        break;
-                    case 'it':
-                        setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT'])
-                        break;
-                    case 'en-US':
-                        setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN'])
-                        break;
-                    default:
-                        setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
-                        break;
-                }
-            }
-        } else {
-            setClosed();
+      if (dayOfWeek >= 1 && dayOfWeek <= 6 && currentUTCHour >= 6 && currentUTCHour < 15) {
+        if (customerType == 'connect-customer') {
+          switch (currentLanguage) {
+            case 'de':
+              setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
+              break;
+            case 'fr':
+              setWaitTime(chatWaitTimes['connectFR'], callWaitTimes['connectFR']);
+              break;
+            case 'it':
+              setWaitTime(chatWaitTimes['connectIT'], callWaitTimes['connectIT']);
+              break;
+            case 'en-US':
+              setWaitTime(chatWaitTimes['connectEN'], callWaitTimes['connectEN']);
+              break;
+            default:
+              setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
+              break;
+          }
         }
+        if (customerType == 'business-customer') {
+          switch (currentLanguage) {
+            case 'de':
+              if (isInPEChatHours()) {
+                if (requestReasonTag.includes('webform_case_product_advice_')) {
+                  var lastIndex = requestReasonTag.lastIndexOf('_');
+                  var splitstring = requestReasonTag.substring(lastIndex, requestReasonTag.length)
+                  var lastpart = splitstring.substring(1, splitstring.length)
+                  var lastpartCapitalized = lastpart.charAt(0).toUpperCase() + lastpart.substring(1, lastpart.length)
+                  if (isInBusinessChatHours) {
+                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['businessCHDE']);
+                  } else {
+                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['privateCHDE']);
+                  }
+                } else if (isInBusinessChatHours()) {
+                  setWaitTime(chatWaitTimes['businessDE'], callWaitTimes['businessCHDE']);
+                } else {
+                  setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE']);
+                }
+              } else {
+                setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE']);
+              }
+              break;
+            case 'fr':
+              if (isInBusinessChatHours()) {
+                setWaitTime(chatWaitTimes['businessFR'], callWaitTimes['businessCHFR']);
+              } else {
+                setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR']);
+              }
+              break;
+            case 'it':
+              if (isInBusinessChatHours()) {
+                setWaitTime(chatWaitTimes['businessIT'], callWaitTimes['businessCHIT']);
+              } else {
+                setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT']);
+              }
+              break;
+            case 'en-US':
+              if (isInBusinessChatHours()) {
+                setWaitTime(chatWaitTimes['businessEN'], callWaitTimes['businessCHEN']);
+              } else {
+                setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN']);
+              }
+              break;
+            default:
+              if (isInBusinessChatHours()) {
+                setWaitTime(chatWaitTimes['businessEN'], callWaitTimes['businessCHEN']);
+              } else {
+                setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN']);
+              }
+              break;
+          }
+        } else {
+          switch (currentLanguage) {
+            case 'de':
+              if (isInPEChatHours) {
+                if (requestReasonTag.includes('webform_case_product_advice_')) {
+                  var lastIndex = requestReasonTag.lastIndexOf('_');
+                  var splitstring = requestReasonTag.substring(lastIndex, requestReasonTag.length)
+                  var lastpart = splitstring.substring(1, splitstring.length)
+                  var lastpartCapitalized = lastpart.charAt(0).toUpperCase() + lastpart.substring(1, lastpart.length)
+                  if (lastpartCapitalized.includes('It') || lastpartCapitalized.includes('Network')) {
+                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peItNetwork'])
+                  } else if (lastpartCapitalized.includes('Consumer') || lastpartCapitalized.includes('Photo')) {
+                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peConsumerPhoto'])
+                  } else if (lastpartCapitalized.includes('Diy') || lastpartCapitalized.includes('Home')) {
+                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peDiyHome'])
+                  }
+                } else {
+                  setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
+                }
+              } else {
+                setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
+              }
+              break;
+            case 'fr':
+              setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR'])
+              break;
+            case 'it':
+              setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT'])
+              break;
+            case 'en-US':
+              setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN'])
+              break;
+            default:
+              setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
+              break;
+          }
+        }
+      } else if (dayOfWeek >= 1 && dayOfWeek <= 6 && currentUTCHour >= 15 && currentUTCHour < 17) {
+        switch (currentLanguage) {
+            case 'de':
+              if (isInPEChatHours) {
+                if (requestReasonTag.includes('webform_case_product_advice_')) {
+                  var lastIndex = requestReasonTag.lastIndexOf('_');
+                  var splitstring = requestReasonTag.substring(lastIndex, requestReasonTag.length)
+                  var lastpart = splitstring.substring(1, splitstring.length)
+                  var lastpartCapitalized = lastpart.charAt(0).toUpperCase() + lastpart.substring(1, lastpart.length)
+                  if (lastpartCapitalized.includes('It') || lastpartCapitalized.includes('Network')) {
+                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peItNetwork'])
+                  } else if (lastpartCapitalized.includes('Consumer') || lastpartCapitalized.includes('Photo')) {
+                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peConsumerPhoto'])
+                  } else if (lastpartCapitalized.includes('Diy') || lastpartCapitalized.includes('Home')) {
+                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peDiyHome'])
+                  }
+                } else {
+                  setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
+                }
+              } else {
+                setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
+              }
+              break;
+            case 'fr':
+              setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR'])
+              break;
+            case 'it':
+              setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT'])
+              break;
+            case 'en-US':
+              setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN'])
+              break;
+            default:
+              setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
+              break;
+          }
+      } else {
+        setClosed();
+      }
     }
-}
+  }
 
 function setClosed(){
     callWaitTimesDOMElements.hide();
