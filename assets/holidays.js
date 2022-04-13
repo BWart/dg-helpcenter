@@ -14,10 +14,10 @@ var showHolidays = {
 }
 var textToDisplay = {
     0 : {
-        'de' : '<br>Ostern: 14.04.2022 ab 16:00 Uhr bis 18.04.2022 geschlossen',
-        'fr' : "<br>Pâques : 14.04.2022 à partir de 16:00 heures jusqu'au 18.04.2022 fermé<br>",
-        'it' : '<br>Pasqua: 14.04.2022 chiuso dalle 16:00 al 18.04.2022<br>',
-        'en-US' : '<br>Easter: 14.04.2022 from 16:00 until 18.04.2022 closed<br>',
+        'de' : '<br>Ostern: Geschlossen 14.04.2022 ab 16:00 Uhr bis 18.04.2022',
+        'fr' : "<br>Pâques : Fermé le 14.04.2022 à partir de 16:00 jusqu'au 18.04.2022",
+        'it' : '<br>Pasqua: Chiuso 14.04.2022 dalle 16:00 al 18.04.2022',
+        'en-US' : '<br>Easter: Closed 14.04.2022 from 16:00 until 18.04.2022',
     },
     1 : {
         'de' : '<br>Ostern: 15.04.2022 & 18.04.2022 geschlossen',
