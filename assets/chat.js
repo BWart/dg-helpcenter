@@ -212,6 +212,20 @@ function isInPEChatHours(){
     }
 }
 
+//Returns true during weekdays from 8AM to 7PM
+
+function isInGeneralChatHours(){
+    var today = new Date();
+    if (today.getUTCDay() < 1 || today.getUTCDay() > 5){
+        return false;
+    }
+    if(today.getUTCHours() < 17 && today.getUTCHours() > 6){
+        return true;
+    } else {
+        return false;
+    }
+}
+
 //Returns true or false for holidays
 function isHoliday(){
     var portalChooser = '';
