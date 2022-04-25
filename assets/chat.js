@@ -219,7 +219,7 @@ function isInGeneralChatHours(){
     if (today.getUTCDay() < 1 || today.getUTCDay() > 5){
         return false;
     }
-    if(today.getUTCHours() < 17 && today.getUTCHours() > 6){
+    if(today.getUTCHours() < 17 && today.getUTCHours() > 5){
         return true;
     } else {
         return false;
