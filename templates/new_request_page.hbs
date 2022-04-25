@@ -274,6 +274,38 @@
   var reasonsForLongerMailWaitTime = ["webform_case_product_advice_it", "webform_case_product_advice_network"]
   var languagesForLongerMailWaitTime = ["de"]
 
+  var requestReasonTopCategory = {
+    "webform_case_shipping_status": "where_is_my_order",
+    "webform_case_ready_for_shipment": "where_is_my_order",
+    "webform_case_order_status": "where_is_my_order",
+    "webform_case_damaged_product": "problems_with_an_order",
+    "webform_case_not_working_product": "problems_with_an_order",
+    "webform_case_wrong_product": "problems_with_an_order",
+    "webform_case_missing_product": "problems_with_an_order",
+    "webform_case_cancel_order": "problems_with_an_order",
+    "webform_case_other_request_order": "problems_with_an_order",
+    "webform_case_return": "return",
+    "webform_case_return_status": "return",
+    "webform_case_creditnote": "return",
+    "webform_case_other_request_returns": "return",
+    "webform_case_refund": "payment_reminder_and_refund",
+    "webform_case_receipt": "payment_reminder_and_refund",
+    "webform_case_payment_reminder": "payment_reminder_and_refund",
+    "webform_case_no_bill": "payment_reminder_and_refund",
+    "webform_case_dunning_block": "payment_reminder_and_refund",
+    "webform_case_other_request_payment": "payment_reminder_and_refund",
+    "webform_case_delete_account": "customer_account",
+    "webform_case_cant_login": "customer_account",
+    "webform_case_other_request_account": "customer_account",
+    "webform_case_product_advice_it": "product_information",
+    "webform_case_product_advice_network": "product_information",
+    "webform_case_product_advice_consumer": "product_information",
+    "webform_case_product_advice_photo": "product_information",
+    "webform_case_product_advice_home": "product_information",
+    "webform_case_product_advice_diy": "product_information",
+    "webform_case_offer": "offer"
+  }
+
   //intial setup
   chatWaitTimesDOMElements.hide();
   fallbackText.hide();
@@ -1109,11 +1141,12 @@ function setClosed(){
   
   function sendGARequestOpeningHours(action){
       if(gaSend){
-        if(requestReasonTag.includes('webform_case_product_advice_') && currentLanguage == 'de') {
-            ga('send', 'event', 'Opening Hours', 'PE ' + action, customerType + ' ' + currentLanguage);
-        } else {
-            ga('send', 'event', 'Opening Hours', action, customerType + ' ' + currentLanguage);
-        }
+        //if(requestReasonTag.includes('webform_case_product_advice_') && currentLanguage == 'de') {
+        //    ga('send', 'event', 'Opening Hours', 'PE ' + action, customerType + ' ' + currentLanguage);
+        //} else {
+          console.log(requestReasonTopCategory[requestReasonTag] + ' ' + customerType + ' ' + currentLanguage)
+            ga('send', 'event', 'Opening Hours', action, requestReasonTopCategory[requestReasonTag] + ' ' + customerType + ' ' + currentLanguage);
+        //}
       }
   }
   
