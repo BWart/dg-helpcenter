@@ -216,14 +216,15 @@ function isInPEChatHours(){
 
 function isInGeneralChatHours(){
     var today = new Date();
-    if (today.getUTCDay() < 1 || today.getUTCDay() > 5){
-        return false;
-    }
-    if(today.getUTCHours() < 17 && today.getUTCHours() > 5){
+    //opening times CH (without connect as it's not needed)
+    if((portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch') && (today.getUTCHours() < 17 && today.getUTCHours() > 5 && (today.getUTCDay() > 0 || today.getUTCDay() < 6))){
         return true;
-    } else {
-        return false;
     }
+    //opening times Ger
+    if((portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at') && ((today.getUTCDay() > 0 && today.getUTCDay() < 6 && today.getUTCHours() > 5 && today.getUTCHours() < 19) || (today.getUTCDay() = 6 && today.getUTCHours() > 6 && today.getUTCHours() < 18))){
+        return true;
+    }
+    return false;
 }
 
 //Returns true or false for holidays
