@@ -111,6 +111,8 @@ switch(portal){
 var currentLanguage = $('html').attr('lang');
 var topBannerWording = fillTopBannerWording();
 
+setMetaDescription();
+
 /*console.log(currentLanguage);*/
 
 var headingBannerCH=topBannerWording['outputHeadingBannerCH'][currentLanguage];
@@ -173,6 +175,26 @@ if(bannerSwitch == "true"){
   $('#bannerSchalter').show();
 }else{
   $('#bannerSchalter').hide();
+}
+
+function setMetaDescription(){
+  switch(currentLanguage){
+    case 'de':
+      document.querySelector('meta[name="description"]').setAttribute("content", 'Du brauchst Hilfe? Auf unserem Helpcenter beantworten wir deine Fragen rund um Bestellungen, Gutscheine, Gutschriften, Versand und Rückgabe.');
+      break;
+    case 'fr':
+      document.querySelector('meta[name="description"]').setAttribute("content", "Tu as besoin d'aide ? Sur notre Helpcenter, nous répondons à tes questions concernant les commandes, les bons d'achat, les crédits, l'expédition et les retours.");
+      break;
+    case 'it':
+      document.querySelector('meta[name="description"]').setAttribute("content", "Hai bisogno di aiuto? Nel nostro centro di assistenza rispondiamo alle tue domande su ordini, buoni, crediti, spedizioni e resi.");
+      break;
+    default:
+      document.querySelector('meta[name="description"]').setAttribute("content", "Need help? On our help center we answer your questions about orders, vouchers, credits, shipping and returns.");
+      break;
+  }
+  if (window.location.href.includes('requests')){
+    document.querySelector('meta[name="robots"]').setAttribute("content", 'noindex');
+  }
 }
 
 </script>
