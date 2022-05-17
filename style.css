@@ -707,9 +707,9 @@ ul {
 /***** Footer *****/
 .footer { 
   display: table-footer-group;
-  margin-left: -5px;
-  margin-right: -5px;
-  margin-bottom: -5px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
   margin-top: 50px;
 }
 
@@ -835,17 +835,16 @@ ul {
   background-color: rgba(0,0,0,0);
   background-position: center;
   background-size: cover;
-  height: 200px;
   padding: 0 20px;
   text-align: center;
   width: 100%;
   border-top: 1px solid #ddd;
+  padding-top:30px;
+  padding-bottom:50px;
 }
 
 .hero-inner {
-  position: relative;
-  top: 60%;
-  transform: translateY(-50%);
+  /*transform: translateY(-50%);*/
   max-width: 610px;
   margin: 0 auto;
 }
@@ -4699,8 +4698,10 @@ infoNoteBox{
 
 html {
   min-height: 100%;
-  margin-left: calc(100vw - 100%);
+  /*margin-left: calc(100vw - 100%);*/
+  width: 100%;
   scroll-behavior: smooth;
+  margin:0;
  }
 
  /* aus style.css */
@@ -4742,8 +4743,8 @@ html {
     }
   }
   
-  @media (max-width: 425px) {
-    .hideUnder425 {
+  @media (max-width: 381px) {
+    .hideUnder381 {
       display : none !important;
     }
   }

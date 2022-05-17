@@ -1,7 +1,7 @@
 {
   "name": "Github Import",
   "author": "Zendesk",
-  "version": "1.0.210",
+  "version": "1.0.211",
   "api_version": 1,
   "default_locale": "en-us",
   "settings": [

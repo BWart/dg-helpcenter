@@ -221,7 +221,7 @@ function isInGeneralChatHours(){
         return true;
     }
     //opening times Ger
-    if((portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at') && ((today.getUTCDay() > 0 && today.getUTCDay() < 6 && today.getUTCHours() > 5 && today.getUTCHours() < 19) || (today.getUTCDay() = 6 && today.getUTCHours() > 6 && today.getUTCHours() < 18))){
+    if((portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at') && ((today.getUTCDay() > 0 && today.getUTCDay() < 6 && today.getUTCHours() > 5 && today.getUTCHours() < 19) || (today.getUTCDay() == 6 && today.getUTCHours() > 6 && today.getUTCHours() < 18))){
         return true;
     }
     return false;

@@ -11,10 +11,8 @@
 
 <section class="section hero" style="margin-bottom:0px">
   <div class="hero-inner">
+    <h2 style="margin-bottom:20px;"><font class='searchBoxText' data-wording-key='searchBoxText' style="color:black; margin-botton:20px;"></font></h2>
     {{search submit=false instant=true class='search search-full'}}
-  </div>
- <div class='searchBoxNote' style='top:-5%; position: relative;' >
-  	<a class='searchBoxText' data-wording-key='searchBoxText'></a>
   </div>
 </section> 
     
@@ -128,13 +126,13 @@
 			case 'Pagamento':
 				elements2[index].innerHTML = '<img src="{{asset 'orders-and-payment.png'}}" height="' + pixelheight + 'px">';
 				break;
-       case 'Rückerstattung': //Temporär hier bis eigenes Icon
+      case 'Rückerstattung': //Temporär hier bis eigenes Icon
       case 'Refund': // Temporär hier bis eigenes Icon
       case 'Remboursement': // Temporär hier bis eigenes Icon
       case 'Rimborso': // Temporär hier bis eigenes Icon
         elements2[index].innerHTML = '<img src="{{asset 'refund.png'}}" height="' + pixelheight + 'px">';
         break;
-      case 'Rückgabe &amp; Gewährleistung':
+      case 'Rückgabe und Gewährleistung':
       case 'Garantie &amp; Rückgabe': 
 			case 'Warranty &amp; return':
 			case 'Garantie &amp; retour':
