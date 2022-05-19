@@ -27,6 +27,16 @@ function changeWebWidgetSettingsOnChange(){
 
 // Definiert die Widget Settings
 function getWebWidgetSettings(){
+    var greetingTextDE = "Damit wir dir rasch helfen können, teile uns bitte deine Auftrags- oder Rechnungsnummer mit."
+    var greetingTextFR = "Pour que nous puissions vous aider rapidement, veuillez nous communiquer votre numéro de commande ou de facture."
+    var greetingTextIT = "Per potervi aiutare rapidamente, vi preghiamo di comunicarci il vostro numero d'ordine o di fattura."
+    var greetingTextEN = "So that we can help you quickly, please let us know your order or invoice number."
+    if (portal == "helpcenter.connect.digitec.ch") {
+        greetingTextDE = "Damit wir dir rasch helfen können, teile uns bitte deine Mobiltelefonnummer mit."
+        greetingTextFR = "Pour que nous puissions vous aider rapidement, veuillez nous communiquer votre numéro de téléphone portable."
+        greetingTextIT = "Per potervi aiutare rapidamente, vi preghiamo di comunicarci il vostro numero di cellulare."
+        greetingTextEN = "So that we can help you quickly, please let us know your cell phone number."
+    }
     var dep = getChatDepartment();
     var zeSettings = {
         webWidget: {
@@ -44,10 +54,10 @@ function getWebWidgetSettings(){
                 },
                 prechatForm: {
                     greeting: {
-                        '*': "So that we can help you quickly, please let us know your order or invoice number.",
-                        fr: "Pour que nous puissions vous aider rapidement, veuillez nous communiquer votre numéro de commande ou de facture.",
-                        de: "Damit wir dir rasch helfen können, teile uns bitte deine Auftrags- oder Rechnungsnummer mit. ",
-                        it: "Per potervi aiutare rapidamente, vi preghiamo di comunicarci il vostro numero d'ordine o di fattura."
+                        '*': greetingTextEN,
+                        fr: greetingTextFR,
+                        de: greetingTextDE,
+                        it: greetingTextIT
                     }
                 },
                 offlineForm: {
