@@ -1447,7 +1447,7 @@ function swapContactOptionsForHiddenContactForm(){
   }
 
   function hideContactForm(){
-      if ((reasonsForNoContactFormPE.indexOf(requestReasonTag) >= 0 && isInPEChatHours() && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch') && currentLanguage == 'de') || (customerType == "private-customer" && reasonsForNoContactFormGeneral.indexOf(requestReasonTag) >= 0 && isInGeneralChatHours())){
+      if ((reasonsForNoContactFormPE.indexOf(requestReasonTag) >= 0 && isInPEChatHours() && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch') && currentLanguage == 'de') || (customerType == "private-customer" && reasonsForNoContactFormGeneral.indexOf(requestReasonTag) >= 0 && isInGeneralChatHours()) && !isHoliday()){
           swapContactOptionsForHiddenContactForm();
           $('#mailIconCellContent').hide();
           $('#mailTitleCellContent').hide();
