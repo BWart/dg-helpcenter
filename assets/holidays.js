@@ -14,10 +14,10 @@ var showHolidays = {
 }
 var textToDisplay = {
     0 : {
-        'de' : '<br>Auffahrt: Geschlossen 25.5.2022 ab 16 Uhr & 26.5.2022 ganztags',
-        'fr' : "<br>Ascension : Fermé le 25.5.2022 à partir de 16h & le 26.5.2022 toute la journée",
-        'it' : '<br>Ascensione: Chiuso il 25.5.2022 dalle 16.00 e il 26.5.2022 tutto il giorno.',
-        'en-US' : '<br>Ascension: Closed 25.5.2022 from 4pm & 26.5.2022 all day',
+        'de' : '<br>Auffahrt: 25.05. 08:00 bis 16:00, 26.05. geschlossen',
+        'fr' : "<br>Ascension : 25.05. 08:00 à 16:00, 26.05. fermé",
+        'it' : '<br>Ascensione: 25.05. dalle 08:00 alle 16:00, 26.05. chiuso',
+        'en-US' : '<br>Ascension: 25.05. 08:00 to 16:00, 26.05. closed',
     },
     1 : {
         'de' : '<br>Christi Himmelfahrt: 26.05.2022 geschlossen',
