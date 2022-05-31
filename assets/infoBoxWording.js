@@ -300,10 +300,10 @@ function fillInfoBoxWording(){
   
         //LEVEL 0: Offerte
         "webform_case_offer" : {
-              'de' : "Offerten mit einem Auftragsvolumen von bis zu " + offerte + " werden nicht gepriced. Es gelten die Preisangaben auf unserem Shop.",
-              'fr' : "Remarque : pour une offre, le volume de la commande doit être d'au moins " + offerte + ". Les prix indiqués dans notre boutique s'appliquent.",
-              'it' : "Attenzione: per un'offerta, il volume dell'ordine deve essere di almeno " + offerte + ". Si applicano i prezzi indicati nel nostro negozio.",
-              'en-US' : "Please note: For a quotation, the minimum order volume must be " + offerte + ". The prices quoted in our store apply."
+              'de' : "Für Auftragsvolumen unter " + offerte + " werden keine Offerten erstellt. Es gelten die Preisangaben in unserem Onlineshop.",
+              'fr' : "Nous n'établissons pas d'offres pour les volumes de commande inférieurs à " + offerte + ". Les prix indiqués dans notre boutique en ligne font foi.",
+              'it' : "Non verranno emesse quotazioni per volumi d'ordine inferiori a " + offerte + ". Si applicano i prezzi del nostro negozio online.",
+              'en-US' : "For order volumes below " + offerte + ", no quotations will be issued. The prices in our online store apply."
         },
   
         //Error-Meldungen für Attachment
