@@ -720,7 +720,7 @@ ul {
 	}
 }
 
-@media (max-width: 1920px) {
+@media (max-width: 1359px) {
   .footer { 
    	display: flex;
 	}
@@ -730,7 +730,7 @@ ul {
     margin-top: 50px;
     text-align: center;
     padding-top: 20px;
-    padding-bottom: 24px;
+    padding-bottom: 30px;
 }
 
 @media (min-width: 1160px) {
