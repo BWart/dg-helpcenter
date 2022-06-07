@@ -259,6 +259,8 @@
 
   //Variable stuff and checkers
   var contactFormIsShown = 0; // 0 Shows Infotext and 1 shows OrderNumber Field
+  var hideContactFormCheckerChat = true;
+  var hideContactFormCheckerPhone = true;
 
   //List of tags to hide OrderNumber Input Field
   var reasonsForNoOrderNumber = ["webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer",
@@ -269,9 +271,9 @@
   "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy"]
   //var reasonsForNoContactFormPE = []
   //ALL REASONS
-  //var reasonsForNoContactFormGeneral = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product", "webform_case_not_working_product", "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_other_request_order", "webform_case_return", "webform_case_return_status", "webform_case_creditnote", "webform_case_other_request_returns", "webform_case_refund", "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_other_request_payment", "webform_case_delete_account", "webform_case_cant_login", "webform_case_other_request_account", "webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer", "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy"]
+  var reasonsForNoContactFormGeneral = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product", "webform_case_not_working_product", "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_other_request_order", "webform_case_return", "webform_case_return_status", "webform_case_creditnote", "webform_case_other_request_returns", "webform_case_refund", "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_other_request_payment", "webform_case_delete_account", "webform_case_cant_login", "webform_case_other_request_account", "webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer", "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy"]
   //ONLY FOLLOWING REASONS: Where is my order, problems with an order, payment
-  var reasonsForNoContactFormGeneral = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product", "webform_case_not_working_product", "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_other_request_order", "webform_case_refund", "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_other_request_payment"]
+  //var reasonsForNoContactFormGeneral = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product", "webform_case_not_working_product", "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_other_request_order", "webform_case_refund", "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_other_request_payment"]
 
   var reasonsForLongerMailWaitTime = ["webform_case_product_advice_it", "webform_case_product_advice_network"]
   var languagesForLongerMailWaitTime = ["de"]
@@ -552,7 +554,6 @@
       $('.' + customerType).show();
       infoTextField.show();
     }
-    hideContactForm();
     //OrderNumber Feld verstecken wenn nicht benötigt
     if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
       mailFormOrderNumberOrPhoneNumber.hide()
@@ -579,9 +580,8 @@
             ga('send', 'event', 'Errors', 'ChatLoad', String(e));
         }
       } 
-    hideContactForm();
-    addExternalScriptForWaitingTimes();
     contactNowClicked();
+    hideContactForm();
   } 
 
   function onDropdownChangeConnect(){
@@ -653,7 +653,6 @@
         }
       } 
     contactNowClicked();
-    addExternalScriptForWaitingTimes();
   }  
 
   commitButton.on("click", function(){
@@ -725,7 +724,6 @@
       onDropdownChange();
       contactInfos.show();
     }
-    addExternalScriptForWaitingTimes();
   })
 
   //Aktion bei Klick auf "Jetzt kontaktieren"
@@ -946,10 +944,23 @@ function setClosed(){
           $(".recommendedChannel").css('display' , 'none');
       } else {
       }
+      if (chatSeconds > 570){
+        hideContactFormCheckerChat = false;
+      }
+      else {
+        hideContactFormCheckerChat = true;
+      }
+      if (callSeconds > 570){
+        hideContactFormCheckerPhone = false;
+      }
+      else {
+        hideContactFormCheckerPhone = true;
+      }
       var chatElements = $('.chatWaitTime')
       var callElements = $('.callWaitTime')
       changeWaitTimeHTML(chatSeconds, chatElements)
       changeWaitTimeHTML(callSeconds, callElements)
+      hideContactForm();
       waitTimes.show();
   }
 
@@ -1449,7 +1460,7 @@ function swapContactOptionsForHiddenContactForm(){
   }
 
   function hideContactForm(){
-      if ((reasonsForNoContactFormPE.indexOf(requestReasonTag) >= 0 && isInPEChatHours() && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch') && currentLanguage == 'de') || (customerType == "private-customer" && reasonsForNoContactFormGeneral.indexOf(requestReasonTag) >= 0 && isInGeneralChatHours()) && !isHoliday()){
+      if ((reasonsForNoContactFormPE.indexOf(requestReasonTag) >= 0 && isInPEChatHours() && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch') && currentLanguage == 'de') || (customerType == "private-customer" && reasonsForNoContactFormGeneral.indexOf(requestReasonTag) >= 0 && isInGeneralChatHours()) && !isHoliday() && hideContactFormCheckerChat && hideContactFormCheckerPhone){
           swapContactOptionsForHiddenContactForm();
           $('#mailIconCellContent').hide();
           $('#mailTitleCellContent').hide();
@@ -1470,7 +1481,6 @@ function swapContactOptionsForHiddenContactForm(){
   }
 
   function hidePhoneCells(){
-    //console.log("ENTER HIDEPHONECELLS")
     $('#chatIconCellContent').insertBefore($('#row1cell2inserter'));
     $('#mailIconCellContent').insertBefore($('#row1cell1inserter'));
     $('#phoneIconCellContent').insertBefore($('#row1cell3inserter'));
