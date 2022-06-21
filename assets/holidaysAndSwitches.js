@@ -1,5 +1,4 @@
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
-
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
 var switchHideContactForm = false
 //set to true if the phone number should be hidden, set to false if it should be displayed
@@ -8,8 +7,30 @@ var switchHidePhone = false
 var switchHideChat = false
 
 
-// --- ENTER HOLIDAYS HERE TO BE DISPLAYED IN THE HELPCENTER AND FOR THE WAITING TIMES TO BE REMOVED ---
+// --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
+//Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
+var bannerSwitchCHDE = false;
+var bannerSwitchCHFR = false;
+var bannerSwitchCHIT = false;
+var bannerSwitchCHEN = false;
+var bannerSwitchConncetDE = false;
+var bannerSwitchConncetFR = false;
+var bannerSwitchConncetIT = false;
+var bannerSwitchConncetEN = false;
+var bannerSwitchDEDE = false;
+var bannerSwitchDEFR = false;
+var bannerSwitchDEIT = false;
+var bannerSwitchDEEN = false;
+var bannerSwitchATDE = false;
+var bannerSwitchATFR = false;
+var bannerSwitchATIT = false;
+var bannerSwitchATEN = false;
+//Title of the banner per Language and Portal combination
+var bannerTitleCHDE = 
 
+
+
+// --- ENTER HOLIDAYS HERE TO BE DISPLAYED IN THE HELPCENTER AND FOR THE WAITING TIMES TO BE REMOVED ---
 //WHEN TO SHOW THE HOLIDAY INFORMATION TEXT (USUALLY STARTS SOME DAYS BEFORE THE ACTUAL HOLIDAY)
 //NOTE THAT DATES MUST BE NOTED IN UTC TIME
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
