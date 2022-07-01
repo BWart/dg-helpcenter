@@ -192,82 +192,23 @@
   </div>
 </div>
 <script>
+  //THE FULL MAIL FORM IS INITIALLY HIDDEN
 
-  function commitButtonPressed(){
-    mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
-    sendGARequestOpeningHours('ContactForm Commit clicked');
-    sessionStorage.setItem('dgCustomerEmail', $('input[name="request[anonymous_requester_email]"]').val());
-    sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
-    requestReasonDropdown.insertBefore(mailFormMailInput);
-    customerTypeDropdown.insertBefore(mailFormMailInput);
-    requestReasonDropdown.hide()
-    customerTypeDropdown.hide()
-
-  }
-  //The form is fully hidden initially
-
-  //Set up all needed variables
-  var portal = window.location.hostname;
-  var fullLink = window.location.href;
-  var infoBoxWording = fillInfoBoxWording();
-  var customerType;  //Für Privat, business oder connect
-  var currentLanguage = $('html').attr('lang');
-  var header = $('#HeaderID');
-  var fullMailform = $('.requestform');  //Whole Mail Form
-  var introText = $('.contactFormInfoTextClass');
-  var fallbackText = $('.fallbackInfoText');
-  var customerTypeDropdown = $('.request_ticket_form_id');
-  var requestReasonDropdown;
-  var requestReasonDropdownNesty;
-  var requestReasonTag;
-  var contactInfos = $('.contactInfos');
-  var infoTextField = $('.contactFormNote');
-  var infoText = $('.contactFormTextInfo');
-  var backButton = $('.text-back');
-  var requestForm = $('.request-form');
-  var circleOne = document.getElementById('circle1');
-  var circleTwo = document.getElementById('circle2');
-  var circleThree = document.getElementById('circle3');
-  var circleThreeTitle = $('.circle3Title');
-  var circleThreeTitleTwo = $('.circle3Title2');
-  var waitTimes = $('.waittime');
-  var chatWaitTimesDOMElements = $('.chatWaitTimeOnly');
-  var callWaitTimesDOMElements = $('.callWaitTimeOnly');
-
-  //TODO: Integrate new variables properly
-  var customerTypeDropdownLabel = $('[for=request_issue_type_select]');
-  var contactOptions= $('.request-form');
-  var requestReasonDropdownLabel = $('#request_custom_fields_360014169819_label')
-
-  //business & private Kontaktangaben
-  var privateContact = $('.private-customer');
-  var businessContact = $('.business-customer')
-
-  //Mailform fields, with label and Input field
-  var mailFormOrderNumberOrPhoneNumber;  //Order number, Phone on digitec Connect
-  var mailFormSubject = $('.request_subject');
-  var mailFormMessage = $('.request_description');
-  var mailFormMailInput = $('.request_anonymous_requester_email');
-  var commitButton = $('input[name ="commit"]');
-  //Mailform fields, labels and input fields separated
-  var mailFormAttachmentDropZone = $('#upload-dropzone');
-  var mailFormAttachmentLabel = $('label[for="request-attachments"]')
-  var mailFormSubjectLabel = $('#request_subject_label');
-  var mailFormSubjectTextField = $('#request_subject');
-  var mailFormMessageLabel = $('#request_description_label');
-  var mailFormMessageTextField = $('#request_description');
-
-  //Variable stuff and checkers
-  var contactFormIsShown = 0; // 0 Shows Infotext and 1 shows OrderNumber Field
-  var hideContactFormCheckerChat = true;
-  var hideContactFormCheckerPhone = true;
-
+  // --- SETTING UP VARIABLES ---
+  // General variables
+  // Following variables are already defined elsewhere: portal, currentLanguage
+  let fullLink = window.location.href;
+  let customerType = setCustomerType();  //the function also removes offers for private customers in the dropdown selection
+  let infoBoxWording = fillInfoBoxWording();
+  let contactFormIsShown = 0; // 0 Shows Infotext and 1 shows OrderNumber Field
+  let hideContactFormCheckerChat = true;
+  let hideContactFormCheckerPhone = true;
   //List of tags to hide OrderNumber Input Field
-  var reasonsForNoOrderNumber = ["webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer",
+  const reasonsForNoOrderNumber = ["webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer",
   "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy", "webform_case_delete_account", "webform_case_cant_login",
   "webform_case_offer", "webform_case_no_bill"]
-
-  var reasonsForNoContactFormPE = ["webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer",
+  //list of tags to hide Contact Form for PE and general requests during opening times
+  const reasonsForNoContactFormPE = ["webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer",
   "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy"]
   //var reasonsForNoContactFormPE = []
   //ALL REASONS
@@ -275,12 +216,13 @@
   //ONLY FOLLOWING REASONS: Where is my order, problems with an order, payment
   //var reasonsForNoContactFormGeneral = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product", "webform_case_not_working_product", "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_other_request_order", "webform_case_refund", "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_other_request_payment"]
   //NO REASONS
-  var reasonsForNoContactFormGeneral = []
+  const reasonsForNoContactFormGeneral = []
 
-  var reasonsForLongerMailWaitTime = ["webform_case_product_advice_it", "webform_case_product_advice_network"]
-  var languagesForLongerMailWaitTime = ["de"]
+  //Display longer wait times for mails for specific reasons
+  const reasonsForLongerMailWaitTime = ["webform_case_product_advice_it", "webform_case_product_advice_network"]
+  const languagesForLongerMailWaitTime = ["de"]
 
-  var requestReasonTopCategory = {
+  const requestReasonTopCategory = {
     "webform_case_shipping_status": "where_is_my_order",
     "webform_case_ready_for_shipment": "where_is_my_order",
     "webform_case_order_status": "where_is_my_order",
@@ -312,123 +254,124 @@
     "webform_case_offer": "offer"
   }
 
-  //intial setup
-  chatWaitTimesDOMElements.hide();
-  fallbackText.hide();
-  setPortalDependantVariables();
-  setCustomerType();
-  fillHoliday(currentLanguage);
-  //checkForFeedbackForm();
+  // DOM elements and their contents
+  const fullMailform = $('.requestform');
+  const introText = $('.contactFormInfoTextClass');
+  const fallbackText = $('.fallbackInfoText');
+  const customerTypeDropdown = $('.request_ticket_form_id');
+  const [requestReasonDropdown, requestReasonDropdownNesty, requestReasonDropdownContents] = getRequestReasonDropdown();
+  const contactInfos = $('.contactInfos');
+  const infoTextField = $('.contactFormNote');
+  const infoText = $('.contactFormTextInfo');
+  const backButton = $('.text-back');
+  const requestForm = $('.request-form');
+  const circleOne = document.getElementById('circle1');
+  const circleTwo = document.getElementById('circle2');
+  const circleThree = document.getElementById('circle3');
+  const circleThreeTitle = $('.circle3Title');
+  const circleThreeTitleTwo = $('.circle3Title2');
+  const waitTimes = $('.waittime');
+  const chatWaitTimesDOMElements = $('.chatWaitTimeOnly');
+  const callWaitTimesDOMElements = $('.callWaitTimeOnly');
+  const customerTypeDropdownLabel = $('[for=request_issue_type_select]');
+  const contactOptions= $('.request-form');
+  const requestReasonDropdownLabel = $('#request_custom_fields_360014169819_label')
+  const privateContact = $('.private-customer');
+  const businessContact = $('.business-customer')
+  //Mailform fields, with label and Input field
+  const mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');  //Input field for order number, phone number on digitec Connect
+  const mailFormSubject = $('.request_subject');
+  const mailFormMessage = $('.request_description');
+  const mailFormMailInput = $('.request_anonymous_requester_email');
+  const commitButton = $('input[name ="commit"]');
+  //Mailform fields, labels and input fields separated
+  const mailFormAttachmentDropZone = $('#upload-dropzone');
+  const mailFormAttachmentLabel = $('label[for="request-attachments"]')
+  const mailFormSubjectLabel = $('#request_subject_label');
+  const mailFormSubjectTextField = $('#request_subject');
+  const mailFormMessageLabel = $('#request_description_label');
+  const mailFormMessageTextField = $('#request_description');
+  //Contents of DOM elements
+  let requestReasonTag; //Filled when the request reason dropdown is changed
 
-  function setPortalDependantVariables(){
-    switch (portal){
-      case 'helpcenter.digitec.ch':
-      case 'helpcenter.galaxus.ch':
-      case 'helpcenter.galaxus.de':
-      case 'helpcenter.galaxus.at':
-        if (fullLink.slice(-3) != 'new' || fullLink.slice(-4) == 'new/'){
-          circleOne.classList.remove('circleOpenStep');
-          circleOne.classList.add('circleStepCompleted');
-          circleOne.innerHTML = '&#10003';
-        }
-        requestReasonDropdown = $('.request_custom_fields_360014169819');
-        requestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
-        mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
-        requestReasonDropdownContents = $('#request_custom_fields_360014169819');
-        mailFormMailInput.insertAfter(requestReasonDropdown);
-        customerTypeDropdown.insertBefore(document.getElementById('inserter'));
-        requestReasonDropdown.insertBefore(document.getElementById('inserter2'));
-        requestForm.hide()
-        customerTypeDropdownLabel.hide()
-        requestReasonDropdownLabel.hide()
-        circleThreeTitleTwo.hide()
-        regularHelpcenterEntryPoint();
-        var linkEnd = fullLink.slice(-8);
-        if (linkEnd == 'requests'){
-          onDropdownChange();
-          showContactForm();
-          mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
-        }
-        waitTimes.hide();
-        fullMailform.show();
-        break;
-      case 'helpcenter.connect.digitec.ch':
-        if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/') {
-          window.location.replace('https://helpcenter.connect.digitec.ch/hc/requests/new?ticket_form_id=360002056120');
-        }
-        requestReasonDropdown = $('.request_custom_fields_360021132800');
-        requestReasonDropdownNesty = '.request_custom_fields_360021132800' + ' a.nesty-input';
-        mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
-        requestReasonDropdownContents = $('#request_custom_fields_360021132800');
-        mailFormMailInput.insertAfter(requestReasonDropdown);
-        customerTypeDropdown.insertBefore(document.getElementById('inserter'));
-        requestReasonDropdown.insertBefore(document.getElementById('inserter2'));
-        requestForm.hide()
-        customerTypeDropdownLabel.hide()
-        requestReasonDropdownLabel.hide()
-        circleThreeTitleTwo.hide()
-        $('.connectHide').hide()
-        circleTwo.innerHTML = '1';
-        circleThree.innerHTML = '2';
-        connectHelpcenterEntryPoint();
-        var linkEnd = fullLink.slice(-8);
-        if (linkEnd == 'requests'){
-          //setTimeout(() => { onDropdownChangeConnect(); }, 2000);
-          onDropdownChangeConnect();
-          showContactForm();
-          mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
-        }
-        waitTimes.hide();
-        fullMailform.show();
-        if (currentLanguage != 'de' && portal == "helpcenter.connect.digitec.ch"){
-          hidePhoneCells();
-        }
-        break;
-      default:
-        if (fullLink.slice(-3) != 'new'){
-          circleOne.classList.remove('circleOpenStep');
-          circleOne.classList.add('circleStepCompleted');
-          circleOne.innerHTML = '&#10003';
-        }
-        requestReasonDropdown = $('.request_custom_fields_360014169819');
-        requestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
-        mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');
-        requestReasonDropdownContents = $('#request_custom_fields_360014169819');
-        mailFormMailInput.insertAfter(requestReasonDropdown);
-        customerTypeDropdown.insertBefore(document.getElementById('inserter'));
-        requestReasonDropdown.insertBefore(document.getElementById('inserter2'));
-        requestForm.hide()
-        customerTypeDropdownLabel.hide()
-        requestReasonDropdownLabel.hide()
-        circleThreeTitleTwo.hide()
-        regularHelpcenterEntryPoint();
-        var linkEnd = fullLink.slice(-8);
-        if (linkEnd == 'requests'){
-          onDropdownChange();
-          showContactForm();
-          mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
-        }
-        waitTimes.hide();
-        fullMailform.show();
-        break;
-    }
+  
+  // --- INITIAL SETUP ---
+  // Case when "Contact Us" Button in footer is clicked
+  if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/'){
+    pageSetup('contactUs');
+  }
+  // Case when the page reloads after an incorrectly filled mail form
+  else if (fullLink.slice(-8) == 'requests'){
+    //TODO: Handling beim Laden nach Eingabefehler
+    pageSetup('mailFormWrong')
+    removeOfferforPrivate();
+  }
+  // Rest; Case when the page loads after the customer type was selected
+  else {
+    pageSetup('customerChosen');
+    removeOfferforPrivate();
   }
 
-  function setCustomerType(){
-    //Kundentyp setzen
-    customerType = sessionStorage.getItem('customerType');
-    if (fullLink.includes('39231')){
-      customerType = 'private-customer';
-      sessionStorage.setItem('customerType', customerType)
+
+  // --- ACTIONS WHEN USER CLICKS OR CHANGES DOM ELEMENTS ---
+  // Action upon change of the request reason dropdown
+  requestReasonDropdown.on('change', function(){
+    if (requestReasonDropdownContents.attr('value') != ''){
+      onDropdownChange();
     }
-    if (fullLink.includes('360000554760')){
-      customerType = 'business-customer';
-      sessionStorage.setItem('customerType', customerType)
+  });
+
+
+
+
+  // --- FUNCTIONS THAT ADJUST THE PAGE AND ELEMENTS ---
+  function pageSetup(entryPoint){
+    //Make form attachments required for some reasons
+    isFormAttachmentRequired();
+    //Hide information that should not be displayed at start
+    chatWaitTimesDOMElements.hide();
+    callWaitTimesDOMElements.hide();
+    infoTextField.hide();
+    fallbackText.hide();
+    requestForm.hide()
+    customerTypeDropdownLabel.hide()
+    circleThreeTitleTwo.hide()
+    waitTimes.hide()
+    backButton.hide();
+    contactInfos.hide();
+    //adjust the order of the form elements
+    customerTypeDropdown.insertBefore(document.getElementById('inserter'));
+    //adjust additional elements if it is a customer form
+    if (entryPoint == 'customerChosen' || entryPoint == 'mailFormWrong'){
+      requestReasonDropdown.insertBefore(document.getElementById('inserter2'));
+      circleOne.classList.remove('circleOpenStep');
+      circleOne.classList.add('circleStepCompleted');
+      circleOne.innerHTML = '&#10003';
     }
-    if (fullLink.includes('360002056120')){
-      customerType = 'connect-customer';
-      sessionStorage.setItem('customerType', customerType)
+    //show form
+    fullMailform.show();
+  }
+
+  function onDropdownChange(){
+    circleTwo.classList.remove('circleOpenStep');
+    circleTwo.classList.add('circleStepCompleted');
+    circleTwo.innerHTML = '&#10003';
+    if (requestReasonDropdownContents.attr('value') == null){
+      fallbackExit();
+      return;
+    } else {
+      requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
     }
+    contactInfos.show();
+    
+  }
+
+  function fallbackExit(){
+    introText.hide();
+    fallbackText.show();
+  }
+
+  function removeOfferforPrivate(){
     if (customerType == 'private-customer'){
       // Removes Offers for Private Customers
       var categoryToRemove = 'webform_case_offer';
@@ -439,8 +382,6 @@
       catch (e) { // Initial wird das Formular immer geladen ohne Kundentyp und deshalb hier etwas unschön gecatcht. Funktionalität ist jedoch nicht kritisch 
       }
     }
-    isFormAttachmentRequired();
-    fillInfoBoxWording();
   }
 
   function removeCategoryFromJson(json, categoryToRemove){  	
@@ -452,589 +393,61 @@
   return JSON.stringify(json);
   }
 
-  function regularHelpcenterEntryPoint(){
-    introText.show();
-    customerTypeDropdown.show();
-    requestReasonDropdown.show();
-    backButton.hide();
-    infoTextField.hide();
-    contactInfos.hide();
-    mailFormOrderNumberOrPhoneNumber.hide();
-    mailFormSubject.hide();
-    mailFormMessage.hide();
-    mailFormAttachmentDropZone.hide();
-    mailFormAttachmentLabel.hide();
-    mailFormMailInput.hide();
-    commitButton.hide();
-    isFormAttachmentRequired();
-  }
-
-  function connectHelpcenterEntryPoint(){
-    introText.show();
-    //customerTypeDropdown.hide();
-    requestReasonDropdown.show();
-    backButton.hide();
-    infoTextField.hide();
-    contactInfos.hide();
-    mailFormOrderNumberOrPhoneNumber.hide();
-    mailFormSubject.hide();
-    mailFormMessage.hide();
-    mailFormAttachmentDropZone.hide();
-    mailFormAttachmentLabel.hide();
-    mailFormMailInput.hide();
-    commitButton.hide();
-    isFormAttachmentRequired();
-  }
   
-  //Aktion bei Änderung des RequestReasonDropdown
-  requestReasonDropdown.on('change', function(){
-    if (requestReasonDropdownContents.attr('value') != ''){
-      if (customerType == 'connect-customer'){
-        onDropdownChangeConnect();
-      } else {
-        onDropdownChange();
-      }
+  // --- FUNCTIONS TO FILL VARIABLES ---
+  function setCustomerType(){
+    //Kundentyp setzen
+    var tempCustomerType = sessionStorage.getItem('customerType');
+    if (fullLink.includes('39231')){
+      tempCustomerType = 'private-customer';
+      sessionStorage.setItem('customerType', tempCustomerType)
     }
-  });
-
-  
-  function onDropdownChange(){
-    var mailWaitTimes = $('.mailWaitTime');
-    resetContactOptions();
-    circleOne.classList.remove('circleOpenStep');
-    circleOne.classList.add('circleStepCompleted');
-    circleOne.innerHTML = '&#10003';
-    circleTwo.classList.remove('circleOpenStep');
-    circleTwo.classList.add('circleStepCompleted');
-    circleTwo.innerHTML = '&#10003';
-    if (requestReasonDropdownContents.attr('value') == null){
-      fallbackExit();
-      return;
-    } else {
-      requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
+    if (fullLink.includes('360000554760')){
+      tempCustomerType = 'business-customer';
+      sessionStorage.setItem('customerType', tempCustomerType)
     }
-    infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
-    //Update Label and Template
-    if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
-      mailFormMessageTextField.val(infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate'])
-    } else {
-      mailFormMessageTextField.val('')
+    if (fullLink.includes('360002056120')){
+      tempCustomerType = 'connect-customer';
+      sessionStorage.setItem('customerType', tempCustomerType)
     }
-    if (infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel']){
-      mailFormMessageLabel.html(infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel'])
-    } else {
-      switch (currentLanguage) {
-        case 'de':
-          mailFormMessageLabel.html('Beschreibung')
-          break;
-        case 'fr':
-          mailFormMessageLabel.html('Description')
-          break;
-        case 'it':
-          mailFormMessageLabel.html('Descrizione')
-          break;
-        case 'en-US':
-          mailFormMessageLabel.html('Description')
-          break;
-      }
-    }
-    mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
-    //customerTypeDropdown.hide();
-    //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
-    if (contactFormIsShown == 0 || contactFormIsShown == 1) {
-      //introText.hide();
-      backButton.hide();
-      mailFormOrderNumberOrPhoneNumber.hide();
-      mailFormSubject.hide();
-      mailFormMessage.hide();
-      mailFormAttachmentDropZone.hide();
-      mailFormAttachmentLabel.hide();
-      mailFormMailInput.hide();
-      commitButton.hide();
-      //contactInfos.show();
-      requestForm.hide();
-      $('.' + customerType).show();
-      infoTextField.show();
-    }
-    //OrderNumber Feld verstecken wenn nicht benötigt
-    if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
-      mailFormOrderNumberOrPhoneNumber.hide()
-    } else {
-      if (contactFormIsShown == 1) { mailFormOrderNumberOrPhoneNumber.show() }
-    }
-    //Längere Wartezeit im Mail Feld
-    if (reasonsForLongerMailWaitTime.indexOf(requestReasonTag) >= 0 && languagesForLongerMailWaitTime.indexOf(currentLanguage) >= 0 && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
-        for (var i = 0; i < mailWaitTimes.length; i++){
-            mailWaitTimes[i].innerHTML = 'ca. 6'
-        }
-    } else {
-        for (var i = 0; i < mailWaitTimes.length; i++){
-            mailWaitTimes[i].innerHTML = '1-2'
-        }
-    }
-    try {
-        removeChatBasedOnRequestType();
-        updateChatConnectionAfterDropdownChange();
-      }
-      catch (e) {
-        console.log(e); 
-        if(gaSend){
-            ga('send', 'event', 'Errors', 'ChatLoad', String(e));
-        }
-      } 
-    contactNowClicked();
-    hideContactForm();
-  } 
-
-  function onDropdownChangeConnect(){
-    circleOne.classList.add('circleStepCompleted');
-    circleOne.innerHTML = '&#10003';
-    circleTwo.classList.remove('circleOpenStep');
-    circleTwo.classList.add('circleStepCompleted');
-    circleTwo.innerHTML = '&#10003';
-  
-    requestReasonTag = requestReasonDropdownContents.attr('value');
-  
-    //infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
-    //Update Label and Template
-    if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
-      mailFormMessageTextField.val(infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate'])
-    } else {
-      mailFormMessageTextField.val('')
-    }
-    if (infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel']){
-      mailFormMessageLabel.html(infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel'])
-    } else {
-      switch (currentLanguage) {
-        case 'de':
-          mailFormMessageLabel.html('Beschreibung')
-          break;
-        case 'fr':
-          mailFormMessageLabel.html('Description')
-          break;
-        case 'it':
-          mailFormMessageLabel.html('Descrizione')
-          break;
-        case 'en-US':
-          mailFormMessageLabel.html('Description')
-          break;
-      }
-    }
-    mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
-    //customerTypeDropdown.hide();
-    //Sichtbare Objekte nur ändern, falls Kontaktformular noch nicht angezeigt
-    if (contactFormIsShown == 0) {
-      backButton.hide();
-      mailFormOrderNumberOrPhoneNumber.hide();
-      mailFormSubject.hide();
-      mailFormMessage.hide();
-      mailFormAttachmentDropZone.hide();
-      mailFormAttachmentLabel.hide();
-      mailFormMailInput.hide();
-      commitButton.hide();
-      //contactInfos.show();
-      requestForm.hide();
-      $('.' + customerType).show();
-      infoTextField.hide();
-      //introText.hide();
-    }
-    //OrderNumber Feld verstecken wenn nicht benötigt
-    if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
-      mailFormOrderNumberOrPhoneNumber.hide()
-    } else {
-      if (contactFormIsShown == 1) { mailFormOrderNumberOrPhoneNumber.show() }
-    }
-    try {
-        removeChatBasedOnRequestType();
-        updateChatConnectionAfterDropdownChange();
-      }
-      catch (e) {
-        console.log(e); 
-        if(gaSend){
-            ga('send', 'event', 'Errors', 'ChatLoad', String(e));
-        }
-      } 
-    contactNowClicked();
-  }  
-
-  commitButton.on("click", function(){
-    commitButtonPressed();
-  })
-
-  //AKTIONEN IN DEN KONTAKTINFOS
-  //Aktion bei Klick auf "Schreib uns" Button
-  $('.contactFormWriteUs').on("click", function () {
-    showContactForm();
-  })
-  function showContactForm(){
-    circleThreeTitle.hide();
-    circleThreeTitleTwo.show();
-    contactFormIsShown = 1;
-    requestForm.show();
-    backButton.show();
-    //introText.hide();
-    //infoTextField.hide();
-    contactInfos.hide();
-    //customerTypeDropdown.hide();
-    mailFormOrderNumberOrPhoneNumber.show();
-    mailFormSubject.hide();
-    mailFormMessage.show();
-    mailFormAttachmentDropZone.show();
-    mailFormAttachmentLabel.show();
-    mailFormMailInput.show();
-    commitButton.show();
-    //OrderNumber Feld verstecken wenn nicht benötigt
-    if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
-      mailFormOrderNumberOrPhoneNumber.hide();
-    } else {
-      mailFormOrderNumberOrPhoneNumber.show();
-    }
+    return tempCustomerType;
   }
 
-  //Aktionen bei Klick auf "Ruf uns an"
-  $('.private-number').on("click", function () {
-    var popup = document.getElementById("phoneNumberPrivate");
-    popup.classList.toggle("show");
-  }) 
-  $('.private-number2').on("click", function () {
-   var popup = document.getElementById("phoneNumberPrivateMobile");
-   popup.classList.toggle("show");
-  }) 
-  $('.business-number').on("click", function () {
-    var popup = document.getElementById("phoneNumberBusiness");
-    popup.classList.toggle("show");
-  })
-  $('.business-number2').on("click", function () {
-    var popup = document.getElementById("phoneNumberBusinessMobile");
-  	popup.classList.toggle("show");
-  })
-  //Aktion bei Klick auf "Chat" 
-  $('.button-chat').on("click", function () {
-    checkForTagChanges();
-    openChat();
-    setEventListernerForChatStart();
-  }); 
-  //Aktion bei Klick auf back Button
-  $('.text-back').on("click", function (){
-    contactFormIsShown = 0;
-    circleThreeTitle.show();
-    circleThreeTitleTwo.hide();
-    if (customerType == 'connect-customer'){
-      onDropdownChangeConnect();
-      contactInfos.show();
-    } else {
-      onDropdownChange();
-      contactInfos.show();
+
+
+  function getRequestReasonDropdown(){
+    let tempRequestReasonDropdown;
+    let tempRequestReasonDropdownNesty;
+    let  tempRequestReasonDropdownContents
+    switch (portal){
+      case 'helpcenter.digitec.ch':
+      case 'helpcenter.galaxus.ch':
+      case 'helpcenter.galaxus.de':
+      case 'helpcenter.galaxus.at':
+        tempRequestReasonDropdown = $('.request_custom_fields_360014169819');
+        tempRequestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
+        tempRequestReasonDropdownContents = $('#request_custom_fields_360014169819');
+        break;
+      case 'helpcenter.connect.digitec.ch':
+        tempRequestReasonDropdown = $('.request_custom_fields_360021132800');
+        tempRequestReasonDropdownNesty = '.request_custom_fields_360021132800' + ' a.nesty-input';
+        tempRequestReasonDropdownContents = $('#request_custom_fields_360021132800');
+      default:
+        tempRequestReasonDropdown = $('.request_custom_fields_360014169819');
+        tempRequestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
+        tempRequestReasonDropdownContents = $('#request_custom_fields_360014169819');
+        break;
     }
-  })
-
-  //Aktion bei Klick auf "Jetzt kontaktieren"
-  $('.contactNowButton').on("click", function() {
-    contactNowClicked();
-  })
-
-  function contactNowClicked(){
-    contactInfos.show();
-    //circleThree.classList.remove('circleOpenStep');
-    //circleThree.classList.add('circleStepCompleted');
-    //circleThree.innerHTML = '&#10003';
-    $('.contactNowButton').hide();
-    $('.questionNotAnswered').hide();
-    addExternalScriptForWaitingTimes();
+    return[tempRequestReasonDropdown, tempRequestReasonDropdownNesty, tempRequestReasonDropdownContents]
   }
 
-  function addExternalScriptForWaitingTimes(){
-      $('.waitTimeScript').remove();
-      var script = document.createElement('script');
-      script.classList.add('waitTimeScript')
-      script.src = 'https://www.hardread.ch/testing/waitTimes.js';
-      script.onload = function() {
-          setWaitTimes();
-      }
-      script.onerror = function() {
-          waitTimes.hide();
-      }
-    document.body.appendChild(script);
-  }
 
-  function setWaitTimes() {
-    waitTimes.hide();
-    const d = new Date();
-    var dayOfWeek = d.getUTCDay();
-    var currentUTCHour = d.getUTCHours();
-    const dateFromExternalScript = new Date(createTimeStampUTC)
-    const currentUTCDate = new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds())
-    const diffSeconds = Math.abs((currentUTCDate - dateFromExternalScript) / 1000)
-    if (diffSeconds > 299 || isHoliday()) {
-      waitTimes.hide();
-    } else if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at') {
-      if ((dayOfWeek >= 1 && dayOfWeek <= 5 && currentUTCHour >= 6 && currentUTCHour < 18) || (dayOfWeek == 6 && currentUTCHour >= 7 && currentUTCHour < 15)) {
-        if (customerType == 'private-customer') {
-          if (callWaitTimes['privateGer'] >= callWaitTimes['privateAt']) {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateGer'])
-          } else {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'])
-          }
-        } else {
-          if (callWaitTimes['businessGer'] >= callWaitTimes['privateAt']) {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['businessGer'])
-          } else {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'])
-          }
-        }
-      } else {
-        setClosed();
-      }
-    } else {
-      if (dayOfWeek >= 1 && dayOfWeek <= 6 && currentUTCHour >= 6 && currentUTCHour < 15) {
-        if (customerType == 'connect-customer') {
-          switch (currentLanguage) {
-            case 'de':
-              setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
-              break;
-            case 'fr':
-              setWaitTime(chatWaitTimes['connectFR'], callWaitTimes['connectFR']);
-              break;
-            case 'it':
-              setWaitTime(chatWaitTimes['connectIT'], callWaitTimes['connectIT']);
-              break;
-            case 'en-US':
-              setWaitTime(chatWaitTimes['connectEN'], callWaitTimes['connectEN']);
-              break;
-            default:
-              setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
-              break;
-          }
-        }
-        if (customerType == 'business-customer') {
-          switch (currentLanguage) {
-            case 'de':
-              if (isInPEChatHours()) {
-                if (requestReasonTag.includes('webform_case_product_advice_')) {
-                  var lastIndex = requestReasonTag.lastIndexOf('_');
-                  var splitstring = requestReasonTag.substring(lastIndex, requestReasonTag.length)
-                  var lastpart = splitstring.substring(1, splitstring.length)
-                  var lastpartCapitalized = lastpart.charAt(0).toUpperCase() + lastpart.substring(1, lastpart.length)
-                  if (isInBusinessChatHours) {
-                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['businessCHDE']);
-                  } else {
-                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['privateCHDE']);
-                  }
-                } else if (isInBusinessChatHours()) {
-                  setWaitTime(chatWaitTimes['businessDE'], callWaitTimes['businessCHDE']);
-                } else {
-                  setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE']);
-                }
-              } else {
-                setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE']);
-              }
-              break;
-            case 'fr':
-              if (isInBusinessChatHours()) {
-                setWaitTime(chatWaitTimes['businessFR'], callWaitTimes['businessCHFR']);
-              } else {
-                setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR']);
-              }
-              break;
-            case 'it':
-              if (isInBusinessChatHours()) {
-                setWaitTime(chatWaitTimes['businessIT'], callWaitTimes['businessCHIT']);
-              } else {
-                setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT']);
-              }
-              break;
-            case 'en-US':
-              if (isInBusinessChatHours()) {
-                setWaitTime(chatWaitTimes['businessEN'], callWaitTimes['businessCHEN']);
-              } else {
-                setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN']);
-              }
-              break;
-            default:
-              if (isInBusinessChatHours()) {
-                setWaitTime(chatWaitTimes['businessEN'], callWaitTimes['businessCHEN']);
-              } else {
-                setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN']);
-              }
-              break;
-          }
-        } else {
-          switch (currentLanguage) {
-            case 'de':
-              if (isInPEChatHours) {
-                if (requestReasonTag.includes('webform_case_product_advice_')) {
-                  var lastIndex = requestReasonTag.lastIndexOf('_');
-                  var splitstring = requestReasonTag.substring(lastIndex, requestReasonTag.length)
-                  var lastpart = splitstring.substring(1, splitstring.length)
-                  var lastpartCapitalized = lastpart.charAt(0).toUpperCase() + lastpart.substring(1, lastpart.length)
-                  if (lastpartCapitalized.includes('It') || lastpartCapitalized.includes('Network')) {
-                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peItNetwork'])
-                  } else if (lastpartCapitalized.includes('Consumer') || lastpartCapitalized.includes('Photo')) {
-                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peConsumerPhoto'])
-                  } else if (lastpartCapitalized.includes('Diy') || lastpartCapitalized.includes('Home')) {
-                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peDiyHome'])
-                  }
-                } else {
-                  setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
-                }
-              } else {
-                setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
-              }
-              break;
-            case 'fr':
-              setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR'])
-              break;
-            case 'it':
-              setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT'])
-              break;
-            case 'en-US':
-              setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN'])
-              break;
-            default:
-              setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
-              break;
-          }
-        }
-      } else if (dayOfWeek >= 1 && dayOfWeek <= 6 && currentUTCHour >= 15 && currentUTCHour < 17 && portal != 'helpcenter.connect.digitec.ch') {
-        switch (currentLanguage) {
-            case 'de':
-              if (isInPEChatHours) {
-                if (requestReasonTag.includes('webform_case_product_advice_')) {
-                  var lastIndex = requestReasonTag.lastIndexOf('_');
-                  var splitstring = requestReasonTag.substring(lastIndex, requestReasonTag.length)
-                  var lastpart = splitstring.substring(1, splitstring.length)
-                  var lastpartCapitalized = lastpart.charAt(0).toUpperCase() + lastpart.substring(1, lastpart.length)
-                  if (lastpartCapitalized.includes('It') || lastpartCapitalized.includes('Network')) {
-                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peItNetwork'])
-                  } else if (lastpartCapitalized.includes('Consumer') || lastpartCapitalized.includes('Photo')) {
-                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peConsumerPhoto'])
-                  } else if (lastpartCapitalized.includes('Diy') || lastpartCapitalized.includes('Home')) {
-                    setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peDiyHome'])
-                  }
-                } else {
-                  setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
-                }
-              } else {
-                setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
-              }
-              break;
-            case 'fr':
-              setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR'])
-              break;
-            case 'it':
-              setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT'])
-              break;
-            case 'en-US':
-              setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN'])
-              break;
-            default:
-              setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
-              break;
-          }
-      } else {
-        setClosed();
-      }
-    }
-  }
 
-function setClosed(){
-    callWaitTimesDOMElements.hide();
-}
 
-  function setWaitTime(chatSeconds, callSeconds){
-      if (chatSeconds > 329){
-          $(".recommendedChannel").css('display' , 'none');
-      } else {
-      }
-      if (chatSeconds > 570){
-        hideContactFormCheckerChat = false;
-      }
-      else {
-        hideContactFormCheckerChat = true;
-      }
-      if (callSeconds > 570){
-        hideContactFormCheckerPhone = false;
-      }
-      else {
-        hideContactFormCheckerPhone = true;
-      }
-      var chatElements = $('.chatWaitTime')
-      var callElements = $('.callWaitTime')
-      changeWaitTimeHTML(chatSeconds, chatElements)
-      changeWaitTimeHTML(callSeconds, callElements)
-      hideContactForm();
-      waitTimes.show();
-  }
 
-  function changeWaitTimeHTML(seconds, elements){
-      if (seconds < 31){
-          for (var i = 0; i < elements.length; i++){
-              switch (currentLanguage){
-                  case 'de':
-                    elements[i].innerHTML = 'unter 1';
-                    break;
-                  case 'fr':
-                    elements[i].innerHTML = 'moins de 1';
-                    break;
-                  case 'it':
-                    elements[i].innerHTML = 'meno di 1';
-                    break;
-                  case 'en-US':
-                    elements[i].innerHTML = 'under 1';
-                    break;
-                  default:
-                    elements[i].innerHTML = 'unter 1';
-                    break;
-              }
-          }  
-      } else if (seconds > 630) {
-          var waitingMin = '10';
-          for (var i = 0; i < elements.length; i++){
-              switch(currentLanguage){
-                  case 'de':
-                    elements[i].innerHTML = 'min. ' + waitingMin;
-                    break;
-                  case 'fr':
-                    elements[i].innerHTML = 'min. ' + waitingMin;
-                    break;
-                  case 'it':
-                    elements[i].innerHTML = 'min. ' + waitingMin;
-                    break;
-                  case 'en-US':
-                    elements[i].innerHTML = 'min. ' + waitingMin;
-                    break;
-                  default:
-                    elements[i].innerHTML = 'min. ' + waitingMin;
-                    break;
-              }
-          }
-        } else
-          {
-          var waitingMin = String(Math.floor((seconds + 30)/60));
-          for (var i = 0; i < elements.length; i++){
-              switch (currentLanguage){
-                  case 'de':
-                    elements[i].innerHTML = ' ' + waitingMin;
-                    break;
-                  case 'fr':
-                    elements[i].innerHTML = ' ' + waitingMin;
-                    break;
-                  case 'it':
-                    elements[i].innerHTML = ' ' + waitingMin;
-                    break;
-                  case 'en-US':
-                    elements[i].innerHTML = ' ' + waitingMin;
-                    break;
-                  default:
-                    elements[i].innerHTML = ' ' + waitingMin;
-                    break;
-              }
-          }
-      }
-  }
 
-    
-  // TICKET FORM ATTACHMENT CHANGES
+
+  // --- TICKET FORM ATTACHMENT CHANGES ---
   // Function to start observing node for mutations
   var startObserveMutations = function (nodeSelector, options, callbackFunction) {
     var node = document.querySelector(nodeSelector);
@@ -1146,403 +559,4 @@ function setClosed(){
   clearCheckbox(attachmentCheckboxId);
 
   setTimeout(function() { setFormAttachmentCheckbox() }, 500);
-
-
-
-
-
-  ///////////////////////////////////////////////////////////////////////////////Event Tracking/////////////////////////////////////////////////////
-
-  
-  function sendGARequestOpeningHours(action){
-      if(gaSend){
-        //if(requestReasonTag.includes('webform_case_product_advice_') && currentLanguage == 'de') {
-        //    ga('send', 'event', 'Opening Hours', 'PE ' + action, customerType + ' ' + currentLanguage);
-        //} else {
-          console.log(requestReasonTopCategory[requestReasonTag] + ' ' + customerType + ' ' + currentLanguage)
-            ga('send', 'event', 'Opening Hours', action, requestReasonTopCategory[requestReasonTag] + ' ' + customerType + ' ' + currentLanguage);
-        //}
-      }
-  }
-  
-  //Phone Number Tracking
-  
-  $('.phone-number').on("click", function () {
-    sendGARequestOpeningHours('Click Phone Button');
-    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-  }) 
-  
-  //Contact Form Tracking
-  
-  $('.contactFormWriteUs').on("click", function () {
-    sendGARequestOpeningHours('Click Mail Button');
-    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-  }) 
-  
-  //Chat Tracking
-  
-  $('.button-chat').on("click", function () {
-    sendGARequestOpeningHours('Click Chat Button');
-    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-  }) 
-
-
-  // Request Reason Tracking
-
-  $('.request_custom_fields_360014169819').on("change",function() {
-      if(gaSend){
-          ga('send', 'event', 'Opening Hours', 'ShowsInfo', $('.request_custom_fields_360014169819' + ' a.nesty-input').text());                                                                                     
-      }
-  });
-
-  //Contact now button tracking
-  $('.contactNowButton').on("click", function () {
-      sendGARequestOpeningHours('Click Contact Now Button');
-  })
-
-   //////////////////////////Downvote-button Formular////////////////////////////
-
-   /*
-  function checkForFeedbackForm(){
-    if (sessionStorage.getItem("referrer")) {
-      referrer = sessionStorage.getItem("referrer");
-    }
-  if (document.referrer.indexOf('articles') !== -1 && sessionStorage.getItem('Feedback') != 0 && sessionStorage.getItem('Feedback') != null || $('#request_description').val() == '' && sessionStorage.getItem('Feedback') != null) {   
-    // Bezeichnung des Helpcenter Artikels
-    var subjectTitel = sessionStorage.getItem('articleHeader');
-    contactFormIsShown = 2; // 0 Shows Infotext and 1 shows OrderNumber field
-    
-    //Felder automatisch befüllen 
-    window.addEventListener('load', function() {
-      requestReasonDropdownContents.attr('value' , 'webform_case_other_request_order'); //Grund der Anfrage setzen////
-    })
-    $('input[name="request[subject]"]').val('Feedback'); //Betreff gesetzt //// 
-    $('input[name="request[anonymous_requester_email]"]').val('feedback.helpcenter@digitecgalaxus.ch');//Mail setzen////
-    mailFormMessageLabel.text(infoBoxWording['outputFeedbackLabelPart1'][currentLanguage] + subjectTitel);//Label des Mailformulars anhand des Helpcenter Artikels setzen////
-    
-    //Bezeichnung Formular und Introtext überschreiben
-    header.attr('data-wording-key', 'feedbackHeader');
-    introText.attr('data-wording-key', 'feedbackDescription');
-    
-    //Felder für Feedbackformular anzeigen/verstecken
-    $('.form-field:not(.request_ticket_form_id)').show();
-    requestReasonDropdown.hide();
-    mailFormSubject.hide();
-    commitButton.show();
-    mailFormMailInput.hide();
-    mailFormOrderNumberOrPhoneNumber.hide();
-    customerTypeDropdown.hide();
-      
-    $('.request-form footer').show();
-
-    //Text vor dem Submittbutton mit CSS Anpassungen
-    $('.request-form footer').css('margin-top', '0px')
-    $('.request-form footer').css('padding-top', '0px')
-    $('.request-form footer').prepend(infoBoxWording['feedbackThanks'][currentLanguage]);
-    sessionStorage.removeItem('Feedback');
-  }
-    else{
-      sessionStorage.removeItem('Feedback');
-    }
-  }
-  */
-  
-  ////////////////////CHAT Table Cell entfernen///////////////////////////
-
-  // Entfernt ChatTabeCell, wenn Bedigungen erfüllt sind
-  function removeChatBasedOnRequestType(){
-    if(isGermany() || isBusinessRequestReasonWithoutChat()){
-    //if (true) {
-      hideChatCells();
-      //$('.chatTableCell').hide();
-      var temp = document.getElementById('desktopContactTable');
-      //temp.setAttribute('width', '400px')
-    }else{
-      //$('.chatTableCell').show();
-      var temp = document.getElementById('desktopContactTable');
-      //temp.setAttribute('width', '100%')
-    }
-  }
-
-  // Deaktiviert den Chat für Connect und Germany
-  function isGermany(){
-    var hideChat;
-    switch(portal){
-      case'helpcenter.digitec.ch':
-      case'helpcenter.galaxus.ch':
-      case'helpcenter.connect.digitec.ch':
-      case'helpcenter.galaxus.de':
-      case'helpcenter.galaxus.at':
-        hideChat = false;
-        break;
-      //case'helpcenter.galaxus.at':
-      //  hideChat = true;
-      //  break;
-      default:
-        hideChat = false;
-        break;
-    }
-    return hideChat;
-  }
-
-  //Deaktiviert den Chat für einige Anfragegründe bei B2B
-  function isBusinessRequestReasonWithoutChat(){
-    if(requestReasonTag == 'webform_case_offer' || (requestReasonTag == 'webform_case_delete_account' && customerType == 'business-customer')){
-      return true;
-    }else {
-      return false;
-    }
-  }
-
-
-  // CSS Change für Chat Button Offline
-  function hideChatButton(){
-    $(".button-chat").addClass("button-offline");
- 	$(".button-chat").html(getButtonText('chatNotOnline'));
-    $(".recommendedChannel").css('display' , 'none');
-    chatWaitTimesDOMElements.hide();
-    resetContactOptions();
-  }
-
-  // CSS Change für Chat Button Online
-  function showChatButton(){
-    $(".button-chat").removeClass("button-offline");
-    $(".button-chat").html(getButtonText('chatUs'));
-    $(".recommendedChannel").css('display' , 'inline-block');
-    swapContactOptions();
-    chatWaitTimesDOMElements.show();
-  }
-
-  function swapContactOptions(){
-    //console.log('ENTER SWAP')
-
-    $('#chatIconCellContent').insertBefore($('#row1cell1inserter'));
-    $('#phoneIconCellContent').insertBefore($('#row1cell2inserter'));
-    $('#mailIconCellContent').insertBefore($('#row1cell3inserter'));
-
-    $('#chatTitleCellContent').insertBefore($('#row2cell1inserter'));
-    $('#phoneTitleCellContent').insertBefore($('#row2cell2inserter'));
-    $('#mailTitleCellContent').insertBefore($('#row2cell3inserter'));
-
-    $('#chatTextCellContent').insertBefore($('#row3cell1inserter'));
-    $('#phoneTextCellContent').insertBefore($('#row3cell2inserter'));
-    $('#mailTextCellContent').insertBefore($('#row3cell3inserter'));
-
-    $('#chatButtonCellContent').insertBefore($('#row4cell1inserter'));
-    $('#phoneButtonCellContent').insertBefore($('#row4cell2inserter'));
-    $('#mailButtonCellContent').insertBefore($('#row4cell3inserter'));
-
-    $('#mobileChatCell1Content').insertBefore($('#mobileInserter1'));
-    $('#mobileChatCell2Content').insertBefore($('#mobileInserter2'));
-
-    $('#mobilePhoneCell1Content').insertBefore($('#mobileInserter3'));
-    $('#mobilePhoneCell2Content').insertBefore($('#mobileInserter4'));
-
-    $('#mobileMailCell1Content').insertBefore($('#mobileInserter5'));
-    $('#mobileMailCell2Content').insertBefore($('#mobileInserter6'));
-
-    $('#chatIconCellContent').show();
-    $('#chatTitleCellContent').show();
-    $('#chatTextCellContent').show();
-    $('#chatButtonCellContent').show();
-    $('#mobileChatCell1Content').show();
-    $('#mobileChatCell2Content').show();
-
-    if (currentLanguage != 'de' && portal == "helpcenter.connect.digitec.ch"){
-        hidePhoneCells();
-    }
-  }
-
-  function hideChatCells(){
-    //console.log('ENTER HIDE')
-    $('#phoneIconCellContent').insertBefore($('#row1cell1inserter'));
-    $('#mailIconCellContent').insertBefore($('#row1cell2inserter'));
-    $('#chatIconCellContent').insertBefore($('#row1cell3inserter'));
-
-    $('#phoneTitleCellContent').insertBefore($('#row2cell1inserter'));
-    $('#mailTitleCellContent').insertBefore($('#row2cell2inserter'));
-    $('#chatTitleCellContent').insertBefore($('#row2cell3inserter'));
-
-    $('#phoneTextCellContent').insertBefore($('#row3cell1inserter'));
-    $('#mailTextCellContent').insertBefore($('#row3cell2inserter'));
-    $('#chatTextCellContent').insertBefore($('#row3cell3inserter'));
-
-    $('#phoneButtonCellContent').insertBefore($('#row4cell1inserter'));
-    $('#mailButtonCellContent').insertBefore($('#row4cell2inserter'));
-    $('#chatButtonCellContent').insertBefore($('#row4cell3inserter'));
-
-    $('#mobilePhoneCell1Content').insertBefore($('#mobileInserter1'));
-    $('#mobilePhoneCell2Content').insertBefore($('#mobileInserter2'));
-
-    $('#mobileMailCell1Content').insertBefore($('#mobileInserter3'));
-    $('#mobileMailCell2Content').insertBefore($('#mobileInserter4'));
-
-    $('#mobileChatCell1Content').insertBefore($('#mobileInserter5'));
-    $('#mobileChatCell2Content').insertBefore($('#mobileInserter6'));
-
-    $('#chatIconCellContent').hide();
-    $('#chatTitleCellContent').hide();
-    $('#chatTextCellContent').hide();
-    $('#chatButtonCellContent').hide();
-    $('#mobileChatCell1Content').hide();
-    $('#mobileChatCell2Content').hide();
-  }
-
-  function resetContactOptions(){
-    //console.log('ENTER RESET')
-    $('#chatIconCellContent').show();
-    $('#chatTitleCellContent').show();
-    $('#chatTextCellContent').show();
-    $('#chatButtonCellContent').show();
-    $('#mobileChatCell1Content').show();
-    $('#mobileChatCell2Content').show();
-
-    $('#mailIconCellContent').insertBefore($('#row1cell1inserter'));
-    $('#phoneIconCellContent').insertBefore($('#row1cell2inserter'));
-    $('#chatIconCellContent').insertBefore($('#row1cell3inserter'));
-
-    $('#mailTitleCellContent').insertBefore($('#row2cell1inserter'));
-    $('#phoneTitleCellContent').insertBefore($('#row2cell2inserter'));
-    $('#chatTitleCellContent').insertBefore($('#row2cell3inserter'));
-
-    $('#mailTextCellContent').insertBefore($('#row3cell1inserter'));
-    $('#phoneTextCellContent').insertBefore($('#row3cell2inserter'));
-    $('#chatTextCellContent').insertBefore($('#row3cell3inserter'));
-
-    $('#mailButtonCellContent').insertBefore($('#row4cell1inserter'));
-    $('#phoneButtonCellContent').insertBefore($('#row4cell2inserter'));
-    $('#chatButtonCellContent').insertBefore($('#row4cell3inserter'));
-
-    $('#mobileMailCell1Content').insertBefore($('#mobileInserter1'));
-    $('#mobileMailCell2Content').insertBefore($('#mobileInserter2'));
-
-    $('#mobilePhoneCell1Content').insertBefore($('#mobileInserter3'));
-    $('#mobilePhoneCell2Content').insertBefore($('#mobileInserter4'));
-
-    $('#mobileChatCell1Content').insertBefore($('#mobileInserter5'));
-    $('#mobileChatCell2Content').insertBefore($('#mobileInserter6'));
-
-    if (currentLanguage != 'de' && portal == "helpcenter.connect.digitec.ch"){
-        hidePhoneCells();
-    }
-  }
-
-function swapContactOptionsForHiddenContactForm(){
-    //console.log('ENTER SWAP2')
-    $('#chatIconCellContent').insertBefore($('#row1cell1inserter'));
-    $('#mailIconCellContent').insertBefore($('#row1cell3inserter'));
-    $('#phoneIconCellContent').insertBefore($('#row1cell2inserter'));
-
-    $('#chatTitleCellContent').insertBefore($('#row2cell1inserter'));
-    $('#mailTitleCellContent').insertBefore($('#row2cell3inserter'));
-    $('#phoneTitleCellContent').insertBefore($('#row2cell2inserter'));
-
-    $('#chatTextCellContent').insertBefore($('#row3cell1inserter'));
-    $('#mailTextCellContent').insertBefore($('#row3cell3inserter'));
-    $('#phoneTextCellContent').insertBefore($('#row3cell2inserter'));
-
-    $('#chatButtonCellContent').insertBefore($('#row4cell1inserter'));
-    $('#mailButtonCellContent').insertBefore($('#row4cell3inserter'));
-    $('#phoneButtonCellContent').insertBefore($('#row4cell2inserter'));
-
-    $('#mobileChatCell1Content').insertBefore($('#mobileInserter1'));
-    $('#mobileChatCell2Content').insertBefore($('#mobileInserter2'));
-
-    $('#mobileMailCell1Content').insertBefore($('#mobileInserter5'));
-    $('#mobileMailCell2Content').insertBefore($('#mobileInserter6'));
-
-    $('#mobilePhoneCell1Content').insertBefore($('#mobileInserter3'));
-    $('#mobilePhoneCell2Content').insertBefore($('#mobileInserter4'));
-  }
-
-  function fallbackExit(){
-    introText.hide();
-    fallbackText.show();
-    //$('.progressTable').hide();
-  }
-
-  function hideContactForm(){
-      if ((reasonsForNoContactFormPE.indexOf(requestReasonTag) >= 0 && isInPEChatHours() && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch') && currentLanguage == 'de') || (customerType == "private-customer" && reasonsForNoContactFormGeneral.indexOf(requestReasonTag) >= 0 && isInGeneralChatHours()) && !isHoliday() && hideContactFormCheckerChat && hideContactFormCheckerPhone){
-          swapContactOptionsForHiddenContactForm();
-          $('#mailIconCellContent').hide();
-          $('#mailTitleCellContent').hide();
-          $('#mailTextCellContent').hide();
-          $('#mailButtonCellContent').hide();   
-          $('#mobileMailCell1Content').hide();       
-          $('#mobileMailCell2Content').hide();   
-          removeChatBasedOnRequestType();    
-      } else {
-          $('#mailIconCellContent').show();
-          $('#mailTitleCellContent').show();
-          $('#mailTextCellContent').show();
-          $('#mailButtonCellContent').show();    
-          $('#mobileMailCell1Content').show();       
-          $('#mobileMailCell2Content').show();   
-          removeChatBasedOnRequestType();    
-      }
-  }
-
-  function hidePhoneCells(){
-    $('#chatIconCellContent').insertBefore($('#row1cell2inserter'));
-    $('#mailIconCellContent').insertBefore($('#row1cell1inserter'));
-    $('#phoneIconCellContent').insertBefore($('#row1cell3inserter'));
-
-    $('#chatTitleCellContent').insertBefore($('#row2cell2inserter'));
-    $('#mailTitleCellContent').insertBefore($('#row2cell1inserter'));
-    $('#phoneTitleCellContent').insertBefore($('#row2cell3inserter'));
-
-    $('#chatTextCellContent').insertBefore($('#row3cell2inserter'));
-    $('#mailTextCellContent').insertBefore($('#row3cell1inserter'));
-    $('#phoneTextCellContent').insertBefore($('#row3cell3inserter'));
-
-    $('#chatButtonCellContent').insertBefore($('#row4cell2inserter'));
-    $('#mailButtonCellContent').insertBefore($('#row4cell1inserter'));
-    $('#phoneButtonCellContent').insertBefore($('#row4cell3inserter'));
-
-    $('#mobileChatCell1Content').insertBefore($('#mobileInserter3'));
-    $('#mobileChatCell2Content').insertBefore($('#mobileInserter4'));
-
-    $('#mobileMailCell1Content').insertBefore($('#mobileInserter1'));
-    $('#mobileMailCell2Content').insertBefore($('#mobileInserter2'));
-
-    $('#mobilePhoneCell1Content').insertBefore($('#mobileInserter5'));
-    $('#mobilePhoneCell2Content').insertBefore($('#mobileInserter6'));
-
-    $('#phoneIconCellContent').hide();
-    $('#phoneTitleCellContent').hide();
-    $('#phoneTextCellContent').hide();
-    $('#phoneButtonCellContent').hide();
-    $('#mobilePhoneCell1Content').hide();
-    $('#mobilePhoneCell2Content').hide();
-  }
-
-  function fillHoliday(lang){
-      var portalChooser = '';
-      switch(portal){
-          case 'helpcenter.digitec.ch':
-          case 'helpcenter.galaxus.ch':
-          case 'helpcenter.connect.digitec.ch':
-            portalChooser = 'ch'
-            break;
-          case 'helpcenter.galaxus.de':
-          case 'helpcenter.galaxus.at':
-            portalChooser = 'eu'
-            break;
-          default:
-            portalChooser = 'ch'
-            break;
-      }
-      const d = new Date();
-      datestring = String(d.getUTCFullYear()) + '-' + String(d.getUTCMonth() + 1) + '-' + String(d.getUTCDate()) + ' ' + String(d.getUTCHours()) + ':' + String(d.getUTCMinutes()) + ':' + String(d.getUTCSeconds())
-      const utc_timestamp = Date.parse(datestring)
-      var stampslist = showHolidays[portalChooser]
-      stampslist.forEach((stampset) => {
-          if (utc_timestamp > Date.parse(stampset[0]) && utc_timestamp < Date.parse(stampset[1])){
-              var tempstring = textToDisplay[stampset[2]][lang]
-              $('#holidaysDesktop')[0].innerHTML = tempstring
-              $('#holidaysMobile')[0].innerHTML = tempstring
-          }
-      })
-    }
-
 </script>

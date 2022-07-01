@@ -26,7 +26,7 @@ var bannerSwitchATFR = false;
 var bannerSwitchATIT = false;
 var bannerSwitchATEN = false;
 //Title of the banner per Language and Portal combination
-var bannerTitleCHDE = 
+//var bannerTitleCHDE = 
 
 
 

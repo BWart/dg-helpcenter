@@ -99,7 +99,7 @@ function fillInfoBoxWording(){
                     break;
       }
   
-      infoBoxWording = {
+      var infoBoxWording = {
         //ALLE ANDERWEITIGEN ANFRAGEN
         "webform_case_other_request_order" : {
               'de' : "Die aktuellen Informationen zum Lieferstatus, Kaufbelege, Garantiescheine und Weiteres findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto.<br><br>Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales/service-cases/select-position' target='blank'>Defekt anmelden</a>.",
