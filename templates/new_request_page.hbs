@@ -278,6 +278,7 @@
   const requestReasonDropdownLabel = $('#request_custom_fields_360014169819_label')
   const privateContact = $('.private-customer');
   const businessContact = $('.business-customer')
+  const connectContact = $('.connect-customer')
   //Mailform fields, with label and Input field
   const mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');  //Input field for order number, phone number on digitec Connect
   const mailFormSubject = $('.request_subject');
@@ -303,24 +304,14 @@
   // Case when the page reloads after an incorrectly filled mail form
   else if (fullLink.slice(-8) == 'requests'){
     //TODO: Handling beim Laden nach Eingabefehler
-    pageSetup('mailFormWrong')
     removeOfferforPrivate();
+    pageSetup('mailFormWrong')
   }
   // Rest; Case when the page loads after the customer type was selected
   else {
     pageSetup('customerChosen');
     removeOfferforPrivate();
   }
-
-
-  // --- ACTIONS WHEN USER CLICKS OR CHANGES DOM ELEMENTS ---
-  // Action upon change of the request reason dropdown
-  requestReasonDropdown.on('change', function(){
-    if (requestReasonDropdownContents.attr('value') != ''){
-      onDropdownChange();
-    }
-  });
-
 
 
 
@@ -348,6 +339,11 @@
       circleOne.classList.add('circleStepCompleted');
       circleOne.innerHTML = '&#10003';
     }
+    if (entryPoint == 'mailFormWrong'){
+      onDropdownChange();
+      showContactForm();
+      mailFormMessageTextField.val(sessionStorage.getItem('mailFormMessageTextFieldText'));
+    }
     //show form
     fullMailform.show();
   }
@@ -362,8 +358,46 @@
     } else {
       requestReasonTag = requestReasonDropdownContents.attr('value').replace('//duplicate', '');
     }
+    infoText.html(infoBoxWording[requestReasonTag][currentLanguage]);
+    $('.questionNotAnswered').hide();
+    $('.contactNowButton').hide();
+    infoText.show();
+    infoTextField.show();
+    mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
+    contactNowClicked();
+  }
+
+  function contactNowClicked(){
+    switch (customerType){
+      case "private-customer":
+        privateContact.show();
+        break;
+      case "business-customer":
+        businessContact.show();
+        break;
+      case "connect-customer":
+        connectContact.show();
+        break;
+      default:
+        //TODO: Handle Case if nothing is entered by default
+        break;
+    }
+    try {
+      updateChatConnectionAfterDropdownChange();
+    }
+    catch (e) {
+      console.log(e); 
+      if(gaSend){
+        //TODO: TRACKING
+        //ga('send', 'event', 'Errors', 'ChatLoad', String(e));
+      }
+    } 
+    addExternalScriptForWaitingTimes();
     contactInfos.show();
-    
+    requestForm.hide();
+    backButton.hide();
+    circleThreeTitle.show();
+    circleThreeTitleTwo.hide();
   }
 
   function fallbackExit(){
@@ -392,6 +426,108 @@
     }
   return JSON.stringify(json);
   }
+
+  // CSS Change für Chat Button Offline
+  function hideChatButton(){
+    console.log('BBBBBBBBBBBBBBBBBB')
+    $(".button-chat").addClass("button-offline");
+ 	  $(".button-chat").html(getButtonText('chatNotOnline'));
+    $(".recommendedChannel").css('display' , 'none');
+    chatWaitTimesDOMElements.hide();
+  }
+
+  // CSS Change für Chat Button Online
+  function showChatButton(){
+    console.log('AAAAAAAAAAAAAAAAAAAAAAAAA')
+    $(".button-chat").removeClass("button-offline");
+    $(".button-chat").html(getButtonText('chatUs'));
+    $(".recommendedChannel").css('display' , 'inline-block');
+    chatWaitTimesDOMElements.show();
+  }
+
+  //Add external wait time script
+  function addExternalScriptForWaitingTimes(){
+      $('.waitTimeScript').remove();
+      var script = document.createElement('script');
+      script.classList.add('waitTimeScript')
+      script.src = 'https://www.hardread.ch/testing/waitTimes.js';
+      script.onload = function() {
+          setWaitTimes();
+      }
+      script.onerror = function() {
+          waitTimes.hide();
+      }
+    document.body.appendChild(script);
+  }
+
+
+  // --- EVENTS ---
+  // Action upon change of the request reason dropdown
+  requestReasonDropdown.on('change', function(){
+    if (requestReasonDropdownContents.attr('value') != ''){
+      onDropdownChange();
+    }
+  });
+  // Action upon clicking "back to contact options"
+  backButton.on('click', function(){
+    if (requestReasonDropdownContents.attr('value') != ''){
+      onDropdownChange();
+    }
+  });
+  // Action when clicking on "call us"
+  $('.private-number').on("click", function () {
+    var popup = document.getElementById("phoneNumberPrivate");
+    popup.classList.toggle("show");
+  }) 
+  $('.private-number2').on("click", function () {
+   var popup = document.getElementById("phoneNumberPrivateMobile");
+   popup.classList.toggle("show");
+  }) 
+  $('.business-number').on("click", function () {
+    var popup = document.getElementById("phoneNumberBusiness");
+    popup.classList.toggle("show");
+  })
+  $('.business-number2').on("click", function () {
+    var popup = document.getElementById("phoneNumberBusinessMobile");
+  	popup.classList.toggle("show");
+  })
+
+  //Action when clicking "contact now"
+  $('.contactNowButton').on("click", function() {
+    contactNowClicked();
+  })
+
+  //Action when clicking "write us"
+  $('.contactFormWriteUs').on("click", function () {
+    showContactForm();
+  })
+
+  //Action when sending the contact form
+  commitButton.on("click", function(){
+    commitButtonPressed();
+  })
+
+
+
+  function showContactForm(){
+    circleThreeTitle.hide();
+    circleThreeTitleTwo.show();
+    requestForm.show();
+    mailFormSubject.hide();
+    backButton.show();
+    contactInfos.hide();
+  }
+
+  function commitButtonPressed(){
+    mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
+    sessionStorage.setItem('dgCustomerEmail', $('input[name="request[anonymous_requester_email]"]').val());
+    sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
+    requestReasonDropdown.insertBefore(mailFormMailInput);
+    customerTypeDropdown.insertBefore(mailFormMailInput);
+    requestReasonDropdown.hide()
+    customerTypeDropdown.hide()
+  }
+  
 
   
   // --- FUNCTIONS TO FILL VARIABLES ---

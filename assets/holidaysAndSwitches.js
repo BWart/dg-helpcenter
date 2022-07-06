@@ -1,3 +1,7 @@
+// --- TIMEZONE OFFSET --- 
+// 2 during summer time, 1 during winter time
+var UTCTimeOffset = 2;
+
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
 var switchHideContactForm = false
@@ -13,10 +17,10 @@ var bannerSwitchCHDE = false;
 var bannerSwitchCHFR = false;
 var bannerSwitchCHIT = false;
 var bannerSwitchCHEN = false;
-var bannerSwitchConncetDE = false;
-var bannerSwitchConncetFR = false;
-var bannerSwitchConncetIT = false;
-var bannerSwitchConncetEN = false;
+var bannerSwitchConnectDE = false;
+var bannerSwitchConnectFR = false;
+var bannerSwitchConnectIT = false;
+var bannerSwitchConnectEN = false;
 var bannerSwitchDEDE = false;
 var bannerSwitchDEFR = false;
 var bannerSwitchDEIT = false;
