@@ -271,13 +271,15 @@
   "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy"]
   //var reasonsForNoContactFormPE = []
   //ALL REASONS
-  //var reasonsForNoContactFormGeneral = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product", "webform_case_not_working_product", "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_other_request_order", "webform_case_return", "webform_case_return_status", "webform_case_creditnote", "webform_case_other_request_returns", "webform_case_refund", "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_other_request_payment", "webform_case_delete_account", "webform_case_cant_login", "webform_case_other_request_account", "webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer", "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy"]
+  var reasonsForNoContactFormGeneral = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product", "webform_case_not_working_product", "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_other_request_order", "webform_case_return", "webform_case_return_status", "webform_case_creditnote", "webform_case_other_request_returns", "webform_case_refund", "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_other_request_payment", "webform_case_delete_account", "webform_case_cant_login", "webform_case_other_request_account", "webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer", "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy"]
   //ONLY FOLLOWING REASONS: Where is my order, problems with an order, payment
   //var reasonsForNoContactFormGeneral = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product", "webform_case_not_working_product", "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_other_request_order", "webform_case_refund", "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_other_request_payment"]
   //NO REASONS
-  var reasonsForNoContactFormGeneral = []
+  //var reasonsForNoContactFormGeneral = []
 
-  var reasonsForLongerMailWaitTime = ["webform_case_product_advice_it", "webform_case_product_advice_network"]
+  //var reasonsForLongerMailWaitTime = ["webform_case_product_advice_it", "webform_case_product_advice_network"]
+  //ALL REASONS
+  var reasonsForLongerMailWaitTime = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product", "webform_case_not_working_product", "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_other_request_order", "webform_case_return", "webform_case_return_status", "webform_case_creditnote", "webform_case_other_request_returns", "webform_case_refund", "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_other_request_payment", "webform_case_delete_account", "webform_case_cant_login", "webform_case_other_request_account", "webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer", "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy"]
   var languagesForLongerMailWaitTime = ["de"]
 
   var requestReasonTopCategory = {
@@ -563,9 +565,9 @@
       if (contactFormIsShown == 1) { mailFormOrderNumberOrPhoneNumber.show() }
     }
     //Längere Wartezeit im Mail Feld
-    if (reasonsForLongerMailWaitTime.indexOf(requestReasonTag) >= 0 && languagesForLongerMailWaitTime.indexOf(currentLanguage) >= 0 && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
+    if (reasonsForLongerMailWaitTime.indexOf(requestReasonTag) >= 0 && languagesForLongerMailWaitTime.indexOf(currentLanguage) >= 0 && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch') && customerType == "private-customer") {
         for (var i = 0; i < mailWaitTimes.length; i++){
-            mailWaitTimes[i].innerHTML = 'ca. 6'
+            mailWaitTimes[i].innerHTML = 'bis zu 5'
         }
     } else {
         for (var i = 0; i < mailWaitTimes.length; i++){
