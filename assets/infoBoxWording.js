@@ -415,12 +415,26 @@ function fillInfoBoxWording(){
         infoBoxWording['webform_case_payment_reminder']['de'] = "Es kann bis zu fünf Werktage dauern, bis deine Zahlung in unserem System verbucht wird. Deshalb kann es sein, dass sich die Mahnung/Zahlungserinnerung mit deiner Zahlung überschnitten hat. In diesem Fall kannst du die Mahnung ignorieren.<br>Weitere Möglichkeiten woran es liegen kann findest du unter <a href='" + helpcenterURL + "articles" + hp6 + "' target='blank'>Warum habe ich eine Zahlungserinnerung erhalten, obwohl ich bezahlt habe?</a>.";
         }
       if (typeof customerType !== 'undefined') {  
-      if (customerType == 'business-customer') {
+            if (customerType == 'business-customer') {
         infoBoxWording['webform_case_delete_account']['de'] = 'Nachdem dein Konto deaktiviert wurde, hast du keinen Zugriff mehr auf deine elektronischen Kaufbelege und andere Unterlagen. Wir empfehlen dir daher, eine Kopie der noch benötigten Formulare zu drucken oder abzuspeichern, bevor du dein Konto deaktivieren lässt.<br><br>Firmenkunden können unseren Kundendienst kontaktieren, um die Deaktivierung ihres Kontos zu veranlassen.';
         infoBoxWording['webform_case_delete_account']['fr'] = "Après la désactivation de ton compte, tu n'auras plus accès à tes justificatifs d'achat électroniques et autres documents. Nous te recommandons donc d'imprimer ou de sauvegarder une copie des formulaires dont tu as encore besoin avant de faire désactiver ton compte.<br><br>Les entreprises clientes peuvent contacter notre service clientèle pour demander la désactivation de leur compte.";
         infoBoxWording['webform_case_delete_account']['it'] = "Dopo la disattivazione dell'account, non sarà più possibile accedere alle ricevute di acquisto elettroniche e ad altri documenti. Si consiglia di stampare o salvare una copia dei moduli necessari prima di disattivare l'account.<br><br>I clienti aziendali possono contattare il nostro servizio clienti per disattivare il proprio account.";
         infoBoxWording['webform_case_delete_account']['en-US'] = 'After your account is deactivated, you will no longer have access to your electronic purchase receipts and other records. We recommend that you print or save a copy of any forms you still need before deactivating your account.<br><br>Business customers can contact our customer service to have their account deactivated.';
-    }}
+      }}
+      if (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch'){
+            infoBoxWording['webform_case_shipping_status']['de'] += "<br><br><b><font color='red'>Hinweis:</font> Aktuell haben wir längere Lieferzeiten (1-3 Werktage) und bitten um Geduld.</b>"
+            infoBoxWording['webform_case_ready_for_shipment']['de'] += "<br><br><b><font color='red'>Hinweis:</font> Aktuell haben wir längere Lieferzeiten (1-3 Werktage) und bitten um Geduld.</b>"
+            infoBoxWording['webform_case_order_status']['de'] += "<br><br><b><font color='red'>Hinweis:</font> Aktuell haben wir längere Lieferzeiten (1-3 Werktage) und bitten um Geduld.</b>"
+            infoBoxWording['webform_case_shipping_status']['fr'] += "<br><br><b><font color='red'>Remarque :</font> Actuellement, nous avons des délais de livraison plus longs (1-3 jours ouvrables) et nous vous prions de bien vouloir patienter.</b>"
+            infoBoxWording['webform_case_ready_for_shipment']['fr'] += "<br><br><b><font color='red'>Remarque :</font> Actuellement, nous avons des délais de livraison plus longs (1-3 jours ouvrables) et nous vous prions de bien vouloir patienter.</b>"
+            infoBoxWording['webform_case_order_status']['fr'] += "<br><br><b><font color='red'>Remarque :</font> Actuellement, nous avons des délais de livraison plus longs (1-3 jours ouvrables) et nous vous prions de bien vouloir patienter.</b>"
+            infoBoxWording['webform_case_shipping_status']['it'] += "<br><br><b><font color='red'>Nota bene:</font> attualmente i tempi di consegna sono più lunghi (1-3 giorni lavorativi) e vi chiediamo di avere pazienza.</b>"
+            infoBoxWording['webform_case_ready_for_shipment']['it'] += "<br><br><b><font color='red'>Nota bene:</font> attualmente i tempi di consegna sono più lunghi (1-3 giorni lavorativi) e vi chiediamo di avere pazienza.</b>"
+            infoBoxWording['webform_case_order_status']['it'] += "<br><br><b><font color='red'>Nota bene:</font> attualmente i tempi di consegna sono più lunghi (1-3 giorni lavorativi) e vi chiediamo di avere pazienza.</b>"
+            infoBoxWording['webform_case_shipping_status']['en-US'] += "<br><br><b><font color='red'>Note:</font> Currently we have longer delivery times (1-3 business days) and ask for your patience.</b>"
+            infoBoxWording['webform_case_ready_for_shipment']['en-US'] += "<br><br><b><font color='red'>Note:</font> Currently we have longer delivery times (1-3 business days) and ask for your patience.</b>"
+            infoBoxWording['webform_case_order_status']['en-US'] += "<br><br><b><font color='red'>Note:</font> Currently we have longer delivery times (1-3 business days) and ask for your patience.</b>"
+      }
 
 
         return infoBoxWording;
