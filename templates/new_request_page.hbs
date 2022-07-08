@@ -586,6 +586,7 @@
       } 
     contactNowClicked();
     hideContactForm();
+    fillHoliday(currentLanguage);
   } 
 
   function onDropdownChangeConnect(){
@@ -1303,7 +1304,6 @@ function setClosed(){
  	$(".button-chat").html(getButtonText('chatNotOnline'));
     $(".recommendedChannel").css('display' , 'none');
     chatWaitTimesDOMElements.hide();
-    resetContactOptions();
   }
 
   // CSS Change für Chat Button Online
@@ -1311,7 +1311,6 @@ function setClosed(){
     $(".button-chat").removeClass("button-offline");
     $(".button-chat").html(getButtonText('chatUs'));
     $(".recommendedChannel").css('display' , 'inline-block');
-    swapContactOptions();
     chatWaitTimesDOMElements.show();
   }
 
@@ -1471,7 +1470,23 @@ function swapContactOptionsForHiddenContactForm(){
           $('#mailTextCellContent').hide();
           $('#mailButtonCellContent').hide();   
           $('#mobileMailCell1Content').hide();       
-          $('#mobileMailCell2Content').hide();   
+          $('#mobileMailCell2Content').hide();
+          $('#phoneIconCellContent').show();
+          $('#phoneTitleCellContent').show();
+          $('#phoneTextCellContent').show();
+          $('#phoneButtonCellContent').show();   
+          $('#mobilePhoneCell1Content').show();       
+          $('#mobilePhoneCell2Content').show(); 
+          $(".recommendedChannel").css('display' , 'inline-block');
+          if (reasonsForNoContactFormPE.includes(requestReasonTag)) {
+            $('#phoneIconCellContent').hide();
+            $('#phoneTitleCellContent').hide();
+            $('#phoneTextCellContent').hide();
+            $('#phoneButtonCellContent').hide();   
+            $('#mobilePhoneCell1Content').hide();       
+            $('#mobilePhoneCell2Content').hide(); 
+            $(".recommendedChannel").css('display' , 'none'); 
+          } 
           removeChatBasedOnRequestType();    
       } else {
           $('#mailIconCellContent').show();
@@ -1479,7 +1494,23 @@ function swapContactOptionsForHiddenContactForm(){
           $('#mailTextCellContent').show();
           $('#mailButtonCellContent').show();    
           $('#mobileMailCell1Content').show();       
-          $('#mobileMailCell2Content').show();   
+          $('#mobileMailCell2Content').show(); 
+          if (reasonsForNoContactFormPE.includes(requestReasonTag)) {
+            swapContactOptionsForHiddenContactForm();
+            $('#mailIconCellContent').hide();
+            $('#mailTitleCellContent').hide();
+            $('#mailTextCellContent').hide();
+            $('#mailButtonCellContent').hide();   
+            $('#mobileMailCell1Content').hide();       
+            $('#mobileMailCell2Content').hide();
+            $('#phoneIconCellContent').hide();
+            $('#phoneTitleCellContent').hide();
+            $('#phoneTextCellContent').hide();
+            $('#phoneButtonCellContent').hide();   
+            $('#mobilePhoneCell1Content').hide();       
+            $('#mobilePhoneCell2Content').hide(); 
+            $(".recommendedChannel").css('display' , 'none'); 
+          }   
           removeChatBasedOnRequestType();    
       }
   }
@@ -1524,7 +1555,12 @@ function swapContactOptionsForHiddenContactForm(){
           case 'helpcenter.digitec.ch':
           case 'helpcenter.galaxus.ch':
           case 'helpcenter.connect.digitec.ch':
-            portalChooser = 'ch'
+            if (reasonsForNoContactFormPE.includes(requestReasonTag)){
+              portalChooser = 'chpe'
+            }
+            else{
+              portalChooser = 'ch'
+            }
             break;
           case 'helpcenter.galaxus.de':
           case 'helpcenter.galaxus.at':
@@ -1534,6 +1570,7 @@ function swapContactOptionsForHiddenContactForm(){
             portalChooser = 'ch'
             break;
       }
+      console.log(portalChooser)
       const d = new Date();
       datestring = String(d.getUTCFullYear()) + '-' + String(d.getUTCMonth() + 1) + '-' + String(d.getUTCDate()) + ' ' + String(d.getUTCHours()) + ':' + String(d.getUTCMinutes()) + ':' + String(d.getUTCSeconds())
       const utc_timestamp = Date.parse(datestring)
