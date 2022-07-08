@@ -298,6 +298,7 @@
   
   // --- INITIAL SETUP ---
   // Case when "Contact Us" Button in footer is clicked
+  addExternalScriptForWaitingTimes(true);
   if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/'){
     pageSetup('contactUs');
   }
@@ -392,7 +393,7 @@
         //ga('send', 'event', 'Errors', 'ChatLoad', String(e));
       }
     } 
-    addExternalScriptForWaitingTimes();
+    addExternalScriptForWaitingTimes(false);
     contactInfos.show();
     requestForm.hide();
     backButton.hide();
@@ -429,7 +430,6 @@
 
   // CSS Change für Chat Button Offline
   function hideChatButton(){
-    console.log('BBBBBBBBBBBBBBBBBB')
     $(".button-chat").addClass("button-offline");
  	  $(".button-chat").html(getButtonText('chatNotOnline'));
     $(".recommendedChannel").css('display' , 'none');
@@ -438,7 +438,6 @@
 
   // CSS Change für Chat Button Online
   function showChatButton(){
-    console.log('AAAAAAAAAAAAAAAAAAAAAAAAA')
     $(".button-chat").removeClass("button-offline");
     $(".button-chat").html(getButtonText('chatUs'));
     $(".recommendedChannel").css('display' , 'inline-block');
@@ -446,8 +445,10 @@
   }
 
   //Add external wait time script
-  function addExternalScriptForWaitingTimes(){
-      $('.waitTimeScript').remove();
+  function addExternalScriptForWaitingTimes(firstCall){
+      if (!firstCall){
+        $('.waitTimeScript').remove();
+      }
       var script = document.createElement('script');
       script.classList.add('waitTimeScript')
       script.src = 'https://www.hardread.ch/testing/waitTimes.js';
@@ -459,6 +460,114 @@
       }
     document.body.appendChild(script);
   }
+
+  //set the waiting times
+  function setWaitTimes(){
+    waitTimes.hide();
+    const d = new Date();
+    let dayOfWeek = d.getUTCDay();
+    let currentHour = d.getUTCHours() + UTCHourOffset;
+    const dateFromExternalScript = new Date(createTimeStampUTC);
+    const currentUTCDate = new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds());
+    const diffSeconds = Math.abs((currentUTCDate - dateFromExternalScript) / 1000)
+    if (diffSeconds > 299 || isHoliday()){
+      waitTimes.hide();
+      return;
+    }
+    if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
+      if (isInDEOpeningTimes(dayOfWeek, currentHour)) {
+        if (customerType == 'private-customer') {
+          if (callWaitTimes['privateGer'] >= callWaitTimes['privateAt']) {
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateGer'])
+          } else {
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'])
+          }
+        } else {
+          if (callWaitTimes['businessGer'] >= callWaitTimes['privateAt']) {
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['businessGer'])
+          } else {
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'])
+          }
+        }
+      }
+      else {
+        setClosed();
+      }
+    }
+    if (portal == 'helpcenter.connect.digitec.ch'){
+      if (isInConnectOpeningTimes(dayOfWeek, currentHour)){
+        switch (currentLanguage) {
+          case 'de':
+            setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
+            break;
+          case 'fr':
+            setWaitTime(chatWaitTimes['connectFR'], callWaitTimes['connectFR']);
+            break;
+          case 'it':
+            setWaitTime(chatWaitTimes['connectIT'], callWaitTimes['connectIT']);
+            break;
+          case 'en-US':
+            setWaitTime(chatWaitTimes['connectEN'], callWaitTimes['connectEN']);
+            break;
+          default:
+            setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
+            break;
+        }
+      }
+      else {
+        setClosed();
+      }
+    }
+    if (portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.digitec.ch'){
+      if (isInCHOpeningTimes(dayOfWeek, currentHour)){
+        console.log('ENTER');
+      }
+    }
+  }
+
+  function isInDEOpeningTimes(dayOfWeek, currentHour){
+    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= euOpeningHourWeekday && currentHour < euClosingHourWeekday){
+      return true;
+    }
+    if (dayOfWeek == 6 && currentHour >= euOpeningHourSaturday && currentHour < euClosingHourSaturday){
+      return true;
+    }
+    return false;
+  }
+
+  function isInConnectOpeningTimes(dayOfWeek, currentHour){
+    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= connectOpeningHourWeekday && currentHour < connectClosingHourWeekday){
+      return true;
+    }
+    if (dayOfWeek == 6 && currentHour >= connectOpeningHourSaturday && currentHour < connectClosingHourSaturday){
+      return true;
+    }
+    return false;
+  }
+
+  function isInCHOpeningTimes(dayOfWeek, currentHour){
+    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= chOpeningHourWeekday && currentHour < chClosingHourWeekday){
+      return true;
+    }
+    if (dayOfWeek == 6 && currentHour >= chOpeningHourSaturday && currentHour < chClosingHourSaturday){
+      return true;
+    }
+    return false;
+  }
+
+  function isInCHPEOpeningTimes(dayOfWeek, currentHour){
+    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= chPEOpeningHourWeekday && currentHour < chPEClosingHourWeekday){
+      return true;
+    }
+    if (dayOfWeek == 6 && currentHour >= chPEOpeningHourSaturday && currentHour < chPEClosingHourSaturday){
+      return true;
+    }
+    return false;
+  }
+
+  function setClosed(){
+    callWaitTimesDOMElements.hide();
+  } 
 
 
   // --- EVENTS ---

@@ -1,6 +1,6 @@
 // --- TIMEZONE OFFSET --- 
 // 2 during summer time, 1 during winter time
-var UTCTimeOffset = 2;
+var UTCHourOffset = 2;
 
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
@@ -74,3 +74,26 @@ var hideWaitingTimes = {
         ['2022-06-06 00:00:00', '2022-06-06 22:00:00']
     ]
 }
+
+
+//OPENING HOURS
+//EU
+var euOpeningHourWeekday = 8;
+var euClosingHourWeekday = 20;
+var euOpeningHourSaturday = 9;
+var euClosingHourSaturday = 17;
+//Connect
+var connectOpeningHourWeekday = 8;
+var connectClosingHourWeekday = 17;
+var connectOpeningHourSaturday = false;
+var connectClosingHourSaturday = false;
+//CH Regular
+var chOpeningHourWeekday = 8;
+var chClosingHourWeekday = 19;
+var chOpeningHourSaturday = false;
+var chClosingHourSaturday = false;
+//CH PE
+var chPEOpeningHourWeekday = 8;
+var chPEClosingHourWeekday = 17;
+var chPEOpeningHourSaturday = false;
+var chPEClosingHourSaturday = false;
