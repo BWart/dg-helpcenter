@@ -4,11 +4,36 @@ var UTCHourOffset = 2;
 
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
-var switchHideContactForm = false
+var switchHideContactFormDuringOpeningTimes = false;
+var switchHideContactFormOutsideOpeningTimes = false;
+var switchHideContactFormForPEDuringOpeningTimes = false;
+var switchHideContactFormForPEOutsideOpeningTimes = false;
+var switchHideContactFormForEUDuringOpeningTimes = false;
+var switchHideContactFormForEUOutsideOpeningTimes = false;
 //set to true if the phone number should be hidden, set to false if it should be displayed
-var switchHidePhone = false
+var switchHidePhoneDuringOpeningTimes = false;
+var switchHidePhoneOutsideOpeningTimes = false;
+var switchHidePhoneForPEDuringOpeningTimes = false;
+var switchHidePhoneForPEOutsideOpeningTimes = false;
+var switchHidePhoneForEUDuringOpeningTimes = false;
+var switchHidePhoneForEUOutsideOpeningTimes = false;
 //set to true if the Chat should be hidden, set to false if it should be displayed
-var switchHideChat = false
+var switchHideChatDuringOpeningTimes = false;
+var switchHideChatOutsideOpeningTimes = false;
+var switchHideChatForPEDuringOpeningTimes = false;
+var switchHideChatForPEOutsideOpeningTimes = false;
+var switchHideChatForEUDuringOpeningTimes = false;
+var switchHideChatForEUOutsideOpeningTimes = false;
+//If contact form is hidden, set threshhold to show it again when the waiting time for live contact channels get too high; set to 50000 if contact form should never be shown
+var phoneWaitThreshholdToShowcontactForm = 50000;
+var phoneWaitThreshholdToShowContactFormPE = 50000;
+var phoneWaitThreshholdToShowContactFormEU = 50000;
+var chatWaitThreshholdToShowcontactForm = 50000;
+var chatWaitThreshholdToShowcontactFormPE = 50000;
+var chatWaitThreshholdToShowcontactFormEU = 50000;
+var chatAndPhoneWaitThreshholdToShowcontactForm = 50000;
+var chatAndPhoneWaitThreshholdToShowcontactFormPE = 50000;
+var chatAndPhoneWaitThreshholdToShowcontactFormEU = 50000;
 
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
@@ -29,8 +54,6 @@ var bannerSwitchATDE = false;
 var bannerSwitchATFR = false;
 var bannerSwitchATIT = false;
 var bannerSwitchATEN = false;
-//Title of the banner per Language and Portal combination
-//var bannerTitleCHDE = 
 
 
 

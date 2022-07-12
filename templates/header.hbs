@@ -133,26 +133,40 @@ var bannerSwitch; //true=an, false=aus, FÜR ALLE DOMAINS
 
 if(window.location.hostname =="helpcenter.digitec.ch" || window.location.hostname =="helpcenter.galaxus.ch"){ //SCHWEIZ
   if(currentLanguage =='de'){ //CH DEUTSCH
-    bannerSwitch="false";
+    bannerSwitch = bannerSwitchCHDE;
   }else if(currentLanguage =='fr'){ //CH FRANZÖSISCH
-    bannerSwitch="false";
+    bannerSwitch = bannerSwitchCHFR;
   }else if(currentLanguage =='it'){ //CH ITALIENISCH
-    bannerSwitch="false";
+    bannerSwitch = bannerSwitchCHIT;
   }else if(currentLanguage =='en-US'){ //CH ENGLISCH
-    bannerSwitch="false";
+    bannerSwitch = bannerSwitchCHEN;
   }
   else { //Rest
-    bannerSwitch="false";
+    bannerSwitch = false;
+  }
+}
+else if(window.location.hostname == 'helpcenter.connect.digitec.ch'){
+  if(currentLanguage =='de'){ //CH DEUTSCH
+    bannerSwitch = bannerSwitchConnectDE;
+  }else if(currentLanguage =='fr'){ //CH FRANZÖSISCH
+    bannerSwitch = bannerSwitchConnectFR;
+  }else if(currentLanguage =='it'){ //CH ITALIENISCH
+    bannerSwitch = bannerSwitchConnectIT;
+  }else if(currentLanguage =='en-US'){ //CH ENGLISCH
+    bannerSwitch = bannerSwitchConnectEN;
+  }
+  else { //Rest
+    bannerSwitch = false;
   }
 }
 else if(window.location.hostname =="helpcenter.galaxus.de"){ //DEUTSCHLAND
-  bannerSwitch="false";
+  bannerSwitch = bannerSwitchDEDE;
 }
 else if(window.location.hostname =="helpcenter.galaxus.at"){ //ÖSTERREICH
-  bannerSwitch="false";
+  bannerSwitch = bannerSwitchATDE;
 }
 else{ //Rest
-  bannerSwitch="false";
+  bannerSwitch = false;
 }
 ////////////////////////////////////////////////////////////////////
 
@@ -171,7 +185,7 @@ else{ /*Digitec ist Else*/
     document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerCH + ":</strong><br> " + textBannerCH;
 }
 
-if(bannerSwitch == "true"){
+if(bannerSwitch){
   $('#bannerSchalter').show();
 }else{
   $('#bannerSchalter').hide();
