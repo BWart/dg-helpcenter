@@ -4,7 +4,7 @@ var UTCHourOffset = 2;
 
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
-var switchHideContactFormDuringOpeningTimes = false;
+var switchHideContactFormDuringOpeningTimes = true;
 var switchHideContactFormOutsideOpeningTimes = false;
 var switchHideContactFormForPEDuringOpeningTimes = false;
 var switchHideContactFormForPEOutsideOpeningTimes = false;
@@ -25,15 +25,15 @@ var switchHideChatForPEOutsideOpeningTimes = false;
 var switchHideChatForEUDuringOpeningTimes = false;
 var switchHideChatForEUOutsideOpeningTimes = false;
 //If contact form is hidden, set threshhold to show it again when the waiting time for live contact channels get too high; set to 50000 if contact form should never be shown
-var phoneWaitThreshholdToShowcontactForm = 50000;
+var phoneWaitThreshholdToShowContactForm = 50000;
 var phoneWaitThreshholdToShowContactFormPE = 50000;
 var phoneWaitThreshholdToShowContactFormEU = 50000;
-var chatWaitThreshholdToShowcontactForm = 50000;
-var chatWaitThreshholdToShowcontactFormPE = 50000;
-var chatWaitThreshholdToShowcontactFormEU = 50000;
-var chatAndPhoneWaitThreshholdToShowcontactForm = 50000;
-var chatAndPhoneWaitThreshholdToShowcontactFormPE = 50000;
-var chatAndPhoneWaitThreshholdToShowcontactFormEU = 50000;
+var chatWaitThreshholdToShowContactForm = 50000;
+var chatWaitThreshholdToShowContactFormPE = 50000;
+var chatWaitThreshholdToShowContactFormEU = 50000;
+var chatAndPhoneWaitThreshholdToShowContactForm = 50000;
+var chatAndPhoneWaitThreshholdToShowContactFormPE = 50000;
+var chatAndPhoneWaitThreshholdToShowContactFormEU = 50000;
 
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---

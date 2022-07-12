@@ -655,44 +655,48 @@
 
 
   function reorderContactChannels(){
+    const d = new Date();
+    let dayOfWeek = d.getUTCDay();
+    let currentHour = d.getUTCHours() + UTCHourOffset;
     let contactChannelChat = true;
     let contactChannelCall = true;
     let contactChannelMail = true;
-    let isOpen = true;
+    let isOpen = 'true';
     let isPE = false;
     let isCH = false;
     switch (portal){
       case 'helpcenter.digitec.ch':
       case 'helpcenter.galaxus.ch':
         if (requestReasonTag.includes('webform_case_product_advice_')){
-          isOpen = isInCHPEOpeningTimes();
+          isOpen = isInCHPEOpeningTimes(dayOfWeek, currentHour);
           isPE = true;
           isCH = true;
         }
         else {
-          isOpen = isInCHOpeningTimes();
+          isOpen = isInCHOpeningTimes(dayOfWeek, currentHour);
           isPE = false;
           isCH = true;
         }
         break;
       case 'helpcenter.connect.digitec.ch':
-        isOpen = isInCHPEOpeningTimes();
+        isOpen = isInCHPEOpeningTimes(dayOfWeek, currentHour);
         isCH = true;
         break;
       case 'helpcenter.galaxus.de':
       case 'helpcenter.galaxus.at':
-        isOpen = isInDEOpeningTimes();
+        isOpen = isInDEOpeningTimes(dayOfWeek, currentHour);
         isCH = false;
         break;
       default:
         isOpen = false;
+        break;
     }
     if (isPE && isCH){
       if (isOpen){
         if (switchHideContactFormForPEDuringOpeningTimes){
           contactChannelMail = false;
         }
-        if (phoneWaitThreshholdToShowContactFormPE < callWaitSeconds || chatWaitThreshholdToShowcontactFormPE < chatWaitSeconds || (chatAndPhoneWaitThreshholdToShowcontactFormPE < callWaitSeconds && chatAndPhoneWaitThreshholdToShowcontactFormPE < chatWaitSeconds)){
+        if (phoneWaitThreshholdToShowContactFormPE < callWaitSeconds || chatWaitThreshholdToShowContactFormPE < chatWaitSeconds || (chatAndPhoneWaitThreshholdToShowContactFormPE < callWaitSeconds && chatAndPhoneWaitThreshholdToShowcontactFormPE < chatWaitSeconds)){
           contactChannelMail = true;
         }
         if (switchHidePhoneForPEDuringOpeningTimes){
@@ -719,7 +723,7 @@
         if (switchHideContactFormDuringOpeningTimes){
           contactChannelMail = false;
         }
-        if (phoneWaitThreshholdToShowContactForm < callWaitSeconds || chatWaitThreshholdToShowcontactForm < chatWaitSeconds || (chatAndPhoneWaitThreshholdToShowcontactForm < callWaitSeconds && chatAndPhoneWaitThreshholdToShowcontactForm < chatWaitSeconds)){
+        if (phoneWaitThreshholdToShowContactForm <= callWaitSeconds || chatWaitThreshholdToShowContactForm <= chatWaitSeconds || (chatAndPhoneWaitThreshholdToShowContactForm <= callWaitSeconds && chatAndPhoneWaitThreshholdToShowContactForm <= chatWaitSeconds)){
           contactChannelMail = true;
         }
         if (switchHidePhoneDuringOpeningTimes){
@@ -746,7 +750,7 @@
         if (switchHideContactFormForEUDuringOpeningTimes){
           contactChannelMail = false;
         }
-        if (phoneWaitThreshholdToShowContactFormEU < callWaitSeconds || chatWaitThreshholdToShowcontactFormEU < chatWaitSeconds || (chatAndPhoneWaitThreshholdToShowcontactFormEU < callWaitSeconds && chatAndPhoneWaitThreshholdToShowcontactFormEU < chatWaitSeconds)){
+        if (phoneWaitThreshholdToShowContactFormEU < callWaitSeconds || chatWaitThreshholdToShowContactFormEU < chatWaitSeconds || (chatAndPhoneWaitThreshholdToShowContactFormEU < callWaitSeconds && chatAndPhoneWaitThreshholdToShowContactFormEU < chatWaitSeconds)){
           contactChannelMail = true;
         }
         if (switchHidePhoneForEUDuringOpeningTimes){
@@ -905,10 +909,11 @@
     if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= chOpeningHourWeekday && currentHour < chClosingHourWeekday){
       return true;
     }
-    if (dayOfWeek == 6 && currentHour >= chOpeningHourSaturday && currentHour < chClosingHourSaturday){
+    else if (dayOfWeek == 6 && currentHour >= chOpeningHourSaturday && currentHour < chClosingHourSaturday){
       return true;
+    } else {
+      return false;
     }
-    return false;
   }
 
   function isInCHPEOpeningTimes(dayOfWeek, currentHour){
