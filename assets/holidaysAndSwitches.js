@@ -18,6 +18,8 @@ var switchHideContactFormDuringOpeningTimes = true;
 var switchHideContactFormOutsideOpeningTimes = false;
 var switchHideContactFormForPEDuringOpeningTimes = false;
 var switchHideContactFormForPEOutsideOpeningTimes = false;
+var switchHideContactFormForBusinessDuringOpeningTimes = false;
+var switchHideContactFormForBusinessOutsideOpeningTimes = false;
 var switchHideContactFormForEUDuringOpeningTimes = false;
 var switchHideContactFormForEUOutsideOpeningTimes = false;
 //set to true if the phone number should be hidden, set to false if it should be displayed
@@ -25,6 +27,8 @@ var switchHidePhoneDuringOpeningTimes = false;
 var switchHidePhoneOutsideOpeningTimes = false;
 var switchHidePhoneForPEDuringOpeningTimes = false;
 var switchHidePhoneForPEOutsideOpeningTimes = false;
+var switchHidePhoneForBusinessDuringOpeningTimes = false;
+var switchHidePhoneForBusinessOutsideOpeningTimes = false;
 var switchHidePhoneForEUDuringOpeningTimes = false;
 var switchHidePhoneForEUOutsideOpeningTimes = false;
 //set to true if the Chat should be hidden, set to false if it should be displayed
@@ -32,23 +36,28 @@ var switchHideChatDuringOpeningTimes = false;
 var switchHideChatOutsideOpeningTimes = false;
 var switchHideChatForPEDuringOpeningTimes = false;
 var switchHideChatForPEOutsideOpeningTimes = false;
+var switchHideChatForBusinessDuringOpeningTimes = false;
+var switchHideChatForBusinessOutsideOpeningTimes = false;
 var switchHideChatForEUDuringOpeningTimes = false;
 var switchHideChatForEUOutsideOpeningTimes = false;
 //If contact form is hidden, set threshhold to show it again when the waiting time for live contact channels get too high; set to 50000 if contact form should never be shown
 var phoneWaitThreshholdToShowContactForm = 50000;
 var phoneWaitThreshholdToShowContactFormPE = 50000;
+var phoneWaitThreshholdToShowContactFormBusiness = 50000;
 var phoneWaitThreshholdToShowContactFormEU = 50000;
 var chatWaitThreshholdToShowContactForm = 50000;
 var chatWaitThreshholdToShowContactFormPE = 50000;
 var chatWaitThreshholdToShowContactFormEU = 50000;
+var chatWaitThreshholdToShowContactFormBusiness = 50000;
 var chatAndPhoneWaitThreshholdToShowContactForm = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormPE = 50000;
+var chatAndPhoneWaitThreshholdToShowContactFormBusiness = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormEU = 50000;
 
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
-var bannerSwitchCHDE = true;
+var bannerSwitchCHDE = false;
 var bannerSwitchCHFR = false;
 var bannerSwitchCHIT = false;
 var bannerSwitchCHEN = false;
@@ -64,6 +73,51 @@ var bannerSwitchATDE = false;
 var bannerSwitchATFR = false;
 var bannerSwitchATIT = false;
 var bannerSwitchATEN = false;
+
+// --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
+function fillTopBannerWording(){
+    topBannerWording = {
+    "outputHeadingBannerCH" : {
+      'de' : "Achtung",
+      'fr' : "Attention",
+      'it' : "Attenzione",
+      'en-US' : "Attention"
+    },
+    "outputTextBannerCH" : {
+      'de' : "Der Versand beträgt momentant 5-7 Tage.",
+      'fr' : "Les délais de livraison sont actuellement de 5 à 7 jours.",
+      'it' : "Il tempo di spedizione è attualmente di 5-7 giorni.",
+      'en-US' : "The shipping time is 5-7 days at the moment."
+    },
+    "outputHeadingBannerDE" : {
+      'de' : "Achtung",
+      'fr' : "Attention",
+      'it' : "Attenzione",
+      'en-US' : "Attention"
+    },
+    "outputTextBannerDE" : {
+      'de' : "Der Versand beträgt momentant 25-27 Tage.",
+      'fr' : "Les délais de livraison sont actuellement de 25 à 27 jours.",
+      'it' : "Il tempo di spedizione è attualmente di 25-27 giorni.",
+      'en-US' : "The shipping time is 25-27 days at the moment."
+    },
+    "outputHeadingBannerAT" : {
+      'de' : "Achtung",
+      'fr' : "Attention",
+      'it' : "Attenzione",
+      'en-US' : "Attention"
+    },
+    "outputTextBannerAT" : {
+      'de' : "Der Versand beträgt momentant 35-37 Tage.",
+      'fr' : "Les délais de livraison sont actuellement de 35 à 37 jours.",
+      'it' : "Il tempo di spedizione è attualmente di 35-37 giorni.",
+      'en-US' : "The shipping time is 35-37 days at the moment."
+    },
+    }
+      return topBannerWording;
+}
+
+
 
 
 

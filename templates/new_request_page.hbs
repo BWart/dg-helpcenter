@@ -568,10 +568,8 @@
   }
 
   function setWaitTime(chatSeconds, callSeconds){
-      if (chatSeconds > 329){
+      if (chatSeconds > 180){
           $(".recommendedChannel").css('display' , 'none');
-      } else {
-        $(".recommendedChannel").css('display' , 'inline-block');
       }
       chatWaitSeconds = chatSeconds;
       callWaitSeconds = callSeconds;
@@ -659,6 +657,7 @@
     let isOpen = 'true';
     let isPE = false;
     let isCH = false;
+    let isBusiness = false;
     switch (portal){
       case 'helpcenter.digitec.ch':
       case 'helpcenter.galaxus.ch':
@@ -668,9 +667,18 @@
           isCH = true;
         }
         else {
-          isOpen = isInCHOpeningTimes();
-          isPE = false;
-          isCH = true;
+          if (customerType == "business-customer"){
+            isOpen = isInBusinessOpeningTimes();
+            isPE = false;
+            isCH = true;
+            isBusiness = true;
+          }
+          else {
+            isOpen = isInCHOpeningTimes();
+            isPE = false;
+            isCH = true;
+            isBusiness = false;
+          }
         }
         break;
       case 'helpcenter.connect.digitec.ch':
@@ -713,7 +721,7 @@
         }
       }
     }
-    else if (isCH) {
+    else if (isCH && !isBusiness) {
       if (isOpen){
         if (switchHideContactFormDuringOpeningTimes){
           contactChannelMail = false;
@@ -736,6 +744,33 @@
           contactChannelCall = false;
         }
         if (switchHideChatOutsideOpeningTimes){
+          contactChannelChat = false;
+        }
+      }
+    }
+    else if (isCH && isBusiness){
+      if (isOpen){
+        if (switchHideContactFormForBusinessDuringOpeningTimes){
+          contactChannelMail = false;
+        }
+        if (phoneWaitThreshholdToShowContactFormBusiness <= callWaitSeconds || chatWaitThreshholdToShowContactFormBusiness <= chatWaitSeconds || (chatAndPhoneWaitThreshholdToShowContactFormBusiness <= callWaitSeconds && chatAndPhoneWaitThreshholdToShowContactFormBusiness <= chatWaitSeconds)){
+          contactChannelMail = true;
+        }
+        if (switchHidePhoneForBusinessDuringOpeningTimes){
+          contactChannelCall = false;
+        }
+        if (switchHideChatForBusinessDuringOpeningTimes){
+          contactChannelChat = false;
+        }
+      }
+      else {
+        if (switchHideContactFormForBusinessOutsideOpeningTimes){
+          contactChannelMail = false;
+        }
+        if (switchHidePhoneForBusinessOutsideOpeningTimes){
+          contactChannelCall = false;
+        }
+        if (switchHideChatForBusinessOutsideOpeningTimes){
           contactChannelChat = false;
         }
       }
