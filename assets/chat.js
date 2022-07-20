@@ -196,10 +196,12 @@ function getBusinessCustomerDepartmentType(){
 //Returns true before 16:55
 function isInBusinessChatHours(){
     var today = new Date();
-    if((today.getUTCHours() == 14 && today.getMinutes() >= 55)){
+    let dayOfWeek = today.getUTCDay();
+    let currentHour = today.getUTCHours() + UTCHourOffset;
+    if((currentHour == (businessClosingHourWeekday-1) && today.getMinutes() >= 55)){
         return false;
     }
-    if(today.getUTCHours() < 15 && today.getUTCHours() > 5){
+    if(currentHour < businessClosingHourWeekday && currentHour >= businessOpeningHourWeekday){
         return true;
     }else{
         return false;
@@ -209,13 +211,15 @@ function isInBusinessChatHours(){
 //Returns true before 17:55
 function isInPEChatHours(){
     var today = new Date();
+    let dayOfWeek = today.getUTCDay();
+    let currentHour = today.getUTCHours() + UTCHourOffset;
     if (today.getUTCDay() < 1 || today.getUTCDay() > 5){
         return false;
     }
-    if((today.getUTCHours() == 15 && today.getMinutes() >=55)){
+    if((currentHour == (chPEClosingHourWeekday-1) && today.getMinutes() >=55)){
         return false;
     }
-    if(today.getUTCHours() < 16 && today.getUTCHours() > 6){
+    if(currentHour < chPEClosingHourWeekday && currentHour > chPEOpeningHourWeekday){
         return true;
     } else {
         return false;
@@ -226,6 +230,8 @@ function isInPEChatHours(){
 
 function isInGeneralChatHours(){
     var today = new Date();
+    let dayOfWeek = today.getUTCDay();
+    let currentHour = today.getUTCHours() + UTCHourOffset;
     //opening times CH (without connect as it's not needed)
     if((portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch') && (today.getUTCHours() < 17 && today.getUTCHours() > 5 && (today.getUTCDay() > 0 || today.getUTCDay() < 6))){
         return true;

@@ -476,8 +476,6 @@
   function setWaitTimes(){
     waitTimes.hide();
     const d = new Date();
-    let dayOfWeek = d.getUTCDay();
-    let currentHour = d.getUTCHours() + UTCHourOffset;
     const dateFromExternalScript = new Date(createTimeStampUTC);
     const currentUTCDate = new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate(), d.getUTCHours(), d.getUTCMinutes(), d.getUTCSeconds());
     const diffSeconds = Math.abs((currentUTCDate - dateFromExternalScript) / 1000)
@@ -486,7 +484,7 @@
       return;
     }
     if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
-      if (isInDEOpeningTimes(dayOfWeek, currentHour)) {
+      if (isInDEOpeningTimes()) {
         if (customerType == 'private-customer') {
           if (callWaitTimes['privateGer'] >= callWaitTimes['privateAt']) {
             setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateGer'])
@@ -506,7 +504,7 @@
       }
     }
     if (portal == 'helpcenter.connect.digitec.ch'){
-      if (isInConnectOpeningTimes(dayOfWeek, currentHour)){
+      if (isInConnectOpeningTimes()){
         switch (currentLanguage) {
           case 'de':
             setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
@@ -530,7 +528,7 @@
       }
     }
     if (portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.digitec.ch'){
-      if (isInCHOpeningTimes(dayOfWeek, currentHour)){
+      if (isInCHOpeningTimes()){
         switch (currentLanguage) {
             case 'de':
               setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
@@ -549,7 +547,7 @@
               break;
         }
         console.log(requestReasonTag)
-        if (isInCHPEOpeningTimes(dayOfWeek, currentHour) && requestReasonTag.includes('webform_case_product_advice_') && currentLanguage == 'de'){
+        if (isInCHPEOpeningTimes() && requestReasonTag.includes('webform_case_product_advice_') && currentLanguage == 'de'){
           var lastIndex = requestReasonTag.lastIndexOf('_');
           var splitstring = requestReasonTag.substring(lastIndex, requestReasonTag.length)
           var lastpart = splitstring.substring(1, splitstring.length)
@@ -655,9 +653,6 @@
 
 
   function reorderContactChannels(){
-    const d = new Date();
-    let dayOfWeek = d.getUTCDay();
-    let currentHour = d.getUTCHours() + UTCHourOffset;
     let contactChannelChat = true;
     let contactChannelCall = true;
     let contactChannelMail = true;
@@ -668,23 +663,23 @@
       case 'helpcenter.digitec.ch':
       case 'helpcenter.galaxus.ch':
         if (requestReasonTag.includes('webform_case_product_advice_')){
-          isOpen = isInCHPEOpeningTimes(dayOfWeek, currentHour);
+          isOpen = isInCHPEOpeningTimes();
           isPE = true;
           isCH = true;
         }
         else {
-          isOpen = isInCHOpeningTimes(dayOfWeek, currentHour);
+          isOpen = isInCHOpeningTimes();
           isPE = false;
           isCH = true;
         }
         break;
       case 'helpcenter.connect.digitec.ch':
-        isOpen = isInCHPEOpeningTimes(dayOfWeek, currentHour);
+        isOpen = isInCHPEOpeningTimes();
         isCH = true;
         break;
       case 'helpcenter.galaxus.de':
       case 'helpcenter.galaxus.at':
-        isOpen = isInDEOpeningTimes(dayOfWeek, currentHour);
+        isOpen = isInDEOpeningTimes();
         isCH = false;
         break;
       default:
@@ -885,7 +880,10 @@
   }
 
 
-  function isInDEOpeningTimes(dayOfWeek, currentHour){
+  function isInDEOpeningTimes(){
+    const d = new Date();
+    let dayOfWeek = d.getUTCDay();
+    let currentHour = d.getUTCHours() + UTCHourOffset;
     if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= euOpeningHourWeekday && currentHour < euClosingHourWeekday){
       return true;
     }
@@ -895,7 +893,10 @@
     return false;
   }
 
-  function isInConnectOpeningTimes(dayOfWeek, currentHour){
+  function isInBusinessOpeningTimes(){
+    const d = new Date();
+    let dayOfWeek = d.getUTCDay();
+    let currentHour = d.getUTCHours() + UTCHourOffset;
     if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= connectOpeningHourWeekday && currentHour < connectClosingHourWeekday){
       return true;
     }
@@ -905,7 +906,23 @@
     return false;
   }
 
-  function isInCHOpeningTimes(dayOfWeek, currentHour){
+  function isInConnectOpeningTimes(){
+    const d = new Date();
+    let dayOfWeek = d.getUTCDay();
+    let currentHour = d.getUTCHours() + UTCHourOffset;
+    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= connectOpeningHourWeekday && currentHour < connectClosingHourWeekday){
+      return true;
+    }
+    if (dayOfWeek == 6 && currentHour >= connectOpeningHourSaturday && currentHour < connectClosingHourSaturday){
+      return true;
+    }
+    return false;
+  }
+
+  function isInCHOpeningTimes(){
+    const d = new Date();
+    let dayOfWeek = d.getUTCDay();
+    let currentHour = d.getUTCHours() + UTCHourOffset;
     if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= chOpeningHourWeekday && currentHour < chClosingHourWeekday){
       return true;
     }
@@ -916,7 +933,10 @@
     }
   }
 
-  function isInCHPEOpeningTimes(dayOfWeek, currentHour){
+  function isInCHPEOpeningTimes(){
+    const d = new Date();
+    let dayOfWeek = d.getUTCDay();
+    let currentHour = d.getUTCHours() + UTCHourOffset;
     if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= chPEOpeningHourWeekday && currentHour < chPEClosingHourWeekday){
       return true;
     }

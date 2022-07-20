@@ -1,3 +1,13 @@
+//NEEDED OPTIONS:
+/*
+- HIding Contact Options
+- Banner
+- Holidays
+
+TODO
+- Add Bannerwording to same file
+*/
+
 // --- TIMEZONE OFFSET --- 
 // 2 during summer time, 1 during winter time
 var UTCHourOffset = 2;
@@ -38,7 +48,7 @@ var chatAndPhoneWaitThreshholdToShowContactFormEU = 50000;
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
-var bannerSwitchCHDE = false;
+var bannerSwitchCHDE = true;
 var bannerSwitchCHFR = false;
 var bannerSwitchCHIT = false;
 var bannerSwitchCHEN = false;
@@ -110,6 +120,11 @@ var connectOpeningHourWeekday = 8;
 var connectClosingHourWeekday = 17;
 var connectOpeningHourSaturday = false;
 var connectClosingHourSaturday = false;
+//Business
+var businessOpeningHourWeekday = 8;
+var businessClosingHourWeekday = 17;
+var businessOpeningHourSaturday = false;
+var businessClosingHourSaturday = false;
 //CH Regular
 var chOpeningHourWeekday = 8;
 var chClosingHourWeekday = 19;
@@ -117,6 +132,6 @@ var chOpeningHourSaturday = false;
 var chClosingHourSaturday = false;
 //CH PE
 var chPEOpeningHourWeekday = 8;
-var chPEClosingHourWeekday = 17;
+var chPEClosingHourWeekday = 18;
 var chPEOpeningHourSaturday = false;
 var chPEClosingHourSaturday = false;
