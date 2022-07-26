@@ -658,7 +658,26 @@
         }
       } 
     contactNowClicked();
-  }  
+    const d = new Date();
+    var dayOfWeek = d.getUTCDay();
+    var currentUTCHour = d.getUTCHours();
+    console.log(isHoliday)
+    if (isHoliday()){
+      resetContactOptions();
+      $('#chatIconCellContent').hide();
+      $('#chatTitleCellContent').hide();
+      $('#chatTextCellContent').hide();
+      $('#chatButtonCellContent').hide();
+      $('#mobileChatCell1Content').hide();
+      $('#mobileChatCell2Content').hide();
+      $('#phoneIconCellContent').hide();
+      $('#phoneTitleCellContent').hide();
+      $('#phoneTextCellContent').hide();
+      $('#phoneButtonCellContent').hide();
+      $('#mobilePhoneCell1Content').hide();
+      $('#mobilePhoneCell2Content').hide();
+    }
+  }
 
   commitButton.on("click", function(){
     commitButtonPressed();

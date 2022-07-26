@@ -421,7 +421,7 @@ function fillInfoBoxWording(){
         infoBoxWording['webform_case_delete_account']['it'] = "Dopo la disattivazione dell'account, non sarà più possibile accedere alle ricevute di acquisto elettroniche e ad altri documenti. Si consiglia di stampare o salvare una copia dei moduli necessari prima di disattivare l'account.<br><br>I clienti aziendali possono contattare il nostro servizio clienti per disattivare il proprio account.";
         infoBoxWording['webform_case_delete_account']['en-US'] = 'After your account is deactivated, you will no longer have access to your electronic purchase receipts and other records. We recommend that you print or save a copy of any forms you still need before deactivating your account.<br><br>Business customers can contact our customer service to have their account deactivated.';
       }}
-      if (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch'){
+      /*if (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch'){
             infoBoxWording['webform_case_shipping_status']['de'] += "<br><br><b><font color='red'>Hinweis:</font> Aktuell haben wir längere Lieferzeiten (1-3 Werktage) und bitten um Geduld.</b>"
             infoBoxWording['webform_case_ready_for_shipment']['de'] += "<br><br><b><font color='red'>Hinweis:</font> Aktuell haben wir längere Lieferzeiten (1-3 Werktage) und bitten um Geduld.</b>"
             infoBoxWording['webform_case_order_status']['de'] += "<br><br><b><font color='red'>Hinweis:</font> Aktuell haben wir längere Lieferzeiten (1-3 Werktage) und bitten um Geduld.</b>"
@@ -434,7 +434,7 @@ function fillInfoBoxWording(){
             infoBoxWording['webform_case_shipping_status']['en-US'] += "<br><br><b><font color='red'>Note:</font> Currently we have longer delivery times (1-3 business days) and ask for your patience.</b>"
             infoBoxWording['webform_case_ready_for_shipment']['en-US'] += "<br><br><b><font color='red'>Note:</font> Currently we have longer delivery times (1-3 business days) and ask for your patience.</b>"
             infoBoxWording['webform_case_order_status']['en-US'] += "<br><br><b><font color='red'>Note:</font> Currently we have longer delivery times (1-3 business days) and ask for your patience.</b>"
-      }
+      }*/
 
 
         return infoBoxWording;
