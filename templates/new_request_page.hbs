@@ -810,6 +810,7 @@
     } else {
       if (dayOfWeek >= 1 && dayOfWeek <= 6 && currentUTCHour >= 6 && currentUTCHour < 15) {
         if (customerType == 'connect-customer') {
+          console.log("ENTER ELSe")
           switch (currentLanguage) {
             case 'de':
               setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
@@ -828,7 +829,7 @@
               break;
           }
         }
-        if (customerType == 'business-customer') {
+        else if (customerType == 'business-customer') {
           switch (currentLanguage) {
             case 'de':
               if (isInPEChatHours()) {
