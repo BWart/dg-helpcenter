@@ -661,7 +661,6 @@
     const d = new Date();
     var dayOfWeek = d.getUTCDay();
     var currentUTCHour = d.getUTCHours();
-    console.log(isHoliday)
     if (isHoliday()){
       resetContactOptions();
       $('#chatIconCellContent').hide();
@@ -676,6 +675,9 @@
       $('#phoneButtonCellContent').hide();
       $('#mobilePhoneCell1Content').hide();
       $('#mobilePhoneCell2Content').hide();
+    }
+    else if (isInBusinessChatHours) {
+      swapContactOptions();
     }
   }
 
@@ -810,7 +812,6 @@
     } else {
       if (dayOfWeek >= 1 && dayOfWeek <= 6 && currentUTCHour >= 6 && currentUTCHour < 15) {
         if (customerType == 'connect-customer') {
-          console.log("ENTER ELSe")
           switch (currentLanguage) {
             case 'de':
               setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
@@ -1335,7 +1336,7 @@ function setClosed(){
   }
 
   function swapContactOptions(){
-    //console.log('ENTER SWAP')
+    console.log('ENTER SWAP')
 
     $('#chatIconCellContent').insertBefore($('#row1cell1inserter'));
     $('#phoneIconCellContent').insertBefore($('#row1cell2inserter'));
