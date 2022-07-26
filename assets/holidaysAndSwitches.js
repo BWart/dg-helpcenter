@@ -67,7 +67,7 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-        ['2022-07-26 09:55:00', '2022-07-27 11:05:00']
+        ['2022-07-27 09:55:00', '2022-07-27 11:05:00']
     ],
     'eu' : [
         ['2022-06-16 00:00:00', '2022-06-16 22:00:00']
