@@ -16,8 +16,8 @@ var UTCHourOffset = 2;
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
 var switchHideContactFormDuringOpeningTimes = true;
 var switchHideContactFormOutsideOpeningTimes = false;
-var switchHideContactFormForPEDuringOpeningTimes = false;
-var switchHideContactFormForPEOutsideOpeningTimes = false;
+var switchHideContactFormForPEDuringOpeningTimes = true;
+var switchHideContactFormForPEOutsideOpeningTimes = true;
 var switchHideContactFormForBusinessDuringOpeningTimes = false;
 var switchHideContactFormForBusinessOutsideOpeningTimes = false;
 var switchHideContactFormForEUDuringOpeningTimes = false;
@@ -25,8 +25,8 @@ var switchHideContactFormForEUOutsideOpeningTimes = false;
 //set to true if the phone number should be hidden, set to false if it should be displayed
 var switchHidePhoneDuringOpeningTimes = false;
 var switchHidePhoneOutsideOpeningTimes = false;
-var switchHidePhoneForPEDuringOpeningTimes = false;
-var switchHidePhoneForPEOutsideOpeningTimes = false;
+var switchHidePhoneForPEDuringOpeningTimes = true;
+var switchHidePhoneForPEOutsideOpeningTimes = true;
 var switchHidePhoneForBusinessDuringOpeningTimes = false;
 var switchHidePhoneForBusinessOutsideOpeningTimes = false;
 var switchHidePhoneForEUDuringOpeningTimes = false;
@@ -41,11 +41,11 @@ var switchHideChatForBusinessOutsideOpeningTimes = false;
 var switchHideChatForEUDuringOpeningTimes = false;
 var switchHideChatForEUOutsideOpeningTimes = false;
 //If contact form is hidden, set threshhold to show it again when the waiting time for live contact channels get too high; set to 50000 if contact form should never be shown
-var phoneWaitThreshholdToShowContactForm = 50000;
+var phoneWaitThreshholdToShowContactForm = 300;
 var phoneWaitThreshholdToShowContactFormPE = 50000;
 var phoneWaitThreshholdToShowContactFormBusiness = 50000;
 var phoneWaitThreshholdToShowContactFormEU = 50000;
-var chatWaitThreshholdToShowContactForm = 50000;
+var chatWaitThreshholdToShowContactForm = 300;
 var chatWaitThreshholdToShowContactFormPE = 50000;
 var chatWaitThreshholdToShowContactFormEU = 50000;
 var chatWaitThreshholdToShowContactFormBusiness = 50000;

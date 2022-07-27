@@ -59,7 +59,7 @@
         </tr>
         <tr>
             <td class="circleOpenStep" id="circle3">3</td>
-            <td style="padding-left:10px"><b class="circle3Title"><font data-wording-key="contactOptions"></font></b><b data-wording-key="email" class="circle3Title2"></b></td>
+            <td style="padding-left:10px"><b class="circle3Title"><font data-wording-key="contactOptions"></font></b><b data-wording-key="email" class="circle3Title2"></b><b data-wording-key="callbackTitle" class="circle3Title3"></b></td>
         </tr>
         <tr class="tablespacer">
             <td></td>
@@ -84,7 +84,7 @@
                 </tr>
                 <tr>
                   <td style="padding-right:20px"><div id="mailTitleCellContent"><b data-wording-key="email"></b></div><div id="row2cell1inserter"></div></td>
-                  <td style="padding-right:10px;padding-left:10px"><div id="phoneTitleCellContent"><b data-wording-key="phone"></b></div><div id="row2cell2inserter"></div></td>
+                  <td style="padding-right:10px;padding-left:10px"><div id="phoneTitleCellContent"><b data-wording-key="phone" class="phoneTitle1"></b><b data-wording-key="callbackTitleText" class="phoneTitle2"></b></div><div id="row2cell2inserter"></div></td>
                   <td style="padding-left:20px"><div id="chatTitleCellContent"><b data-wording-key="chat"></b></div><div id="row2cell3inserter"></div></td>
                 </tr>
                 <tr>
@@ -107,6 +107,7 @@
                   <td style="padding-right:10px;padding-left:10px;padding-top:10px"><div id="phoneButtonCellContent">
                     <div class="button-contact phone-number private-number private-customer connect-customer" data-wording-key="callUsPrivate"></div>
                     <div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div>
+                    <div class="button-contact phone-number callback-number private-customer" data-wording-key="callYouCallback"></div>
                     </div><div id="row4cell2inserter"></div></td>
                   <td style="padding-left:20px;padding-top:10px"><div id="chatButtonCellContent"><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></div><div id="row4cell3inserter"></div>
                   </td>
@@ -184,6 +185,27 @@
 
               <h5><a class="text-back">&lt; <font data-wording-key="backButtonText"></font></a></h5>
               {{request_form}}
+              <form class="callbackRequestForm" id="callbackRequestForm" action="">
+                <div class="form-field string optional request">
+                  <label data-wording-key="callbackPhoneNumber"></label>
+                  <table><tr><td>+41&nbsp;&nbsp;</td><td><input type="number" name="callback_customer_phone_number"/></td></tr></table>
+                  <label><i data-wording-key="callbackPhoneNumberHint"></i></label>
+                </div>
+                <div class="form-field string optional request">
+                  <label data-wording-key="callbackOrderNumber"></label>
+                  <table><tr><td><input type="number" name="callback_customer_phone_number"/></td></tr></table>
+                </div>
+                <div class="form-field string optional request">
+                  <label for="callback_customer_email" data-wording-key="callbackEmailLabel"></label>
+                  <input type="email" name="callback_customer_email" id="callback_customer_email"/>
+                  <label class="callbackMailError"><font color="red"></font></label>
+                  <label><i data-wording-key="callbackMailHint"></i></label>
+                </div>
+                <footer>
+                  <font data-wording-key="callbackAgentHint"></font><br>
+                  <button type="submit" class="button-large callbackSubmitButton" data-wording-key="demandCallback"></button>
+                </footer>
+              </form>
 
             </td>
         </tr>
@@ -268,6 +290,7 @@
   const circleThree = document.getElementById('circle3');
   const circleThreeTitle = $('.circle3Title');
   const circleThreeTitleTwo = $('.circle3Title2');
+  const circleThreeTitleThree = $('.circle3Title3')
   const waitTimes = $('.waittime');
   const chatWaitTimesDOMElements = $('.chatWaitTimeOnly');
   const callWaitTimesDOMElements = $('.callWaitTimeOnly');
@@ -277,6 +300,8 @@
   const privateContact = $('.private-customer');
   const businessContact = $('.business-customer')
   const connectContact = $('.connect-customer')
+  const phoneTitleOne = $('.phoneTitle1')
+  const phoneTitleTwo = $('.phoneTitle2')
   //Mailform fields, with label and Input field
   const mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');  //Input field for order number, phone number on digitec Connect
   const mailFormSubject = $('.request_subject');
@@ -295,6 +320,27 @@
   //WaitSeconds
   let callWaitSeconds = 0;
   let chatWaitSeconds = 0;
+
+
+  //SETTING UP CALLBACK A/B
+  const callbackButton = $('.callback-number')
+  const callbackForm = $('.callbackRequestForm')
+  const callBackSubmitButton = $('.callbackSubmitButton')
+  callbackForm.hide()
+  if (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch'){
+    if (localStorage.getItem("callbackGroup") === null){
+      if (Math.random() < 0.5){
+        localStorage.setItem("callbackGroup", true);
+      }
+      else {
+        localStorage.setItem("callbackGroup", true);
+      }
+    }
+  }
+  else {
+    localStorage.setItem("callbackGroup", false);
+  }
+
 
   
   // --- INITIAL SETUP ---
@@ -329,6 +375,7 @@
     requestForm.hide()
     customerTypeDropdownLabel.hide()
     circleThreeTitleTwo.hide()
+    circleThreeTitleThree.hide()
     waitTimes.hide()
     backButton.hide();
     contactInfos.hide();
@@ -369,7 +416,22 @@
     infoText.show();
     infoTextField.show();
     mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
+
     contactNowClicked();
+
+    //-- CALLBACK BUTTON SHOW/HIDE --
+    console.log(localStorage.getItem("callbackGroup"))
+    if (localStorage.getItem("callbackGroup")){
+      $('.phone-number').hide()
+      callbackButton.show()
+      phoneTitleTwo.show()
+      phoneTitleOne.hide()
+    }
+    else {
+      callbackButton.hide()
+      phoneTitleTwo.hide()
+      phoneTitleOne.show()
+    }
   }
 
   function contactNowClicked(){
@@ -400,9 +462,11 @@
     addExternalScriptForWaitingTimes(false);
     contactInfos.show();
     requestForm.hide();
+    callbackForm.hide();
     backButton.hide();
     circleThreeTitle.show();
     circleThreeTitleTwo.hide();
+    circleThreeTitleThree.hide();
     if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
       mailFormOrderNumberOrPhoneNumber.hide()
     }
@@ -1033,10 +1097,26 @@
   })
 
 
+  //--- CALLBACK EVENTS ---
+  callbackButton.on("click", function(){
+    showContactForm()
+    requestForm.hide()
+    callbackForm.show()
+    backButton.show()
+    circleThreeTitleTwo.hide()
+    circleThreeTitleThree.show()
+  })
+
+  callBackSubmitButton.on("click", function(){
+    
+  })
+
+
 
   function showContactForm(){
     circleThreeTitle.hide();
     circleThreeTitleTwo.show();
+    circleThreeTitleThree.hide();
     requestForm.show();
     mailFormSubject.hide();
     backButton.show();
@@ -1044,6 +1124,7 @@
   }
 
   function commitButtonPressed(){
+    sendGARequestOpeningHours('ContactForm Commit clicked');
     mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
     sessionStorage.setItem('dgCustomerEmail', $('input[name="request[anonymous_requester_email]"]').val());
     sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
@@ -1103,6 +1184,55 @@
   }
 
 
+
+///////////////////////////////////////////////////////////////////////////////Event Tracking/////////////////////////////////////////////////////
+
+  
+  function sendGARequestOpeningHours(action){
+      if(gaSend){
+        //if(requestReasonTag.includes('webform_case_product_advice_') && currentLanguage == 'de') {
+        //    ga('send', 'event', 'Opening Hours', 'PE ' + action, customerType + ' ' + currentLanguage);
+        //} else {
+          console.log(requestReasonTopCategory[requestReasonTag] + ' ' + customerType + ' ' + currentLanguage)
+            ga('send', 'event', 'Opening Hours', action, requestReasonTopCategory[requestReasonTag] + ' ' + customerType + ' ' + currentLanguage);
+        //}
+      }
+  }
+  
+  //Phone Number Tracking
+  
+  $('.phone-number').on("click", function () {
+    sendGARequestOpeningHours('Click Phone Button');
+    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
+  }) 
+  
+  //Contact Form Tracking
+  
+  $('.contactFormWriteUs').on("click", function () {
+    sendGARequestOpeningHours('Click Mail Button');
+    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
+  }) 
+  
+  //Chat Tracking
+  
+  $('.button-chat').on("click", function () {
+    sendGARequestOpeningHours('Click Chat Button');
+    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
+  }) 
+
+
+  // Request Reason Tracking
+
+  $('.request_custom_fields_360014169819').on("change",function() {
+      if(gaSend){
+          ga('send', 'event', 'Opening Hours', 'ShowsInfo', $('.request_custom_fields_360014169819' + ' a.nesty-input').text());                                                                                     
+      }
+  });
+
+  //Contact now button tracking
+  $('.contactNowButton').on("click", function () {
+      sendGARequestOpeningHours('Click Contact Now Button');
+  })
 
 
 
