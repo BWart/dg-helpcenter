@@ -188,22 +188,24 @@
               <form class="callbackRequestForm" id="callbackRequestForm" action="">
                 <div class="form-field string optional request">
                   <label data-wording-key="callbackPhoneNumber"></label>
-                  <table><tr><td>+41&nbsp;&nbsp;</td><td><input type="number" name="callback_customer_phone_number"/></td></tr></table>
+                  <table><tr><td>+41&nbsp;&nbsp;</td><td><input type="number" min="0" name="callback_customer_phone_number" class="callback_customer_phone_number_input"/></td></tr></table>
+                  <label class="callbackPhoneErrorLabel"><font color="red" class="callbackPhoneErrorText"></font></label>
                   <label><i data-wording-key="callbackPhoneNumberHint"></i></label>
                 </div>
                 <div class="form-field string optional request">
                   <label data-wording-key="callbackOrderNumber"></label>
-                  <table><tr><td><input type="number" name="callback_customer_phone_number"/></td></tr></table>
+                  <table><tr><td><input type="number" name="callback_customer_order_number" class="callback_customer_order_number_input"/></td></tr></table>
                 </div>
                 <div class="form-field string optional request">
                   <label for="callback_customer_email" data-wording-key="callbackEmailLabel"></label>
-                  <input type="email" name="callback_customer_email" id="callback_customer_email"/>
-                  <label class="callbackMailError"><font color="red"></font></label>
+                  <input type="email" name="callback_customer_email" id="callback_customer_email" class="callback_customer_mail_input"/>
+                  <label class="callbackMailErrorLabel"><font color="red" class="callbackMailErrorText"></font></label>
                   <label><i data-wording-key="callbackMailHint"></i></label>
                 </div>
                 <footer>
                   <font data-wording-key="callbackAgentHint"></font><br>
-                  <button type="submit" class="button-large callbackSubmitButton" data-wording-key="demandCallback"></button>
+                  <font class="callbackFormErrorText" color="red"></font>
+                  <button type="button" class="button-large callbackSubmitButton" data-wording-key="demandCallback"></button>
                 </footer>
               </form>
 
@@ -322,7 +324,7 @@
   let chatWaitSeconds = 0;
 
 
-  //SETTING UP CALLBACK A/B
+  //--- CALLBACK SETTING UP A/B AND FURTHER VARIABLES
   const callbackButton = $('.callback-number')
   const callbackForm = $('.callbackRequestForm')
   const callBackSubmitButton = $('.callbackSubmitButton')
@@ -340,6 +342,9 @@
   else {
     localStorage.setItem("callbackGroup", false);
   }
+  const callBackPhoneInputField = $('.callback_customer_phone_number_input')
+  const callBackOrderInputField = $('.callback_customer_order_number_input')
+  const callBackMailInputField = $('.callback_customer_mail_input')
 
 
   
@@ -1108,7 +1113,33 @@
   })
 
   callBackSubmitButton.on("click", function(){
-    
+    var dynamicWording2 = filldynamicWording();
+    console.log('bindrin')
+    let enteredPhoneNumber = String(callBackPhoneInputField.val())
+    let enteredOrderNumber = callBackOrderInputField.val()
+    let enteredMail = callBackMailInputField.val()
+    let validationChecker = true;
+    console.log(enteredPhoneNumber.substring(0,4))
+    if (enteredPhoneNumber.length != 9 && enteredPhoneNumber.length != 10) {
+      $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
+      validationChecker = false;
+    } else if (enteredPhoneNumber.substring(0,4) == '0800' || enteredPhoneNumber.substring(0,4) == '0900' || enteredPhoneNumber.substring(0,4) == '0901' || enteredPhoneNumber.substring(0,4) == '0906' || enteredPhoneNumber.substring(0,3) == '084' || enteredPhoneNumber.substring(0,3) == '800' || enteredPhoneNumber.substring(0,3) == '900' || enteredPhoneNumber.substring(0,3) == '901' || enteredPhoneNumber.substring(0,3) == '906' || enteredPhoneNumber.substring(0,2) == '84'){
+      $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError2'])
+      validationChecker = false;
+    } else {
+      $('.callbackPhoneErrorText').html('')
+    }
+    if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(enteredMail))){
+      $('.callbackMailErrorText').html(dynamicWording2[currentLanguage]['callbackEmailError'])
+      validationChecker = false;
+    } else {
+      $('.callbackMailErrorText').html('')
+    }
+
+    if (!validationChecker){
+      $('.callbackFormErrorText').html(dynamicWording2[currentLanguage]['callbackFormError'])
+    }
+
   })
 
 
