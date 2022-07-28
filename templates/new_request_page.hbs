@@ -1322,7 +1322,7 @@ function setClosed(){
   // CSS Change für Chat Button Offline
   function hideChatButton(){
     $(".button-chat").addClass("button-offline");
- 	$(".button-chat").html(getButtonText('chatNotOnline'));
+ 	  $(".button-chat").html(getButtonText('chatNotOnline'));
     $(".recommendedChannel").css('display' , 'none');
     chatWaitTimesDOMElements.hide();
   }
@@ -1332,6 +1332,7 @@ function setClosed(){
     $(".button-chat").removeClass("button-offline");
     $(".button-chat").html(getButtonText('chatUs'));
     $(".recommendedChannel").css('display' , 'inline-block');
+    setWaitTimes();
     chatWaitTimesDOMElements.show();
   }
 
