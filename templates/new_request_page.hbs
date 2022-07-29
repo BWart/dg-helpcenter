@@ -1332,7 +1332,7 @@ function setClosed(){
     $(".button-chat").removeClass("button-offline");
     $(".button-chat").html(getButtonText('chatUs'));
     $(".recommendedChannel").css('display' , 'inline-block');
-    setWaitTimes();
+    addExternalScriptForWaitingTimes();
     chatWaitTimesDOMElements.show();
   }
 
