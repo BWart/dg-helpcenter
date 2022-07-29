@@ -200,7 +200,7 @@
                   <label for="callback_customer_email" data-wording-key="callbackEmailLabel"></label>
                   <input type="email" name="callback_customer_email" id="callback_customer_email" class="callback_customer_mail_input"/>
                   <label class="callbackMailErrorLabel"><font color="red" class="callbackMailErrorText"></font></label>
-                  <label><i data-wording-key="callbackMailHint"></i></label>
+                  <!--<label><i data-wording-key="callbackMailHint"></i></label>-->
                 </div>
                 <footer>
                   <font data-wording-key="callbackAgentHint"></font><br>
@@ -1138,9 +1138,42 @@
 
     if (!validationChecker){
       $('.callbackFormErrorText').html(dynamicWording2[currentLanguage]['callbackFormError'])
+    } else {
+      $('.callbackFormErrorText').html('')
+      sessionStorage.setItem("callbackReturn", "true")
+      callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail);
     }
-
   })
+
+
+  function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail){
+    console.log('enter api request function')
+    var dataToPass = {
+        "customer_phone": enteredPhoneNumber,
+        "customer_name": "Bastian Wartmann",
+        "record": "no",
+        "rg_motive": "this is a test rg_motive, the ticket can be deleted"
+    }
+    var dataToPass2 = JSON.stringify(dataToPass)
+    $.ajax({
+      type: "POST",
+      url: "https://api.talkdeskapp.com/flows/3731b2ebb4c5492f868cbe2f1e3e3601/interactions",
+      headers: {"content-type" : "application/json",
+      "authorization" : "Bearer eyJraWQiOiJiZGVmMGI5OWQ1YjE0NjNkODA3OGJlOWFmMWQ5ZGU1NSIsImFsZyI6IkVTMjU2In0.eyJpc3MiOiJodHRwczovL3d3dy50YWxrZGVza2lkLmNvbSIsImF1ZCI6Imh0dHBzOi8vYXBpLnRhbGtkZXNrYXBwLmNvbSIsImV4cCI6MTY1OTAyODE3MCwibmJmIjoxNjU5MDI3NTcwLCJpYXQiOjE2NTkwMjc1NzAsImp0aSI6IjdiYTZjMzhmNjNiODQ3OTU4N2UxM2ZiZmY4YmJhMzZiIiwiY2lkIjoiZjUwZmFmNjQzZTcwNDE4OTk2YzY1ZTM0Nzc0Y2NiNmQiLCJndHkiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJzY3AiOlsiZmxvd3MtaW50ZXJhY3Rpb25zOnN0YXJ0Il0sInJsbSI6Ik1BSU4iLCJhaWQiOiI1ZTc4ZWY2YmRjYjg3MTAwMDE3ZjEwNDgiLCJhY2MiOiJkaWdpdGVjZ2FsYXh1cyIsInBzbiI6IkNVU1RPTUVSIiwic3ViIjoiZjUwZmFmNjQzZTcwNDE4OTk2YzY1ZTM0Nzc0Y2NiNmQifQ.x8hnysEt_m7fKFGQjrAAMw1WO0nOQgesKq62qNlQJr7TK6HXZVYOEvW2glJcr5k8b3ficJ7kWgoJSXffYLrPMQ"
+      },
+      data: dataToPass2,
+      success: function(result){
+        console.log('api success')
+        console.log(result);
+        window.open("https://" + portal + "/hc?callbackReturn=yes", "_self")
+      },
+      error: function (result){
+        console.log('api fail')
+        console.log(result);
+      },
+      dataType: "json"
+    })
+  }
 
 
 
