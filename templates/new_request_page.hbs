@@ -325,6 +325,7 @@
 
 
   //--- CALLBACK SETTING UP A/B AND FURTHER VARIABLES
+  let callBackTokenChecker = false;
   const callbackButton = $('.callback-number')
   const callbackForm = $('.callbackRequestForm')
   const callBackSubmitButton = $('.callbackSubmitButton')
@@ -528,6 +529,7 @@
   function addExternalScriptForWaitingTimes(firstCall){
     if (!firstCall){
       $('.waitTimeScript').remove();
+      $('.callbackScript').remove();
     }
     var script = document.createElement('script');
     script.classList.add('waitTimeScript')
@@ -539,6 +541,16 @@
         waitTimes.hide();
     }
     document.body.appendChild(script);
+    var script2 = document.createElement('script');
+    script2.classList.add('callbackScript');
+    script2.src = 'https://www.hardread.ch/testing/callback.js';
+    script2.onload = function() {
+      callBackTokenChecker = true;
+    }
+    script2.onerror = function() {
+        callBackTokenChecker = false;
+    }
+    document.body.appendChild(script2);
   }
 
   //set the waiting times
@@ -1155,6 +1167,7 @@
         "rg_motive": "this is a test rg_motive, the ticket can be deleted"
     }
     var dataToPass2 = JSON.stringify(dataToPass)
+    
     $.ajax({
       type: "POST",
       url: "https://api.talkdeskapp.com/flows/3731b2ebb4c5492f868cbe2f1e3e3601/interactions",
