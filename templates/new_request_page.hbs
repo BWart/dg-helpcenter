@@ -92,6 +92,7 @@
                   <td style="padding-right:10px;padding-left:10px;vertical-align:top">
                     <div id="phoneTextCellContent">
                       <div class="callWaitTimeOnly"><div class="waittime" data-wording-key="callWaitTime"></div></div>
+                      <div class="callbackWaitTimeOnly"><div class="waittimeCallback" data-wording-key="callbackWaitTime"></div></div>
                     </div>
                     <div id="row3cell2inserter"></div>
                   </td>
@@ -149,6 +150,7 @@
                       <img src="{{asset 'phoneIcon.png'}}" height="16px">
                       <b><font data-wording-key="phone"></font></b>
                       <font class="callWaitTimeOnly"><br><font class="waittime" style="font-size: 11px;" data-wording-key="callWaitTime"></font></font>
+                      <font class="callbackWaitTimeOnly"><br><font class="waittimeCallback" style="font-size: 11px;" data-wording-key="callbackWaitTime"></font></font>
                     </div>
                     <div id="mobileInserter3"></div>
                   </td>
@@ -244,6 +246,9 @@
   const reasonsForLongerMailWaitTime = ["webform_case_product_advice_it", "webform_case_product_advice_network"]
   const languagesForLongerMailWaitTime = ["de"]
 
+  //reasons for callback to be shown
+  const reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status"]
+
   const requestReasonTopCategory = {
     "webform_case_shipping_status": "where_is_my_order",
     "webform_case_ready_for_shipment": "where_is_my_order",
@@ -296,6 +301,7 @@
   const waitTimes = $('.waittime');
   const chatWaitTimesDOMElements = $('.chatWaitTimeOnly');
   const callWaitTimesDOMElements = $('.callWaitTimeOnly');
+  const callbackWaitTimesDOMElements = $('.callbackWaitTimeOnly');
   const customerTypeDropdownLabel = $('[for=request_issue_type_select]');
   const contactOptions= $('.request-form');
   const requestReasonDropdownLabel = $('#request_custom_fields_360014169819_label')
@@ -330,6 +336,7 @@
   const callbackForm = $('.callbackRequestForm')
   const callBackSubmitButton = $('.callbackSubmitButton')
   callbackForm.hide()
+  /*
   if (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch'){
     if (localStorage.getItem("callbackGroup") === null){
       if (Math.random() < 0.5){
@@ -339,6 +346,12 @@
         localStorage.setItem("callbackGroup", true);
       }
     }
+  }
+  else {
+    localStorage.setItem("callbackGroup", false);
+  }*/
+  if (portal == 'helpcenter.galaxus.ch'){
+    localStorage.setItem("callbackGroup", true);
   }
   else {
     localStorage.setItem("callbackGroup", false);
@@ -376,6 +389,7 @@
     //Hide information that should not be displayed at start
     chatWaitTimesDOMElements.hide();
     callWaitTimesDOMElements.hide();
+    callbackWaitTimesDOMElements.hide();
     infoTextField.hide();
     fallbackText.hide();
     requestForm.hide()
@@ -426,7 +440,6 @@
     contactNowClicked();
 
     //-- CALLBACK BUTTON SHOW/HIDE --
-    console.log(localStorage.getItem("callbackGroup"))
     if (localStorage.getItem("callbackGroup")){
       $('.phone-number').hide()
       callbackButton.show()
@@ -553,6 +566,20 @@
     document.body.appendChild(script2);
   }
 
+  function addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail){
+    $('.callbackScript').remove();
+    var script2 = document.createElement('script');
+    script2.classList.add('callbackScript');
+    script2.src = 'https://www.hardread.ch/testing/callback.js';
+    script2.onload = function() {
+      callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail);
+    }
+    script2.onerror = function() {
+        callBackTokenChecker = false;
+    }
+    document.body.appendChild(script2);
+  }
+
   //set the waiting times
   function setWaitTimes(){
     waitTimes.hide();
@@ -663,7 +690,16 @@
   }
 
   function changeWaitTimeHTML(seconds, elements){
-      callWaitTimesDOMElements.show();
+      if (callbackCheck()){
+        console.log("CHECK SUCCESS")
+        callbackWaitTimesDOMElements.show();
+        callWaitTimesDOMElements.hide();
+        callbackButton.show()
+      } else {
+        console.log("CHECK FAIL")
+        callbackWaitTimesDOMElements.hide();
+        callWaitTimesDOMElements.show();
+      }
       if (seconds < 31){
           for (var i = 0; i < elements.length; i++){
               switch (currentLanguage){
@@ -684,8 +720,8 @@
                     break;
               }
           }  
-      } else if (seconds > 630) {
-          var waitingMin = '10';
+      } else if (seconds > 1830) {
+          var waitingMin = '30';
           for (var i = 0; i < elements.length; i++){
               switch(currentLanguage){
                   case 'de':
@@ -1153,26 +1189,31 @@
     } else {
       $('.callbackFormErrorText').html('')
       sessionStorage.setItem("callbackReturn", "true")
-      callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail);
+      addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail);
     }
   })
 
 
   function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail){
     console.log('enter api request function')
+    var compiledSubject = "Callback " + currentLanguage.toUpperCase + ": " + requestReasonTag
     var dataToPass = {
         "customer_phone": enteredPhoneNumber,
-        "customer_name": "Bastian Wartmann",
+        "customer_mail": enteredMail,
         "record": "no",
-        "rg_motive": "this is a test rg_motive, the ticket can be deleted"
+        "rg_motive": requestReasonTag,
+        "customer_language": currentLanguage,
+        "ticket_body": "This is a test ticket for callback testing and can be deleted",
+        "ticket_subject": compiledSubject,
+        "order_number": enteredOrderNumber
     }
     var dataToPass2 = JSON.stringify(dataToPass)
-    
+    let auth = "Bearer " + wertmarke
     $.ajax({
       type: "POST",
       url: "https://api.talkdeskapp.com/flows/3731b2ebb4c5492f868cbe2f1e3e3601/interactions",
       headers: {"content-type" : "application/json",
-      "authorization" : "Bearer eyJraWQiOiJiZGVmMGI5OWQ1YjE0NjNkODA3OGJlOWFmMWQ5ZGU1NSIsImFsZyI6IkVTMjU2In0.eyJpc3MiOiJodHRwczovL3d3dy50YWxrZGVza2lkLmNvbSIsImF1ZCI6Imh0dHBzOi8vYXBpLnRhbGtkZXNrYXBwLmNvbSIsImV4cCI6MTY1OTAyODE3MCwibmJmIjoxNjU5MDI3NTcwLCJpYXQiOjE2NTkwMjc1NzAsImp0aSI6IjdiYTZjMzhmNjNiODQ3OTU4N2UxM2ZiZmY4YmJhMzZiIiwiY2lkIjoiZjUwZmFmNjQzZTcwNDE4OTk2YzY1ZTM0Nzc0Y2NiNmQiLCJndHkiOiJjbGllbnRfY3JlZGVudGlhbHMiLCJzY3AiOlsiZmxvd3MtaW50ZXJhY3Rpb25zOnN0YXJ0Il0sInJsbSI6Ik1BSU4iLCJhaWQiOiI1ZTc4ZWY2YmRjYjg3MTAwMDE3ZjEwNDgiLCJhY2MiOiJkaWdpdGVjZ2FsYXh1cyIsInBzbiI6IkNVU1RPTUVSIiwic3ViIjoiZjUwZmFmNjQzZTcwNDE4OTk2YzY1ZTM0Nzc0Y2NiNmQifQ.x8hnysEt_m7fKFGQjrAAMw1WO0nOQgesKq62qNlQJr7TK6HXZVYOEvW2glJcr5k8b3ficJ7kWgoJSXffYLrPMQ"
+      "authorization" : auth
       },
       data: dataToPass2,
       success: function(result){
@@ -1186,6 +1227,16 @@
       },
       dataType: "json"
     })
+  }
+
+
+  function callbackCheck(){
+    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup")){
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 
 

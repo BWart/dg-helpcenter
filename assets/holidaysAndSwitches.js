@@ -1,13 +1,3 @@
-//NEEDED OPTIONS:
-/*
-- HIding Contact Options
-- Banner
-- Holidays
-
-TODO
-- Add Bannerwording to same file
-*/
-
 // --- TIMEZONE OFFSET --- 
 // 2 during summer time, 1 during winter time
 var UTCHourOffset = 2;
@@ -20,7 +10,7 @@ var switchHideContactFormForPEDuringOpeningTimes = true;
 var switchHideContactFormForPEOutsideOpeningTimes = true;
 var switchHideContactFormForBusinessDuringOpeningTimes = false;
 var switchHideContactFormForBusinessOutsideOpeningTimes = false;
-var switchHideContactFormForEUDuringOpeningTimes = false;
+var switchHideContactFormForEUDuringOpeningTimes = true;
 var switchHideContactFormForEUOutsideOpeningTimes = false;
 //set to true if the phone number should be hidden, set to false if it should be displayed
 var switchHidePhoneDuringOpeningTimes = false;
@@ -41,18 +31,18 @@ var switchHideChatForBusinessOutsideOpeningTimes = false;
 var switchHideChatForEUDuringOpeningTimes = false;
 var switchHideChatForEUOutsideOpeningTimes = false;
 //If contact form is hidden, set threshhold to show it again when the waiting time for live contact channels get too high; set to 50000 if contact form should never be shown
-var phoneWaitThreshholdToShowContactForm = 300;
+var phoneWaitThreshholdToShowContactForm = 50000;
 var phoneWaitThreshholdToShowContactFormPE = 50000;
 var phoneWaitThreshholdToShowContactFormBusiness = 50000;
 var phoneWaitThreshholdToShowContactFormEU = 50000;
-var chatWaitThreshholdToShowContactForm = 300;
+var chatWaitThreshholdToShowContactForm = 50000;
 var chatWaitThreshholdToShowContactFormPE = 50000;
 var chatWaitThreshholdToShowContactFormEU = 50000;
 var chatWaitThreshholdToShowContactFormBusiness = 50000;
-var chatAndPhoneWaitThreshholdToShowContactForm = 50000;
+var chatAndPhoneWaitThreshholdToShowContactForm = 600;
 var chatAndPhoneWaitThreshholdToShowContactFormPE = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormBusiness = 50000;
-var chatAndPhoneWaitThreshholdToShowContactFormEU = 50000;
+var chatAndPhoneWaitThreshholdToShowContactFormEU = 600;
 
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
