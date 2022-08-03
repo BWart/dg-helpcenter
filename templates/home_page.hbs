@@ -93,7 +93,7 @@
 <div class="container callbacksubmitconfirmation">
 <div class="form">
 <h2 style="margin-top:50px" data-wording-key="callbackSubmitConfirmationTitle"></h2>
-<font style="color:#218521" data-wording-key="callbackSubmintConfirmationTextPt1"></font><font data-wording-key="callbackSubmintConfirmationTextPt2"></font>
+<font style="color:#218521" data-wording-key="callbackSubmintConfirmationTextPt1"></font><font data-wording-key="callbackSubmintConfirmationTextPt2"></font></font><b id="dgCustomerPhone"></b><font data-wording-key="callbackSubmintConfirmationTextPt3"></font>
 <font id="backToHelpcenter2"></font>
 </div></div>
 
@@ -117,13 +117,15 @@
       sessionStorage.removeItem('dgCustomerEmail');
   }
   if (fullLink.includes('callbackReturn=yes') && sessionStorage.getItem("callbackReturn") !== null){
+      $('#dgCustomerPhone')[0].innerHTML = sessionStorage.getItem('callbackCustomerPhone')
       $('#backToHelpcenter2')[0].innerHTML = "<a href='/hc' data-wording-key='backToHelpcenter'>"
       var container = $('.container')
       var hero = $('.hero')
       container.hide()
       hero.hide();
       $('.callbacksubmitconfirmation').show();
-      //sessionStorage.removeItem('callbackReturn');
+      sessionStorage.removeItem('callbackReturn');
+      sessionStorage.removeItem('callbackCustomerPhone');
   }
 
   var elements = document.getElementsByClassName('blocks-item-title');

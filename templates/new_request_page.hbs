@@ -595,15 +595,15 @@
       if (isInDEOpeningTimes()) {
         if (customerType == 'private-customer') {
           if (callWaitTimes['privateGer'] >= callWaitTimes['privateAt']) {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateGer'])
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateGer'], callWaitTimes['privateGer'])
           } else {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'])
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'], callWaitTimes['privateAt'])
           }
         } else {
           if (callWaitTimes['businessGer'] >= callWaitTimes['privateAt']) {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['businessGer'])
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['businessGer'], callWaitTimes['businessGer'])
           } else {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'])
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'], callWaitTimes['privateAt'])
           }
         }
       }
@@ -615,19 +615,19 @@
       if (isInConnectOpeningTimes()){
         switch (currentLanguage) {
           case 'de':
-            setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
+            setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE'], callWaitTimes['connectDE']);
             break;
           case 'fr':
-            setWaitTime(chatWaitTimes['connectFR'], callWaitTimes['connectFR']);
+            setWaitTime(chatWaitTimes['connectFR'], callWaitTimes['connectFR'], callWaitTimes['connectFR']);
             break;
           case 'it':
-            setWaitTime(chatWaitTimes['connectIT'], callWaitTimes['connectIT']);
+            setWaitTime(chatWaitTimes['connectIT'], callWaitTimes['connectIT'], callWaitTimes['connectIT']);
             break;
           case 'en-US':
-            setWaitTime(chatWaitTimes['connectEN'], callWaitTimes['connectEN']);
+            setWaitTime(chatWaitTimes['connectEN'], callWaitTimes['connectEN'], callWaitTimes['connectEN']);
             break;
           default:
-            setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE']);
+            setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE'], callWaitTimes['connectDE']);
             break;
         }
       }
@@ -639,19 +639,19 @@
       if (isInCHOpeningTimes()){
         switch (currentLanguage) {
             case 'de':
-              setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
+              setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'], callWaitTimes['callbackDE'])
               break;
             case 'fr':
-              setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR'])
+              setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR'], callWaitTimes['privateCHFR'])
               break;
             case 'it':
-              setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT'])
+              setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT'], callWaitTimes['privateCHIT'])
               break;
             case 'en-US':
-              setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN'])
+              setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN'], callWaitTimes['privateCHEN'])
               break;
             default:
-              setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'])
+              setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'], callWaitTimes['privateCHDE'])
               break;
         }
         console.log(requestReasonTag)
@@ -661,11 +661,11 @@
           var lastpart = splitstring.substring(1, splitstring.length)
           var lastpartCapitalized = lastpart.charAt(0).toUpperCase() + lastpart.substring(1, lastpart.length)
           if (lastpartCapitalized.includes('It') || lastpartCapitalized.includes('Network')) {
-            setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peItNetwork'])
+            setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peItNetwork'], callWaitTimes['peItNetwork'])
           } else if (lastpartCapitalized.includes('Consumer') || lastpartCapitalized.includes('Photo')) {
-            setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peConsumerPhoto'])
+            setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peConsumerPhoto'], callWaitTimes['peConsumerPhoto'])
           } else if (lastpartCapitalized.includes('Diy') || lastpartCapitalized.includes('Home')) {
-            setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peDiyHome'])
+            setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peDiyHome'], callWaitTimes['peDiyHome'])
           }
         }
       }
@@ -675,16 +675,21 @@
     }
   }
 
-  function setWaitTime(chatSeconds, callSeconds){
+  function setWaitTime(chatSeconds, callSeconds, callbackSeconds){
       if (chatSeconds > 180){
           $(".recommendedChannel").css('display' , 'none');
       }
       chatWaitSeconds = chatSeconds;
       callWaitSeconds = callSeconds;
+      if (callbackSeconds > callSeconds) {
+        callWaitSeconds = callbackSeconds
+      }
       var chatElements = $('.chatWaitTime')
       var callElements = $('.callWaitTime')
+      var callbackElements = $('.callbackWaitTime')
       changeWaitTimeHTML(chatSeconds, chatElements)
       changeWaitTimeHTML(callSeconds, callElements)
+      changeWaitTimeHTML(callSeconds, callbackElements)
       //hideContactForm();
       waitTimes.show();
   }
@@ -695,10 +700,20 @@
         callbackWaitTimesDOMElements.show();
         callWaitTimesDOMElements.hide();
         callbackButton.show()
+        $('.phone-number').hide()
+        callbackButton.show()
+        phoneTitleTwo.show()
+        phoneTitleOne.hide()
       } else {
         console.log("CHECK FAIL")
         callbackWaitTimesDOMElements.hide();
         callWaitTimesDOMElements.show();
+        callbackButton.hide()
+        phoneTitleTwo.hide()
+        phoneTitleOne.show()
+        if (customerType == 'private-customer'){
+          $('.private-number').show()
+        }
       }
       if (seconds < 31){
           for (var i = 0; i < elements.length; i++){
@@ -1163,12 +1178,12 @@
   callBackSubmitButton.on("click", function(){
     var dynamicWording2 = filldynamicWording();
     console.log('bindrin')
-    let enteredPhoneNumber = String(callBackPhoneInputField.val())
+    let enteredPhoneNumber = "+41" + String(callBackPhoneInputField.val())
     let enteredOrderNumber = callBackOrderInputField.val()
     let enteredMail = callBackMailInputField.val()
     let validationChecker = true;
     console.log(enteredPhoneNumber.substring(0,4))
-    if (enteredPhoneNumber.length != 9 && enteredPhoneNumber.length != 10) {
+    if (enteredPhoneNumber.length != 12 && enteredPhoneNumber.length != 13) {
       $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
       validationChecker = false;
     } else if (enteredPhoneNumber.substring(0,4) == '0800' || enteredPhoneNumber.substring(0,4) == '0900' || enteredPhoneNumber.substring(0,4) == '0901' || enteredPhoneNumber.substring(0,4) == '0906' || enteredPhoneNumber.substring(0,3) == '084' || enteredPhoneNumber.substring(0,3) == '800' || enteredPhoneNumber.substring(0,3) == '900' || enteredPhoneNumber.substring(0,3) == '901' || enteredPhoneNumber.substring(0,3) == '906' || enteredPhoneNumber.substring(0,2) == '84'){
@@ -1189,6 +1204,7 @@
     } else {
       $('.callbackFormErrorText').html('')
       sessionStorage.setItem("callbackReturn", "true")
+      sessionStorage.setItem("callbackCustomerPhone", enteredPhoneNumber)
       addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail);
     }
   })
@@ -1196,7 +1212,7 @@
 
   function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail){
     console.log('enter api request function')
-    var compiledSubject = "Callback " + currentLanguage.toUpperCase + ": " + requestReasonTag
+    var compiledSubject = "Callback " + currentLanguage.toUpperCase() + ": " + requestReasonTag
     var dataToPass = {
         "customer_phone": enteredPhoneNumber,
         "customer_mail": enteredMail,
