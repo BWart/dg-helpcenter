@@ -1179,6 +1179,7 @@
     var dynamicWording2 = filldynamicWording();
     console.log('bindrin')
     let enteredPhoneNumber = "+41" + String(callBackPhoneInputField.val())
+    let enteredPhoneNumberShort = String(callBackPhoneInputField.val())
     let enteredOrderNumber = callBackOrderInputField.val()
     let enteredMail = callBackMailInputField.val()
     let validationChecker = true;
@@ -1186,7 +1187,7 @@
     if (enteredPhoneNumber.length != 12 && enteredPhoneNumber.length != 13) {
       $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
       validationChecker = false;
-    } else if (enteredPhoneNumber.substring(0,4) == '0800' || enteredPhoneNumber.substring(0,4) == '0900' || enteredPhoneNumber.substring(0,4) == '0901' || enteredPhoneNumber.substring(0,4) == '0906' || enteredPhoneNumber.substring(0,3) == '084' || enteredPhoneNumber.substring(0,3) == '800' || enteredPhoneNumber.substring(0,3) == '900' || enteredPhoneNumber.substring(0,3) == '901' || enteredPhoneNumber.substring(0,3) == '906' || enteredPhoneNumber.substring(0,2) == '84'){
+    } else if (enteredPhoneNumberShort.substring(0,4) == '0800' || enteredPhoneNumberShort.substring(0,4) == '0900' || enteredPhoneNumberShort.substring(0,4) == '0901' || enteredPhoneNumberShort.substring(0,4) == '0906' || enteredPhoneNumberShort.substring(0,3) == '084' || enteredPhoneNumberShort.substring(0,3) == '800' || enteredPhoneNumberShort.substring(0,3) == '900' || enteredPhoneNumberShort.substring(0,3) == '901' || enteredPhoneNumberShort.substring(0,3) == '906' || enteredPhoneNumberShort.substring(0,2) == '84'){
       $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError2'])
       validationChecker = false;
     } else {
@@ -1211,17 +1212,86 @@
 
 
   function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail){
-    console.log('enter api request function')
-    var compiledSubject = "Callback " + currentLanguage.toUpperCase() + ": " + requestReasonTag
+    var brandID = ""
+    var groupID = ""
+    var brandName = ""
+    var baseERPLink = ""
+    var ringGroup = ""
+    var customerTypeShorthand = ""
+    if (customerType == "private-customer") {
+      customerTypeShorthand = "c"
+    } else if (customerType == "business-customer") {
+      customerTypeShorthand = "b"
+    } else {
+      customerTypeShorthand = "connect"
+    }
+    if (requestReasonTag.includes('webform_case_product_advice_') && currentLanguage == "de" && isInCHPEOpeningTimes()){
+      customerTypeShorthand = "pe"
+    }
+    switch(portal){
+      case 'helpcenter.digitec.ch':
+        brandID = "263412"
+        groupID = "6972193395474"
+        brandName = "digitec"
+        baseERPLink = "https://erp.digitecgalaxus.ch/"
+        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage
+        break;
+      case 'helpcenter.galaxus.ch':
+        brandID = "486521"
+        groupID = "6972193395474"
+        brandName = "galaxus CH"
+        baseERPLink = "https://erp.digitecgalaxus.ch/"
+        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage
+        break;
+      case 'helpcenter.connect.digitec.ch':
+        brandID = "360002520320"
+        groupID = "6972193395474"
+        brandName = "digitec CONNECT"
+        baseERPLink = "https://erp.digitecgalaxus.ch/"
+        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage
+        break;
+      case 'helpcenter.galaxus.de':
+        brandID = "360000002879"
+        groupID = "6972193395474"
+        brandName = "galaxus DE"
+        baseERPLink = "https://erp.galaxus.eu/"
+        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage
+        break;
+      case 'helpcenter.galaxus.at':
+        brandID = "360002535479"
+        groupID = "6972193395474"
+        brandName = "galaxus AT"
+        baseERPLink = "https://erp.galaxus.eu/"
+        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage
+        break;
+      default:
+        brandID = "486521"
+        groupID = "6972193395474"
+        brandName = "Brand unknown"
+        baseERPLink = "https://erp.digitecgalaxus.ch/"
+        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage
+        break;   
+    }
+    //TODO: add request reason to mail body
+    var compiledSubject = "Callback " + currentLanguage.toUpperCase() + ": " + $(requestReasonDropdownNesty).text()
+    var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\n Order: " + baseERPLink + "Order/" + enteredOrderNumber + " \nRequest Reason: " + compiledSubject + " \n"
+    var ticketTags = "callback_request"
+    var baseOrderLink = baseERPLink + "Order/"
     var dataToPass = {
         "customer_phone": enteredPhoneNumber,
         "customer_mail": enteredMail,
         "record": "no",
-        "rg_motive": requestReasonTag,
+        "rg_motive": compiledSubject,
         "customer_language": currentLanguage,
-        "ticket_body": "This is a test ticket for callback testing and can be deleted",
+        "ticket_body": ticketBody,
         "ticket_subject": compiledSubject,
-        "order_number": enteredOrderNumber
+        "order_number": enteredOrderNumber,
+        "brand_id": brandID,
+        "group_id": groupID,
+        "brand_name": brandName,
+        "ticket_tags": ticketTags,
+        "ring_group": ringGroup,
+        "erp_link_base_order": baseOrderLink
     }
     var dataToPass2 = JSON.stringify(dataToPass)
     let auth = "Bearer " + wertmarke
