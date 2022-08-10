@@ -348,26 +348,26 @@
   const callbackForm = $('.callbackRequestForm')
   const callBackSubmitButton = $('.callbackSubmitButton')
   callbackForm.hide()
-  /*
+  
   if (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch'){
     if (localStorage.getItem("callbackGroup") === null){
-      if (Math.random() < 0.5){
+      if (Math.random() < 0.1){
         localStorage.setItem("callbackGroup", true);
       }
       else {
-        localStorage.setItem("callbackGroup", true);
+        localStorage.setItem("callbackGroup", false);
       }
     }
   }
   else {
     localStorage.setItem("callbackGroup", false);
-  }*/
-  if (portal == 'helpcenter.galaxus.ch' && customerType == "private-customer"){
+  }
+  /*if (portal == 'helpcenter.galaxus.ch' && customerType == "private-customer"){
     localStorage.setItem("callbackGroup", true);
   }
   else {
     localStorage.setItem("callbackGroup", false);
-  }
+  }*/
   const callBackPhoneInputField = $('.callback_customer_phone_number_input')
   const callBackOrderInputField = $('.callback_customer_order_number_input')
   const callBackMailInputField = $('.callback_customer_mail_input')
@@ -1353,7 +1353,7 @@
 
 
   function callbackCheck(){
-    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup") && customerType == "private-customer"){
+    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup") && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       return true;
     }
     else {
@@ -1480,7 +1480,7 @@
       sendGARequestCallbackTestA('Click Mail Button');
       sendGARequestCallbackTestA('Click Phone/Mail/Chat Button');      
     }
-    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer") {
+    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
       sendGARequestCallbackTestB('Click Mail Button');
       sendGARequestCallbackTestB('Click Phone/Mail/Chat Button');
     }
