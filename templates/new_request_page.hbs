@@ -1465,7 +1465,7 @@
       sendGARequestCallbackTestA('Click Phone Button');
       sendGARequestCallbackTestA('Click Phone/Mail/Chat Button');      
     }
-    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer") {
+    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
       sendGARequestCallbackTestB('Click Phone Button');
       sendGARequestCallbackTestB('Click Phone/Mail/Chat Button');
     }
@@ -1495,7 +1495,7 @@
       sendGARequestCallbackTestA('Click Chat Button');
       sendGARequestCallbackTestA('Click Phone/Mail/Chat Button');      
     }
-    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer") {
+    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
       sendGARequestCallbackTestB('Click Chat Button');
       sendGARequestCallbackTestB('Click Phone/Mail/Chat Button');
     }
@@ -1516,7 +1516,7 @@
       sendGARequestCallbackTestA('Click Callback Button');
       sendGARequestCallbackTestA('Click Phone/Mail/Chat Button');      
     }
-    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer") {
+    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
       sendGARequestCallbackTestB('Click Callback Button');
       sendGARequestCallbackTestB('Click Phone/Mail/Chat Button');
     }
