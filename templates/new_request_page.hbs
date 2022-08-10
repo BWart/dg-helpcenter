@@ -108,7 +108,8 @@
                   <td style="padding-right:10px;padding-left:10px;padding-top:10px"><div id="phoneButtonCellContent">
                     <div class="button-contact phone-number private-number private-customer connect-customer" data-wording-key="callUsPrivate"></div>
                     <div class="button-contact phone-number business-number business-customer" data-wording-key="callUsBusiness"></div>
-                    <div class="button-contact phone-number callback-number private-customer" data-wording-key="callYouCallback"></div>
+                    <div class="button-contact callback-number" data-wording-key="callYouCallback"></div>
+                    <div class="button-contact callback-number-offline button-offline" data-wording-key="callbackOffline"></div>
                     </div><div id="row4cell2inserter"></div></td>
                   <td style="padding-left:20px;padding-top:10px"><div id="chatButtonCellContent"><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></div><div id="row4cell3inserter"></div>
                   </td>
@@ -148,7 +149,7 @@
                   <td class="contactButtonTableCellLeftNoBorder">
                     <div id="mobilePhoneCell1Content">
                       <img src="{{asset 'phoneIcon.png'}}" height="16px">
-                      <b><font data-wording-key="phone"></font></b>
+                      <b><font class="phoneTitle1" data-wording-key="phone"></font><font data-wording-key="callbackTitleText" class="phoneTitle2"></font></b>
                       <font class="callWaitTimeOnly"><br><font class="waittime" style="font-size: 11px;" data-wording-key="callWaitTime"></font></font>
                       <font class="callbackWaitTimeOnly"><br><font class="waittimeCallback" style="font-size: 11px;" data-wording-key="callbackWaitTime"></font></font>
                     </div>
@@ -160,6 +161,8 @@
                     <div id="mobilePhoneCell2Content">
                       <div class="button-contact phone-number private-number2 private-customer connect-customer" data-wording-key="callUsPrivateMobile"></div>
                       <div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div>
+                      <div class="button-contact callback-number2" data-wording-key="callYouCallback"></div>
+                      <div class="button-contact callback-number-offline-mobile button-offline" data-wording-key="callbackOfflineMobile"></div>
                     </div>
                     <div id="mobileInserter4"></div>
                   </td>
@@ -204,12 +207,11 @@
                   <label class="callbackMailErrorLabel"><font color="red" class="callbackMailErrorText"></font></label>
                   <!--<label><i data-wording-key="callbackMailHint"></i></label>-->
                 </div>
-                <footer>
-                  <font data-wording-key="callbackAgentHint"></font><br>
-                  <font class="callbackFormErrorText" color="red"></font>
+                <div class="form-field">
+                  <label data-wording-key="callbackAgentHint"></label>
+                  <label class="callbackFormErrorText" style="color:red"></label>
                   <button type="button" class="button-large callbackSubmitButton" data-wording-key="demandCallback"></button>
-                </footer>
-              </form>
+                </div>
 
             </td>
         </tr>
@@ -247,7 +249,7 @@
   const languagesForLongerMailWaitTime = ["de"]
 
   //reasons for callback to be shown
-  const reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status"]
+  const reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product", "webform_case_not_working_product", "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_other_request_order", "webform_case_return", "webform_case_return_status", "webform_case_creditnote", "webform_case_other_request_returns", "webform_case_refund", "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_other_request_payment", "webform_case_delete_account", "webform_case_cant_login", "webform_case_other_request_account"]
 
   const requestReasonTopCategory = {
     "webform_case_shipping_status": "where_is_my_order",
@@ -331,8 +333,18 @@
 
 
   //--- CALLBACK SETTING UP A/B AND FURTHER VARIABLES
+  $('.callback-number-offline').hide();
+  $('.callback-number-offline-mobile').hide();
   let callBackTokenChecker = false;
-  const callbackButton = $('.callback-number')
+  let callbackButton = $('.callback-number')
+  let callbackButtonMobile = $('.callback-number2')
+  callbackButton.hide();
+  callbackButtonMobile.hide();
+  if (!isInCHOpeningTimes()){
+    console.log('ASDF')
+    callbackButton = $('.callback-number-offline')
+    callbackButtonMobile = $('.callback-number-offline-mobile')
+  }
   const callbackForm = $('.callbackRequestForm')
   const callBackSubmitButton = $('.callbackSubmitButton')
   callbackForm.hide()
@@ -350,7 +362,7 @@
   else {
     localStorage.setItem("callbackGroup", false);
   }*/
-  if (portal == 'helpcenter.galaxus.ch'){
+  if (portal == 'helpcenter.galaxus.ch' && customerType == "private-customer"){
     localStorage.setItem("callbackGroup", true);
   }
   else {
@@ -440,14 +452,16 @@
     contactNowClicked();
 
     //-- CALLBACK BUTTON SHOW/HIDE --
-    if (localStorage.getItem("callbackGroup")){
+    if (callbackCheck()){
       $('.phone-number').hide()
       callbackButton.show()
+      callbackButtonMobile.show()
       phoneTitleTwo.show()
       phoneTitleOne.hide()
     }
     else {
       callbackButton.hide()
+      callbackButtonMobile.hide()
       phoneTitleTwo.hide()
       phoneTitleOne.show()
     }
@@ -696,19 +710,18 @@
 
   function changeWaitTimeHTML(seconds, elements){
       if (callbackCheck()){
-        console.log("CHECK SUCCESS")
         callbackWaitTimesDOMElements.show();
         callWaitTimesDOMElements.hide();
-        callbackButton.show()
         $('.phone-number').hide()
         callbackButton.show()
+        callbackButtonMobile.show()
         phoneTitleTwo.show()
         phoneTitleOne.hide()
       } else {
-        console.log("CHECK FAIL")
         callbackWaitTimesDOMElements.hide();
         callWaitTimesDOMElements.show();
         callbackButton.hide()
+        callbackButtonMobile.hide()
         phoneTitleTwo.hide()
         phoneTitleOne.show()
         if (customerType == 'private-customer'){
@@ -1174,8 +1187,17 @@
     circleThreeTitleTwo.hide()
     circleThreeTitleThree.show()
   })
+  callbackButtonMobile.on("click", function(){
+    showContactForm()
+    requestForm.hide()
+    callbackForm.show()
+    backButton.show()
+    circleThreeTitleTwo.hide()
+    circleThreeTitleThree.show()
+  })
 
   callBackSubmitButton.on("click", function(){
+    sendGARequestOpeningHours('Callback Commit clicked');
     var dynamicWording2 = filldynamicWording();
     console.log('bindrin')
     let enteredPhoneNumber = "+41" + String(callBackPhoneInputField.val())
@@ -1272,10 +1294,24 @@
         ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage
         break;   
     }
-    //TODO: add request reason to mail body
-    var compiledSubject = "Callback " + currentLanguage.toUpperCase() + ": " + $(requestReasonDropdownNesty).text()
+    var callbackPerLang = ""
+    switch (currentLanguage){
+      case 'de':
+        callbackPerLang = "Rückruf"
+        break;
+      case 'fr':
+        callbackPerLang = "Rappel"
+        break;
+      case 'de':
+        callbackPerLang = "Richiamo"
+        break;
+      default:
+        callbackPerLang = "Callback"
+        break;
+    }
+    var compiledSubject = callbackPerLang + ": " + $(requestReasonDropdownNesty).text()
     var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\n Order: " + baseERPLink + "Order/" + enteredOrderNumber + " \nRequest Reason: " + compiledSubject + " \n"
-    var ticketTags = "callback_request"
+    var ticketTags = "callback_request " + requestReasonTag
     var baseOrderLink = baseERPLink + "Order/"
     var dataToPass = {
         "customer_phone": enteredPhoneNumber,
@@ -1303,13 +1339,13 @@
       },
       data: dataToPass2,
       success: function(result){
-        console.log('api success')
-        console.log(result);
+        ga('send', 'event', 'Errors', 'CallbackAPI', 'Success')
         window.open("https://" + portal + "/hc?callbackReturn=yes", "_self")
       },
       error: function (result){
-        console.log('api fail')
-        console.log(result);
+        ga('send', 'event', 'Errors', 'CallbackAPI', String(result))
+        var dynamicWording2 = filldynamicWording();
+        $('.callbackFormErrorText').html(dynamicWording2[currentLanguage]['callbackAPIError'])
       },
       dataType: "json"
     })
@@ -1317,7 +1353,7 @@
 
 
   function callbackCheck(){
-    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup")){
+    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup") && customerType == "private-customer"){
       return true;
     }
     else {
@@ -1412,12 +1448,27 @@
         //}
       }
   }
+
+  function sendGARequestCallbackTestA(action){
+    ga('send', 'event', 'Callback Testing A', action, requestReasonTopCategory[requestReasonTag] + ' ' + customerType + ' ' + currentLanguage);
+  }
+  function sendGARequestCallbackTestB(action){
+    ga('send', 'event', 'Callback Testing B', action, requestReasonTopCategory[requestReasonTag] + ' ' + customerType + ' ' + currentLanguage);
+  }
   
   //Phone Number Tracking
   
   $('.phone-number').on("click", function () {
     sendGARequestOpeningHours('Click Phone Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
+    if (callbackCheck() && isInCHOpeningTimes()){
+      sendGARequestCallbackTestA('Click Phone Button');
+      sendGARequestCallbackTestA('Click Phone/Mail/Chat Button');      
+    }
+    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer") {
+      sendGARequestCallbackTestB('Click Phone Button');
+      sendGARequestCallbackTestB('Click Phone/Mail/Chat Button');
+    }
   }) 
   
   //Contact Form Tracking
@@ -1425,6 +1476,14 @@
   $('.contactFormWriteUs').on("click", function () {
     sendGARequestOpeningHours('Click Mail Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
+    if (callbackCheck() && isInCHOpeningTimes()){
+      sendGARequestCallbackTestA('Click Mail Button');
+      sendGARequestCallbackTestA('Click Phone/Mail/Chat Button');      
+    }
+    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer") {
+      sendGARequestCallbackTestB('Click Mail Button');
+      sendGARequestCallbackTestB('Click Phone/Mail/Chat Button');
+    }
   }) 
   
   //Chat Tracking
@@ -1432,7 +1491,36 @@
   $('.button-chat').on("click", function () {
     sendGARequestOpeningHours('Click Chat Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
+    if (callbackCheck() && isInCHOpeningTimes()){
+      sendGARequestCallbackTestA('Click Chat Button');
+      sendGARequestCallbackTestA('Click Phone/Mail/Chat Button');      
+    }
+    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer") {
+      sendGARequestCallbackTestB('Click Chat Button');
+      sendGARequestCallbackTestB('Click Phone/Mail/Chat Button');
+    }
   }) 
+
+  //Callback Tracking
+  
+  $('.callback-number').on("click", function(){
+    callbackGALogging();
+  })
+  $('.callback-number2').on("click", function(){
+    callbackGALogging();
+  })
+  function callbackGALogging(){
+    sendGARequestOpeningHours('Click Callback Button');
+    sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
+    if (callbackCheck() && isInCHOpeningTimes()){
+      sendGARequestCallbackTestA('Click Callback Button');
+      sendGARequestCallbackTestA('Click Phone/Mail/Chat Button');      
+    }
+    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer") {
+      sendGARequestCallbackTestB('Click Callback Button');
+      sendGARequestCallbackTestB('Click Phone/Mail/Chat Button');
+    }
+  }
 
 
   // Request Reason Tracking
