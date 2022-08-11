@@ -1311,7 +1311,7 @@
     }
     var compiledSubject = callbackPerLang + ": " + $(requestReasonDropdownNesty).text()
     if (requestReasonTag.includes("_other_request_")){
-      compiledSubject = callbackPerLang + ": " + requestReasonTopCategory(requestReasonTag) + "; " + $(requestReasonDropdownNesty).text()
+      compiledSubject = callbackPerLang + ": " + requestReasonTopCategory[requestReasonTag] + "; " + $(requestReasonDropdownNesty).text()
     }
     var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\n Order: " + baseERPLink + "Order/" + enteredOrderNumber + " \nRequest Reason: " + compiledSubject + " \n"
     var ticketTags = "callback_request " + requestReasonTag
