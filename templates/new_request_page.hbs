@@ -1177,6 +1177,13 @@
     commitButtonPressed();
   })
 
+  //Action when clicking the chat button
+  $('.button-chat').on("click", function () {
+    checkForTagChanges();
+    openChat();
+    setEventListernerForChatStart();
+  });
+
 
   //--- CALLBACK EVENTS ---
   callbackButton.on("click", function(){
@@ -1451,7 +1458,7 @@
         //    ga('send', 'event', 'Opening Hours', 'PE ' + action, customerType + ' ' + currentLanguage);
         //} else {
           console.log(requestReasonTopCategory[requestReasonTag] + ' ' + customerType + ' ' + currentLanguage)
-            ga('send', 'event', 'Opening Hours', action, requestReasonTopCategory[requestReasonTag] + ' ' + customerType + ' ' + currentLanguage);
+            //ga('send', 'event', 'Opening Hours', action, requestReasonTopCategory[requestReasonTag] + ' ' + customerType + ' ' + currentLanguage);
         //}
       }
   }
