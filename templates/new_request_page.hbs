@@ -349,25 +349,25 @@
   callbackForm.hide()
   
   if (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch'){
-    if (localStorage.getItem("callbackGroup") === null){
-      if (Math.random() < 0.1){
-        localStorage.setItem("callbackGroup", "true");
+    if (localStorage.getItem("callbackGroup2") === null){
+      if (Math.random() < 0.25){
+        localStorage.setItem("callbackGroup2", "true");
       }
       else {
-        localStorage.setItem("callbackGroup", "false");
+        localStorage.setItem("callbackGroup2", "false");
       }
     }
   }
   else {
-    localStorage.setItem("callbackGroup", "false");
+    localStorage.setItem("callbackGroup2", "false");
   }
   /*if (portal == 'helpcenter.galaxus.ch' && customerType == "private-customer"){
-    localStorage.setItem("callbackGroup", true);
+    localStorage.setItem("callbackGroup2", true);
   }
   else {
-    localStorage.setItem("callbackGroup", false);
+    localStorage.setItem("callbackGroup2", false);
   }*/
-  console.log(localStorage.getItem("callbackGroup"));
+  console.log(localStorage.getItem("callbackGroup2"));
   const callBackPhoneInputField = $('.callback_customer_phone_number_input')
   const callBackOrderInputField = $('.callback_customer_order_number_input')
   const callBackMailInputField = $('.callback_customer_mail_input')
@@ -1379,7 +1379,7 @@
 
 
   function callbackCheck(){
-    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup2") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       console.log("callbackcheck true")
       return true;
     }
