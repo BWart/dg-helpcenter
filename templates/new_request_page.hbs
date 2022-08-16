@@ -197,7 +197,7 @@
                   <label class="callbackPhoneErrorLabel"><font color="red" class="callbackPhoneErrorText"></font></label>
                   <label><i data-wording-key="callbackPhoneNumberHint"></i></label>
                 </div>
-                <div class="form-field string optional request">
+                <div class="form-field string optional request callbackOrderNumberFormFields">
                   <label data-wording-key="callbackOrderNumber"></label>
                   <table><tr><td><input type="number" name="callback_customer_order_number" class="callback_customer_order_number_input"/></td></tr></table>
                 </div>
@@ -361,13 +361,13 @@
   else {
     localStorage.setItem("callbackGroup", "false");
   }
-  console.log(localStorage.getItem("callbackGroup"))
   /*if (portal == 'helpcenter.galaxus.ch' && customerType == "private-customer"){
     localStorage.setItem("callbackGroup", true);
   }
   else {
     localStorage.setItem("callbackGroup", false);
   }*/
+  console.log(localStorage.getItem("callbackGroup"));
   const callBackPhoneInputField = $('.callback_customer_phone_number_input')
   const callBackOrderInputField = $('.callback_customer_order_number_input')
   const callBackMailInputField = $('.callback_customer_mail_input')
@@ -1193,6 +1193,11 @@
     backButton.show()
     circleThreeTitleTwo.hide()
     circleThreeTitleThree.show()
+    if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
+      $('.callbackOrderNumberFormFields').hide();
+    } else {
+      $('.callbackOrderNumberFormFields').show();
+    }
   })
   callbackButtonMobile.on("click", function(){
     showContactForm()
@@ -1201,6 +1206,11 @@
     backButton.show()
     circleThreeTitleTwo.hide()
     circleThreeTitleThree.show()
+    if (reasonsForNoOrderNumber.indexOf(requestReasonTag) >= 0){
+      $('.callbackOrderNumberFormFields').hide();
+    } else {
+      $('.callbackOrderNumberFormFields').show();
+    }
   })
 
   callBackSubmitButton.on("click", function(){
