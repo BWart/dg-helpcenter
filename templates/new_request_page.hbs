@@ -1330,7 +1330,11 @@
     if (requestReasonTag.includes("_other_request_")){
       compiledSubject = callbackPerLang + ": " + requestReasonTopCategory[requestReasonTag] + "; " + $(requestReasonDropdownNesty).text()
     }
-    var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\n Order: " + baseERPLink + "Order/" + enteredOrderNumber + " \nRequest Reason: " + compiledSubject + " \n"
+    var orderLink = baseERPLink + "Order/" + enteredOrderNumber;
+    if (enteredOrderNumber.length < 5){
+      orderLink = "None"
+    }
+    var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\n Order: " + orderLink + " \nRequest Reason: " + compiledSubject + " \n"
     var ticketTags = "callback_request " + requestReasonTag
     var baseOrderLink = baseERPLink + "Order/"
     var custName = enteredMail.split("@")[0].replace(".", " ")
