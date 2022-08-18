@@ -201,6 +201,10 @@
                   <label data-wording-key="callbackOrderNumber"></label>
                   <table><tr><td><input type="number" name="callback_customer_order_number" class="callback_customer_order_number_input"/></td></tr></table>
                 </div>
+                <div class="form-field string optional request callbackRGNumberFormFields">
+                  <label data-wording-key="callbackRGNumber"></label>
+                  <table><tr><td><input type="number" name="callback_customer_rg_number" class="callback_customer_rg_number_input"/></td></tr></table>
+                </div>
                 <div class="form-field string optional request">
                   <label for="callback_customer_email" data-wording-key="callbackEmailLabel"></label>
                   <input type="email" name="callback_customer_email" id="callback_customer_email" class="callback_customer_mail_input"/>
@@ -212,7 +216,7 @@
                   <label class="callbackFormErrorText" style="color:red"></label>
                   <button type="button" class="button-large callbackSubmitButton" data-wording-key="demandCallback"></button>
                 </div>
-
+              </form>
             </td>
         </tr>
     </table>
@@ -349,27 +353,28 @@
   callbackForm.hide()
   
   if (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch'){
-    if (localStorage.getItem("callbackGroup2") === null){
-      if (Math.random() < 0.25){
-        localStorage.setItem("callbackGroup2", "true");
+    if (localStorage.getItem("callbackGroup3") === null){
+      if (Math.random() < 0.5){
+        localStorage.setItem("callbackGroup3", "true");
       }
       else {
-        localStorage.setItem("callbackGroup2", "false");
+        localStorage.setItem("callbackGroup3", "false");
       }
     }
   }
   else {
-    localStorage.setItem("callbackGroup2", "false");
+    localStorage.setItem("callbackGroup3", "false");
   }
   /*if (portal == 'helpcenter.galaxus.ch' && customerType == "private-customer"){
-    localStorage.setItem("callbackGroup2", true);
+    localStorage.setItem("callbackGroup3", true);
   }
   else {
-    localStorage.setItem("callbackGroup2", false);
+    localStorage.setItem("callbackGroup3", true);
   }*/
-  console.log(localStorage.getItem("callbackGroup2"));
+  console.log(localStorage.getItem("callbackGroup3"));
   const callBackPhoneInputField = $('.callback_customer_phone_number_input')
   const callBackOrderInputField = $('.callback_customer_order_number_input')
+  const callBackRGInputField = $('.callback_customer_rg_number_input')
   const callBackMailInputField = $('.callback_customer_mail_input')
 
 
@@ -464,6 +469,63 @@
       callbackButtonMobile.hide()
       phoneTitleTwo.hide()
       phoneTitleOne.show()
+    }
+
+    //-- CALLBACK ALTERNATIVE PHONE NUMBERS --
+        //if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup3") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+
+    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup3") == "false" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+      var extraPrivateNumber = "undefined";
+      var extraPrivateNumberText = "undefined";
+      var dynamicWordingTemp = filldynamicWording();
+      if (portal == "helpcenter.digitec.ch"){
+        switch (requestReasonTopCategory[requestReasonTag]){
+          case 'where_is_my_order':
+            var dynamicWordingTemp = filldynamicWording("+41445759708", "+41 44 575 97 08")
+            break;
+          case 'problems_with_an_order':
+            var dynamicWordingTemp = filldynamicWording("+41445759709", "+41 44 575 97 09")
+            break;
+          case 'return':
+            var dynamicWordingTemp = filldynamicWording("+41445759802", "+41 44 575 98 02")
+            break;
+          case 'payment_reminder_and_refund':
+            var dynamicWordingTemp = filldynamicWording("+41445759803", "+41 44 575 98 03")
+            break;
+          case 'customer_account':
+            var dynamicWordingTemp = filldynamicWording("+41445759805", "+41 44 575 98 05")
+            break;
+          default:
+            var dynamicWordingTemp = filldynamicWording()
+            break;
+        }
+      }
+      if (portal == 'helpcenter.galaxus.ch'){
+        console.log(requestReasonTopCategory[requestReasonTag])
+        switch (requestReasonTopCategory[requestReasonTag]){
+          case 'where_is_my_order':
+            var dynamicWordingTemp = filldynamicWording("+41445759602", "+41 44 575 96 02")
+            break;
+          case 'problems_with_an_order':
+            var dynamicWordingTemp = filldynamicWording("+41445759604", "+41 44 575 96 04")
+            break;
+          case 'return':
+            var dynamicWordingTemp = filldynamicWording("+41445759605", "+41 44 575 96 05")
+            break;
+          case 'payment_reminder_and_refund':
+            var dynamicWordingTemp = filldynamicWording("+41445759607", "+41 44 575 96 07")
+            break;
+          case 'customer_account':
+            var dynamicWordingTemp = filldynamicWording("+41445759609", "+41 44 575 96 09")
+            break;
+          default:
+            var dynamicWordingTemp = filldynamicWording()
+            break;
+        }
+      }
+      console.log(dynamicWordingTemp['de']['callUsPrivate'])
+      $('.private-number').html(dynamicWordingTemp['de']['callUsPrivate'])
+      $('.private-number2').html(dynamicWordingTemp['de']['callUsPrivateMovile'])
     }
   }
 
@@ -1198,6 +1260,11 @@
     } else {
       $('.callbackOrderNumberFormFields').show();
     }
+    if (requestReasonTag == 'webform_case_payment_reminder' || requestReasonTag == 'webform_case_dunning_block'){
+      $('.callbackRGNumberFormFields').show();
+    } else {
+      $('.callbackRGNumberFormFields').hide();
+    }
   })
   callbackButtonMobile.on("click", function(){
     showContactForm()
@@ -1211,6 +1278,11 @@
     } else {
       $('.callbackOrderNumberFormFields').show();
     }
+    if (requestReasonTag == 'webform_case_payment_reminder' || requestReasonTag == 'webform_case_dunning_block'){
+      $('.callbackRGNumberFormFields').show();
+    } else {
+      $('.callbackRGNumberFormFields').hide();
+    }
   })
 
   callBackSubmitButton.on("click", function(){
@@ -1220,6 +1292,7 @@
     let enteredPhoneNumber = "+41" + String(callBackPhoneInputField.val())
     let enteredPhoneNumberShort = String(callBackPhoneInputField.val())
     let enteredOrderNumber = callBackOrderInputField.val()
+    let enteredRGNumber = callBackRGInputField.val()
     let enteredMail = callBackMailInputField.val()
     let validationChecker = true;
     console.log(enteredPhoneNumber.substring(0,4))
@@ -1245,12 +1318,12 @@
       $('.callbackFormErrorText').html('')
       sessionStorage.setItem("callbackReturn", "true")
       sessionStorage.setItem("callbackCustomerPhone", enteredPhoneNumber)
-      addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail);
+      addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber);
     }
   })
 
 
-  function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail){
+  function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber){
     var brandID = ""
     var groupID = ""
     var brandName = ""
@@ -1331,12 +1404,17 @@
       compiledSubject = callbackPerLang + ": " + requestReasonTopCategory[requestReasonTag] + "; " + $(requestReasonDropdownNesty).text()
     }
     var orderLink = baseERPLink + "Order/" + enteredOrderNumber;
+    var invoiceLink = baseERPLink + "Invoice/" + enteredRGNumber;
     if (enteredOrderNumber.length < 5){
-      orderLink = "None"
+      invoiceLink = "None"
     }
-    var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\n Order: " + orderLink + " \nRequest Reason: " + compiledSubject + " \n"
+    if (enteredRGNumber.length < 5){
+      rgLink = "None"
+    }
+    var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\nOrder: " + orderLink + " \nInvoice: " + invoiceLink + "\nRequest Reason: " + compiledSubject + " \n"
     var ticketTags = "callback_request " + requestReasonTag
     var baseOrderLink = baseERPLink + "Order/"
+    var baseRGLink = baseERPLink + "Invoice/"
     var custName = enteredMail.split("@")[0].replace(".", " ")
     var dataToPass = {
         "customer_phone": enteredPhoneNumber,
@@ -1348,12 +1426,14 @@
         "ticket_body": ticketBody,
         "ticket_subject": compiledSubject,
         "order_number": enteredOrderNumber,
+        "invoice_number": enteredRGNumber,
         "brand_id": brandID,
         "group_id": groupID,
         "brand_name": brandName,
         "ticket_tags": ticketTags,
         "ring_group": ringGroup,
-        "erp_link_base_order": baseOrderLink
+        "erp_link_base_order": baseOrderLink,
+        "erp_link_base_invoice": baseRGLink
     }
     var dataToPass2 = JSON.stringify(dataToPass)
     let auth = "Bearer " + wertmarke
@@ -1379,7 +1459,7 @@
 
 
   function callbackCheck(){
-    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup2") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup3") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       console.log("callbackcheck true")
       return true;
     }

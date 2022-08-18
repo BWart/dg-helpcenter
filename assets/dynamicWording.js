@@ -1,4 +1,4 @@
-function filldynamicWording(){
+function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
     var portal = window.location.hostname;
 
     //Variabeln Öffnungszeiten Telefon
@@ -35,9 +35,8 @@ function filldynamicWording(){
     var telPrivatkundeText = "";
     var telFirmenkundeText = "";
 
-
     switch(portal){
-        case'helpcenter.digitec.ch':
+        case 'helpcenter.digitec.ch':
                 //Öffnungszeiten
                 tagePrivatkundeDE = "Mo - Fr "; 
                 tagePrivatkundeFR = "Lu - Ve "; 
@@ -57,9 +56,15 @@ function filldynamicWording(){
                 telPrivatkunde = "+41445759500";
                 telPrivatkundeText = "+41 44 575 95 00";
                 telFirmenkunde = "+41445759600";
-                telFirmenkundeText = "+41 44 575 96 00";    
+                telFirmenkundeText = "+41 44 575 96 00";
+
+                if (typeof extraPrivateNumber !== 'undefined' && extraPrivateNumberText !== 'undefined'){
+                    telPrivatkunde = extraPrivateNumber;
+                    telPrivatkundeText = extraPrivateNumberText;
+                }
+
                 break;
-        case'helpcenter.galaxus.ch':
+        case 'helpcenter.galaxus.ch':
                 //Öffnungszeiten
                 tagePrivatkundeDE = "Mo - Fr "; 
                 tagePrivatkundeFR = "Lu - Ve "; 
@@ -79,9 +84,14 @@ function filldynamicWording(){
                 telPrivatkunde = "+41445759800";
                 telPrivatkundeText = "+41 44 575 98 00";
                 telFirmenkunde = "+41445759900";
-                telFirmenkundeText = "+41 44 575 99 00";                
+                telFirmenkundeText = "+41 44 575 99 00";  
+                if (typeof extraPrivateNumber !== 'undefined' && extraPrivateNumberText !== 'undefined'){
+                    telPrivatkunde = extraPrivateNumber;
+                    telPrivatkundeText = extraPrivateNumberText;
+                }
+
                 break;
-        case'helpcenter.galaxus.de':
+        case 'helpcenter.galaxus.de':
                 //Öffnungszeiten
                 tagePrivatkundeDE = "Mo - Fr "; 
                 tagePrivatkundeFR = "Lu - Ve "; 
@@ -103,7 +113,7 @@ function filldynamicWording(){
                 telFirmenkunde = "+4940334614748";
                 telFirmenkundeText = "+49 (0)40 334 614 748";
                 break;
-        case'helpcenter.galaxus.at':
+        case 'helpcenter.galaxus.at':
                 //Öffnungszeiten
                 tagePrivatkundeDE = "Mo - Fr "; 
                 tagePrivatkundeFR = "Lu - Ve "; 
@@ -125,7 +135,7 @@ function filldynamicWording(){
                 telFirmenkunde = "+43800017837";
                 telFirmenkundeText = "+43 800 017 837";
                 break;
-        case'helpcenter.connect.digitec.ch':
+        case 'helpcenter.connect.digitec.ch':
                 //Öffnungszeiten
                 tagePrivatkundeDE = "Mo - Fr "; 
                 tagePrivatkundeFR = "Lu - Ve "; 
@@ -207,6 +217,7 @@ function filldynamicWording(){
         'callbackAgentHint' : 'Sobald ein Agent verfügbar ist, rufen wir Dich umgehend an.<br><b>Aktuelle Wartezeit: ca. <font class="callbackWaitTime"></font> min</b>',
         'callbackPhoneNumber' : 'Telefonnummer <font color="red">*</font>',
         'callbackOrderNumber' : 'Auftragsnummer (optional)',
+        'callbackRGNumber' : 'Rechnungsnummer (optional)', 
         'callbackEmailLabel' : 'E-Mail Adresse <font color="red">*</font>',
         'callbackEmailError' : 'Bitte gib eine gültige E-Mail Adresse ein',
         'callbackPhoneError' : 'Bitte gib eine gültige Telefonnummer ein. Nur Schweizer Telefonnummern werden akzeptiert.',
@@ -281,6 +292,7 @@ function filldynamicWording(){
         'callbackAgentHint' : 'Dès qu\'un agent est disponible, nous t\'appelons immédiatement.<br><b>Temps d\'attente actuel : env. <font class="callbackWaitTime"></font> min</b>',
         'callbackPhoneNumber' : 'Numéro de téléphone <font color="red">*</font>',
         'callbackOrderNumber' : 'Numéro de commande (facultatif)',
+        'callbackRGNumber' : 'Numéro de facture (facultatif)',
         'callbackEmailLabel' : 'Adresse électronique <font color="red">*</font>',
         'callbackEmailError' : 'Veuillez saisir une adresse e-mail valide',
         'callbackPhoneError' : 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone suisses sont acceptés.',
@@ -351,6 +363,7 @@ function filldynamicWording(){
         'callbackAgentHint' : 'Non appena sarà disponibile un agente, vi chiameremo immediatamente.<br><b>Tempo di attesa attuale: circa <font class="callbackWaitTime"></font> min</b>',
         'callbackPhoneNumber' : 'Numero di telefono <font color="red">*</font>',
         'callbackOrderNumber' : 'Numero d\'ordine (opzionale)',
+        'callbackRGNumber' : 'Numero di fattura (opzionale)',
         'callbackEmailLabel' : 'Indirizzo e-mail <font color="red">*</font>',
         'callbackEmailError' : 'Inserire un indirizzo e-mail valido',
         'callbackPhoneError' : 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono svizzeri.',
@@ -421,6 +434,7 @@ function filldynamicWording(){
         'callbackAgentHint' : 'As soon as an agent is available, we will call you immediately.<br><b>Current waiting time: approx. <font class="callbackWaitTime"></font> min</b>',
         'callbackPhoneNumber' : 'Phone number <font color="red">*</font>',
         'callbackOrderNumber' : 'Order number (optional)',
+        'callbackRGNumber' : 'Invoice number (optional)',
         'callbackEmailLabel' : 'E-Mail address <font color="red">*</font>',
         'callbackEmailError' : 'Please enter a valid e-mail address',
         'callbackPhoneError' : 'Please enter a valid phone number. Only Swiss phone numbers are accepted.',
