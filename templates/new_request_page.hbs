@@ -1403,12 +1403,12 @@
     var orderLink = baseERPLink + "Order/" + enteredOrderNumber;
     var invoiceLink = baseERPLink + "Invoice/" + enteredRGNumber;
     if (enteredOrderNumber.length < 5){
-      invoiceLink = "None"
+      orderLink = "None"
     }
     if (enteredRGNumber.length < 5){
-      rgLink = "None"
+      invoiceLink = "None"
     }
-    var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\nOrder: " + orderLink + " \nInvoice: " + invoiceLink + "\nRequest Reason: " + compiledSubject + " \n"
+    var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\nOrder: " + orderLink + " \nInvoice: " + invoiceLink + "\nRequest Reason: " + compiledSubject + " \n -- \ninteraction_id: "
     var ticketTags = "callback_request " + requestReasonTag
     var baseOrderLink = baseERPLink + "Order/"
     var baseRGLink = baseERPLink + "Invoice/"
@@ -1452,6 +1452,7 @@
       },
       dataType: "json"
     })
+    //*/
   }
 
 
