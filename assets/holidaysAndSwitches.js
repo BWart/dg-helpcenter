@@ -13,14 +13,14 @@ var switchHideContactFormForBusinessOutsideOpeningTimes = false;
 var switchHideContactFormForEUDuringOpeningTimes = true;
 var switchHideContactFormForEUOutsideOpeningTimes = false;
 //set to true if the phone number should be hidden, set to false if it should be displayed
-var switchHidePhoneDuringOpeningTimes = false;
-var switchHidePhoneOutsideOpeningTimes = false;
+var switchHidePhoneDuringOpeningTimes = true;
+var switchHidePhoneOutsideOpeningTimes = true;
 var switchHidePhoneForPEDuringOpeningTimes = true;
 var switchHidePhoneForPEOutsideOpeningTimes = true;
-var switchHidePhoneForBusinessDuringOpeningTimes = false;
-var switchHidePhoneForBusinessOutsideOpeningTimes = false;
-var switchHidePhoneForEUDuringOpeningTimes = false;
-var switchHidePhoneForEUOutsideOpeningTimes = false;
+var switchHidePhoneForBusinessDuringOpeningTimes = true;
+var switchHidePhoneForBusinessOutsideOpeningTimes = true;
+var switchHidePhoneForEUDuringOpeningTimes = true;
+var switchHidePhoneForEUOutsideOpeningTimes = true;
 //set to true if the Chat should be hidden, set to false if it should be displayed
 var switchHideChatDuringOpeningTimes = false;
 var switchHideChatOutsideOpeningTimes = false;
