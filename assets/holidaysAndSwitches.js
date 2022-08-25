@@ -74,7 +74,7 @@ function fillTopBannerWording(){
       'en-US' : "Attention"
     },
     "outputTextBannerCH" : {
-      'de' : "Der Versand beträgt momentant 5-7 Tage.",
+      'de' : "Unsere Telefonleitung ist aufgrund einer technischen Störung zurzeit nicht verfügbar",
       'fr' : "Notre ligne téléphonique est actuellement indisponible en raison d'un problème technique.",
       'it' : "La nostra linea telefonica non è attualmente disponibile a causa di un guasto tecnico.",
       'en-US' : "Our telephone line is currently unavailable due to a technical fault"
