@@ -86,7 +86,7 @@ function fillTopBannerWording(){
       'en-US' : "Technical issue"
     },
     "outputTextBannerDE" : {
-      'de' : "Der Versand beträgt momentant 25-27 Tage.",
+      'de' : "Unsere Telefonleitung ist aufgrund einer technischen Störung zurzeit nicht verfügbar",
       'fr' : "Notre ligne téléphonique est actuellement indisponible en raison d'un problème technique.",
       'it' : "La nostra linea telefonica non è attualmente disponibile a causa di un guasto tecnico.",
       'en-US' : "Our telephone line is currently unavailable due to a technical fault"
@@ -98,7 +98,7 @@ function fillTopBannerWording(){
       'en-US' : "Technical issue"
     },
     "outputTextBannerAT" : {
-      'de' : "Der Versand beträgt momentant 35-37 Tage.",
+      'de' : "Unsere Telefonleitung ist aufgrund einer technischen Störung zurzeit nicht verfügbar",
       'fr' : "Notre ligne téléphonique est actuellement indisponible en raison d'un problème technique.",
       'it' : "La nostra linea telefonica non è attualmente disponibile a causa di un guasto tecnico.",
       'en-US' : "Our telephone line is currently unavailable due to a technical fault"
