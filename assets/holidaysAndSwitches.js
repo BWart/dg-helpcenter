@@ -47,61 +47,61 @@ var chatAndPhoneWaitThreshholdToShowContactFormEU = 600;
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
-var bannerSwitchCHDE = false;
-var bannerSwitchCHFR = false;
-var bannerSwitchCHIT = false;
-var bannerSwitchCHEN = false;
+var bannerSwitchCHDE = true;
+var bannerSwitchCHFR = true;
+var bannerSwitchCHIT = true;
+var bannerSwitchCHEN = true;
 var bannerSwitchConnectDE = false;
 var bannerSwitchConnectFR = false;
 var bannerSwitchConnectIT = false;
 var bannerSwitchConnectEN = false;
-var bannerSwitchDEDE = false;
-var bannerSwitchDEFR = false;
-var bannerSwitchDEIT = false;
-var bannerSwitchDEEN = false;
-var bannerSwitchATDE = false;
-var bannerSwitchATFR = false;
-var bannerSwitchATIT = false;
-var bannerSwitchATEN = false;
+var bannerSwitchDEDE = true;
+var bannerSwitchDEFR = true;
+var bannerSwitchDEIT = true;
+var bannerSwitchDEEN = true;
+var bannerSwitchATDE = true;
+var bannerSwitchATFR = true;
+var bannerSwitchATIT = true;
+var bannerSwitchATEN = true;
 
 // --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
 function fillTopBannerWording(){
     topBannerWording = {
     "outputHeadingBannerCH" : {
-      'de' : "Achtung",
-      'fr' : "Attention",
-      'it' : "Attenzione",
+      'de' : "Technische Störung",
+      'fr' : "Panne technique",
+      'it' : "Guasto tecnico",
       'en-US' : "Attention"
     },
     "outputTextBannerCH" : {
       'de' : "Der Versand beträgt momentant 5-7 Tage.",
-      'fr' : "Les délais de livraison sont actuellement de 5 à 7 jours.",
-      'it' : "Il tempo di spedizione è attualmente di 5-7 giorni.",
-      'en-US' : "The shipping time is 5-7 days at the moment."
+      'fr' : "Notre ligne téléphonique est actuellement indisponible en raison d'un problème technique.",
+      'it' : "La nostra linea telefonica non è attualmente disponibile a causa di un guasto tecnico.",
+      'en-US' : "Our telephone line is currently unavailable due to a technical fault"
     },
     "outputHeadingBannerDE" : {
-      'de' : "Achtung",
-      'fr' : "Attention",
-      'it' : "Attenzione",
-      'en-US' : "Attention"
+      'de' : "Technische Störung",
+      'fr' : "Panne techniqe",
+      'it' : "Guasto tecnico",
+      'en-US' : "Technical issue"
     },
     "outputTextBannerDE" : {
       'de' : "Der Versand beträgt momentant 25-27 Tage.",
-      'fr' : "Les délais de livraison sont actuellement de 25 à 27 jours.",
-      'it' : "Il tempo di spedizione è attualmente di 25-27 giorni.",
-      'en-US' : "The shipping time is 25-27 days at the moment."
+      'fr' : "Notre ligne téléphonique est actuellement indisponible en raison d'un problème technique.",
+      'it' : "La nostra linea telefonica non è attualmente disponibile a causa di un guasto tecnico.",
+      'en-US' : "Our telephone line is currently unavailable due to a technical fault"
     },
     "outputHeadingBannerAT" : {
-      'de' : "Achtung",
-      'fr' : "Attention",
-      'it' : "Attenzione",
-      'en-US' : "Attention"
+      'de' : "Technische Störung",
+      'fr' : "Panne techniqe",
+      'it' : "Guasto tecnico",
+      'en-US' : "Technical issue"
     },
     "outputTextBannerAT" : {
       'de' : "Der Versand beträgt momentant 35-37 Tage.",
-      'fr' : "Les délais de livraison sont actuellement de 35 à 37 jours.",
-      'it' : "Il tempo di spedizione è attualmente di 35-37 giorni.",
-      'en-US' : "The shipping time is 35-37 days at the moment."
+      'fr' : "Notre ligne téléphonique est actuellement indisponible en raison d'un problème technique.",
+      'it' : "La nostra linea telefonica non è attualmente disponibile a causa di un guasto tecnico.",
+      'en-US' : "Our telephone line is currently unavailable due to a technical fault"
     },
     }
       return topBannerWording;
