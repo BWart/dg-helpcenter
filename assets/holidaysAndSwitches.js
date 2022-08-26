@@ -117,10 +117,10 @@ function fillTopBannerWording(){
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-        ['2022-06-03 00:00:00', '2022-06-06 22:00:00', 0]
+        ['2022-06-01 14:00:00', '2022-06-01 22:00:00', 0]
     ],
     'eu' : [
-        ['2022-08-26 14:00:00', '2022-08-27 22:00:00', 1]
+        ['2022-08-26 15:00:00', '2022-08-27 22:00:00', 1]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
@@ -134,9 +134,9 @@ var textToDisplay = {
     },
     1 : {
         'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
-        'fr' : '<br>Lundi de Pentecôte : 06.06. fermé',
-        'it' : '<br>Lunedì di Pentecoste: 06.06. chiuso',
-        'en-US' : '<br>Whit Monday: 06.06. closed',
+        'fr' : '<br>27.06.2022 16:00: fermé',
+        'it' : '<br>27.06.2022 16:00: chiuso',
+        'en-US' : '<br>27.06.2022: Closed from 16:00',
     }
 }
 
