@@ -867,7 +867,7 @@
     switch (portal){
       case 'helpcenter.digitec.ch':
       case 'helpcenter.galaxus.ch':
-        if (requestReasonTag.includes('webform_case_product_advice_')){
+        if (requestReasonTag.includes('webform_case_product_advice_') && customerType == 'private-customer'){
           isOpen = isInCHPEOpeningTimes();
           isPE = true;
           isCH = true;

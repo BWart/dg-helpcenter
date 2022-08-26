@@ -120,7 +120,7 @@ var showHolidays = {
         ['2022-06-03 00:00:00', '2022-06-06 22:00:00', 0]
     ],
     'eu' : [
-        ['2022-06-03 00:00:00', '2022-06-06 22:00:00', 1]
+        ['2022-08-26 14:00:00', '2022-08-27 22:00:00', 1]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
@@ -133,7 +133,7 @@ var textToDisplay = {
         'en-US' : '<br>Whit Monday: 06.06. closed',
     },
     1 : {
-        'de' : '<br>Pfingstmontag: 06.06. geschlossen',
+        'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
         'fr' : '<br>Lundi de Pentecôte : 06.06. fermé',
         'it' : '<br>Lunedì di Pentecoste: 06.06. chiuso',
         'en-US' : '<br>Whit Monday: 06.06. closed',
@@ -148,7 +148,7 @@ var hideWaitingTimes = {
         ['2022-06-06 00:00:00', '2022-06-06 22:00:00']
     ],
     'eu' : [
-        ['2022-06-06 00:00:00', '2022-06-06 22:00:00']
+        ['2022-08-27 14:00:00', '2022-08-27 22:00:00']
     ]
 }
 
