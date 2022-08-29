@@ -628,6 +628,10 @@
     }
     script.onerror = function() {
         waitTimes.hide();
+        switchHideContactFormDuringOpeningTimes = false;
+        switchHideContactFormForPEDuringOpeningTimes = false;
+        switchHideContactFormForBusinessDuringOpeningTimes = false;
+        switchHideContactFormForEUDuringOpeningTimes = false;
     }
     document.body.appendChild(script);
     var script2 = document.createElement('script');

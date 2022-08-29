@@ -67,8 +67,24 @@
 
 //href -> Link dynamisch nach Hostname ersetzen;
 // innerHTML -> gibt das Logo in svg an
-var portal = window.location.hostname;
-var gaSend = false;
+let portal = window.location.hostname;
+let gaSend = false;
+
+let tempLink = window.location.href;
+let upperCaseChecker = false;
+console.log(tempLink)
+
+for (const c of tempLink){
+  console.log('enter')
+  if (c == c.toUpperCase() && c.match(/[a-z]/i)) {
+    console.log('enteeeeeeeeeeerrr')
+    upperCaseChecker = true;
+  }
+}
+
+if (upperCaseChecker){
+  window.location.href = tempLink.toLowerCase();
+}
 
 switch(portal){
       case'helpcenter.digitec.ch':
