@@ -716,7 +716,7 @@
       }
     }
     if (portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.digitec.ch'){
-      if (isInCHOpeningTimes()){
+      if ((isInCHOpeningTimes() && customerType == 'private-customer') || (customerType == 'business-customer' && !isInBusinessOpeningTimes() && isInCHOpeningTimes())){
         switch (currentLanguage) {
             case 'de':
               setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'], callWaitTimes['callbackDE'])
@@ -747,6 +747,25 @@
           } else if (lastpartCapitalized.includes('Diy') || lastpartCapitalized.includes('Home')) {
             setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peDiyHome'], callWaitTimes['peDiyHome'])
           }
+        }
+      }
+      else if (isInBusinessOpeningTimes() && customerType == 'business-customer') {
+        switch (currentLanguage) {
+            case 'de':
+              setWaitTime(chatWaitTimes['businessDE'], callWaitTimes['businessCHDE'], 0)
+              break;
+            case 'fr':
+              setWaitTime(chatWaitTimes['businessFR'], callWaitTimes['businessCHFR'], 0)
+              break;
+            case 'it':
+              setWaitTime(chatWaitTimes['businessIT'], callWaitTimes['businessCHIT'], 0)
+              break;
+            case 'en-US':
+              setWaitTime(chatWaitTimes['businessEN'], callWaitTimes['businessCHEN'], 0)
+              break;
+            default:
+              setWaitTime(chatWaitTimes['businessDE'], callWaitTimes['businessCHDE'], 0)
+              break;
         }
       }
       else {
@@ -872,7 +891,7 @@
     switch (portal){
       case 'helpcenter.digitec.ch':
       case 'helpcenter.galaxus.ch':
-        if (requestReasonTag.includes('webform_case_product_advice_')){
+        if (requestReasonTag.includes('webform_case_product_advice_') && customerType == 'private-customer'){
           isOpen = isInCHPEOpeningTimes();
           isPE = true;
           isCH = true;
@@ -1140,19 +1159,21 @@
   }
 
   function isInBusinessOpeningTimes(){
+    //console.log('calling business op times')
     const d = new Date();
     let dayOfWeek = d.getUTCDay();
     let currentHour = d.getUTCHours() + UTCHourOffset;
-    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= connectOpeningHourWeekday && currentHour < connectClosingHourWeekday){
+    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= businessOpeningHourWeekday && currentHour < businessClosingHourWeekday){
       return true;
     }
-    if (dayOfWeek == 6 && currentHour >= connectOpeningHourSaturday && currentHour < connectClosingHourSaturday){
+    if (dayOfWeek == 6 && currentHour >= businessOpeningHourSaturday && currentHour < businessClosingHourSaturday){
       return true;
     }
     return false;
   }
 
   function isInConnectOpeningTimes(){
+    //console.log('calling connect op times')
     const d = new Date();
     let dayOfWeek = d.getUTCDay();
     let currentHour = d.getUTCHours() + UTCHourOffset;
@@ -1166,6 +1187,7 @@
   }
 
   function isInCHOpeningTimes(){
+    //console.log('calling CH op times')
     const d = new Date();
     let dayOfWeek = d.getUTCDay();
     let currentHour = d.getUTCHours() + UTCHourOffset;
