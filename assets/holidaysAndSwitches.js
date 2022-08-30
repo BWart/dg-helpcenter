@@ -15,7 +15,7 @@ var switchHideChat = false
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-        ['2022-07-25 00:00:00', '2022-08-01 22:00:00', 0]
+        ['2022-08-31 00:00:00', '2022-08-31 11:10:00', 0]
     ],
     'eu' : [
         ['2022-06-15 00:00:00', '2022-06-16 22:00:00', 1]
@@ -43,10 +43,10 @@ var showHolidays = {
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-        'de' : '<br>1. August: geschlossen',
-        'fr' : "<br>1er août : fermé",
-        'it' : '<br>1 agosto: chiuso',
-        'en-US' : '<br>1st August: closed',
+        'de' : '<br>31.08.2022: Von 12:00 bis 13:00 Uhr geschlossen',
+        'fr' : "<br>31.08.2022 : fermé de 12h00 à 13h00",
+        'it' : '<br>31.08.2022: Chiuso dalle 12:00 alle 13:00',
+        'en-US' : '<br>31.08.2022: Closed from 12:00 to 13:00',
     },
     1 : {
         'de' : '<br>Fronleichnam: 16.06. geschlossen',
@@ -67,7 +67,7 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-        ['2022-08-01 06:00:00', '2022-08-01 22:00:00']
+        ['2022-08-31 09:55:00', '2022-08-31 11:05:00']
     ],
     'eu' : [
         ['2022-06-16 00:00:00', '2022-06-16 22:00:00']
