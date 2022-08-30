@@ -10,10 +10,10 @@ function fillTopBannerWording(){
       'en-US' : "Technical malfunction"
     },
     "outputTextBannerCH" : {
-      'de' : "Unsere Telefonleitung ist aufgrund einer technischen Störung zurzeit nicht verfügbar",
-      'fr' : "Notre ligne téléphonique est actuellement indisponible en raison d'un problème technique.",
-      'it' : "La nostra linea telefonica non è attualmente disponibile a causa di un guasto tecnico.",
-      'en-US' : "Our telephone line is currently unavailable due to a technical malfunction"
+      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
+      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
+      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
     },
     "outputHeadingBannerDE" : {
       'de' : "Achtung",
@@ -22,10 +22,10 @@ function fillTopBannerWording(){
       'en-US' : "Attention"
     },
     "outputTextBannerDE" : {
-      'de' : "Technische Störung: Kontaktanfragen über Chat, Telefon oder E-Mail funktionieren aktuell teilweise nicht.",
-      'fr' : "Dysfonctionnement technique : les demandes de contact par chat, téléphone ou e-mail ne fonctionnent actuellement que partiellement.",
-      'it' : "Malfunzionamento tecnico: le richieste di contatto via chat, telefono o e-mail non funzionano in alcuni casi.",
-      'en-US' : "Technical malfunction: Contact requests via chat, phone or e-mail are currently partially not working."
+      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
+      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
+      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
     },
     "outputHeadingBannerAT" : {
       'de' : "Achtung",
@@ -34,10 +34,10 @@ function fillTopBannerWording(){
       'en-US' : "Attention"
     },
     "outputTextBannerAT" : {
-      'de' : "Technische Störung: Kontaktanfragen über Chat, Telefon oder E-Mail funktionieren aktuell teilweise nicht.",
-      'fr' : "Dysfonctionnement technique : les demandes de contact par chat, téléphone ou e-mail ne fonctionnent actuellement que partiellement.",
-      'it' : "Malfunzionamento tecnico: le richieste di contatto via chat, telefono o e-mail non funzionano in alcuni casi.",
-      'en-US' : "Technical malfunction: Contact requests via chat, phone or e-mail are currently partially not working."
+      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
+      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
+      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
     },
     
     }
