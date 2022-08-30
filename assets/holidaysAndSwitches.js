@@ -47,22 +47,22 @@ var chatAndPhoneWaitThreshholdToShowContactFormEU = 600;
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
-var bannerSwitchCHDE = false;
-var bannerSwitchCHFR = false;
-var bannerSwitchCHIT = false;
-var bannerSwitchCHEN = false;
-var bannerSwitchConnectDE = false;
-var bannerSwitchConnectFR = false;
-var bannerSwitchConnectIT = false;
-var bannerSwitchConnectEN = false;
-var bannerSwitchDEDE = false;
-var bannerSwitchDEFR = false;
-var bannerSwitchDEIT = false;
-var bannerSwitchDEEN = false;
-var bannerSwitchATDE = false;
-var bannerSwitchATFR = false;
-var bannerSwitchATIT = false;
-var bannerSwitchATEN = false;
+var bannerSwitchCHDE = true;
+var bannerSwitchCHFR = true;
+var bannerSwitchCHIT = true;
+var bannerSwitchCHEN = true;
+var bannerSwitchConnectDE = true;
+var bannerSwitchConnectFR = true;
+var bannerSwitchConnectIT = true;
+var bannerSwitchConnectEN = true;
+var bannerSwitchDEDE = true;
+var bannerSwitchDEFR = true;
+var bannerSwitchDEIT = true;
+var bannerSwitchDEEN = true;
+var bannerSwitchATDE = true;
+var bannerSwitchATFR = true;
+var bannerSwitchATIT = true;
+var bannerSwitchATEN = true;
 
 // --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
 function fillTopBannerWording(){
