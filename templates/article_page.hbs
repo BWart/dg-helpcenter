@@ -229,7 +229,7 @@
 <script>
 
     var makebuttons = $('.makebutton')
-
+    console.log('asdfasdf')
     for (var i=0; i<makebuttons.length; i++){
         tempstring = makebuttons[i].innerHTML
         tempElems = tempstring.split('||')
@@ -245,7 +245,7 @@
   
  
   //Get the Infobox Content based on Rule
-  var portal = window.location.hostname;
+  //var portal = window.location.hostname;
 
   var infoBoxWording = fillInfoBoxWording(portal);
   var currentLanguage = $('html').attr('lang');
