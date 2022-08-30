@@ -1486,7 +1486,7 @@
   function callbackCheck(){
     if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup3") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       console.log("callbackcheck true")
-      return false;
+      return true;
     }
     else {
       console.log("callbackcheck false")
