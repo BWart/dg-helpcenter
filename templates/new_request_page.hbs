@@ -342,6 +342,7 @@
   let callBackTokenChecker = false;
   let callbackButton = $('.callback-number')
   let callbackButtonMobile = $('.callback-number2')
+  let callbackButtonClicked = false;
   callbackButton.hide();
   callbackButtonMobile.hide();
   if (!isInCHOpeningTimes()){
@@ -656,6 +657,7 @@
     }
     script2.onerror = function() {
         callBackTokenChecker = false;
+        callbackButtonClicked = false;
     }
     document.body.appendChild(script2);
   }
@@ -1312,6 +1314,10 @@
   })
 
   callBackSubmitButton.on("click", function(){
+    if (callbackButtonClicked == true){
+      return;
+    }
+    callbackButtonClicked = true;
     sendGARequestOpeningHours('Callback Commit clicked');
     var dynamicWording2 = filldynamicWording();
     let enteredPhoneNumber = "+41" + String(callBackPhoneInputField.val())
@@ -1323,15 +1329,18 @@
     if (enteredPhoneNumber.length != 12 && enteredPhoneNumber.length != 13) {
       $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
       validationChecker = false;
+      callbackButtonClicked = false;
     } else if (enteredPhoneNumberShort.substring(0,4) == '0800' || enteredPhoneNumberShort.substring(0,4) == '0900' || enteredPhoneNumberShort.substring(0,4) == '0901' || enteredPhoneNumberShort.substring(0,4) == '0906' || enteredPhoneNumberShort.substring(0,3) == '084' || enteredPhoneNumberShort.substring(0,3) == '800' || enteredPhoneNumberShort.substring(0,3) == '900' || enteredPhoneNumberShort.substring(0,3) == '901' || enteredPhoneNumberShort.substring(0,3) == '906' || enteredPhoneNumberShort.substring(0,2) == '84'){
       $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError2'])
       validationChecker = false;
+      callbackButtonClicked = false;
     } else {
       $('.callbackPhoneErrorText').html('')
     }
     if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(enteredMail))){
       $('.callbackMailErrorText').html(dynamicWording2[currentLanguage]['callbackEmailError'])
       validationChecker = false;
+      callbackButtonClicked = false;
     } else {
       $('.callbackMailErrorText').html('')
     }
@@ -1470,9 +1479,10 @@
       data: dataToPass2,
       success: function(result){
         ga('send', 'event', 'Errors', 'CallbackAPI', 'Success')
-        window.open("https://" + portal + "/hc?callbackReturn=yes", "_self")
+        window.open("https://" + portal + "/hc?callbackreturn=yes", "_self")
       },
       error: function (result){
+        callbackButtonClicked = false;
         ga('send', 'event', 'Errors', 'CallbackAPI', String(result))
         var dynamicWording2 = filldynamicWording();
         $('.callbackFormErrorText').html(dynamicWording2[currentLanguage]['callbackAPIError'])

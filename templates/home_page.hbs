@@ -116,7 +116,7 @@
       $('.ticketsubmitconfirmation').show();
       sessionStorage.removeItem('dgCustomerEmail');
   }
-  if (fullLink.includes('callbackReturn=yes') && sessionStorage.getItem("callbackReturn") !== null){
+  if (fullLink.includes('callbackreturn=yes') && sessionStorage.getItem("callbackReturn") !== null){
       $('#dgCustomerPhone')[0].innerHTML = sessionStorage.getItem('callbackCustomerPhone')
       $('#backToHelpcenter2')[0].innerHTML = "<a href='/hc' data-wording-key='backToHelpcenter'>"
       var container = $('.container')
