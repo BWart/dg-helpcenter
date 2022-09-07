@@ -35,14 +35,14 @@ var phoneWaitThreshholdToShowContactForm = 50000;
 var phoneWaitThreshholdToShowContactFormPE = 50000;
 var phoneWaitThreshholdToShowContactFormBusiness = 50000;
 var phoneWaitThreshholdToShowContactFormEU = 50000;
-var chatWaitThreshholdToShowContactForm = 50000;
+var chatWaitThreshholdToShowContactForm = 300;
 var chatWaitThreshholdToShowContactFormPE = 50000;
-var chatWaitThreshholdToShowContactFormEU = 50000;
 var chatWaitThreshholdToShowContactFormBusiness = 50000;
-var chatAndPhoneWaitThreshholdToShowContactForm = 600;
+var chatWaitThreshholdToShowContactFormEU = 300;
+var chatAndPhoneWaitThreshholdToShowContactForm = 570;
 var chatAndPhoneWaitThreshholdToShowContactFormPE = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormBusiness = 50000;
-var chatAndPhoneWaitThreshholdToShowContactFormEU = 600;
+var chatAndPhoneWaitThreshholdToShowContactFormEU = 570;
 
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
