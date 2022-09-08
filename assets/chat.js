@@ -153,22 +153,22 @@ function getDGChatDepartmentType(){
     var DGChatDepartmentType;
     if(typeof customerType != 'undefined' && typeof requestReasonTag != 'undefined'){
         switch(true){
-            case(requestReasonTag == 'webform_case_product_advice_it' && isInPEChatHours() && lang == 'de'):
+            case(requestReasonTag == 'webform_case_product_advice_it' && isInCHPEOpeningTimes() && lang == 'de'):
                 DGChatDepartmentType = 'PeIt'
                 break;
-            case(requestReasonTag == 'webform_case_product_advice_network' && isInPEChatHours() && lang == 'de'):
+            case(requestReasonTag == 'webform_case_product_advice_network' && isInCHPEOpeningTimes() && lang == 'de'):
                 DGChatDepartmentType = 'PeNetwork'
                 break;
-            case(requestReasonTag == 'webform_case_product_advice_consumer' && isInPEChatHours() && lang == 'de'):
+            case(requestReasonTag == 'webform_case_product_advice_consumer' && isInCHPEOpeningTimes() && lang == 'de'):
                 DGChatDepartmentType = 'PeConsumer';
                 break;
-            case(requestReasonTag == 'webform_case_product_advice_photo' && isInPEChatHours() && lang == 'de'):
+            case(requestReasonTag == 'webform_case_product_advice_photo' && isInCHPEOpeningTimes() && lang == 'de'):
                 DGChatDepartmentType = 'PePhoto'
                 break;
-            case(requestReasonTag == 'webform_case_product_advice_home' && isInPEChatHours() && lang == 'de'):
+            case(requestReasonTag == 'webform_case_product_advice_home' && isInCHPEOpeningTimes() && lang == 'de'):
                 DGChatDepartmentType = 'PeHome';
                 break;
-            case(requestReasonTag == 'webform_case_product_advice_diy' && isInPEChatHours() && lang == 'de'):
+            case(requestReasonTag == 'webform_case_product_advice_diy' && isInCHPEOpeningTimes() && lang == 'de'):
                 DGChatDepartmentType = 'PeDiy'
                 break;
             case(customerType == 'business-customer' && (lang == 'de' || lang == 'fr' || lang =='en')):
@@ -186,7 +186,7 @@ function getDGChatDepartmentType(){
 
 //SpecialRoutingForBusinessCustomers Deutsch - Produktberatungen gehen zu den Privatkunden/PE sowie alle Chats nach 17:00
 function getBusinessCustomerDepartmentType(){
-    if(isInBusinessChatHours()){
+    if(isInBusinessOpeningTimes()){
         return 'Business';
     }else{
         return 'Private';

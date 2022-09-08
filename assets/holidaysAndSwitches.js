@@ -171,11 +171,15 @@ var businessOpeningHourSaturday = false;
 var businessClosingHourSaturday = false;
 //CH Regular
 var chOpeningHourWeekday = 8;
-var chClosingHourWeekday = 19;
+var chOpeningMinuteWeekday = 0;
+var chClosingHourWeekday = 17;
+var chClosingMinuteWeekday = 30;
 var chOpeningHourSaturday = false;
 var chClosingHourSaturday = false;
 //CH PE
 var chPEOpeningHourWeekday = 8;
-var chPEClosingHourWeekday = 18;
+var chPEOpeningMinuteWeekday = 0;
+var chPEClosingHourWeekday = 17;
+var chPEClosingMinuteWeekday = 30;
 var chPEOpeningHourSaturday = false;
 var chPEClosingHourSaturday = false;
