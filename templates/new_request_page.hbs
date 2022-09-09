@@ -330,7 +330,7 @@
   const mailFormMessageLabel = $('#request_description_label');
   const mailFormMessageTextField = $('#request_description');
   //Contents of DOM elements
-  let requestReasonTag; //Filled when the request reason dropdown is changed
+  var requestReasonTag = 'unknown'; //Filled when the request reason dropdown is changed
   //WaitSeconds
   let callWaitSeconds = 0;
   let chatWaitSeconds = 0;
@@ -925,7 +925,10 @@
         isOpen = false;
         break;
     }
+    // Business Logic to Add Or Remove Contact Option Based on Selection ------> Change in HolidayAndSwitches.js
+    // PE Schweiz
     if (isPE && isCH){
+      // In Business Hours
       if (isOpen){
         if (switchHideContactFormForPEDuringOpeningTimes){
           contactChannelMail = false;
@@ -940,6 +943,7 @@
           contactChannelChat = false;
         }
       }
+      //OutOfBusinessHours
       else {
         if (switchHideContactFormForPEOutsideOpeningTimes){
           contactChannelMail = false;
@@ -952,7 +956,9 @@
         }
       }
     }
+    //B2C CH
     else if (isCH && !isBusiness) {
+      //In Business Hours
       if (isOpen){
         if (switchHideContactFormDuringOpeningTimes){
           contactChannelMail = false;
@@ -967,6 +973,7 @@
           contactChannelChat = false;
         }
       }
+      //OutOfBusinessHours
       else {
         if (switchHideContactFormOutsideOpeningTimes){
           contactChannelMail = false;
@@ -979,7 +986,9 @@
         }
       }
     }
+    //B2B CH
     else if (isCH && isBusiness){
+      //In Business Hours
       if (isOpen){
         if (switchHideContactFormForBusinessDuringOpeningTimes){
           contactChannelMail = false;
@@ -994,6 +1003,7 @@
           contactChannelChat = false;
         }
       }
+      //OutOfBusinessHours
       else {
         if (switchHideContactFormForBusinessOutsideOpeningTimes){
           contactChannelMail = false;
@@ -1006,7 +1016,9 @@
         }
       }
     }
+    // EU
     else if(!isCH) {
+      //In Business Hours
       if (isOpen){
         if (switchHideContactFormForEUDuringOpeningTimes){
           contactChannelMail = false;
@@ -1021,6 +1033,7 @@
           contactChannelChat = false;
         }
       }
+      //OutOfBusinessHours
       else {
         if (switchHideContactFormForEUOutsideOpeningTimes){
           contactChannelMail = false;

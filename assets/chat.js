@@ -38,6 +38,7 @@ function getWebWidgetSettings(){
         greetingTextEN = "So that we can help you quickly, please let us know your cell phone number."
     }
     var dep = getChatDepartment();
+    console.log('Department Set: '+ dep);
     var zeSettings = {
         webWidget: {
             chat: {
@@ -91,7 +92,6 @@ function getWebWidgetSettings(){
 
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
-    console.log('Chat DEPARTMENT-------------' + getChatDepartmentType()+ ' ' + getChatDepartmentLanguage())
     return 'Chat ' + getChatDepartmentType()+ ' ' + getChatDepartmentLanguage(); 
 }
 
