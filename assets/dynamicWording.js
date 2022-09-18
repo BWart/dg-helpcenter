@@ -43,7 +43,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkundeIT = "Lun - Ven "; 
                 tagePrivatkundeEN = "Mo - Fr "; 
                 tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2FR = " | Fermé le Jeûne fédéral";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 17:30";
@@ -71,9 +71,9 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkundeIT = "Lun - Ven "; 
                 tagePrivatkundeEN = "Mo - Fr "; 
                 tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2FR = " | Fermé le Jeûne fédéral";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2EN = " | closed on prayer day";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 17:30";
                 uhrzeitPrivatkunde2 = "";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
@@ -246,7 +246,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
         'contactNow' : 'Jetzt kontaktieren',
         'chatWaitTime': 'Wartezeit <font class="chatWaitTime"></font> min',
-        'callWaitTime': 'Wartezeit <font class="callWaitTime"></font> min',
+        'callWaitTime': ' ',//'Wartezeit <font class="callWaitTime"></font> min',
         'callbackWaitTime': 'Wartezeit <font class="callbackWaitTime"></font> min',
         'toShop' : '<a href="https://www.digitec.ch/" target="blank">Zum Shop</a>',
         'ticketSubmitConfirmationTitle' : 'Vielen Dank für deine Anfrage!',
