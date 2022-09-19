@@ -43,7 +43,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkundeIT = "Lun - Ven "; 
                 tagePrivatkundeEN = "Mo - Fr "; 
                 tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = " | Fermé le Jeûne fédéral";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 17:30";
@@ -71,7 +71,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkundeIT = "Lun - Ven "; 
                 tagePrivatkundeEN = "Mo - Fr "; 
                 tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = " | Fermé le Jeûne fédéral";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 17:30";
@@ -321,7 +321,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
         'contactNow' : 'Contacter maintenant',
         'chatWaitTime': 'Réponse en <font class="chatWaitTime"></font> min',
-        'callWaitTime': '', //'Réponse en <font class="callWaitTime"></font> min',
+        'callWaitTime': 'Réponse en <font class="callWaitTime"></font> min',
         'callbackWaitTime': 'Réponse en <font class="callbackWaitTime"></font> min',
         'toShop' : '<a href="https://www.digitec.ch/" target="blank">Vers le Shop</a>',
         'ticketSubmitConfirmationTitle' : 'Merci pour votre demande !',
