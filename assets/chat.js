@@ -387,14 +387,15 @@ function removeZopimTags(tags){
 // Gibt Callback, wenn der Chat gestartet wird und ruft den Event Listener für den Chat Recconect auf
 function setEventListernerForChatStart(){
     zE('webWidget:on', 'chat:start', function() {
-        setTagsAtReconnect();
+        setTagsAndDepartmentAtReconnect();
     });
 }
 
-//Setzt die Tags, wenn der Chat neu verbunden wird
-function setTagsAtReconnect(){
+//Setzt  Tags und Department, wenn der Chat neu verbunden wird
+function setTagsAndDepartmentAtReconnect(){
     zE('webWidget:on', 'chat:connected', function() {
         checkForTagChanges();
+        changeWebWidgetSettingsOnChange();
     });
 }
 
