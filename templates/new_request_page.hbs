@@ -542,14 +542,15 @@
         connectContact.show();
         break;
       default:
-        //TODO: Handle Case if nothing is entered by default
+        privateContact.show();
         break;
     }
     try {
-      updateChatConnectionAfterDropdownChange();
+      updateChatDepartment();
     }
     catch (e) {
-      console.log(e); 
+      console.log(e);
+      hideChatButton(); 
       if(gaSend){
         //TODO: TRACKING
         //ga('send', 'event', 'Errors', 'ChatLoad', String(e));
@@ -878,6 +879,36 @@
               }
           }
       }
+  }
+
+  //Returns true or false for holidays
+  function isHoliday(){
+      var portalChooser = '';
+      switch(portal){
+          case 'helpcenter.digitec.ch':
+          case 'helpcenter.galaxus.ch':
+          case 'helpcenter.connect.digitec.ch':
+            portalChooser = 'ch'
+            break;
+          case 'helpcenter.galaxus.de':
+          case 'helpcenter.galaxus.at':
+            portalChooser = 'eu'
+            break;
+          default:
+            portalChooser = 'ch'
+            break;
+      }
+      const d = new Date();
+      datestring = String(d.getUTCFullYear()) + '-' + String(d.getUTCMonth() + 1) + '-' + String(d.getUTCDate()) + ' ' + String(d.getUTCHours()) + ':' + String(d.getUTCMinutes()) + ':' + String(d.getUTCSeconds())
+      const utc_timestamp = Date.parse(datestring)
+      var stampslist = hideWaitingTimes[portalChooser]
+      checker = false;
+      stampslist.forEach((stampset) => {
+          if (utc_timestamp > Date.parse(stampset[0]) && utc_timestamp < Date.parse(stampset[1])){
+              checker = true;
+          }
+      })
+      return checker;
   }
 
 
@@ -1296,10 +1327,20 @@
   //Action when clicking the chat button
   $('.button-chat').on("click", function () {
     checkForTagChanges();
-    openChat();
-    setEventListernerForChatStart();
+    try {
+      updateChatDepartment();
+      openChat();
+      setEventListernerForChatStart();
+    }
+    catch (e) {
+      console.log(e); 
+      hideChatButton();
+      if(gaSend){
+        //TODO: TRACKING
+        //ga('send', 'event', 'Errors', 'ChatLoad', String(e));
+      }
+    } 
   });
-
 
   //--- CALLBACK EVENTS ---
   callbackButton.on("click", function(){

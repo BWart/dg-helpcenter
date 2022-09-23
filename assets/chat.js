@@ -13,13 +13,13 @@ function waitForChat(){
 }
 
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
-
-// Updated die Widget Settings - Update Soll nur bei Dropdown Change im Request Form passieren. Ansonsten soll die Einstellung nicht überschrieben werden
+//Initiales Setting des Web Widgets beim Laden der Seite
 function changeWebWidgetSettingInitial(){
     window.zESettings = getWebWidgetSettings(); // Widget Settings Initiales Setup
     zE('webWidget', 'setLocale', getLanguage()); // Setzt die Widget Sprache   
 }
 
+// Updated die Widget Settings - Update Soll nur bei Dropdown Change im Request Form und beim Reconnect passieren. Ansonsten soll die Einstellung nicht überschrieben werden
 function changeWebWidgetSettingsOnChange(){
     zE('webWidget', 'updateSettings', getWebWidgetSettings());
     zE('webWidget', 'setLocale', getLanguage()); // Setzt die Widget Sprache
@@ -31,7 +31,7 @@ function getWebWidgetSettings(){
     var greetingTextFR = "Pour que nous puissions vous aider rapidement, veuillez nous communiquer votre numéro de commande ou de facture."
     var greetingTextIT = "Per potervi aiutare rapidamente, vi preghiamo di comunicarci il vostro numero d'ordine o di fattura."
     var greetingTextEN = "So that we can help you quickly, please let us know your order or invoice number."
-    if (portal == "helpcenter.connect.digitec.ch") {
+    if (portal == "helpcenter.connect.digitec.ch"){
         greetingTextDE = "Damit wir dir rasch helfen können, teile uns bitte deine Mobiltelefonnummer mit."
         greetingTextFR = "Pour que nous puissions vous aider rapidement, veuillez nous communiquer votre numéro de téléphone portable."
         greetingTextIT = "Per potervi aiutare rapidamente, vi preghiamo di comunicarci il vostro numero di cellulare."
@@ -92,7 +92,12 @@ function getWebWidgetSettings(){
 
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
-    return 'Chat ' + getChatDepartmentType()+ ' ' + getChatDepartmentLanguage(); 
+    dep = 'Chat ' + getChatDepartmentType()+ ' ' + getChatDepartmentLanguage(); 
+    if(zE('webWidget:get', 'chat:department', 'dep') != undefined){
+        return dep
+    }else{
+        return 'Chat Private ' + getChatDepartmentLanguage();
+    }
 }
 
 //Gets language and changes to uppercase
@@ -183,7 +188,6 @@ function getDGChatDepartmentType(){
     }
 }
 
-
 //SpecialRoutingForBusinessCustomers Deutsch - Produktberatungen gehen zu den Privatkunden/PE sowie alle Chats nach 17:00
 function getBusinessCustomerDepartmentType(){
     if(isInBusinessOpeningTimes()){
@@ -192,98 +196,14 @@ function getBusinessCustomerDepartmentType(){
         return 'Private';
     }
 }
-
-//Returns true before 16:55
-function isInBusinessChatHours(){
-    var today = new Date();
-    let dayOfWeek = today.getUTCDay();
-    let currentHour = today.getUTCHours() + UTCHourOffset;
-    if((currentHour == (businessClosingHourWeekday-1) && today.getMinutes() >= 55)){
-        return false;
-    }
-    if(currentHour < businessClosingHourWeekday && currentHour >= businessOpeningHourWeekday){
-        return true;
-    }else{
-        return false;
-    }   
-}
-
-//Returns true before 17:55
-function isInPEChatHours(){
-    var today = new Date();
-    let dayOfWeek = today.getUTCDay();
-    let currentHour = today.getUTCHours() + UTCHourOffset;
-    if (today.getUTCDay() < 1 || today.getUTCDay() > 5){
-        return false;
-    }
-    if((currentHour == (chPEClosingHourWeekday-1) && today.getMinutes() >=55)){
-        return false;
-    }
-    if(currentHour < chPEClosingHourWeekday && currentHour > chPEOpeningHourWeekday){
-        return true;
-    } else {
-        return false;
-    }
-}
-
-//Returns true during weekdays from 8AM to 7PM
-
-function isInGeneralChatHours(){
-    var today = new Date();
-    let dayOfWeek = today.getUTCDay();
-    let currentHour = today.getUTCHours() + UTCHourOffset;
-    //opening times CH (without connect as it's not needed)
-    if((portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch') && (today.getUTCHours() < 17 && today.getUTCHours() > 5 && (today.getUTCDay() > 0 || today.getUTCDay() < 6))){
-        return true;
-    }
-    //opening times Ger
-    if((portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at') && ((today.getUTCDay() > 0 && today.getUTCDay() < 6 && today.getUTCHours() > 5 && today.getUTCHours() < 19) || (today.getUTCDay() == 6 && today.getUTCHours() > 6 && today.getUTCHours() < 18))){
-        return true;
-    }
-    return false;
-}
-
-//Returns true or false for holidays
-function isHoliday(){
-    var portalChooser = '';
-    switch(portal){
-        case 'helpcenter.digitec.ch':
-        case 'helpcenter.galaxus.ch':
-        case 'helpcenter.connect.digitec.ch':
-          portalChooser = 'ch'
-          break;
-        case 'helpcenter.galaxus.de':
-        case 'helpcenter.galaxus.at':
-          portalChooser = 'eu'
-          break;
-        default:
-          portalChooser = 'ch'
-          break;
-    }
-    const d = new Date();
-    datestring = String(d.getUTCFullYear()) + '-' + String(d.getUTCMonth() + 1) + '-' + String(d.getUTCDate()) + ' ' + String(d.getUTCHours()) + ':' + String(d.getUTCMinutes()) + ':' + String(d.getUTCSeconds())
-    const utc_timestamp = Date.parse(datestring)
-    var stampslist = hideWaitingTimes[portalChooser]
-    checker = false;
-    stampslist.forEach((stampset) => {
-        if (utc_timestamp > Date.parse(stampset[0]) && utc_timestamp < Date.parse(stampset[1])){
-            checker = true;
-        }
-    })
-    return checker;
-}
-
-
   
 ///////////////////////////////////////////////////////////New Request Page Events/////////////////////////////////////////////////////////////
-
-function updateChatConnectionAfterDropdownChange(){
+function updateChatDepartment(){
     if(!isChatting()){
         var chatDepartment = getChatDepartment();                                                                                 
         checkDepartmentforInitialButtonChange(chatDepartment);                                                                                          
         listenDepartmentStatus(chatDepartment);
         changeWebWidgetSettingsOnChange(); 
-        //TODO: Test with changeButtonVisibility()
     }else{
         showChatButton();
     }
@@ -298,9 +218,7 @@ function checkDepartmentforInitialButtonChange(selectedDepartment){
     }
 }
 
-
-// Hide or Shows Button if Status Changes
- 
+// Hide or Shows Button if Chosen Department Status Changes 
 function listenDepartmentStatus(selectedDepartment){
     zE('webWidget:on', 'chat:departmentStatus', function(department) {
         if(department.name == selectedDepartment){
@@ -311,16 +229,12 @@ function listenDepartmentStatus(selectedDepartment){
 
 // Shows Chat button if anyone is available and inside opening hours
 function changeButtonVisibility(status){
-    //console.log('ENTERING changeButtonVisibility Part 1')
     if(status == 'online'){
-        //console.log('ENTERING changeButtonVisibility Part 2 : online')
         showChatButton();
     }else{
-        //console.log('ENTERING changeButtonVisibility Part 2 : else')
         hideChatButton();
     }
   }
-
 
 //Gibt den Text für den ChatButton im Kontaktforumar zurück offen/geschlossen
 function getButtonText(buttonText){
@@ -346,7 +260,6 @@ function getButtonText(buttonText){
 }
 
 /////////////////////////////////////////////////////////////////Zopim Tags/////////////////////////////////////////////////////////////////////////
-
 //Nach dem Klick auf den Chat Button werden vorhandene Skills entfernt und neue gesetzt
 function checkForTagChanges(){
     removeOldWebformCaseTag();
@@ -400,7 +313,6 @@ function setTagsAndDepartmentAtReconnect(){
 }
 
 //////////////////////////////////////////////////////////Globale Chat Funktionen////////////////////////////////////////////////////////////////
-
 function openWidgetForUnreadMessages(){
     zE('webWidget:on', 'chat:unreadMessages', function(number) {
         openChat();
