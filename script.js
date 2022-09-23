@@ -186,7 +186,6 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
 ///////////////////////////////////////////////////////////////////////Zopim Integration/////////////////////////////////////////////////////////////////
 //Zopim integration Ausgelagert in Chat.js
 try {
-    //setTimeout(() => {waitForChat()}, 5000)
   waitForChat();
 }
 catch (e) {

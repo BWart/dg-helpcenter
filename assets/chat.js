@@ -1,12 +1,12 @@
 // Hauptfunktion, wartet bis chat geladen ist und ruft danach die anderen Funktionen auf
 function waitForChat(){
     window.addEventListener('load', function() {
-        changeWebWidgetSettingInitial();
         openWidgetForUnreadMessages();
         hideWidgetWhenMinimized();
         if(isChatting()){
             openChat();
         }else{
+            changeWebWidgetSettingInitial();
             hideChat();
         }
     })
@@ -89,12 +89,11 @@ function getWebWidgetSettings(){
 }
 
 /////////////////////////////////////////////////////////////Departments///////////////////////////////////////////////////////////////////////////
-
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
     dep = 'Chat ' + getChatDepartmentType()+ ' ' + getChatDepartmentLanguage(); 
-    if(zE('webWidget:get', 'chat:department', 'dep') != undefined){
-        return dep
+    if(typeof getDepartmentInfo(dep) != 'undefined'){
+        return dep;
     }else{
         return 'Chat Private ' + getChatDepartmentLanguage();
     }
@@ -175,6 +174,15 @@ function getDGChatDepartmentType(){
                 break;
             case(requestReasonTag == 'webform_case_product_advice_diy' && isInCHPEOpeningTimes() && lang == 'de'):
                 DGChatDepartmentType = 'PeDiy'
+                break;  
+            case(isPeEnFr(lang)):
+                DGChatDepartmentType = 'Pe';
+                break;
+            case(isYoummdayBasic()):
+                DGChatDepartmentType = 'YoummdayBasic';
+                break;
+            case(isYoummdayAdvanced()):
+                DGChatDepartmentType = 'YoummdayAdvanced';
                 break;
             case(customerType == 'business-customer' && (lang == 'de' || lang == 'fr' || lang =='en')):
                 DGChatDepartmentType = getBusinessCustomerDepartmentType();
@@ -188,6 +196,58 @@ function getDGChatDepartmentType(){
     }
 }
 
+/////////////////////////////////////////////////////////////Special Routing Conditions///////////////////////////////////////////////////////////////////////////
+//Special Routing for PE EN/FR
+function isPeEnFr(lang){
+    if((lang == 'fr' || lang == 'en') && (requestReasonTag == 'webform_case_product_advice_it' || requestReasonTag == 'webform_case_product_advice_network' || requestReasonTag == 'webform_case_product_advice_consumer' || requestReasonTag == 'webform_case_product_advice_photo') && peEnFrisAvailable()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function peEnFrisAvailable(){
+    if(isDepartmentAvailable('Chat Pe '+getChatDepartmentLanguage())){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for YoummdayBasic
+function isYoummdayBasic(){
+    if(lang == 'de'  && (requestReasonTag == 'webform_case_shipping_status' || requestReasonTag == 'webform_case_ready_for_shipment' || requestReasonTag == 'webform_case_order_status') && yoummdayBasicIsAvailable()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function yoummdayBasicIsAvailable(){
+    if(isDepartmentAvailable('Chat YoummdayBasic '+getChatDepartmentLanguage())){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for YoummdayAdvanced
+function isYoummdayAdvanced(){
+    if(lang == 'de'  && (requestReasonTag == 'webform_case_return' || requestReasonTag == 'webform_case_receipt') && yoummdayAdvancedIsAvailable()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function yoummdayAdvancedIsAvailable(){
+    if(isDepartmentAvailable('Chat YoummdayAdvanced '+getChatDepartmentLanguage())){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 //SpecialRoutingForBusinessCustomers Deutsch - Produktberatungen gehen zu den Privatkunden/PE sowie alle Chats nach 17:00
 function getBusinessCustomerDepartmentType(){
     if(isInBusinessOpeningTimes()){
@@ -196,21 +256,38 @@ function getBusinessCustomerDepartmentType(){
         return 'Private';
     }
 }
+
+function isDepartmentAvailable(depName){
+    var dep = getDepartmentInfo(depName)
+    if(typeof dep != 'undefined'){
+        if(dep.status == 'online'){
+            return true;
+        }else{
+            return false;
+        }
+    }else{
+        return false;
+    }
+}
+
+function getDepartmentInfo(departmentName){
+    return zE('webWidget:get', 'chat:department', departmentName)
+}
   
 ///////////////////////////////////////////////////////////New Request Page Events/////////////////////////////////////////////////////////////
 function updateChatDepartment(){
     if(!isChatting()){
-        var chatDepartment = getChatDepartment();                                                                                 
-        checkDepartmentforInitialButtonChange(chatDepartment);                                                                                          
+        var chatDepartment = getChatDepartment();
+        changeWebWidgetSettingsOnChange();                                                                                    
+        checkDepartmentforInitialButtonChange(chatDepartment);                                                                                        
         listenDepartmentStatus(chatDepartment);
-        changeWebWidgetSettingsOnChange(); 
     }else{
         showChatButton();
     }
 }
 
 function checkDepartmentforInitialButtonChange(selectedDepartment){
-    var dep = zE('webWidget:get', 'chat:department', selectedDepartment);
+    var dep = getDepartmentInfo(selectedDepartment);
     if(dep.status == 'online'){
         showChatButton();
     } else {
@@ -223,6 +300,7 @@ function listenDepartmentStatus(selectedDepartment){
     zE('webWidget:on', 'chat:departmentStatus', function(department) {
         if(department.name == selectedDepartment){
             changeButtonVisibility(department.status);
+            updateChatDepartment();
         }
     });
 }
@@ -301,6 +379,13 @@ function removeZopimTags(tags){
 function setEventListernerForChatStart(){
     zE('webWidget:on', 'chat:start', function() {
         setTagsAndDepartmentAtReconnect();
+        setEventListenerForChatEnd();
+    });
+}
+
+function setEventListenerForChatEnd(){
+    zE('webWidget:on', 'chat:end', function() {
+        updateChatDepartment();
     });
 }
 
