@@ -15,7 +15,7 @@ var switchHideChat = false
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-        ['2022-08-31 00:00:00', '2022-08-31 11:10:00', 0]
+        ['2022-08-28 00:00:00', '2022-08-28 11:10:00', 0]
     ],
     'eu' : [
         ['2022-06-15 00:00:00', '2022-06-16 22:00:00', 1]
@@ -67,7 +67,7 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-        ['2022-08-31 09:55:00', '2022-08-31 11:05:00']
+        ['2022-08-28 09:55:00', '2022-08-28 11:05:00']
     ],
     'eu' : [
         ['2022-06-16 00:00:00', '2022-06-16 22:00:00']
