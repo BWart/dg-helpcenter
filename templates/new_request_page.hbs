@@ -378,6 +378,39 @@
   const callBackRGInputField = $('.callback_customer_rg_number_input')
   const callBackMailInputField = $('.callback_customer_mail_input')
 
+  // --- Callback Ring Group levels ---
+  const callbackRingGroupLevels = {
+    "webform_case_shipping_status": "_lv1",
+    "webform_case_ready_for_shipment": "_lv1",
+    "webform_case_order_status": "_lv1",
+    "webform_case_damaged_product": "_lv2",
+    "webform_case_not_working_product": "_lv2",
+    "webform_case_wrong_product": "_lv2",
+    "webform_case_missing_product": "_lv2",
+    "webform_case_cancel_order": "_lv2",
+    "webform_case_other_request_order": "_lv2",
+    "webform_case_return": "_lv2",
+    "webform_case_return_status": "_lv2",
+    "webform_case_creditnote": "_lv2",
+    "webform_case_other_request_returns": "_lv2",
+    "webform_case_refund": "_lv2",
+    "webform_case_receipt": "_lv2",
+    "webform_case_payment_reminder": "_lv2",
+    "webform_case_no_bill": "_lv2",
+    "webform_case_dunning_block": "_lv2",
+    "webform_case_other_request_payment": "_lv2",
+    "webform_case_delete_account": "_lv2",
+    "webform_case_cant_login": "_lv2",
+    "webform_case_other_request_account": "_lv2",
+    "webform_case_product_advice_it": "_lv2",
+    "webform_case_product_advice_network": "_lv2",
+    "webform_case_product_advice_consumer": "_lv2",
+    "webform_case_product_advice_photo": "_lv2",
+    "webform_case_product_advice_home": "_lv2",
+    "webform_case_product_advice_diy": "_lv2",
+    "webform_case_offer": "_lv2"
+  }
+
 
   
   // --- INITIAL SETUP ---
@@ -1446,42 +1479,42 @@
         groupID = "6972193395474"
         brandName = "digitec"
         baseERPLink = "https://erp.digitecgalaxus.ch/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage
+        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage + callbackRingGroupLevels[requestReasonTag]
         break;
       case 'helpcenter.galaxus.ch':
         brandID = "486521"
         groupID = "6972193395474"
         brandName = "galaxus CH"
         baseERPLink = "https://erp.digitecgalaxus.ch/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage
+        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage + callbackRingGroupLevels[requestReasonTag]
         break;
       case 'helpcenter.connect.digitec.ch':
         brandID = "360002520320"
         groupID = "6972193395474"
         brandName = "digitec CONNECT"
         baseERPLink = "https://erp.digitecgalaxus.ch/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage
+        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage + callbackRingGroupLevels[requestReasonTag]
         break;
       case 'helpcenter.galaxus.de':
         brandID = "360000002879"
         groupID = "6972193395474"
         brandName = "galaxus DE"
         baseERPLink = "https://erp.galaxus.eu/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage
+        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage + callbackRingGroupLevels[requestReasonTag]
         break;
       case 'helpcenter.galaxus.at':
         brandID = "360002535479"
         groupID = "6972193395474"
         brandName = "galaxus AT"
         baseERPLink = "https://erp.galaxus.eu/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage
+        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage + callbackRingGroupLevels[requestReasonTag]
         break;
       default:
         brandID = "486521"
         groupID = "6972193395474"
         brandName = "Brand unknown"
         baseERPLink = "https://erp.digitecgalaxus.ch/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage
+        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage + callbackRingGroupLevels[requestReasonTag]
         break;   
     }
     var callbackPerLang = ""
