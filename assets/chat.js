@@ -182,7 +182,7 @@ function getChatDepartmentType(){
             break;
         case('helpcenter.galaxus.de'):
         case('helpcenter.galaxus.at'):
-            chatDepartmentType = 'Ger'
+            chatDepartmentType = 'EU'
             break;
         default:
             chatDepartmentType = 'Private';
