@@ -232,6 +232,7 @@
   let fullLink = window.location.href;
   let customerType = setCustomerType();  //the function also removes offers for private customers in the dropdown selection
   let infoBoxWording = fillInfoBoxWording();
+  let dynamicWording = filldynamicWording();
   let contactFormIsShown = 0; // 0 Shows Infotext and 1 shows OrderNumber Field
   //List of tags to hide OrderNumber Input Field
   const reasonsForNoOrderNumber = ["webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer",
@@ -656,7 +657,7 @@
   // CSS Change für Chat Button Offline
   function hideChatButton(){
     $(".button-chat").addClass("button-offline");
- 	  $(".button-chat").html(getButtonText('chatNotOnline'));
+ 	  $(".button-chat").html(dynamicWording[currentLanguage]['chatNotOnline']);
     $(".recommendedChannel").css('display' , 'none');
     chatWaitTimesDOMElements.hide();
   }
@@ -664,7 +665,7 @@
   // CSS Change für Chat Button Online
   function showChatButton(){
     $(".button-chat").removeClass("button-offline");
-    $(".button-chat").html(getButtonText('chatUs'));
+    $(".button-chat").html(dynamicWording[currentLanguage]['chatUs']);
     $(".recommendedChannel").css('display' , 'inline-block');
     chatWaitTimesDOMElements.show();
   }

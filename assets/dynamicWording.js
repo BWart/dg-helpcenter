@@ -258,7 +258,10 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'callbackSubmintConfirmationTextPt2' : 'Sobald ein Agent verfügbar ist, rufen wir Dich umgehend unter ',
          'callbackSubmintConfirmationTextPt3' : ' an.<br><br>',
         'backToHelpcenter' : 'Zurück zum Helpcenter',
-        'privacynotice' : privacynoticeDE
+        'privacynotice' : privacynoticeDE,
+        'chatGreetingText' : 'Damit wir dir rasch helfen können, teile uns bitte deine Auftrags- oder Rechnungsnummer mit.',
+        'chatOfflineMessage' : 'Wir sind im Moment nicht online',
+        'chatNotOnline' : 'Nicht verfügbar'
     },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -329,7 +332,10 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'ticketSubmintConfirmationTextPt2' : 'Nous vous enverrons une copie de votre demande à ',
         'ticketSubmintConfirmationTextPt3' : '. Si votre demande a été résolue entre-temps, répondez à l\'e-mail avec #closeticket.<br><br>',
         'backToHelpcenter': 'Retour au Helpcenter',
-        'privacynotice' : privacynoticeFR
+        'privacynotice' : privacynoticeFR,
+        'chatGreetingText' : 'Pour que nous puissions vous aider rapidement, veuillez nous communiquer votre numéro de commande ou de facture.',
+        'chatOfflineMessage' : 'Nous ne sommes pas en ligne pour le moment',
+        'chatNotOnline' : 'Non disponible'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -400,7 +406,10 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'ticketSubmintConfirmationTextPt2' : 'Vi invieremo una copia della vostra richiesta a ',
         'ticketSubmintConfirmationTextPt3' : '. Se la tua richiesta è stata risolta nel frattempo, rispondi all\'email con #closeticket.<br><br>',
         'backToHelpcenter': 'Ritorna al Centro assistenza',
-        'privacynotice' : privacynoticeIT
+        'privacynotice' : privacynoticeIT,
+        'chatGreetingText' : 'Per potervi aiutare rapidamente, vi preghiamo di comunicarci il vostro numero d\'ordine o di fattura.',
+        'chatOfflineMessage' : "Non siamo online in questo momento",
+        'chatNotOnline' : 'Non disponibile'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -471,7 +480,10 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'ticketSubmintConfirmationTextPt2' : 'We will send you a copy of your request to ',
         'ticketSubmintConfirmationTextPt3' : '. If your request has been resolved in the meantime, reply to the email with #closeticket.<br><br>',
         'backToHelpcenter': 'Back to the Helpcenter',
-        'privacynotice' : privacynoticeEN
+        'privacynotice' : privacynoticeEN,
+        'chatGreetingText' : 'So that we can help you quickly, please let us know your order or invoice number.',
+        'chatOfflineMessage' : 'We aren\'t online right now',
+        'chatNotOnline' : 'Not available'
         }
     }
 

@@ -16,29 +16,21 @@ function waitForChat(){
 //Initiales Setting des Web Widgets beim Laden der Seite
 function changeWebWidgetSettingInitial(){
     window.zESettings = getWebWidgetSettings(); // Widget Settings Initiales Setup
-    zE('webWidget', 'setLocale', getLanguage()); // Setzt die Widget Sprache   
+    zE('webWidget', 'setLocale', getNormalizedLanguage()); // Setzt die Widget Sprache   
 }
 
 // Updated die Widget Settings - Update Soll nur bei Dropdown Change im Request Form und beim Reconnect passieren. Ansonsten soll die Einstellung nicht überschrieben werden
 function changeWebWidgetSettingsOnChange(){
     zE('webWidget', 'updateSettings', getWebWidgetSettings());
-    zE('webWidget', 'setLocale', getLanguage()); // Setzt die Widget Sprache
+    zE('webWidget', 'setLocale', getNormalizedLanguage()); // Setzt die Widget Sprache
 }
 
 // Definiert die Widget Settings
 function getWebWidgetSettings(){
-    var greetingTextDE = "Damit wir dir rasch helfen können, teile uns bitte deine Auftrags- oder Rechnungsnummer mit."
-    var greetingTextFR = "Pour que nous puissions vous aider rapidement, veuillez nous communiquer votre numéro de commande ou de facture."
-    var greetingTextIT = "Per potervi aiutare rapidamente, vi preghiamo di comunicarci il vostro numero d'ordine o di fattura."
-    var greetingTextEN = "So that we can help you quickly, please let us know your order or invoice number."
-    if (portal == "helpcenter.connect.digitec.ch"){
-        greetingTextDE = "Damit wir dir rasch helfen können, teile uns bitte deine Mobiltelefonnummer mit."
-        greetingTextFR = "Pour que nous puissions vous aider rapidement, veuillez nous communiquer votre numéro de téléphone portable."
-        greetingTextIT = "Per potervi aiutare rapidamente, vi preghiamo di comunicarci il vostro numero di cellulare."
-        greetingTextEN = "So that we can help you quickly, please let us know your cell phone number."
-    }
     var dep = getChatDepartment();
+    dynamicWording = filldynamicWording();
     console.log('Department Set: '+ dep);
+
     var zeSettings = {
         webWidget: {
             chat: {
@@ -48,26 +40,25 @@ function getWebWidgetSettings(){
                     enabled: []
                 },
                 title: {
-                    '*': 'Chat with us',
-                    fr: 'Chattez avec nous',
-                    de: "Chatte mit uns",
-                    it: "Chattata con noi"
+                    '*': dynamicWording['en-US']['chatUs'],
+                    fr: dynamicWording[getLanguage()]['chatUs'],
+                    de: dynamicWording[getLanguage()]['chatUs'],
+                    it: dynamicWording[getLanguage()]['chatUs']
                 },
                 prechatForm: {
                     greeting: {
-                        '*': greetingTextEN,
-                        fr: greetingTextFR,
-                        de: greetingTextDE,
-                        it: greetingTextIT
+                        '*': dynamicWording['en-US']['chatGreetingText'],
+                        fr: dynamicWording[getLanguage()]['chatGreetingText'],
+                        de: dynamicWording[getLanguage()]['chatGreetingText'],
+                        it: dynamicWording[getLanguage()]['chatGreetingText']
                     }
                 },
                 offlineForm: {
                     greeting: {
-                        '*': "We aren't online right now",
-                        fr: "Nous ne sommes pas en ligne pour le moment",
-                        en: "We aren't online right now",
-                        de: "Wir sind im Moment nicht online",
-                        it: "Non siamo online in questo momento"
+                        '*': dynamicWording['en-US']['chatOfflineMessage'],
+                        fr: dynamicWording[getLanguage()]['chatOfflineMessage'],
+                        de: dynamicWording[getLanguage()]['chatOfflineMessage'],
+                        it: dynamicWording[getLanguage()]['chatOfflineMessage']
                     }
                 }
             },
@@ -101,14 +92,14 @@ function getChatDepartment(){
 
 //Gets language and changes to uppercase
 function getChatDepartmentLanguage(){
-    var chatDepartmentLanguage = getLanguage();
+    var chatDepartmentLanguage = getNormalizedLanguage();
     return chatDepartmentLanguage.toUpperCase();
 }
 
 //Normalisiert die HTML Sprache
-function getLanguage(){
+function getNormalizedLanguage(){
     var normalizedLanguage;
-    switch($('html').attr('lang')) {
+    switch(getLanguage()) {
         case ('de'):
             normalizedLanguage = 'de';
             break;
@@ -127,14 +118,17 @@ function getLanguage(){
     return normalizedLanguage;
 }
 
+function getLanguage(){
+    return $('html').attr('lang');
+}
+
+
 //Department Type wird anhand der Domain gesetzt
 function getChatDepartmentType(){
     var href = window.location.hostname;
     var chatDepartmentType;
     switch(href){
         case('helpcenter.digitec.ch'):
-            chatDepartmentType = getDGChatDepartmentType();
-            break;
         case('helpcenter.galaxus.ch'):
             chatDepartmentType = getDGChatDepartmentType();
             break;
@@ -153,29 +147,29 @@ function getChatDepartmentType(){
 
 //Unterteilung zwischen PE, Private & Business
 function getDGChatDepartmentType(){
-    lang = getLanguage();
+    lang = getNormalizedLanguage();
     var DGChatDepartmentType;
     if(typeof customerType != 'undefined' && typeof requestReasonTag != 'undefined'){
         switch(true){
-            case(requestReasonTag == 'webform_case_product_advice_it' && isInCHPEOpeningTimes() && lang == 'de'):
+            case(isPeIt()):
                 DGChatDepartmentType = 'PeIt'
                 break;
-            case(requestReasonTag == 'webform_case_product_advice_network' && isInCHPEOpeningTimes() && lang == 'de'):
+            case(isPeNetwork()):
                 DGChatDepartmentType = 'PeNetwork'
                 break;
-            case(requestReasonTag == 'webform_case_product_advice_consumer' && isInCHPEOpeningTimes() && lang == 'de'):
+            case(isPeConsumer()):
                 DGChatDepartmentType = 'PeConsumer';
                 break;
-            case(requestReasonTag == 'webform_case_product_advice_photo' && isInCHPEOpeningTimes() && lang == 'de'):
+            case(isPePhoto()):
                 DGChatDepartmentType = 'PePhoto'
                 break;
-            case(requestReasonTag == 'webform_case_product_advice_home' && isInCHPEOpeningTimes() && lang == 'de'):
+            case(isPeHome()):
                 DGChatDepartmentType = 'PeHome';
                 break;
-            case(requestReasonTag == 'webform_case_product_advice_diy' && isInCHPEOpeningTimes() && lang == 'de'):
+            case(isPeDiy()):
                 DGChatDepartmentType = 'PeDiy'
                 break;  
-            case(isPeEnFr(lang)):
+            case(isPeEnFr()):
                 DGChatDepartmentType = 'Pe';
                 break;
             case(isYoummdayBasic()):
@@ -184,8 +178,8 @@ function getDGChatDepartmentType(){
             case(isYoummdayAdvanced()):
                 DGChatDepartmentType = 'YoummdayAdvanced';
                 break;
-            case(customerType == 'business-customer' && (lang == 'de' || lang == 'fr' || lang =='en')):
-                DGChatDepartmentType = getBusinessCustomerDepartmentType();
+            case(isBusiness()):
+                DGChatDepartmentType = 'Business';
                 break;
             default:
                 DGChatDepartmentType = 'Private';
@@ -197,17 +191,154 @@ function getDGChatDepartmentType(){
 }
 
 /////////////////////////////////////////////////////////////Special Routing Conditions///////////////////////////////////////////////////////////////////////////
-//Special Routing for PE EN/FR
-function isPeEnFr(lang){
-    if((lang == 'fr' || lang == 'en') && (requestReasonTag == 'webform_case_product_advice_it' || requestReasonTag == 'webform_case_product_advice_network' || requestReasonTag == 'webform_case_product_advice_consumer' || requestReasonTag == 'webform_case_product_advice_photo') && peEnFrisAvailable()){
+//Special Routing for PeIt
+function isPeIt(){
+    if(requestReasonTag == 'webform_case_product_advice_it' && lang == 'de' && isPeItAvailable()){
         return true;
     }else{
         return false;
     }
 }
 
-function peEnFrisAvailable(){
+function isPeItAvailable(){
+    if(isDepartmentAvailable('Chat PeIt '+getChatDepartmentLanguage())){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for PeNetwork
+function isPeNetwork(){
+    if(requestReasonTag == 'webform_case_product_advice_network' && lang == 'de' && isPeNetworkAvailable()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function isPeNetworkAvailable(){
+    if(isDepartmentAvailable('Chat PeNetwork '+getChatDepartmentLanguage())){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for PePhoto
+function isPePhoto(){
+    if(requestReasonTag == 'webform_case_product_advice_photo' && lang == 'de' && isPePhotoAvailable()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function isPePhotoAvailable(){
+    if(isDepartmentAvailable('Chat PePhoto '+getChatDepartmentLanguage())){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for PeConsumer
+function isPeConsumer(){
+    if(requestReasonTag == 'webform_case_product_advice_consumer' && lang == 'de' && isPeConsumerAvailable()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function isPeConsumerAvailable(){
+    if(isDepartmentAvailable('Chat PeConsumer '+getChatDepartmentLanguage())){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for PePhoto
+function isPePhoto(){
+    if(requestReasonTag == 'webform_case_product_advice_photo' && lang == 'de' && isPePhotoAvailable()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function isPePhotoAvailable(){
+    if(isDepartmentAvailable('Chat PePhoto '+getChatDepartmentLanguage())){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for PeHome
+function isPeHome(){
+    if(requestReasonTag == 'webform_case_product_advice_home' && lang == 'de' && isPeHomeAvailable()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function isPeHomeAvailable(){
+    if(isDepartmentAvailable('Chat PeHome '+getChatDepartmentLanguage())){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for PeDiy
+function isPeDiy(){
+    if(requestReasonTag == 'webform_case_product_advice_diy' && lang == 'de' && isPeDiyAvailable()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function isPeDiyAvailable(){
+    if(isDepartmentAvailable('Chat PeDiy '+getChatDepartmentLanguage())){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for PE EN/FR
+function isPeEnFr(){
+    if((lang == 'fr' || lang == 'en') && (requestReasonTag == 'webform_case_product_advice_it' || requestReasonTag == 'webform_case_product_advice_network' || requestReasonTag == 'webform_case_product_advice_consumer' || requestReasonTag == 'webform_case_product_advice_photo') && isPeEnFrAvailable()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function isPeEnFrAvailable(){
     if(isDepartmentAvailable('Chat Pe '+getChatDepartmentLanguage())){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
+//Special Routing for B2B
+function isBusiness(){
+    if(customerType == 'business-customer' && (lang == 'de' || lang == 'fr' || lang =='en') && isBusinessAvailable()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function isBusinessAvailable(){
+    if(isDepartmentAvailable('Chat Business '+getChatDepartmentLanguage())){
         return true;
     }else{
         return false;
@@ -216,14 +347,14 @@ function peEnFrisAvailable(){
 
 //Special Routing for YoummdayBasic
 function isYoummdayBasic(){
-    if(lang == 'de'  && (requestReasonTag == 'webform_case_shipping_status' || requestReasonTag == 'webform_case_ready_for_shipment' || requestReasonTag == 'webform_case_order_status') && yoummdayBasicIsAvailable()){
+    if(lang == 'de'  && (requestReasonTag == 'webform_case_shipping_status' || requestReasonTag == 'webform_case_ready_for_shipment' || requestReasonTag == 'webform_case_order_status') && isYoummdayBasicAvailable()){
         return true;
     }else{
         return false;
     }
 }
 
-function yoummdayBasicIsAvailable(){
+function isYoummdayBasicAvailable(){
     if(isDepartmentAvailable('Chat YoummdayBasic '+getChatDepartmentLanguage())){
         return true;
     }else{
@@ -233,14 +364,14 @@ function yoummdayBasicIsAvailable(){
 
 //Special Routing for YoummdayAdvanced
 function isYoummdayAdvanced(){
-    if(lang == 'de'  && (requestReasonTag == 'webform_case_return' || requestReasonTag == 'webform_case_receipt') && yoummdayAdvancedIsAvailable()){
+    if(lang == 'de'  && (requestReasonTag == 'webform_case_return' || requestReasonTag == 'webform_case_receipt') && isYoummdayAdvancedAvailable()){
         return true;
     }else{
         return false;
     }
 }
 
-function yoummdayAdvancedIsAvailable(){
+function isYoummdayAdvancedAvailable(){
     if(isDepartmentAvailable('Chat YoummdayAdvanced '+getChatDepartmentLanguage())){
         return true;
     }else{
@@ -314,29 +445,6 @@ function changeButtonVisibility(status){
     }
   }
 
-//Gibt den Text für den ChatButton im Kontaktforumar zurück offen/geschlossen
-function getButtonText(buttonText){
-        chatText = {
-          de: {
-                  'chatUs': 'Chatte mit uns',
-                  'chatNotOnline' : 'Nicht verfügbar'
-          },
-          fr: {      
-                  'chatUs': 'Chattez avec nous',
-                  'chatNotOnline' : 'Non disponible'
-          },
-          it:{  
-                  'chatUs': 'Chatta con noi',
-                  'chatNotOnline' : 'Non disponibile'
-          },
-          en: {
-                  'chatUs': 'Chat with us',
-                  'chatNotOnline' : 'Not available'
-        }
-    }
-    return chatText[getLanguage()][buttonText];
-}
-
 /////////////////////////////////////////////////////////////////Zopim Tags/////////////////////////////////////////////////////////////////////////
 //Nach dem Klick auf den Chat Button werden vorhandene Skills entfernt und neue gesetzt
 function checkForTagChanges(){
@@ -352,7 +460,7 @@ function removeOldTags(){
 
 //Fügt die neuen Tags für Skill, WebformCase und Sprache hinzu.
 function addNewZopimTags(){
-    var languageTag = getLanguage();
+    var languageTag = getNormalizedLanguage();
     setZopimTags([languageTag, requestReasonTag]); // Alle neuen Tags werden gesetzt
 }
 
