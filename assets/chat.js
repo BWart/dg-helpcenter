@@ -82,11 +82,56 @@ function getWebWidgetSettings(){
 /////////////////////////////////////////////////////////////Departments///////////////////////////////////////////////////////////////////////////
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
-    dep = 'Chat ' + getChatDepartmentType()+ ' ' + getChatDepartmentLanguage(); 
+    var dep = 'Chat ' + getChatDepartmentType + ' ' + getChatDepartmentLanguage(); 
+
+    if(dep.includes('Private')){
+        try {
+            dep = getDepartmentWithOverflowCheck(dep);
+          } catch (e) {
+            console.error(e);
+            if(gaSend){
+                ga('send', 'event', 'Errors', 'ChatOverflow', String(e));
+              }
+          }
+    }
+    
     if(typeof getDepartmentInfo(dep) != 'undefined'){
         return dep;
     }else{
         return 'Chat Private ' + getChatDepartmentLanguage();
+    }
+}
+
+function getDepartmentWithOverflowCheck(selectedDepartment){
+    overflowDepartmentArray = checkForOverflow()
+    var departmenWaitingTime = getDepartmentWaitingTime();
+    if(isDepartmentAvailable(selectedDepartment) && departmenWaitingTime > secondsToChatFallback && isOverflowDepartmentTresholdReached(departmenWaitingTime, overflowDepartmentArray[0][1])){
+        return 'Chat Private ' + overflowDepartmentArray[0][0];
+    }else{
+        return selectedDepartment;
+    }
+}
+
+function getDepartmentWaitingTime(){
+    switch(getChatDepartmentLanguage()){
+        case 'DE':
+            return chatWaitTimes['privateDE'];
+        case 'EN':
+            return chatWaitTimes['privateEN'];
+        case 'IT':
+            return chatWaitTimes['privateIT'];
+        case 'FR':
+            return chatWaitTimes['privateFR'];
+        default:
+            return 0;
+    }
+}
+
+function isOverflowDepartmentTresholdReached(selectedDepartmentWaitingTime, overflowDepartmentWaitingTime){
+    if(selectedDepartmentWaitingTime > (overflowDepartmentWaitingTime /100 * percentageForChatFallback)){
+        return true;
+    }else{
+        return false;
     }
 }
 
@@ -191,6 +236,64 @@ function getDGChatDepartmentType(){
 }
 
 /////////////////////////////////////////////////////////////Special Routing Conditions///////////////////////////////////////////////////////////////////////////
+//Special Overflow Routing for big Workload
+function checkForOverflow(){
+    if(isOverflowActive(getChatDepartmentLanguage())){
+        return getOverflowDepartmentLanguage();
+    }else{
+        return getChatDepartmentLanguage();
+    }
+}
+
+function isOverflowActive(chatDepartmentLanguage){
+    switch(chatDepartmentLanguage){
+        case 'DE':
+            return chatDeHasFallback;
+        case 'EN':
+            return chatEnHasFallback;
+        case 'IT':
+            return chatItHasFallback;
+        case 'FR':
+            return chatFrHasFallback;
+        default:
+            return false;
+    }
+}
+
+function getOverflowDepartmentLanguage(){
+    var overflowDepartments = [];
+    if(chatDeIsFallback && isDepartmentAvailable('Chat Private DE') && getChatDepartmentLanguage() != 'DE'){
+        overflowDepartments.push(['DE', chatWaitTimes['privateDE']])
+    }
+    if(chatFrIsFallback && isDepartmentAvailable('Chat Private FR') && getChatDepartmentLanguage() != 'FR'){
+        overflowDepartments.push(['FR', chatWaitTimes['privateFR']])
+    }
+    if(chatEnIsFallback && isDepartmentAvailable('Chat Private EN') && getChatDepartmentLanguage() != 'EN'){
+        overflowDepartments.push(['EN', chatWaitTimes['privateEN']])
+    }
+    if(chatItIsFallback && isDepartmentAvailable('Chat Private IT') && getChatDepartmentLanguage() != 'IT'){
+        overflowDepartments.push(['IT', chatWaitTimes['privateIT']])
+    }
+    return getOverflowDepartment(overflowDepartments);
+}
+
+function getOverflowDepartment(overflowDepartments){
+    if(overflowDepartments.length > 0){
+        return overflowDepartments.sort(sortArray)[0];
+    }else{
+        return getChatDepartmentLanguage();
+    }
+}
+
+function sortArray(a, b){
+    if (a[1] === b[1]) {
+        return 0;
+    }
+    else {
+        return (a[1] < b[1]) ? -1 : 1;
+    }
+}
+
 //Special Routing for PeIt
 function isPeIt(){
     if(requestReasonTag == 'webform_case_product_advice_it' && lang == 'de' && isPeItAvailable()){
@@ -376,15 +479,6 @@ function isYoummdayAdvancedAvailable(){
         return true;
     }else{
         return false;
-    }
-}
-
-//SpecialRoutingForBusinessCustomers Deutsch - Produktberatungen gehen zu den Privatkunden/PE sowie alle Chats nach 17:00
-function getBusinessCustomerDepartmentType(){
-    if(isInBusinessOpeningTimes()){
-        return 'Business';
-    }else{
-        return 'Private';
     }
 }
 

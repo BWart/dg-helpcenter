@@ -120,14 +120,14 @@ var showHolidays = {
         ['2022-06-01 14:00:00', '2022-06-01 22:00:00', 0]
     ],
     'eu' : [
-        ['2022-08-26 15:00:00', '2022-08-27 22:00:00', 1]
+        ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 0]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-        'de' : '<br>Pfingstmontag: 06.06. geschlossen',
+        'de' : '<br>Tag der Deutschen Einheit: 03.10.2022 geschlossen',
         'fr' : "<br>Lundi de Pentecôte : 06.06. fermé",
         'it' : '<br>Lunedì di Pentecoste: 06.06. chiuso',
         'en-US' : '<br>Whit Monday: 06.06. closed',
@@ -148,7 +148,7 @@ var hideWaitingTimes = {
         ['2022-06-06 00:00:00', '2022-06-06 22:00:00']
     ],
     'eu' : [
-        ['2022-08-27 14:00:00', '2022-08-27 22:00:00']
+        ['2022-10-02 15:00:00', '2022-10-03 22:00:00']
     ]
 }
 
@@ -183,3 +183,22 @@ var chPEClosingHourWeekday = 17;
 var chPEClosingMinuteWeekday = 30;
 var chPEOpeningHourSaturday = false;
 var chPEClosingHourSaturday = false;
+
+////////////////////////////////////////////////////////////////////////////////////////Chat Fallback///////////////////////////////////////////////////////////////////////////////////////
+//Defines if the Language is used as Fallback 
+var chatEnIsFallback = false;
+var chatDeIsFallback = false;
+var chatItIsFallback = false;
+var chatFrIsFallback = false;
+
+//Defines if the Language has a Fallback
+var chatEnHasFallback = false;
+var chatDeHasFallback = false;
+var chatItHasFallback = false;
+var chatFrHasFallback = false;
+
+//Amount of Seconds for Fallback to trigger
+var secondsToChatFallback = 300;
+//Percentage of Waiting Time difference between the two languages
+var percentageForChatFallback = 400;
+

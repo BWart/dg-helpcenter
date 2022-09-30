@@ -1390,8 +1390,7 @@
       console.log(e); 
       hideChatButton();
       if(gaSend){
-        //TODO: TRACKING
-        //ga('send', 'event', 'Errors', 'ChatLoad', String(e));
+        ga('send', 'event', 'Errors', 'ChatLoadAfterDropdown', String(e));
       }
     } 
   });

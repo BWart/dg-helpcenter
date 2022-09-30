@@ -190,6 +190,9 @@ try {
 }
 catch (e) {
   console.log(e);
+  if(gaSend){
+    ga('send', 'event', 'Errors', 'ChatInitialLoad', String(e));
+  }
 }
 
 });
