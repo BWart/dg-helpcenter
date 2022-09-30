@@ -253,7 +253,28 @@
   const languagesForLongerMailWaitTime = ["de"]
 
   //reasons for callback to be shown
-  const reasonsForCallback = ["webform_case_shipping_status", "webform_case_ready_for_shipment", "webform_case_order_status", "webform_case_damaged_product", "webform_case_not_working_product", "webform_case_wrong_product", "webform_case_missing_product", "webform_case_cancel_order", "webform_case_other_request_order", "webform_case_return", "webform_case_return_status", "webform_case_creditnote", "webform_case_other_request_returns", "webform_case_refund", "webform_case_receipt", "webform_case_payment_reminder", "webform_case_no_bill", "webform_case_dunning_block", "webform_case_other_request_payment", "webform_case_delete_account", "webform_case_cant_login", "webform_case_other_request_account"]
+  const reasonsForCallback = ["webform_case_shipping_status",
+    "webform_case_ready_for_shipment",
+    "webform_case_order_status",
+    "webform_case_damaged_product",
+    "webform_case_not_working_product",
+    "webform_case_wrong_product",
+    "webform_case_missing_product",
+    "webform_case_cancel_order",
+    "webform_case_other_request_order",
+    "webform_case_return",
+    "webform_case_return_status",
+    "webform_case_creditnote",
+    "webform_case_other_request_returns",
+    "webform_case_refund",
+    "webform_case_receipt",
+    "webform_case_payment_reminder",
+    "webform_case_no_bill",
+    "webform_case_dunning_block",
+    "webform_case_other_request_payment",
+    "webform_case_delete_account",
+    "webform_case_cant_login",
+    "webform_case_other_request_account"]
 
   const requestReasonTopCategory = {
     "webform_case_shipping_status": "where_is_my_order",
@@ -354,25 +375,24 @@
   callbackForm.hide()
   
   if (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch'){
-    if (localStorage.getItem("callbackGroup3") === null){
-      if (Math.random() < 0.5){
-        localStorage.setItem("callbackGroup3", "true");
+    if (localStorage.getItem("callbackGroup4") === null){
+      if (Math.random() <= 1){
+        localStorage.setItem("callbackGroup4", "true");
       }
       else {
-        localStorage.setItem("callbackGroup3", "false");
+        localStorage.setItem("callbackGroup4", "false");
       }
     }
-  }
-  else {
-    localStorage.setItem("callbackGroup3", "false");
+  } else {
+    localStorage.setItem("callbackGroup4", "false");
   }
   /*if (portal == 'helpcenter.galaxus.ch' && customerType == "private-customer"){
-    localStorage.setItem("callbackGroup3", true);
+    localStorage.setItem("callbackGroup4", true);
   }
   else {
-    localStorage.setItem("callbackGroup3", true);
+    localStorage.setItem("callbackGroup4", true);
   }*/
-  console.log(localStorage.getItem("callbackGroup3"));
+  console.log(localStorage.getItem("callbackGroup4"));
   const callBackPhoneInputField = $('.callback_customer_phone_number_input')
   const callBackOrderInputField = $('.callback_customer_order_number_input')
   const callBackRGInputField = $('.callback_customer_rg_number_input')
@@ -506,9 +526,9 @@
     }
 
     //-- CALLBACK ALTERNATIVE PHONE NUMBERS --
-        //if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup3") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+        //if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
 
-    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup3") == "false" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "false" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       var extraPrivateNumber = "undefined";
       var extraPrivateNumberText = "undefined";
       var dynamicWordingTemp = filldynamicWording();
@@ -1594,7 +1614,7 @@
 
 
   function callbackCheck(){
-    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup3") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       console.log("callbackcheck true")
       return true;
     }
