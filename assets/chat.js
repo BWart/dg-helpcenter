@@ -1,42 +1,43 @@
 // Hauptfunktion, wartet bis chat geladen ist und ruft danach die anderen Funktionen auf
 function waitForChat(){
     window.addEventListener('load', function() {
-        openWidgetForUnreadMessages();
-        hideWidgetWhenMinimized();
-        if(isChatting()){
-            openChat();
-        }else{
-            changeWebWidgetSettingInitial();
-            hideChat();
-        }
+        zE('webWidget:on', 'chat:connected', function() {
+            openWidgetForUnreadMessages();
+            hideWidgetWhenMinimized();
+            if(isChatting()){
+                openChat();
+            }else{
+                changeWebWidgetSettingInitial(getChatDepartment());
+                hideChat();
+            }
+        });
     })
 }
 
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
 //Initiales Setting des Web Widgets beim Laden der Seite
-function changeWebWidgetSettingInitial(){
-    window.zESettings = getWebWidgetSettings(); // Widget Settings Initiales Setup
+function changeWebWidgetSettingInitial(department){
+    window.zESettings = getWebWidgetSettings(department); // Widget Settings Initiales Setup
     zE('webWidget', 'setLocale', getNormalizedLanguage()); // Setzt die Widget Sprache   
 }
 
 // Updated die Widget Settings - Update Soll nur bei Dropdown Change im Request Form und beim Reconnect passieren. Ansonsten soll die Einstellung nicht überschrieben werden
-function changeWebWidgetSettingsOnChange(){
-    zE('webWidget', 'updateSettings', getWebWidgetSettings());
+function changeWebWidgetSettingsOnChange(department){
+    zE('webWidget', 'updateSettings', getWebWidgetSettings(department));
     zE('webWidget', 'setLocale', getNormalizedLanguage()); // Setzt die Widget Sprache
 }
 
 // Definiert die Widget Settings
-function getWebWidgetSettings(){
-    var dep = getChatDepartment();
+function getWebWidgetSettings(department){
     dynamicWording = filldynamicWording();
-    console.log('Department Set: '+ dep);
+    console.log('Department Set: '+ department);
 
     var zeSettings = {
         webWidget: {
             chat: {
                 suppress: false,
                 departments: {
-                    select: dep,
+                    select: department,
                     enabled: []
                 },
                 title: {
@@ -82,7 +83,7 @@ function getWebWidgetSettings(){
 /////////////////////////////////////////////////////////////Departments///////////////////////////////////////////////////////////////////////////
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
-    var dep = 'Chat ' + getChatDepartmentType + ' ' + getChatDepartmentLanguage(); 
+    var dep = 'Chat ' + getChatDepartmentType() + ' ' + getChatDepartmentLanguage(); 
 
     if(dep.includes('Private')){
         try {
@@ -166,7 +167,6 @@ function getNormalizedLanguage(){
 function getLanguage(){
     return $('html').attr('lang');
 }
-
 
 //Department Type wird anhand der Domain gesetzt
 function getChatDepartmentType(){
@@ -503,7 +503,7 @@ function getDepartmentInfo(departmentName){
 function updateChatDepartment(){
     if(!isChatting()){
         var chatDepartment = getChatDepartment();
-        changeWebWidgetSettingsOnChange();                                                                                    
+        changeWebWidgetSettingsOnChange(chatDepartment);                                                                                    
         checkDepartmentforInitialButtonChange(chatDepartment);                                                                                        
         listenDepartmentStatus(chatDepartment);
     }else{
