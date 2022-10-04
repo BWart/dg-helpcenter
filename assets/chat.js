@@ -512,10 +512,9 @@ function updateChatDepartment(){
 }
 
 function checkDepartmentforInitialButtonChange(selectedDepartment){
-    var dep = getDepartmentInfo(selectedDepartment);
-    if(dep.status == 'online'){
+    if(isDepartmentAvailable(selectedDepartment)){
         showChatButton();
-    } else {
+    }else{
         hideChatButton();
     }
 }
