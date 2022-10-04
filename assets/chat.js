@@ -1,4 +1,4 @@
-// Hauptfunktion, wartet bis chat geladen ist und ruft danach die anderen Funktionen auf
+// Waits until Page loaded and then calls basic Setup
 function waitForChat(){
     window.addEventListener('load', function() {
         zE('webWidget:on', 'chat:connected', function() {
@@ -15,7 +15,7 @@ function waitForChat(){
 }
 
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
-//Initiales Setting des Web Widgets beim Laden der Seite
+//Initial WebWebidget Settings
 function changeWebWidgetSettingInitial(department){
     window.zESettings = getWebWidgetSettings(department); // Widget Settings Initiales Setup
     zE('webWidget', 'setLocale', getNormalizedLanguage()); // Setzt die Widget Sprache   
@@ -104,7 +104,7 @@ function getChatDepartment(){
 }
 
 function getDepartmentWithOverflowCheck(selectedDepartment){
-    overflowDepartmentArray = checkForOverflow()
+    overflowDepartmentArray = checkForOverflow();
     var departmenWaitingTime = getDepartmentWaitingTime();
     if(isDepartmentAvailable(selectedDepartment) && departmenWaitingTime > secondsToChatFallback && isOverflowDepartmentTresholdReached(departmenWaitingTime, overflowDepartmentArray[0][1])){
         return 'Chat Private ' + overflowDepartmentArray[0][0];
@@ -182,7 +182,7 @@ function getChatDepartmentType(){
             break;
         case('helpcenter.galaxus.de'):
         case('helpcenter.galaxus.at'):
-            chatDepartmentType = 'EU'
+            chatDepartmentType = 'EU';
             break;
         default:
             chatDepartmentType = 'Private';
@@ -197,22 +197,22 @@ function getDGChatDepartmentType(){
     if(typeof customerType != 'undefined' && typeof requestReasonTag != 'undefined'){
         switch(true){
             case(isPeIt()):
-                DGChatDepartmentType = 'PeIt'
+                DGChatDepartmentType = 'PeIt';
                 break;
             case(isPeNetwork()):
-                DGChatDepartmentType = 'PeNetwork'
+                DGChatDepartmentType = 'PeNetwork';
                 break;
             case(isPeConsumer()):
                 DGChatDepartmentType = 'PeConsumer';
                 break;
             case(isPePhoto()):
-                DGChatDepartmentType = 'PePhoto'
+                DGChatDepartmentType = 'PePhoto';
                 break;
             case(isPeHome()):
                 DGChatDepartmentType = 'PeHome';
                 break;
             case(isPeDiy()):
-                DGChatDepartmentType = 'PeDiy'
+                DGChatDepartmentType = 'PeDiy';
                 break;  
             case(isPeEnFr()):
                 DGChatDepartmentType = 'Pe';
@@ -263,16 +263,16 @@ function isOverflowActive(chatDepartmentLanguage){
 function getOverflowDepartmentLanguage(){
     var overflowDepartments = [];
     if(chatDeIsFallback && isDepartmentAvailable('Chat Private DE') && getChatDepartmentLanguage() != 'DE'){
-        overflowDepartments.push(['DE', chatWaitTimes['privateDE']])
+        overflowDepartments.push(['DE', chatWaitTimes['privateDE']]);
     }
     if(chatFrIsFallback && isDepartmentAvailable('Chat Private FR') && getChatDepartmentLanguage() != 'FR'){
-        overflowDepartments.push(['FR', chatWaitTimes['privateFR']])
+        overflowDepartments.push(['FR', chatWaitTimes['privateFR']]);
     }
     if(chatEnIsFallback && isDepartmentAvailable('Chat Private EN') && getChatDepartmentLanguage() != 'EN'){
-        overflowDepartments.push(['EN', chatWaitTimes['privateEN']])
+        overflowDepartments.push(['EN', chatWaitTimes['privateEN']]);
     }
     if(chatItIsFallback && isDepartmentAvailable('Chat Private IT') && getChatDepartmentLanguage() != 'IT'){
-        overflowDepartments.push(['IT', chatWaitTimes['privateIT']])
+        overflowDepartments.push(['IT', chatWaitTimes['privateIT']]);
     }
     return getOverflowDepartment(overflowDepartments);
 }
@@ -286,7 +286,7 @@ function getOverflowDepartment(overflowDepartments){
 }
 
 function sortArray(a, b){
-    if (a[1] === b[1]) {
+    if (a[1] === b[1]){
         return 0;
     }
     else {
@@ -512,10 +512,9 @@ function updateChatDepartment(){
 }
 
 function checkDepartmentforInitialButtonChange(selectedDepartment){
-    var dep = getDepartmentInfo(selectedDepartment);
-    if(dep.status == 'online'){
+    if(isDepartmentAvailable(selectedDepartment)){
         showChatButton();
-    } else {
+    }else{
         hideChatButton();
     }
 }
@@ -577,7 +576,7 @@ function removeZopimTags(tags){
     zE('webWidget', 'chat:removeTags', tags);  
 }
 
-// Gibt Callback, wenn der Chat gestartet wird und ruft den Event Listener für den Chat Recconect auf
+// Callback for Start and Adds Event Listeners
 function setEventListernerForChatStart(){
     zE('webWidget:on', 'chat:start', function() {
         setTagsAndDepartmentAtReconnect();
@@ -591,7 +590,7 @@ function setEventListenerForChatEnd(){
     });
 }
 
-//Setzt  Tags und Department, wenn der Chat neu verbunden wird
+//Set tags when Chat Reconnects
 function setTagsAndDepartmentAtReconnect(){
     zE('webWidget:on', 'chat:connected', function() {
         checkForTagChanges();
@@ -599,7 +598,7 @@ function setTagsAndDepartmentAtReconnect(){
     });
 }
 
-//////////////////////////////////////////////////////////Globale Chat Funktionen////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////Globale Chat Functions////////////////////////////////////////////////////////////////
 function openWidgetForUnreadMessages(){
     zE('webWidget:on', 'chat:unreadMessages', function(number) {
         openChat();
