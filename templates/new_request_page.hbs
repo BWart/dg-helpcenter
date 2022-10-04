@@ -212,6 +212,14 @@
                   <!--<label><i data-wording-key="callbackMailHint"></i></label>-->
                 </div>
                 <div class="form-field">
+                  <label data-wording-key="callbackRecordingLabel" class="callback_customer_record_label_ch"></label>
+                  <table border="0px solid" class="callback_customer_record_label_eu">
+                    <tr>
+                      <td width="20px" style="vertical-align:top" ><input type="checkbox" id="callbackRecording" name="callbackRecording" class="callback_customer_record_checker" checked></td><td style="vertical-align:top"><label data-wording-key="callbackRecordingLabelEU"></label></td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="form-field">
                   <label data-wording-key="callbackAgentHint"></label>
                   <label class="callbackFormErrorText" style="color:red"></label>
                   <button type="button" class="button-large callbackSubmitButton" data-wording-key="demandCallback"></button>
@@ -359,6 +367,13 @@
 
 
   //--- CALLBACK SETTING UP A/B AND FURTHER VARIABLES
+  $('.callback_customer_record_label_ch').hide();
+  $('.callback_customer_record_label_eu').hide();
+  if(portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.digitec.ch'){
+    $('.callback_customer_record_label_ch').show();
+  } else {
+    $('.callback_customer_record_label_eu').show();
+  }
   $('.callback-number-offline').hide();
   $('.callback-number-offline-mobile').hide();
   let callBackTokenChecker = false;
@@ -398,6 +413,7 @@
   const callBackOrderInputField = $('.callback_customer_order_number_input')
   const callBackRGInputField = $('.callback_customer_rg_number_input')
   const callBackMailInputField = $('.callback_customer_mail_input')
+  const callBackRecordChecker = $('.callback_customer_record_checker')
 
   // --- Callback Ring Group levels ---
   const callbackRingGroupLevels = {
@@ -702,13 +718,13 @@
     document.body.appendChild(script2);
   }
 
-  function addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber){
+  function addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker){
     $('.callbackScript').remove();
     var script2 = document.createElement('script');
     script2.classList.add('callbackScript');
     script2.src = 'https://www.hardread.ch/testing/callback.js';
     script2.onload = function() {
-      callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber);
+      callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker);
     }
     script2.onerror = function() {
         callBackTokenChecker = false;
@@ -1445,6 +1461,10 @@
     let enteredOrderNumber = callBackOrderInputField.val()
     let enteredRGNumber = callBackRGInputField.val()
     let enteredMail = callBackMailInputField.val()
+    let enteredRecordChecker = "no"
+    if (callBackRecordChecker.is(':checked')){
+      enteredRecordChecker = "yes"
+    }
     let validationChecker = true;
     if (enteredPhoneNumber.length != 12 && enteredPhoneNumber.length != 13) {
       $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
@@ -1471,12 +1491,12 @@
       $('.callbackFormErrorText').html('')
       sessionStorage.setItem("callbackReturn", "true")
       sessionStorage.setItem("callbackCustomerPhone", enteredPhoneNumber)
-      addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber);
+      addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker);
     }
   })
 
 
-  function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber){
+  function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker){
     var brandID = ""
     var groupID = ""
     var brandName = ""
@@ -1573,7 +1593,7 @@
         "customer_phone": enteredPhoneNumber,
         "customer_mail": enteredMail,
         "customer_name": custName,
-        "record": "yes",
+        "record": enteredRecordChecker,
         "rg_motive": compiledSubject,
         "customer_language": currentLanguage,
         "ticket_body": ticketBody,
