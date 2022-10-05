@@ -85,15 +85,15 @@ function getWebWidgetSettings(department){
 function getChatDepartment(){
     var dep = 'Chat ' + getChatDepartmentType() + ' ' + getChatDepartmentLanguage(); 
 
-    if(dep.includes('Private')){
+    if(dep.includes('Private') && typeof chatWaitTimes != 'undefined'){        
         try {
             dep = getDepartmentWithOverflowCheck(dep);
-          } catch (e) {
+        }catch (e) {
             console.error(e);
             if(gaSend){
                 ga('send', 'event', 'Errors', 'ChatOverflow', String(e));
-              }
-          }
+            }
+        }
     }
     
     if(typeof getDepartmentInfo(dep) != 'undefined'){
@@ -106,6 +106,7 @@ function getChatDepartment(){
 function getDepartmentWithOverflowCheck(selectedDepartment){
     overflowDepartmentArray = checkForOverflow();
     var departmenWaitingTime = getDepartmentWaitingTime();
+        
     if(isDepartmentAvailable(selectedDepartment) && departmenWaitingTime > secondsToChatFallback && isOverflowDepartmentTresholdReached(departmenWaitingTime, overflowDepartmentArray[0][1])){
         return 'Chat Private ' + overflowDepartmentArray[0][0];
     }else{
