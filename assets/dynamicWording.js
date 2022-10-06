@@ -387,7 +387,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'noAnswerFound' : 'Non hai trovato la risposta giusta?',
         'writeUs' : 'Scrivici',
         'recommendedChannel' : 'Canale consigliato',
-        'searchBoxText' : 'Come possiamo aiutarla?',
+        'searchBoxText' : 'Come possiamo aiutarti?',
         'infoNoteText' : '<br>A causa dell\'attuale situazione meteorologica e stradale, si prevedono ritardi nella consegna dei pacchi da parte della Posta Svizzera. Grazie per la vostra comprensione<br>&nbsp;',
         'contactFormInfoText' : 'Tramite telefono, chat o modulo di contatto – seleziona il tuo gruppo di clienti e il motivo della tua richiesta.',
         'headerTitle' : 'Contattaci',
