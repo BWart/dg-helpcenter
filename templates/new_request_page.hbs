@@ -1548,6 +1548,7 @@
     var baseERPLink = ""
     var ringGroup = ""
     var customerTypeShorthand = ""
+    var brandTag = " brand-"
     if (customerType == "private-customer") {
       customerTypeShorthand = "c"
     } else if (customerType == "business-customer") {
@@ -1565,6 +1566,12 @@
         brandName = "digitec"
         baseERPLink = "https://erp.digitecgalaxus.ch/"
         ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage + callbackRingGroupLevels[requestReasonTag]
+        brandTag += "digitec-"
+        if (customerType == "private-customer"){
+          brandTag += "private"
+        } else {
+          brandTag += "business"
+        }
         break;
       case 'helpcenter.galaxus.ch':
         brandID = "486521"
@@ -1572,6 +1579,12 @@
         brandName = "galaxus CH"
         baseERPLink = "https://erp.digitecgalaxus.ch/"
         ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
+        brandTag += "galaxus-"
+        if (customerType == "private-customer"){
+          brandTag += "private"
+        } else {
+          brandTag += "business"
+        }
         break;
       case 'helpcenter.connect.digitec.ch':
         brandID = "360002520320"
@@ -1579,6 +1592,7 @@
         brandName = "digitec CONNECT"
         baseERPLink = "https://erp.digitecgalaxus.ch/"
         ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
+        brandTag = ""
         break;
       case 'helpcenter.galaxus.de':
         brandID = "360000002879"
@@ -1586,6 +1600,7 @@
         brandName = "galaxus DE"
         baseERPLink = "https://erp.galaxus.eu/"
         ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
+        brandTag = ""
         break;
       case 'helpcenter.galaxus.at':
         brandID = "360002535479"
@@ -1593,6 +1608,7 @@
         brandName = "galaxus AT"
         baseERPLink = "https://erp.galaxus.eu/"
         ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
+        brandTag = ""
         break;
       default:
         brandID = "486521"
@@ -1600,6 +1616,12 @@
         brandName = "Brand unknown"
         baseERPLink = "https://erp.digitecgalaxus.ch/"
         ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
+        brandTag += "digitec-"
+        if (customerType == "private-customer"){
+          brandTag += "private"
+        } else {
+          brandTag += "business"
+        }
         break;   
     }
     var callbackPerLang = ""
@@ -1630,7 +1652,7 @@
       invoiceLink = "None"
     }
     var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\nOrder: " + orderLink + " \nInvoice: " + invoiceLink + "\nRequest Reason: " + compiledSubject + " \n -- \ninteraction_id: "
-    var ticketTags = "callback_request " + requestReasonTag + " talkdesk_interaction_"
+    var ticketTags = "callback_request " + requestReasonTag + brandTag + " talkdesk_interaction_"
     var baseOrderLink = baseERPLink + "Order/"
     var baseRGLink = baseERPLink + "Invoice/"
     var custName = enteredMail.split("@")[0].replace(".", " ")
