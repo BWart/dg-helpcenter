@@ -317,6 +317,51 @@
     "webform_case_offer": "offer"
   }
 
+  const requestReasonTopCategoryPlaintext = {
+    "where_is_my_order": {
+      "de": "Wo ist meine Bestellung?",
+      "fr": "Où est ma commande ?",
+      "it": "Dove si trova il mio ordine?",
+      "en-US": "Where is my order?"
+    },
+    "problems_with_an_order": {
+      "de": "Probleme mit einer Bestellung",
+      "fr": "Problème avec la commande",
+      "it": "Problemi con un ordine",
+      "en-US": "Problems with an order"
+    },
+    "return": {
+      "de": "Rückgabe",
+      "fr": "Retour",
+      "it": "Resi",
+      "en-US": "Returns"
+    },
+    "payment_reminder_and_refund": {
+      "de": "Zahlung, Mahnung und Rückerstattung",
+      "fr": "Paiement, rappel et remboursement",
+      "it": "Pagamento, sollecito e rimborso",
+      "en-US": "Payment, reminder and refund"
+    },
+    "customer_account": {
+      "de": "Kundenkonto",
+      "fr": "Compte client",
+      "it": "Conto cliente",
+      "en-US": "Customer account"
+    },
+    "product_information": {
+      "de": "Produktberatung",
+      "fr": "Conseil produits",
+      "it": "Consulenza prodotti",
+      "en-US": "Product information"
+    },
+    "offer": {
+      "de": "Offerte",
+      "fr": "Offre",
+      "it": "Offerta",
+      "en-US": "Offer"
+    }
+  }
+
   // DOM elements and their contents
   const fullMailform = $('.requestform');
   const introText = $('.contactFormInfoTextClass');
@@ -421,31 +466,31 @@
     "webform_case_ready_for_shipment": "_lv1",
     "webform_case_order_status": "_lv1",
     "webform_case_damaged_product": "_lv2",
-    "webform_case_not_working_product": "_lv2",
+    "webform_case_not_working_product": "_lv4",
     "webform_case_wrong_product": "_lv2",
     "webform_case_missing_product": "_lv2",
     "webform_case_cancel_order": "_lv2",
-    "webform_case_other_request_order": "_lv2",
-    "webform_case_return": "_lv2",
-    "webform_case_return_status": "_lv2",
-    "webform_case_creditnote": "_lv2",
-    "webform_case_other_request_returns": "_lv2",
-    "webform_case_refund": "_lv2",
+    "webform_case_other_request_order": "_lv4",
+    "webform_case_return": "_lv3",
+    "webform_case_return_status": "_lv3",
+    "webform_case_creditnote": "_lv4",
+    "webform_case_other_request_returns": "_lv4",
+    "webform_case_refund": "_lv4",
     "webform_case_receipt": "_lv2",
-    "webform_case_payment_reminder": "_lv2",
-    "webform_case_no_bill": "_lv2",
-    "webform_case_dunning_block": "_lv2",
-    "webform_case_other_request_payment": "_lv2",
-    "webform_case_delete_account": "_lv2",
-    "webform_case_cant_login": "_lv2",
-    "webform_case_other_request_account": "_lv2",
-    "webform_case_product_advice_it": "_lv2",
-    "webform_case_product_advice_network": "_lv2",
-    "webform_case_product_advice_consumer": "_lv2",
-    "webform_case_product_advice_photo": "_lv2",
-    "webform_case_product_advice_home": "_lv2",
-    "webform_case_product_advice_diy": "_lv2",
-    "webform_case_offer": "_lv2"
+    "webform_case_payment_reminder": "_lv4",
+    "webform_case_no_bill": "_lv4",
+    "webform_case_dunning_block": "_lv4",
+    "webform_case_other_request_payment": "_lv4",
+    "webform_case_delete_account": "_lv4",
+    "webform_case_cant_login": "_lv4",
+    "webform_case_other_request_account": "_lv4",
+    "webform_case_product_advice_it": "_lv4",
+    "webform_case_product_advice_network": "_lv4",
+    "webform_case_product_advice_consumer": "_lv4",
+    "webform_case_product_advice_photo": "_lv4",
+    "webform_case_product_advice_home": "_lv4",
+    "webform_case_product_advice_diy": "_lv4",
+    "webform_case_offer": "_lv4"
   }
 
 
@@ -795,16 +840,16 @@
               setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'], callWaitTimes['callbackDE'])
               break;
             case 'fr':
-              setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR'], callWaitTimes['privateCHFR'])
+              setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR'], callWaitTimes['callbackFR'])
               break;
             case 'it':
-              setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT'], callWaitTimes['privateCHIT'])
+              setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT'], callWaitTimes['callbackIT'])
               break;
             case 'en-US':
-              setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN'], callWaitTimes['privateCHEN'])
+              setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN'], callWaitTimes['callbackEN'])
               break;
             default:
-              setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'], callWaitTimes['privateCHDE'])
+              setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'], callWaitTimes['callbackDE'])
               break;
         }
         if (isInCHPEOpeningTimes() && requestReasonTag.includes('webform_case_product_advice_') && currentLanguage == 'de'){
@@ -1526,35 +1571,35 @@
         groupID = "6972193395474"
         brandName = "galaxus CH"
         baseERPLink = "https://erp.digitecgalaxus.ch/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage + callbackRingGroupLevels[requestReasonTag]
+        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
         break;
       case 'helpcenter.connect.digitec.ch':
         brandID = "360002520320"
         groupID = "6972193395474"
         brandName = "digitec CONNECT"
         baseERPLink = "https://erp.digitecgalaxus.ch/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage + callbackRingGroupLevels[requestReasonTag]
+        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
         break;
       case 'helpcenter.galaxus.de':
         brandID = "360000002879"
         groupID = "6972193395474"
         brandName = "galaxus DE"
         baseERPLink = "https://erp.galaxus.eu/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage + callbackRingGroupLevels[requestReasonTag]
+        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
         break;
       case 'helpcenter.galaxus.at':
         brandID = "360002535479"
         groupID = "6972193395474"
         brandName = "galaxus AT"
         baseERPLink = "https://erp.galaxus.eu/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage + callbackRingGroupLevels[requestReasonTag]
+        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
         break;
       default:
         brandID = "486521"
         groupID = "6972193395474"
         brandName = "Brand unknown"
         baseERPLink = "https://erp.digitecgalaxus.ch/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage + callbackRingGroupLevels[requestReasonTag]
+        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
         break;   
     }
     var callbackPerLang = ""
@@ -1574,7 +1619,7 @@
     }
     var compiledSubject = callbackPerLang + ": " + $(requestReasonDropdownNesty).text()
     if (requestReasonTag.includes("_other_request_")){
-      compiledSubject = callbackPerLang + ": " + requestReasonTopCategory[requestReasonTag] + "; " + $(requestReasonDropdownNesty).text()
+      compiledSubject = callbackPerLang + ": " + requestReasonTopCategoryPlaintext[requestReasonTopCategory[requestReasonTag]][currentLanguage] + "; " + $(requestReasonDropdownNesty).text()
     }
     var orderLink = baseERPLink + "Order/" + enteredOrderNumber;
     var invoiceLink = baseERPLink + "Invoice/" + enteredRGNumber;
