@@ -4,13 +4,13 @@ var UTCHourOffset = 2;
 
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
-var switchHideContactFormDuringOpeningTimes = true;
+var switchHideContactFormDuringOpeningTimes = false;
 var switchHideContactFormOutsideOpeningTimes = false;
 var switchHideContactFormForPEDuringOpeningTimes = true;
 var switchHideContactFormForPEOutsideOpeningTimes = true;
 var switchHideContactFormForBusinessDuringOpeningTimes = false;
 var switchHideContactFormForBusinessOutsideOpeningTimes = false;
-var switchHideContactFormForEUDuringOpeningTimes = true;
+var switchHideContactFormForEUDuringOpeningTimes = false;
 var switchHideContactFormForEUOutsideOpeningTimes = false;
 //set to true if the phone number should be hidden, set to false if it should be displayed
 var switchHidePhoneDuringOpeningTimes = false;
