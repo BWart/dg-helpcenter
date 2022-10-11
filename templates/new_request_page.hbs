@@ -1038,7 +1038,7 @@
     switch (portal){
       case 'helpcenter.digitec.ch':
       case 'helpcenter.galaxus.ch':
-        if (requestReasonTag.includes('webform_case_product_advice_') /*&& customerType == 'private-customer'*/){
+        if (requestReasonTag.includes('webform_case_product_advice_') && customerType == 'private-customer'){
           isOpen = isInCHPEOpeningTimes();
           isPE = true;
           isCH = true;
@@ -1701,7 +1701,7 @@
 
 
   function callbackCheck(){
-    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+    if (/*currentLanguage == 'de' && */reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       console.log("callbackcheck true")
       return true;
     }
