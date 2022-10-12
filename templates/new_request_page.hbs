@@ -1503,6 +1503,7 @@
     var dynamicWording2 = filldynamicWording();
     let enteredPhoneNumber = "+41" + String(callBackPhoneInputField.val())
     let enteredPhoneNumberShort = String(callBackPhoneInputField.val())
+    let enteredPhoneNumberShortNoLeadingZero = enteredPhoneNumberShort
     let enteredOrderNumber = callBackOrderInputField.val()
     let enteredRGNumber = callBackRGInputField.val()
     let enteredMail = callBackMailInputField.val()
@@ -1511,7 +1512,10 @@
       enteredRecordChecker = "yes"
     }
     let validationChecker = true;
-    if (enteredPhoneNumber.length != 12 && enteredPhoneNumber.length != 13) {
+    if (enteredPhoneNumberShort.substring(0,1) == "0"){
+      enteredPhoneNumberShortNoLeadingZero = enteredPhoneNumberShort.substring(1, enteredPhoneNumberShort.length)
+    }
+    if (enteredPhoneNumberShortNoLeadingZero.length != 9) {
       $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
       validationChecker = false;
       callbackButtonClicked = false;
