@@ -1565,7 +1565,7 @@
         groupID = "6972193395474"
         brandName = "digitec"
         baseERPLink = "https://erp.digitecgalaxus.ch/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage + callbackRingGroupLevels[requestReasonTag]
+        ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
         brandTag += "digitec-"
         if (customerType == "private-customer"){
           brandTag += "private"
