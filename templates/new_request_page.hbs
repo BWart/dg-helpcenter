@@ -1549,6 +1549,7 @@
     var ringGroup = ""
     var customerTypeShorthand = ""
     var brandTag = " brand-"
+    var customerLocale = ""
     if (customerType == "private-customer") {
       customerTypeShorthand = "c"
     } else if (customerType == "business-customer") {
@@ -1624,6 +1625,20 @@
         }
         break;   
     }
+    switch (currentLanguage){
+      case 'de':
+        customerLocale = "8"
+        break;
+      case 'fr':
+        customerLocale = "16"
+        break;
+      case 'it':
+        customerLocale = "22"
+        break;
+      default:
+        customerLocale = "1"
+        break;
+    } 
     var callbackPerLang = ""
     switch (currentLanguage){
       case 'de':
@@ -1660,6 +1675,7 @@
         "customer_phone": enteredPhoneNumber,
         "customer_mail": enteredMail,
         "customer_name": custName,
+        "customer_locale": customerLocale,
         "record": enteredRecordChecker,
         "rg_motive": compiledSubject,
         "customer_language": currentLanguage,
