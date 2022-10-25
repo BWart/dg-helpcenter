@@ -192,8 +192,14 @@
               {{request_form}}
               <form class="callbackRequestForm" id="callbackRequestForm" action="">
                 <div class="form-field string optional request">
+                  <table>
+                    <tr><td><input type="radio" class="radioCH" id="radioCH" name="radioCH" checked/></td><td><label>&nbsp;&nbsp;Schweiz</label></td></tr>
+                    <tr><td><input type="radio" class="radioLI" id="radioLI" name="radioCH"/></td><td><label>&nbsp;&nbsp;Liechtenstein</label></td></tr>
+                  </table>
+                </div>
+                <div class="form-field string optional request">
                   <label data-wording-key="callbackPhoneNumber"></label>
-                  <table><tr><td>+41&nbsp;&nbsp;</td><td><input type="number" min="0" name="callback_customer_phone_number" class="callback_customer_phone_number_input"/></td></tr></table>
+                  <table><tr><td class="callbackVorwahl">+41&nbsp;&nbsp;</td><td><input type="number" min="0" name="callback_customer_phone_number" class="callback_customer_phone_number_input"/></td></tr></table>
                   <label class="callbackPhoneErrorLabel"><font color="red" class="callbackPhoneErrorText"></font></label>
                   <label><i data-wording-key="callbackPhoneNumberHint"></i></label>
                 </div>
@@ -283,7 +289,8 @@
     "webform_case_other_request_payment",
     "webform_case_delete_account",
     "webform_case_cant_login",
-    "webform_case_other_request_account"]
+    "webform_case_other_request_account",
+    "webform_case_offer"]
 
   const requestReasonTopCategory = {
     "webform_case_shipping_status": "where_is_my_order",
@@ -484,14 +491,16 @@
     "webform_case_delete_account": "_lv4",
     "webform_case_cant_login": "_lv4",
     "webform_case_other_request_account": "_lv4",
-    "webform_case_product_advice_it": "_lv4",
-    "webform_case_product_advice_network": "_lv4",
-    "webform_case_product_advice_consumer": "_lv4",
-    "webform_case_product_advice_photo": "_lv4",
-    "webform_case_product_advice_home": "_lv4",
-    "webform_case_product_advice_diy": "_lv4",
+    "webform_case_product_advice_it": "_lvpe",
+    "webform_case_product_advice_network": "_lvpe",
+    "webform_case_product_advice_consumer": "_lvpe",
+    "webform_case_product_advice_photo": "_lvpe",
+    "webform_case_product_advice_home": "_lvpe",
+    "webform_case_product_advice_diy": "_lvpe",
     "webform_case_offer": "_lv4"
   }
+
+  let callbackCountry = "CH"
 
 
   
@@ -1502,6 +1511,9 @@
     sendGARequestOpeningHours('Callback Commit clicked');
     var dynamicWording2 = filldynamicWording();
     let enteredPhoneNumber = "+41" + String(callBackPhoneInputField.val())
+    if (callbackCountry == "LI"){
+      enteredPhoneNumber = "+423" + String(callBackPhoneInputField.val())
+    }
     let enteredPhoneNumberShort = String(callBackPhoneInputField.val())
     let enteredPhoneNumberShortNoLeadingZero = enteredPhoneNumberShort
     let enteredOrderNumber = callBackOrderInputField.val()
@@ -1542,6 +1554,15 @@
       sessionStorage.setItem("callbackCustomerPhone", enteredPhoneNumber)
       addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker);
     }
+  })
+
+  $('.radioCH').on("change", function(){
+    $('.callbackVorwahl').html("+41&nbsp;&nbsp;") 
+    callbackCountry = "CH"
+  })
+  $('.radioLI').on("change", function(){
+    $('.callbackVorwahl').html("+423&nbsp;&nbsp;") 
+    callbackCountry = "LI"
   })
 
 
@@ -1721,14 +1742,17 @@
 
 
   function callbackCheck(){
-    if (/*currentLanguage == 'de' && */reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
-      console.log("callbackcheck true")
+    //CallbackCheck Private CH
+    if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+      console.log("callbackcheck private true")
       return true;
     }
-    else {
-      console.log("callbackcheck false")
-      return false;
+    //CallbackCheck Business CH
+    if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "true" && customerType == "business-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+      console.log("callbackcheck business true")
+      return true;
     }
+    console.log("callbackcheck false")
   }
 
 
