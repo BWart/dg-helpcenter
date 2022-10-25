@@ -263,7 +263,9 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'privacynotice' : privacynoticeDE,
         'chatGreetingText' : 'Damit wir dir rasch helfen können, teile uns bitte deine Auftrags- oder Rechnungsnummer mit.',
         'chatOfflineMessage' : 'Wir sind im Moment nicht online',
-        'chatNotOnline' : 'Nicht verfügbar'
+        'chatNotOnline' : 'Nicht verfügbar',
+        'countryCH' : '&nbsp;&nbsp;Schweiz', // benötigt immer Leading &nbsp;&nbsp;
+        'countryLI' : '&nbsp;&nbsp;Liechtenstein' // benötigt immer Leading &nbsp;&nbsp;
     },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -343,7 +345,9 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'privacynotice' : privacynoticeFR,
         'chatGreetingText' : 'Pour que nous puissions vous aider rapidement, veuillez nous communiquer votre numéro de commande ou de facture.',
         'chatOfflineMessage' : 'Nous ne sommes pas en ligne pour le moment',
-        'chatNotOnline' : 'Non disponible'
+        'chatNotOnline' : 'Non disponible',
+        'countryCH' : '&nbsp;&nbsp;Suisse', // benötigt immer Leading &nbsp;&nbsp;
+        'countryLI' : '&nbsp;&nbsp;Liechtenstein' // benötigt immer Leading &nbsp;&nbsp;
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -423,7 +427,9 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'privacynotice' : privacynoticeIT,
         'chatGreetingText' : 'Per potervi aiutare rapidamente, vi preghiamo di comunicarci il vostro numero d\'ordine o di fattura.',
         'chatOfflineMessage' : "Non siamo online in questo momento",
-        'chatNotOnline' : 'Non disponibile'
+        'chatNotOnline' : 'Non disponibile',
+        'countryCH' : '&nbsp;&nbsp;Svizzera', // benötigt immer Leading &nbsp;&nbsp;
+        'countryLI' : '&nbsp;&nbsp;Liechtenstein' // benötigt immer Leading &nbsp;&nbsp;
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -503,7 +509,9 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'privacynotice' : privacynoticeEN,
         'chatGreetingText' : 'So that we can help you quickly, please let us know your order or invoice number.',
         'chatOfflineMessage' : 'We aren\'t online right now',
-        'chatNotOnline' : 'Not available'
+        'chatNotOnline' : 'Not available',
+        'countryCH' : '&nbsp;&nbsp;Switzerland', // benötigt immer Leading &nbsp;&nbsp;
+        'countryLI' : '&nbsp;&nbsp;Liechtenstein' // benötigt immer Leading &nbsp;&nbsp;
         }
     }
 
