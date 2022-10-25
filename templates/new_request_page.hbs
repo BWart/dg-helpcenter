@@ -878,19 +878,19 @@
       else if (isInBusinessOpeningTimes() && customerType == 'business-customer') {
         switch (currentLanguage) {
             case 'de':
-              setWaitTime(chatWaitTimes['businessDE'], callWaitTimes['businessCHDE'], 0)
+              setWaitTime(chatWaitTimes['businessDE'], callWaitTimes['businessCHDE'], callWaitTimes['callback2bDE'])
               break;
             case 'fr':
-              setWaitTime(chatWaitTimes['businessFR'], callWaitTimes['businessCHFR'], 0)
+              setWaitTime(chatWaitTimes['businessFR'], callWaitTimes['businessCHFR'], callWaitTimes['callback2bFR'])
               break;
             case 'it':
-              setWaitTime(chatWaitTimes['businessIT'], callWaitTimes['businessCHIT'], 0)
+              setWaitTime(chatWaitTimes['businessIT'], callWaitTimes['businessCHIT'], callWaitTimes['callback2bIT'])
               break;
             case 'en-US':
-              setWaitTime(chatWaitTimes['businessEN'], callWaitTimes['businessCHEN'], 0)
+              setWaitTime(chatWaitTimes['businessEN'], callWaitTimes['businessCHEN'], callWaitTimes['callback2bEN'])
               break;
             default:
-              setWaitTime(chatWaitTimes['businessDE'], callWaitTimes['businessCHDE'], 0)
+              setWaitTime(chatWaitTimes['businessDE'], callWaitTimes['businessCHDE'], callWaitTimes['callback2bDE'])
               break;
         }
       }
