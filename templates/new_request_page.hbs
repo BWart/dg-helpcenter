@@ -1332,6 +1332,10 @@
     const d = new Date();
     let dayOfWeek = d.getUTCDay();
     let currentHour = d.getUTCHours() + UTCHourOffset;
+    let currentMinutes = d.getUTCMinutes();
+    if ((dayOfWeek >= 1 && dayOfWeek <=5 && currentHour == 12) || (dayOfWeek >= 1 && dayOfWeek <=5 && currentHour == 11 && currentMinutes >= 55)){
+      return false;
+    }
     if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= businessOpeningHourWeekday && currentHour < businessClosingHourWeekday){
       return true;
     }
@@ -1578,7 +1582,11 @@
     if (customerType == "private-customer") {
       customerTypeShorthand = "c"
     } else if (customerType == "business-customer") {
-      customerTypeShorthand = "b"
+      if (isInBusinessOpeningTimes()){
+        customerTypeShorthand = "b"
+      } else {
+        customerTypeShorthand = "c"
+      }
     } else {
       customerTypeShorthand = "connect"
     }
@@ -1718,7 +1726,8 @@
     }
     var dataToPass2 = JSON.stringify(dataToPass)
     let auth = "Bearer " + wertmarke
-    $.ajax({
+    console.log(ringGroup)
+    /*$.ajax({
       type: "POST",
       url: "https://api.talkdeskapp.com/flows/3731b2ebb4c5492f868cbe2f1e3e3601/interactions",
       headers: {"content-type" : "application/json",
