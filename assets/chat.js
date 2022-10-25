@@ -224,6 +224,9 @@ function getDGChatDepartmentType(){
             case(isYoummdayAdvanced()):
                 DGChatDepartmentType = 'YoummdayAdvanced';
                 break;
+            case(isYoummdayExpert()):
+                DGChatDepartmentType = 'YoummdayExpert';
+                break;
             case(isBusiness()):
                 DGChatDepartmentType = 'Business';
                 break;
@@ -477,6 +480,23 @@ function isYoummdayAdvanced(){
 
 function isYoummdayAdvancedAvailable(){
     if(isDepartmentAvailable('Chat YoummdayAdvanced '+getChatDepartmentLanguage())){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for YoummdayExpert
+function isYoummdayExpert(){
+    if(lang == 'de'  && (requestReasonTag == 'webform_case_damaged_product' || requestReasonTag == 'webform_case_wrong_product' || requestReasonTag == 'webform_case_missing_product') && isYoummdayExpertAvailable()){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function isYoummdayExpertAvailable(){
+    if(isDepartmentAvailable('Chat YoummdayExpert '+getChatDepartmentLanguage())){
         return true;
     }else{
         return false;
