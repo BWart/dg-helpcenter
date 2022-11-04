@@ -1808,12 +1808,12 @@
     //CallbackCheck Private CH
     if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       //console.log("callbackcheck private true")
-      return false;
+      return true;
     }
     //CallbackCheck Business CH
     if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "true" && customerType == "business-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       //console.log("callbackcheck business true")
-      return false;
+      return true;
     }
     //console.log("callbackcheck false")
     return false;
