@@ -80,7 +80,7 @@
                 <tr>
                   <td width="33%" style="padding-right:20px;padding-top:15px"><div id="mailIconCellContent"><img src="{{asset 'mailIcon.png'}}" height="20px"></div><div id="row1cell1inserter"></div></td>
                   <td width="33%" style="padding-right:10px;padding-left:10px;padding-top:15px"><div id="phoneIconCellContent"><img src="{{asset 'phoneIcon.png'}}" height="20px"></div><div id="row1cell2inserter"></div></td>
-                  <td width="33%" style="padding-left:20px;padding-top:15px"><div id="chatIconCellContent"><img src="{{asset 'chatIcon.png'}}" height="20px">&nbsp;&nbsp;<div class="recommendedChannel" data-wording-key="recommendedChannel" style=""></div></div><div id="row1cell3inserter"></div></td>
+                  <td width="33%" style="padding-left:20px;padding-top:15px"><div id="chatIconCellContent"><img src="{{asset 'chatIcon.png'}}" height="20px">&nbsp;&nbsp;<div class="recommendedChannel" data-wording-key="recommendedChannel" style="display:none"></div></div><div id="row1cell3inserter"></div></td>
                 </tr>
                 <tr>
                   <td style="padding-right:20px"><div id="mailTitleCellContent"><b data-wording-key="email"></b></div><div id="row2cell1inserter"></div></td>
@@ -192,7 +192,7 @@
               {{request_form}}
               <form class="callbackRequestForm" id="callbackRequestForm" action="">
                 <div class="form-field string optional request">
-                  <table>
+                  <table class="chPreCodeTable">
                     <tr><td><input type="radio" class="radioCH" id="radioCH" name="radioCH" checked/></td><td><label data-wording-key="countryCH"></label></td></tr>
                     <tr><td><input type="radio" class="radioLI" id="radioLI" name="radioCH"/></td><td><label data-wording-key="countryLI"></label></td></tr>
                   </table>
@@ -466,6 +466,22 @@
   const callBackRGInputField = $('.callback_customer_rg_number_input')
   const callBackMailInputField = $('.callback_customer_mail_input')
   const callBackRecordChecker = $('.callback_customer_record_checker')
+  const chPreCodeTable = $('.chPreCodeTable')
+  const callbackPrecode = $('.callbackVorwahl')
+  let callbackCountry = "CH"
+  switch (portal) {
+    case 'helpcenter.galaxus.de':
+      callbackCountry = "DE"
+      callbackPrecode.html("+49&nbsp;&nbsp;")
+      break;
+    case 'helpcenter.galaxus.at':
+      callbackCountry = "AT"
+      callbackPrecode.html("+43&nbsp;&nbsp;")
+      break;
+    default:
+      callbackCountry = "CH"
+      callbackPrecode.html("+41&nbsp;&nbsp;")
+  }
 
   // --- Callback Ring Group levels ---
   const callbackRingGroupLevels = {
@@ -499,8 +515,6 @@
     "webform_case_product_advice_diy": "_lvpe",
     "webform_case_offer": "_lv4"
   }
-
-  let callbackCountry = "CH"
 
 
   
@@ -541,6 +555,9 @@
     waitTimes.hide()
     backButton.hide();
     contactInfos.hide();
+    if (portal != 'helpcenter.digitec.ch' && portal != 'helpcenter.galaxus.ch' && portal != 'helpcenter.connect.digitec.ch'){
+      chPreCodeTable.hide()
+    }
     //adjust the order of the form elements
     customerTypeDropdown.insertBefore(document.getElementById('inserter'));
     //adjust additional elements if it is a customer form
@@ -1517,6 +1534,10 @@
     let enteredPhoneNumber = "+41" + String(callBackPhoneInputField.val())
     if (callbackCountry == "LI"){
       enteredPhoneNumber = "+423" + String(callBackPhoneInputField.val())
+    } else if (callbackCountry == "DE"){
+      enteredPhoneNumber = "+49" + String(callBackPhoneInputField.val())
+    } else if (callbackCountry == "AT"){
+      enteredPhoneNumber = "+43" + String(callBackPhoneInputField.val())
     }
     let enteredPhoneNumberShort = String(callBackPhoneInputField.val())
     let enteredPhoneNumberShortNoLeadingZero = enteredPhoneNumberShort
@@ -1531,17 +1552,49 @@
     if (enteredPhoneNumberShort.substring(0,1) == "0"){
       enteredPhoneNumberShortNoLeadingZero = enteredPhoneNumberShort.substring(1, enteredPhoneNumberShort.length)
     }
-    if (enteredPhoneNumberShortNoLeadingZero.length != 9) {
-      $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
-      validationChecker = false;
-      callbackButtonClicked = false;
-    } else if (enteredPhoneNumberShort.substring(0,4) == '0800' || enteredPhoneNumberShort.substring(0,4) == '0900' || enteredPhoneNumberShort.substring(0,4) == '0901' || enteredPhoneNumberShort.substring(0,4) == '0906' || enteredPhoneNumberShort.substring(0,3) == '084' || enteredPhoneNumberShort.substring(0,3) == '800' || enteredPhoneNumberShort.substring(0,3) == '900' || enteredPhoneNumberShort.substring(0,3) == '901' || enteredPhoneNumberShort.substring(0,3) == '906' || enteredPhoneNumberShort.substring(0,2) == '84'){
-      $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError2'])
-      validationChecker = false;
-      callbackButtonClicked = false;
-    } else {
-      $('.callbackPhoneErrorText').html('')
+    // Phone number checks for CH
+    if (callbackCountry == "CH" || callbackCountry == "LI"){
+      if (enteredPhoneNumberShortNoLeadingZero.length != 9) {
+        $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
+        validationChecker = false;
+        callbackButtonClicked = false;
+      } else if (enteredPhoneNumberShort.substring(0,4) == '0800' || enteredPhoneNumberShort.substring(0,4) == '0900' || enteredPhoneNumberShort.substring(0,4) == '0901' || enteredPhoneNumberShort.substring(0,4) == '0906' || enteredPhoneNumberShort.substring(0,3) == '084' || enteredPhoneNumberShort.substring(0,3) == '800' || enteredPhoneNumberShort.substring(0,3) == '900' || enteredPhoneNumberShort.substring(0,3) == '901' || enteredPhoneNumberShort.substring(0,3) == '906' || enteredPhoneNumberShort.substring(0,2) == '84'){
+        $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError2'])
+        validationChecker = false;
+        callbackButtonClicked = false;
+      } else {
+        $('.callbackPhoneErrorText').html('')
+      }
     }
+    // Phone number checks for DE
+    if (callbackCountry == "DE"){
+      if (enteredPhoneNumberShortNoLeadingZero.length > 12 || enteredPhoneNumberShortNoLeadingZero.length < 10) {
+        $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
+        validationChecker = false;
+        callbackButtonClicked = false;
+      } else if (enteredPhoneNumberShort.substring(0,4) == '0800' || enteredPhoneNumberShort.substring(0,4) == '0900' || enteredPhoneNumberShort.substring(0,4) == '0700' || enteredPhoneNumberShort.substring(0,3) == '800' || enteredPhoneNumberShort.substring(0,3) == '900' || enteredPhoneNumberShort.substring(0,3) == '700'){
+        $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError2'])
+        validationChecker = false;
+        callbackButtonClicked = false;
+      } else {
+        $('.callbackPhoneErrorText').html('')
+      }
+    }
+    // Phone number checks for AT
+    if (callbackCountry == "AT"){
+      if (enteredPhoneNumberShortNoLeadingZero.length > 12 || enteredPhoneNumberShortNoLeadingZero.length < 10) {
+        $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
+        validationChecker = false;
+        callbackButtonClicked = false;
+      } else if (enteredPhoneNumberShort.substring(0,4) == '0800' || enteredPhoneNumberShort.substring(0,4) == '0900' || enteredPhoneNumberShort.substring(0,4) == '0700' || enteredPhoneNumberShort.substring(0,3) == '800' || enteredPhoneNumberShort.substring(0,3) == '900' || enteredPhoneNumberShort.substring(0,3) == '700'){
+        $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError2'])
+        validationChecker = false;
+        callbackButtonClicked = false;
+      } else {
+        $('.callbackPhoneErrorText').html('')
+      }
+    }
+    // Mail address checks
     if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(enteredMail))){
       $('.callbackMailErrorText').html(dynamicWording2[currentLanguage]['callbackEmailError'])
       validationChecker = false;
@@ -1561,11 +1614,11 @@
   })
 
   $('.radioCH').on("change", function(){
-    $('.callbackVorwahl').html("+41&nbsp;&nbsp;") 
+    callbackPrecode.html("+41&nbsp;&nbsp;") 
     callbackCountry = "CH"
   })
   $('.radioLI').on("change", function(){
-    $('.callbackVorwahl').html("+423&nbsp;&nbsp;") 
+    callbackPrecode.html("+423&nbsp;&nbsp;") 
     callbackCountry = "LI"
   })
 
@@ -1727,7 +1780,7 @@
     var dataToPass2 = JSON.stringify(dataToPass)
     let auth = "Bearer " + wertmarke
     console.log(ringGroup)
-    /*$.ajax({
+    $.ajax({
       type: "POST",
       url: "https://api.talkdeskapp.com/flows/3731b2ebb4c5492f868cbe2f1e3e3601/interactions",
       headers: {"content-type" : "application/json",

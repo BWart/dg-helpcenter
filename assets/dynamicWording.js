@@ -35,6 +35,15 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
     var telPrivatkundeText = "";
     var telFirmenkundeText = "";
 
+    var callbackPhoneError1DE = "";
+    var callbackPhoneError2DE = "";
+    var callbackPhoneError1FR = "";
+    var callbackPhoneError2FR = "";
+    var callbackPhoneError1IT = "";
+    var callbackPhoneError2IT = "";
+    var callbackPhoneError1EN = "";
+    var callbackPhoneError2EN = "";
+
     switch(portal){
         case 'helpcenter.digitec.ch':
                 //Öffnungszeiten
@@ -63,6 +72,15 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                     telPrivatkundeText = extraPrivateNumberText;
                 }
 
+                callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Schweizer Telefonnummern werden akzeptiert.';
+                callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone suisses sont acceptés.';
+                callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono svizzeri.';
+                callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1EN = 'Please enter a valid phone number. Only Swiss phone numbers are accepted.';
+                callbackPhoneError2EN = 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906';
+
                 break;
         case 'helpcenter.galaxus.ch':
                 //Öffnungszeiten
@@ -90,6 +108,15 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                     telPrivatkundeText = extraPrivateNumberText;
                 }
 
+                callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Schweizer Telefonnummern werden akzeptiert.';
+                callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone suisses sont acceptés.';
+                callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono svizzeri.';
+                callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1EN = 'Please enter a valid phone number. Only Swiss phone numbers are accepted.';
+                callbackPhoneError2EN = 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906';
+
                 break;
         case 'helpcenter.galaxus.de':
                 //Öffnungszeiten
@@ -112,6 +139,16 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 telPrivatkundeText = "+49 (0)40 334 614 747";
                 telFirmenkunde = "+4940334614748";
                 telFirmenkundeText = "+49 (0)40 334 614 748";
+
+                callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Deutsche Telefonnummern werden akzeptiert.';
+                callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)700, (0)800, (0)900';
+                callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone allemands sont acceptés.';
+                callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)700, (0)800, (0)900';
+                callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono tedeschi.';
+                callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)700, (0)800, (0)900';
+                callbackPhoneError1EN = 'Please enter a valid phone number. Only German phone numbers are accepted.';
+                callbackPhoneError2EN = 'The following area codes are not accepted: (0)700, (0)800, (0)900';
+
                 break;
         case 'helpcenter.galaxus.at':
                 //Öffnungszeiten
@@ -134,6 +171,16 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 telPrivatkundeText = "+43 800 017 837";
                 telFirmenkunde = "+43800017837";
                 telFirmenkundeText = "+43 800 017 837";
+
+                callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Österreichische Telefonnummern werden akzeptiert.';
+                callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)700, (0)800, (0)900';
+                callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone autrichiens sont acceptés.';
+                callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)700, (0)800, (0)900';
+                callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono austriaci.';
+                callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)700, (0)800, (0)900';
+                callbackPhoneError1EN = 'Please enter a valid phone number. Only Austrian phone numbers are accepted.';
+                callbackPhoneError2EN = 'The following area codes are not accepted: (0)700, (0)800, (0)900';
+
                 break;
         case 'helpcenter.connect.digitec.ch':
                 //Öffnungszeiten
@@ -155,7 +202,17 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 telPrivatkunde = "+41445759700";
                 telPrivatkundeText = "+41 44 575 97 00";
                 telFirmenkunde = "+41445759700";
-                telFirmenkundeText = "+41 44 575 97 00";    
+                telFirmenkundeText = "+41 44 575 97 00"; 
+                
+                callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Schweizer Telefonnummern werden akzeptiert.';
+                callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone suisses sont acceptés.';
+                callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono svizzeri.';
+                callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1EN = 'Please enter a valid phone number. Only Swiss phone numbers are accepted.';
+                callbackPhoneError2EN = 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906';
+
                 break;
         default:
                 //Öffnungszeiten
@@ -167,7 +224,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                uhrzeitPrivatkunde = "08:00 - 19:00";
+                uhrzeitPrivatkunde = "08:00 - 17:30";
                 uhrzeitPrivatkunde2 = "";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
@@ -177,7 +234,17 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 telPrivatkunde = "+41445759800";
                 telPrivatkundeText = "+41 44 575 98 00";
                 telFirmenkunde = "+41445759900";
-                telFirmenkundeText = "+41 44 575 99 00";                
+                telFirmenkundeText = "+41 44 575 99 00";   
+                
+                callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Schweizer Telefonnummern werden akzeptiert.';
+                callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone suisses sont acceptés.';
+                callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono svizzeri.';
+                callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1EN = 'Please enter a valid phone number. Only Swiss phone numbers are accepted.';
+                callbackPhoneError2EN = 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906';
+
                 break;
     }
 
@@ -222,8 +289,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'callbackRecordingLabel' : 'Dein Gespräch wird zur Qualitätssicherung und zu Schulungszwecken aufgezeichnet',
         'callbackRecordingLabelEU' : 'Mein Gespräch darf zur Qualitätssicherung und zu Schulungszwecken aufgezeichnet werden',
         'callbackEmailError' : 'Bitte gib eine gültige E-Mail Adresse ein',
-        'callbackPhoneError' : 'Bitte gib eine gültige Telefonnummer ein. Nur Schweizer Telefonnummern werden akzeptiert.',
-        'callbackPhoneError2' : 'Folgende Vorwahlen werden nicht akzeptiert: (0)800, (0)84, (0)900, (0)901, (0)906',
+        'callbackPhoneError' : callbackPhoneError1DE,
+        'callbackPhoneError2' : callbackPhoneError2DE,
         'callbackFormError' : 'Bitte überprüfe Deine Eingaben<br>',
         'callbackAPIError' : 'Deine Anfrage konnte nicht übermittelt werden. Bitte verwende einen unserer anderen Kontaktkanäle.',
         'contact' : 'Kontaktiere uns',
@@ -304,8 +371,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'callbackRecordingLabel' : 'Ton entretien est enregistré à des fins de formation et d\'assurance qualité',
         'callbackRecordingLabelEU' : 'Mon entretien peut être enregistré à des fins d\'assurance qualité et de formation',
         'callbackEmailError' : 'Veuillez saisir une adresse e-mail valide',
-        'callbackPhoneError' : 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone suisses sont acceptés.',
-        'callbackPhoneError2' : 'Les préfixes suivants ne sont pas acceptés : (0)800, (0)84, (0)900, (0)901, (0)906',
+        'callbackPhoneError' : callbackPhoneError1FR,
+        'callbackPhoneError2' : callbackPhoneError2FR,
         'callbackFormError' : 'Veuillez vérifier vos saisies<br>',
         'callbackAPIError' : 'Ta demande n\'a pas pu être transmise. Veuillez utiliser l\'un de nos autres canaux de contact.',
         'contact' : 'Contactez-nous',
@@ -386,8 +453,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'callbackRecordingLabel' : 'La conversazione verrà registrata per garantire la qualità e la formazione',
         'callbackRecordingLabelEU' : 'La mia conversazione può essere registrata a fini di garanzia della qualità e di formazione',
         'callbackEmailError' : 'Inserire un indirizzo e-mail valido',
-        'callbackPhoneError' : 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono svizzeri.',
-        'callbackPhoneError2' : 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906',
+        'callbackPhoneError' : callbackPhoneError1IT,
+        'callbackPhoneError2' : callbackPhoneError2IT,
         'callbackFormError' : 'Controllate le vostre iscrizioni<br>',
         'callbackAPIError' : 'Non è stato possibile inviare la richiesta. Si prega di utilizzare uno degli altri canali di contatto.',
         'contact' : 'Contattaci',
@@ -468,8 +535,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'callbackRecordingLabel' : 'Your call will be recorded for quality assurance and training purposes',
         'callbackRecordingLabelEU' : 'My call may be recorded for quality assurance and training purposes',
         'callbackEmailError' : 'Please enter a valid e-mail address',
-        'callbackPhoneError' : 'Please enter a valid phone number. Only Swiss phone numbers are accepted.',
-        'callbackPhoneError2' : 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906',
+        'callbackPhoneError' : callbackPhoneError1EN,
+        'callbackPhoneError2' : callbackPhoneError2EN,
         'callbackFormError' : 'Please check your entries<br>',
         'callbackAPIError' : 'There was a problem submitting your request. Please contact us under another contact channel',
         'contact' : 'Contact us',
