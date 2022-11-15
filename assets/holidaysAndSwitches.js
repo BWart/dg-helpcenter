@@ -156,7 +156,7 @@ var hideWaitingTimes = {
 //OPENING HOURS
 //EU
 var euOpeningHourWeekday = 8;
-var euClosingHourWeekday = 22;
+var euClosingHourWeekday = 18;
 var euOpeningHourSaturday = 9;
 var euClosingHourSaturday = 17;
 //Connect
