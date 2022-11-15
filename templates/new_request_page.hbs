@@ -434,7 +434,10 @@
   let callbackButtonClicked = false;
   callbackButton.hide();
   callbackButtonMobile.hide();
-  if (!isInCHOpeningTimes()){
+  if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && !isInCHOpeningTimes()){
+    callbackButton = $('.callback-number-offline')
+    callbackButtonMobile = $('.callback-number-offline-mobile')
+  } else if ((portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at") && !isInDEOpeningTimes()){
     callbackButton = $('.callback-number-offline')
     callbackButtonMobile = $('.callback-number-offline-mobile')
   }
@@ -442,25 +445,25 @@
   const callBackSubmitButton = $('.callbackSubmitButton')
   callbackForm.hide()
   
-  if (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch'){
-    if (localStorage.getItem("callbackGroup4") === null){
+  if (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
+    if (localStorage.getItem("callbackGroup5") === null){
       if (Math.random() <= 1){
-        localStorage.setItem("callbackGroup4", "true");
+        localStorage.setItem("callbackGroup5", "true");
       }
       else {
-        localStorage.setItem("callbackGroup4", "false");
+        localStorage.setItem("callbackGroup5", "false");
       }
     }
   } else {
-    localStorage.setItem("callbackGroup4", "false");
+    localStorage.setItem("callbackGroup5", "false");
   }
   /*if (portal == 'helpcenter.galaxus.ch' && customerType == "private-customer"){
-    localStorage.setItem("callbackGroup4", true);
+    localStorage.setItem("callbackGroup5", true);
   }
   else {
-    localStorage.setItem("callbackGroup4", true);
+    localStorage.setItem("callbackGroup5", true);
   }*/
-  console.log(localStorage.getItem("callbackGroup4"));
+  console.log(localStorage.getItem("callbackGroup5"));
   const callBackPhoneInputField = $('.callback_customer_phone_number_input')
   const callBackOrderInputField = $('.callback_customer_order_number_input')
   const callBackRGInputField = $('.callback_customer_rg_number_input')
@@ -472,10 +475,12 @@
   switch (portal) {
     case 'helpcenter.galaxus.de':
       callbackCountry = "DE"
+      callBackRecordChecker.prop('checked', false);
       callbackPrecode.html("+49&nbsp;&nbsp;")
       break;
     case 'helpcenter.galaxus.at':
       callbackCountry = "AT"
+      callBackRecordChecker.prop('checked', false);
       callbackPrecode.html("+43&nbsp;&nbsp;")
       break;
     default:
@@ -500,6 +505,38 @@
     "webform_case_other_request_returns": "_lv4",
     "webform_case_refund": "_lv4",
     "webform_case_receipt": "_lv2",
+    "webform_case_payment_reminder": "_lv4",
+    "webform_case_no_bill": "_lv4",
+    "webform_case_dunning_block": "_lv4",
+    "webform_case_other_request_payment": "_lv4",
+    "webform_case_delete_account": "_lv4",
+    "webform_case_cant_login": "_lv4",
+    "webform_case_other_request_account": "_lv4",
+    "webform_case_product_advice_it": "_lvpe",
+    "webform_case_product_advice_network": "_lvpe",
+    "webform_case_product_advice_consumer": "_lvpe",
+    "webform_case_product_advice_photo": "_lvpe",
+    "webform_case_product_advice_home": "_lvpe",
+    "webform_case_product_advice_diy": "_lvpe",
+    "webform_case_offer": "_lv4"
+  }
+
+  const callbackRingGroupLevelsEU = {
+    "webform_case_shipping_status": "_lv1",
+    "webform_case_ready_for_shipment": "_lv1",
+    "webform_case_order_status": "_lv1",
+    "webform_case_damaged_product": "_lv4",
+    "webform_case_not_working_product": "_lv4",
+    "webform_case_wrong_product": "_lv4",
+    "webform_case_missing_product": "_lv4",
+    "webform_case_cancel_order": "_lv1",
+    "webform_case_other_request_order": "_lv4",
+    "webform_case_return": "_lv1",
+    "webform_case_return_status": "_lv4",
+    "webform_case_creditnote": "_lv4",
+    "webform_case_other_request_returns": "_lv4",
+    "webform_case_refund": "_lv4",
+    "webform_case_receipt": "_lv1",
     "webform_case_payment_reminder": "_lv4",
     "webform_case_no_bill": "_lv4",
     "webform_case_dunning_block": "_lv4",
@@ -614,9 +651,9 @@
     }
 
     //-- CALLBACK ALTERNATIVE PHONE NUMBERS --
-        //if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+        //if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup5") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
 
-    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "false" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+    if (currentLanguage == 'de' && reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup5") == "false" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       var extraPrivateNumber = "undefined";
       var extraPrivateNumberText = "undefined";
       var dynamicWordingTemp = filldynamicWording();
@@ -819,15 +856,15 @@
       if (isInDEOpeningTimes()) {
         if (customerType == 'private-customer') {
           if (callWaitTimes['privateGer'] >= callWaitTimes['privateAt']) {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateGer'], callWaitTimes['privateGer'])
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateGer'], callWaitTimes['callbackGERDE'])
           } else {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'], callWaitTimes['privateAt'])
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'], callWaitTimes['callbackGERDE'])
           }
         } else {
           if (callWaitTimes['businessGer'] >= callWaitTimes['privateAt']) {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['businessGer'], callWaitTimes['businessGer'])
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['businessGer'], callWaitTimes['callbackGERDE'])
           } else {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'], callWaitTimes['privateAt'])
+            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'], callWaitTimes['callbackGERDE'])
           }
         }
       }
@@ -931,7 +968,7 @@
       var callbackElements = $('.callbackWaitTime')
       changeWaitTimeHTML(chatSeconds, chatElements)
       changeWaitTimeHTML(callSeconds, callElements)
-      changeWaitTimeHTML(callSeconds, callbackElements)
+      changeWaitTimeHTML(callWaitSeconds, callbackElements)
       //hideContactForm();
       waitTimes.show();
   }
@@ -1092,6 +1129,9 @@
       case 'helpcenter.galaxus.at':
         isOpen = isInDEOpeningTimes();
         isCH = false;
+        if (requestReasonTag.includes('webform_case_product_advice_')){
+          isPE = true
+        }
         break;
       default:
         isOpen = false;
@@ -1204,6 +1244,11 @@
         if (switchHideChatForEUDuringOpeningTimes){
           contactChannelChat = false;
         }
+        if(isPE){
+          if (switchHidePhoneForPEDuringOpeningTimes){
+            contactChannelCall = false;
+          }
+        }
       }
       //OutOfBusinessHours
       else {
@@ -1215,6 +1260,11 @@
         }
         if (switchHideChatForEUOutsideOpeningTimes){
           contactChannelChat = false;
+        }
+        if (isPE){
+          if (switchHidePhoneForPEOutsideOpeningTimes){
+            contactChannelCall = false;
+          }
         }
       }
     }
@@ -1683,18 +1733,18 @@
         break;
       case 'helpcenter.galaxus.de':
         brandID = "360000002879"
-        groupID = "6972193395474"
+        groupID = "8588490254354"
         brandName = "galaxus DE"
         baseERPLink = "https://erp.galaxus.eu/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
+        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + callbackRingGroupLevelsEU[requestReasonTag]
         brandTag = ""
         break;
       case 'helpcenter.galaxus.at':
         brandID = "360002535479"
-        groupID = "6972193395474"
+        groupID = "8588490254354"
         brandName = "galaxus AT"
         baseERPLink = "https://erp.galaxus.eu/"
-        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
+        ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + callbackRingGroupLevelsEU[requestReasonTag]
         brandTag = ""
         break;
       default:
@@ -1806,14 +1856,19 @@
 
   function callbackCheck(){
     //CallbackCheck Private CH
-    if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+    if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup5") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       //console.log("callbackcheck private true")
       return false;
     }
     //CallbackCheck Business CH
-    if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup4") == "true" && customerType == "business-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+    if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup5") == "true" && customerType == "business-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       //console.log("callbackcheck business true")
       return false;
+    }
+    //Callback Germany + Austria
+    if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup5") == "true" && (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at')){
+      //console.log("callbackcheck business true")
+      return true;
     }
     //console.log("callbackcheck false")
     return false;

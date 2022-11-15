@@ -10,7 +10,7 @@ var switchHideContactFormForPEDuringOpeningTimes = true;
 var switchHideContactFormForPEOutsideOpeningTimes = true;
 var switchHideContactFormForBusinessDuringOpeningTimes = false;
 var switchHideContactFormForBusinessOutsideOpeningTimes = false;
-var switchHideContactFormForEUDuringOpeningTimes = false;
+var switchHideContactFormForEUDuringOpeningTimes = true;
 var switchHideContactFormForEUOutsideOpeningTimes = false;
 //set to true if the phone number should be hidden, set to false if it should be displayed
 var switchHidePhoneDuringOpeningTimes = false;
@@ -42,7 +42,7 @@ var chatWaitThreshholdToShowContactFormEU = 60;
 var chatAndPhoneWaitThreshholdToShowContactForm = 570;
 var chatAndPhoneWaitThreshholdToShowContactFormPE = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormBusiness = 50000;
-var chatAndPhoneWaitThreshholdToShowContactFormEU = 570;
+var chatAndPhoneWaitThreshholdToShowContactFormEU = 300;
 
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
@@ -156,7 +156,7 @@ var hideWaitingTimes = {
 //OPENING HOURS
 //EU
 var euOpeningHourWeekday = 8;
-var euClosingHourWeekday = 18;
+var euClosingHourWeekday = 22;
 var euOpeningHourSaturday = 9;
 var euClosingHourSaturday = 17;
 //Connect
