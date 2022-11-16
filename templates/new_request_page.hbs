@@ -1585,7 +1585,7 @@
     if (callbackCountry == "LI"){
       enteredPhoneNumber = "+423" + String(callBackPhoneInputField.val())
     } else if (callbackCountry == "DE"){
-      enteredPhoneNumber = "+41" + String(callBackPhoneInputField.val())
+      enteredPhoneNumber = "+49" + String(callBackPhoneInputField.val())
     } else if (callbackCountry == "AT"){
       enteredPhoneNumber = "+43" + String(callBackPhoneInputField.val())
     }
@@ -1839,12 +1839,12 @@
       },
       data: dataToPass2,
       success: function(result){
-        ga('send', 'event', 'Errors', 'CallbackAPI', 'Success')
+        //ga('send', 'event', 'Errors', 'CallbackAPI', 'Success')
         window.open("https://" + portal + "/hc?callbackreturn=yes", "_self")
       },
       error: function (result){
         callbackButtonClicked = false;
-        ga('send', 'event', 'Errors', 'CallbackAPI', String(result))
+        //ga('send', 'event', 'Errors', 'CallbackAPI', String(result))
         var dynamicWording2 = filldynamicWording();
         $('.callbackFormErrorText').html(dynamicWording2[currentLanguage]['callbackAPIError'])
       },
