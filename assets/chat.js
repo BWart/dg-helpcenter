@@ -488,7 +488,7 @@ function isYoummdayAdvancedAvailable(){
 
 //Special Routing for YoummdayExpert
 function isYoummdayExpert(){
-    if(lang == 'de'  && (requestReasonTag == 'webform_case_damaged_product' || requestReasonTag == 'webform_case_wrong_product' || requestReasonTag == 'webform_case_missing_product') && isYoummdayExpertAvailable()){
+    if(lang == 'de'  && (requestReasonTag == 'webform_case_wrong_product') && isYoummdayExpertAvailable()){
         return true;
     }else{
         return false;
