@@ -1618,7 +1618,7 @@
     }
     // Phone number checks for DE
     if (callbackCountry == "DE"){
-      if (enteredPhoneNumberShortNoLeadingZero.length > 12 || enteredPhoneNumberShortNoLeadingZero.length < 9) {
+      if (enteredPhoneNumberShortNoLeadingZero.length > 12 || enteredPhoneNumberShortNoLeadingZero.length < 10) {
         $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
         validationChecker = false;
         callbackButtonClicked = false;
