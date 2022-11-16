@@ -1276,6 +1276,11 @@
         }
       }
     }
+    // We need offers by Mail, hence Mail only
+    if (requestReasonTag == "webform_case_offer"){
+      contactChannelMail = true;
+      contactChannelCall = false;
+    }
 
     resetContactOptions();
     if (contactChannelMail == false && contactChannelChat == true && contactChannelCall == true){
