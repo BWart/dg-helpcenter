@@ -38,11 +38,11 @@ var phoneWaitThreshholdToShowContactFormEU = 50000;
 var chatWaitThreshholdToShowContactForm = 60;
 var chatWaitThreshholdToShowContactFormPE = 50000;
 var chatWaitThreshholdToShowContactFormBusiness = 50000;
-var chatWaitThreshholdToShowContactFormEU = 60;
+var chatWaitThreshholdToShowContactFormEU = 300;
 var chatAndPhoneWaitThreshholdToShowContactForm = 570;
 var chatAndPhoneWaitThreshholdToShowContactFormPE = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormBusiness = 50000;
-var chatAndPhoneWaitThreshholdToShowContactFormEU = 300;
+var chatAndPhoneWaitThreshholdToShowContactFormEU = 50000;
 
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
