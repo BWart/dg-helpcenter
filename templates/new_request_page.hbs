@@ -1875,17 +1875,17 @@
     //CallbackCheck Private CH
     if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup5") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       //console.log("callbackcheck private true")
-      return true;
+      return false;
     }
     //CallbackCheck Business CH
     if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup5") == "true" && customerType == "business-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       //console.log("callbackcheck business true")
-      return true;
+      return false;
     }
     //Callback Germany + Austria
     if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup5") == "true" && (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at')){
       //console.log("callbackcheck business true")
-      return true;
+      return false;
     }
     //console.log("callbackcheck false")
     return false;
