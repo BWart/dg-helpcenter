@@ -454,7 +454,7 @@ function isBusinessAvailable(){
 
 //Special Routing for YoummdayBasic
 function isYoummdayBasic(){
-    if(lang == 'de'  && (requestReasonTag == 'webform_case_shipping_status' || requestReasonTag == 'webform_case_ready_for_shipment' || requestReasonTag == 'webform_case_order_status') && isYoummdayBasicAvailable()){
+    if(/*lang == 'de'  && */(requestReasonTag == 'webform_case_shipping_status' || requestReasonTag == 'webform_case_ready_for_shipment' || requestReasonTag == 'webform_case_order_status') && isYoummdayBasicAvailable()){
         return true;
     }else{
         return false;
@@ -471,7 +471,7 @@ function isYoummdayBasicAvailable(){
 
 //Special Routing for YoummdayAdvanced
 function isYoummdayAdvanced(){
-    if(lang == 'de'  && (requestReasonTag == 'webform_case_return' || requestReasonTag == 'webform_case_receipt') && isYoummdayAdvancedAvailable()){
+    if(/*lang == 'de'  && */(requestReasonTag == 'webform_case_return' || requestReasonTag == 'webform_case_receipt') && isYoummdayAdvancedAvailable()){
         return true;
     }else{
         return false;
@@ -488,7 +488,7 @@ function isYoummdayAdvancedAvailable(){
 
 //Special Routing for YoummdayExpert
 function isYoummdayExpert(){
-    if(lang == 'de'  && (requestReasonTag == 'webform_case_wrong_product') && isYoummdayExpertAvailable()){
+    if(/*lang == 'de'  && */(requestReasonTag == 'webform_case_wrong_product') && isYoummdayExpertAvailable()){
         return true;
     }else{
         return false;
