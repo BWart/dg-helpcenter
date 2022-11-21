@@ -864,15 +864,15 @@
       if (isInDEOpeningTimes()) {
         if (customerType == 'private-customer') {
           if (callWaitTimes['privateGer'] >= callWaitTimes['privateAt']) {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateGer'], callWaitTimes['callbackGERDE'])
+            setWaitTime(chatWaitTimes, callWaitTimes['privateGer'], callWaitTimes['callbackGERDE'])
           } else {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'], callWaitTimes['callbackGERDE'])
+            setWaitTime(chatWaitTimes, callWaitTimes['privateAt'], callWaitTimes['callbackGERDE'])
           }
         } else {
           if (callWaitTimes['businessGer'] >= callWaitTimes['privateAt']) {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['businessGer'], callWaitTimes['callbackGERDE'])
+            setWaitTime(chatWaitTimes, callWaitTimes['businessGer'], callWaitTimes['callbackGERDE'])
           } else {
-            setWaitTime(chatWaitTimes['gerDE'], callWaitTimes['privateAt'], callWaitTimes['callbackGERDE'])
+            setWaitTime(chatWaitTimes, callWaitTimes['privateAt'], callWaitTimes['callbackGERDE'])
           }
         }
       }
@@ -884,19 +884,19 @@
       if (isInConnectOpeningTimes()){
         switch (currentLanguage) {
           case 'de':
-            setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE'], callWaitTimes['connectDE']);
+            setWaitTime(chatWaitTimes, callWaitTimes['connectDE'], callWaitTimes['connectDE']);
             break;
           case 'fr':
-            setWaitTime(chatWaitTimes['connectFR'], callWaitTimes['connectFR'], callWaitTimes['connectFR']);
+            setWaitTime(chatWaitTimes, callWaitTimes['connectFR'], callWaitTimes['connectFR']);
             break;
           case 'it':
-            setWaitTime(chatWaitTimes['connectIT'], callWaitTimes['connectIT'], callWaitTimes['connectIT']);
+            setWaitTime(chatWaitTimes, callWaitTimes['connectIT'], callWaitTimes['connectIT']);
             break;
           case 'en-US':
-            setWaitTime(chatWaitTimes['connectEN'], callWaitTimes['connectEN'], callWaitTimes['connectEN']);
+            setWaitTime(chatWaitTimes, callWaitTimes['connectEN'], callWaitTimes['connectEN']);
             break;
           default:
-            setWaitTime(chatWaitTimes['connectDE'], callWaitTimes['connectDE'], callWaitTimes['connectDE']);
+            setWaitTime(chatWaitTimes, callWaitTimes['connectDE'], callWaitTimes['connectDE']);
             break;
         }
       }
@@ -908,19 +908,19 @@
       if ((isInCHOpeningTimes() && customerType == 'private-customer') || (customerType == 'business-customer' && !isInBusinessOpeningTimes() && isInCHOpeningTimes())){
         switch (currentLanguage) {
             case 'de':
-              setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'], callWaitTimes['callbackDE'])
+              setWaitTime(chatWaitTimes, callWaitTimes['privateCHDE'], callWaitTimes['callbackDE'])
               break;
             case 'fr':
-              setWaitTime(chatWaitTimes['privateFR'], callWaitTimes['privateCHFR'], callWaitTimes['callbackFR'])
+              setWaitTime(chatWaitTimes, callWaitTimes['privateCHFR'], callWaitTimes['callbackFR'])
               break;
             case 'it':
-              setWaitTime(chatWaitTimes['privateIT'], callWaitTimes['privateCHIT'], callWaitTimes['callbackIT'])
+              setWaitTime(chatWaitTimes, callWaitTimes['privateCHIT'], callWaitTimes['callbackIT'])
               break;
             case 'en-US':
-              setWaitTime(chatWaitTimes['privateEN'], callWaitTimes['privateCHEN'], callWaitTimes['callbackEN'])
+              setWaitTime(chatWaitTimes, callWaitTimes['privateCHEN'], callWaitTimes['callbackEN'])
               break;
             default:
-              setWaitTime(chatWaitTimes['privateDE'], callWaitTimes['privateCHDE'], callWaitTimes['callbackDE'])
+              setWaitTime(chatWaitTimes, callWaitTimes['privateCHDE'], callWaitTimes['callbackDE'])
               break;
         }
         if (isInCHPEOpeningTimes() && requestReasonTag.includes('webform_case_product_advice_') && currentLanguage == 'de'){
@@ -929,30 +929,30 @@
           var lastpart = splitstring.substring(1, splitstring.length)
           var lastpartCapitalized = lastpart.charAt(0).toUpperCase() + lastpart.substring(1, lastpart.length)
           if (lastpartCapitalized.includes('It') || lastpartCapitalized.includes('Network')) {
-            setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peItNetwork'], callWaitTimes['peItNetwork'])
+            setWaitTime(chatWaitTimes/*['pe' + lastpartCapitalized + 'DE']*/, callWaitTimes['peItNetwork'], callWaitTimes['peItNetwork'])
           } else if (lastpartCapitalized.includes('Consumer') || lastpartCapitalized.includes('Photo')) {
-            setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peConsumerPhoto'], callWaitTimes['peConsumerPhoto'])
+            setWaitTime(chatWaitTimes/*['pe' + lastpartCapitalized + 'DE']*/, callWaitTimes['peConsumerPhoto'], callWaitTimes['peConsumerPhoto'])
           } else if (lastpartCapitalized.includes('Diy') || lastpartCapitalized.includes('Home')) {
-            setWaitTime(chatWaitTimes['pe' + lastpartCapitalized + 'DE'], callWaitTimes['peDiyHome'], callWaitTimes['peDiyHome'])
+            setWaitTime(chatWaitTimes/*['pe' + lastpartCapitalized + 'DE']*/, callWaitTimes['peDiyHome'], callWaitTimes['peDiyHome'])
           }
         }
       }
       else if (isInBusinessOpeningTimes() && customerType == 'business-customer') {
         switch (currentLanguage) {
             case 'de':
-              setWaitTime(chatWaitTimes['businessDE'], callWaitTimes['businessCHDE'], callWaitTimes['callback2bDE'])
+              setWaitTime(chatWaitTimes, callWaitTimes['businessCHDE'], callWaitTimes['callback2bDE'])
               break;
             case 'fr':
-              setWaitTime(chatWaitTimes['businessFR'], callWaitTimes['businessCHFR'], callWaitTimes['callback2bFR'])
+              setWaitTime(chatWaitTimes, callWaitTimes['businessCHFR'], callWaitTimes['callback2bFR'])
               break;
             case 'it':
-              setWaitTime(chatWaitTimes['businessIT'], callWaitTimes['businessCHIT'], callWaitTimes['callback2bIT'])
+              setWaitTime(chatWaitTimes, callWaitTimes['businessCHIT'], callWaitTimes['callback2bIT'])
               break;
             case 'en-US':
-              setWaitTime(chatWaitTimes['businessEN'], callWaitTimes['businessCHEN'], callWaitTimes['callback2bEN'])
+              setWaitTime(chatWaitTimes, callWaitTimes['businessCHEN'], callWaitTimes['callback2bEN'])
               break;
             default:
-              setWaitTime(chatWaitTimes['businessDE'], callWaitTimes['businessCHDE'], callWaitTimes['callback2bDE'])
+              setWaitTime(chatWaitTimes, callWaitTimes['businessCHDE'], callWaitTimes['callback2bDE'])
               break;
         }
       }
@@ -974,9 +974,13 @@
       var chatElements = $('.chatWaitTime')
       var callElements = $('.callWaitTime')
       var callbackElements = $('.callbackWaitTime')
-      changeWaitTimeHTML(chatSeconds, chatElements)
-      changeWaitTimeHTML(callSeconds, callElements)
-      changeWaitTimeHTML(callWaitSeconds, callbackElements)
+      changeWaitTimeHTML(chatSeconds[customerDepartment], chatElements)
+      if (callSeconds != -1){
+        changeWaitTimeHTML(callSeconds, callElements)
+      }
+      if (callbackSeconds != -1){
+        changeWaitTimeHTML(callWaitSeconds, callbackElements)
+      }
       //hideContactForm();
       waitTimes.show();
   }

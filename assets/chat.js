@@ -527,8 +527,9 @@ function updateChatDepartment(){
     if(!isChatting()){
         var chatDepartment = getChatDepartment();
         customerDepartment = chatDepartment;
-        changeWebWidgetSettingsOnChange(chatDepartment);                                                                                    
-        checkDepartmentforInitialButtonChange(chatDepartment);                                                                                        
+        changeWebWidgetSettingsOnChange(chatDepartment);
+        checkDepartmentforInitialButtonChange(chatDepartment);
+        addExternalScriptForWaitingTimes(false);
         //listenDepartmentStatus(chatDepartment);
     }else{
         showChatButton();
