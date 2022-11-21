@@ -1,9 +1,11 @@
 // Waits until Page loaded and then calls basic Setup
+let customerDepartment = "Chat Private DE"
 function waitForChat(){
     window.addEventListener('load', function() {
         zE('webWidget:on', 'chat:connected', function() {
             openWidgetForUnreadMessages();
             hideWidgetWhenMinimized();
+            listenDepartmentStatus(customerDepartment);
             if(isChatting()){
                 openChat();
             }else{
@@ -95,7 +97,7 @@ function getChatDepartment(){
             }
         }
     }
-    
+    //return("Chat Testgroup DE")
     if(typeof getDepartmentInfo(dep) != 'undefined'){
         return dep;
     }else{
@@ -524,9 +526,10 @@ function getDepartmentInfo(departmentName){
 function updateChatDepartment(){
     if(!isChatting()){
         var chatDepartment = getChatDepartment();
+        customerDepartment = chatDepartment;
         changeWebWidgetSettingsOnChange(chatDepartment);                                                                                    
         checkDepartmentforInitialButtonChange(chatDepartment);                                                                                        
-        listenDepartmentStatus(chatDepartment);
+        //listenDepartmentStatus(chatDepartment);
     }else{
         showChatButton();
     }
@@ -541,9 +544,9 @@ function checkDepartmentforInitialButtonChange(selectedDepartment){
 }
 
 // Hide or Shows Button if Chosen Department Status Changes 
-function listenDepartmentStatus(selectedDepartment){
+function listenDepartmentStatus(){
     zE('webWidget:on', 'chat:departmentStatus', function(department) {
-        if(department.name == selectedDepartment){
+        if(department.name == customerDepartment){
             changeButtonVisibility(department.status);
             updateChatDepartment();
         }
