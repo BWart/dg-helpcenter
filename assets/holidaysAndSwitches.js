@@ -3,7 +3,7 @@
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
 var switchHideContactForm = false
 //set to true if the phone number should be hidden, set to false if it should be displayed
-var switchHidePhone = false
+var switchHidePhone = true
 //set to true if the Chat should be hidden, set to false if it should be displayed
 var switchHideChat = false
 
