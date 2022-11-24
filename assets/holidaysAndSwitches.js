@@ -117,20 +117,20 @@ function fillTopBannerWording(){
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-        ['2022-06-01 14:00:00', '2022-06-01 22:00:00', 0]
+        ['2022-11-24 00:00:00', '2022-11-28 22:00:00', 0]
     ],
     'eu' : [
-        ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 0]
+        ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 1]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-        'de' : '<br>Tag der Deutschen Einheit: 03.10.2022 geschlossen',
-        'fr' : "<br>Lundi de Pentecôte : 06.06. fermé",
-        'it' : '<br>Lunedì di Pentecoste: 06.06. chiuso',
-        'en-US' : '<br>Whit Monday: 06.06. closed',
+        'de' : '<br>25. & 28.11.2022: Geöffnet bis 19:00',
+        'fr' : "<br>28 & 28.11.2022 : Ouvert jusqu'à 19:00",
+        'it' : '<br>25 e 28.11.2022: Aperto fino alle 19:00',
+        'en-US' : '<br>25 & 28.11.2022: Open until 19:00',
     },
     1 : {
         'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
