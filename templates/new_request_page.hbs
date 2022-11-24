@@ -1243,14 +1243,11 @@
     // EU
     else if(!isCH) {
       //In Business Hours
-      console.log("ENTER")
       if (isOpen){
-        console.log("ENTER2")
         if (switchHideContactFormForEUDuringOpeningTimes){
           contactChannelMail = false;
         }
         if (phoneWaitThreshholdToShowContactFormEU < callWaitSeconds || chatWaitThreshholdToShowContactFormEU < chatWaitSeconds[customerDepartment] || (chatAndPhoneWaitThreshholdToShowContactFormEU < callWaitSeconds && chatAndPhoneWaitThreshholdToShowContactFormEU < chatWaitSeconds[customerDepartment])){
-          console.log("ENTER3")
           contactChannelMail = true;
         }
         if (switchHidePhoneForEUDuringOpeningTimes){
