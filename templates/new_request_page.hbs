@@ -263,7 +263,7 @@
   //NO REASONS
   const reasonsForNoContactFormGeneral = []
 
-  //Display longer wait times for mails for specific reasons
+  //Display longer wait times for mails for specific reasons -- NOT ACTIVE ANYMORE
   const reasonsForLongerMailWaitTime = ["webform_case_product_advice_it", "webform_case_product_advice_network"]
   const languagesForLongerMailWaitTime = ["de"]
 
@@ -1157,7 +1157,7 @@
         if (switchHideContactFormForPEDuringOpeningTimes){
           contactChannelMail = false;
         }
-        if (phoneWaitThreshholdToShowContactFormPE < callWaitSeconds || chatWaitThreshholdToShowContactFormPE < chatWaitSeconds || (chatAndPhoneWaitThreshholdToShowContactFormPE < callWaitSeconds && chatAndPhoneWaitThreshholdToShowcontactFormPE < chatWaitSeconds)){
+        if (phoneWaitThreshholdToShowContactFormPE < callWaitSeconds || chatWaitThreshholdToShowContactFormPE < chatWaitSeconds[customerDepartment] || (chatAndPhoneWaitThreshholdToShowContactFormPE < callWaitSeconds && chatAndPhoneWaitThreshholdToShowcontactFormPE < chatWaitSeconds[customerDepartment])){
           contactChannelMail = true;
         }
         if (switchHidePhoneForPEDuringOpeningTimes){
@@ -1187,7 +1187,7 @@
         if (switchHideContactFormDuringOpeningTimes){
           contactChannelMail = false;
         }
-        if (phoneWaitThreshholdToShowContactForm <= callWaitSeconds || chatWaitThreshholdToShowContactForm <= chatWaitSeconds || (chatAndPhoneWaitThreshholdToShowContactForm <= callWaitSeconds && chatAndPhoneWaitThreshholdToShowContactForm <= chatWaitSeconds)){
+        if (phoneWaitThreshholdToShowContactForm <= callWaitSeconds || chatWaitThreshholdToShowContactForm <= chatWaitSeconds[customerDepartment] || (chatAndPhoneWaitThreshholdToShowContactForm <= callWaitSeconds && chatAndPhoneWaitThreshholdToShowContactForm <= chatWaitSeconds[customerDepartment])){
           contactChannelMail = true;
         }
         if (switchHidePhoneDuringOpeningTimes){
@@ -1217,7 +1217,7 @@
         if (switchHideContactFormForBusinessDuringOpeningTimes){
           contactChannelMail = false;
         }
-        if (phoneWaitThreshholdToShowContactFormBusiness <= callWaitSeconds || chatWaitThreshholdToShowContactFormBusiness <= chatWaitSeconds || (chatAndPhoneWaitThreshholdToShowContactFormBusiness <= callWaitSeconds && chatAndPhoneWaitThreshholdToShowContactFormBusiness <= chatWaitSeconds)){
+        if (phoneWaitThreshholdToShowContactFormBusiness <= callWaitSeconds || chatWaitThreshholdToShowContactFormBusiness <= chatWaitSeconds[customerDepartment] || (chatAndPhoneWaitThreshholdToShowContactFormBusiness <= callWaitSeconds && chatAndPhoneWaitThreshholdToShowContactFormBusiness <= chatWaitSeconds[customerDepartment])){
           contactChannelMail = true;
         }
         if (switchHidePhoneForBusinessDuringOpeningTimes){
@@ -1243,11 +1243,14 @@
     // EU
     else if(!isCH) {
       //In Business Hours
+      console.log("ENTER")
       if (isOpen){
+        console.log("ENTER2")
         if (switchHideContactFormForEUDuringOpeningTimes){
           contactChannelMail = false;
         }
-        if (phoneWaitThreshholdToShowContactFormEU < callWaitSeconds || chatWaitThreshholdToShowContactFormEU < chatWaitSeconds || (chatAndPhoneWaitThreshholdToShowContactFormEU < callWaitSeconds && chatAndPhoneWaitThreshholdToShowContactFormEU < chatWaitSeconds)){
+        if (phoneWaitThreshholdToShowContactFormEU < callWaitSeconds || chatWaitThreshholdToShowContactFormEU < chatWaitSeconds[customerDepartment] || (chatAndPhoneWaitThreshholdToShowContactFormEU < callWaitSeconds && chatAndPhoneWaitThreshholdToShowContactFormEU < chatWaitSeconds[customerDepartment])){
+          console.log("ENTER3")
           contactChannelMail = true;
         }
         if (switchHidePhoneForEUDuringOpeningTimes){
