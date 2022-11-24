@@ -601,6 +601,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         dynamicWording['fr']['toShop'] = '<a href="https://www.galaxus.de/" target="blank">Vers le Shop</a>'
         dynamicWording['it']['toShop'] = '<a href="https://www.galaxus.de/" target="blank">Al Shop</a>'
         dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.de/" target="blank">To Shop</a>'
+        dynamicWording['de']['emailDescription'] = 'Wartezeit <font class="mailWaitTime">3-4</font> Tage'
+        dynamicWording['de']['emailDescriptionMobile'] = 'Wartezeit <font class="mailWaitTime">3-4</font> Tage'
     }
 
     if (window.location.hostname == 'helpcenter.galaxus.at'){
@@ -608,6 +610,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         dynamicWording['fr']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">Vers le Shop</a>'
         dynamicWording['it']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">Al Shop</a>'
         dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">To Shop</a>'
+        dynamicWording['de']['emailDescription'] = 'Wartezeit <font class="mailWaitTime">3-4</font> Tage'
+        dynamicWording['de']['emailDescriptionMobile'] = 'Wartezeit <font class="mailWaitTime">3-4</font> Tage'
     }
 
   return dynamicWording;  
