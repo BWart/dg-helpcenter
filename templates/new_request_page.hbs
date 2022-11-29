@@ -1620,8 +1620,22 @@
       enteredPhoneNumberShortNoLeadingZero = enteredPhoneNumberShort.substring(1, enteredPhoneNumberShort.length)
     }
     // Phone number checks for CH
-    if (callbackCountry == "CH" || callbackCountry == "LI"){
+    if (callbackCountry == "CH"){
       if (enteredPhoneNumberShortNoLeadingZero.length != 9) {
+        $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
+        validationChecker = false;
+        callbackButtonClicked = false;
+      } else if (enteredPhoneNumberShort.substring(0,4) == '0800' || enteredPhoneNumberShort.substring(0,4) == '0900' || enteredPhoneNumberShort.substring(0,4) == '0901' || enteredPhoneNumberShort.substring(0,4) == '0906' || enteredPhoneNumberShort.substring(0,3) == '084' || enteredPhoneNumberShort.substring(0,3) == '800' || enteredPhoneNumberShort.substring(0,3) == '900' || enteredPhoneNumberShort.substring(0,3) == '901' || enteredPhoneNumberShort.substring(0,3) == '906' || enteredPhoneNumberShort.substring(0,2) == '84'){
+        $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError2'])
+        validationChecker = false;
+        callbackButtonClicked = false;
+      } else {
+        $('.callbackPhoneErrorText').html('')
+      }
+    }
+    // Phone number checks for LI
+    if (callbackCountry == "LI"){
+      if (enteredPhoneNumberShortNoLeadingZero.length < 7 || nteredPhoneNumberShortNoLeadingZero.length > 9) {
         $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
         validationChecker = false;
         callbackButtonClicked = false;
