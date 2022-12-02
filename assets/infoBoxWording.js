@@ -63,7 +63,7 @@ function fillInfoBoxWording(){
                     hp6 = "/360010182760";
                     hp7 = "/360008226499";
   
-                    offerte = "EUR 2'000.-";
+                    offerte = "EUR 5'000.-";
                     break;
               case 'helpcenter.galaxus.at':
                     shopURL = "https://www.galaxus.at/"
@@ -79,7 +79,7 @@ function fillInfoBoxWording(){
                     hp6 = "/4407011198994";
                     hp7 = "/4407007830674";
   
-                    offerte = "EUR 2'000.-";
+                    offerte = "EUR 5'000.-";
                     break;
               default:
                     shopURL = "https://www.digitec.ch/";
@@ -410,8 +410,8 @@ function fillInfoBoxWording(){
         //TODO: Galaxus AT links prüfen
       if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
         infoBoxWording['webform_case_not_working_product']['de'] = "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "wiki/5547' target='blank'>Gewährleistungsinformationen</a> sowie in unseren <a href='" + shopURL + "Wiki/478' target='blank'>AGBs</a>.";
-        infoBoxWording['webform_case_shipping_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas länger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.";
-        infoBoxWording['webform_case_order_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.";
+        infoBoxWording['webform_case_shipping_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas länger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.<br><br><b>In der \"Black Week\" hat das allgemeine Versandvolumen stark zugenommen. Momentan ist unser Versandpartner DHL mit den Lieferungen leider im Verzug. Bitte kontaktiere unseren Kundenservice nur, falls sich dein Paket seit <i>5 oder mehr Tagen</i> immer noch im Transport befindet.</b>";
+        infoBoxWording['webform_case_order_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br><b>In der \"Black Week\" hat das allgemeine Versandvolumen stark zugenommen. Momentan ist unser Versandpartner DHL mit den Lieferungen leider im Verzug. Bitte kontaktiere unseren Kundenservice nur, falls sich dein Paket seit <i>5 oder mehr Tagen</i> immer noch im Transport befindet.</b>";
         infoBoxWording['webform_case_payment_reminder']['de'] = "Es kann bis zu fünf Werktage dauern, bis deine Zahlung in unserem System verbucht wird. Deshalb kann es sein, dass sich die Mahnung/Zahlungserinnerung mit deiner Zahlung überschnitten hat. In diesem Fall kannst du die Mahnung ignorieren.<br>Weitere Möglichkeiten woran es liegen kann findest du unter <a href='" + helpcenterURL + "articles" + hp6 + "' target='blank'>Warum habe ich eine Zahlungserinnerung erhalten, obwohl ich bezahlt habe?</a>.";
         }
       if (typeof customerType !== 'undefined') {  
