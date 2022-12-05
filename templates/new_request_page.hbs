@@ -1717,7 +1717,11 @@
       customerTypeShorthand = "c"
     } else if (customerType == "business-customer") {
       if (isInBusinessOpeningTimes()){
-        customerTypeShorthand = "b"
+        if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && currentLanguage.toLowerCase() == "de"){
+          customerTypeShorthand = "c"
+        } else {
+          customerTypeShorthand = "b"
+        }
       } else {
         customerTypeShorthand = "c"
       }
