@@ -1676,7 +1676,7 @@
       }
     }
     // Mail address checks
-    if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*\.\w\w+$/.test(enteredMail))){
+    if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*\.\w\w+/.test(enteredMail))){
       $('.callbackMailErrorText').html(dynamicWording2[currentLanguage]['callbackEmailError'])
       validationChecker = false;
       callbackButtonClicked = false;
