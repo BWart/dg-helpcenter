@@ -114,6 +114,9 @@
                   <td style="padding-left:20px;padding-top:10px"><div id="chatButtonCellContent"><div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div></div><div id="row4cell3inserter"></div>
                   </td>
                 </tr>
+                <tr>
+                  <td colspan="3"><div class="chatClosedMessage" data-wording-key="chatClosedMessage" style="color:red"></div></td>
+                </tr>
               </table>
 
               <!-- MOBILE CONTACT TABLE -->
@@ -182,6 +185,7 @@
                   <td class="contactButtonTableCellLeftNoBorder">
                     <div id="mobileChatCell2Content">
                       <div class="button-contact button-chat button-offline" data-wording-key="chatNotOnline"></div>
+                      <div class="chatClosedMessage" data-wording-key="chatClosedMessage"></div>
                     </div>
                     <div id="mobileInserter6"></div>
                   </td>
@@ -398,6 +402,7 @@
   const connectContact = $('.connect-customer')
   const phoneTitleOne = $('.phoneTitle1')
   const phoneTitleTwo = $('.phoneTitle2')
+  const chatClosedMessage = $('.chatClosedMessage')
   //Mailform fields, with label and Input field
   const mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');  //Input field for order number, phone number on digitec Connect
   const mailFormSubject = $('.request_subject');
@@ -556,6 +561,7 @@
 
   
   // --- INITIAL SETUP ---
+  chatClosedMessage.hide()
   // Case when "Contact Us" Button in footer is clicked
   addExternalScriptForWaitingTimes(true);
   if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/'){
@@ -617,6 +623,7 @@
   }
 
   function onDropdownChange(){
+    chatClosedMessage.hide()
     circleTwo.classList.remove('circleOpenStep');
     circleTwo.classList.add('circleStepCompleted');
     circleTwo.innerHTML = '&#10003';
@@ -1398,6 +1405,15 @@
   }
 
 
+  function isInGeneralOpeningTimes(){
+    if (portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch"){
+      return isInCHOpeningTimes()
+    }
+    else if (portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at"){
+      return isInDEOpeningTimes()
+    }
+  }
+
   function isInDEOpeningTimes(){
     const d = new Date();
     let dayOfWeek = d.getUTCDay();
@@ -1539,6 +1555,10 @@
   //Action when clicking the chat button
   $('.button-chat').on("click", function () {
     checkForTagChanges();
+    if(!isInGeneralOpeningTimes()){
+      chatClosedMessage.show()
+      return 0;
+    }
     try {
       updateChatDepartment();
       openChat();
@@ -1894,7 +1914,7 @@
 
 
   function callbackCheck(){
-    return false;
+    //return false;
     //CallbackCheck Private CH
     if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup5") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       //console.log("callbackcheck private true")

@@ -532,12 +532,14 @@ function updateChatDepartment(){
         addExternalScriptForWaitingTimes(false);
         //listenDepartmentStatus(chatDepartment);
     }else{
-        showChatButton();
+        if (isInGeneralOpeningTimes()){
+            showChatButton();
+        }
     }
 }
 
 function checkDepartmentforInitialButtonChange(selectedDepartment){
-    if(isDepartmentAvailable(selectedDepartment)){
+    if(isDepartmentAvailable(selectedDepartment) && isInGeneralOpeningTimes()){
         showChatButton();
     }else{
         hideChatButton();
@@ -556,7 +558,7 @@ function listenDepartmentStatus(){
 
 // Shows Chat button if anyone is available and inside opening hours
 function changeButtonVisibility(status){
-    if(status == 'online'){
+    if(status == 'online' && isInGeneralOpeningTimes()){
         showChatButton();
     }else{
         hideChatButton();

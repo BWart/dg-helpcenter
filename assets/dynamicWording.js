@@ -332,7 +332,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatOfflineMessage' : 'Wir sind im Moment nicht online',
         'chatNotOnline' : 'Nicht verfügbar',
         'countryCH' : '&nbsp;&nbsp;Schweiz', // benötigt immer Leading &nbsp;&nbsp;
-        'countryLI' : '&nbsp;&nbsp;Liechtenstein' // benötigt immer Leading &nbsp;&nbsp;
+        'countryLI' : '&nbsp;&nbsp;Liechtenstein', // benötigt immer Leading &nbsp;&nbsp;
+        'chatClosedMessage' : 'Leider ist unsere Öffnungszeit unterdessen vorbei. Bitte verwende das Kontaktformular oder versuche es morgen noch einmal.'
     },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -414,7 +415,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatOfflineMessage' : 'Nous ne sommes pas en ligne pour le moment',
         'chatNotOnline' : 'Non disponible',
         'countryCH' : '&nbsp;&nbsp;Suisse', // benötigt immer Leading &nbsp;&nbsp;
-        'countryLI' : '&nbsp;&nbsp;Liechtenstein' // benötigt immer Leading &nbsp;&nbsp;
+        'countryLI' : '&nbsp;&nbsp;Liechtenstein', // benötigt immer Leading &nbsp;&nbsp;
+        'chatClosedMessage' : 'Leider ist unsere Öffnungszeit unterdessen vorbei. Bitte verwende das Kontaktformular oder versuche es morgen noch einmal.'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -496,7 +498,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatOfflineMessage' : "Non siamo online in questo momento",
         'chatNotOnline' : 'Non disponibile',
         'countryCH' : '&nbsp;&nbsp;Svizzera', // benötigt immer Leading &nbsp;&nbsp;
-        'countryLI' : '&nbsp;&nbsp;Liechtenstein' // benötigt immer Leading &nbsp;&nbsp;
+        'countryLI' : '&nbsp;&nbsp;Liechtenstein', // benötigt immer Leading &nbsp;&nbsp;
+        'chatClosedMessage' : 'Leider ist unsere Öffnungszeit unterdessen vorbei. Bitte verwende das Kontaktformular oder versuche es morgen noch einmal.'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -578,7 +581,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatOfflineMessage' : 'We aren\'t online right now',
         'chatNotOnline' : 'Not available',
         'countryCH' : '&nbsp;&nbsp;Switzerland', // benötigt immer Leading &nbsp;&nbsp;
-        'countryLI' : '&nbsp;&nbsp;Liechtenstein' // benötigt immer Leading &nbsp;&nbsp;
+        'countryLI' : '&nbsp;&nbsp;Liechtenstein', // benötigt immer Leading &nbsp;&nbsp;
+        'chatClosedMessage' : 'Leider ist unsere Öffnungszeit unterdessen vorbei. Bitte verwende das Kontaktformular oder versuche es morgen noch einmal.'
         }
     }
 
