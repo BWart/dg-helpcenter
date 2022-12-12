@@ -1676,7 +1676,7 @@
       }
     }
     // Mail address checks
-    if (!(/.+@+.+\...+/.test(enteredMail))){
+    if (!(/.+@.+\...+/.test(enteredMail))){
       $('.callbackMailErrorText').html(dynamicWording2[currentLanguage]['callbackEmailError'])
       validationChecker = false;
       callbackButtonClicked = false;
@@ -1894,7 +1894,7 @@
 
 
   function callbackCheck(){
-    //return false;
+    return false;
     //CallbackCheck Private CH
     if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup5") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       //console.log("callbackcheck private true")
