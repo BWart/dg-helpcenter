@@ -333,7 +333,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatNotOnline' : 'Nicht verfügbar',
         'countryCH' : '&nbsp;&nbsp;Schweiz', // benötigt immer Leading &nbsp;&nbsp;
         'countryLI' : '&nbsp;&nbsp;Liechtenstein', // benötigt immer Leading &nbsp;&nbsp;
-        'chatClosedMessage' : 'Leider ist unsere Öffnungszeit unterdessen vorbei. Bitte verwende das Kontaktformular oder versuche es morgen noch einmal.'
+        'chatClosedMessage' : 'Leider ist unser Chat nicht mehr verfügbar, gerne stehen wir innerhalb der Öffnungszeiten zur Verfügung. Ausserhalb der Öffnungszeiten kann das Kontaktformular verwendet werden.'
     },
         fr: {      
         'privateCustomers' : 'Clients privés',
@@ -416,7 +416,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatNotOnline' : 'Non disponible',
         'countryCH' : '&nbsp;&nbsp;Suisse', // benötigt immer Leading &nbsp;&nbsp;
         'countryLI' : '&nbsp;&nbsp;Liechtenstein', // benötigt immer Leading &nbsp;&nbsp;
-        'chatClosedMessage' : 'Leider ist unsere Öffnungszeit unterdessen vorbei. Bitte verwende das Kontaktformular oder versuche es morgen noch einmal.'
+        'chatClosedMessage' : 'Malheureusement, notre chat n\'est plus disponible. Nous restons volontiers à votre disposition pendant les heures d\'ouverture. En dehors des heures d\'ouverture, le formulaire de contact peut être utilisé.'
         },
         it: {
         'privateCustomers' : 'Clienti privati',
@@ -499,7 +499,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatNotOnline' : 'Non disponibile',
         'countryCH' : '&nbsp;&nbsp;Svizzera', // benötigt immer Leading &nbsp;&nbsp;
         'countryLI' : '&nbsp;&nbsp;Liechtenstein', // benötigt immer Leading &nbsp;&nbsp;
-        'chatClosedMessage' : 'Leider ist unsere Öffnungszeit unterdessen vorbei. Bitte verwende das Kontaktformular oder versuche es morgen noch einmal.'
+        'chatClosedMessage' : 'Purtroppo la nostra chat non è più disponibile, ma saremo lieti di aiutarvi durante gli orari di apertura. Al di fuori degli orari di apertura è possibile utilizzare il modulo di contatto.'
         },
         'en-US': {
         'privateCustomers' : 'Private customers',
@@ -582,7 +582,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatNotOnline' : 'Not available',
         'countryCH' : '&nbsp;&nbsp;Switzerland', // benötigt immer Leading &nbsp;&nbsp;
         'countryLI' : '&nbsp;&nbsp;Liechtenstein', // benötigt immer Leading &nbsp;&nbsp;
-        'chatClosedMessage' : 'Leider ist unsere Öffnungszeit unterdessen vorbei. Bitte verwende das Kontaktformular oder versuche es morgen noch einmal.'
+        'chatClosedMessage' : 'Unfortunately, our chat is no longer available, gladly we are available within the opening hours. Outside the opening hours you can use the contact form.'
         }
     }
 
