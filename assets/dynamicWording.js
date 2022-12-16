@@ -124,10 +124,10 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkundeFR = "Lu - Ve "; 
                 tagePrivatkundeIT = "Lun - Ven "; 
                 tagePrivatkundeEN = "Mo - Fr "; 
-                tagePrivatkunde2DE = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2DE = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 18:00";
                 uhrzeitPrivatkunde2 = "09:00 - 17:00";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Datenschutzerklärung</a>';
@@ -156,10 +156,10 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkundeFR = "Lu - Ve "; 
                 tagePrivatkundeIT = "Lun - Ven "; 
                 tagePrivatkundeEN = "Mo - Fr "; 
-                tagePrivatkunde2DE = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2DE = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 18:00";
                 uhrzeitPrivatkunde2 = "09:00 - 17:00";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Datenschutzerklärung</a>';
@@ -180,6 +180,72 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)700, (0)800, (0)900';
                 callbackPhoneError1EN = 'Please enter a valid phone number. Only Austrian phone numbers are accepted.';
                 callbackPhoneError2EN = 'The following area codes are not accepted: (0)700, (0)800, (0)900';
+
+                break;
+        case 'helpcenter.galaxus.fr':
+                //Öffnungszeiten
+                tagePrivatkundeDE = ""; 
+                tagePrivatkundeFR = ""; 
+                tagePrivatkundeIT = ""; 
+                tagePrivatkundeEN = ""; 
+                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                uhrzeitPrivatkunde = "";
+                uhrzeitPrivatkunde2 = "";
+                // TODO: LINKS AUF KORREKTHEIT PRÜFEN
+                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/5567" target="blank">Datenschutzerklärung</a>';
+                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/5567" target="blank">Déclaration de protection des données</a>';
+                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
+                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/5567" target="blank">Privacy statement</a>';
+
+                telPrivatkunde = "";
+                telPrivatkundeText = "";
+                telFirmenkunde = "";
+                telFirmenkundeText = "";
+
+                callbackPhoneError1DE = '';
+                callbackPhoneError2DE = '';
+                callbackPhoneError1FR = '';
+                callbackPhoneError2FR = '';
+                callbackPhoneError1IT = '';
+                callbackPhoneError2IT = '';
+                callbackPhoneError1EN = '';
+                callbackPhoneError2EN = '';
+
+                break;
+        case 'helpcenter.galaxus.it':
+                //Öffnungszeiten
+                tagePrivatkundeDE = ""; 
+                tagePrivatkundeFR = ""; 
+                tagePrivatkundeIT = ""; 
+                tagePrivatkundeEN = ""; 
+                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " | " wenn befüllt
+                uhrzeitPrivatkunde = "";
+                uhrzeitPrivatkunde2 = "";
+                // TODO: LINKS AUF KORREKTHEIT PRÜFEN
+                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/5567" target="blank">Datenschutzerklärung</a>';
+                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/5567" target="blank">Déclaration de protection des données</a>';
+                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
+                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/5567" target="blank">Privacy statement</a>';
+
+                telPrivatkunde = "";
+                telPrivatkundeText = "";
+                telFirmenkunde = "";
+                telFirmenkundeText = "";
+
+                callbackPhoneError1DE = '';
+                callbackPhoneError2DE = '';
+                callbackPhoneError1FR = '';
+                callbackPhoneError2FR = '';
+                callbackPhoneError1IT = '';
+                callbackPhoneError2IT = '';
+                callbackPhoneError1EN = '';
+                callbackPhoneError2EN = '';
 
                 break;
         case 'helpcenter.connect.digitec.ch':
@@ -616,6 +682,20 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">To Shop</a>'
         dynamicWording['de']['emailDescription'] = 'Wartezeit <font class="mailWaitTime">3-4</font> Tage'
         dynamicWording['de']['emailDescriptionMobile'] = 'Wartezeit <font class="mailWaitTime">3-4</font> Tage'
+    }
+
+    if (window.location.hostname == 'helpcenter.galaxus.fr'){
+        dynamicWording['de']['toShop'] = '<a href="https://www.galaxus.fr/" target="blank">Zum Shop</a>'
+        dynamicWording['fr']['toShop'] = '<a href="https://www.galaxus.fr/" target="blank">Vers le Shop</a>'
+        dynamicWording['it']['toShop'] = '<a href="https://www.galaxus.fr/" target="blank">Al Shop</a>'
+        dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.fr/" target="blank">To Shop</a>'
+    }
+
+    if (window.location.hostname == 'helpcenter.galaxus.it'){
+        dynamicWording['de']['toShop'] = '<a href="https://www.galaxus.it/" target="blank">Zum Shop</a>'
+        dynamicWording['fr']['toShop'] = '<a href="https://www.galaxus.it/" target="blank">Vers le Shop</a>'
+        dynamicWording['it']['toShop'] = '<a href="https://www.galaxus.it/" target="blank">Al Shop</a>'
+        dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.it/" target="blank">To Shop</a>'
     }
 
   return dynamicWording;  

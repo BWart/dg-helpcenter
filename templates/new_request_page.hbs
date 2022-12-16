@@ -1088,8 +1088,16 @@
             portalChooser = 'ch'
             break;
           case 'helpcenter.galaxus.de':
+            portalChooser = 'de'
+            break;
           case 'helpcenter.galaxus.at':
-            portalChooser = 'eu'
+            portalChooser = 'at'
+            break;
+          case 'helpcenter.galaxus.fr':
+            portalChooser = 'fr'
+            break;
+          case 'helpcenter.galaxus.it':
+            portalChooser = 'it'
             break;
           default:
             portalChooser = 'ch'
@@ -1113,6 +1121,8 @@
     let contactChannelChat = true;
     let contactChannelCall = true;
     let contactChannelMail = true;
+    let isDEAT = false;
+    let isFRIT = false;
     let isOpen = 'true';
     let isPE = false;
     let isCH = false;
@@ -1152,6 +1162,10 @@
           isPE = true
         }
         break;
+      case 'helpcenter.galaxus.fr':
+      case 'helpcenter.galaxus.it':
+        isOpen = false
+        
       default:
         isOpen = false;
         break;
@@ -1248,45 +1262,90 @@
       }
     }
     // EU
-    else if(!isCH) {
-      //In Business Hours
+    else {
+      let tempSwitchHideContactFormDuringOpening = false;
+      let tempSwitchHideContactFormOutsideOpening = false;
+      let tempSwitchHidePhoneDuringOpening = false;
+      let tempSwitchHidePhoneOutsideOpening = false;
+      let tempSwitchHideChatDuringOpening = false;
+      let tempPhoneWaitThreshholdToShowContactForm = 0;
+      let tempChatWaitThreshholdToShowContactForm = 0;
+      let tempChatAndPhoneWaitThreshholdToShowContactForm = 0;
+      switch (portal){
+        case 'helpcenter.galaxus.de':
+        case 'helpcenter.galaxus.at':
+          isOpen = isInDEOpeningTimes();
+          tempSwitchHideContactFormDuringOpening = switchHideContactFormForEUDuringOpeningTimes;
+          tempSwitchHideContactFormOutsideOpening = switchHideContactFormForEUOutsideOpeningTimes;
+          tempSwitchHidePhoneDuringOpening = switchHidePhoneForEUDuringOpeningTimes;
+          tempSwitchHidePhoneOutsideOpening = switchHidePhoneForEUOutsideOpeningTimes;
+          tempSwitchHideChatDuringOpening = switchHideChatForEUDuringOpeningTimes;
+          tempSwitchHideChatOutsideOpening = switchHideChatForEUOutsideOpeningTimes;
+          tempPhoneWaitThreshholdToShowContactForm = phoneWaitThreshholdToShowContactFormEU;
+          tempChatWaitThreshholdToShowContactForm = chatWaitThreshholdToShowContactFormEU;
+          tempChatAndPhoneWaitThreshholdToShowContactForm = chatAndPhoneWaitThreshholdToShowContactFormEU;
+          break;
+        case 'helpcenter.galaxus.fr':
+          isOpen = isInFROpeningTimes();
+          tempSwitchHideContactFormDuringOpening = switchHideContactFormForFRDuringOpeningTimes;
+          tempSwitchHideContactFormOutsideOpening = switchHideContactFormForFROutsideOpeningTimes;
+          tempSwitchHidePhoneDuringOpening = switchHidePhoneForFRDuringOpeningTimes;
+          tempSwitchHidePhoneOutsideOpening = switchHidePhoneForFROutsideOpeningTimes;
+          tempSwitchHideChatDuringOpening = switchHideChatForFRDuringOpeningTimes;
+          tempSwitchHideChatOutsideOpening = switchHideChatForFROutsideOpeningTimes;
+          tempPhoneWaitThreshholdToShowContactForm = phoneWaitThreshholdToShowContactFormFR;
+          tempChatWaitThreshholdToShowContactForm = chatWaitThreshholdToShowContactFormFR;
+          tempChatAndPhoneWaitThreshholdToShowContactForm = chatAndPhoneWaitThreshholdToShowContactFormFR;
+          break;
+        case 'helpcenter.galaxus.it':
+          isOpen = isInITOpeningTimes();
+          tempSwitchHideContactFormDuringOpening = switchHideContactFormForITDuringOpeningTimes;
+          tempSwitchHideContactFormOutsideOpening = switchHideContactFormForITOutsideOpeningTimes;
+          tempSwitchHidePhoneDuringOpening = switchHidePhoneForITDuringOpeningTimes;
+          tempSwitchHidePhoneOutsideOpening = switchHidePhoneForITOutsideOpeningTimes;
+          tempSwitchHideChatDuringOpening = switchHideChatForITDuringOpeningTimes;
+          tempSwitchHideChatOutsideOpening = switchHideChatForITOutsideOpeningTimes;
+          tempPhoneWaitThreshholdToShowContactForm = phoneWaitThreshholdToShowContactFormIT;
+          tempChatWaitThreshholdToShowContactForm = chatWaitThreshholdToShowContactFormIT;
+          tempChatAndPhoneWaitThreshholdToShowContactForm = chatAndPhoneWaitThreshholdToShowContactFormIT;
+          break;
+      }
       if (isOpen){
-        if (switchHideContactFormForEUDuringOpeningTimes){
+        if (tempSwitchHideContactFormDuringOpening){
           contactChannelMail = false;
         }
-        if (phoneWaitThreshholdToShowContactFormEU < callWaitSeconds || chatWaitThreshholdToShowContactFormEU < chatWaitSeconds[customerDepartment] || (chatAndPhoneWaitThreshholdToShowContactFormEU < callWaitSeconds && chatAndPhoneWaitThreshholdToShowContactFormEU < chatWaitSeconds[customerDepartment])){
+        if(tempPhoneWaitThreshholdToShowContactForm < callWaitSeconds || tempChatWaitThreshholdToShowContactForm < chatWaitSeconds[customerDepartment] || (tempChatAndPhoneWaitThreshholdToShowContactForm < callWaitSeconds && tempChatAndPhoneWaitThreshholdToShowContactForm < chatWaitSeconds[customerDepartment])){
           contactChannelMail = true;
         }
-        if (switchHidePhoneForEUDuringOpeningTimes){
+        if (tempSwitchHidePhoneDuringOpening){
           contactChannelCall = false;
         }
-        if (switchHideChatForEUDuringOpeningTimes){
+        if (tempSwitchHideChatDuringOpening){
           contactChannelChat = false;
         }
-        if(isPE){
+        if (requestReasonTag.includes('webform_case_product_advice_')){
           if (switchHidePhoneForPEDuringOpeningTimes){
             contactChannelCall = false;
           }
         }
-      }
-      //OutOfBusinessHours
-      else {
-        if (switchHideContactFormForEUOutsideOpeningTimes){
+      } else { //WHEN OUTSIDE OPENING TIMES
+        if (tempSwitchHideContactFormOutsideOpening){
           contactChannelMail = false;
         }
-        if (switchHidePhoneForEUOutsideOpeningTimes){
+        if (tempSwitchHidePhoneOutsideOpening){
           contactChannelCall = false;
         }
-        if (switchHideChatForEUOutsideOpeningTimes){
+        if (tempSwitchHideChatOutsideOpening){
           contactChannelChat = false;
         }
-        if (isPE){
+        if (requestReasonTag.includes('webform_case_product_advice_')){
           if (switchHidePhoneForPEOutsideOpeningTimes){
             contactChannelCall = false;
           }
         }
       }
     }
+    
     // We need offers by Mail, hence Mail only
     if (requestReasonTag == "webform_case_offer"){
       contactChannelMail = true;
@@ -1422,6 +1481,32 @@
       return true;
     }
     if (dayOfWeek == 6 && currentHour >= euOpeningHourSaturday && currentHour < euClosingHourSaturday){
+      return true;
+    }
+    return false;
+  }
+
+  function isInFROpeningTimes(){
+    const d = new Date();
+    let dayOfWeek = d.getUTCDay();
+    let currentHour = d.getUTCHours() + UTCHourOffset;
+    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= frOpeningHourWeekday && currentHour < frClosingHourWeekday){
+      return true;
+    }
+    if (dayOfWeek == 6 && currentHour >= frOpeningHourSaturday && currentHour < frClosingHourSaturday){
+      return true;
+    }
+    return false;
+  }
+
+  function isInITOpeningTimes(){
+    const d = new Date();
+    let dayOfWeek = d.getUTCDay();
+    let currentHour = d.getUTCHours() + UTCHourOffset;
+    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= itOpeningHourWeekday && currentHour < itClosingHourWeekday){
+      return true;
+    }
+    if (dayOfWeek == 6 && currentHour >= itOpeningHourSaturday && currentHour < itClosingHourSaturday){
       return true;
     }
     return false;
@@ -2239,16 +2324,19 @@
           case 'helpcenter.digitec.ch':
           case 'helpcenter.galaxus.ch':
           case 'helpcenter.connect.digitec.ch':
-            if (reasonsForNoContactFormPE.includes(requestReasonTag)){
-              portalChooser = 'ch'
-            }
-            else{
-              portalChooser = 'ch'
-            }
+            portalChooser = 'ch'
             break;
           case 'helpcenter.galaxus.de':
+            portalChooser = 'de'
+            break;
           case 'helpcenter.galaxus.at':
-            portalChooser = 'eu'
+            portalChooser = 'at'
+            break;
+          case 'helpcenter.galaxus.fr':
+            portalChooser = 'fr'
+            break;
+          case 'helpcenter.galaxus.it':
+            portalChooser = 'it'
             break;
           default:
             portalChooser = 'ch'

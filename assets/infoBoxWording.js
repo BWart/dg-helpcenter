@@ -16,96 +16,128 @@ function fillInfoBoxWording(){
       // Hostname korrekt in der JSON in den Links hinterlegen
       // Helpcenter Links richtig hinterlegen (Helpcenter-spezifische-Nummern); var "hp"
       // Beitrag Seitennamen werden dynamisch angepasst, var "seite"
-      switch (portal){
-              case 'helpcenter.digitec.ch':
-                    shopURL = "https://www.digitec.ch/"; 
-  
-                    helpcenterURL = "https://helpcenter.digitec.ch/hc/";
-                    seite = "digitec";
-                     
-                    hp1 = "/115005646225";
-                    hp2 = "/360012370979";
-                    hp3 = "/360014638579";
-                    hp4 = "/360010272859";
-                    hp5 = "/360012795199";
-                    hp6 = "/115005646085";
-                    hp7 = "/360000452549";
-  
-                    offerte = "CHF 5'000.-";
-                    break;
-              case 'helpcenter.galaxus.ch':
-                    shopURL = "https://www.galaxus.ch/";
-                    
-                    helpcenterURL = "https://helpcenter.galaxus.ch/hc/";
-                    seite = "Galaxus";
-                      
-                    hp1 = "/360007334359";
-                    hp2 = "/360012372239";
-                    hp3 = "/360007333839";
-                    hp4 = "/360010180420";
-                    hp5 = "/360012690580";
-                    hp6 = "/360007334059";
-                    hp7 = "/360014471940";
-  
-                    offerte = "CHF 5'000.-";
-                    break;
-              case 'helpcenter.galaxus.de':
-                    shopURL = "https://www.galaxus.de/";
-  
-                    helpcenterURL = "https://helpcenter.galaxus.de/hc/";
-                    seite = "Galaxus";
-                      
-                    hp1 = "/360008216899";
-                    hp2 = "";
-                    hp3 = "/360016850820";
-                    hp4 = "/360010273099";
-                    hp5 = "";
-                    hp6 = "/360010182760";
-                    hp7 = "/360008226499";
-  
-                    offerte = "EUR 5'000.-";
-                    break;
-              case 'helpcenter.galaxus.at':
-                    shopURL = "https://www.galaxus.at/"
-  
-                    helpcenterURL = "https://helpcenter.galaxus.at/hc/";
-                    seite = "Galaxus";
-  
-                    hp1 = "/4403441880850";
-                    hp2 = "";
-                    hp3 = "/4407053718930";  
-                    hp4 = "/4407061056530";
-                    hp5 = "";
-                    hp6 = "/4407011198994";
-                    hp7 = "/4407007830674";
-  
-                    offerte = "EUR 5'000.-";
-                    break;
-              default:
-                    shopURL = "https://www.digitec.ch/";
-  
-                    helpcenterURL = "https://helpcenter.digitec.ch/hc/";
-                    seite = "digitec";
-                    
-                    hp1 = "/115005646225";
-                    hp2 = "/360012370979";
-                    hp3 = "/360014638579";
-                    hp4 = "/360010272859";
-                    hp5 = "/360012795199";
-                    hp6 = "/115005646085";
-                    hp7 = "/360000452549";
-  
-                    offerte = "CHF 5'000.-";
-                    break;
+      switch (portal) {
+            case 'helpcenter.digitec.ch':
+                  shopURL = "https://www.digitec.ch/";
+
+                  helpcenterURL = "https://helpcenter.digitec.ch/hc/";
+                  seite = "digitec";
+
+                  hp1 = "/115005646225";
+                  hp2 = "/360012370979";
+                  hp3 = "/360014638579";
+                  hp4 = "/360010272859";
+                  hp5 = "/360012795199";
+                  hp6 = "/115005646085";
+                  hp7 = "/360000452549";
+
+                  offerte = "CHF 5'000.-";
+                  break;
+            case 'helpcenter.galaxus.ch':
+                  shopURL = "https://www.galaxus.ch/";
+
+                  helpcenterURL = "https://helpcenter.galaxus.ch/hc/";
+                  seite = "Galaxus";
+
+                  hp1 = "/360007334359";
+                  hp2 = "/360012372239";
+                  hp3 = "/360007333839";
+                  hp4 = "/360010180420";
+                  hp5 = "/360012690580";
+                  hp6 = "/360007334059";
+                  hp7 = "/360014471940";
+
+                  offerte = "CHF 5'000.-";
+                  break;
+            case 'helpcenter.galaxus.de':
+                  shopURL = "https://www.galaxus.de/";
+
+                  helpcenterURL = "https://helpcenter.galaxus.de/hc/";
+                  seite = "Galaxus";
+
+                  hp1 = "/360008216899";
+                  hp2 = "";
+                  hp3 = "/360016850820";
+                  hp4 = "/360010273099";
+                  hp5 = "";
+                  hp6 = "/360010182760";
+                  hp7 = "/360008226499";
+
+                  offerte = "EUR 5'000.-";
+                  break;
+            case 'helpcenter.galaxus.at':
+                  shopURL = "https://www.galaxus.at/"
+
+                  helpcenterURL = "https://helpcenter.galaxus.at/hc/";
+                  seite = "Galaxus";
+
+                  hp1 = "/4403441880850";
+                  hp2 = "";
+                  hp3 = "/4407053718930";
+                  hp4 = "/4407061056530";
+                  hp5 = "";
+                  hp6 = "/4407011198994";
+                  hp7 = "/4407007830674";
+
+                  offerte = "EUR 5'000.-";
+                  break;
+            case 'helpcenter.galaxus.fr':
+                  shopURL = "https://www.galaxus.fr/"
+
+                  helpcenterURL = "https://helpcenter.galaxus.fr/hc/";
+                  seite = "Galaxus";
+
+                  hp1 = "/7699726055314";
+                  hp2 = "";
+                  hp3 = "/7976197781522";
+                  hp4 = "/7976051973010";
+                  hp5 = "";
+                  hp6 = "/7971569619602";
+                  hp7 = "/7706724974866";
+
+                  offerte = "EUR 5'000.-";
+                  break;
+            case 'helpcenter.galaxus.it':
+                  shopURL = "https://www.galaxus.it/"
+
+                  helpcenterURL = "https://helpcenter.galaxus.it/hc/";
+                  seite = "Galaxus";
+
+                  hp1 = "/8177762057234";
+                  hp2 = "";
+                  hp3 = "/8177762652306";
+                  hp4 = "/8177794311954";
+                  hp5 = "";
+                  hp6 = "/8177762450066";
+                  hp7 = "/8177794011666";
+
+                  offerte = "EUR 5'000.-";
+                  break;
+            default:
+                  shopURL = "https://www.digitec.ch/";
+
+                  helpcenterURL = "https://helpcenter.digitec.ch/hc/";
+                  seite = "digitec";
+
+                  hp1 = "/115005646225";
+                  hp2 = "/360012370979";
+                  hp3 = "/360014638579";
+                  hp4 = "/360010272859";
+                  hp5 = "/360012795199";
+                  hp6 = "/115005646085";
+                  hp7 = "/360000452549";
+
+                  offerte = "CHF 5'000.-";
+                  break;
       }
   
       var infoBoxWording = {
         //ALLE ANDERWEITIGEN ANFRAGEN
         "webform_case_other_request_order" : {
-              'de' : "Die aktuellen Informationen zum Lieferstatus, Kaufbelege, Garantiescheine und Weiteres findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto.<br><br>Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>Defekt anmelden</a>.<br><br><b>Aktuell hat die Schweizer Post mehrere Tage Verzögerung bei der Datenübertragung. Es kann daher sein, dass deine Links zur Sendungsverfolgung nicht funktionieren. Bitte kontaktiere unseren Kundendienst nur, fallst deine Sendungslinks bereits seit mindestens <i>7 Tagen</i> nicht funktionieren und deine Artikel nicht zugestellt sind.</b>",
-              'fr' : "Dans l'<a href='" + shopURL + "Order' target='blank'>aperçu des commandes</a> de votre compte client, vous pouvez consulter les dernières informations relatives au statut de livraison de vos produits et tous les reçus, certificats de garantie.<br><br>Si un produit est défectueux et s'il peut être pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>signaler un défaut</a>.<br><br><b>Actuellement, la Poste suisse a plusieurs jours de retard dans la transmission des données. Il se peut donc que tes liens de suivi ne fonctionnent pas. Contacte notre service clientèle uniquement si tes liens de suivi ne fonctionnent pas depuis au moins <i>7 jours</i> et si tes articles n'ont pas été livrés.</b>",
-              'it' : "Trovi informazioni più dettagliate sullo stato di consegna dei tuoi articoli, tutte le ricevute d'acquisto, i certificati di garanzia e altro nel tuo conto cliente alla voce <a href='" + shopURL + "Order' target='blank'>ordini</a>.<br><br>Se un prodotto è difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>segnala un difetto</a>.<br><br><b>Attualmente la Posta Svizzera registra un ritardo di alcuni giorni nella trasmissione dei dati. È quindi possibile che i vostri link di tracciamento non funzionino. Si prega di contattare il nostro servizio clienti solo se i link di tracciamento non funzionano da almeno <i>7 giorni</i> e gli articoli non sono stati consegnati.</b>",
-              'en-US' : "We'll keep the delivery status, sales receipts and warranty certificates updated in the <a href='" + shopURL + "Order' target='blank'>order overview</a> in your customer account.<br><br>Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>report a defect</a>.<br><br><b>Currently, the Swiss Post has several days delay in data transmission. Therefore, it is possible that your tracking links are not working. Please contact our customer service only if your tracking links have not been working for at least <i>7 days</i> and your items have not been delivered.</b>"
+              'de' : "Die aktuellen Informationen zum Lieferstatus, Kaufbelege, Garantiescheine und Weiteres findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto.<br><br>Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>Defekt anmelden</a>.",
+              'fr' : "Dans l'<a href='" + shopURL + "Order' target='blank'>aperçu des commandes</a> de votre compte client, vous pouvez consulter les dernières informations relatives au statut de livraison de vos produits et tous les reçus, certificats de garantie.<br><br>Si un produit est défectueux et s'il peut être pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>signaler un défaut</a>.",
+              'it' : "Trovi informazioni più dettagliate sullo stato di consegna dei tuoi articoli, tutte le ricevute d'acquisto, i certificati di garanzia e altro nel tuo conto cliente alla voce <a href='" + shopURL + "Order' target='blank'>ordini</a>.<br><br>Se un prodotto è difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>segnala un difetto</a>.",
+              'en-US' : "We'll keep the delivery status, sales receipts and warranty certificates updated in the <a href='" + shopURL + "Order' target='blank'>order overview</a> in your customer account.<br><br>Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>report a defect</a>."
         },
         "webform_case_other_request_returns" : {
               'de' : "Die aktuellen Informationen zum Lieferstatus, Kaufbelege, Garantiescheine und Weiteres findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto.<br><br>Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>Defekt anmelden</a>.",
@@ -128,10 +160,10 @@ function fillInfoBoxWording(){
   
         //LEVEL 0: Wo ist meine Bestellung?
         "webform_case_shipping_status" : {
-              'de' : "Leider kann eine Sendung auch mal etwas länger unterwegs sein oder sie erfolgt in mehreren Paketen. Sollte die Sendung auch nach fünf Tagen nach Versand nicht auftauchen, leiten wir gerne eine Nachforschung ein.<br>Aktuelle Informationen zum Lieferstatus findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto.<br><br><b>Aktuell hat die Schweizer Post mehrere Tage Verzögerung bei der Datenübertragung. Es kann daher sein, dass deine Links zur Sendungsverfolgung nicht funktionieren. Bitte kontaktiere unseren Kundendienst nur, fallst deine Sendungslinks bereits seit mindestens <i>7 Tagen</i> nicht funktionieren und deine Artikel nicht zugestellt sind.</b>",
-              'fr' : "Malheureusement, un envoi peut prendre un peu plus de temps pour arriver ou il peut être envoyé en plusieurs colis. Si l'envoi ne se présente pas au bout de cinq jours après l'expédition, nous serons heureux d'ouvrir une enquête.<br>Vous trouverez des informations actualisées sur l'état de la livraison dans le <a href='" + shopURL + "Order' target='blank'>aperçu des commandes</a> dans votre compte client.<br><br><b>Actuellement, la Poste suisse a plusieurs jours de retard dans la transmission des données. Il se peut donc que tes liens de suivi ne fonctionnent pas. Contacte notre service clientèle uniquement si tes liens de suivi ne fonctionnent pas depuis au moins <i>7 jours</i> et si tes articles n'ont pas été livrés.</b>",
-              'it' : "Sfortunatamente, una spedizione può richiedere un po' più di tempo per arrivare o può essere inviata in più pacchi. Se la spedizione non si presenta entro cinque giorni dalla spedizione, saremo lieti di indagare.<br>Si possono trovare informazioni aggiornate sullo stato della consegna nel <a href='" + shopURL + "Order' target='blank'>riassunto dell'ordine</a> nel tuo account cliente.<br><br><b>Attualmente la Posta Svizzera registra un ritardo di alcuni giorni nella trasmissione dei dati. È quindi possibile che i vostri link di tracciamento non funzionino. Si prega di contattare il nostro servizio clienti solo se i link di tracciamento non funzionano da almeno <i>7 giorni</i> e gli articoli non sono stati consegnati.</b>",
-              'en-US' : "Unfortunately, a shipment can sometimes be a little longer on the road or it takes place in several packages. If the shipment does not appear after five days after shipment, we will gladly initiate an investigation.<br>You can find current information on the delivery status in the <a href='" + shopURL + "Order' target='blank'>order overview</a> in your customer account.<br><br><b>Currently, the Swiss Post has several days delay in data transmission. Therefore, it is possible that your tracking links are not working. Please contact our customer service only if your tracking links have not been working for at least <i>7 days</i> and your items have not been delivered.</b>",
+              'de' : "Leider kann eine Sendung auch mal etwas länger unterwegs sein oder sie erfolgt in mehreren Paketen. Sollte die Sendung auch nach fünf Tagen nach Versand nicht auftauchen, leiten wir gerne eine Nachforschung ein.<br>Aktuelle Informationen zum Lieferstatus findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto.",
+              'fr' : "Malheureusement, un envoi peut prendre un peu plus de temps pour arriver ou il peut être envoyé en plusieurs colis. Si l'envoi ne se présente pas au bout de cinq jours après l'expédition, nous serons heureux d'ouvrir une enquête.<br>Vous trouverez des informations actualisées sur l'état de la livraison dans le <a href='" + shopURL + "Order' target='blank'>aperçu des commandes</a> dans votre compte client.",
+              'it' : "Sfortunatamente, una spedizione può richiedere un po' più di tempo per arrivare o può essere inviata in più pacchi. Se la spedizione non si presenta entro cinque giorni dalla spedizione, saremo lieti di indagare.<br>Si possono trovare informazioni aggiornate sullo stato della consegna nel <a href='" + shopURL + "Order' target='blank'>riassunto dell'ordine</a> nel tuo account cliente.",
+              'en-US' : "Unfortunately, a shipment can sometimes be a little longer on the road or it takes place in several packages. If the shipment does not appear after five days after shipment, we will gladly initiate an investigation.<br>You can find current information on the delivery status in the <a href='" + shopURL + "Order' target='blank'>order overview</a> in your customer account.",
               'deMailTemplate' : "Welche Artikel fehlen: \nSendungsnummer: ",
               'frMailTemplate' : "Quels sont les articles manquants : \nNuméro de suivi : ",
               'itMailTemplate' : "Quali articoli mancano: \nNumero di spedizione: ",
@@ -144,10 +176,10 @@ function fillInfoBoxWording(){
               'en-US' : "We don't ship the order until all your products are in the warehouse and «ready for shipment». If you need any items sooner, please <a href='" + helpcenterURL + "articles" + hp1 + "-How-do-I-arrange-partial-delivery-' target='blank'>activate partial delivery</a>."
         },
         "webform_case_order_status" : {
-              'de' : "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto.<br><br>Mehr Informationen zu den Versandstatus, findest du unter <a href='" + helpcenterURL + "articles" + hp5 + "' target='blank'>Wo ist mein Paket und wann erhalte ich meine Bestellung?</a><br><br><b>Aktuell hat die Schweizer Post mehrere Tage Verzögerung bei der Datenübertragung. Es kann daher sein, dass deine Links zur Sendungsverfolgung nicht funktionieren. Bitte kontaktiere unseren Kundendienst nur, fallst deine Sendungslinks bereits seit mindestens <i>7 Tagen</i> nicht funktionieren und deine Artikel nicht zugestellt sind.</b>",
-              'fr' : "Vous pouvez trouver les informations actuelles sur l'état de la livraison de vos produits dans la rubrique <a href='" + shopURL + "Order' target='blank'>aperçu de la commande</a> dans votre compte client.<br><br>Pour plus d'informations sur l'état d'expédition, voir <a href='" + helpcenterURL + "articles" + hp5 + "' target='blank'>Où est mon colis et quand vais-je recevoir ma commande ?</a><br><br><b>Actuellement, la Poste suisse a plusieurs jours de retard dans la transmission des données. Il se peut donc que tes liens de suivi ne fonctionnent pas. Contacte notre service clientèle uniquement si tes liens de suivi ne fonctionnent pas depuis au moins <i>7 jours</i> et si tes articles n'ont pas été livrés.</b>",
-              'it' : "Potete trovare le informazioni attuali sullo stato di consegna dei vostri prodotti nel <a href='" + shopURL + "Order' target='blank'>riassunto dell'ordine</a> nel tuo account cliente.<br><br>Per maggiori informazioni sullo stato della spedizione, vedi <a href='" + helpcenterURL + "articles" + hp5 + "' target='blank'>Quando riceverò il mio ordine?</a><br><br><b>Attualmente la Posta Svizzera registra un ritardo di alcuni giorni nella trasmissione dei dati. È quindi possibile che i vostri link di tracciamento non funzionino. Si prega di contattare il nostro servizio clienti solo se i link di tracciamento non funzionano da almeno <i>7 giorni</i> e gli articoli non sono stati consegnati.</b>",
-              'en-US' : "You can find the latest information on the delivery status of your products in the <a href='" + shopURL + "Order' target='blank'>order overview</a> in your customer account.<br><br>You can find more information about the shipping status at <a href='" + helpcenterURL + "articles" + hp5 + "' target='blank'>Where’s my order and when will I receive it?</a><br><br><b>Currently, the Swiss Post has several days delay in data transmission. Therefore, it is possible that your tracking links are not working. Please contact our customer service only if your tracking links have not been working for at least <i>7 days</i> and your items have not been delivered.</b>",
+              'de' : "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto.<br><br>Mehr Informationen zu den Versandstatus, findest du unter <a href='" + helpcenterURL + "articles" + hp5 + "' target='blank'>Wo ist mein Paket und wann erhalte ich meine Bestellung?</a>",
+              'fr' : "Vous pouvez trouver les informations actuelles sur l'état de la livraison de vos produits dans la rubrique <a href='" + shopURL + "Order' target='blank'>aperçu de la commande</a> dans votre compte client.<br><br>Pour plus d'informations sur l'état d'expédition, voir <a href='" + helpcenterURL + "articles" + hp5 + "' target='blank'>Où est mon colis et quand vais-je recevoir ma commande ?</a>",
+              'it' : "Potete trovare le informazioni attuali sullo stato di consegna dei vostri prodotti nel <a href='" + shopURL + "Order' target='blank'>riassunto dell'ordine</a> nel tuo account cliente.<br><br>Per maggiori informazioni sullo stato della spedizione, vedi <a href='" + helpcenterURL + "articles" + hp5 + "' target='blank'>Quando riceverò il mio ordine?</a>",
+              'en-US' : "You can find the latest information on the delivery status of your products in the <a href='" + shopURL + "Order' target='blank'>order overview</a> in your customer account.<br><br>You can find more information about the shipping status at <a href='" + helpcenterURL + "articles" + hp5 + "' target='blank'>Where’s my order and when will I receive it?</a>",
         },
   
         //LEVEL 0: Probleme mit einer Bestellung
@@ -407,7 +439,7 @@ function fillInfoBoxWording(){
         }
       }
   
-        //TODO: Galaxus AT links prüfen
+        //TODO: ÜBERSETZUNG IT+FR
       if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
         infoBoxWording['webform_case_not_working_product']['de'] = "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "wiki/5547' target='blank'>Gewährleistungsinformationen</a> sowie in unseren <a href='" + shopURL + "Wiki/478' target='blank'>AGBs</a>.";
         infoBoxWording['webform_case_shipping_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas länger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.<br><br><b>In der \"Black Week\" hat das allgemeine Versandvolumen stark zugenommen. Momentan ist unser Versandpartner DHL mit den Lieferungen leider im Verzug. Bitte kontaktiere unseren Kundenservice nur, falls sich dein Paket seit <i>5 oder mehr Tagen</i> immer noch im Transport befindet.</b>";
@@ -421,6 +453,21 @@ function fillInfoBoxWording(){
         infoBoxWording['webform_case_delete_account']['it'] = "Dopo la disattivazione dell'account, non sarà più possibile accedere alle ricevute di acquisto elettroniche e ad altri documenti. Si consiglia di stampare o salvare una copia dei moduli necessari prima di disattivare l'account.<br><br>I clienti aziendali possono contattare il nostro servizio clienti per disattivare il proprio account.";
         infoBoxWording['webform_case_delete_account']['en-US'] = 'After your account is deactivated, you will no longer have access to your electronic purchase receipts and other records. We recommend that you print or save a copy of any forms you still need before deactivating your account.<br><br>Business customers can contact our customer service to have their account deactivated.';
     }}
+
+      if (portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.digitec.ch'){
+            infoBoxWording['webform_case_other_request_order']['de'] += "<br><br><b>Aktuell hat die Schweizer Post mehrere Tage Verzögerung bei der Datenübertragung. Es kann daher sein, dass deine Links zur Sendungsverfolgung nicht funktionieren. Bitte kontaktiere unseren Kundendienst nur, fallst deine Sendungslinks bereits seit mindestens <i>7 Tagen</i> nicht funktionieren und deine Artikel nicht zugestellt sind.</b>"
+            infoBoxWording['webform_case_other_request_order']['fr'] += "<br><br><b>Actuellement, la Poste suisse a plusieurs jours de retard dans la transmission des données. Il se peut donc que tes liens de suivi ne fonctionnent pas. Contacte notre service clientèle uniquement si tes liens de suivi ne fonctionnent pas depuis au moins <i>7 jours</i> et si tes articles n'ont pas été livrés.</b>"
+            infoBoxWording['webform_case_other_request_order']['it'] += "<br><br><b>Attualmente la Posta Svizzera registra un ritardo di alcuni giorni nella trasmissione dei dati. È quindi possibile che i vostri link di tracciamento non funzionino. Si prega di contattare il nostro servizio clienti solo se i link di tracciamento non funzionano da almeno <i>7 giorni</i> e gli articoli non sono stati consegnati.</b>"
+            infoBoxWording['webform_case_other_request_order']['en-US'] += "<br><br><b>Currently, the Swiss Post has several days delay in data transmission. Therefore, it is possible that your tracking links are not working. Please contact our customer service only if your tracking links have not been working for at least <i>7 days</i> and your items have not been delivered.</b>"
+            infoBoxWording['webform_case_shipping_status']['de'] += "<br><br><b>Aktuell hat die Schweizer Post mehrere Tage Verzögerung bei der Datenübertragung. Es kann daher sein, dass deine Links zur Sendungsverfolgung nicht funktionieren. Bitte kontaktiere unseren Kundendienst nur, fallst deine Sendungslinks bereits seit mindestens <i>7 Tagen</i> nicht funktionieren und deine Artikel nicht zugestellt sind.</b>"
+            infoBoxWording['webform_case_shipping_status']['fr'] += "<br><br><b>Actuellement, la Poste suisse a plusieurs jours de retard dans la transmission des données. Il se peut donc que tes liens de suivi ne fonctionnent pas. Contacte notre service clientèle uniquement si tes liens de suivi ne fonctionnent pas depuis au moins <i>7 jours</i> et si tes articles n'ont pas été livrés.</b>"
+            infoBoxWording['webform_case_shipping_status']['it'] += "<br><br><b>Attualmente la Posta Svizzera registra un ritardo di alcuni giorni nella trasmissione dei dati. È quindi possibile che i vostri link di tracciamento non funzionino. Si prega di contattare il nostro servizio clienti solo se i link di tracciamento non funzionano da almeno <i>7 giorni</i> e gli articoli non sono stati consegnati.</b>"
+            infoBoxWording['webform_case_shipping_status']['en-US'] += "<br><br><b>Currently, the Swiss Post has several days delay in data transmission. Therefore, it is possible that your tracking links are not working. Please contact our customer service only if your tracking links have not been working for at least <i>7 days</i> and your items have not been delivered.</b>"
+            infoBoxWording['webform_case_order_status']['de'] += "<br><br><b>Aktuell hat die Schweizer Post mehrere Tage Verzögerung bei der Datenübertragung. Es kann daher sein, dass deine Links zur Sendungsverfolgung nicht funktionieren. Bitte kontaktiere unseren Kundendienst nur, fallst deine Sendungslinks bereits seit mindestens <i>7 Tagen</i> nicht funktionieren und deine Artikel nicht zugestellt sind.</b>"
+            infoBoxWording['webform_case_order_status']['fr'] += "<br><br><b>Actuellement, la Poste suisse a plusieurs jours de retard dans la transmission des données. Il se peut donc que tes liens de suivi ne fonctionnent pas. Contacte notre service clientèle uniquement si tes liens de suivi ne fonctionnent pas depuis au moins <i>7 jours</i> et si tes articles n'ont pas été livrés.</b>"
+            infoBoxWording['webform_case_order_status']['it'] += "<br><br><b>Attualmente la Posta Svizzera registra un ritardo di alcuni giorni nella trasmissione dei dati. È quindi possibile che i vostri link di tracciamento non funzionino. Si prega di contattare il nostro servizio clienti solo se i link di tracciamento non funzionano da almeno <i>7 giorni</i> e gli articoli non sono stati consegnati.</b>"
+            infoBoxWording['webform_case_order_status']['en-US'] += "<br><br><b>Currently, the Swiss Post has several days delay in data transmission. Therefore, it is possible that your tracking links are not working. Please contact our customer service only if your tracking links have not been working for at least <i>7 days</i> and your items have not been delivered.</b>"
+      }
 
 
         return infoBoxWording;

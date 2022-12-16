@@ -211,10 +211,60 @@ else if(window.location.hostname == 'helpcenter.connect.digitec.ch'){
   }
 }
 else if(window.location.hostname =="helpcenter.galaxus.de"){ //DEUTSCHLAND
-  bannerSwitch = bannerSwitchDEDE;
+  if(currentLanguage =='de'){ //CH DEUTSCH
+    bannerSwitch = bannerSwitchDEDE;
+  }else if(currentLanguage =='fr'){ //CH FRANZÖSISCH
+    bannerSwitch = bannerSwitchDEFR;
+  }else if(currentLanguage =='it'){ //CH ITALIENISCH
+    bannerSwitch = bannerSwitchDEIT;
+  }else if(currentLanguage =='en-US'){ //CH ENGLISCH
+    bannerSwitch = bannerSwitchDEEN;
+  }
+  else { //Rest
+    bannerSwitch = false;
+  }
 }
 else if(window.location.hostname =="helpcenter.galaxus.at"){ //ÖSTERREICH
-  bannerSwitch = bannerSwitchATDE;
+  if(currentLanguage =='de'){ //CH DEUTSCH
+    bannerSwitch = bannerSwitchATDE;
+  }else if(currentLanguage =='fr'){ //CH FRANZÖSISCH
+    bannerSwitch = bannerSwitchATFR;
+  }else if(currentLanguage =='it'){ //CH ITALIENISCH
+    bannerSwitch = bannerSwitchATIT;
+  }else if(currentLanguage =='en-US'){ //CH ENGLISCH
+    bannerSwitch = bannerSwitchATEN;
+  }
+  else { //Rest
+    bannerSwitch = false;
+  }
+}
+else if(window.location.hostname =="helpcenter.galaxus.fr"){ //ÖSTERREICH
+  if(currentLanguage =='de'){ //CH DEUTSCH
+    bannerSwitch = bannerSwitchFRDE;
+  }else if(currentLanguage =='fr'){ //CH FRANZÖSISCH
+    bannerSwitch = bannerSwitchFRFR;
+  }else if(currentLanguage =='it'){ //CH ITALIENISCH
+    bannerSwitch = bannerSwitchFRIT;
+  }else if(currentLanguage =='en-US'){ //CH ENGLISCH
+    bannerSwitch = bannerSwitchFREN;
+  }
+  else if(window.location.hostname =="helpcenter.galaxus.it"){ //ÖSTERREICH
+  if(currentLanguage =='de'){ //CH DEUTSCH
+    bannerSwitch = bannerSwitchITDE;
+  }else if(currentLanguage =='fr'){ //CH FRANZÖSISCH
+    bannerSwitch = bannerSwitchITFR;
+  }else if(currentLanguage =='it'){ //CH ITALIENISCH
+    bannerSwitch = bannerSwitchITIT;
+  }else if(currentLanguage =='en-US'){ //CH ENGLISCH
+    bannerSwitch = bannerSwitchITEN;
+  }
+  else { //Rest
+    bannerSwitch = false;
+  }
+}
+  else { //Rest
+    bannerSwitch = false;
+  }
 }
 else{ //Rest
   bannerSwitch = false;

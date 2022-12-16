@@ -12,15 +12,23 @@ var switchHideContactFormForBusinessDuringOpeningTimes = false;
 var switchHideContactFormForBusinessOutsideOpeningTimes = false;
 var switchHideContactFormForEUDuringOpeningTimes = true;
 var switchHideContactFormForEUOutsideOpeningTimes = false;
+var switchHideContactFormForFRDuringOpeningTimes = false;
+var switchHideContactFormForFROutsideOpeningTimes = false;
+var switchHideContactFormForITDuringOpeningTimes = false;
+var switchHideContactFormForITOutsideOpeningTimes = false;
 //set to true if the phone number should be hidden, set to false if it should be displayed
 var switchHidePhoneDuringOpeningTimes = false;
 var switchHidePhoneOutsideOpeningTimes = false;
-var switchHidePhoneForPEDuringOpeningTimes = true;
-var switchHidePhoneForPEOutsideOpeningTimes = true;
+var switchHidePhoneForPEDuringOpeningTimes = true;   //THIS IS CURRENTLY VALID ON ALL HELPCENTERS IN CH + EU
+var switchHidePhoneForPEOutsideOpeningTimes = true;  //THIS IS CURRENTLY VALID ON ALL HELPCENTERS IN CH + EU
 var switchHidePhoneForBusinessDuringOpeningTimes = false;
 var switchHidePhoneForBusinessOutsideOpeningTimes = false;
 var switchHidePhoneForEUDuringOpeningTimes = false;
 var switchHidePhoneForEUOutsideOpeningTimes = false;
+var switchHidePhoneForFRDuringOpeningTimes = true;
+var switchHidePhoneForFROutsideOpeningTimes = true;
+var switchHidePhoneForITDuringOpeningTimes = true;
+var switchHidePhoneForITOutsideOpeningTimes = true;
 //set to true if the Chat should be hidden, set to false if it should be displayed
 var switchHideChatDuringOpeningTimes = false;
 var switchHideChatOutsideOpeningTimes = false;
@@ -30,19 +38,29 @@ var switchHideChatForBusinessDuringOpeningTimes = false;
 var switchHideChatForBusinessOutsideOpeningTimes = false;
 var switchHideChatForEUDuringOpeningTimes = false;
 var switchHideChatForEUOutsideOpeningTimes = false;
+var switchHideChatForFRDuringOpeningTimes = true;
+var switchHideChatForFROutsideOpeningTimes = true;
+var switchHideChatForITDuringOpeningTimes = true;
+var switchHideChatForITOutsideOpeningTimes = true;
 //If contact form is hidden, set threshhold to show it again when the waiting time for live contact channels get too high; set to 50000 if contact form should never be shown
 var phoneWaitThreshholdToShowContactForm = 50000;
 var phoneWaitThreshholdToShowContactFormPE = 50000;
 var phoneWaitThreshholdToShowContactFormBusiness = 50000;
 var phoneWaitThreshholdToShowContactFormEU = 50000;
+var phoneWaitThreshholdToShowContactFormFR = 50000;
+var phoneWaitThreshholdToShowContactFormIT = 50000;
 var chatWaitThreshholdToShowContactForm = 60;
 var chatWaitThreshholdToShowContactFormPE = 50000;
 var chatWaitThreshholdToShowContactFormBusiness = 50000;
-var chatWaitThreshholdToShowContactFormEU = 270;
+var chatWaitThreshholdToShowContactFormEU = 420;
+var chatWaitThreshholdToShowContactFormFR = 50000;
+var chatWaitThreshholdToShowContactFormIT = 50000;
 var chatAndPhoneWaitThreshholdToShowContactForm = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormPE = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormBusiness = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormEU = 50000;
+var chatAndPhoneWaitThreshholdToShowContactFormFR = 50000;
+var chatAndPhoneWaitThreshholdToShowContactFormIT = 50000;
 
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
@@ -63,6 +81,14 @@ var bannerSwitchATDE = false;
 var bannerSwitchATFR = false;
 var bannerSwitchATIT = false;
 var bannerSwitchATEN = false;
+var bannerSwitchFRDE = false;
+var bannerSwitchFRFR = false;
+var bannerSwitchFRIT = false;
+var bannerSwitchFREN = false;
+var bannerSwitchITDE = false;
+var bannerSwitchITFR = false;
+var bannerSwitchITIT = false;
+var bannerSwitchITEN = false;
 
 // --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
 function fillTopBannerWording(){
@@ -103,6 +129,30 @@ function fillTopBannerWording(){
       'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
       'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
     },
+    "outputHeadingBannerFR" : {
+      'de' : "Technische Störung",
+      'fr' : "Panne techniqe",
+      'it' : "Guasto tecnico",
+      'en-US' : "Technical issue"
+    },
+    "outputTextBannerFR" : {
+      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
+      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
+      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+    },
+    "outputHeadingBannerIT" : {
+      'de' : "Technische Störung",
+      'fr' : "Panne techniqe",
+      'it' : "Guasto tecnico",
+      'en-US' : "Technical issue"
+    },
+    "outputTextBannerIT" : {
+      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
+      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
+      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+    },
     }
       return topBannerWording;
 }
@@ -117,10 +167,19 @@ function fillTopBannerWording(){
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-        ['2022-11-24 00:00:00', '2022-11-28 22:00:00', 0]
+      ['2022-11-24 00:00:00', '2022-11-28 22:00:00', 0]
     ],
-    'eu' : [
-        ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 1]
+    'de' : [
+      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 1]
+    ],
+    'at' : [
+      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 2]
+    ],
+    'it' : [
+      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 3]
+    ],
+    'fr' : [
+      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 4]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
@@ -137,6 +196,24 @@ var textToDisplay = {
         'fr' : '<br>27.06.2022 16:00: fermé',
         'it' : '<br>27.06.2022 16:00: chiuso',
         'en-US' : '<br>27.06.2022: Closed from 16:00',
+    },
+    2 : {
+      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
+      'fr' : '<br>27.06.2022 16:00: fermé',
+      'it' : '<br>27.06.2022 16:00: chiuso',
+      'en-US' : '<br>27.06.2022: Closed from 16:00',
+    },
+    3 : {
+      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
+      'fr' : '<br>27.06.2022 16:00: fermé',
+      'it' : '<br>27.06.2022 16:00: chiuso',
+      'en-US' : '<br>27.06.2022: Closed from 16:00',
+    },
+    4 : {
+      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
+      'fr' : '<br>27.06.2022 16:00: fermé',
+      'it' : '<br>27.06.2022 16:00: chiuso',
+      'en-US' : '<br>27.06.2022: Closed from 16:00',
     }
 }
 
@@ -145,20 +222,39 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-        ['2022-06-06 00:00:00', '2022-06-06 22:00:00']
+      ['2022-06-06 00:00:00', '2022-06-06 22:00:00']
     ],
-    'eu' : [
-        ['2022-10-02 15:00:00', '2022-10-03 22:00:00']
+    'de' : [
+      ['2022-10-02 15:00:00', '2022-10-03 22:00:00']
+    ],
+    'at' : [
+      ['2022-10-02 15:00:00', '2022-10-03 22:00:00']
+    ],
+    'it' : [
+      ['2022-10-02 15:00:00', '2022-10-03 22:00:00']
+    ],
+    'fr' : [
+      ['2022-10-02 15:00:00', '2022-10-03 22:00:00']
     ]
 }
 
 
 //OPENING HOURS
-//EU
+//EU (DE + AT)
 var euOpeningHourWeekday = 8;
 var euClosingHourWeekday = 18;
 var euOpeningHourSaturday = 9;
 var euClosingHourSaturday = 17;
+//FR
+var frOpeningHourWeekday = 0;
+var frClosingHourWeekday = 0;
+var frOpeningHourSaturday = false;
+var frClosingHourSaturday = false;
+//IT
+var itOpeningHourWeekday = 0;
+var itClosingHourWeekday = 0;
+var itOpeningHourSaturday = false;
+var itClosingHourSaturday = false;
 //Connect
 var connectOpeningHourWeekday = 8;
 var connectClosingHourWeekday = 17;
@@ -172,8 +268,8 @@ var businessClosingHourSaturday = false;
 //CH Regular
 var chOpeningHourWeekday = 8;
 var chOpeningMinuteWeekday = 0;
-var chClosingHourWeekday = 17;
-var chClosingMinuteWeekday = 30;
+var chClosingHourWeekday = 19;
+var chClosingMinuteWeekday = 0;
 var chOpeningHourSaturday = false;
 var chClosingHourSaturday = false;
 //CH PE
