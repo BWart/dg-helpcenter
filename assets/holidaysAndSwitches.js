@@ -167,7 +167,7 @@ function fillTopBannerWording(){
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2022-12-19 00:00:00', '2022-12-19 22:00:00', 0]
+      ['2022-12-20 00:00:00', '2022-12-20 22:00:00', 0]
     ],
     'de' : [
       ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 1]
@@ -186,10 +186,10 @@ var showHolidays = {
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-        'de' : '<br>19.12.2022: Geöffnet bis 19:00',
-        'fr' : "<br>19.12.2022 : Ouvert jusqu'à 19:00",
-        'it' : '<br>19.12.2022: Aperto fino alle 19:00',
-        'en-US' : '<br>19.12.2022: Open until 19:00',
+        'de' : '<br>20.12.2022: Geöffnet bis 19:00',
+        'fr' : "<br>20.12.2022 : Ouvert jusqu'à 19:00",
+        'it' : '<br>20.12.2022: Aperto fino alle 19:00',
+        'en-US' : '<br>20.12.2022: Open until 19:00',
     },
     1 : {
         'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
