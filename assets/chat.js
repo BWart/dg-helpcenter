@@ -85,8 +85,14 @@ function getWebWidgetSettings(department){
 /////////////////////////////////////////////////////////////Departments///////////////////////////////////////////////////////////////////////////
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
-    var dep = 'Chat ' + getChatDepartmentType() + ' ' + getChatDepartmentLanguage(); 
+    var chatDepartmentType = getChatDepartmentType();
 
+    if(chatDepartmentType.includes('Yoummday')){
+        var dep = 'Chat ' + chatDepartmentType + ' DE'; 
+    }else{
+        var dep = 'Chat ' + chatDepartmentType + ' ' + getChatDepartmentLanguage(); 
+    }
+ 
     if(dep.includes('Private') && typeof chatWaitTimes != 'undefined'){        
         try {
             dep = getDepartmentWithOverflowCheck(dep);
@@ -119,13 +125,13 @@ function getDepartmentWithOverflowCheck(selectedDepartment){
 function getDepartmentWaitingTime(){
     switch(getChatDepartmentLanguage()){
         case 'DE':
-            return chatWaitTimes['privateDE'];
+            return chatWaitTimes['Chat Private DE'];
         case 'EN':
-            return chatWaitTimes['privateEN'];
+            return chatWaitTimes['Chat Private EN'];
         case 'IT':
-            return chatWaitTimes['privateIT'];
+            return chatWaitTimes['Chat Private IT'];
         case 'FR':
-            return chatWaitTimes['privateFR'];
+            return chatWaitTimes['Chat Private FR'];
         default:
             return 0;
     }
@@ -456,7 +462,7 @@ function isBusinessAvailable(){
 
 //Special Routing for YoummdayBasic
 function isYoummdayBasic(){
-    if(/*lang == 'de'  && */(requestReasonTag == 'webform_case_shipping_status' || requestReasonTag == 'webform_case_ready_for_shipment' || requestReasonTag == 'webform_case_order_status') && isYoummdayBasicAvailable()){
+       if((requestReasonTag == 'webform_case_shipping_status' || requestReasonTag == 'webform_case_ready_for_shipment' || requestReasonTag == 'webform_case_order_status') && isYoummdayBasicAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayBasic DE')){
         return true;
     }else{
         return false;
@@ -464,16 +470,28 @@ function isYoummdayBasic(){
 }
 
 function isYoummdayBasicAvailable(){
-    if(isDepartmentAvailable('Chat YoummdayBasic '+getChatDepartmentLanguage())){
+    if(isDepartmentAvailable('Chat YoummdayBasic DE')){
         return true;
     }else{
         return false;
     }
 }
 
+function isYoummdayWaitingTimeSmall(yoummdayDepartment){
+    if(typeof chatWaitTimes != 'undefined'){   
+        if(chatWaitTimes['Chat Private ' + getChatDepartmentLanguage()] < chatWaitTimes[yoummdayDepartment] && chatWaitTimes[yoummdayDepartment] > 300){
+            return false;
+        }else{
+            return true;
+        }
+    }else{
+        return true;
+    }
+}
+
 //Special Routing for YoummdayAdvanced
 function isYoummdayAdvanced(){
-    if(/*lang == 'de'  && */(requestReasonTag == 'webform_case_return' || requestReasonTag == 'webform_case_receipt') && isYoummdayAdvancedAvailable()){
+    if((requestReasonTag == 'webform_case_return' || requestReasonTag == 'webform_case_receipt') && isYoummdayAdvancedAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayAdvanced DE') ){
         return true;
     }else{
         return false;
@@ -481,7 +499,7 @@ function isYoummdayAdvanced(){
 }
 
 function isYoummdayAdvancedAvailable(){
-    if(isDepartmentAvailable('Chat YoummdayAdvanced '+getChatDepartmentLanguage())){
+    if(isDepartmentAvailable('Chat YoummdayAdvanced DE')){
         return true;
     }else{
         return false;
@@ -490,7 +508,7 @@ function isYoummdayAdvancedAvailable(){
 
 //Special Routing for YoummdayExpert
 function isYoummdayExpert(){
-    if(/*lang == 'de'  && */(requestReasonTag == 'webform_case_wrong_product') && isYoummdayExpertAvailable()){
+    if((requestReasonTag == 'webform_case_wrong_product') && isYoummdayExpertAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayExpert DE')){
         return true;
     }else{
         return false;
@@ -498,7 +516,7 @@ function isYoummdayExpert(){
 }
 
 function isYoummdayExpertAvailable(){
-    if(isDepartmentAvailable('Chat YoummdayExpert '+getChatDepartmentLanguage())){
+    if(isDepartmentAvailable('Chat YoummdayExpert DE')){
         return true;
     }else{
         return false;
