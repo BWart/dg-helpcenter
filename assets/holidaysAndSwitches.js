@@ -241,10 +241,10 @@ var hideWaitingTimes = {
 
 //OPENING HOURS
 //EU (DE + AT)
-var euOpeningHourWeekday = 8;
-var euClosingHourWeekday = 18;
+var euOpeningHourWeekday = false;
+var euClosingHourWeekday = false;
 var euOpeningHourSaturday = 9;
-var euClosingHourSaturday = 17;
+var euClosingHourSaturday = 14;
 //FR
 var frOpeningHourWeekday = 0;
 var frClosingHourWeekday = 0;
@@ -266,10 +266,10 @@ var businessClosingHourWeekday = 17;
 var businessOpeningHourSaturday = false;
 var businessClosingHourSaturday = false;
 //CH Regular
-var chOpeningHourWeekday = 8;
-var chOpeningMinuteWeekday = 0;
-var chClosingHourWeekday = 17;
-var chClosingMinuteWeekday = 30;
+var chOpeningHourWeekday = false;
+var chOpeningMinuteWeekday = false;
+var chClosingHourWeekday = false;
+var chClosingMinuteWeekday = false;
 var chOpeningHourSaturday = false;
 var chClosingHourSaturday = false;
 //CH PE
