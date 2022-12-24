@@ -167,13 +167,13 @@ function fillTopBannerWording(){
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2022-12-20 00:00:00', '2022-12-20 22:00:00', 0]
+      ['2022-12-20 00:00:00', '2022-12-26 22:00:00', 0]
     ],
     'de' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 1]
+      ['2022-12-20 00:00:00', '2022-12-26 22:00:00', 1]
     ],
     'at' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 2]
+      ['2022-12-20 00:00:00', '2022-12-26 22:00:00', 2]
     ],
     'it' : [
       ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 3]
@@ -186,19 +186,19 @@ var showHolidays = {
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-        'de' : '<br>20.12.2022: Geöffnet bis 19:00',
-        'fr' : "<br>20.12.2022 : Ouvert jusqu'à 19:00",
-        'it' : '<br>20.12.2022: Aperto fino alle 19:00',
-        'en-US' : '<br>20.12.2022: Open until 19:00',
+        'de' : '<br>26.12.2022: Geschlossen',
+        'fr' : "<br>26.12.2022: Fermé",
+        'it' : '<br>26.12.2022: Chiuso',
+        'en-US' : '<br>26.12.2022: Closed',
     },
     1 : {
-        'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
+        'de' : '<br>24.12.2022: Ab 14:00 geschlossen<br>26.12.2022: Geschlossen',
         'fr' : '<br>27.06.2022 16:00: fermé',
         'it' : '<br>27.06.2022 16:00: chiuso',
         'en-US' : '<br>27.06.2022: Closed from 16:00',
     },
     2 : {
-      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
+      'de' : '<br>24.12.2022: Ab 14:00 geschlossen<br>26.12.2022: Geschlossen',
       'fr' : '<br>27.06.2022 16:00: fermé',
       'it' : '<br>27.06.2022 16:00: chiuso',
       'en-US' : '<br>27.06.2022: Closed from 16:00',
@@ -222,13 +222,13 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-      ['2022-06-06 00:00:00', '2022-06-06 22:00:00']
+      ['2022-12-26 00:00:00', '2022-12-26 22:00:00']
     ],
     'de' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00']
+      ['2022-12-24 13:00:00', '2022-12-26 22:00:00']
     ],
     'at' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00']
+      ['2022-12-24 13:00:00', '2022-12-26 22:00:00']
     ],
     'it' : [
       ['2022-10-02 15:00:00', '2022-10-03 22:00:00']
