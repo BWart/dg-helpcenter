@@ -473,7 +473,7 @@ function fillInfoBoxWording(){
         infoBoxWording['webform_case_delete_account']['en-US'] = 'After your account is deactivated, you will no longer have access to your electronic purchase receipts and other records. We recommend that you print or save a copy of any forms you still need before deactivating your account.<br><br>Business customers can contact our customer service to have their account deactivated.';
     }}
 
-      if (portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.digitec.ch'){
+      /*if (portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.digitec.ch'){
             infoBoxWording['webform_case_other_request_order']['de'] += "<br><br><b>Aktuell hat die Schweizer Post mehrere Tage Verzögerung bei der Datenübertragung. Es kann daher sein, dass deine Links zur Sendungsverfolgung nicht funktionieren. Bitte kontaktiere unseren Kundendienst nur, fallst deine Sendungslinks bereits seit mindestens <i>7 Tagen</i> nicht funktionieren und deine Artikel nicht zugestellt sind.</b>"
             infoBoxWording['webform_case_other_request_order']['fr'] += "<br><br><b>Actuellement, la Poste suisse a plusieurs jours de retard dans la transmission des données. Il se peut donc que tes liens de suivi ne fonctionnent pas. Contacte notre service clientèle uniquement si tes liens de suivi ne fonctionnent pas depuis au moins <i>7 jours</i> et si tes articles n'ont pas été livrés.</b>"
             infoBoxWording['webform_case_other_request_order']['it'] += "<br><br><b>Attualmente la Posta Svizzera registra un ritardo di alcuni giorni nella trasmissione dei dati. È quindi possibile che i vostri link di tracciamento non funzionino. Si prega di contattare il nostro servizio clienti solo se i link di tracciamento non funzionano da almeno <i>7 giorni</i> e gli articoli non sono stati consegnati.</b>"
@@ -486,7 +486,7 @@ function fillInfoBoxWording(){
             infoBoxWording['webform_case_order_status']['fr'] += "<br><br><b>Actuellement, la Poste suisse a plusieurs jours de retard dans la transmission des données. Il se peut donc que tes liens de suivi ne fonctionnent pas. Contacte notre service clientèle uniquement si tes liens de suivi ne fonctionnent pas depuis au moins <i>7 jours</i> et si tes articles n'ont pas été livrés.</b>"
             infoBoxWording['webform_case_order_status']['it'] += "<br><br><b>Attualmente la Posta Svizzera registra un ritardo di alcuni giorni nella trasmissione dei dati. È quindi possibile che i vostri link di tracciamento non funzionino. Si prega di contattare il nostro servizio clienti solo se i link di tracciamento non funzionano da almeno <i>7 giorni</i> e gli articoli non sono stati consegnati.</b>"
             infoBoxWording['webform_case_order_status']['en-US'] += "<br><br><b>Currently, the Swiss Post has several days delay in data transmission. Therefore, it is possible that your tracking links are not working. Please contact our customer service only if your tracking links have not been working for at least <i>7 days</i> and your items have not been delivered.</b>"
-      }
+      }*/
 
 
         return infoBoxWording;
