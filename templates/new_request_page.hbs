@@ -255,7 +255,7 @@
   //List of tags to hide OrderNumber Input Field
   const reasonsForNoOrderNumber = ["webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer",
   "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy", "webform_case_delete_account", "webform_case_cant_login",
-  "webform_case_offer", "webform_case_no_bill"]
+  "webform_case_offer", "webform_case_no_bill", "webform_case_data_request"]
   //list of tags to hide Contact Form for PE and general requests during opening times
   const reasonsForNoContactFormPE = ["webform_case_product_advice_it", "webform_case_product_advice_network", "webform_case_product_advice_consumer",
   "webform_case_product_advice_photo", "webform_case_product_advice_home", "webform_case_product_advice_diy"]
@@ -318,6 +318,7 @@
     "webform_case_other_request_payment": "payment_reminder_and_refund",
     "webform_case_delete_account": "customer_account",
     "webform_case_cant_login": "customer_account",
+    "webform_case_data_request": "customer_account",
     "webform_case_other_request_account": "customer_account",
     "webform_case_product_advice_it": "product_information",
     "webform_case_product_advice_network": "product_information",
@@ -439,10 +440,10 @@
   let callbackButtonClicked = false;
   callbackButton.hide();
   callbackButtonMobile.hide();
-  if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && !isInCHOpeningTimes()){
+  if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (!isInCHOpeningTimes() || isHoliday())){
     callbackButton = $('.callback-number-offline')
     callbackButtonMobile = $('.callback-number-offline-mobile')
-  } else if ((portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at") && !isInDEOpeningTimes()){
+  } else if ((portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at") && (!isInCHOpeningTimes() || isHoliday())){
     callbackButton = $('.callback-number-offline')
     callbackButtonMobile = $('.callback-number-offline-mobile')
   }
@@ -516,6 +517,7 @@
     "webform_case_other_request_payment": "_lv4",
     "webform_case_delete_account": "_lv4",
     "webform_case_cant_login": "_lv4",
+    "webform_case_data_request": "_lv4",
     "webform_case_other_request_account": "_lv4",
     "webform_case_product_advice_it": "_lvpe",
     "webform_case_product_advice_network": "_lvpe",
@@ -549,6 +551,7 @@
     "webform_case_delete_account": "_lv4",
     "webform_case_cant_login": "_lv4",
     "webform_case_other_request_account": "_lv4",
+    "webform_case_data_request": "_lv4",
     "webform_case_product_advice_it": "_lvpe",
     "webform_case_product_advice_network": "_lvpe",
     "webform_case_product_advice_consumer": "_lvpe",
@@ -767,6 +770,18 @@
     if (customerType == 'private-customer'){
       // Removes Offers for Private Customers
       var categoryToRemove = 'webform_case_offer';
+      try {
+        var catJson = JSON.parse(requestReasonDropdownContents.attr("data-tagger"));
+        requestReasonDropdownContents.attr("data-tagger", removeCategoryFromJson(catJson, categoryToRemove));
+      }
+      catch (e) { // Initial wird das Formular immer geladen ohne Kundentyp und deshalb hier etwas unschön gecatcht. Funktionalität ist jedoch nicht kritisch 
+      }
+    }
+  }
+
+  function removeDataRequestForBusiness(){
+    if(customerType == 'business-customer'){
+      var categoryToRemove = 'webform_case_data_request'
       try {
         var catJson = JSON.parse(requestReasonDropdownContents.attr("data-tagger"));
         requestReasonDropdownContents.attr("data-tagger", removeCategoryFromJson(catJson, categoryToRemove));
@@ -1347,8 +1362,8 @@
       }
     }
     
-    // We need offers by Mail, hence Mail only
-    if (requestReasonTag == "webform_case_offer"){
+    // We need offers by Mail, hence Mail only; same goes for data requests
+    if (requestReasonTag == "webform_case_offer" || requestReasonTag == 'webform_case_data_request'){
       contactChannelMail = true;
       contactChannelCall = false;
     }

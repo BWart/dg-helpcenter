@@ -9,6 +9,8 @@ function fillInfoBoxWording(){
       var hp4 = "";
       var hp5 = "";
       var hp6 = "";
+      var hp7 = "";
+      var hp8 = "";
       var offerte = "";
   
       var seite = "";
@@ -30,6 +32,7 @@ function fillInfoBoxWording(){
                   hp5 = "/360012795199";
                   hp6 = "/115005646085";
                   hp7 = "/360000452549";
+                  hp8 = "/9229492228114";
 
                   offerte = "CHF 5'000.-";
                   break;
@@ -46,6 +49,7 @@ function fillInfoBoxWording(){
                   hp5 = "/360012690580";
                   hp6 = "/360007334059";
                   hp7 = "/360014471940";
+                  hp8 = "/9229468573714";
 
                   offerte = "CHF 5'000.-";
                   break;
@@ -62,6 +66,7 @@ function fillInfoBoxWording(){
                   hp5 = "";
                   hp6 = "/360010182760";
                   hp7 = "/360008226499";
+                  hp8 = "/9229681720466";
 
                   offerte = "EUR 5'000.-";
                   break;
@@ -78,6 +83,7 @@ function fillInfoBoxWording(){
                   hp5 = "";
                   hp6 = "/4407011198994";
                   hp7 = "/4407007830674";
+                  hp8 = "/9229717842962";
 
                   offerte = "EUR 5'000.-";
                   break;
@@ -94,6 +100,7 @@ function fillInfoBoxWording(){
                   hp5 = "";
                   hp6 = "/7971569619602";
                   hp7 = "/7706724974866";
+                  hp8 = "/9232516283026";
 
                   offerte = "EUR 5'000.-";
                   break;
@@ -110,6 +117,7 @@ function fillInfoBoxWording(){
                   hp5 = "";
                   hp6 = "/8177762450066";
                   hp7 = "/8177794011666";
+                  hp8 = "/9249985259154";
 
                   offerte = "EUR 5'000.-";
                   break;
@@ -126,6 +134,7 @@ function fillInfoBoxWording(){
                   hp5 = "/360012795199";
                   hp6 = "/115005646085";
                   hp7 = "/360000452549";
+                  hp8 = "/9229492228114";
 
                   offerte = "CHF 5'000.-";
                   break;
@@ -291,6 +300,16 @@ function fillInfoBoxWording(){
               "itDescriptionLabel" : "Descrizione<br>Nota: per una rapida elaborazione abbiamo bisogno del vostro numero cliente",
               "en-USDescriptionLabel" : "Description<br>Note: For quick processing we need your customer number"
         },
+        "webform_case_data_request": {
+            'de': "Du hast ein Auskunftsrecht, was deine bei uns gespeicherten Daten betrifft. Auskunftsbegehren, die du an uns stellst, beantworten wir innerhalb der gesetzlichen Frist (im Normalfall innerhalb von 30 Tagen).<br><br><b>Wichtig: Wenn wir nicht alle nötigen Angaben erhalten können wir keine Datenauskunft gewähren. Mehr Informationen dazu findest du in <a href='" + helpcenterURL + "articles" + hp8 + "' target='blank'>diesem Artikel.</a></b>",
+            'fr': "Vous avez un droit d'accès à vos données que nous avons enregistrées. Nous répondrons à ces demandes dans le délai légal (normalement dans les 30 jours).<br><br><b>Important : Si nous ne recevons pas toutes les informations nécessaires, nous ne pouvons pas fournir les données. Vous pouvez trouver plus d'informations dans <a href='" + helpcenterURL + "articles" + hp8 + "' target='blank'>cet article.</a></b>",
+            'it': "L'utente ha il diritto di ricevere informazioni sui propri dati memorizzati da noi. Risponderemo alle richieste d'informazioni che ci sottoporrete entro i termini previsti dalla legge (normalmente entro 30 giorni).<br><br><b>Importante: se non riceviamo tutte le informazioni necessarie, non possiamo fornire alcun dato. Per ulteriori informazioni al riguardo, consultare <a href='" + helpcenterURL + "articles" + hp8 + "' target='blank'>questo articolo.</a></b>",
+            'en-US': "You have a right to access regarding your data stored by us. We will respond to such requests within the statutory period (normally within 30 days).<br><br><b>Important: If we don't receive all the necessary information, we can not provide the data. You can find more information in <a href='" + helpcenterURL + "articles" + hp8 + "' target='blank'>this article.</a></b>",
+            'deMailTemplate' : "Ich bitte Sie, mir schriftlich innerhalb von 30 Tagen, Auskunft über meine bei galaxus.ch bzw. digitec.ch gespeicherten Daten zu erteilen.\nDie Nummer zu meinem Benutzerkonto lautet: xxx\n",
+            'frMailTemplate' : "Veuillez nous communiquer par écrit, dans un délai de 30 jours, les données personnelles que galaxus.ch ou digitec.ch détient à mon sujet.\nLe numéro de mon compte d'utilisateur est : \n",
+            'itMailTemplate' : "Chiedo che mi vengano fornite informazioni sui miei dati memorizzati su galaxus.ch o digitec.ch, per iscritto, entro 30 giorni.\nIl numero del mio conto utente è: \n",
+            "en-USMailTemplate" : "Please supply the personal data galaxus.ch or digitec.ch hold about me in writing within 30 days.\nThe number of my user account is: \n"
+        },
   
         //LEVEL 0: Produktberatung
         "webform_case_product_advice_it" : {
@@ -442,8 +461,8 @@ function fillInfoBoxWording(){
         //TODO: ÜBERSETZUNG IT+FR
       if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
         infoBoxWording['webform_case_not_working_product']['de'] = "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "wiki/5547' target='blank'>Gewährleistungsinformationen</a> sowie in unseren <a href='" + shopURL + "Wiki/478' target='blank'>AGBs</a>.";
-        infoBoxWording['webform_case_shipping_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas länger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.<br><br><b>In der \"Black Week\" hat das allgemeine Versandvolumen stark zugenommen. Momentan ist unser Versandpartner DHL mit den Lieferungen leider im Verzug. Bitte kontaktiere unseren Kundenservice nur, falls sich dein Paket seit <i>5 oder mehr Tagen</i> immer noch im Transport befindet.</b>";
-        infoBoxWording['webform_case_order_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br><b>In der \"Black Week\" hat das allgemeine Versandvolumen stark zugenommen. Momentan ist unser Versandpartner DHL mit den Lieferungen leider im Verzug. Bitte kontaktiere unseren Kundenservice nur, falls sich dein Paket seit <i>5 oder mehr Tagen</i> immer noch im Transport befindet.</b>";
+        infoBoxWording['webform_case_shipping_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas länger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.<br><br><b>Momentan ist unser Versandpartner DHL mit den Lieferungen leider im Verzug. Bitte kontaktiere unseren Kundenservice nur, falls sich dein Paket seit <i>5 oder mehr Tagen</i> immer noch im Transport befindet.</b>";
+        infoBoxWording['webform_case_order_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br><b>Momentan ist unser Versandpartner DHL mit den Lieferungen leider im Verzug. Bitte kontaktiere unseren Kundenservice nur, falls sich dein Paket seit <i>5 oder mehr Tagen</i> immer noch im Transport befindet.</b>";
         infoBoxWording['webform_case_payment_reminder']['de'] = "Es kann bis zu fünf Werktage dauern, bis deine Zahlung in unserem System verbucht wird. Deshalb kann es sein, dass sich die Mahnung/Zahlungserinnerung mit deiner Zahlung überschnitten hat. In diesem Fall kannst du die Mahnung ignorieren.<br>Weitere Möglichkeiten woran es liegen kann findest du unter <a href='" + helpcenterURL + "articles" + hp6 + "' target='blank'>Warum habe ich eine Zahlungserinnerung erhalten, obwohl ich bezahlt habe?</a>.";
         }
       if (typeof customerType !== 'undefined') {  
