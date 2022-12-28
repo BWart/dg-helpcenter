@@ -305,7 +305,7 @@ function fillInfoBoxWording(){
             'fr': "Vous avez un droit d'accès à vos données que nous avons enregistrées. Nous répondrons à ces demandes dans le délai légal (normalement dans les 30 jours).<br><br><b>Important : Si nous ne recevons pas toutes les informations nécessaires, nous ne pouvons pas fournir les données. Vous pouvez trouver plus d'informations dans <a href='" + helpcenterURL + "articles" + hp8 + "' target='blank'>cet article.</a></b>",
             'it': "L'utente ha il diritto di ricevere informazioni sui propri dati memorizzati da noi. Risponderemo alle richieste d'informazioni che ci sottoporrete entro i termini previsti dalla legge (normalmente entro 30 giorni).<br><br><b>Importante: se non riceviamo tutte le informazioni necessarie, non possiamo fornire alcun dato. Per ulteriori informazioni al riguardo, consultare <a href='" + helpcenterURL + "articles" + hp8 + "' target='blank'>questo articolo.</a></b>",
             'en-US': "You have a right to access regarding your data stored by us. We will respond to such requests within the statutory period (normally within 30 days).<br><br><b>Important: If we don't receive all the necessary information, we can not provide the data. You can find more information in <a href='" + helpcenterURL + "articles" + hp8 + "' target='blank'>this article.</a></b>",
-            'deMailTemplate' : "Ich bitte Sie, mir schriftlich innerhalb von 30 Tagen, Auskunft über meine bei galaxus.ch bzw. digitec.ch gespeicherten Daten zu erteilen.\nDie Nummer zu meinem Benutzerkonto lautet: xxx\n",
+            'deMailTemplate' : "Ich bitte Sie, mir schriftlich innerhalb von 30 Tagen, Auskunft über meine bei galaxus.ch bzw. digitec.ch gespeicherten Daten zu erteilen.\nDie Nummer zu meinem Benutzerkonto lautet: \n",
             'frMailTemplate' : "Veuillez nous communiquer par écrit, dans un délai de 30 jours, les données personnelles que galaxus.ch ou digitec.ch détient à mon sujet.\nLe numéro de mon compte d'utilisateur est : \n",
             'itMailTemplate' : "Chiedo che mi vengano fornite informazioni sui miei dati memorizzati su galaxus.ch o digitec.ch, per iscritto, entro 30 giorni.\nIl numero del mio conto utente è: \n",
             "en-USMailTemplate" : "Please supply the personal data galaxus.ch or digitec.ch hold about me in writing within 30 days.\nThe number of my user account is: \n"
@@ -472,6 +472,13 @@ function fillInfoBoxWording(){
         infoBoxWording['webform_case_delete_account']['it'] = "Dopo la disattivazione dell'account, non sarà più possibile accedere alle ricevute di acquisto elettroniche e ad altri documenti. Si consiglia di stampare o salvare una copia dei moduli necessari prima di disattivare l'account.<br><br>I clienti aziendali possono contattare il nostro servizio clienti per disattivare il proprio account.";
         infoBoxWording['webform_case_delete_account']['en-US'] = 'After your account is deactivated, you will no longer have access to your electronic purchase receipts and other records. We recommend that you print or save a copy of any forms you still need before deactivating your account.<br><br>Business customers can contact our customer service to have their account deactivated.';
     }}
+
+    if (portal == 'helpcenter.galaxus.de'){
+      infoBoxWording['webform_case_data_request']['deMailTemplate'] = "Ich bitte Sie, mir schriftlich innerhalb von 30 Tagen, Auskunft über meine bei galaxus.de gespeicherten Daten zu erteilen.\nDie Nummer zu meinem Benutzerkonto lautet: \n"
+    }
+    if (portal == 'helpcenter.galaxus.at'){
+      infoBoxWording['webform_case_data_request']['deMailTemplate'] = "Ich bitte Sie, mir schriftlich innerhalb von 30 Tagen, Auskunft über meine bei galaxus.at gespeicherten Daten zu erteilen.\nDie Nummer zu meinem Benutzerkonto lautet: \n"
+    }
 
       /*if (portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.digitec.ch'){
             infoBoxWording['webform_case_other_request_order']['de'] += "<br><br><b>Aktuell hat die Schweizer Post mehrere Tage Verzögerung bei der Datenübertragung. Es kann daher sein, dass deine Links zur Sendungsverfolgung nicht funktionieren. Bitte kontaktiere unseren Kundendienst nur, fallst deine Sendungslinks bereits seit mindestens <i>7 Tagen</i> nicht funktionieren und deine Artikel nicht zugestellt sind.</b>"

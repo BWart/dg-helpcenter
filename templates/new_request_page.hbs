@@ -1393,6 +1393,7 @@
     // We need offers by Mail, hence Mail only; same goes for data requests
     if (requestReasonTag == "webform_case_offer" || requestReasonTag == 'webform_case_data_request'){
       contactChannelMail = true;
+      contactChannelChat = false;
       contactChannelCall = false;
     }
 
