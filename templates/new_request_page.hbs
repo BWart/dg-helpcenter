@@ -574,12 +574,14 @@
   else if (fullLink.slice(-8) == 'requests'){
     //TODO: Handling beim Laden nach Eingabefehler
     removeOfferforPrivate();
+    removeDataRequestForBusiness();
     pageSetup('mailFormWrong')
   }
   // Rest; Case when the page loads after the customer type was selected
   else {
     pageSetup('customerChosen');
     removeOfferforPrivate();
+    removeDataRequestForBusiness();
   }
 
 
@@ -812,11 +814,24 @@
       var categoryToRemove = 'webform_case_data_request'
       try {
         var catJson = JSON.parse(requestReasonDropdownContents.attr("data-tagger"));
-        requestReasonDropdownContents.attr("data-tagger", removeCategoryFromJson(catJson, categoryToRemove));
+        requestReasonDropdownContents.attr("data-tagger", removeSubcategoryFromJson(catJson, categoryToRemove));
       }
       catch (e) { // Initial wird das Formular immer geladen ohne Kundentyp und deshalb hier etwas unschön gecatcht. Funktionalität ist jedoch nicht kritisch 
       }
     }
+  }
+
+  function removeSubcategoryFromJson(json, categoryToRemove){
+    for (var i = 0; i < json.length; i++){
+      if(json[i].options){
+        for (var j = 0; j < json[i].options.length; j++){
+          if (json[i].options[j].value == categoryToRemove){
+            json[i].options.splice(j,1)
+          }
+        }
+      }
+    }
+    return JSON.stringify(json)
   }
 
   function removeCategoryFromJson(json, categoryToRemove){  	
