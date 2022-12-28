@@ -641,6 +641,7 @@
     $('.contactNowButton').hide();
     infoText.show();
     infoTextField.show();
+    updateLabelAndTemplate();
     mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
 
     contactNowClicked();
@@ -716,6 +717,33 @@
       $('.private-number2').html(dynamicWordingTemp['de']['callUsPrivateMovile'])
     }
     fillHoliday(currentLanguage);
+  }
+
+  function updateLabelAndTemplate(){
+    //Update Label and Template
+    if (infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate']){
+      mailFormMessageTextField.val(infoBoxWording[requestReasonTag][currentLanguage + 'MailTemplate'])
+    } else {
+      mailFormMessageTextField.val('')
+    }
+    if (infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel']){
+      mailFormMessageLabel.html(infoBoxWording[requestReasonTag][currentLanguage + 'DescriptionLabel'])
+    } else {
+      switch (currentLanguage) {
+        case 'de':
+          mailFormMessageLabel.html('Beschreibung')
+          break;
+        case 'fr':
+          mailFormMessageLabel.html('Description')
+          break;
+        case 'it':
+          mailFormMessageLabel.html('Descrizione')
+          break;
+        case 'en-US':
+          mailFormMessageLabel.html('Description')
+          break;
+      }
+    }
   }
 
   function contactNowClicked(){
@@ -1758,6 +1786,7 @@
 
   function commitButtonPressed(){
     sendGARequestOpeningHours('ContactForm Commit clicked');
+    updateLabelAndTemplate();
     mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
     sessionStorage.setItem('dgCustomerEmail', $('input[name="request[anonymous_requester_email]"]').val());
     sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
