@@ -48,7 +48,7 @@ function resetContactOptions(){
     $('#phoneTitleCellContent').hide();
     $('#phoneTextCellContent').hide();
     $('#phoneButtonCellContent').hide();
-    $('#mobilePhone1Content').hide();
+    $('#mobilePhoneCell1Content').hide();
     $('#mobilePhoneCell2Content').hide();
   }
 
