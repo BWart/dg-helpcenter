@@ -1533,7 +1533,7 @@
       if (chOpeningHourWeekday == currentHour && currentMinutes < chOpeningMinuteWeekday) {
         return false;
       }
-      if (chClosingHourWeekday == currentHour && currentMinutes > chClosingMinuteWeekday) {
+      if (chClosingHourWeekday == currentHour && currentMinutes >= chClosingMinuteWeekday) {
         return false;
       }
       return true;
