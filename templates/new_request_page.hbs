@@ -1802,7 +1802,7 @@
 
   function commitButtonPressed(){
     sendGARequestOpeningHours('ContactForm Commit clicked');
-    updateLabelAndTemplate();
+    //updateLabelAndTemplate();
     mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
     sessionStorage.setItem('dgCustomerEmail', $('input[name="request[anonymous_requester_email]"]').val());
     sessionStorage.setItem('mailFormMessageTextFieldText', mailFormMessageTextField.val())
