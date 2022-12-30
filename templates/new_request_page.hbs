@@ -115,7 +115,7 @@
                   </td>
                 </tr>
                 <tr>
-                  <td colspan="3"><div class="chatClosedMessage" data-wording-key="chatClosedMessage" style="color:red"></div></td>
+                  <td colspan="3"><div class="liveChannelsClosedMessage" data-wording-key="liveChannelsClosedMessage" style="color:red"></div></td>
                 </tr>
               </table>
 
@@ -166,6 +166,7 @@
                       <div class="button-contact phone-number business-number2 business-customer" data-wording-key="callUsBusinessMobile"></div>
                       <div class="button-contact callback-number2" data-wording-key="callYouCallback"></div>
                       <div class="button-contact callback-number-offline-mobile button-offline" data-wording-key="callbackOfflineMobile"></div>
+                      <div class="callbackClosedMessage" data-wording-key="callbackClosedMessage" style="color:red"></div>
                     </div>
                     <div id="mobileInserter4"></div>
                   </td>
@@ -403,7 +404,9 @@
   const connectContact = $('.connect-customer')
   const phoneTitleOne = $('.phoneTitle1')
   const phoneTitleTwo = $('.phoneTitle2')
+  const liveChannelsClosedMessage = $('.liveChannelsClosedMessage')
   const chatClosedMessage = $('.chatClosedMessage')
+  const callbackClosedMessage = $('.callbackClosedMessage')
   //Mailform fields, with label and Input field
   const mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');  //Input field for order number, phone number on digitec Connect
   const mailFormSubject = $('.request_subject');
@@ -565,6 +568,8 @@
   
   // --- INITIAL SETUP ---
   chatClosedMessage.hide()
+  callbackClosedMessage.hide()
+  liveChannelsClosedMessage.hide()
   // Case when "Contact Us" Button in footer is clicked
   addExternalScriptForWaitingTimes(true);
   if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/'){
@@ -629,6 +634,8 @@
 
   function onDropdownChange(){
     chatClosedMessage.hide()
+    callbackClosedMessage.hide()
+    liveChannelsClosedMessage.hide()
     circleTwo.classList.remove('circleOpenStep');
     circleTwo.classList.add('circleStepCompleted');
     circleTwo.innerHTML = '&#10003';
@@ -1621,6 +1628,17 @@
     checkForTagChanges();
     if(!isInGeneralOpeningTimes()){
       chatClosedMessage.show()
+      liveChannelsClosedMessage.show()
+      hideChatButton()
+      callbackClosedMessage.show()
+      liveChannelsClosedMessage.show()
+      callbackButton.hide()
+      callbackButtonMobile.hide()
+      callbackButton = $('.callback-number-offline')
+      callbackButtonMobile = $('.callback-number-offline-mobile')
+      callbackButton.show()
+      callbackButtonMobile.show()
+      callbackWaitTimesDOMElements.hide();
       return 0;
     }
     try {
@@ -1639,6 +1657,21 @@
 
   //--- CALLBACK EVENTS ---
   callbackButton.on("click", function(){
+    if(!isInGeneralOpeningTimes()){
+      callbackClosedMessage.show()
+      liveChannelsClosedMessage.show()
+      callbackButton.hide()
+      callbackButtonMobile.hide()
+      callbackButton = $('.callback-number-offline')
+      callbackButtonMobile = $('.callback-number-offline-mobile')
+      callbackButton.show()
+      callbackButtonMobile.show()
+      callbackWaitTimesDOMElements.hide();
+      chatClosedMessage.show()
+      liveChannelsClosedMessage.show()
+      hideChatButton()
+      return 0;
+    }
     showContactForm()
     requestForm.hide()
     callbackForm.show()
@@ -1657,6 +1690,21 @@
     }
   })
   callbackButtonMobile.on("click", function(){
+    if(!isInGeneralOpeningTimes()){
+      callbackClosedMessage.show()
+      liveChannelsClosedMessage.show()
+      callbackButton.hide()
+      callbackButtonMobile.hide()
+      callbackButton = $('.callback-number-offline')
+      callbackButtonMobile = $('.callback-number-offline-mobile')
+      callbackButton.show()
+      callbackButtonMobile.show()
+      callbackWaitTimesDOMElements.hide();
+      chatClosedMessage.show()
+      liveChannelsClosedMessage.show()
+      hideChatButton()
+      return 0;
+    }
     showContactForm()
     requestForm.hide()
     callbackForm.show()
