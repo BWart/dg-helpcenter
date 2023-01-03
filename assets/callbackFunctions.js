@@ -34,7 +34,7 @@ function callbackCheck(){
       customerTypeShorthand = "c"
     } else if (customerType == "business-customer") {
       if (isInBusinessOpeningTimes()){
-        if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (currentLanguage.toLowerCase() == "de" || currentLanguage.toLowerCase() == "fr" || currentLanguage.toLowerCase() == "en-us")){
+        if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (currentLanguage.toLowerCase() == "de")){
           customerTypeShorthand = "c"
         } else {
           customerTypeShorthand = "b"
