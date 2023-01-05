@@ -63,7 +63,7 @@ function fillInfoBoxWording(){
                   hp2 = "";
                   hp3 = "/360016850820";
                   hp4 = "/360010273099";
-                  hp5 = "";
+                  hp5 = "/360008151740";
                   hp6 = "/360010182760";
                   hp7 = "/360008226499";
                   hp8 = "/9229681720466";
@@ -80,7 +80,7 @@ function fillInfoBoxWording(){
                   hp2 = "";
                   hp3 = "/4407053718930";
                   hp4 = "/4407061056530";
-                  hp5 = "";
+                  hp5 = "/4406990238482";
                   hp6 = "/4407011198994";
                   hp7 = "/4407007830674";
                   hp8 = "/9229717842962";
@@ -97,7 +97,7 @@ function fillInfoBoxWording(){
                   hp2 = "";
                   hp3 = "/7976197781522";
                   hp4 = "/7976051973010";
-                  hp5 = "";
+                  hp5 = "/7699523560466";
                   hp6 = "/7971569619602";
                   hp7 = "/7706724974866";
                   hp8 = "/9232516283026";
@@ -114,7 +114,7 @@ function fillInfoBoxWording(){
                   hp2 = "";
                   hp3 = "/8177762652306";
                   hp4 = "/8177794311954";
-                  hp5 = "";
+                  hp5 = "/8177760246418";
                   hp6 = "/8177762450066";
                   hp7 = "/8177794011666";
                   hp8 = "/9249985259154";
@@ -249,10 +249,10 @@ function fillInfoBoxWording(){
   
         //LEVEL 0: Zahlungen, Mahnungen und Rückestattungen
         "webform_case_refund" : {
-              'de' : "Du kannst die Rückerstattung einer Gutschrift <a href='" + helpcenterURL +"articles" + hp3 + "-Rückerstattung-einer-Gutschrift' target='blank'>in wenigen Schritten selbst vornehmen</a>.<br>Bitte beachte, dass die Geldüberweisung in der Regel 1-5 Werktage in Anspruch nimmt.<br>Rückerstattungen auf deine Kreditkarte werden auf deiner nächsten Kreditkartenabrechnung ersichtlich.",
-              'fr' : "Vous pouvez effectuer vous-même le remboursement <a href='" + helpcenterURL + "articles" + hp3 + "-Que-faire-pour-lancer-le-processus-de-remboursement-' target='blank'>d'un avoir en quelques étapes</a>.<br>Veuillez noter que le virement prend habituellement entre 1 à 5 jours ouvrables.<br>Les remboursements sur votre carte de crédit figureront sur votre prochain relevé de carte de crédit.",
-              'it' : "Puoi avviare <a href='" + helpcenterURL + "articles" + hp3 + "-Come-faccio-a-richiedere-il-rimborso-' target='blank'>il rimborso di un credito autonomamente</a>.<br>Si prega di notare che il trasferimento di denaro di solito richiede da 1 a 5 giorni lavorativi.<br>I rimborsi sulla carta di credito appariranno sul prossimo estratto conto della carta di credito.",
-              'en-US' : "To refund a credit note, <a href='" + helpcenterURL + "articles" + hp3 + "-How-do-I-get-a-refund-' target='blank'>please follow the simple steps described in this article</a>.<br>Please bear in mind that transfers usually take one to five working days.<br>Refunds to your credit card will appear on your next credit card statement."
+              'de' : "Du kannst die Rückerstattung einer Gutschrift <a href='" + helpcenterURL +"articles" + hp3 + "' target='blank'>in wenigen Schritten selbst vornehmen</a>.<br>Bitte beachte, dass die Geldüberweisung in der Regel 1-5 Werktage in Anspruch nimmt.<br>Rückerstattungen auf deine Kreditkarte werden auf deiner nächsten Kreditkartenabrechnung ersichtlich.",
+              'fr' : "Vous pouvez effectuer vous-même le remboursement <a href='" + helpcenterURL + "articles" + hp3 + "' target='blank'>d'un avoir en quelques étapes</a>.<br>Veuillez noter que le virement prend habituellement entre 1 à 5 jours ouvrables.<br>Les remboursements sur votre carte de crédit figureront sur votre prochain relevé de carte de crédit.",
+              'it' : "Puoi avviare <a href='" + helpcenterURL + "articles" + hp3 + "' target='blank'>il rimborso di un credito autonomamente</a>.<br>Si prega di notare che il trasferimento di denaro di solito richiede da 1 a 5 giorni lavorativi.<br>I rimborsi sulla carta di credito appariranno sul prossimo estratto conto della carta di credito.",
+              'en-US' : "To refund a credit note, <a href='" + helpcenterURL + "articles" + hp3 + "' target='blank'>please follow the simple steps described in this article</a>.<br>Please bear in mind that transfers usually take one to five working days.<br>Refunds to your credit card will appear on your next credit card statement."
         },
         "webform_case_receipt" : {
               'de' : "Sämtliche Kaufbelege, Garantiescheine und Weiteres findest du unter dem Menüpunkt <a href='" + shopURL + "Order' target='blank'>Bestellungen</a> in deinem Kundenkonto, indem du den gewünschten Auftrag auswählst.<br><br>Rechnungsbelege für Bestellungen, welche du per Rechnung getätigt hast, findest du <a href='" + shopURL + "Invoice/ListInvoices' target='blank'>hier</a>.",
