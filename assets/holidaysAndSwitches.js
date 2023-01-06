@@ -268,8 +268,8 @@ var businessClosingHourSaturday = false;
 //CH Regular
 var chOpeningHourWeekday = 8;
 var chOpeningMinuteWeekday = 0;
-var chClosingHourWeekday = 17;
-var chClosingMinuteWeekday = 30;
+var chClosingHourWeekday = 19;
+var chClosingMinuteWeekday = 00;
 var chOpeningHourSaturday = false;
 var chClosingHourSaturday = false;
 //CH PE
