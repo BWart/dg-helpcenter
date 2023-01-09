@@ -242,7 +242,7 @@ var hideWaitingTimes = {
 //OPENING HOURS
 //EU (DE + AT)
 var euOpeningHourWeekday = 8;
-var euClosingHourWeekday = 18;
+var euClosingHourWeekday = 19;
 var euOpeningHourSaturday = 9;
 var euClosingHourSaturday = 17;
 //FR
@@ -269,7 +269,7 @@ var businessClosingHourSaturday = false;
 var chOpeningHourWeekday = 8;
 var chOpeningMinuteWeekday = 0;
 var chClosingHourWeekday = 19;
-var chClosingMinuteWeekday = 00;
+var chClosingMinuteWeekday = 0;
 var chOpeningHourSaturday = false;
 var chClosingHourSaturday = false;
 //CH PE

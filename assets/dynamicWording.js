@@ -128,7 +128,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
-                uhrzeitPrivatkunde = "08:00 - 18:00";
+                uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "09:00 - 17:00";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Déclaration de protection des données</a>';
@@ -160,7 +160,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
-                uhrzeitPrivatkunde = "08:00 - 18:00";
+                uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "09:00 - 17:00";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Déclaration de protection des données</a>';
