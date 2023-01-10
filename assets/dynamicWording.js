@@ -195,10 +195,10 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 uhrzeitPrivatkunde = "";
                 uhrzeitPrivatkunde2 = "";
                 // TODO: LINKS AUF KORREKTHEIT PRÜFEN
-                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/5567" target="blank">Datenschutzerklärung</a>';
-                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/5567" target="blank">Déclaration de protection des données</a>';
-                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
-                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/5567" target="blank">Privacy statement</a>';
+                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/6182" target="blank">Datenschutzerklärung</a>';
+                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/6182" target="blank">Déclaration de protection des données</a>';
+                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/6182" target="blank">Informativa sulla protezione dei dati</a>';
+                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/6182" target="blank">Privacy statement</a>';
 
                 telPrivatkunde = "";
                 telPrivatkundeText = "";
@@ -228,10 +228,10 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 uhrzeitPrivatkunde = "";
                 uhrzeitPrivatkunde2 = "";
                 // TODO: LINKS AUF KORREKTHEIT PRÜFEN
-                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/5567" target="blank">Datenschutzerklärung</a>';
-                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/5567" target="blank">Déclaration de protection des données</a>';
-                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
-                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/5567" target="blank">Privacy statement</a>';
+                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Datenschutzerklärung</a>';
+                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Déclaration de protection des données</a>';
+                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Informativa sulla protezione dei dati</a>';
+                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Privacy statement</a>';
 
                 telPrivatkunde = "";
                 telPrivatkundeText = "";
