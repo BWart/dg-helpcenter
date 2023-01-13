@@ -443,10 +443,10 @@
   let callbackButtonClicked = false;
   callbackButton.hide();
   callbackButtonMobile.hide();
-  if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (!isInCHOpeningTimes() || isHoliday())){
+  if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (!isInOpeningTimes() || isHoliday())){
     callbackButton = $('.callback-number-offline')
     callbackButtonMobile = $('.callback-number-offline-mobile')
-  } else if ((portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at") && (!isInDEOpeningTimes() || isHoliday())){
+  } else if ((portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at") && (!isInOpeningTimes() || isHoliday())){
     callbackButton = $('.callback-number-offline')
     callbackButtonMobile = $('.callback-number-offline-mobile')
   }
@@ -933,7 +933,7 @@
       return;
     }
     if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
-      if (isInDEOpeningTimes()) {
+      if (isInOpeningTimes()) {
         if (customerType == 'private-customer') {
           if (callWaitTimes['privateGer'] >= callWaitTimes['privateAt']) {
             setWaitTime(chatWaitTimes, callWaitTimes['privateGer'], callWaitTimes['callbackGERDE'])
@@ -953,7 +953,7 @@
       }
     }
     if (portal == 'helpcenter.connect.digitec.ch'){
-      if (isInConnectOpeningTimes()){
+      if (isInOpeningTimes()){
         switch (currentLanguage) {
           case 'de':
             setWaitTime(chatWaitTimes, callWaitTimes['connectDE'], callWaitTimes['connectDE']);
@@ -977,7 +977,7 @@
       }
     }
     if (portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.digitec.ch'){
-      if ((isInCHOpeningTimes() && customerType == 'private-customer') || (customerType == 'business-customer' && !isInBusinessOpeningTimes() && isInCHOpeningTimes())){
+      if ((isInOpeningTimes() && customerType == 'private-customer') || (customerType == 'business-customer' && !isInBusinessOpeningTimes() && isInOpeningTimes())){
         switch (currentLanguage) {
             case 'de':
               setWaitTime(chatWaitTimes, callWaitTimes['privateCHDE'], callWaitTimes['callbackDE'])
@@ -1208,7 +1208,7 @@
             isBusiness = true;
           }
           else {
-            isOpen = isInCHOpeningTimes();
+            isOpen = isInOpeningTimes();
             isPE = false;
             isCH = true;
             isBusiness = false;
@@ -1221,7 +1221,7 @@
         break;
       case 'helpcenter.galaxus.de':
       case 'helpcenter.galaxus.at':
-        isOpen = isInDEOpeningTimes();
+        isOpen = isInOpeningTimes();
         isCH = false;
         if (requestReasonTag.includes('webform_case_product_advice_')){
           isPE = true
@@ -1340,7 +1340,7 @@
       switch (portal){
         case 'helpcenter.galaxus.de':
         case 'helpcenter.galaxus.at':
-          isOpen = isInDEOpeningTimes();
+          isOpen = isInOpeningTimes();
           tempSwitchHideContactFormDuringOpening = switchHideContactFormForEUDuringOpeningTimes;
           tempSwitchHideContactFormOutsideOpening = switchHideContactFormForEUOutsideOpeningTimes;
           tempSwitchHidePhoneDuringOpening = switchHidePhoneForEUDuringOpeningTimes;
@@ -1352,7 +1352,7 @@
           tempChatAndPhoneWaitThreshholdToShowContactForm = chatAndPhoneWaitThreshholdToShowContactFormEU;
           break;
         case 'helpcenter.galaxus.fr':
-          isOpen = isInFROpeningTimes();
+          isOpen = isInOpeningTimes();
           tempSwitchHideContactFormDuringOpening = switchHideContactFormForFRDuringOpeningTimes;
           tempSwitchHideContactFormOutsideOpening = switchHideContactFormForFROutsideOpeningTimes;
           tempSwitchHidePhoneDuringOpening = switchHidePhoneForFRDuringOpeningTimes;
@@ -1364,7 +1364,7 @@
           tempChatAndPhoneWaitThreshholdToShowContactForm = chatAndPhoneWaitThreshholdToShowContactFormFR;
           break;
         case 'helpcenter.galaxus.it':
-          isOpen = isInITOpeningTimes();
+          isOpen = isInOpeningTimes();
           tempSwitchHideContactFormDuringOpening = switchHideContactFormForITDuringOpeningTimes;
           tempSwitchHideContactFormOutsideOpening = switchHideContactFormForITOutsideOpeningTimes;
           tempSwitchHidePhoneDuringOpening = switchHidePhoneForITDuringOpeningTimes;
@@ -1449,129 +1449,6 @@
   }
 
 
-
-  function isInGeneralOpeningTimes(){
-    if (portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch"){
-      return isInCHOpeningTimes()
-    }
-    else if (portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at"){
-      return isInDEOpeningTimes()
-    }
-  }
-
-  function isInDEOpeningTimes(){
-    const d = new Date();
-    let dayOfWeek = d.getUTCDay();
-    let currentHour = d.getUTCHours() + UTCHourOffset;
-    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= euOpeningHourWeekday && currentHour < euClosingHourWeekday){
-      return true;
-    }
-    if (dayOfWeek == 6 && currentHour >= euOpeningHourSaturday && currentHour < euClosingHourSaturday){
-      return true;
-    }
-    return false;
-  }
-
-  function isInFROpeningTimes(){
-    const d = new Date();
-    let dayOfWeek = d.getUTCDay();
-    let currentHour = d.getUTCHours() + UTCHourOffset;
-    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= frOpeningHourWeekday && currentHour < frClosingHourWeekday){
-      return true;
-    }
-    if (dayOfWeek == 6 && currentHour >= frOpeningHourSaturday && currentHour < frClosingHourSaturday){
-      return true;
-    }
-    return false;
-  }
-
-  function isInITOpeningTimes(){
-    const d = new Date();
-    let dayOfWeek = d.getUTCDay();
-    let currentHour = d.getUTCHours() + UTCHourOffset;
-    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= itOpeningHourWeekday && currentHour < itClosingHourWeekday){
-      return true;
-    }
-    if (dayOfWeek == 6 && currentHour >= itOpeningHourSaturday && currentHour < itClosingHourSaturday){
-      return true;
-    }
-    return false;
-  }
-
-  function isInBusinessOpeningTimes(){
-    //console.log('calling business op times')
-    const d = new Date();
-    let dayOfWeek = d.getUTCDay();
-    let currentHour = d.getUTCHours() + UTCHourOffset;
-    let currentMinutes = d.getUTCMinutes();
-    if ((dayOfWeek >= 1 && dayOfWeek <=5 && currentHour == 12) || (dayOfWeek >= 1 && dayOfWeek <=5 && currentHour == 11 && currentMinutes >= 55)){
-      return false;
-    }
-    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= businessOpeningHourWeekday && currentHour < businessClosingHourWeekday){
-      return true;
-    }
-    if (dayOfWeek == 6 && currentHour >= businessOpeningHourSaturday && currentHour < businessClosingHourSaturday){
-      return true;
-    }
-    return false;
-  }
-
-  function isInConnectOpeningTimes(){
-    //console.log('calling connect op times')
-    const d = new Date();
-    let dayOfWeek = d.getUTCDay();
-    let currentHour = d.getUTCHours() + UTCHourOffset;
-    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= connectOpeningHourWeekday && currentHour < connectClosingHourWeekday){
-      return true;
-    }
-    if (dayOfWeek == 6 && currentHour >= connectOpeningHourSaturday && currentHour < connectClosingHourSaturday){
-      return true;
-    }
-    return false;
-  }
-
-  function isInCHOpeningTimes(){
-    //console.log('calling CH op times')
-    const d = new Date();
-    let dayOfWeek = d.getUTCDay();
-    let currentHour = d.getUTCHours() + UTCHourOffset;
-    let currentMinutes = d.getUTCMinutes();
-    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= chOpeningHourWeekday && currentHour <= chClosingHourWeekday){
-      if (chOpeningHourWeekday == currentHour && currentMinutes < chOpeningMinuteWeekday) {
-        return false;
-      }
-      if (chClosingHourWeekday == currentHour && currentMinutes >= chClosingMinuteWeekday) {
-        return false;
-      }
-      return true;
-    }
-    else if (dayOfWeek == 6 && currentHour >= chOpeningHourSaturday && currentHour < chClosingHourSaturday){
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  function isInCHPEOpeningTimes(){
-    const d = new Date();
-    let dayOfWeek = d.getUTCDay();
-    let currentHour = d.getUTCHours() + UTCHourOffset;
-    let currentMinutes = d.getUTCMinutes();
-    if (dayOfWeek >= 1 && dayOfWeek <= 5 && currentHour >= chPEOpeningHourWeekday && currentHour <= chPEClosingHourWeekday){
-      if (chPEOpeningHourWeekday == currentHour && currentMinutes < chPEOpeningMinuteWeekday) {
-        return false;
-      }
-      if (chPEClosingHourWeekday == currentHour && currentMinutes > chPEClosingMinuteWeekday) {
-        return false;
-      }
-      return true;
-    }
-    if (dayOfWeek == 6 && currentHour >= chPEOpeningHourSaturday && currentHour < chPEClosingHourSaturday){
-      return true;
-    }
-    return false;
-  }
-
   function setClosed(){
     waitTimes.hide();
   } 
@@ -1626,7 +1503,7 @@
   //Action when clicking the chat button
   $('.button-chat').on("click", function () {
     checkForTagChanges();
-    if(!isInGeneralOpeningTimes()){
+    if(!isInOpeningTimes()){
       chatClosedMessage.show()
       liveChannelsClosedMessage.show()
       hideChatButton()
@@ -1657,7 +1534,7 @@
 
   //--- CALLBACK EVENTS ---
   callbackButton.on("click", function(){
-    if(!isInGeneralOpeningTimes()){
+    if(!isInOpeningTimes()){
       callbackClosedMessage.show()
       liveChannelsClosedMessage.show()
       callbackButton.hide()
@@ -1690,7 +1567,7 @@
     }
   })
   callbackButtonMobile.on("click", function(){
-    if(!isInGeneralOpeningTimes()){
+    if(!isInOpeningTimes()){
       callbackClosedMessage.show()
       liveChannelsClosedMessage.show()
       callbackButton.hide()
@@ -1941,11 +1818,11 @@
   $('.phone-number').on("click", function () {
     sendGARequestOpeningHours('Click Phone Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-    if (callbackCheck() && isInCHOpeningTimes()){
+    if (callbackCheck() && isInOpeningTimes()){
       sendGARequestCallbackTestA('Click Phone Button');
       sendGARequestCallbackTestA('Click Phone/Mail/Chat Button');      
     }
-    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
+    if (!callbackCheck() && isInOpeningTimes() && currentLanguage == "de" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
       sendGARequestCallbackTestB('Click Phone Button');
       sendGARequestCallbackTestB('Click Phone/Mail/Chat Button');
     }
@@ -1956,11 +1833,11 @@
   $('.contactFormWriteUs').on("click", function () {
     sendGARequestOpeningHours('Click Mail Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-    if (callbackCheck() && isInCHOpeningTimes()){
+    if (callbackCheck() && isInOpeningTimes()){
       sendGARequestCallbackTestA('Click Mail Button');
       sendGARequestCallbackTestA('Click Phone/Mail/Chat Button');      
     }
-    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
+    if (!callbackCheck() && isInOpeningTimes() && currentLanguage == "de" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
       sendGARequestCallbackTestB('Click Mail Button');
       sendGARequestCallbackTestB('Click Phone/Mail/Chat Button');
     }
@@ -1971,11 +1848,11 @@
   $('.button-chat').on("click", function () {
     sendGARequestOpeningHours('Click Chat Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-    if (callbackCheck() && isInCHOpeningTimes()){
+    if (callbackCheck() && isInOpeningTimes()){
       sendGARequestCallbackTestA('Click Chat Button');
       sendGARequestCallbackTestA('Click Phone/Mail/Chat Button');      
     }
-    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
+    if (!callbackCheck() && isInOpeningTimes() && currentLanguage == "de" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
       sendGARequestCallbackTestB('Click Chat Button');
       sendGARequestCallbackTestB('Click Phone/Mail/Chat Button');
     }
@@ -1992,11 +1869,11 @@
   function callbackGALogging(){
     sendGARequestOpeningHours('Click Callback Button');
     sendGARequestOpeningHours('Click Phone/Mail/Chat Button');
-    if (callbackCheck() && isInCHOpeningTimes()){
+    if (callbackCheck() && isInOpeningTimes()){
       sendGARequestCallbackTestA('Click Callback Button');
       sendGARequestCallbackTestA('Click Phone/Mail/Chat Button');      
     }
-    if (!callbackCheck() && isInCHOpeningTimes() && currentLanguage == "de" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
+    if (!callbackCheck() && isInOpeningTimes() && currentLanguage == "de" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')) {
       sendGARequestCallbackTestB('Click Callback Button');
       sendGARequestCallbackTestB('Click Phone/Mail/Chat Button');
     }

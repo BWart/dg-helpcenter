@@ -462,7 +462,7 @@ function isBusinessAvailable(){
 
 //Special Routing for YoummdayBasic
 function isYoummdayBasic(){
-       if(lang == "de" && (requestReasonTag == 'webform_case_shipping_status' || requestReasonTag == 'webform_case_ready_for_shipment' || requestReasonTag == 'webform_case_order_status') && isYoummdayBasicAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayBasic DE')){
+       if(isInYoummdayShift() && lang == "de" && (requestReasonTag == 'webform_case_shipping_status' || requestReasonTag == 'webform_case_ready_for_shipment' || requestReasonTag == 'webform_case_order_status') && isYoummdayBasicAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayBasic DE')){
         return true;
     }else{
         return false;
@@ -491,7 +491,7 @@ function isYoummdayWaitingTimeSmall(yoummdayDepartment){
 
 //Special Routing for YoummdayAdvanced
 function isYoummdayAdvanced(){
-    if(lang == "de" && (requestReasonTag == 'webform_case_return' || requestReasonTag == 'webform_case_receipt') && isYoummdayAdvancedAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayAdvanced DE') ){
+    if(isInYoummdayShift() && lang == "de" && (requestReasonTag == 'webform_case_return' || requestReasonTag == 'webform_case_receipt') && isYoummdayAdvancedAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayAdvanced DE') ){
         return true;
     }else{
         return false;
@@ -508,7 +508,7 @@ function isYoummdayAdvancedAvailable(){
 
 //Special Routing for YoummdayExpert
 function isYoummdayExpert(){
-    if(lang == "de" && (requestReasonTag == 'webform_case_wrong_product') && isYoummdayExpertAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayExpert DE')){
+    if(isInYoummdayShift() && lang == "de" && (requestReasonTag == 'webform_case_wrong_product') && isYoummdayExpertAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayExpert DE')){
         return true;
     }else{
         return false;
@@ -550,14 +550,14 @@ function updateChatDepartment(){
         addExternalScriptForWaitingTimes(false);
         //listenDepartmentStatus(chatDepartment);
     }else{
-        if (isInGeneralOpeningTimes()){
+        if (isInOpeningTimes()){
             showChatButton();
         }
     }
 }
 
 function checkDepartmentforInitialButtonChange(selectedDepartment){
-    if(isDepartmentAvailable(selectedDepartment) && isInGeneralOpeningTimes()){
+    if(isDepartmentAvailable(selectedDepartment) && isInOpeningTimes()){
         showChatButton();
     }else{
         hideChatButton();
@@ -576,7 +576,7 @@ function listenDepartmentStatus(){
 
 // Shows Chat button if anyone is available and inside opening hours
 function changeButtonVisibility(status){
-    if(status == 'online' && isInGeneralOpeningTimes()){
+    if(status == 'online' && isInOpeningTimes()){
         showChatButton();
     }else{
         hideChatButton();
