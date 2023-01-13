@@ -240,45 +240,29 @@ var hideWaitingTimes = {
 
 
 //OPENING HOURS
-//EU (DE + AT)
-var euOpeningHourWeekday = 8;
-var euClosingHourWeekday = 19;
-var euOpeningHourSaturday = 9;
-var euClosingHourSaturday = 17;
-//FR
-var frOpeningHourWeekday = false;
-var frClosingHourWeekday = false;
-var frOpeningHourSaturday = false;
-var frClosingHourSaturday = false;
-//IT
-var itOpeningHourWeekday = false;
-var itClosingHourWeekday = false;
-var itOpeningHourSaturday = false;
-var itClosingHourSaturday = false;
+const openingHours = {
+  //Standard overall opening times
+  "helpcenter.digitec.ch": {"weekday": [[8, 0, 19, 0]], "saturday": []},
+  "helpcenter.galaxus.ch": {"weekday": [[8, 0, 19, 0]], "saturday": []},
+  "helpcenter.galaxus.de": {"weekday": [[8, 0, 19, 0]], "saturday": [[9, 0, 17, 0]]},
+  "helpcenter.galaxus.at": {"weekday": [[8, 0, 19, 0]], "saturday": [[9, 0, 17, 0]]},
+  "helpcenter.galaxus.fr": {"weekday": [], "saturday": []},
+  "helpcenter.galaxus.it": {"weekday": [], "saturday": []},
+  "helpcenter.galaxus.be": {"weekday": [], "saturday": []},
+  "helpcenter.galaxus.nl": {"weekday": [], "saturday": []},
+  "helpcenter.galaxus.lu": {"weekday": [], "saturday": []},
+  //special cases for CH Routing
+  "helpcenter.connect.digitec.ch": {"weekday": [[8, 0, 17, 0]], "saturday": []},
+  "chBusiness": {"weekday": [[8, 0, 17, 0]], "saturday": []},
+  "chPE": {"weekday": [[8, 0, 17, 30]], "saturday": []}
+}
+
 //Connect
 var connectOpeningHourWeekday = 8;
 var connectClosingHourWeekday = 17;
 var connectOpeningHourSaturday = false;
 var connectClosingHourSaturday = false;
-//Business
-var businessOpeningHourWeekday = 8;
-var businessClosingHourWeekday = 17;
-var businessOpeningHourSaturday = false;
-var businessClosingHourSaturday = false;
-//CH Regular
-var chOpeningHourWeekday = 8;
-var chOpeningMinuteWeekday = 0;
-var chClosingHourWeekday = 19;
-var chClosingMinuteWeekday = 0;
-var chOpeningHourSaturday = false;
-var chClosingHourSaturday = false;
-//CH PE
-var chPEOpeningHourWeekday = 8;
-var chPEOpeningMinuteWeekday = 0;
-var chPEClosingHourWeekday = 17;
-var chPEClosingMinuteWeekday = 30;
-var chPEOpeningHourSaturday = false;
-var chPEClosingHourSaturday = false;
+
 
 ////////////////////////////////////////////////////////////////////////////////////////Chat Fallback///////////////////////////////////////////////////////////////////////////////////////
 //Defines if the Language is used as Fallback 
@@ -298,3 +282,10 @@ var secondsToChatFallback = 300;
 //Percentage of Waiting Time difference between the two languages
 var percentageForChatFallback = 400;
 
+//Yoummday Shifts; [shiftHourStart, ShiftMinuteStart, ShiftHourEnd, ShiftMinutesEnd]
+mondayYDShifts = [[8, 0, 14, 30], [17, 0, 19, 0]]
+tuesdayYDShifts = [[8, 0, 14, 30]]
+wednesdayYDShifts = [[8, 0, 14, 30]]
+thursdayYDShifts = [[8, 0, 14, 30]]
+fridayYDShifts = [[8, 0, 10, 55], [12, 0, 14, 25], [17, 0, 19, 0]]
+fallbackYDShifts = [[8, 0, 14, 30]]
