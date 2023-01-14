@@ -168,18 +168,6 @@ function fillTopBannerWording(){
 var showHolidays = {
     'ch' : [
       ['2022-12-20 00:00:00', '2022-12-26 22:00:00', 0]
-    ],
-    'de' : [
-      ['2022-12-30 00:00:00', '2022-12-31 22:00:00', 1]
-    ],
-    'at' : [
-      ['2022-12-30 00:00:00', '2022-12-31 22:00:00', 2]
-    ],
-    'it' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 3]
-    ],
-    'fr' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 4]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
@@ -190,30 +178,6 @@ var textToDisplay = {
         'fr' : "<br>26.12.2022: Fermé",
         'it' : '<br>26.12.2022: Chiuso',
         'en-US' : '<br>26.12.2022: Closed',
-    },
-    1 : {
-        'de' : '<br>31.12.2022: Geschlossen',
-        'fr' : '<br>27.06.2022 16:00: fermé',
-        'it' : '<br>27.06.2022 16:00: chiuso',
-        'en-US' : '<br>27.06.2022: Closed from 16:00',
-    },
-    2 : {
-      'de' : '<br>31.12.2022: Geschlossen',
-      'fr' : '<br>27.06.2022 16:00: fermé',
-      'it' : '<br>27.06.2022 16:00: chiuso',
-      'en-US' : '<br>27.06.2022: Closed from 16:00',
-    },
-    3 : {
-      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
-      'fr' : '<br>27.06.2022 16:00: fermé',
-      'it' : '<br>27.06.2022 16:00: chiuso',
-      'en-US' : '<br>27.06.2022: Closed from 16:00',
-    },
-    4 : {
-      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
-      'fr' : '<br>27.06.2022 16:00: fermé',
-      'it' : '<br>27.06.2022 16:00: chiuso',
-      'en-US' : '<br>27.06.2022: Closed from 16:00',
     }
 }
 
@@ -223,45 +187,14 @@ var textToDisplay = {
 var hideWaitingTimes = {
     'ch' : [
       ['2022-12-26 00:00:00', '2022-12-26 22:00:00']
-    ],
-    'de' : [
-      ['2022-12-30 00:00:00', '2022-12-31 22:00:00']
-    ],
-    'at' : [
-      ['2022-12-30 00:00:00', '2022-12-31 22:00:00']
-    ],
-    'it' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00']
-    ],
-    'fr' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00']
     ]
 }
 
 
 //OPENING HOURS
 const openingHours = {
-  //Standard overall opening times
-  "helpcenter.digitec.ch": {"weekday": [[8, 0, 19, 0]], "saturday": []},
-  "helpcenter.galaxus.ch": {"weekday": [[8, 0, 19, 0]], "saturday": []},
-  "helpcenter.galaxus.de": {"weekday": [[8, 0, 19, 0]], "saturday": [[9, 0, 17, 0]]},
-  "helpcenter.galaxus.at": {"weekday": [[8, 0, 19, 0]], "saturday": [[9, 0, 17, 0]]},
-  "helpcenter.galaxus.fr": {"weekday": [], "saturday": []},
-  "helpcenter.galaxus.it": {"weekday": [], "saturday": []},
-  "helpcenter.galaxus.be": {"weekday": [], "saturday": []},
-  "helpcenter.galaxus.nl": {"weekday": [], "saturday": []},
-  "helpcenter.galaxus.lu": {"weekday": [], "saturday": []},
-  //special cases for CH Routing
   "helpcenter.connect.digitec.ch": {"weekday": [[8, 0, 17, 0]], "saturday": []},
-  "chBusiness": {"weekday": [[8, 0, 17, 0]], "saturday": []},
-  "chPE": {"weekday": [[8, 0, 17, 30]], "saturday": []}
 }
-
-//Connect
-var connectOpeningHourWeekday = 8;
-var connectClosingHourWeekday = 17;
-var connectOpeningHourSaturday = false;
-var connectClosingHourSaturday = false;
 
 
 ////////////////////////////////////////////////////////////////////////////////////////Chat Fallback///////////////////////////////////////////////////////////////////////////////////////
@@ -287,5 +220,5 @@ mondayYDShifts = [[8, 0, 14, 30], [17, 0, 19, 0]]
 tuesdayYDShifts = [[8, 0, 14, 30]]
 wednesdayYDShifts = [[8, 0, 14, 30]]
 thursdayYDShifts = [[8, 0, 14, 30]]
-fridayYDShifts = [[8, 0, 10, 55], [12, 0, 14, 25], [17, 0, 19, 0]]
+fridayYDShifts = [[8, 0, 14, 30], [17, 0, 19, 0]]
 fallbackYDShifts = [[8, 0, 14, 30]]

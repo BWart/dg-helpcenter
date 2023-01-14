@@ -18,22 +18,8 @@
     <!-- PROGRESS BAR TESTING &#10003 -->
 
     <table class="progressTable">
-        <tr class="connectHide">
-            <td class="circleOpenStep" id="circle1">1</td>
-            <td style="padding-left:10px; max-width:100%;"><b data-wording-key="chooseCustomerGroup"></b></td>
-        </tr>
-        <tr class="tablespacer connectHide">
-            <td></td>
-        </tr>
-        <tr class="connectHide">
-            <td class="line"><div class="line" style="min-height:30px"></div></td>
-            <td style="padding-left:10px;padding-bottom:30px;padding-top:15px"><div id="inserter"></div></td>
-        </tr>
-        <tr class="tablespacer connectHide">
-            <td></td>
-        </tr>
         <tr>
-            <td class="circleOpenStep" id="circle2">2</td>
+            <td class="circleOpenStep" id="circle2">1</td>
             <td style="padding-left:10px"><b data-wording-key="chooseRequestReason"></b></td>
         </tr>
         <tr class="tablespacer">
@@ -43,22 +29,13 @@
             <td class="line" ><div class="line" style="min-height:30px"></div></td>
             <td style="padding-left:10px;padding-bottom:30px;padding-top:15px">
               <div id="inserter2"></div>
-              <div class="contactFormNote">
-                <div class="contactFormText">
-                    <b><div class="contactFormTextTitel" data-wording-key="contactFormNoteTitel"></div></b>
-                  <div class="contactFormTextInfo"></div>
-                  <!--<h4></h4>-->
-                </div>
-                <div class ="questionNotAnswered" data-wording-key="questionNotAnswered"></div>
-                <div class="button-contact contactNowButton" data-wording-key="contactNow" style="width:150px;margin-top:0px"></div>
-              </div>
             </td>
         </tr>
         <tr class="tablespacer">
             <td></td>
         </tr>
         <tr>
-            <td class="circleOpenStep" id="circle3">3</td>
+            <td class="circleOpenStep" id="circle3">2</td>
             <td style="padding-left:10px"><b class="circle3Title"><font data-wording-key="contactOptions"></font></b><b data-wording-key="email" class="circle3Title2"></b><b data-wording-key="callbackTitle" class="circle3Title3"></b></td>
         </tr>
         <tr class="tablespacer">
@@ -249,7 +226,7 @@
   // General variables
   // Following variables are already defined elsewhere: portal, currentLanguage
   let fullLink = window.location.href;
-  let customerType = setCustomerType();  //the function also removes offers for private customers in the dropdown selection
+  let customerType = "connect-customer"; 
   let infoBoxWording = fillInfoBoxWording();
   let dynamicWording = filldynamicWording();
   let contactFormIsShown = 0; // 0 Shows Infotext and 1 shows OrderNumber Field
@@ -273,106 +250,16 @@
   const languagesForLongerMailWaitTime = ["de"]
 
   //reasons for callback to be shown
-  const reasonsForCallback = ["webform_case_shipping_status",
-    "webform_case_ready_for_shipment",
-    "webform_case_order_status",
-    "webform_case_damaged_product",
-    "webform_case_not_working_product",
-    "webform_case_wrong_product",
-    "webform_case_missing_product",
-    "webform_case_cancel_order",
-    "webform_case_other_request_order",
-    "webform_case_return",
-    "webform_case_return_status",
-    "webform_case_creditnote",
-    "webform_case_other_request_returns",
-    "webform_case_refund",
-    "webform_case_receipt",
-    "webform_case_payment_reminder",
-    "webform_case_no_bill",
-    "webform_case_dunning_block",
-    "webform_case_other_request_payment",
-    "webform_case_delete_account",
-    "webform_case_cant_login",
-    "webform_case_other_request_account",
-    "webform_case_offer"]
-
+  const reasonsForCallback = ["webform_case_connect_customer",
+    "webform_case_connect_payment",
+    "webform_case_connect_technical",
+    "webform_case_connect_b2b"]
+  
   const requestReasonTopCategory = {
-    "webform_case_shipping_status": "where_is_my_order",
-    "webform_case_ready_for_shipment": "where_is_my_order",
-    "webform_case_order_status": "where_is_my_order",
-    "webform_case_damaged_product": "problems_with_an_order",
-    "webform_case_not_working_product": "problems_with_an_order",
-    "webform_case_wrong_product": "problems_with_an_order",
-    "webform_case_missing_product": "problems_with_an_order",
-    "webform_case_cancel_order": "problems_with_an_order",
-    "webform_case_other_request_order": "problems_with_an_order",
-    "webform_case_return": "return",
-    "webform_case_return_status": "return",
-    "webform_case_creditnote": "return",
-    "webform_case_other_request_returns": "return",
-    "webform_case_refund": "payment_reminder_and_refund",
-    "webform_case_receipt": "payment_reminder_and_refund",
-    "webform_case_payment_reminder": "payment_reminder_and_refund",
-    "webform_case_no_bill": "payment_reminder_and_refund",
-    "webform_case_dunning_block": "payment_reminder_and_refund",
-    "webform_case_other_request_payment": "payment_reminder_and_refund",
-    "webform_case_delete_account": "customer_account",
-    "webform_case_cant_login": "customer_account",
-    "webform_case_data_request": "customer_account",
-    "webform_case_other_request_account": "customer_account",
-    "webform_case_product_advice_it": "product_information",
-    "webform_case_product_advice_network": "product_information",
-    "webform_case_product_advice_consumer": "product_information",
-    "webform_case_product_advice_photo": "product_information",
-    "webform_case_product_advice_home": "product_information",
-    "webform_case_product_advice_diy": "product_information",
-    "webform_case_offer": "offer"
-  }
-
-  const requestReasonTopCategoryPlaintext = {
-    "where_is_my_order": {
-      "de": "Wo ist meine Bestellung?",
-      "fr": "Où est ma commande ?",
-      "it": "Dove si trova il mio ordine?",
-      "en-US": "Where is my order?"
-    },
-    "problems_with_an_order": {
-      "de": "Probleme mit einer Bestellung",
-      "fr": "Problème avec la commande",
-      "it": "Problemi con un ordine",
-      "en-US": "Problems with an order"
-    },
-    "return": {
-      "de": "Rückgabe",
-      "fr": "Retour",
-      "it": "Resi",
-      "en-US": "Returns"
-    },
-    "payment_reminder_and_refund": {
-      "de": "Zahlung, Mahnung und Rückerstattung",
-      "fr": "Paiement, rappel et remboursement",
-      "it": "Pagamento, sollecito e rimborso",
-      "en-US": "Payment, reminder and refund"
-    },
-    "customer_account": {
-      "de": "Kundenkonto",
-      "fr": "Compte client",
-      "it": "Conto cliente",
-      "en-US": "Customer account"
-    },
-    "product_information": {
-      "de": "Produktberatung",
-      "fr": "Conseil produits",
-      "it": "Consulenza prodotti",
-      "en-US": "Product information"
-    },
-    "offer": {
-      "de": "Offerte",
-      "fr": "Offre",
-      "it": "Offerta",
-      "en-US": "Offer"
-    }
+    "webform_case_connect_customer": "connect",
+    "webform_case_connect_payment": "connect",
+    "webform_case_connect_technical": "connect",
+    "webform_case_connect_b2b": "connect"
   }
 
   // DOM elements and their contents
@@ -382,11 +269,9 @@
   const customerTypeDropdown = $('.request_ticket_form_id');
   const [requestReasonDropdown, requestReasonDropdownNesty, requestReasonDropdownContents] = getRequestReasonDropdown();
   const contactInfos = $('.contactInfos');
-  const infoTextField = $('.contactFormNote');
   const infoText = $('.contactFormTextInfo');
   const backButton = $('.text-back');
   const requestForm = $('.request-form');
-  const circleOne = document.getElementById('circle1');
   const circleTwo = document.getElementById('circle2');
   const circleThree = document.getElementById('circle3');
   const circleThreeTitle = $('.circle3Title');
@@ -599,7 +484,6 @@
     chatWaitTimesDOMElements.hide();
     callWaitTimesDOMElements.hide();
     callbackWaitTimesDOMElements.hide();
-    infoTextField.hide();
     fallbackText.hide();
     requestForm.hide()
     customerTypeDropdownLabel.hide()
@@ -616,9 +500,6 @@
     //adjust additional elements if it is a customer form
     if (entryPoint == 'customerChosen' || entryPoint == 'mailFormWrong'){
       requestReasonDropdown.insertBefore(document.getElementById('inserter2'));
-      circleOne.classList.remove('circleOpenStep');
-      circleOne.classList.add('circleStepCompleted');
-      circleOne.innerHTML = '&#10003';
     }
     if (entryPoint == 'mailFormWrong'){
       onDropdownChange();
@@ -649,7 +530,6 @@
     $('.questionNotAnswered').hide();
     $('.contactNowButton').hide();
     infoText.show();
-    infoTextField.show();
     updateLabelAndTemplate();
     mailFormSubjectTextField.val($(requestReasonDropdownNesty).text());  //Autofill Mail Subject
 
@@ -1145,29 +1025,7 @@
 
   //Returns true or false for holidays
   function isHoliday(){
-      var portalChooser = '';
-      switch(portal){
-          case 'helpcenter.digitec.ch':
-          case 'helpcenter.galaxus.ch':
-          case 'helpcenter.connect.digitec.ch':
-            portalChooser = 'ch'
-            break;
-          case 'helpcenter.galaxus.de':
-            portalChooser = 'de'
-            break;
-          case 'helpcenter.galaxus.at':
-            portalChooser = 'at'
-            break;
-          case 'helpcenter.galaxus.fr':
-            portalChooser = 'fr'
-            break;
-          case 'helpcenter.galaxus.it':
-            portalChooser = 'it'
-            break;
-          default:
-            portalChooser = 'ch'
-            break;
-      }
+      var portalChooser = 'ch';
       const d = new Date();
       datestring = String(d.getUTCFullYear()) + '-' + String(d.getUTCMonth() + 1) + '-' + String(d.getUTCDate()) + ' ' + String(d.getUTCHours()) + ':' + String(d.getUTCMinutes()) + ':' + String(d.getUTCSeconds())
       const utc_timestamp = Date.parse(datestring)
@@ -1186,238 +1044,7 @@
     let contactChannelChat = true;
     let contactChannelCall = true;
     let contactChannelMail = true;
-    let isDEAT = false;
-    let isFRIT = false;
-    let isOpen = 'true';
-    let isPE = false;
-    let isCH = false;
-    let isBusiness = false;
-    switch (portal){
-      case 'helpcenter.digitec.ch':
-      case 'helpcenter.galaxus.ch':
-        if (requestReasonTag.includes('webform_case_product_advice_') && customerType == 'private-customer'){
-          isOpen = isInCHPEOpeningTimes();
-          isPE = true;
-          isCH = true;
-        }
-        else {
-          if (customerType == "business-customer"){
-            isOpen = isInBusinessOpeningTimes();
-            isPE = false;
-            isCH = true;
-            isBusiness = true;
-          }
-          else {
-            isOpen = isInOpeningTimes();
-            isPE = false;
-            isCH = true;
-            isBusiness = false;
-          }
-        }
-        break;
-      case 'helpcenter.connect.digitec.ch':
-        isOpen = isInCHPEOpeningTimes();
-        isCH = true;
-        break;
-      case 'helpcenter.galaxus.de':
-      case 'helpcenter.galaxus.at':
-        isOpen = isInOpeningTimes();
-        isCH = false;
-        if (requestReasonTag.includes('webform_case_product_advice_')){
-          isPE = true
-        }
-        break;
-      case 'helpcenter.galaxus.fr':
-      case 'helpcenter.galaxus.it':
-        isOpen = false
         
-      default:
-        isOpen = false;
-        break;
-    }
-    // Business Logic to Add Or Remove Contact Option Based on Selection ------> Change in HolidayAndSwitches.js
-    // PE Schweiz
-    if (isPE && isCH){
-      // In Business Hours
-      if (isOpen){
-        if (switchHideContactFormForPEDuringOpeningTimes){
-          contactChannelMail = false;
-        }
-        if (phoneWaitThreshholdToShowContactFormPE < callWaitSeconds || chatWaitThreshholdToShowContactFormPE < chatWaitSeconds[customerDepartment] || (chatAndPhoneWaitThreshholdToShowContactFormPE < callWaitSeconds && chatAndPhoneWaitThreshholdToShowcontactFormPE < chatWaitSeconds[customerDepartment])){
-          contactChannelMail = true;
-        }
-        if (switchHidePhoneForPEDuringOpeningTimes){
-          contactChannelCall = false;
-        }
-        if (switchHideChatForPEDuringOpeningTimes){
-          contactChannelChat = false;
-        }
-      }
-      //OutOfBusinessHours
-      else {
-        if (switchHideContactFormForPEOutsideOpeningTimes){
-          contactChannelMail = false;
-        }
-        if (switchHidePhoneForPEOutsideOpeningTimes){
-          contactChannelCall = false;
-        }
-        if (switchHideChatForPEOutsideOpeningTimes){
-          contactChannelChat = false;
-        }
-      }
-    }
-    //B2C CH
-    else if (isCH && !isBusiness) {
-      //In Business Hours
-      if (isOpen){
-        if (switchHideContactFormDuringOpeningTimes){
-          contactChannelMail = false;
-        }
-        if (phoneWaitThreshholdToShowContactForm <= callWaitSeconds || chatWaitThreshholdToShowContactForm <= chatWaitSeconds[customerDepartment] || (chatAndPhoneWaitThreshholdToShowContactForm <= callWaitSeconds && chatAndPhoneWaitThreshholdToShowContactForm <= chatWaitSeconds[customerDepartment])){
-          contactChannelMail = true;
-        }
-        if (switchHidePhoneDuringOpeningTimes){
-          contactChannelCall = false;
-        }
-        if (switchHideChatDuringOpeningTimes){
-          contactChannelChat = false;
-        }
-      }
-      //OutOfBusinessHours
-      else {
-        if (switchHideContactFormOutsideOpeningTimes){
-          contactChannelMail = false;
-        }
-        if (switchHidePhoneOutsideOpeningTimes){
-          contactChannelCall = false;
-        }
-        if (switchHideChatOutsideOpeningTimes){
-          contactChannelChat = false;
-        }
-      }
-    }
-    //B2B CH
-    else if (isCH && isBusiness){
-      //In Business Hours
-      if (isOpen){
-        if (switchHideContactFormForBusinessDuringOpeningTimes){
-          contactChannelMail = false;
-        }
-        if (phoneWaitThreshholdToShowContactFormBusiness <= callWaitSeconds || chatWaitThreshholdToShowContactFormBusiness <= chatWaitSeconds[customerDepartment] || (chatAndPhoneWaitThreshholdToShowContactFormBusiness <= callWaitSeconds && chatAndPhoneWaitThreshholdToShowContactFormBusiness <= chatWaitSeconds[customerDepartment])){
-          contactChannelMail = true;
-        }
-        if (switchHidePhoneForBusinessDuringOpeningTimes){
-          contactChannelCall = false;
-        }
-        if (switchHideChatForBusinessDuringOpeningTimes){
-          contactChannelChat = false;
-        }
-      }
-      //OutOfBusinessHours
-      else {
-        if (switchHideContactFormForBusinessOutsideOpeningTimes){
-          contactChannelMail = false;
-        }
-        if (switchHidePhoneForBusinessOutsideOpeningTimes){
-          contactChannelCall = false;
-        }
-        if (switchHideChatForBusinessOutsideOpeningTimes){
-          contactChannelChat = false;
-        }
-      }
-    }
-    // EU
-    else {
-      let tempSwitchHideContactFormDuringOpening = false;
-      let tempSwitchHideContactFormOutsideOpening = false;
-      let tempSwitchHidePhoneDuringOpening = false;
-      let tempSwitchHidePhoneOutsideOpening = false;
-      let tempSwitchHideChatDuringOpening = false;
-      let tempSwitchHideChatOutsideOpening = false;
-      let tempPhoneWaitThreshholdToShowContactForm = 0;
-      let tempChatWaitThreshholdToShowContactForm = 0;
-      let tempChatAndPhoneWaitThreshholdToShowContactForm = 0;
-      switch (portal){
-        case 'helpcenter.galaxus.de':
-        case 'helpcenter.galaxus.at':
-          isOpen = isInOpeningTimes();
-          tempSwitchHideContactFormDuringOpening = switchHideContactFormForEUDuringOpeningTimes;
-          tempSwitchHideContactFormOutsideOpening = switchHideContactFormForEUOutsideOpeningTimes;
-          tempSwitchHidePhoneDuringOpening = switchHidePhoneForEUDuringOpeningTimes;
-          tempSwitchHidePhoneOutsideOpening = switchHidePhoneForEUOutsideOpeningTimes;
-          tempSwitchHideChatDuringOpening = switchHideChatForEUDuringOpeningTimes;
-          tempSwitchHideChatOutsideOpening = switchHideChatForEUOutsideOpeningTimes;
-          tempPhoneWaitThreshholdToShowContactForm = phoneWaitThreshholdToShowContactFormEU;
-          tempChatWaitThreshholdToShowContactForm = chatWaitThreshholdToShowContactFormEU;
-          tempChatAndPhoneWaitThreshholdToShowContactForm = chatAndPhoneWaitThreshholdToShowContactFormEU;
-          break;
-        case 'helpcenter.galaxus.fr':
-          isOpen = isInOpeningTimes();
-          tempSwitchHideContactFormDuringOpening = switchHideContactFormForFRDuringOpeningTimes;
-          tempSwitchHideContactFormOutsideOpening = switchHideContactFormForFROutsideOpeningTimes;
-          tempSwitchHidePhoneDuringOpening = switchHidePhoneForFRDuringOpeningTimes;
-          tempSwitchHidePhoneOutsideOpening = switchHidePhoneForFROutsideOpeningTimes;
-          tempSwitchHideChatDuringOpening = switchHideChatForFRDuringOpeningTimes;
-          tempSwitchHideChatOutsideOpening = switchHideChatForFROutsideOpeningTimes;
-          tempPhoneWaitThreshholdToShowContactForm = phoneWaitThreshholdToShowContactFormFR;
-          tempChatWaitThreshholdToShowContactForm = chatWaitThreshholdToShowContactFormFR;
-          tempChatAndPhoneWaitThreshholdToShowContactForm = chatAndPhoneWaitThreshholdToShowContactFormFR;
-          break;
-        case 'helpcenter.galaxus.it':
-          isOpen = isInOpeningTimes();
-          tempSwitchHideContactFormDuringOpening = switchHideContactFormForITDuringOpeningTimes;
-          tempSwitchHideContactFormOutsideOpening = switchHideContactFormForITOutsideOpeningTimes;
-          tempSwitchHidePhoneDuringOpening = switchHidePhoneForITDuringOpeningTimes;
-          tempSwitchHidePhoneOutsideOpening = switchHidePhoneForITOutsideOpeningTimes;
-          tempSwitchHideChatDuringOpening = switchHideChatForITDuringOpeningTimes;
-          tempSwitchHideChatOutsideOpening = switchHideChatForITOutsideOpeningTimes;
-          tempPhoneWaitThreshholdToShowContactForm = phoneWaitThreshholdToShowContactFormIT;
-          tempChatWaitThreshholdToShowContactForm = chatWaitThreshholdToShowContactFormIT;
-          tempChatAndPhoneWaitThreshholdToShowContactForm = chatAndPhoneWaitThreshholdToShowContactFormIT;
-          break;
-      }
-      if (isOpen){
-        if (tempSwitchHideContactFormDuringOpening){
-          contactChannelMail = false;
-        }
-        if(tempPhoneWaitThreshholdToShowContactForm < callWaitSeconds || tempChatWaitThreshholdToShowContactForm < chatWaitSeconds[customerDepartment] || (tempChatAndPhoneWaitThreshholdToShowContactForm < callWaitSeconds && tempChatAndPhoneWaitThreshholdToShowContactForm < chatWaitSeconds[customerDepartment])){
-          contactChannelMail = true;
-        }
-        if (tempSwitchHidePhoneDuringOpening){
-          contactChannelCall = false;
-        }
-        if (tempSwitchHideChatDuringOpening){
-          contactChannelChat = false;
-        }
-        if (requestReasonTag.includes('webform_case_product_advice_')){
-          if (switchHidePhoneForPEDuringOpeningTimes){
-            contactChannelCall = false;
-          }
-        }
-      } else { //WHEN OUTSIDE OPENING TIMES
-        if (tempSwitchHideContactFormOutsideOpening){
-          contactChannelMail = false;
-        }
-        if (tempSwitchHidePhoneOutsideOpening){
-          contactChannelCall = false;
-        }
-        if (tempSwitchHideChatOutsideOpening){
-          contactChannelChat = false;
-        }
-        if (requestReasonTag.includes('webform_case_product_advice_')){
-          if (switchHidePhoneForPEOutsideOpeningTimes){
-            contactChannelCall = false;
-          }
-        }
-      }
-    }
-    
-    // We need offers by Mail, hence Mail only; same goes for data requests
-    if (requestReasonTag == "webform_case_offer" || requestReasonTag == 'webform_case_data_request'){
-      contactChannelMail = true;
-      contactChannelChat = false;
-      contactChannelCall = false;
-    }
 
     resetContactOptions();
     if (contactChannelMail == false && contactChannelChat == true && contactChannelCall == true){
@@ -1736,27 +1363,6 @@
     requestReasonDropdown.hide()
     customerTypeDropdown.hide()
   }
-  
-
-  
-  // --- FUNCTIONS TO FILL VARIABLES ---
-  function setCustomerType(){
-    //Kundentyp setzen
-    var tempCustomerType = sessionStorage.getItem('customerType');
-    if (fullLink.includes('39231')){
-      tempCustomerType = 'private-customer';
-      sessionStorage.setItem('customerType', tempCustomerType)
-    }
-    if (fullLink.includes('360000554760')){
-      tempCustomerType = 'business-customer';
-      sessionStorage.setItem('customerType', tempCustomerType)
-    }
-    if (fullLink.includes('360002056120')){
-      tempCustomerType = 'connect-customer';
-      sessionStorage.setItem('customerType', tempCustomerType)
-    }
-    return tempCustomerType;
-  }
 
 
 
@@ -1764,25 +1370,9 @@
     let tempRequestReasonDropdown;
     let tempRequestReasonDropdownNesty;
     let  tempRequestReasonDropdownContents
-    switch (portal){
-      case 'helpcenter.digitec.ch':
-      case 'helpcenter.galaxus.ch':
-      case 'helpcenter.galaxus.de':
-      case 'helpcenter.galaxus.at':
-        tempRequestReasonDropdown = $('.request_custom_fields_360014169819');
-        tempRequestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
-        tempRequestReasonDropdownContents = $('#request_custom_fields_360014169819');
-        break;
-      case 'helpcenter.connect.digitec.ch':
-        tempRequestReasonDropdown = $('.request_custom_fields_360021132800');
-        tempRequestReasonDropdownNesty = '.request_custom_fields_360021132800' + ' a.nesty-input';
-        tempRequestReasonDropdownContents = $('#request_custom_fields_360021132800');
-      default:
-        tempRequestReasonDropdown = $('.request_custom_fields_360014169819');
-        tempRequestReasonDropdownNesty = '.request_custom_fields_360014169819' + ' a.nesty-input';
-        tempRequestReasonDropdownContents = $('#request_custom_fields_360014169819');
-        break;
-    }
+    tempRequestReasonDropdown = $('.request_custom_fields_360021132800');
+    tempRequestReasonDropdownNesty = '.request_custom_fields_360021132800' + ' a.nesty-input';
+    tempRequestReasonDropdownContents = $('#request_custom_fields_360021132800');
     return[tempRequestReasonDropdown, tempRequestReasonDropdownNesty, tempRequestReasonDropdownContents]
   }
 
@@ -2014,29 +1604,7 @@
 
 
   function fillHoliday(lang){
-      var portalChooser = '';
-      switch(portal){
-          case 'helpcenter.digitec.ch':
-          case 'helpcenter.galaxus.ch':
-          case 'helpcenter.connect.digitec.ch':
-            portalChooser = 'ch'
-            break;
-          case 'helpcenter.galaxus.de':
-            portalChooser = 'de'
-            break;
-          case 'helpcenter.galaxus.at':
-            portalChooser = 'at'
-            break;
-          case 'helpcenter.galaxus.fr':
-            portalChooser = 'fr'
-            break;
-          case 'helpcenter.galaxus.it':
-            portalChooser = 'it'
-            break;
-          default:
-            portalChooser = 'ch'
-            break;
-      }
+      var portalChooser = 'ch';
       const d = new Date();
       datestring = String(d.getUTCFullYear()) + '-' + String(d.getUTCMonth() + 1) + '-' + String(d.getUTCDate()) + ' ' + String(d.getUTCHours()) + ':' + String(d.getUTCMinutes()) + ':' + String(d.getUTCSeconds())
       const utc_timestamp = Date.parse(datestring)

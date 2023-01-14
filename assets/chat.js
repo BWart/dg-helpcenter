@@ -194,7 +194,7 @@ function getChatDepartmentType(){
             chatDepartmentType = 'EU';
             break;
         default:
-            chatDepartmentType = 'Private';
+            chatDepartmentType = 'Connect';
     }
     return chatDepartmentType;
 }
