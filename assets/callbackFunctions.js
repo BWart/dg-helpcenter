@@ -30,6 +30,7 @@ function callbackCheck(){
     var customerTypeShorthand = ""
     var brandTag = " brand-"
     var customerLocale = ""
+    var customerSearchLink = ""
     if (customerType == "private-customer") {
       customerTypeShorthand = "c"
     } else if (customerType == "business-customer") {
@@ -159,9 +160,11 @@ function callbackCheck(){
     var baseOrderLink = baseERPLink + "Order/"
     var baseRGLink = baseERPLink + "Invoice/"
     var custName = enteredMail.split("@")[0].replace(".", " ")
+    customerSearchLink = baseERPLink + "Customer/SearchPersonAdvanced?&PersonAdvancedSearch.EMail=" + enteredMail
     var dataToPass = {
         "customer_phone": enteredPhoneNumber,
         "customer_mail": enteredMail,
+        "customer_search_link": customerSearchLink,
         "customer_name": custName,
         "customer_locale": customerLocale,
         "record": enteredRecordChecker,
