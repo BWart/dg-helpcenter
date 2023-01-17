@@ -339,25 +339,8 @@
   const callBackSubmitButton = $('.callbackSubmitButton')
   callbackForm.hide()
   
-  if (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
-    if (localStorage.getItem("callbackGroup5") === null){
-      if (Math.random() <= 1){
-        localStorage.setItem("callbackGroup5", "true");
-      }
-      else {
-        localStorage.setItem("callbackGroup5", "false");
-      }
-    }
-  } else {
-    localStorage.setItem("callbackGroup5", "false");
-  }
-  /*if (portal == 'helpcenter.galaxus.ch' && customerType == "private-customer"){
-    localStorage.setItem("callbackGroup5", true);
-  }
-  else {
-    localStorage.setItem("callbackGroup5", true);
-  }*/
-  console.log(localStorage.getItem("callbackGroup5"));
+  localStorage.setItem("callbackGroup5", "true");
+  
   const callBackPhoneInputField = $('.callback_customer_phone_number_input')
   const callBackOrderInputField = $('.callback_customer_order_number_input')
   const callBackRGInputField = $('.callback_customer_rg_number_input')
@@ -1044,6 +1027,10 @@
     let contactChannelChat = true;
     let contactChannelCall = true;
     let contactChannelMail = true;
+
+    if (currentLanguage != "de") {
+      contactChannelCall = false;
+    }
         
 
     resetContactOptions();
