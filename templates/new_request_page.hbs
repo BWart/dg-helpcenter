@@ -874,7 +874,7 @@
     }
     var script = document.createElement('script');
     script.classList.add('waitTimeScript')
-    script.src = 'https://www.hardread.ch/testing/waitTimes.js';
+    script.src = 'https://py-waittimes-web.prod.pub.devinite.com/waitTimes.js';
     script.onload = function() {
         setWaitTimes();
     }
@@ -889,9 +889,9 @@
     var script2 = document.createElement('script');
     script2.classList.add('callbackScript');
     if (portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch"){
-      script2.src = 'https://www.hardread.ch/testing/callback.js';
+      script2.src = 'https://py-waittimes-web.prod.pub.devinite.com/callback.js';
     } else if (portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at"){
-      script2.src = 'https://www.hardread.ch/testing/callbackEU.js';
+      script2.src = 'https://py-waittimes-web.prod.pub.devinite.com/callbackEU.js';
     }
     script2.onload = function() {
       callBackTokenChecker = true;
@@ -907,9 +907,9 @@
     var script2 = document.createElement('script');
     script2.classList.add('callbackScript');
     if (portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch"){
-      script2.src = 'https://www.hardread.ch/testing/callback.js';
+      script2.src = 'https://py-waittimes-web.prod.pub.devinite.com/callback.js';
     } else if (portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at"){
-      script2.src = 'https://www.hardread.ch/testing/callbackEU.js';
+      script2.src = 'https://py-waittimes-web.prod.pub.devinite.com/callbackEU.js';
     }
     script2.onload = function() {
       callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker);
