@@ -29,7 +29,6 @@ function callbackCheck(){
     groupID = "9631731442450"
     brandName = "digitec Connect"
     baseERPLink = "https://erp.digitecgalaxus.ch/"
-    customerSearchLink = baseERPLink + "Customer/SearchPersonAdvanced?&PersonAdvancedSearch.EMail="
     brandTag = ""
     ringGroup = "callback2connect_ch_de"
     switch (currentLanguage){
@@ -78,7 +77,7 @@ function callbackCheck(){
     var baseOrderLink = baseERPLink + "Order/"
     var baseRGLink = baseERPLink + "Invoice/"
     var custName = enteredMail.split("@")[0].replace(".", " ")
-    customerSearchLink += enteredMail
+    customerSearchLink = baseERPLink + "Customer/SearchPersonAdvanced?&PersonAdvancedSearch.EMail=" + enteredMail
     var dataToPass = {
         "customer_phone": enteredPhoneNumber,
         "customer_mail": enteredMail,
