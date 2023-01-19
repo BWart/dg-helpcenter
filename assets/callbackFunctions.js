@@ -21,15 +21,15 @@ function callbackCheck(){
     var baseERPLink = ""
     var ringGroup = ""
     var customerTypeShorthand = ""
-    var brandTag = " brand-"
     var customerLocale = ""
     var customerSearchLink = ""
     customerTypeShorthand = "connect"
     brandID = "360002520320"
-    groupID = "9631731442450"
+    groupID = "9631731442450" //Callback Requests Connect
+    //groupID = "360003887000"  //Connect Privatkunden
+    //groupID = "360003882299"  //Connect Firmenkunden
     brandName = "digitec Connect"
     baseERPLink = "https://erp.digitecgalaxus.ch/"
-    brandTag = ""
     ringGroup = "callback2connect_ch_de"
     switch (currentLanguage){
       case 'de':
@@ -73,7 +73,7 @@ function callbackCheck(){
       invoiceLink = "None"
     }
     var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\nOrder: " + orderLink + " \nInvoice: " + invoiceLink + "\nRequest Reason: " + compiledSubject + " \n -- \ninteraction_id: "
-    var ticketTags = "callback_request voice " + requestReasonTag + brandTag + " talkdesk_interaction_"
+    var ticketTags = "callback_request voice " + requestReasonTag + " talkdesk_interaction_"
     var baseOrderLink = baseERPLink + "Order/"
     var baseRGLink = baseERPLink + "Invoice/"
     var custName = enteredMail.split("@")[0].replace(".", " ")
@@ -103,7 +103,7 @@ function callbackCheck(){
     var dataToPass2 = JSON.stringify(dataToPass)
     let auth = "Bearer " + wertmarke
     console.log(ringGroup)
-    $.ajax({
+    /*$.ajax({
       type: "POST",
       url: "https://api.talkdeskapp.com/flows/3731b2ebb4c5492f868cbe2f1e3e3601/interactions",
       headers: {"content-type" : "application/json",

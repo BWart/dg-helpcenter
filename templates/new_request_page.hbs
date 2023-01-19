@@ -313,13 +313,8 @@
 
 
   //--- CALLBACK SETTING UP A/B AND FURTHER VARIABLES
-  $('.callback_customer_record_label_ch').hide();
   $('.callback_customer_record_label_eu').hide();
-  if(portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.digitec.ch'){
-    $('.callback_customer_record_label_ch').show();
-  } else {
-    $('.callback_customer_record_label_eu').show();
-  }
+  $('.callback_customer_record_label_ch').show();
   $('.callback-number-offline').hide();
   $('.callback-number-offline-mobile').hide();
   let callBackTokenChecker = false;
@@ -328,10 +323,7 @@
   let callbackButtonClicked = false;
   callbackButton.hide();
   callbackButtonMobile.hide();
-  if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (!isInOpeningTimes() || isHoliday())){
-    callbackButton = $('.callback-number-offline')
-    callbackButtonMobile = $('.callback-number-offline-mobile')
-  } else if ((portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at") && (!isInOpeningTimes() || isHoliday())){
+  if ((!isInOpeningTimes() || isHoliday())){
     callbackButton = $('.callback-number-offline')
     callbackButtonMobile = $('.callback-number-offline-mobile')
   }
@@ -348,89 +340,8 @@
   const callBackRecordChecker = $('.callback_customer_record_checker')
   const chPreCodeTable = $('.chPreCodeTable')
   const callbackPrecode = $('.callbackVorwahl')
-  let callbackCountry = "CH"
-  switch (portal) {
-    case 'helpcenter.galaxus.de':
-      callbackCountry = "DE"
-      callBackRecordChecker.prop('checked', false);
-      callbackPrecode.html("+49&nbsp;&nbsp;")
-      break;
-    case 'helpcenter.galaxus.at':
-      callbackCountry = "AT"
-      callBackRecordChecker.prop('checked', false);
-      callbackPrecode.html("+43&nbsp;&nbsp;")
-      break;
-    default:
-      callbackCountry = "CH"
-      callbackPrecode.html("+41&nbsp;&nbsp;")
-  }
-
-  // --- Callback Ring Group levels ---
-  const callbackRingGroupLevels = {
-    "webform_case_shipping_status": "_lv1",
-    "webform_case_ready_for_shipment": "_lv1",
-    "webform_case_order_status": "_lv1",
-    "webform_case_damaged_product": "_lv4",
-    "webform_case_not_working_product": "_lv4",
-    "webform_case_wrong_product": "_lv2",
-    "webform_case_missing_product": "_lv4",
-    "webform_case_cancel_order": "_lv2",
-    "webform_case_other_request_order": "_lv4",
-    "webform_case_return": "_lv3",
-    "webform_case_return_status": "_lv4",
-    "webform_case_creditnote": "_lv4",
-    "webform_case_other_request_returns": "_lv4",
-    "webform_case_refund": "_lv4",
-    "webform_case_receipt": "_lv2",
-    "webform_case_payment_reminder": "_lv4",
-    "webform_case_no_bill": "_lv4",
-    "webform_case_dunning_block": "_lv4",
-    "webform_case_other_request_payment": "_lv4",
-    "webform_case_delete_account": "_lv4",
-    "webform_case_cant_login": "_lv4",
-    "webform_case_data_request": "_lv4",
-    "webform_case_other_request_account": "_lv4",
-    "webform_case_product_advice_it": "_lvpe",
-    "webform_case_product_advice_network": "_lvpe",
-    "webform_case_product_advice_consumer": "_lvpe",
-    "webform_case_product_advice_photo": "_lvpe",
-    "webform_case_product_advice_home": "_lvpe",
-    "webform_case_product_advice_diy": "_lvpe",
-    "webform_case_offer": "_lv4"
-  }
-
-  const callbackRingGroupLevelsEU = {
-    "webform_case_shipping_status": "_lv1",
-    "webform_case_ready_for_shipment": "_lv1",
-    "webform_case_order_status": "_lv1",
-    "webform_case_damaged_product": "_lv4",
-    "webform_case_not_working_product": "_lv4",
-    "webform_case_wrong_product": "_lv4",
-    "webform_case_missing_product": "_lv4",
-    "webform_case_cancel_order": "_lv1",
-    "webform_case_other_request_order": "_lv4",
-    "webform_case_return": "_lv1",
-    "webform_case_return_status": "_lv4",
-    "webform_case_creditnote": "_lv4",
-    "webform_case_other_request_returns": "_lv4",
-    "webform_case_refund": "_lv4",
-    "webform_case_receipt": "_lv1",
-    "webform_case_payment_reminder": "_lv4",
-    "webform_case_no_bill": "_lv4",
-    "webform_case_dunning_block": "_lv4",
-    "webform_case_other_request_payment": "_lv4",
-    "webform_case_delete_account": "_lv4",
-    "webform_case_cant_login": "_lv4",
-    "webform_case_other_request_account": "_lv4",
-    "webform_case_data_request": "_lv4",
-    "webform_case_product_advice_it": "_lvpe",
-    "webform_case_product_advice_network": "_lvpe",
-    "webform_case_product_advice_consumer": "_lvpe",
-    "webform_case_product_advice_photo": "_lvpe",
-    "webform_case_product_advice_home": "_lvpe",
-    "webform_case_product_advice_diy": "_lvpe",
-    "webform_case_offer": "_lv4"
-  }
+  let callbackCountry = "CHConnect"
+  callbackPrecode.html("+41&nbsp;&nbsp;")
 
 
   
@@ -438,6 +349,9 @@
   chatClosedMessage.hide()
   callbackClosedMessage.hide()
   liveChannelsClosedMessage.hide()
+  if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/') {
+    window.location.replace('https://helpcenter.connect.digitec.ch/hc/requests/new?ticket_form_id=360002056120');
+  }
   // Case when "Contact Us" Button in footer is clicked
   addExternalScriptForWaitingTimes(true);
   if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/'){
@@ -446,14 +360,12 @@
   // Case when the page reloads after an incorrectly filled mail form
   else if (fullLink.slice(-8) == 'requests'){
     //TODO: Handling beim Laden nach Eingabefehler
-    removeOfferforPrivate();
     removeDataRequestForBusiness();
     pageSetup('mailFormWrong')
   }
   // Rest; Case when the page loads after the customer type was selected
   else {
     pageSetup('customerChosen');
-    removeOfferforPrivate();
     removeDataRequestForBusiness();
   }
 
@@ -666,18 +578,6 @@
     fallbackText.show();
   }
 
-  function removeOfferforPrivate(){
-    if (customerType == 'private-customer'){
-      // Removes Offers for Private Customers
-      var categoryToRemove = 'webform_case_offer';
-      try {
-        var catJson = JSON.parse(requestReasonDropdownContents.attr("data-tagger"));
-        requestReasonDropdownContents.attr("data-tagger", removeCategoryFromJson(catJson, categoryToRemove));
-      }
-      catch (e) { // Initial wird das Formular immer geladen ohne Kundentyp und deshalb hier etwas unschön gecatcht. Funktionalität ist jedoch nicht kritisch 
-      }
-    }
-  }
 
   function removeDataRequestForBusiness(){
     if(customerType == 'business-customer'){
