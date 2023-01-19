@@ -1122,12 +1122,8 @@
     sendGARequestOpeningHours('Callback Commit clicked');
     var dynamicWording2 = filldynamicWording();
     let enteredPhoneNumber = "+41" + String(callBackPhoneInputField.val())
-    if (callbackCountry == "LI"){
+    if (callbackCountry == "LIConnect"){
       enteredPhoneNumber = "+423" + String(callBackPhoneInputField.val())
-    } else if (callbackCountry == "DE"){
-      enteredPhoneNumber = "+49" + String(callBackPhoneInputField.val())
-    } else if (callbackCountry == "AT"){
-      enteredPhoneNumber = "+43" + String(callBackPhoneInputField.val())
     }
     let enteredPhoneNumberShort = String(callBackPhoneInputField.val())
     let enteredPhoneNumberShortNoLeadingZero = enteredPhoneNumberShort
@@ -1143,7 +1139,7 @@
       enteredPhoneNumberShortNoLeadingZero = enteredPhoneNumberShort.substring(1, enteredPhoneNumberShort.length)
     }
     // Phone number checks for CH
-    if (callbackCountry == "CH"){
+    if (callbackCountry == "CHConnect"){
       if (enteredPhoneNumberShortNoLeadingZero.length != 9) {
         $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
         validationChecker = false;
@@ -1157,7 +1153,7 @@
       }
     }
     // Phone number checks for LI
-    if (callbackCountry == "LI"){
+    if (callbackCountry == "LIConnect"){
       if (enteredPhoneNumberShortNoLeadingZero.length < 7 || enteredPhoneNumberShortNoLeadingZero.length > 9) {
         $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
         validationChecker = false;
@@ -1170,34 +1166,7 @@
         $('.callbackPhoneErrorText').html('')
       }
     }
-    // Phone number checks for DE
-    if (callbackCountry == "DE"){
-      if (enteredPhoneNumberShortNoLeadingZero.length > 12 || enteredPhoneNumberShortNoLeadingZero.length < 10) {
-        $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
-        validationChecker = false;
-        callbackButtonClicked = false;
-      } else if (enteredPhoneNumberShort.substring(0,4) == '0800' || enteredPhoneNumberShort.substring(0,4) == '0900' || enteredPhoneNumberShort.substring(0,4) == '0700' || enteredPhoneNumberShort.substring(0,3) == '800' || enteredPhoneNumberShort.substring(0,3) == '900' || enteredPhoneNumberShort.substring(0,3) == '700'){
-        $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError2'])
-        validationChecker = false;
-        callbackButtonClicked = false;
-      } else {
-        $('.callbackPhoneErrorText').html('')
-      }
-    }
-    // Phone number checks for AT
-    if (callbackCountry == "AT"){
-      if (enteredPhoneNumberShortNoLeadingZero.length > 12 || enteredPhoneNumberShortNoLeadingZero.length < 10) {
-        $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError'])
-        validationChecker = false;
-        callbackButtonClicked = false;
-      } else if (enteredPhoneNumberShort.substring(0,4) == '0800' || enteredPhoneNumberShort.substring(0,4) == '0900' || enteredPhoneNumberShort.substring(0,4) == '0700' || enteredPhoneNumberShort.substring(0,3) == '800' || enteredPhoneNumberShort.substring(0,3) == '900' || enteredPhoneNumberShort.substring(0,3) == '700'){
-        $('.callbackPhoneErrorText').html(dynamicWording2[currentLanguage]['callbackPhoneError2'])
-        validationChecker = false;
-        callbackButtonClicked = false;
-      } else {
-        $('.callbackPhoneErrorText').html('')
-      }
-    }
+   
     // Mail address checks
     if (!(/.+@.+\...+/.test(enteredMail))){
       $('.callbackMailErrorText').html(dynamicWording2[currentLanguage]['callbackEmailError'])
@@ -1219,11 +1188,11 @@
 
   $('.radioCH').on("change", function(){
     callbackPrecode.html("+41&nbsp;&nbsp;") 
-    callbackCountry = "CH"
+    callbackCountry = "CHConnect"
   })
   $('.radioLI').on("change", function(){
     callbackPrecode.html("+423&nbsp;&nbsp;") 
-    callbackCountry = "LI"
+    callbackCountry = "LIConnect"
   })
 
 
