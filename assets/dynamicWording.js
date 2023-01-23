@@ -44,276 +44,36 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
     var callbackPhoneError1EN = "";
     var callbackPhoneError2EN = "";
 
-    switch(portal){
-        case 'helpcenter.digitec.ch':
-                //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr "; 
-                tagePrivatkundeFR = "Lu - Ve "; 
-                tagePrivatkundeIT = "Lun - Ven "; 
-                tagePrivatkundeEN = "Mo - Fr "; 
-                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                uhrzeitPrivatkunde = "08:00 - 19:00";
-                uhrzeitPrivatkunde2 = "";
-                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
-                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
-                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
-                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacy statement</a>';
+    //Befüllung Connect only
+    //Öffnungszeiten
+    tagePrivatkundeDE = "Mo - Fr "; 
+    tagePrivatkundeFR = "Lu - Ve "; 
+    tagePrivatkundeIT = "Lun - Ven "; 
+    tagePrivatkundeEN = "Mo - Fr "; 
+    tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+    tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+    tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+    tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+    uhrzeitPrivatkunde = "08:00 - 12:00, 13:00 - 17:00";
+    uhrzeitPrivatkunde2 = "";
+    privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
+    privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
+    privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
+    privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacy statement</a>';
 
-                telPrivatkunde = "+41445759500";
-                telPrivatkundeText = "+41 44 575 95 00";
-                telFirmenkunde = "+41445759600";
-                telFirmenkundeText = "+41 44 575 96 00";
-
-                if (typeof extraPrivateNumber !== 'undefined' && extraPrivateNumberText !== 'undefined'){
-                    telPrivatkunde = extraPrivateNumber;
-                    telPrivatkundeText = extraPrivateNumberText;
-                }
-
-                callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Schweizer Telefonnummern werden akzeptiert.';
-                callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone suisses sont acceptés.';
-                callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono svizzeri.';
-                callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1EN = 'Please enter a valid phone number. Only Swiss phone numbers are accepted.';
-                callbackPhoneError2EN = 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906';
-
-                break;
-        case 'helpcenter.galaxus.ch':
-                //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr "; 
-                tagePrivatkundeFR = "Lu - Ve "; 
-                tagePrivatkundeIT = "Lun - Ven "; 
-                tagePrivatkundeEN = "Mo - Fr "; 
-                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                uhrzeitPrivatkunde = "08:00 - 19:00";
-                uhrzeitPrivatkunde2 = "";
-                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
-                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
-                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
-                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Privacy statement</a>';
-
-                telPrivatkunde = "+41445759800";
-                telPrivatkundeText = "+41 44 575 98 00";
-                telFirmenkunde = "+41445759900";
-                telFirmenkundeText = "+41 44 575 99 00";  
-                if (typeof extraPrivateNumber !== 'undefined' && extraPrivateNumberText !== 'undefined'){
-                    telPrivatkunde = extraPrivateNumber;
-                    telPrivatkundeText = extraPrivateNumberText;
-                }
-
-                callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Schweizer Telefonnummern werden akzeptiert.';
-                callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone suisses sont acceptés.';
-                callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono svizzeri.';
-                callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1EN = 'Please enter a valid phone number. Only Swiss phone numbers are accepted.';
-                callbackPhoneError2EN = 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906';
-
-                break;
-        case 'helpcenter.galaxus.de':
-                //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr "; 
-                tagePrivatkundeFR = "Lu - Ve "; 
-                tagePrivatkundeIT = "Lun - Ven "; 
-                tagePrivatkundeEN = "Mo - Fr "; 
-                tagePrivatkunde2DE = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
-                uhrzeitPrivatkunde = "08:00 - 19:00";
-                uhrzeitPrivatkunde2 = "09:00 - 17:00";
-                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Datenschutzerklärung</a>';
-                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Déclaration de protection des données</a>';
-                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
-                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Privacy statement</a>';
-
-                telPrivatkunde = "+4940334614747";
-                telPrivatkundeText = "+49 (0)40 334 614 747";
-                telFirmenkunde = "+4940334614748";
-                telFirmenkundeText = "+49 (0)40 334 614 748";
-
-                callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Deutsche Telefonnummern werden akzeptiert.';
-                callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)700, (0)800, (0)900';
-                callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone allemands sont acceptés.';
-                callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)700, (0)800, (0)900';
-                callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono tedeschi.';
-                callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)700, (0)800, (0)900';
-                callbackPhoneError1EN = 'Please enter a valid phone number. Only German phone numbers are accepted.';
-                callbackPhoneError2EN = 'The following area codes are not accepted: (0)700, (0)800, (0)900';
-
-                break;
-        case 'helpcenter.galaxus.at':
-                //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr "; 
-                tagePrivatkundeFR = "Lu - Ve "; 
-                tagePrivatkundeIT = "Lun - Ven "; 
-                tagePrivatkundeEN = "Mo - Fr "; 
-                tagePrivatkunde2DE = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
-                uhrzeitPrivatkunde = "08:00 - 19:00";
-                uhrzeitPrivatkunde2 = "09:00 - 17:00";
-                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Datenschutzerklärung</a>';
-                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Déclaration de protection des données</a>';
-                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
-                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Privacy statement</a>';
-
-                telPrivatkunde = "+43800017837";
-                telPrivatkundeText = "+43 800 017 837";
-                telFirmenkunde = "+43800017837";
-                telFirmenkundeText = "+43 800 017 837";
-
-                callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Österreichische Telefonnummern werden akzeptiert.';
-                callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)700, (0)800, (0)900';
-                callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone autrichiens sont acceptés.';
-                callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)700, (0)800, (0)900';
-                callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono austriaci.';
-                callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)700, (0)800, (0)900';
-                callbackPhoneError1EN = 'Please enter a valid phone number. Only Austrian phone numbers are accepted.';
-                callbackPhoneError2EN = 'The following area codes are not accepted: (0)700, (0)800, (0)900';
-
-                break;
-        case 'helpcenter.galaxus.fr':
-                //Öffnungszeiten
-                tagePrivatkundeDE = ""; 
-                tagePrivatkundeFR = ""; 
-                tagePrivatkundeIT = ""; 
-                tagePrivatkundeEN = ""; 
-                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                uhrzeitPrivatkunde = "";
-                uhrzeitPrivatkunde2 = "";
-                // TODO: LINKS AUF KORREKTHEIT PRÜFEN
-                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/6182" target="blank">Datenschutzerklärung</a>';
-                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/6182" target="blank">Déclaration de protection des données</a>';
-                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/6182" target="blank">Informativa sulla protezione dei dati</a>';
-                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/6182" target="blank">Privacy statement</a>';
-
-                telPrivatkunde = "";
-                telPrivatkundeText = "";
-                telFirmenkunde = "";
-                telFirmenkundeText = "";
-
-                callbackPhoneError1DE = '';
-                callbackPhoneError2DE = '';
-                callbackPhoneError1FR = '';
-                callbackPhoneError2FR = '';
-                callbackPhoneError1IT = '';
-                callbackPhoneError2IT = '';
-                callbackPhoneError1EN = '';
-                callbackPhoneError2EN = '';
-
-                break;
-        case 'helpcenter.galaxus.it':
-                //Öffnungszeiten
-                tagePrivatkundeDE = ""; 
-                tagePrivatkundeFR = ""; 
-                tagePrivatkundeIT = ""; 
-                tagePrivatkundeEN = ""; 
-                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " | " wenn befüllt
-                uhrzeitPrivatkunde = "";
-                uhrzeitPrivatkunde2 = "";
-                // TODO: LINKS AUF KORREKTHEIT PRÜFEN
-                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Datenschutzerklärung</a>';
-                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Déclaration de protection des données</a>';
-                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Informativa sulla protezione dei dati</a>';
-                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Privacy statement</a>';
-
-                telPrivatkunde = "";
-                telPrivatkundeText = "";
-                telFirmenkunde = "";
-                telFirmenkundeText = "";
-
-                callbackPhoneError1DE = '';
-                callbackPhoneError2DE = '';
-                callbackPhoneError1FR = '';
-                callbackPhoneError2FR = '';
-                callbackPhoneError1IT = '';
-                callbackPhoneError2IT = '';
-                callbackPhoneError1EN = '';
-                callbackPhoneError2EN = '';
-
-                break;
-        case 'helpcenter.connect.digitec.ch':
-                //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr "; 
-                tagePrivatkundeFR = "Lu - Ve "; 
-                tagePrivatkundeIT = "Lun - Ven "; 
-                tagePrivatkundeEN = "Mo - Fr "; 
-                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                uhrzeitPrivatkunde = "08:00 - 17:00";
-                uhrzeitPrivatkunde2 = "";
-                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
-                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
-                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
-                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacy statement</a>';
-
-                telPrivatkunde = "+41445759700";
-                telPrivatkundeText = "+41 44 575 97 00";
-                telFirmenkunde = "+41445759700";
-                telFirmenkundeText = "+41 44 575 97 00"; 
-                
-                callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Schweizer Telefonnummern werden akzeptiert.';
-                callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone suisses sont acceptés.';
-                callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono svizzeri.';
-                callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1EN = 'Please enter a valid phone number. Only Swiss phone numbers are accepted.';
-                callbackPhoneError2EN = 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906';
-
-                break;
-        default:
-                //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr "; 
-                tagePrivatkundeFR = "Lu - Ve "; 
-                tagePrivatkundeIT = "Lun - Ven "; 
-                tagePrivatkundeEN = "Mo - Fr "; 
-                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                uhrzeitPrivatkunde = "08:00 - 19:00";
-                uhrzeitPrivatkunde2 = "";
-                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
-                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
-                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
-                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacy statement</a>';
-
-                telPrivatkunde = "+41445759800";
-                telPrivatkundeText = "+41 44 575 98 00";
-                telFirmenkunde = "+41445759900";
-                telFirmenkundeText = "+41 44 575 99 00";   
-                
-                callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Schweizer Telefonnummern werden akzeptiert.';
-                callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone suisses sont acceptés.';
-                callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono svizzeri.';
-                callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1EN = 'Please enter a valid phone number. Only Swiss phone numbers are accepted.';
-                callbackPhoneError2EN = 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906';
-
-                break;
-    }
-
+    telPrivatkunde = "+41445759700";
+    telPrivatkundeText = "+41 44 575 97 00";
+    telFirmenkunde = "+41445759700";
+    telFirmenkundeText = "+41 44 575 97 00"; 
+    
+    callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Schweizer Telefonnummern werden akzeptiert.';
+    callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)800, (0)84, (0)900, (0)901, (0)906';
+    callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone suisses sont acceptés.';
+    callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)800, (0)84, (0)900, (0)901, (0)906';
+    callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono svizzeri.';
+    callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906';
+    callbackPhoneError1EN = 'Please enter a valid phone number. Only Swiss phone numbers are accepted.';
+    callbackPhoneError2EN = 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906';
 
     
     var dynamicWording = {
