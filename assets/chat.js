@@ -226,15 +226,6 @@ function getDGChatDepartmentType(){
             case(isPeEnFr()):
                 DGChatDepartmentType = 'Pe';
                 break;
-            case(isYoummdayBasic()):
-                DGChatDepartmentType = 'YoummdayBasic';
-                break;
-            case(isYoummdayAdvanced()):
-                DGChatDepartmentType = 'YoummdayAdvanced';
-                break;
-            case(isYoummdayExpert()):
-                DGChatDepartmentType = 'YoummdayExpert';
-                break;
             case(isBusiness()):
                 DGChatDepartmentType = 'Business';
                 break;
@@ -460,68 +451,6 @@ function isBusinessAvailable(){
     }
 }
 
-//Special Routing for YoummdayBasic
-function isYoummdayBasic(){
-       if(isInYoummdayShift() && lang == "de" && (requestReasonTag == 'webform_case_shipping_status' || requestReasonTag == 'webform_case_ready_for_shipment' || requestReasonTag == 'webform_case_order_status') && isYoummdayBasicAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayBasic DE')){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-function isYoummdayBasicAvailable(){
-    if(isDepartmentAvailable('Chat YoummdayBasic DE')){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-function isYoummdayWaitingTimeSmall(yoummdayDepartment){
-    if(typeof chatWaitTimes != 'undefined'){   
-        if(chatWaitTimes['Chat Private ' + getChatDepartmentLanguage()] < chatWaitTimes[yoummdayDepartment] && chatWaitTimes[yoummdayDepartment] > 300){
-            return false;
-        }else{
-            return true;
-        }
-    }else{
-        return true;
-    }
-}
-
-//Special Routing for YoummdayAdvanced
-function isYoummdayAdvanced(){
-    if(isInYoummdayShift() && lang == "de" && (requestReasonTag == 'webform_case_return' || requestReasonTag == 'webform_case_receipt') && isYoummdayAdvancedAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayAdvanced DE') ){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-function isYoummdayAdvancedAvailable(){
-    if(isDepartmentAvailable('Chat YoummdayAdvanced DE')){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-//Special Routing for YoummdayExpert
-function isYoummdayExpert(){
-    if(isInYoummdayShift() && lang == "de" && (requestReasonTag == 'webform_case_wrong_product') && isYoummdayExpertAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayExpert DE')){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-function isYoummdayExpertAvailable(){
-    if(isDepartmentAvailable('Chat YoummdayExpert DE')){
-        return true;
-    }else{
-        return false;
-    }
-}
 
 function isDepartmentAvailable(depName){
     var dep = getDepartmentInfo(depName)
