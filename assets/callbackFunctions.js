@@ -1,5 +1,5 @@
 function callbackCheck(){
-    return false;
+    return true;
     //CallbackCheck Private CH
     console.log(requestReasonTag)
     console.log(localStorage.getItem("callbackGroup5"))
@@ -101,8 +101,7 @@ function callbackCheck(){
     }
     var dataToPass2 = JSON.stringify(dataToPass)
     let auth = "Bearer " + wertmarke
-    console.log(ringGroup)
-    /*$.ajax({
+    $.ajax({
       type: "POST",
       url: "https://api.talkdeskapp.com/flows/3731b2ebb4c5492f868cbe2f1e3e3601/interactions",
       headers: {"content-type" : "application/json",

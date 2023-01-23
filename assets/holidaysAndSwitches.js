@@ -214,11 +214,3 @@ var chatFrHasFallback = false;
 var secondsToChatFallback = 300;
 //Percentage of Waiting Time difference between the two languages
 var percentageForChatFallback = 400;
-
-//Yoummday Shifts; [shiftHourStart, ShiftMinuteStart, ShiftHourEnd, ShiftMinutesEnd]
-mondayYDShifts = [[8, 0, 14, 30], [17, 0, 19, 0]]
-tuesdayYDShifts = [[8, 0, 14, 30]]
-wednesdayYDShifts = [[8, 0, 14, 30]]
-thursdayYDShifts = [[8, 0, 14, 30]]
-fridayYDShifts = [[8, 0, 14, 30], [17, 0, 19, 0]]
-fallbackYDShifts = [[8, 0, 14, 30]]
