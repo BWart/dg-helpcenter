@@ -3,158 +3,33 @@
 var UTCHourOffset = 1;
 
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
-//set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
-var switchHideContactFormDuringOpeningTimes = false;
-var switchHideContactFormOutsideOpeningTimes = false;
-var switchHideContactFormForPEDuringOpeningTimes = true;
-var switchHideContactFormForPEOutsideOpeningTimes = true;
-var switchHideContactFormForBusinessDuringOpeningTimes = false;
-var switchHideContactFormForBusinessOutsideOpeningTimes = false;
-var switchHideContactFormForEUDuringOpeningTimes = false;
-var switchHideContactFormForEUOutsideOpeningTimes = false;
-var switchHideContactFormForFRDuringOpeningTimes = false;
-var switchHideContactFormForFROutsideOpeningTimes = false;
-var switchHideContactFormForITDuringOpeningTimes = false;
-var switchHideContactFormForITOutsideOpeningTimes = false;
-//set to true if the phone number should be hidden, set to false if it should be displayed
-var switchHidePhoneDuringOpeningTimes = false;
-var switchHidePhoneOutsideOpeningTimes = false;
-var switchHidePhoneForPEDuringOpeningTimes = true;   //THIS IS CURRENTLY VALID ON ALL HELPCENTERS IN CH + EU
-var switchHidePhoneForPEOutsideOpeningTimes = true;  //THIS IS CURRENTLY VALID ON ALL HELPCENTERS IN CH + EU
-var switchHidePhoneForBusinessDuringOpeningTimes = false;
-var switchHidePhoneForBusinessOutsideOpeningTimes = false;
-var switchHidePhoneForEUDuringOpeningTimes = false;
-var switchHidePhoneForEUOutsideOpeningTimes = false;
-var switchHidePhoneForFRDuringOpeningTimes = true;
-var switchHidePhoneForFROutsideOpeningTimes = true;
-var switchHidePhoneForITDuringOpeningTimes = true;
-var switchHidePhoneForITOutsideOpeningTimes = true;
-//set to true if the Chat should be hidden, set to false if it should be displayed
-var switchHideChatDuringOpeningTimes = false;
-var switchHideChatOutsideOpeningTimes = false;
-var switchHideChatForPEDuringOpeningTimes = false;
-var switchHideChatForPEOutsideOpeningTimes = false;
-var switchHideChatForBusinessDuringOpeningTimes = false;
-var switchHideChatForBusinessOutsideOpeningTimes = false;
-var switchHideChatForEUDuringOpeningTimes = false;
-var switchHideChatForEUOutsideOpeningTimes = false;
-var switchHideChatForFRDuringOpeningTimes = true;
-var switchHideChatForFROutsideOpeningTimes = true;
-var switchHideChatForITDuringOpeningTimes = true;
-var switchHideChatForITOutsideOpeningTimes = true;
-//If contact form is hidden, set threshhold to show it again when the waiting time for live contact channels get too high; set to 50000 if contact form should never be shown
-var phoneWaitThreshholdToShowContactForm = 50000;
-var phoneWaitThreshholdToShowContactFormPE = 50000;
-var phoneWaitThreshholdToShowContactFormBusiness = 50000;
-var phoneWaitThreshholdToShowContactFormEU = 50000;
-var phoneWaitThreshholdToShowContactFormFR = 50000;
-var phoneWaitThreshholdToShowContactFormIT = 50000;
-var chatWaitThreshholdToShowContactForm = 60;
-var chatWaitThreshholdToShowContactFormPE = 50000;
-var chatWaitThreshholdToShowContactFormBusiness = 50000;
-var chatWaitThreshholdToShowContactFormEU = 50000;
-var chatWaitThreshholdToShowContactFormFR = 50000;
-var chatWaitThreshholdToShowContactFormIT = 50000;
-var chatAndPhoneWaitThreshholdToShowContactForm = 50000;
-var chatAndPhoneWaitThreshholdToShowContactFormPE = 50000;
-var chatAndPhoneWaitThreshholdToShowContactFormBusiness = 50000;
-var chatAndPhoneWaitThreshholdToShowContactFormEU = 50000;
-var chatAndPhoneWaitThreshholdToShowContactFormFR = 50000;
-var chatAndPhoneWaitThreshholdToShowContactFormIT = 50000;
+// --- Removed for Connect, everything handled directly inside the NewRequestPage script as the logic is simple ---
 
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
-var bannerSwitchCHDE = false;
-var bannerSwitchCHFR = false;
-var bannerSwitchCHIT = false;
-var bannerSwitchCHEN = false;
-var bannerSwitchConnectDE = false;
-var bannerSwitchConnectFR = false;
-var bannerSwitchConnectIT = false;
-var bannerSwitchConnectEN = false;
-var bannerSwitchDEDE = false;
-var bannerSwitchDEFR = false;
-var bannerSwitchDEIT = false;
-var bannerSwitchDEEN = false;
-var bannerSwitchATDE = false;
-var bannerSwitchATFR = false;
-var bannerSwitchATIT = false;
-var bannerSwitchATEN = false;
-var bannerSwitchFRDE = false;
-var bannerSwitchFRFR = false;
-var bannerSwitchFRIT = false;
-var bannerSwitchFREN = false;
-var bannerSwitchITDE = false;
-var bannerSwitchITFR = false;
-var bannerSwitchITIT = false;
-var bannerSwitchITEN = false;
+var bannerSwitchDE = false;
+var bannerSwitchFR = false;
+var bannerSwitchIT = false;
+var bannerSwitchEN = false;
 
 // --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
-function fillTopBannerWording(){
-    topBannerWording = {
-    "outputHeadingBannerCH" : {
-      'de' : "Technische Störung",
-      'fr' : "Panne technique",
-      'it' : "Guasto tecnico",
-      'en-US' : "Attention"
+function fillTopBannerWording() {
+  var topBannerWording = {
+    "outputHeadingBanner": {
+      'de': "Technische Störung",
+      'fr': "Panne technique",
+      'it': "Guasto tecnico",
+      'en-US': "Attention"
     },
-    "outputTextBannerCH" : {
-      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
-      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
-      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
-    },
-    "outputHeadingBannerDE" : {
-      'de' : "Technische Störung",
-      'fr' : "Panne techniqe",
-      'it' : "Guasto tecnico",
-      'en-US' : "Technical issue"
-    },
-    "outputTextBannerDE" : {
-      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
-      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
-      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
-    },
-    "outputHeadingBannerAT" : {
-      'de' : "Technische Störung",
-      'fr' : "Panne techniqe",
-      'it' : "Guasto tecnico",
-      'en-US' : "Technical issue"
-    },
-    "outputTextBannerAT" : {
-      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
-      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
-      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
-    },
-    "outputHeadingBannerFR" : {
-      'de' : "Technische Störung",
-      'fr' : "Panne techniqe",
-      'it' : "Guasto tecnico",
-      'en-US' : "Technical issue"
-    },
-    "outputTextBannerFR" : {
-      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
-      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
-      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
-    },
-    "outputHeadingBannerIT" : {
-      'de' : "Technische Störung",
-      'fr' : "Panne techniqe",
-      'it' : "Guasto tecnico",
-      'en-US' : "Technical issue"
-    },
-    "outputTextBannerIT" : {
-      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
-      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
-      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
-    },
+    "outputTextBanner": {
+      'de': "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
+      'fr': "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
+      'it': "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
+      'en-US': "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
     }
-      return topBannerWording;
+  }
+  return topBannerWording;
 }
 
 
