@@ -63,7 +63,7 @@ function callbackCheck(){
     if (requestReasonTag.includes("_other_request_")){
       compiledSubject = callbackPerLang + ": " + requestReasonTopCategoryPlaintext[requestReasonTopCategory[requestReasonTag]][currentLanguage] + "; " + $(requestReasonDropdownNesty).text()
     }
-    var orderLink = baseERPLink + "Order/" + enteredOrderNumber;
+    var orderLink = enteredOrderNumber;
     var invoiceLink = baseERPLink + "Invoice/" + enteredRGNumber;
     if (enteredOrderNumber.length < 5){
       orderLink = "None"
@@ -73,7 +73,7 @@ function callbackCheck(){
     }
     var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\nOrder: " + orderLink + " \nInvoice: " + invoiceLink + "\nRequest Reason: " + compiledSubject + " \n -- \ninteraction_id: "
     var ticketTags = "callback_request voice " + requestReasonTag + " talkdesk_interaction_"
-    var baseOrderLink = baseERPLink + "Order/"
+    var baseOrderLink = ""
     var baseRGLink = baseERPLink + "Invoice/"
     var custName = enteredMail.split("@")[0].replace(".", " ")
     customerSearchLink = baseERPLink + "Customer/SearchPersonAdvanced?&PersonAdvancedSearch.EMail=" + enteredMail

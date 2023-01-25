@@ -109,7 +109,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'callbackMailHint' : 'Mithilfe der E-Mail Adresse können wir dein Kundenkonto bereits identifizieren.',
         'callbackAgentHint' : 'Sobald ein Agent verfügbar ist, rufen wir Dich umgehend an.<br><b>Aktuelle Wartezeit: ca. <font class="callbackWaitTime"></font> min</b>',
         'callbackPhoneNumber' : 'Telefonnummer <font color="red">*</font>',
-        'callbackOrderNumber' : 'Auftragsnummer (optional)',
+        'callbackOrderNumber' : 'Betroffene Telefonnummer, sofern anders als die Rückrufnummer (optional)',
         'callbackRGNumber' : 'Rechnungsnummer (optional)', 
         'callbackEmailLabel' : 'E-Mail Adresse <font color="red">*</font>',
         'callbackRecordingLabel' : 'Dein Gespräch wird zur Qualitätssicherung und zu Schulungszwecken aufgezeichnet',
