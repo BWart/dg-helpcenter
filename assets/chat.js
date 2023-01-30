@@ -187,7 +187,7 @@ function getChatDepartmentType(){
             chatDepartmentType = getDGChatDepartmentType();
             break;
         case('helpcenter.connect.digitec.ch'):
-            chatDepartmentType = 'Connect';
+            chatDepartmentType = 'Private';
             break;
         case('helpcenter.galaxus.de'):
         case('helpcenter.galaxus.at'):
