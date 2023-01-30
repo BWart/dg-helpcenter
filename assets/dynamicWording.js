@@ -473,7 +473,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'ticketSubmintConfirmationTextPt1' : '&#10003 Votre demande a été transmise avec succès.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'Nous vous enverrons une copie de votre demande à ',
         'ticketSubmintConfirmationTextPt3' : '. Si votre demande a été résolue entre-temps, répondez à l\'e-mail avec #closeticket.<br><br>',
-        'callbackSubmitConfirmationTitle' : 'Nous t\'appelons tou de suite !',
+        'callbackSubmitConfirmationTitle' : 'Nous t\'appelons tout de suite !',
         'callbackSubmintConfirmationTextPt1' : '&#10003 Ta demande a été transmise avec succès.<br><br>',
         'callbackSubmintConfirmationTextPt2' : 'Dès qu\'un agent sera disponible, nous t\'appellerons immédiatement au ',
         'callbackSubmintConfirmationTextPt3' : '.<br><br>',
