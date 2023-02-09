@@ -148,6 +148,9 @@ function isOverflowDepartmentTresholdReached(selectedDepartmentWaitingTime, over
 //Gets language and changes to uppercase
 function getChatDepartmentLanguage(){
     var chatDepartmentLanguage = getNormalizedLanguage();
+    if ((portal == "helpcenter.galaxus.ch" || portal == "helpcenter.digitec.ch") && chatDepartmentLanguage.toUpperCase() == "IT"){
+        chatDepartmentLanguage = "EN"
+    }
     return chatDepartmentLanguage.toUpperCase();
 }
 
@@ -308,7 +311,9 @@ function sortArray(a, b){
 
 //Special Routing for PeIt
 function isPeIt(){
-    if(requestReasonTag == 'webform_case_product_advice_it' && lang == 'de' && isPeItAvailable()){
+    if(requestReasonTag == 'webform_case_product_advice_it' && lang == 'de' && isPeItAvailable() && customerType == "business-customer"){
+        return true;
+    }else if (requestReasonTag == 'webform_case_product_advice_it' && lang == 'de' && customerType == "private-customer"){
         return true;
     }else{
         return false;
@@ -325,8 +330,10 @@ function isPeItAvailable(){
 
 //Special Routing for PeNetwork
 function isPeNetwork(){
-    if(requestReasonTag == 'webform_case_product_advice_network' && lang == 'de' && isPeNetworkAvailable()){
+    if(requestReasonTag == 'webform_case_product_advice_network' && lang == 'de' && isPeNetworkAvailable() && customerType == "business-customer"){
         return true;
+    }else if(requestReasonTag == 'webform_case_product_advice_network' && lang == 'de' && customerType == "private-customer"){
+        return true
     }else{
         return false;
     }
@@ -342,7 +349,9 @@ function isPeNetworkAvailable(){
 
 //Special Routing for PePhoto
 function isPePhoto(){
-    if(requestReasonTag == 'webform_case_product_advice_photo' && lang == 'de' && isPePhotoAvailable()){
+    if(requestReasonTag == 'webform_case_product_advice_photo' && lang == 'de' && isPePhotoAvailable() && customerType == "business-customer"){
+        return true;
+    }else if(requestReasonTag == 'webform_case_product_advice_photo' && lang == 'de' && customerType == "private-customer"){
         return true;
     }else{
         return false;
@@ -359,7 +368,9 @@ function isPePhotoAvailable(){
 
 //Special Routing for PeConsumer
 function isPeConsumer(){
-    if(requestReasonTag == 'webform_case_product_advice_consumer' && lang == 'de' && isPeConsumerAvailable()){
+    if(requestReasonTag == 'webform_case_product_advice_consumer' && lang == 'de' && isPeConsumerAvailable() && customerType == "business-customer"){
+        return true;
+    }else if(requestReasonTag == 'webform_case_product_advice_consumer' && lang == 'de' && customerType == "private-customer"){
         return true;
     }else{
         return false;
@@ -376,7 +387,9 @@ function isPeConsumerAvailable(){
 
 //Special Routing for PePhoto
 function isPePhoto(){
-    if(requestReasonTag == 'webform_case_product_advice_photo' && lang == 'de' && isPePhotoAvailable()){
+    if(requestReasonTag == 'webform_case_product_advice_photo' && lang == 'de' && isPePhotoAvailable() && customerType == "business-customer"){
+        return true;
+    }else if(requestReasonTag == 'webform_case_product_advice_photo' && lang == 'de' && customerType == "private-customer"){
         return true;
     }else{
         return false;
@@ -393,7 +406,9 @@ function isPePhotoAvailable(){
 
 //Special Routing for PeHome
 function isPeHome(){
-    if(requestReasonTag == 'webform_case_product_advice_home' && lang == 'de' && isPeHomeAvailable()){
+    if(requestReasonTag == 'webform_case_product_advice_home' && lang == 'de' && isPeHomeAvailable() && customerType == "business-customer"){
+        return true;
+    }else if(requestReasonTag == 'webform_case_product_advice_home' && lang == 'de' && customerType == "private-customer"){
         return true;
     }else{
         return false;
@@ -410,7 +425,9 @@ function isPeHomeAvailable(){
 
 //Special Routing for PeDiy
 function isPeDiy(){
-    if(requestReasonTag == 'webform_case_product_advice_diy' && lang == 'de' && isPeDiyAvailable()){
+    if(requestReasonTag == 'webform_case_product_advice_diy' && lang == 'de' && isPeDiyAvailable() && customerType == "business-customer"){
+        return true;
+    }else if(requestReasonTag == 'webform_case_product_advice_diy' && lang == 'de' && customerType == "private-customer"){
         return true;
     }else{
         return false;
@@ -420,7 +437,7 @@ function isPeDiy(){
 function isPeDiyAvailable(){
     if(isDepartmentAvailable('Chat PeDiy '+getChatDepartmentLanguage())){
         return true;
-    }else{
+    }else{isBusiness
         return false;
     }
 }

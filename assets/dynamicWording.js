@@ -4,6 +4,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
     //Variabeln Öffnungszeiten Telefon
     var uhrzeitPrivatkunde = "";
     var uhrzeitPrivatkunde2 = "";
+    var uhrzeitPrivatkundePe = ""
+    var uhrzeitPrivatkunde2Pe = ""
     var tagePrivatkundeDE = "";
     var tagePrivatkundeFR = "";
     var tagePrivatkundeIT = "";
@@ -57,6 +59,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "";
+                uhrzeitPrivatkundePe = "08:00 - 17:30";
+                uhrzeitPrivatkunde2Pe = "";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
@@ -94,6 +98,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "";
+                uhrzeitPrivatkundePe = "08:00 - 17:30";
+                uhrzeitPrivatkunde2Pe = "";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
@@ -130,6 +136,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "09:00 - 17:00";
+                uhrzeitPrivatkundePe = "08:00 - 19:00";
+                uhrzeitPrivatkunde2Pe = "09:00 - 17:00";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
@@ -162,6 +170,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "09:00 - 17:00";
+                uhrzeitPrivatkundePe = "08:00 - 19:00";
+                uhrzeitPrivatkunde2Pe = "09:00 - 17:00";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
@@ -194,6 +204,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "";
                 uhrzeitPrivatkunde2 = "";
+                uhrzeitPrivatkundePe = "";
+                uhrzeitPrivatkunde2Pe = "";
                 // TODO: LINKS AUF KORREKTHEIT PRÜFEN
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/6182" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/6182" target="blank">Déclaration de protection des données</a>';
@@ -227,6 +239,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " | " wenn befüllt
                 uhrzeitPrivatkunde = "";
                 uhrzeitPrivatkunde2 = "";
+                uhrzeitPrivatkundePe = "";
+                uhrzeitPrivatkunde2Pe = "";
                 // TODO: LINKS AUF KORREKTHEIT PRÜFEN
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Déclaration de protection des données</a>';
@@ -260,6 +274,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 17:00";
                 uhrzeitPrivatkunde2 = "";
+                uhrzeitPrivatkundePe = "08:00 - 17:00";
+                uhrzeitPrivatkunde2Pe = "";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
@@ -292,6 +308,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "";
+                uhrzeitPrivatkundePe = "08:00 - 19:00";
+                uhrzeitPrivatkunde2Pe = "";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
@@ -337,6 +355,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'openingHours' : uhrzeitPrivatkunde,
         'openingDays2' : tagePrivatkunde2DE,
         'openingHours2' : uhrzeitPrivatkunde2,
+        'openingHoursPe' : uhrzeitPrivatkundePe,
+        'openingHours2Pe' : uhrzeitPrivatkunde2Pe,
         'phone' : 'Telefon',
         'chat' : 'Chat',
         'email' : 'Kontaktformular',
@@ -422,6 +442,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'openingHours' : uhrzeitPrivatkunde,
         'openingDays2' : tagePrivatkunde2FR,
         'openingHours2' : uhrzeitPrivatkunde2,
+        'openingHoursPe' : uhrzeitPrivatkundePe,
+        'openingHours2Pe' : uhrzeitPrivatkunde2Pe,
         'phone' : 'Téléphone',
         'chat' : 'Chat',
         'email' : 'Formulaire de contact',
@@ -507,6 +529,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'openingHours' : uhrzeitPrivatkunde,
         'openingDays2' : tagePrivatkunde2IT,
         'openingHours2' : uhrzeitPrivatkunde2,
+        'openingHoursPe' : uhrzeitPrivatkundePe,
+        'openingHours2Pe' : uhrzeitPrivatkunde2Pe,
         'phone' : 'Telefono',
         'chat' : 'Chat',
         'email' : 'Modulo di contatto',
@@ -592,6 +616,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'openingHours' : uhrzeitPrivatkunde,
         'openingDays2' : tagePrivatkunde2EN,
         'openingHours2' : uhrzeitPrivatkunde2,
+        'openingHoursPe' : uhrzeitPrivatkundePe,
+        'openingHours2Pe' : uhrzeitPrivatkunde2Pe,
         'phone' : 'Phone',
         'chat' : 'Chat',
         'email' : 'Contact form',

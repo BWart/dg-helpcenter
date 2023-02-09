@@ -72,8 +72,10 @@
               <table width="100%" class="contactInfos hideUnder650" id="desktopContactTable">
                 <tr>
                     <td colspan="3">
-                        <font data-wording-key="openingDays"></font><font data-wording-key="openingHours"></font>
-                        <font data-wording-key="openingDays2"></font><font data-wording-key="openingHours2"></font>
+                        <font class="regOpeningTimes" data-wording-key="openingDays"></font><font class="regOpeningTimes" data-wording-key="openingHours"></font>
+                        <font class="regOpeningTimes" data-wording-key="openingDays2"></font><font class="regOpeningTimes" data-wording-key="openingHours2"></font>
+                        <font class="peOpeningTimes" data-wording-key="openingDays"></font><font class="peOpeningTimes" data-wording-key="openingHoursPe"></font>
+                        <font class="peOpeningTimes" data-wording-key="openingDays2"></font><font class="peOpeningTimes" data-wording-key="openingHours2Pe"></font>
                         <font id="holidaysDesktop"></font>
                     </td>
                 </tr>
@@ -123,10 +125,14 @@
               <table class="contactInfos hideOver651" border="0">
                 <tr style="height:0px">
                     <td colspan="3">
-                        <font data-wording-key="openingDays"></font>
-                        <font data-wording-key="openingHours"></font>
-                        <font data-wording-key="openingDays2"></font>
-                        <font data-wording-key="openingHours2"></font>
+                        <font class="regOpeningTimes" data-wording-key="openingDays"></font>
+                        <font class="regOpeningTimes" data-wording-key="openingHours"></font>
+                        <font class="regOpeningTimes" data-wording-key="openingDays2"></font>
+                        <font class="regOpeningTimes" data-wording-key="openingHourse"></font>
+                        <font class="peOpeningTimes" data-wording-key="openingDays"></font>
+                        <font class="peOpeningTimes" data-wording-key="openingHoursPe"></font>
+                        <font class="peOpeningTimes" data-wording-key="openingDays2"></font>
+                        <font class="peOpeningTimes" data-wording-key="openingHours2Pe"></font>
                         <font id="holidaysMobile"></font>
                     </td>
                 </tr>
@@ -425,6 +431,9 @@
   //WaitSeconds
   let callWaitSeconds = 0;
   let chatWaitSeconds = 0;
+  //Opening Times
+  let regOpeningTimes = $('.regOpeningTimes')
+  let peOpeningTimes = $('.peOpeningTimes')
 
 
   //--- CALLBACK SETTING UP A/B AND FURTHER VARIABLES
@@ -570,6 +579,7 @@
   chatClosedMessage.hide()
   callbackClosedMessage.hide()
   liveChannelsClosedMessage.hide()
+  peOpeningTimes.hide()
   // Case when "Contact Us" Button in footer is clicked
   addExternalScriptForWaitingTimes(true);
   if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/'){
@@ -1183,6 +1193,8 @@
 
 
   function reorderContactChannels(){
+    peOpeningTimes.hide()
+    regOpeningTimes.show()
     let contactChannelChat = true;
     let contactChannelCall = true;
     let contactChannelMail = true;
@@ -1196,6 +1208,8 @@
       case 'helpcenter.digitec.ch':
       case 'helpcenter.galaxus.ch':
         if (requestReasonTag.includes('webform_case_product_advice_') && customerType == 'private-customer'){
+          peOpeningTimes.show()
+          regOpeningTimes.hide()
           isOpen = isInCHPEOpeningTimes();
           isPE = true;
           isCH = true;
