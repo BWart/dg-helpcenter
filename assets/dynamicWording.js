@@ -59,7 +59,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "";
-                uhrzeitPrivatkundePe = "08:00 - 17:30";
+                uhrzeitPrivatkundePe = "08:00 - 18:00";
                 uhrzeitPrivatkunde2Pe = "";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
@@ -98,7 +98,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "";
-                uhrzeitPrivatkundePe = "08:00 - 17:30";
+                uhrzeitPrivatkundePe = "08:00 - 18:00";
                 uhrzeitPrivatkunde2Pe = "";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
@@ -308,7 +308,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "";
-                uhrzeitPrivatkundePe = "08:00 - 19:00";
+                uhrzeitPrivatkundePe = "08:00 - 18:00";
                 uhrzeitPrivatkunde2Pe = "";
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';

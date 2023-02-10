@@ -254,7 +254,7 @@ const openingHours = {
   //special cases for CH Routing
   "helpcenter.connect.digitec.ch": {"weekday": [[8, 0, 17, 0]], "saturday": []},
   "chBusiness": {"weekday": [[8, 0, 17, 0]], "saturday": []},
-  "chPE": {"weekday": [[8, 0, 17, 30]], "saturday": []}
+  "chPE": {"weekday": [[8, 0, 18, 0]], "saturday": []}
 }
 
 //Connect
