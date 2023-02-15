@@ -479,7 +479,7 @@ function isBusinessAvailable(){
 
 //Special Routing for YoummdayBasic
 function isYoummdayBasic(){
-       if(isInYoummdayShift() && (requestReasonTag == 'webform_case_shipping_status' || requestReasonTag == 'webform_case_ready_for_shipment' || requestReasonTag == 'webform_case_order_status') && isYoummdayBasicAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayBasic DE')){
+       if(lang == 'de' && isInYoummdayShift() && (requestReasonTag == 'webform_case_shipping_status' || requestReasonTag == 'webform_case_ready_for_shipment' || requestReasonTag == 'webform_case_order_status') && isYoummdayBasicAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayBasic DE')){
         return true;
     }else{
         return false;
@@ -508,7 +508,7 @@ function isYoummdayWaitingTimeSmall(yoummdayDepartment){
 
 //Special Routing for YoummdayAdvanced
 function isYoummdayAdvanced(){
-    if(isInYoummdayShift() && (requestReasonTag == 'webform_case_return' || requestReasonTag == 'webform_case_receipt') && isYoummdayAdvancedAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayAdvanced DE') ){
+    if(lang == 'de' && isInYoummdayShift() && (requestReasonTag == 'webform_case_return' || requestReasonTag == 'webform_case_receipt') && isYoummdayAdvancedAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayAdvanced DE') ){
         return true;
     }else{
         return false;
@@ -525,7 +525,7 @@ function isYoummdayAdvancedAvailable(){
 
 //Special Routing for YoummdayExpert
 function isYoummdayExpert(){
-    if(isInYoummdayShift() && (requestReasonTag == 'webform_case_wrong_product') && isYoummdayExpertAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayExpert DE')){
+    if(lang == 'de' && isInYoummdayShift() && (requestReasonTag == 'webform_case_wrong_product') && isYoummdayExpertAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayExpert DE')){
         return true;
     }else{
         return false;

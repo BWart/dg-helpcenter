@@ -1988,6 +1988,17 @@
       mailFormAttachmentLabel.html(attachString);
 		  return true;
 	  }*/
+    if($(formDropdownClass + ' a.nesty-input').attr('aria-expanded') && (requestReasonTag == 'webform_case_data_request') && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
+      errorMessageId = currentLanguage + '3';
+      attachmentErrorNotification = setErrorMessage();
+      attachmentErrorElt.text(attachmentErrorNotification);
+      attachString = mailFormAttachmentLabel.html();
+      if (!attachString.includes('<font color="red">*</font>')){
+        attachString += '<font color="red">*</font>';
+      }
+      mailFormAttachmentLabel.html(attachString);
+		  return true;
+    }
 	  return false;
   }
 

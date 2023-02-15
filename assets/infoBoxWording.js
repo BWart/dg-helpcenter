@@ -179,7 +179,7 @@ function fillInfoBoxWording(){
               'en-USMailTemplate' : "Which articles are missing: \nConsignment number: "
         },
         "webform_case_ready_for_shipment" : {
-              'de' : "Erst wenn alle Produkte deiner Bestellung versandbereit sind, wird die Bestellung versendet. Soll es schneller gehen kannst du eine <a href='" + helpcenterURL + "articles" + hp1 + "-Wie-löse-ich-eine-Teillieferung-aus-' target='blank'>kostenlose Teillieferung aktivieren</a>.",
+              'de' : "Erst wenn alle Produkte deiner Bestellung ab Lager verfügbar sind, wird die Bestellung versendet. Soll es schneller gehen kannst du eine <a href='" + helpcenterURL + "articles" + hp1 + "-Wie-löse-ich-eine-Teillieferung-aus-' target='blank'>kostenlose Teillieferung aktivieren</a>.",
               'fr' : "La commande ne sera expédiée que lorsque tous les produits de votre commande seront prêts à être envoyés. Pour accélérer ce processus, vous pouvez activer la <a href='" + helpcenterURL + "articles" + hp1 + "-Comment-activer-une-livraison-partielle-' target='blank'>livraison partielle</a>.",
               'it' : "Solo quando tutti i prodotti del tuo ordine saranno pronti per essere spediti, l'ordine verrà inviato. Se vuoi che sia più veloce, puoi attivare gratuitamente la <a href='" + helpcenterURL + "articles" + hp1 + "-Come-faccio-a-richiedere-una-consegna-parziale-' target='blank'>consegna parziale</a>.",
               'en-US' : "We don't ship the order until all your products are in the warehouse and «ready for shipment». If you need any items sooner, please <a href='" + helpcenterURL + "articles" + hp1 + "-How-do-I-arrange-partial-delivery-' target='blank'>activate partial delivery</a>."
@@ -193,16 +193,16 @@ function fillInfoBoxWording(){
   
         //LEVEL 0: Probleme mit einer Bestellung
         "webform_case_damaged_product" : {
-              'de' : "Für eine rasche Bearbeitung benötigen wir folgende Informationen von dir: <br><br>• Auftragsnummer deiner Bestellung<br>• Beschreibung des Schadens<br>• Fotos des Schadens und der Verpackung<br><br>Wir werden deine Anfrage zusammen mit unseren Logistikpartnern prüfen und dich so rasch als möglich über die weiteren Schritte informieren.",
-              'fr' : "Pour un traitement rapide, nous avons besoin des informations suivantes de votre part : <br><br>• numéro de votre commande<br>• description du dommage<br>• photos du dommage et de l'emballage<br><br>Nous examinerons votre demande avec nos partenaires logistiques et vous informerons dès que possible des étapes suivantes.",
-              'it' : "Per una rapida elaborazione abbiamo bisogno delle seguenti informazioni:<br><br>• Numero d’ordine<br>• Breve descrizione del danno<br>• Foto dell’articolo e dell’imballaggio danneggiati<br><br>Esamineremo la tua richiesta insieme ai nostri partner logistici e ti informeremo al più presto su come procedere.",
-              'en-US' : "For quick processing, please send us the following details:<br><br>• Order number<br>• Description of the damage<br>• Photos of the damage and packaging<br><br>We'll then work together with the delivery company to check what happened to your order and will get back to you as quickly as possible with updates and next steps."
-        },
+              'de' : "Du kannst deinen Transportschaden innerhalb von 8 Tagen nach Erhalt als <a href='" + shopURL + "after-sales' target='blank'>defektes Produkt anmelden</a>.",
+              'fr' : "Dans les 8 jours suivant la réception, vous pouvez <a href='" + shopURL + "after-sales' target='blank'>faire enregistrer</a> les dommages causés par le transport <a href='" + shopURL + "after-sales' target='blank'>comme un produit défectueux.</a>",
+              'it' : "Entro 8 giorni dal ricevimento, è possibile <a href='" + shopURL + "after-sales' target='blank'>segnalare</a> il danno da trasporto <a href='" + shopURL + "after-sales' target='blank'>come prodotto difettoso</a>.",
+              'en-US': "Within 8 days after receipt, you can <a href='" + shopURL + "after-sales' target='blank'>register</a> your transport damage <a href='" + shopURL + "after-sales' target='blank'>as a defective product.</a>"
+            },
         "webform_case_not_working_product" : {
-              'de' : "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "wiki/559' target='blank'>Garantierichtlinien</a> sowie in unseren <a href='" + shopURL + "Wiki/478' target='blank'>AGBs</a>.",
-              'fr' : "Si un produit est défectueux et s'il peut être pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>signaler un défaut</a>.<br><br>Les dommages causés par une utilisation inappropriée ne sont pas couverts par la garantie. Vous trouverez un complément d'information concernant ce point dans nos <a href='" + shopURL + "wiki/559' target='blank'>conditions de garantie</a> et <a href='" + shopURL + "Wiki/478' target='blank'>CGV</a>.",
-              'it' : "Se un prodotto è difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>segnala un difetto</a>.<br><br>I danni dovuti ad un uso improprio non sono coperti dalla garanzia. Puoi trovare ulteriori informazioni nelle nostre <a href='" + shopURL + "wiki/559' target='blank'>condizioni di garanzia</a> e nelle <a href='" + shopURL + "Wiki/478' target='blank'>CGC</a>.",
-              'en-US' : "Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>report a defect</a>.<br><br>Damage caused by incorrect use is not covered by the warranty. For more information, see our <a href='" + shopURL + "wiki/559' target='blank'>warranty policy</a> and our <a href='" + shopURL + "Wiki/478' target='blank'>terms and conditions</a>."
+              'de' : "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "wiki/559' target='blank'>Garantierichtlinien</a> sowie in unseren <a href='" + shopURL + "Wiki/478' target='blank'>AGBs</a>.",
+              'fr' : "Si un produit est défectueux et s'il peut être pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + shopURL + "after-sales' target='blank'>signaler un défaut</a>.<br><br>Les dommages causés par une utilisation inappropriée ne sont pas couverts par la garantie. Vous trouverez un complément d'information concernant ce point dans nos <a href='" + shopURL + "wiki/559' target='blank'>conditions de garantie</a> et <a href='" + shopURL + "Wiki/478' target='blank'>CGV</a>.",
+              'it' : "Se un prodotto è difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + shopURL + "after-sales' target='blank'>segnala un difetto</a>.<br><br>I danni dovuti ad un uso improprio non sono coperti dalla garanzia. Puoi trovare ulteriori informazioni nelle nostre <a href='" + shopURL + "wiki/559' target='blank'>condizioni di garanzia</a> e nelle <a href='" + shopURL + "Wiki/478' target='blank'>CGC</a>.",
+              'en-US' : "Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + shopURL + "after-sales' target='blank'>report a defect</a>.<br><br>Damage caused by incorrect use is not covered by the warranty. For more information, see our <a href='" + shopURL + "wiki/559' target='blank'>warranty policy</a> and our <a href='" + shopURL + "Wiki/478' target='blank'>terms and conditions</a>."
         },
         "webform_case_wrong_product" : {
               'de' : "Damit wir dein Anliegen rasch prüfen können, stelle uns die Herstellernummer oder den EAN-Code (Strichcode) des falsch erhaltenen Produkt zur Verfügung. Der EAN-Code befindet sich auf der Produktverpackung und dient dazu ein Produkt zweifelsfrei zu identifizieren. Er besteht aus einem Strichcode, respektive Barcode, und 13 Ziffern:<div style=width:100%;text-align:center;max-height:55px;overflow:hidden;'><img style='width:200px;' src='https://helpcenter.galaxus.ch/hc/article_attachments/4410101322642/ean13.gif'/></div>",
@@ -305,7 +305,7 @@ function fillInfoBoxWording(){
             'fr': "Vous avez un droit d'accès à vos données que nous avons enregistrées. Nous répondrons à ces demandes dans le délai légal (normalement dans les 30 jours).<br><br><b>Important : Si nous ne recevons pas toutes les informations nécessaires, nous ne pouvons pas fournir les données. Vous pouvez trouver plus d'informations dans <a href='" + helpcenterURL + "articles" + hp8 + "' target='blank'>cet article.</a></b>",
             'it': "L'utente ha il diritto di ricevere informazioni sui propri dati memorizzati da noi. Risponderemo alle richieste d'informazioni che ci sottoporrete entro i termini previsti dalla legge (normalmente entro 30 giorni).<br><br><b>Importante: se non riceviamo tutte le informazioni necessarie, non possiamo fornire alcun dato. Per ulteriori informazioni al riguardo, consultare <a href='" + helpcenterURL + "articles" + hp8 + "' target='blank'>questo articolo.</a></b>",
             'en-US': "You have a right to access regarding your data stored by us. We will respond to such requests within the statutory period (normally within 30 days).<br><br><b>Important: If we don't receive all the necessary information, we can not provide the data. You can find more information in <a href='" + helpcenterURL + "articles" + hp8 + "' target='blank'>this article.</a></b>",
-            'deMailTemplate' : "Ich bitte Sie, mir schriftlich innerhalb von 30 Tagen, Auskunft über meine bei galaxus.ch bzw. digitec.ch gespeicherten Daten zu erteilen.\nDie Nummer zu meinem Benutzerkonto lautet: \n",
+            'deMailTemplate' : "Ich bitte um schriftliche Auskunft über meine bei galaxus.ch bzw. digitec.ch gespeicherten Daten innerhalb von 30 Tagen.\nDie Nummer zu meinem Benutzerkonto lautet: \n",
             'frMailTemplate' : "Veuillez nous communiquer par écrit, dans un délai de 30 jours, les données personnelles que galaxus.ch ou digitec.ch détient à mon sujet.\nLe numéro de mon compte d'utilisateur est : \n",
             'itMailTemplate' : "Chiedo che mi vengano fornite informazioni sui miei dati memorizzati su galaxus.ch o digitec.ch, per iscritto, entro 30 giorni.\nIl numero del mio conto utente è: \n",
             "en-USMailTemplate" : "Please supply the personal data galaxus.ch or digitec.ch hold about me in writing within 30 days.\nThe number of my user account is: \n"
@@ -366,7 +366,11 @@ function fillInfoBoxWording(){
               'de2' : 'Um dein Anliegen schnellstmöglich zu lösen, benötigen wir ein Foto des falsch erhaltenen Produkts. Bitte füge deshalb eine entsprechende Datei hinzu.',
               'fr2' : "Afin de résoudre votre problème le plus rapidement possible, nous avons besoin d'une photo du produit mal reçu. Veuillez donc joindre un fichier approprié.",
               'it2' : 'Al fine di risolvere il suo problema il più rapidamente possibile, abbiamo bisogno di una foto del prodotto ricevuto in modo errato. Pertanto, si prega di allegare un file appropriato.',
-              'en-US2' : 'In order to resolve your issue as soon as possible, we need a photo of the incorrectly received product. Therefore, please attach an appropriate file.'
+              'en-US2' : 'In order to resolve your issue as soon as possible, we need a photo of the incorrectly received product. Therefore, please attach an appropriate file.',
+              'de3' : "Für eine Datenauskunftsbegehren wird ein Scan oder Foto eines amtlichen Ausweises benötigt. Für andere Anfragen, wähle bitte einen anderen Anfragegrund.",
+              'fr3' : "Pour une demande de données, un scan ou une photo d'une pièce d'identité officielle est nécessaire. Pour toute autre demande, veuillez choisir un autre motif de demande.",
+              'it3' : "Per la richiesta di dati è necessaria una scansione o una foto di un documento d'identità ufficiale. Per altre richieste, selezionare un motivo diverso.",
+              'en-US3' : "For a data information request, a scan or photo of an official ID is required. For other requests, please select another request reason."
         },
   
         //Feedback Formular Texte
@@ -474,11 +478,28 @@ function fillInfoBoxWording(){
     }}
 
     if (portal == 'helpcenter.galaxus.de'){
-      infoBoxWording['webform_case_data_request']['deMailTemplate'] = "Ich bitte Sie, mir schriftlich innerhalb von 30 Tagen, Auskunft über meine bei galaxus.de gespeicherten Daten zu erteilen.\nDie Nummer zu meinem Benutzerkonto lautet: \n"
+      infoBoxWording['webform_case_data_request']['deMailTemplate'] = "Ich bitte um schriftliche Auskunft über meine bei galaxus.de gespeicherten Daten innerhalb von 30 Tagen.\nDie Nummer zu meinem Benutzerkonto lautet: \n"
     }
     if (portal == 'helpcenter.galaxus.at'){
-      infoBoxWording['webform_case_data_request']['deMailTemplate'] = "Ich bitte Sie, mir schriftlich innerhalb von 30 Tagen, Auskunft über meine bei galaxus.at gespeicherten Daten zu erteilen.\nDie Nummer zu meinem Benutzerkonto lautet: \n"
+      infoBoxWording['webform_case_data_request']['deMailTemplate'] = "Ich bitte um schriftliche Auskunft über meine bei galaxus.at gespeicherten Daten innerhalb von 30 Tagen.\nDie Nummer zu meinem Benutzerkonto lautet: \n"
     }
+    if (portal == 'helpcenter.galaxus.fr'){
+      infoBoxWording['webform_case_data_request']['frMailTemplate'] = "Veuillez nous communiquer par écrit, dans un délai de 30 jours, les données personnelles que galaxus.ch ou digitec.ch détient à mon sujet.\nLe numéro de mon compte d'utilisateur est : \n"
+      infoBoxWording['webform_case_data_request']["en-USMailTemplate"] = "Please supply the personal data galaxus.fr hold about me in writing within 30 days.\nThe number of my user account is: \n"
+      }
+    if (portal == 'helpcenter.galaxus.it'){
+      infoBoxWording['webform_case_data_request']['itMailTemplate'] = "Chiedo che mi vengano fornite informazioni sui miei dati memorizzati su galaxus.it, per iscritto, entro 30 giorni.\nIl numero del mio conto utente è: \n"
+      infoBoxWording['webform_case_data_request']["en-USMailTemplate"] = "Please supply the personal data galaxus.it hold about me in writing within 30 days.\nThe number of my user account is: \n"
+      }
+
+      if (portal != "helpcenter.digitec.ch" && portal != "helpcenter.galaxus.ch"){
+            infoBoxWording['webform_case_damaged_product']['de'] = "Weist ein Produkt einen Transportschaden auf, <a href='" + shopURL + "after-sales' target='blank'>melde dies bitte umgehend als defektes Produkt an</a>."
+            infoBoxWording['webform_case_damaged_product']['it'] = "Se un prodotto presenta danni da trasporto, <a href='" + shopURL + "after-sales' target='blank'>si prega di segnalarlo immediatamente come prodotto difettoso</a>."
+            infoBoxWording['webform_case_damaged_product']['fr'] = "Si un produit a été endommagé pendant le transport, <a href='" + shopURL + "after-sales' target='blank'>veuillez le signaler immédiatement comme un produit défectueux</a>."
+            infoBoxWording['webform_case_damaged_product']['en-US'] = "If a product was damaged in transit, <a href='" + shopURL + "after-sales' target='blank'>please report this immediately as a defective product</a>."
+      }
+
+
 
       /*if (portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.digitec.ch'){
             infoBoxWording['webform_case_other_request_order']['de'] += "<br><br><b>Aktuell hat die Schweizer Post mehrere Tage Verzögerung bei der Datenübertragung. Es kann daher sein, dass deine Links zur Sendungsverfolgung nicht funktionieren. Bitte kontaktiere unseren Kundendienst nur, fallst deine Sendungslinks bereits seit mindestens <i>7 Tagen</i> nicht funktionieren und deine Artikel nicht zugestellt sind.</b>"
