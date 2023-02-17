@@ -1,62 +1,71 @@
+/*TODOS
+- PrivacyNoticeNL: Privacybeleid korrekt oder haben wir anderes Wording auf der Homeepage? Wiki ID korrekt?
+- Wiki IDs für NL + BE + LU allgemein korrekt?
+*/
+
+
 function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
-    var portal = window.location.hostname;
+    let portal = window.location.hostname;
 
     //Variabeln Öffnungszeiten Telefon
-    var uhrzeitPrivatkunde = "";
-    var uhrzeitPrivatkunde2 = "";
-    var uhrzeitPrivatkundePe = ""
-    var uhrzeitPrivatkunde2Pe = ""
-    var tagePrivatkundeDE = "";
-    var tagePrivatkundeFR = "";
-    var tagePrivatkundeIT = "";
-    var tagePrivatkundeEN = "";
-    var tagePrivatkunde2DE = "";
-    var tagePrivatkunde2FR = "";
-    var tagePrivatkunde2IT = "";
-    var tagePrivatkunde2EN = "";
+    let uhrzeitPrivatkunde = "";
+    let uhrzeitPrivatkunde2 = "";
+    let uhrzeitPrivatkundePe = ""
+    let uhrzeitPrivatkunde2Pe = ""
+    let tagePrivatkundeDE = "";
+    let tagePrivatkundeFR = "";
+    let tagePrivatkundeIT = "";
+    let tagePrivatkundeEN = "";
+    let tagePrivatkundeNL = "";
+    let tagePrivatkunde2DE = "";
+    let tagePrivatkunde2FR = "";
+    let tagePrivatkunde2IT = "";
+    let tagePrivatkunde2EN = "";
+    let tagePrivatkunde2NL = "";
 
-    //Variabeln Öffnungszeiten Chat
+    //Datenschutzerklärung
+    let privacynoticeDE = '';
+    let privacynoticeEN = '';
+    let privacynoticeFR = '';
+    let privacynoticeIT = '';
+    let privacynoticeNL = '';
 
-    var tagePrivatkundeChatDE = "";
-    var tagePrivatkundeChatFR = "";
-    var tagePrivatkundeChatIT = "";
-    var tagePrivatkundeChatEN = "";
-    var tagePrivatkunde2ChatDE = "";
-    var tagePrivatkunde2ChatFR = "";
-    var tagePrivatkunde2ChatIT = "";
-    var tagePrivatkunde2ChatEN = "";
-    var tagePrivatkunde2ChatMobileDE = "";
+    //Telefonnummern
+    let telPrivatkunde = "";
+    let telFirmenkunde = "";
+    let telPrivatkundeText = "";
+    let telFirmenkundeText = "";
 
-    var privacynoticeDE = '';
-    var privacynoticeEN = '';
-    var privacynoticeFR = '';
-    var privacynoticeIT = '';
+    //Callback Fehlermeldungen
+    let callbackPhoneError1DE = "";
+    let callbackPhoneError2DE = "";
+    let callbackPhoneError1FR = "";
+    let callbackPhoneError2FR = "";
+    let callbackPhoneError1IT = "";
+    let callbackPhoneError2IT = "";
+    let callbackPhoneError1EN = "";
+    let callbackPhoneError2EN = "";
+    let callbackPhoneError1NL = "";
+    let callbackPhoneError2NL = "";
 
-    var telPrivatkunde = "";
-    var telFirmenkunde = "";
-    var telPrivatkundeText = "";
-    var telFirmenkundeText = "";
-
-    var callbackPhoneError1DE = "";
-    var callbackPhoneError2DE = "";
-    var callbackPhoneError1FR = "";
-    var callbackPhoneError2FR = "";
-    var callbackPhoneError1IT = "";
-    var callbackPhoneError2IT = "";
-    var callbackPhoneError1EN = "";
-    var callbackPhoneError2EN = "";
+    //shopLink
+    let shopLink = ""
 
     switch(portal){
         case 'helpcenter.digitec.ch':
+                shopLink = "https://www.digitec.ch/"
+
                 //Öffnungszeiten
                 tagePrivatkundeDE = "Mo - Fr "; 
                 tagePrivatkundeFR = "Lu - Ve "; 
                 tagePrivatkundeIT = "Lun - Ven "; 
                 tagePrivatkundeEN = "Mo - Fr "; 
+                tagePrivatkundeNL = "Ma - Vr "; 
                 tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2NL = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "";
                 uhrzeitPrivatkundePe = "08:00 - 18:00";
@@ -65,6 +74,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
                 privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacy statement</a>';
+                privacynoticeNL = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacybeleid</a>';
 
                 telPrivatkunde = "+41445759500";
                 telPrivatkundeText = "+41 44 575 95 00";
@@ -84,18 +94,24 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906';
                 callbackPhoneError1EN = 'Please enter a valid phone number. Only Swiss phone numbers are accepted.';
                 callbackPhoneError2EN = 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Zwitserse telefoonnummers worden geaccepteerd.';
+                callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)800, (0)84, (0)900, (0)901, (0)906';
 
                 break;
         case 'helpcenter.galaxus.ch':
+                shopLink = "https://www.galaxus.ch/"
+
                 //Öffnungszeiten
                 tagePrivatkundeDE = "Mo - Fr "; 
                 tagePrivatkundeFR = "Lu - Ve "; 
                 tagePrivatkundeIT = "Lun - Ven "; 
                 tagePrivatkundeEN = "Mo - Fr "; 
+                tagePrivatkundeNL = "Ma - Vr ";
                 tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2NL = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "";
                 uhrzeitPrivatkundePe = "08:00 - 18:00";
@@ -104,6 +120,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
                 privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/2791" target="blank">Privacy statement</a>';
+                privacynoticeNL = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacybeleid</a>';
 
                 telPrivatkunde = "+41445759800";
                 telPrivatkundeText = "+41 44 575 98 00";
@@ -122,18 +139,24 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906';
                 callbackPhoneError1EN = 'Please enter a valid phone number. Only Swiss phone numbers are accepted.';
                 callbackPhoneError2EN = 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Zwitserse telefoonnummers worden geaccepteerd.';
+                callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)800, (0)84, (0)900, (0)901, (0)906';
 
                 break;
         case 'helpcenter.galaxus.de':
+                shopLink = "https://www.galaxus.de/"
+
                 //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr "; 
-                tagePrivatkundeFR = "Lu - Ve "; 
-                tagePrivatkundeIT = "Lun - Ven "; 
-                tagePrivatkundeEN = "Mo - Fr "; 
+                tagePrivatkundeDE = "Mo - Fr ";
+                tagePrivatkundeFR = "Lu - Ve ";
+                tagePrivatkundeIT = "Lun - Ven ";
+                tagePrivatkundeEN = "Mo - Fr ";
+                tagePrivatkundeNL = "Ma - Vr ";
                 tagePrivatkunde2DE = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2EN = " | Za ";  //WICHTIG: braucht leading " | " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "09:00 - 17:00";
                 uhrzeitPrivatkundePe = "08:00 - 19:00";
@@ -142,6 +165,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
                 privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.de/wiki/5567" target="blank">Privacy statement</a>';
+                privacynoticeNL = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/5567" target="blank">Privacybeleid</a>';
 
                 telPrivatkunde = "+4940334614747";
                 telPrivatkundeText = "+49 (0)40 334 614 747";
@@ -156,18 +180,24 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)700, (0)800, (0)900';
                 callbackPhoneError1EN = 'Please enter a valid phone number. Only German phone numbers are accepted.';
                 callbackPhoneError2EN = 'The following area codes are not accepted: (0)700, (0)800, (0)900';
+                callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Duitse telefoonnummers worden geaccepteerd.';
+                callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)700, (0)800, (0)900';
 
                 break;
         case 'helpcenter.galaxus.at':
+                shopLink = "https://www.galaxus.at/"
+
                 //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr "; 
-                tagePrivatkundeFR = "Lu - Ve "; 
-                tagePrivatkundeIT = "Lun - Ven "; 
-                tagePrivatkundeEN = "Mo - Fr "; 
+                tagePrivatkundeDE = "Mo - Fr ";
+                tagePrivatkundeFR = "Lu - Ve ";
+                tagePrivatkundeIT = "Lun - Ven ";
+                tagePrivatkundeEN = "Mo - Fr ";
+                tagePrivatkundeNL = "Ma - Vr ";
                 tagePrivatkunde2DE = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2EN = " | Za ";  //WICHTIG: braucht leading " | " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "09:00 - 17:00";
                 uhrzeitPrivatkundePe = "08:00 - 19:00";
@@ -176,6 +206,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Informativa sulla protezione dei dati</a>';
                 privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.at/wiki/5567" target="blank">Privacy statement</a>';
+                privacynoticeNL = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/5567" target="blank">Privacybeleid</a>';
 
                 telPrivatkunde = "+43800017837";
                 telPrivatkundeText = "+43 800 017 837";
@@ -190,18 +221,24 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)700, (0)800, (0)900';
                 callbackPhoneError1EN = 'Please enter a valid phone number. Only Austrian phone numbers are accepted.';
                 callbackPhoneError2EN = 'The following area codes are not accepted: (0)700, (0)800, (0)900';
+                callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Oostenrijkse telefoonnummers worden geaccepteerd.';
+                callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)700, (0)800, (0)900';
 
                 break;
         case 'helpcenter.galaxus.fr':
+                shopLink = "https://www.galaxus.fr/"
+
                 //Öffnungszeiten
-                tagePrivatkundeDE = ""; 
-                tagePrivatkundeFR = ""; 
-                tagePrivatkundeIT = ""; 
-                tagePrivatkundeEN = ""; 
+                tagePrivatkundeDE = "";
+                tagePrivatkundeFR = "";
+                tagePrivatkundeIT = "";
+                tagePrivatkundeEN = "";
+                tagePrivatkundeNL = "";
                 tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2NL = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "";
                 uhrzeitPrivatkunde2 = "";
                 uhrzeitPrivatkundePe = "";
@@ -211,6 +248,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/6182" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/6182" target="blank">Informativa sulla protezione dei dati</a>';
                 privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/6182" target="blank">Privacy statement</a>';
+                privacynoticeNL = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/6182" target="blank">Privacybeleid</a>';
 
                 telPrivatkunde = "";
                 telPrivatkundeText = "";
@@ -225,18 +263,24 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError2IT = '';
                 callbackPhoneError1EN = '';
                 callbackPhoneError2EN = '';
+                callbackPhoneError1NL = '';
+                callbackPhoneError2NL = '';
 
                 break;
         case 'helpcenter.galaxus.it':
+                shopLink = "https://www.galaxus.it/"
+
                 //Öffnungszeiten
-                tagePrivatkundeDE = ""; 
-                tagePrivatkundeFR = ""; 
-                tagePrivatkundeIT = ""; 
-                tagePrivatkundeEN = ""; 
-                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkundeDE = "";
+                tagePrivatkundeFR = "";
+                tagePrivatkundeIT = "";
+                tagePrivatkundeEN = "";
+                tagePrivatkundeNL = "";
+                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2NL = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "";
                 uhrzeitPrivatkunde2 = "";
                 uhrzeitPrivatkundePe = "";
@@ -246,6 +290,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Informativa sulla protezione dei dati</a>';
                 privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Privacy statement</a>';
+                privacynoticeNL = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/6182" target="blank">Privacybeleid</a>';
 
                 telPrivatkunde = "";
                 telPrivatkundeText = "";
@@ -260,52 +305,150 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError2IT = '';
                 callbackPhoneError1EN = '';
                 callbackPhoneError2EN = '';
+                callbackPhoneError1NL = '';
+                callbackPhoneError2NL = '';
 
                 break;
-        case 'helpcenter.connect.digitec.ch':
+        case 'helpcenter.galaxus.be':
+                shopLink = "https://www.galaxus.be/"
+
                 //Öffnungszeiten
-                tagePrivatkundeDE = "Mo - Fr "; 
-                tagePrivatkundeFR = "Lu - Ve "; 
-                tagePrivatkundeIT = "Lun - Ven "; 
-                tagePrivatkundeEN = "Mo - Fr "; 
+                tagePrivatkundeDE = "";
+                tagePrivatkundeFR = "";
+                tagePrivatkundeIT = "";
+                tagePrivatkundeEN = "";
+                tagePrivatkundeNL = "";
                 tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                uhrzeitPrivatkunde = "08:00 - 17:00";
+                tagePrivatkunde2NL = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                uhrzeitPrivatkunde = "";
                 uhrzeitPrivatkunde2 = "";
-                uhrzeitPrivatkundePe = "08:00 - 17:00";
+                uhrzeitPrivatkundePe = "";
                 uhrzeitPrivatkunde2Pe = "";
-                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
-                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
-                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
-                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacy statement</a>';
+                // TODO: LINKS AUF KORREKTHEIT PRÜFEN
+                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Datenschutzerklärung</a>';
+                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Déclaration de protection des données</a>';
+                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Informativa sulla protezione dei dati</a>';
+                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Privacy statement</a>';
+                privacynoticeNL = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/6182" target="blank">Privacybeleid</a>';
 
-                telPrivatkunde = "+41445759700";
-                telPrivatkundeText = "+41 44 575 97 00";
-                telFirmenkunde = "+41445759700";
-                telFirmenkundeText = "+41 44 575 97 00"; 
-                
-                callbackPhoneError1DE = 'Bitte gib eine gültige Telefonnummer ein. Nur Schweizer Telefonnummern werden akzeptiert.';
-                callbackPhoneError2DE = 'Folgende Vorwahlen werden nicht akzeptiert: (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1FR = 'Veuillez saisir un numéro de téléphone valide. Seuls les numéros de téléphone suisses sont acceptés.';
-                callbackPhoneError2FR = 'Les préfixes suivants ne sont pas acceptés : (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1IT = 'Inserire un numero di telefono valido. Si accettano solo numeri di telefono svizzeri.';
-                callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906';
-                callbackPhoneError1EN = 'Please enter a valid phone number. Only Swiss phone numbers are accepted.';
-                callbackPhoneError2EN = 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906';
+                telPrivatkunde = "";
+                telPrivatkundeText = "";
+                telFirmenkunde = "";
+                telFirmenkundeText = "";
+
+                callbackPhoneError1DE = '';
+                callbackPhoneError2DE = '';
+                callbackPhoneError1FR = '';
+                callbackPhoneError2FR = '';
+                callbackPhoneError1IT = '';
+                callbackPhoneError2IT = '';
+                callbackPhoneError1EN = '';
+                callbackPhoneError2EN = '';
+                callbackPhoneError1NL = '';
+                callbackPhoneError2NL = '';
+
+                break;
+        case 'helpcenter.galaxus.nl':
+                shopLink = "https://www.galaxus.nl/"
+
+                //Öffnungszeiten
+                tagePrivatkundeDE = "";
+                tagePrivatkundeFR = "";
+                tagePrivatkundeIT = "";
+                tagePrivatkundeEN = "";
+                tagePrivatkundeNL = "";
+                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2NL = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                uhrzeitPrivatkunde = "";
+                uhrzeitPrivatkunde2 = "";
+                uhrzeitPrivatkundePe = "";
+                uhrzeitPrivatkunde2Pe = "";
+                // TODO: LINKS AUF KORREKTHEIT PRÜFEN
+                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Datenschutzerklärung</a>';
+                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Déclaration de protection des données</a>';
+                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Informativa sulla protezione dei dati</a>';
+                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Privacy statement</a>';
+                privacynoticeNL = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/6182" target="blank">Privacybeleid</a>';
+
+                telPrivatkunde = "";
+                telPrivatkundeText = "";
+                telFirmenkunde = "";
+                telFirmenkundeText = "";
+
+                callbackPhoneError1DE = '';
+                callbackPhoneError2DE = '';
+                callbackPhoneError1FR = '';
+                callbackPhoneError2FR = '';
+                callbackPhoneError1IT = '';
+                callbackPhoneError2IT = '';
+                callbackPhoneError1EN = '';
+                callbackPhoneError2EN = '';
+                callbackPhoneError1NL = '';
+                callbackPhoneError2NL = '';
+
+                break;
+        case 'helpcenter.galaxus.lu':
+                shopLink = "https://www.galaxus.lu/"
+
+                //Öffnungszeiten
+                tagePrivatkundeDE = "";
+                tagePrivatkundeFR = "";
+                tagePrivatkundeIT = "";
+                tagePrivatkundeEN = "";
+                tagePrivatkundeNL = "";
+                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2NL = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                uhrzeitPrivatkunde = "";
+                uhrzeitPrivatkunde2 = "";
+                uhrzeitPrivatkundePe = "";
+                uhrzeitPrivatkunde2Pe = "";
+                // TODO: LINKS AUF KORREKTHEIT PRÜFEN
+                privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Datenschutzerklärung</a>';
+                privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Déclaration de protection des données</a>';
+                privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Informativa sulla protezione dei dati</a>';
+                privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.it/wiki/6182" target="blank">Privacy statement</a>';
+                privacynoticeNL = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/6182" target="blank">Privacybeleid</a>';
+
+                telPrivatkunde = "";
+                telPrivatkundeText = "";
+                telFirmenkunde = "";
+                telFirmenkundeText = "";
+
+                callbackPhoneError1DE = '';
+                callbackPhoneError2DE = '';
+                callbackPhoneError1FR = '';
+                callbackPhoneError2FR = '';
+                callbackPhoneError1IT = '';
+                callbackPhoneError2IT = '';
+                callbackPhoneError1EN = '';
+                callbackPhoneError2EN = '';
+                callbackPhoneError1NL = '';
+                callbackPhoneError2NL = '';
 
                 break;
         default:
+                shopLink = "https://www.digitec.ch/"
+
                 //Öffnungszeiten
                 tagePrivatkundeDE = "Mo - Fr "; 
                 tagePrivatkundeFR = "Lu - Ve "; 
                 tagePrivatkundeIT = "Lun - Ven "; 
                 tagePrivatkundeEN = "Mo - Fr "; 
+                tagePrivatkundeNL = "Ma - Vr "; 
                 tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
+                tagePrivatkunde2NL = "";  //WICHTIG: braucht leading " |  " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "";
                 uhrzeitPrivatkundePe = "08:00 - 18:00";
@@ -314,6 +457,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
                 privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
                 privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacy statement</a>';
+                privacynoticeNL = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacybeleid</a>';
 
                 telPrivatkunde = "+41445759800";
                 telPrivatkundeText = "+41 44 575 98 00";
@@ -328,13 +472,15 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError2IT = 'I seguenti codici di zona non sono accettati: (0)800, (0)84, (0)900, (0)901, (0)906';
                 callbackPhoneError1EN = 'Please enter a valid phone number. Only Swiss phone numbers are accepted.';
                 callbackPhoneError2EN = 'The following area codes are not accepted: (0)800, (0)84, (0)900, (0)901, (0)906';
+                callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Zwitserse telefoonnummers worden geaccepteerd.';
+                callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)800, (0)84, (0)900, (0)901, (0)906';
 
                 break;
     }
 
 
     
-    var dynamicWording = {
+    let dynamicWording = {
 
         de: {
         'privateCustomers' : 'Privatkunden',
@@ -403,7 +549,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatWaitTime': 'Wartezeit <font class="chatWaitTime"></font> min',
         'callWaitTime': 'Wartezeit <font class="callWaitTime"></font> min',
         'callbackWaitTime': 'Wartezeit <font class="callbackWaitTime"></font> min',
-        'toShop' : '<a href="https://www.digitec.ch/" target="blank">Zum Shop</a>',
+        'toShop' : '<a href="' + shopLink + '" target="blank">Zum Shop</a>',
         'ticketSubmitConfirmationTitle' : 'Vielen Dank für deine Anfrage!',
         'ticketSubmintConfirmationTextPt1' : '&#10003 Deine Anfrage wurde erfolgreich übermittelt.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'Wir senden dir eine Kopie deiner Anfrage an ',
@@ -490,7 +636,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatWaitTime': 'Réponse en <font class="chatWaitTime"></font> min',
         'callWaitTime': 'Réponse en <font class="callWaitTime"></font> min',
         'callbackWaitTime': 'Réponse en <font class="callbackWaitTime"></font> min',
-        'toShop' : '<a href="https://www.digitec.ch/" target="blank">Vers le Shop</a>',
+        'toShop' : '<a href="' + shopLink + '" target="blank">Vers le Shop</a>',
         'ticketSubmitConfirmationTitle' : 'Merci pour votre demande !',
         'ticketSubmintConfirmationTextPt1' : '&#10003 Votre demande a été transmise avec succès.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'Nous vous enverrons une copie de votre demande à ',
@@ -577,7 +723,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatWaitTime': 'Risposta in <font class="chatWaitTime"></font> min',
         'callWaitTime': 'Risposta in <font class="callWaitTime"></font> min',
         'callbackWaitTime': 'Risposta in <font class="callbackWaitTime"></font> min',
-        'toShop' : '<a href="https://www.digitec.ch/" target="blank">Al Shop</a>',
+        'toShop' : '<a href="' + shopLink + '" target="blank">Al Shop</a>',
         'ticketSubmitConfirmationTitle' : 'Grazie per la tua richiesta!',
         'ticketSubmintConfirmationTextPt1' : '&#10003 La tua richiesta è stata inviata con successo.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'Vi invieremo una copia della vostra richiesta a ',
@@ -664,7 +810,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatWaitTime': 'Reply time <font class="chatWaitTime"></font> min',
         'callWaitTime': 'Reply time <font class="callWaitTime"></font> min',
         'callbackWaitTime': 'Reply time <font class="callbackWaitTime"></font> min',
-        'toShop' : '<a href="https://www.digitec.ch/" target="blank">To Shop</a>',
+        'toShop' : '<a href="' + shopLink + '" target="blank">To Shop</a>',
         'ticketSubmitConfirmationTitle' : 'Thank you for your request!',
         'ticketSubmintConfirmationTextPt1' : '&#10003 Your request has been successfully submitted.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'We will send you a copy of your request to ',
@@ -683,53 +829,94 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatClosedMessage' : 'Unfortunately, our chat is no longer available, gladly we are available within the opening hours. Outside the opening hours you can use the contact form.',
         'callbackClosedMessage' : 'Unfortunately, our phone line is no longer available, gladly we are available within the opening hours. Outside the opening hours you can use the contact form.',
         'liveChannelsClosedMessage' : 'Unfortunately, our live channels are longer available, gladly we are available within the opening hours. Outside the opening hours you can use the contact form.'
-        }
-    }
-
-    if (window.location.hostname == 'helpcenter.connect.digitec.ch'){
-        dynamicWording['de']['questionNotAnswered'] = 'Wähle deinen Kontaktkanal'
-        dynamicWording['fr']['questionNotAnswered'] = 'Choisissez votre canal de contact'
-        dynamicWording['it']['questionNotAnswered'] = 'Scegli il tuo canale di contatto'
-        dynamicWording['en-US']['questionNotAnswered'] = 'Choose your contact channel'
-    }
-
-    if (window.location.hostname == 'helpcenter.galaxus.ch'){
-        dynamicWording['de']['toShop'] = '<a href="https://www.galaxus.ch/" target="blank">Zum Shop</a>'
-        dynamicWording['fr']['toShop'] = '<a href="https://www.galaxus.ch/" target="blank">Vers le Shop</a>'
-        dynamicWording['it']['toShop'] = '<a href="https://www.galaxus.ch/" target="blank">Al Shop</a>'
-        dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.ch/" target="blank">To Shop</a>'
-    }
-
-    if (window.location.hostname == 'helpcenter.galaxus.de'){
-        dynamicWording['de']['toShop'] = '<a href="https://www.galaxus.de/" target="blank">Zum Shop</a>'
-        dynamicWording['fr']['toShop'] = '<a href="https://www.galaxus.de/" target="blank">Vers le Shop</a>'
-        dynamicWording['it']['toShop'] = '<a href="https://www.galaxus.de/" target="blank">Al Shop</a>'
-        dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.de/" target="blank">To Shop</a>'
-        dynamicWording['de']['emailDescription'] = 'Wartezeit <font class="mailWaitTime">3-4</font> Tage'
-        dynamicWording['de']['emailDescriptionMobile'] = 'Wartezeit <font class="mailWaitTime">3-4</font> Tage'
-    }
-
-    if (window.location.hostname == 'helpcenter.galaxus.at'){
-        dynamicWording['de']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">Zum Shop</a>'
-        dynamicWording['fr']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">Vers le Shop</a>'
-        dynamicWording['it']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">Al Shop</a>'
-        dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.at/" target="blank">To Shop</a>'
-        dynamicWording['de']['emailDescription'] = 'Wartezeit <font class="mailWaitTime">3-4</font> Tage'
-        dynamicWording['de']['emailDescriptionMobile'] = 'Wartezeit <font class="mailWaitTime">3-4</font> Tage'
-    }
-
-    if (window.location.hostname == 'helpcenter.galaxus.fr'){
-        dynamicWording['de']['toShop'] = '<a href="https://www.galaxus.fr/" target="blank">Zum Shop</a>'
-        dynamicWording['fr']['toShop'] = '<a href="https://www.galaxus.fr/" target="blank">Vers le Shop</a>'
-        dynamicWording['it']['toShop'] = '<a href="https://www.galaxus.fr/" target="blank">Al Shop</a>'
-        dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.fr/" target="blank">To Shop</a>'
-    }
-
-    if (window.location.hostname == 'helpcenter.galaxus.it'){
-        dynamicWording['de']['toShop'] = '<a href="https://www.galaxus.it/" target="blank">Zum Shop</a>'
-        dynamicWording['fr']['toShop'] = '<a href="https://www.galaxus.it/" target="blank">Vers le Shop</a>'
-        dynamicWording['it']['toShop'] = '<a href="https://www.galaxus.it/" target="blank">Al Shop</a>'
-        dynamicWording['en-US']['toShop'] = '<a href="https://www.galaxus.it/" target="blank">To Shop</a>'
+        },
+        'nl': {
+            'privateCustomers' : 'Private klanten',
+            'businessCustomers' : 'Zakelijke klanten',
+            'chatUs': 'Chat met ons',
+            'callUsPrivate' : 'Bel ons <a class="popuptext" id="phoneNumberPrivate" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+            'callUsPrivateMobile' : 'Bel ons <a class="popuptext" id="phoneNumberPrivateMobile" href="tel:' + telPrivatkunde + '">' + telPrivatkundeText + '</a>',
+            'callUsBusiness' : 'Bel ons <a class="popuptext" id="phoneNumberBusiness" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
+            'callUsBusinessMobile' : 'Bel ons <a class="popuptext" id="phoneNumberBusinessMobile" href="tel:' + telFirmenkunde + '">' + telFirmenkundeText + '</a>',
+            'callYouCallback' : 'Bel me',
+            'callYouCallbackMobile' : 'Bel me',
+            'callbackOffline' : 'Niet beschikbaar',
+            'callbackOfflineMobile' : 'Niet beschikbaar',
+            'callbackTitleText' : 'We bellen je',
+            'contactFormNoteTitel' : 'Wist u dat',
+            //Öffnungszeiten
+            'openingDays' : tagePrivatkundeNL,
+            'openingHours' : uhrzeitPrivatkunde,
+            'openingDays2' : tagePrivatkunde2NL,
+            'openingHours2' : uhrzeitPrivatkunde2,
+            'openingHoursPe' : uhrzeitPrivatkundePe,
+            'openingHours2Pe' : uhrzeitPrivatkunde2Pe,
+            'phone' : 'Telefoon',
+            'chat' : 'Chat',
+            'email' : 'Contactformulier',
+            'emailDescription' : 'Wachttijd <font class="mailWaitTime">1-2</font> dagen',
+            'emailDescriptionMobile' : 'Wachttijd <font class="mailWaitTime">1-2</font> dagen',
+            'callbackTitle' : 'We bellen je',
+            'demandCallback' : 'Een gesprek aanvragen',
+            //'callbackPhoneNumberHint' : 'Hinweis: Nur Schweizer Telefonnummern werden akzeptiert.',
+            'callbackPhoneNumberHint' : '',
+            'callbackMailHint' : 'Aan de hand van het e-mailadres kunnen wij uw klantenrekening al identificeren.',
+            'callbackAgentHint' : 'Zodra er een agent beschikbaar is, bellen wij u direct op.<br><b>Huidige wachttijd: ongeveer <font class="callbackWaitTime"></font> min</b>',
+            'callbackPhoneNumber' : 'Telefoonnummer <font color="red">*</font>',
+            'callbackOrderNumber' : 'Bestelnummer (facultatief)',
+            'callbackRGNumber' : 'Factuurnummer (facultatief)', 
+            'callbackEmailLabel' : 'E-mailadres <font color="red">*</font>',
+            'callbackRecordingLabel' : 'Uw interview wordt opgenomen voor kwaliteitsborging en opleidingsdoeleinden.',
+            'callbackRecordingLabelEU' : 'Mijn interview kan worden opgenomen voor kwaliteitsborging en opleidingsdoeleinden. De opnames worden na 30 dagen gewist.',
+            'callbackEmailError' : 'Voer een geldig e-mailadres in',
+            'callbackPhoneError' : callbackPhoneError1NL,
+            'callbackPhoneError2' : callbackPhoneError2NL,
+            'callbackFormError' : 'Controleer uw inzendingen<br>',
+            'callbackAPIError' : 'Uw verzoek kon niet worden ingediend. Gebruik een van onze andere contactkanalen.',
+            'contact' : 'Contacteer ons',
+            'questionNotAnswered' : 'Uw vraag is niet beantwoord?',
+            'noAnswerFound' : 'Geen geschikt antwoord gevonden?',
+            'writeUs' : 'Schrijf ons',
+            'recommendedChannel' : 'Aanbevolen kanaal',
+            'searchBoxText' : 'Hoe kunnen we u helpen?', 
+            'infoNoteText' : '<br>Vanwege de huidige weers- en wegsituatie zijn vertragingen in de pakketbezorging door Swiss Post te verwachten. Hartelijk dank voor uw begrip<br>&nbsp;',
+            'contactFormInfoText' : 'Per chat, telefoon of contactformulier - kies gewoon uw klantengroep en de juiste reden voor uw vraag.',
+            'headerTitle' : 'Contacteer ons',
+            'chatNotOnline': 'Niet beschikbaar',
+            'recommendedChannel' : 'AANBEVOLEN',
+            'backButtonText' : 'Terug naar de contactselectie',
+            'feedbackHeader' : 'Terugkoppelingsformulier',
+            'feedbackDescription' : 'Gebruik het formulier alleen voor suggesties ter verbetering van onze bijdragen.<br>Wij kunnen helaas niet reageren op uw feedback. Voor uw vragen kunt u gebruik maken van het <a href="/hc/requests/new">contactformulier</a>.<br>Opgelet: Vragen van klanten via het feedbackformulier worden niet beantwoord!',
+            'chooseCustomerGroup' : 'Kies uw klantengroep',
+            'chooseRequestReason' : 'Kies uw reden voor het verzoek',
+            'contactOptions' : 'Uw contactmogelijkheden',
+            'chatLanguage' : 'Taal:',
+            'chatLanguage2' : 'Nederlands',
+            'fallbackInfoText' : 'Something went wrong! Please open the contact form again through the "Contact us" Button at the bottom of the page.',
+            'contactNow' : 'Nu contact opnemen',
+            'chatWaitTime': 'Wachttijd <font class="chatWaitTime"></font> min',
+            'callWaitTime': 'Wachttijd <font class="callWaitTime"></font> min',
+            'callbackWaitTime': 'Wachttijd <font class="callbackWaitTime"></font> min',
+            'toShop' : '<a href="' + shopLink + '" target="blank">Naar de winkel</a>',
+            'ticketSubmitConfirmationTitle' : 'Dank u voor uw verzoek!',
+            'ticketSubmintConfirmationTextPt1' : '&#10003 Uw verzoek is succesvol ingediend.<br><br>',
+            'ticketSubmintConfirmationTextPt2' : 'Wij sturen een kopie van uw verzoek naar ',
+            'ticketSubmintConfirmationTextPt3' : '. Als uw probleem inmiddels is opgelost, beantwoord dan de e-mail met #closeticket.<br><br>',
+            'callbackSubmitConfirmationTitle' : 'We bellen je meteen!',
+            'callbackSubmintConfirmationTextPt1' : '&#10003 Uw verzoek is succesvol ingediend.<br><br>',
+            'callbackSubmintConfirmationTextPt2' : 'Zodra er een agent beschikbaar is, bellen wij u onmiddellijk op ',
+            'callbackSubmintConfirmationTextPt3' : '.<br><br>',
+            'backToHelpcenter' : 'Terug naar het Helpcenter',
+            'privacynotice' : privacynoticeNL,
+            'chatGreetingText' : 'Zodat we u snel kunnen helpen, laat ons uw bestel- of factuurnummer weten.',
+            'chatOfflineMessage' : 'We zijn momenteel niet online',
+            'chatNotOnline' : 'Niet beschikbaar',
+            'countryCH' : '&nbsp;&nbsp;Zwitserland', // benötigt immer Leading &nbsp;&nbsp;
+            'countryLI' : '&nbsp;&nbsp;Liechtenstein', // benötigt immer Leading &nbsp;&nbsp;
+            'chatClosedMessage' : 'Helaas is onze chat niet meer beschikbaar. Wij helpen u graag tijdens openingstijden. Buiten de openingstijden kunt u het contactformulier gebruiken.',
+            'callbackClosedMessage' : 'Helaas is onze telefoonlijn gesloten. Wij helpen u graag tijdens openingstijden. Buiten de openingstijden kunt u het contactformulier gebruiken.',
+            'liveChannelsClosedMessage' : 'Helaas zijn onze live kanalen gesloten, wij zijn graag bereikbaar binnen openingstijden. Buiten de openingstijden kunt u het contactformulier gebruiken.'
+        },
     }
 
   return dynamicWording;  
