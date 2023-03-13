@@ -132,44 +132,44 @@
   var elements2 = document.getElementsByClassName('blocks-item-inner-table-cell');
   var pixelheight = "24"
   for (index = 0; index < elements.length; index++){
-		switch(elements[index].innerHTML.toString()){
-			case 'Bestellungen':
-			case 'Orders':
-			case 'Commandes':
-			case 'Ordini':
+		switch(elements[index].innerHTML.toString().toLowerCase()){
+			case 'bestellungen':
+			case 'orders':
+			case 'commandes':
+			case 'ordini':
 				elements2[index].innerHTML = '<img src="{{asset 'shopping-cart.png'}}" height="' + pixelheight + 'px">';
 				break;
-      case 'Bezahlung':
-			case 'Payment':
-			case 'Paiement':
-			case 'Pagamento':
+      case 'bezahlung':
+			case 'payment':
+			case 'paiement':
+			case 'pagamento':
 				elements2[index].innerHTML = '<img src="{{asset 'orders-and-payment.png'}}" height="' + pixelheight + 'px">';
 				break;
-      case 'Rückerstattung': //Temporär hier bis eigenes Icon
-      case 'Refund': // Temporär hier bis eigenes Icon
-      case 'Remboursement': // Temporär hier bis eigenes Icon
-      case 'Rimborso': // Temporär hier bis eigenes Icon
+      case 'rückerstattung': //Temporär hier bis eigenes Icon
+      case 'refund': // Temporär hier bis eigenes Icon
+      case 'remboursement': // Temporär hier bis eigenes Icon
+      case 'rimborso': // Temporär hier bis eigenes Icon
         elements2[index].innerHTML = '<img src="{{asset 'refund.png'}}" height="' + pixelheight + 'px">';
         break;
-      case 'Rückgabe und Gewährleistung':
-      case 'Rückgabe &amp; Gewährleistung':
-      case 'Garantie &amp; Rückgabe': 
-			case 'Warranty &amp; return':
-			case 'Garantie &amp; retour':
-			case 'Resi e garanzia':
+      case 'rückgabe und gewährleistung':
+      case 'rückgabe &amp; gewährleistung':
+      case 'garantie &amp; rückgabe': 
+			case 'warranty &amp; return':
+			case 'garantie &amp; retour':
+			case 'resi e garanzia':
 				elements2[index].innerHTML = '<img src="{{asset 'arrows.png'}}" height="' + pixelheight + 'px">';
 				break;
-			case 'Dienstleistungen &amp; Services': 
-			case 'Additional services':
-			case 'Prestations &amp; services':
-			case 'Prestazioni e servizi':
+			case 'dienstleistungen &amp; services': 
+			case 'additional services':
+			case 'prestations &amp; services':
+			case 'prestazioni e servizi':
 				elements2[index].innerHTML = '<img src="{{asset 'wrench.png'}}" height="' + pixelheight + 'px">';
 				break;
-			case 'Kundenkonto': 
-      case 'Benutzerkonto':
-			case 'Customer account':
-			case 'Compte client':
-			case 'Conto cliente':
+			case 'kundenkonto': 
+      case 'benutzerkonto':
+			case 'customer account':
+			case 'compte client':
+			case 'conto cliente':
 				elements2[index].innerHTML = '<img src="{{asset 'customer-account.png'}}" height="' + pixelheight + 'px">';
 				break;
 			case 'digitec connect':
