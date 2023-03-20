@@ -313,7 +313,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatWaitTime': 'Risposta in <font class="chatWaitTime"></font> min',
         'callWaitTime': 'Risposta in <font class="callWaitTime"></font> min',
         'callbackWaitTime': 'Risposta in <font class="callbackWaitTime"></font> min',
-        'toShop' : '<a href="https://www.digitec.ch/" target="blank">Al Shop</a>',
+        'toShop' : '<a href="https://www.digitec.ch/" target="blank">Al negozio</a>',
         'ticketSubmitConfirmationTitle' : 'Grazie per la tua richiesta!',
         'ticketSubmintConfirmationTextPt1' : '&#10003 La tua richiesta è stata inviata con successo.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'Vi invieremo una copia della vostra richiesta a ',
