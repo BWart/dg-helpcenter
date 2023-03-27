@@ -1,6 +1,6 @@
 // --- TIMEZONE OFFSET --- 
 // 2 during summer time, 1 during winter time
-var UTCHourOffset = 1;
+var UTCHourOffset = 2;
 
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
 // --- Removed for Connect, everything handled directly inside the NewRequestPage script as the logic is simple ---
