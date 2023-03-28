@@ -91,6 +91,7 @@ if (tempLink.includes('de-CH')){
 
 
 // Sets Logo and Link based on URL
+console.log(portal)
 switch(portal){
       case'helpcenter.digitec.ch':
               document.getElementById("logoAnchor").href = "https://helpcenter.digitec.ch/hc";
@@ -118,6 +119,11 @@ switch(portal){
       case'helpcenter.connect.digitec.ch':
               document.getElementById("logoAnchor").href = "https://helpcenter.connect.digitec.ch/hc";
               document.getElementById('logoAnchor').innerHTML = '<img src="{{asset 'digitec_connect.svg'}}">';  
+              gaSend = true;           
+              break;
+      case'helpcenter.mobile.galaxus.ch':
+              document.getElementById("logoAnchor").href = "https://helpcenter.mobile.galaxus.ch/hc";
+              document.getElementById('logoAnchor').innerHTML = '<img src="{{asset 'galaxus_mobile.svg'}}">';  
               gaSend = true;           
               break;
       case'helpcenter.galaxus.lu':
