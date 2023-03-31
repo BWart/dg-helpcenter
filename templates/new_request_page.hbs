@@ -872,7 +872,7 @@
   function showChatButton(){
     $(".button-chat").removeClass("button-offline");
     $(".button-chat").html(dynamicWording[currentLanguage]['chatUs']);
-    $(".recommendedChannel").css('display' , 'inline-block');
+    $(".recommendedChannel").css('display' , 'none');
     chatWaitTimesDOMElements.show();
   }
 
@@ -1050,8 +1050,9 @@
   }
 
   function setWaitTime(chatSeconds, callSeconds, callbackSeconds){
-      if (chatSeconds > 180){
-          $(".recommendedChannel").css('display' , 'none');
+      $(".recommendedChannel").css('display' , 'none');
+      if (chatSeconds[customerDepartment] < 181){
+          $(".recommendedChannel").css('display' , 'inline-block');
       }
       chatWaitSeconds = chatSeconds;
       callWaitSeconds = callSeconds;
