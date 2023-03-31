@@ -224,7 +224,7 @@ function getChatDepartmentType(){
     return chatDepartmentType;
 }
 
-//Unterteilung zwischen PE, Private & Business
+//Unterteilung zwischen PE & Private
 function getDGChatDepartmentType(){
     lang = getNormalizedLanguage();
     var DGChatDepartmentType;
@@ -256,9 +256,6 @@ function getDGChatDepartmentType(){
                 break;
             case(isYoummdayExpert()):
                 DGChatDepartmentType = 'YoummdayExpert';
-                break;
-            case(isBusiness()):
-                DGChatDepartmentType = 'Business';
                 break;
             default:
                 DGChatDepartmentType = 'Private';
@@ -392,23 +389,6 @@ function isPeDiy(){
     }
 }
 
-
-//Special Routing for B2B
-function isBusiness(){
-    if(customerType == 'business-customer' && (lang == 'de' || lang == 'fr' || lang =='en') && isBusinessAvailable()){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-function isBusinessAvailable(){
-    if(isDepartmentAvailable('Chat Business '+getChatDepartmentLanguage())){
-        return true;
-    }else{
-        return false;
-    }
-}
 
 //Special Routing for YoummdayBasic
 function isYoummdayBasic(){
