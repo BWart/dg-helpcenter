@@ -167,13 +167,13 @@ function fillTopBannerWording(){
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2022-12-20 00:00:00', '2022-12-26 22:00:00', 0]
+      ['2023-03-31 00:00:00', '2023-04-10 22:00:00', 0]
     ],
     'de' : [
-      ['2022-12-30 00:00:00', '2022-12-31 22:00:00', 1]
+      ['2023-03-31 00:00:00', '2023-04-10 22:00:00', 1]
     ],
     'at' : [
-      ['2022-12-30 00:00:00', '2022-12-31 22:00:00', 2]
+      ['2023-03-31 00:00:00', '2023-04-10 22:00:00', 2]
     ],
     'it' : [
       ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 3]
@@ -186,34 +186,39 @@ var showHolidays = {
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-        'de' : '<br>.12.2022: Geschlossen',
-        'fr' : "<br>26.12.2022: Fermé",
-        'it' : '<br>26.12.2022: Chiuso',
-        'en-US' : '<br>26.12.2022: Closed',
+        'de' : '<br>06.04.2023: Gründonnerstag, geschlossen ab 17:00<br>07.04.2023 - 10.04.2023: Ostern, geschlossen',
+        'fr' : "<br>06.04.2023 : Jeudi saint, fermé à partir de 17:00<br>07.04.2023 - 10.04.2023 : Pâques, fermé",
+        'it' : '<br>06.04.2023: Giovedì Santo, chiuso dalle 17:00<br>07.04.2023 - 10.04.2023: Pasqua, chiuso',
+        'en-US' : '<br>06.04.2023: Maundy Thursday, closed from 17:00<br>07.04.2023 - 10.04.2023: Easter, closed',
+        'nl': ''
     },
     1 : {
-        'de' : '<br>31.12.2022: Geschlossen',
-        'fr' : '<br>27.06.2022 16:00: fermé',
-        'it' : '<br>27.06.2022 16:00: chiuso',
-        'en-US' : '<br>27.06.2022: Closed from 16:00',
+      'de' : '<br>06.04.2023: Gründonnerstag, geschlossen ab 17:00<br>07.04.2023 - 10.04.2023: Ostern, geschlossen',
+      'fr' : "<br>06.04.2023 : Jeudi saint, fermé à partir de 17:00<br>07.04.2023 - 10.04.2023 : Pâques, fermé",
+      'it' : '<br>06.04.2023: Giovedì Santo, chiuso dalle 17:00<br>07.04.2023 - 10.04.2023: Pasqua, chiuso',
+      'en-US' : '<br>06.04.2023: Maundy Thursday, closed from 17:00<br>07.04.2023 - 10.04.2023: Easter, closed',
+      'nl': ''
     },
     2 : {
-      'de' : '<br>31.12.2022: Geschlossen',
-      'fr' : '<br>27.06.2022 16:00: fermé',
-      'it' : '<br>27.06.2022 16:00: chiuso',
-      'en-US' : '<br>27.06.2022: Closed from 16:00',
+      'de' : '<br>06.04.2023: Gründonnerstag, geschlossen ab 17:00<br>07.04.2023 - 10.04.2023: Ostern, geschlossen',
+      'fr' : "<br>06.04.2023 : Jeudi saint, fermé à partir de 17:00<br>07.04.2023 - 10.04.2023 : Pâques, fermé",
+      'it' : '<br>06.04.2023: Giovedì Santo, chiuso dalle 17:00<br>07.04.2023 - 10.04.2023: Pasqua, chiuso',
+      'en-US' : '<br>06.04.2023: Maundy Thursday, closed from 17:00<br>07.04.2023 - 10.04.2023: Easter, closed',
+      'nl': ''
     },
     3 : {
       'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
       'fr' : '<br>27.06.2022 16:00: fermé',
       'it' : '<br>27.06.2022 16:00: chiuso',
       'en-US' : '<br>27.06.2022: Closed from 16:00',
+      'nl': ''
     },
     4 : {
       'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
       'fr' : '<br>27.06.2022 16:00: fermé',
       'it' : '<br>27.06.2022 16:00: chiuso',
       'en-US' : '<br>27.06.2022: Closed from 16:00',
+      'nl': ''
     }
 }
 
@@ -222,19 +227,19 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-      ['2022-12-26 00:00:00', '2022-12-26 22:00:00']
+      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
     ],
     'de' : [
-      ['2022-12-30 00:00:00', '2022-12-31 22:00:00']
+      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
     ],
     'at' : [
-      ['2022-12-30 00:00:00', '2022-12-31 22:00:00']
+      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
     ],
     'it' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00']
+      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
     ],
     'fr' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00']
+      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
     ]
 }
 
