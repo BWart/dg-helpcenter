@@ -311,7 +311,6 @@
   let callWaitSeconds = 0;
   let chatWaitSeconds = 0;
 
-
   //--- CALLBACK SETTING UP A/B AND FURTHER VARIABLES
   $('.callback_customer_record_label_eu').hide();
   $('.callback_customer_record_label_ch').show();
@@ -350,7 +349,7 @@
   callbackClosedMessage.hide()
   liveChannelsClosedMessage.hide()
   if (fullLink.slice(-3) == 'new' || fullLink.slice(-4) == 'new/') {
-    window.location.replace('https://helpcenter.connect.digitec.ch/hc/requests/new?ticket_form_id=360002056120');
+    window.location.replace('https://helpcenter.mobile.galaxus.ch/hc/requests/new?ticket_form_id=360002056120');
   }
   // Case when "Contact Us" Button in footer is clicked
   addExternalScriptForWaitingTimes(true);
@@ -387,13 +386,14 @@
     waitTimes.hide()
     backButton.hide();
     contactInfos.hide();
-    if (portal != 'helpcenter.digitec.ch' && portal != 'helpcenter.galaxus.ch' && portal != 'helpcenter.connect.digitec.ch'){
+    if (portal != 'helpcenter.digitec.ch' && portal != 'helpcenter.galaxus.ch' && portal != 'helpcenter.connect.digitec.ch' && portal != 'helpcenter.mobile.galaxus.ch'){
       chPreCodeTable.hide()
     }
     //adjust the order of the form elements
     customerTypeDropdown.insertBefore(document.getElementById('inserter'));
     //adjust additional elements if it is a customer form
     if (entryPoint == 'customerChosen' || entryPoint == 'mailFormWrong'){
+      console.log('entrypointtest')
       requestReasonDropdown.insertBefore(document.getElementById('inserter2'));
     }
     if (entryPoint == 'mailFormWrong'){
@@ -703,7 +703,7 @@
         setClosed();
       }
     }
-    if (portal == 'helpcenter.connect.digitec.ch'){
+    if (portal == 'helpcenter.mobile.galaxus.ch'){
       if (isInOpeningTimes()){
         switch (currentLanguage) {
           case 'de':
