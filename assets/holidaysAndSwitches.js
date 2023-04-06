@@ -193,17 +193,17 @@ var textToDisplay = {
         'nl': ''
     },
     1 : {
-      'de' : '<br>06.04.2023: Gründonnerstag, geschlossen ab 17:00<br>07.04.2023 - 10.04.2023: Ostern, geschlossen',
-      'fr' : "<br>06.04.2023 : Jeudi saint, fermé à partir de 17:00<br>07.04.2023 - 10.04.2023 : Pâques, fermé",
-      'it' : '<br>06.04.2023: Giovedì Santo, chiuso dalle 17:00<br>07.04.2023 - 10.04.2023: Pasqua, chiuso',
-      'en-US' : '<br>06.04.2023: Maundy Thursday, closed from 17:00<br>07.04.2023 - 10.04.2023: Easter, closed',
+      'de' : '<br>07.04.2023 - 10.04.2023: Ostern, geschlossen',
+      'fr' : "<br>07.04.2023 - 10.04.2023 : Pâques, fermé",
+      'it' : '<br>07.04.2023 - 10.04.2023: Pasqua, chiuso',
+      'en-US' : '<br>07.04.2023 - 10.04.2023: Easter, closed',
       'nl': ''
     },
     2 : {
-      'de' : '<br>06.04.2023: Gründonnerstag, geschlossen ab 17:00<br>07.04.2023 - 10.04.2023: Ostern, geschlossen',
-      'fr' : "<br>06.04.2023 : Jeudi saint, fermé à partir de 17:00<br>07.04.2023 - 10.04.2023 : Pâques, fermé",
-      'it' : '<br>06.04.2023: Giovedì Santo, chiuso dalle 17:00<br>07.04.2023 - 10.04.2023: Pasqua, chiuso',
-      'en-US' : '<br>06.04.2023: Maundy Thursday, closed from 17:00<br>07.04.2023 - 10.04.2023: Easter, closed',
+      'de' : '<br>07.04.2023 - 10.04.2023: Ostern, geschlossen',
+      'fr' : "<br>07.04.2023 - 10.04.2023 : Pâques, fermé",
+      'it' : '<br>07.04.2023 - 10.04.2023: Pasqua, chiuso',
+      'en-US' : '<br>07.04.2023 - 10.04.2023: Easter, closed',
       'nl': ''
     },
     3 : {
@@ -230,10 +230,10 @@ var hideWaitingTimes = {
       ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
     ],
     'de' : [
-      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
+      ['2023-04-07 01:00:00', '2023-04-10 22:00:00']
     ],
     'at' : [
-      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
+      ['2023-04-07 01:00:00', '2023-04-10 22:00:00']
     ],
     'it' : [
       ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
