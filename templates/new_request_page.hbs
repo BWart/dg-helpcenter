@@ -938,6 +938,9 @@
 
   //set the waiting times
   function setWaitTimes(){
+    if (typeof callWaitTimes == "undefined" || typeof chatWaitTimes == "undefined" || typeof createTimeStampUTC == "undefined"){
+      return 0;
+    }
     waitTimes.hide();
     const d = new Date();
     const dateFromExternalScript = new Date(createTimeStampUTC);
