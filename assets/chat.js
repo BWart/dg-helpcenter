@@ -170,8 +170,8 @@ function isOverflowDepartmentTresholdReached(selectedDepartmentWaitingTime, over
 //Gets language and changes to uppercase
 function getChatDepartmentLanguage(){
     var chatDepartmentLanguage = getNormalizedLanguage();
-    if ((portal == "helpcenter.galaxus.ch" || portal == "helpcenter.digitec.ch") && chatDepartmentLanguage.toUpperCase() == "IT"){
-        chatDepartmentLanguage = "EN"
+    if ((portal == "helpcenter.galaxus.ch" || portal == "helpcenter.digitec.ch") && chatDepartmentLanguage.toUpperCase() != "DE"){
+        return "Multilingual"
     }
     return chatDepartmentLanguage.toUpperCase();
 }

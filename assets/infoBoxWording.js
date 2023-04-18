@@ -445,6 +445,21 @@ function fillInfoBoxWording() {
                   'nl': "U kunt vragen stellen over een product dat al beschikbaar is op " + seite + " direct op de betreffende productpagina. Onze gemeenschap zal u binnen enkele uren antwoorden. Bovendien profiteert iedereen van uw bijdrage :-)<br><br>Klik hier om <a href='" + shopURL + "community' target='blank'>naar de community te gaan</a>."
             },
 
+            //LEVEL 0: Gutscheine einlösen
+            "webform_case_voucher": {
+                  'de': "Dein Gutscheincode wurde aus technischen Gründen gesperrt und durch einene neuen Code ersetzt? Der neue Code befindet sich im Benutzerkonto des Käufers unter <a href='" + shopURL + "coupon' target='blank'>Geschenkgutscheine</a>.<br><br>Brauchst du weitere Hilfe oder Unterstützung, kontaktiere unseren Kundendienst.",
+                  'fr': "Votre code de bon a été bloqué pour des raisons techniques et remplacé par un nouveau code ? Le nouveau code se trouve dans le compte de l'acheteur, sous la rubrique <a href='" + shopURL + "coupon' target='blank'>Bons d'achat</a>.<br><br>Si vous avez besoin d'aide ou d'assistance, veuillez contacter notre service clientèle.",
+                  'it': "Il codice del vostro buono è stato bloccato per motivi tecnici e sostituito con un nuovo codice? Il nuovo codice si trova nell'account dell'acquirente alla voce <a href='" + shopURL + "coupon' target='blank'>Buoni regalo</a>.<br><br>Se avete bisogno di ulteriore aiuto o assistenza, contattate il nostro servizio clienti.",
+                  'en-US': "Your voucher code has been blocked for technical reasons and replaced with a new code? The new code can be found in the buyer's account under <a href='" + shopURL + "coupon' target='blank'>Vouchers</a>.<br><br>If you need further help or assistance, please contact our customer service.",
+                  'nl': "Uw tegoedboncode is om technische redenen geblokkeerd en vervangen door een nieuwe code? De nieuwe code is te vinden in de account van de koper onder <a href='" + shopURL + "coupon' target='blank'>Cadeaubonnen</a>.<br><br>Als u verdere hulp of assistentie nodig heeft, neem dan contact op met onze klantenservice.",
+                  'deMailTemplate': "Gutscheincode: \nUrsprünglicher Käufer des Gutscheins: \n",
+                  'frMailTemplate': "Code de bon d'achat : \nAcheteur initial du bon : \n",
+                  'itMailTemplate': "Codice del buono: \nAcquirente originale del buono: \n",
+                  "en-USMailTemplate": "Voucher code: \nOriginal purchaser of the voucher: \n",
+                  "nlMailTemplate": "Vouchercode: \nOorspronkelijke koper van de bon: \n"
+            
+            },
+
             //LEVEL 0: Offerte
             "webform_case_offer": {
                   'de': "Für Auftragsvolumen unter " + offerte + " werden keine Offerten erstellt. Es gelten die Preisangaben in unserem Onlineshop.",
