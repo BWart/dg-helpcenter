@@ -3,7 +3,7 @@
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 <meta name="google-site-verification" content="8X_8QzD4bZxyaCY1dA-h_IbHT_1aIVhsuTgc_8KGDzo" />
 <div id="customDGStyle"></div>
-<div id="webWidget"></div>
+<div id="webWidget" class="webWidgetDiv"></div>
 <!--<link rel="icon" type="image/x-icon" href="{{asset 'fav_galaxus.png'}}">-->
 
 <script src="{{asset 'holidaysAndSwitches.js'}}"></script>
@@ -15,7 +15,7 @@
 <script src="{{asset 'timeChecks.js'}}"></script>
 
 <script>
- 
+const webWidgetDiv = $(".webWidgetDiv")
 var link = document.createElement('link');
 link.setAttribute("rel", "stylesheet");
 link.setAttribute("type", "text/css");
@@ -31,7 +31,7 @@ link.onload = showBody();
       $('[rel="icon"]').attr("href", "{{asset 'fav_digitec.png'}}");
       $("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=18dfacef-9aec-49ae-bbe4-0bcd883ef859"/><//script>')
     }   
-
+webWidgetDiv.hide()
 $("#customDGStyle").html(link)
 
 function showBody(){

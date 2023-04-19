@@ -597,10 +597,12 @@ function isChatting(){
 }
 
 function openChat(){
+    webWidgetDiv.show()
     zE('webWidget', 'show');
     document.getElementById('launcher').contentWindow.document.getElementById('Embed').getElementsByTagName('button')[0].click();
 }
 
 function hideChat(){
+    webWidgetDiv.hide()
     zE('webWidget', 'hide');
 }
