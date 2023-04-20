@@ -16,6 +16,12 @@ var switchHideContactFormForFRDuringOpeningTimes = false;
 var switchHideContactFormForFROutsideOpeningTimes = false;
 var switchHideContactFormForITDuringOpeningTimes = false;
 var switchHideContactFormForITOutsideOpeningTimes = false;
+var switchHideContactFormForBEDuringOpeningTimes = false;
+var switchHideContactFormForBEOutsideOpeningTimes = false;
+var switchHideContactFormForNLDuringOpeningTimes = false;
+var switchHideContactFormForNLOutsideOpeningTimes = false;
+var switchHideContactFormForLUDuringOpeningTimes = false;
+var switchHideContactFormForLUOutsideOpeningTimes = false;
 //set to true if the phone number should be hidden, set to false if it should be displayed
 var switchHidePhoneDuringOpeningTimes = false;
 var switchHidePhoneOutsideOpeningTimes = false;
@@ -29,6 +35,12 @@ var switchHidePhoneForFRDuringOpeningTimes = true;
 var switchHidePhoneForFROutsideOpeningTimes = true;
 var switchHidePhoneForITDuringOpeningTimes = true;
 var switchHidePhoneForITOutsideOpeningTimes = true;
+var switchHidePhoneForBEDuringOpeningTimes = true;
+var switchHidePhoneForBEOutsideOpeningTimes = true;
+var switchHidePhoneForNLDuringOpeningTimes = true;
+var switchHidePhoneForNLOutsideOpeningTimes = true;
+var switchHidePhoneForLUDuringOpeningTimes = true;
+var switchHidePhoneForLUOutsideOpeningTimes = true;
 //set to true if the Chat should be hidden, set to false if it should be displayed
 var switchHideChatDuringOpeningTimes = false;
 var switchHideChatOutsideOpeningTimes = false;
@@ -42,6 +54,12 @@ var switchHideChatForFRDuringOpeningTimes = true;
 var switchHideChatForFROutsideOpeningTimes = true;
 var switchHideChatForITDuringOpeningTimes = true;
 var switchHideChatForITOutsideOpeningTimes = true;
+var switchHideChatForBEDuringOpeningTimes = true;
+var switchHideChatForBEOutsideOpeningTimes = true;
+var switchHideChatForNLDuringOpeningTimes = true;
+var switchHideChatForNLOutsideOpeningTimes = true;
+var switchHideChatForLUDuringOpeningTimes = true;
+var switchHideChatForLUOutsideOpeningTimes = true;
 //If contact form is hidden, set threshhold to show it again when the waiting time for live contact channels get too high; set to 50000 if contact form should never be shown
 var phoneWaitThreshholdToShowContactForm = 50000;
 var phoneWaitThreshholdToShowContactFormPE = 50000;
@@ -49,46 +67,84 @@ var phoneWaitThreshholdToShowContactFormBusiness = 50000;
 var phoneWaitThreshholdToShowContactFormEU = 50000;
 var phoneWaitThreshholdToShowContactFormFR = 50000;
 var phoneWaitThreshholdToShowContactFormIT = 50000;
+var phoneWaitThreshholdToShowContactFormBE = 50000;
+var phoneWaitThreshholdToShowContactFormBE = 50000;
+var phoneWaitThreshholdToShowContactFormNL = 50000;
 var chatWaitThreshholdToShowContactForm = 60;
 var chatWaitThreshholdToShowContactFormPE = 50000;
 var chatWaitThreshholdToShowContactFormBusiness = 50000;
 var chatWaitThreshholdToShowContactFormEU = 50000;
 var chatWaitThreshholdToShowContactFormFR = 50000;
 var chatWaitThreshholdToShowContactFormIT = 50000;
+var chatWaitThreshholdToShowContactFormBE = 50000;
+var chatWaitThreshholdToShowContactFormNL = 50000;
+var chatWaitThreshholdToShowContactFormLU = 50000;
 var chatAndPhoneWaitThreshholdToShowContactForm = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormPE = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormBusiness = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormEU = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormFR = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormIT = 50000;
+var chatAndPhoneWaitThreshholdToShowContactFormBE = 50000;
+var chatAndPhoneWaitThreshholdToShowContactFormNL = 50000;
+var chatAndPhoneWaitThreshholdToShowContactFormLU = 50000;
 
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
+//CH
 var bannerSwitchCHDE = false;
 var bannerSwitchCHFR = false;
 var bannerSwitchCHIT = false;
 var bannerSwitchCHEN = false;
+var bannerSwitchCHNL = false;
 var bannerSwitchConnectDE = false;
 var bannerSwitchConnectFR = false;
 var bannerSwitchConnectIT = false;
 var bannerSwitchConnectEN = false;
+var bannerSwitchConnectNL = false;
+//Germany
 var bannerSwitchDEDE = false;
 var bannerSwitchDEFR = false;
 var bannerSwitchDEIT = false;
 var bannerSwitchDEEN = false;
+var bannerSwitchDENL = false;
+//Austria
 var bannerSwitchATDE = false;
 var bannerSwitchATFR = false;
 var bannerSwitchATIT = false;
 var bannerSwitchATEN = false;
+var bannerSwitchATNL = false;
+//France
 var bannerSwitchFRDE = false;
 var bannerSwitchFRFR = false;
 var bannerSwitchFRIT = false;
 var bannerSwitchFREN = false;
+var bannerSwitchFRNL = false;
+//Italy
 var bannerSwitchITDE = false;
 var bannerSwitchITFR = false;
 var bannerSwitchITIT = false;
 var bannerSwitchITEN = false;
+var bannerSwitchITNL = false;
+//Belgium
+var bannerSwitchBEDE = false;
+var bannerSwitchBEFR = false;
+var bannerSwitchBEIT = false;
+var bannerSwitchBEEN = false;
+var bannerSwitchBENL = false;
+//Netherlands
+var bannerSwitchNLDE = false;
+var bannerSwitchNLFR = false;
+var bannerSwitchNLIT = false;
+var bannerSwitchNLEN = false;
+var bannerSwitchNLNL = false;
+//Luxembourg
+var bannerSwitchLUDE = false;
+var bannerSwitchLUFR = false;
+var bannerSwitchLUIT = false;
+var bannerSwitchLUEN = false;
+var bannerSwitchLUNL = false;
 
 // --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
 function fillTopBannerWording(){
@@ -153,6 +209,42 @@ function fillTopBannerWording(){
       'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
       'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
     },
+    "outputHeadingBannerBE" : {
+      'de' : "Technische Störung",
+      'fr' : "Panne techniqe",
+      'it' : "Guasto tecnico",
+      'en-US' : "Technical issue"
+    },
+    "outputTextBannerBE" : {
+      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
+      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
+      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+    },
+    "outputHeadingBannerNL" : {
+      'de' : "Technische Störung",
+      'fr' : "Panne techniqe",
+      'it' : "Guasto tecnico",
+      'en-US' : "Technical issue"
+    },
+    "outputTextBannerNL" : {
+      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
+      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
+      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+    },
+    "outputHeadingBannerLU" : {
+      'de' : "Technische Störung",
+      'fr' : "Panne techniqe",
+      'it' : "Guasto tecnico",
+      'en-US' : "Technical issue"
+    },
+    "outputTextBannerLU" : {
+      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
+      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
+      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+    }
     }
       return topBannerWording;
 }
@@ -175,16 +267,26 @@ var showHolidays = {
     'at' : [
       ['2023-03-31 00:00:00', '2023-04-10 22:00:00', 2]
     ],
-    'it' : [
+    'fr' : [
       ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 3]
     ],
-    'fr' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 4]
+    'it' : [
+      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 4],
+    ],
+    'be' : [
+      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 5],
+    ],
+    'nl' : [
+      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 6],
+    ],
+    'lu' : [
+      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 7],
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
+    // Switzerland
     0 : {
         'de' : '<br>06.04.2023: Gründonnerstag, geschlossen ab 17:00<br>07.04.2023 - 10.04.2023: Ostern, geschlossen',
         'fr' : "<br>06.04.2023 : Jeudi saint, fermé à partir de 17:00<br>07.04.2023 - 10.04.2023 : Pâques, fermé",
@@ -192,6 +294,7 @@ var textToDisplay = {
         'en-US' : '<br>06.04.2023: Maundy Thursday, closed from 17:00<br>07.04.2023 - 10.04.2023: Easter, closed',
         'nl': ''
     },
+    //Germany
     1 : {
       'de' : '<br>07.04.2023 - 10.04.2023: Ostern, geschlossen',
       'fr' : "<br>07.04.2023 - 10.04.2023 : Pâques, fermé",
@@ -199,6 +302,7 @@ var textToDisplay = {
       'en-US' : '<br>07.04.2023 - 10.04.2023: Easter, closed',
       'nl': ''
     },
+    //Austria
     2 : {
       'de' : '<br>07.04.2023 - 10.04.2023: Ostern, geschlossen',
       'fr' : "<br>07.04.2023 - 10.04.2023 : Pâques, fermé",
@@ -206,6 +310,7 @@ var textToDisplay = {
       'en-US' : '<br>07.04.2023 - 10.04.2023: Easter, closed',
       'nl': ''
     },
+    //France
     3 : {
       'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
       'fr' : '<br>27.06.2022 16:00: fermé',
@@ -213,7 +318,32 @@ var textToDisplay = {
       'en-US' : '<br>27.06.2022: Closed from 16:00',
       'nl': ''
     },
+    //Italy
     4 : {
+      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
+      'fr' : '<br>27.06.2022 16:00: fermé',
+      'it' : '<br>27.06.2022 16:00: chiuso',
+      'en-US' : '<br>27.06.2022: Closed from 16:00',
+      'nl': ''
+    },
+    //Belgium
+    5 : {
+      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
+      'fr' : '<br>27.06.2022 16:00: fermé',
+      'it' : '<br>27.06.2022 16:00: chiuso',
+      'en-US' : '<br>27.06.2022: Closed from 16:00',
+      'nl': ''
+    },
+    //Netherlands
+    6 : {
+      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
+      'fr' : '<br>27.06.2022 16:00: fermé',
+      'it' : '<br>27.06.2022 16:00: chiuso',
+      'en-US' : '<br>27.06.2022: Closed from 16:00',
+      'nl': ''
+    },
+    //Luxembourg
+    7 : {
       'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
       'fr' : '<br>27.06.2022 16:00: fermé',
       'it' : '<br>27.06.2022 16:00: chiuso',
@@ -235,10 +365,19 @@ var hideWaitingTimes = {
     'at' : [
       ['2023-04-07 01:00:00', '2023-04-10 22:00:00']
     ],
+    'fr' : [
+      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
+    ],
     'it' : [
       ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
     ],
-    'fr' : [
+    'be' : [
+      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
+    ],
+    'nl' : [
+      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
+    ],
+    'lu' : [
       ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
     ]
 }

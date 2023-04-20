@@ -1186,6 +1186,15 @@
           case 'helpcenter.galaxus.it':
             portalChooser = 'it'
             break;
+          case 'helpcenter.galaxus.be':
+            portalChooser = 'be'
+            break;
+          case 'helpcenter.galaxus.nl':
+            portalChooser = 'nl'
+            break;
+          case 'helpcenter.galaxus.lu':
+            portalChooser = 'lu'
+            break;
           default:
             portalChooser = 'ch'
             break;
@@ -1255,6 +1264,9 @@
         break;
       case 'helpcenter.galaxus.fr':
       case 'helpcenter.galaxus.it':
+      case 'helpcenter.galaxus.be':
+      case 'helpcenter.galaxus.nl':
+      case 'helpcenter.galaxus.lu':
         isOpen = false
         
       default:
@@ -1400,6 +1412,42 @@
           tempPhoneWaitThreshholdToShowContactForm = phoneWaitThreshholdToShowContactFormIT;
           tempChatWaitThreshholdToShowContactForm = chatWaitThreshholdToShowContactFormIT;
           tempChatAndPhoneWaitThreshholdToShowContactForm = chatAndPhoneWaitThreshholdToShowContactFormIT;
+          break;
+        case 'helpcenter.galaxus.be':
+          isOpen = isInOpeningTimes();
+          tempSwitchHideContactFormDuringOpening = switchHideContactFormForBEDuringOpeningTimes;
+          tempSwitchHideContactFormOutsideOpening = switchHideContactFormForBEOutsideOpeningTimes;
+          tempSwitchHidePhoneDuringOpening = switchHidePhoneForBEDuringOpeningTimes;
+          tempSwitchHidePhoneOutsideOpening = switchHidePhoneForBEOutsideOpeningTimes;
+          tempSwitchHideChatDuringOpening = switchHideChatForBEDuringOpeningTimes;
+          tempSwitchHideChatOutsideOpening = switchHideChatForBEOutsideOpeningTimes;
+          tempPhoneWaitThreshholdToShowContactForm = phoneWaitThreshholdToShowContactFormBE;
+          tempChatWaitThreshholdToShowContactForm = chatWaitThreshholdToShowContactFormBE;
+          tempChatAndPhoneWaitThreshholdToShowContactForm = chatAndPhoneWaitThreshholdToShowContactFormBE;
+          break;
+        case 'helpcenter.galaxus.nl':
+          isOpen = isInOpeningTimes();
+          tempSwitchHideContactFormDuringOpening = switchHideContactFormForNLDuringOpeningTimes;
+          tempSwitchHideContactFormOutsideOpening = switchHideContactFormForNLOutsideOpeningTimes;
+          tempSwitchHidePhoneDuringOpening = switchHidePhoneForNLDuringOpeningTimes;
+          tempSwitchHidePhoneOutsideOpening = switchHidePhoneForNLOutsideOpeningTimes;
+          tempSwitchHideChatDuringOpening = switchHideChatForNLDuringOpeningTimes;
+          tempSwitchHideChatOutsideOpening = switchHideChatForNLOutsideOpeningTimes;
+          tempPhoneWaitThreshholdToShowContactForm = phoneWaitThreshholdToShowContactFormNL;
+          tempChatWaitThreshholdToShowContactForm = chatWaitThreshholdToShowContactFormNL;
+          tempChatAndPhoneWaitThreshholdToShowContactForm = chatAndPhoneWaitThreshholdToShowContactFormNL;
+          break;
+        case 'helpcenter.galaxus.lu':
+          isOpen = isInOpeningTimes();
+          tempSwitchHideContactFormDuringOpening = switchHideContactFormForLUDuringOpeningTimes;
+          tempSwitchHideContactFormOutsideOpening = switchHideContactFormForLUOutsideOpeningTimes;
+          tempSwitchHidePhoneDuringOpening = switchHidePhoneForLUDuringOpeningTimes;
+          tempSwitchHidePhoneOutsideOpening = switchHidePhoneForLUOutsideOpeningTimes;
+          tempSwitchHideChatDuringOpening = switchHideChatForLUDuringOpeningTimes;
+          tempSwitchHideChatOutsideOpening = switchHideChatForLUOutsideOpeningTimes;
+          tempPhoneWaitThreshholdToShowContactForm = phoneWaitThreshholdToShowContactFormLU;
+          tempChatWaitThreshholdToShowContactForm = chatWaitThreshholdToShowContactFormLU;
+          tempChatAndPhoneWaitThreshholdToShowContactForm = chatAndPhoneWaitThreshholdToShowContactFormLU;
           break;
       }
       if (isOpen){
@@ -2069,6 +2117,15 @@
             break;
           case 'helpcenter.galaxus.it':
             portalChooser = 'it'
+            break;
+          case 'helpcenter.galaxus.be':
+            portalChooser = 'be'
+            break;
+          case 'helpcenter.galaxus.nl':
+            portalChooser = 'nl'
+            break;
+          case 'helpcenter.galaxus.lu':
+            portalChooser = 'lu'
             break;
           default:
             portalChooser = 'ch'

@@ -135,7 +135,7 @@ function callbackCheck(){
       case 'fr':
         callbackPerLang = "Rappel"
         break;
-      case 'de':
+      case 'it':
         callbackPerLang = "Richiamo"
         break;
       default:
