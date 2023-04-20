@@ -149,11 +149,14 @@ function getDepartmentWaitingTime(){
         case 'DE':
             return chatWaitTimes['Chat Private DE'];
         case 'EN':
-            return chatWaitTimes['Chat Private EN'];
+            //return chatWaitTimes['Chat Private EN'];
+            return chatWaitTimes['Chat Private Multilingual'];
         case 'IT':
-            return chatWaitTimes['Chat Private IT'];
+            //return chatWaitTimes['Chat Private IT'];
+            return chatWaitTimes['Chat Private Multilingual'];
         case 'FR':
-            return chatWaitTimes['Chat Private FR'];
+            //return chatWaitTimes['Chat Private FR'];
+            return chatWaitTimes['Chat Private Multilingual'];
         default:
             return 0;
     }
