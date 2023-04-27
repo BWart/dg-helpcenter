@@ -137,18 +137,21 @@
 			case 'orders':
 			case 'commandes':
 			case 'ordini':
+      case 'bestellingen':
 				elements2[index].innerHTML = '<img src="{{asset 'shopping-cart.png'}}" height="' + pixelheight + 'px">';
 				break;
       case 'bezahlung':
 			case 'payment':
 			case 'paiement':
 			case 'pagamento':
+      case 'betaling':
 				elements2[index].innerHTML = '<img src="{{asset 'orders-and-payment.png'}}" height="' + pixelheight + 'px">';
 				break;
       case 'rückerstattung': //Temporär hier bis eigenes Icon
       case 'refund': // Temporär hier bis eigenes Icon
       case 'remboursement': // Temporär hier bis eigenes Icon
       case 'rimborso': // Temporär hier bis eigenes Icon
+      case 'terugbetaling':
         elements2[index].innerHTML = '<img src="{{asset 'refund.png'}}" height="' + pixelheight + 'px">';
         break;
       case 'rückgabe und gewährleistung':
@@ -157,12 +160,16 @@
 			case 'warranty &amp; return':
 			case 'garantie &amp; retour':
 			case 'resi e garanzia':
+      case 'teruggave en garnatie':
+      case 'teruggave & garantie':
 				elements2[index].innerHTML = '<img src="{{asset 'arrows.png'}}" height="' + pixelheight + 'px">';
 				break;
 			case 'dienstleistungen &amp; services': 
 			case 'additional services':
 			case 'prestations &amp; services':
 			case 'prestazioni e servizi':
+      case 'diensten & serveices':
+      case 'dienste en services':
 				elements2[index].innerHTML = '<img src="{{asset 'wrench.png'}}" height="' + pixelheight + 'px">';
 				break;
 			case 'kundenkonto': 
@@ -170,6 +177,7 @@
 			case 'customer account':
 			case 'compte client':
 			case 'conto cliente':
+      case 'gebruikersaccount':
 				elements2[index].innerHTML = '<img src="{{asset 'customer-account.png'}}" height="' + pixelheight + 'px">';
 				break;
 			case 'digitec connect':
