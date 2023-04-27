@@ -180,8 +180,8 @@ function isOverflowDepartmentTresholdReached(selectedDepartmentWaitingTime, over
 function getChatDepartmentLanguage(){
     var chatDepartmentLanguage = getNormalizedLanguage();
     if ((portal == "helpcenter.galaxus.ch" || portal == "helpcenter.digitec.ch") && chatDepartmentLanguage.toUpperCase() != "DE"){
-        return "EN"
-        //return "Multilingual"
+        //return "EN"
+        return "Multilingual"
     }
     return chatDepartmentLanguage.toUpperCase();
 }
