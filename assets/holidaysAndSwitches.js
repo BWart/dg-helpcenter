@@ -259,13 +259,13 @@ function fillTopBannerWording(){
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2023-03-31 00:00:00', '2023-04-10 22:00:00', 0]
+      ['2023-04-27 00:00:00', '2023-05-29 22:00:00', 0]
     ],
     'de' : [
-      ['2023-03-31 00:00:00', '2023-04-10 22:00:00', 1]
+      ['2023-04-27 00:00:00', '2023-05-29 22:00:00', 1]
     ],
     'at' : [
-      ['2023-03-31 00:00:00', '2023-04-10 22:00:00', 2]
+      ['2023-04-27 00:00:00', '2023-05-29 22:00:00', 2]
     ],
     'fr' : [
       ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 3]
@@ -288,26 +288,26 @@ var showHolidays = {
 var textToDisplay = {
     // Switzerland
     0 : {
-        'de' : '<br>06.04.2023: Gründonnerstag, geschlossen ab 17:00<br>07.04.2023 - 10.04.2023: Ostern, geschlossen',
-        'fr' : "<br>06.04.2023 : Jeudi saint, fermé à partir de 17:00<br>07.04.2023 - 10.04.2023 : Pâques, fermé",
-        'it' : '<br>06.04.2023: Giovedì Santo, chiuso dalle 17:00<br>07.04.2023 - 10.04.2023: Pasqua, chiuso',
-        'en-US' : '<br>06.04.2023: Maundy Thursday, closed from 17:00<br>07.04.2023 - 10.04.2023: Easter, closed',
-        'nl': ''
+      'de' : '<br>01.05.2023: 1. Mai, geschlossen<br>17.05.2023: ab 17:00 geschlossen<br>18.05.2023: Auffahrt, geschlossen<br>29.05.2023: Pfingstmontag, geschlossen',
+      'fr' : "<br>01.05.2023 : 1er mai, fermé<br>17.05.2023 : fermé à partir de 17:00<br>18.05.2023 : Ascension, fermé<br>29.05.2023 : Lundi de Pentecôte, fermé",
+      'it' : '<br>01.05.2023: 1 maggio, chiuso<br>17.05.2023: chiuso dalle ore 17:00<br>18.05.2023: Ascensione, chiuso<br>29.05.2023: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>01.05.2023: May 1st, closed<br>17.05.2023: closed from 17:00<br>18.05.2023: Ascension, closed<br>29.05.2023: Whit Monday, closed',
+      'nl': ''
     },
     //Germany
     1 : {
-      'de' : '<br>07.04.2023 - 10.04.2023: Ostern, geschlossen',
-      'fr' : "<br>07.04.2023 - 10.04.2023 : Pâques, fermé",
-      'it' : '<br>07.04.2023 - 10.04.2023: Pasqua, chiuso',
-      'en-US' : '<br>07.04.2023 - 10.04.2023: Easter, closed',
+      'de' : '<br>01.05.2023: 1. Mai, geschlossen<br>18.05.2023: Auffahrt, geschlossen<br>29.05.2023: Pfingstmontag, geschlossen',
+      'fr' : "<br>01.05.2023 : 1er mai, fermé<br>18.05.2023 : Ascension, fermé<br>29.05.2023 : Lundi de Pentecôte, fermé",
+      'it' : '<br>01.05.2023: 1 maggio, chiuso<br>18.05.2023: Ascensione, chiuso<br>29.05.2023: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>01.05.2023: May 1st, closed<br>18.05.2023: Ascension, closed<br>29.05.2023: Whit Monday, closed',
       'nl': ''
     },
     //Austria
     2 : {
-      'de' : '<br>07.04.2023 - 10.04.2023: Ostern, geschlossen',
-      'fr' : "<br>07.04.2023 - 10.04.2023 : Pâques, fermé",
-      'it' : '<br>07.04.2023 - 10.04.2023: Pasqua, chiuso',
-      'en-US' : '<br>07.04.2023 - 10.04.2023: Easter, closed',
+      'de' : '<br>01.05.2023: 1. Mai, geschlossen<br>18.05.2023: Auffahrt, geschlossen<br>29.05.2023: Pfingstmontag, geschlossen',
+      'fr' : "<br>01.05.2023 : 1er mai, fermé<br>18.05.2023 : Ascension, fermé<br>29.05.2023 : Lundi de Pentecôte, fermé",
+      'it' : '<br>01.05.2023: 1 maggio, chiuso<br>18.05.2023: Ascensione, chiuso<br>29.05.2023: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>01.05.2023: May 1st, closed<br>18.05.2023: Ascension, closed<br>29.05.2023: Whit Monday, closed',
       'nl': ''
     },
     //France
@@ -357,13 +357,13 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
+      ['2023-05-01 00:00:00', '2023-05-01 22:00:00'], ['2023-05-17 15:00:00', '2023-05-18 22:00:00'], ['2023-05-29 00:00:00', '2023-05-29 22:00:00']
     ],
     'de' : [
-      ['2023-04-07 01:00:00', '2023-04-10 22:00:00']
+      ['2023-05-01 00:00:00', '2023-05-01 22:00:00'], ['2023-05-18 00:00:00', '2023-05-18 22:00:00'], ['2023-05-29 00:00:00', '2023-05-29 22:00:00']
     ],
     'at' : [
-      ['2023-04-07 01:00:00', '2023-04-10 22:00:00']
+      ['2023-05-01 00:00:00', '2023-05-01 22:00:00'], ['2023-05-18 00:00:00', '2023-05-18 22:00:00'], ['2023-05-29 00:00:00', '2023-05-29 22:00:00']
     ],
     'fr' : [
       ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
