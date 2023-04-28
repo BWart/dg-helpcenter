@@ -2,6 +2,12 @@ function fillInfoBoxWording() {
 
       var infoBoxWording = {
             //LEVEL 0: Connect Tags
+            "webform_case_connect_general": {
+                  'de': "",
+                  'fr': "",
+                  'it': "",
+                  'en-US': ""
+            },
             "webform_case_connect_customer": {
                   'de': "",
                   'fr': "",

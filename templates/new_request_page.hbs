@@ -250,12 +250,14 @@
   const languagesForLongerMailWaitTime = ["de"]
 
   //reasons for callback to be shown
-  const reasonsForCallback = ["webform_case_connect_customer",
+  const reasonsForCallback = ["webform_case_connect_general",
+    "webform_case_connect_customer",
     "webform_case_connect_payment",
     "webform_case_connect_technical",
     "webform_case_connect_b2b"]
   
   const requestReasonTopCategory = {
+    "webform_case_connect_general": "connect",
     "webform_case_connect_customer": "connect",
     "webform_case_connect_payment": "connect",
     "webform_case_connect_technical": "connect",
@@ -647,7 +649,7 @@
     document.body.appendChild(script);
     var script2 = document.createElement('script');
     script2.classList.add('callbackScript');
-    script2.src = "https://py-waittimes-web.prod.pub.devinite.com/callbackConnect.js"
+    script2.src = "https://py-waittimes-web.prod.pub.devinite.com/callbackMobile.js"
     script2.onload = function() {
       callBackTokenChecker = true;
     }
@@ -661,7 +663,7 @@
     $('.callbackScript').remove();
     var script2 = document.createElement('script');
     script2.classList.add('callbackScript');
-    script2.src = "https://py-waittimes-web.prod.pub.devinite.com/callbackConnect.js"
+    script2.src = "https://py-waittimes-web.prod.pub.devinite.com/callbackMobile.js"
     script2.onload = function() {
       callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker);
     }
