@@ -190,14 +190,14 @@ function getChatDepartmentType(){
             chatDepartmentType = getDGChatDepartmentType();
             break;
         case('helpcenter.mobile.galaxus.ch'):
-            chatDepartmentType = 'Galaxus Mobile';
+            chatDepartmentType = 'Mobile';
             break;
         case('helpcenter.galaxus.de'):
         case('helpcenter.galaxus.at'):
             chatDepartmentType = 'EU';
             break;
         default:
-            chatDepartmentType = 'Galaxus Mobile';
+            chatDepartmentType = 'Mobile';
     }
     return chatDepartmentType;
 }
