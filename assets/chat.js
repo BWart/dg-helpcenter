@@ -148,6 +148,9 @@ function isOverflowDepartmentTresholdReached(selectedDepartmentWaitingTime, over
 //Gets language and changes to uppercase
 function getChatDepartmentLanguage(){
     var chatDepartmentLanguage = getNormalizedLanguage();
+    if (chatDepartmentLanguage.toUpperCase() != "DE"){
+        return "Multilingual"
+    }
     return chatDepartmentLanguage.toUpperCase();
 }
 
@@ -187,14 +190,14 @@ function getChatDepartmentType(){
             chatDepartmentType = getDGChatDepartmentType();
             break;
         case('helpcenter.mobile.galaxus.ch'):
-            chatDepartmentType = 'Connect';
+            chatDepartmentType = 'Galaxus Mobile';
             break;
         case('helpcenter.galaxus.de'):
         case('helpcenter.galaxus.at'):
             chatDepartmentType = 'EU';
             break;
         default:
-            chatDepartmentType = 'Connect';
+            chatDepartmentType = 'Galaxus Mobile';
     }
     return chatDepartmentType;
 }
