@@ -8,25 +8,25 @@ var UTCHourOffset = 2;
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
-var bannerSwitchDE = false;
-var bannerSwitchFR = false;
-var bannerSwitchIT = false;
-var bannerSwitchEN = false;
+var bannerSwitchDE = true;
+var bannerSwitchFR = true;
+var bannerSwitchIT = true;
+var bannerSwitchEN = true;
 
 // --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
 function fillTopBannerWording() {
   var topBannerWording = {
     "outputHeadingBanner": {
-      'de': "Technische Störung",
-      'fr': "Panne technique",
-      'it': "Guasto tecnico",
-      'en-us': "Attention"
+      'de': "Digitec Connect ist neu Galaxus Mobile",
+      'fr': "Galaxus Mobile remplace digitec connect",
+      'it': "digitec connect è ora Galaxus Mobile",
+      'en-US': "digitec connect is now Galaxus Mobile"
     },
     "outputTextBanner": {
-      'de': "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
-      'fr': "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
-      'it': "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-us': "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+      'de': "Hast du  Fragen zu deinen gekauften digitec connect Gutscheinen aus Promotionen findest Informationen dazu in folgenden Artikeln:<br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639614908562' target='blank'>Was passiert mit gekauften Gutscheinen?</a><br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639683064722' target='blank'>Was passiert mit geschenkten Gutscheinen aus Promotionen?</a>",
+      'fr': "Si vous avez des questions sur les bons d'achat digitec connect que vous avez achetés dans le cadre de promotions, vous trouverez des informations à ce sujet dans les articles suivants :<br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639614908562' target='blank'>Que se passe-t-il avec les bons d'achat achetés ?</a><br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639683064722' target='blank'>Que se passe-t-il avec les bons d'achat issus de promotions ?</a>",
+      'it': "Se avete domande sui buoni digitec connect acquistati con le promozioni, potete trovare informazioni nei seguenti articoli:<br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639614908562' target='blank'>Cosa succede ai voucher acquistati?</a><br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639683064722' target='blank'>Cosa succede ai buoni regalo delle promozioni?</a>",
+      'en-US': "If you have questions about your purchased digitec connect vouchers from promotions, you can find information about them in the following articles:<br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639614908562' target='blank'>What happens to purchased vouchers?</a><br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639683064722' target='blank'>What happens to gift vouchers from promotions?</a>"
     }
   }
   return topBannerWording;
@@ -42,17 +42,17 @@ function fillTopBannerWording() {
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2023-02-20 00:00:00', '2023-02-20 22:00:00', 0]
+      ['2023-02-20 00:00:00', '2023-05-04 22:00:00', 0]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-        'de' : '<br>20.02.2023: Ab 16:00 geschlossen',
-        'fr' : "<br>20.02.2023: Fermé à partir de 16:00",
-        'it' : '<br>20.02.2023: Dalle 16:00 chiuso',
-        'en-US' : '<br>20.02.2023: From 16:00 closed',
+        'de' : '<br>Aufgrund unseres hohen Anfragevoluments sind wir zurzeit nur per E-Mail und Chat erreichbar.',
+        'fr' : "",
+        'it' : '',
+        'en-US' : '',
     }
 }
 
