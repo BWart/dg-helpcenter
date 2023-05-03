@@ -7,7 +7,7 @@ function waitForChat(){
         if(gaSend){
             ga('send', 'event', 'Errors', 'ChatInitialLoad', 'undefined load');
           }
-        window.addEventListener('load', function() {
+        window.addEventListener('load', (event) => {
             console.log("enter addEventListener")
             zE('webWidget:on', 'chat:connected', function() {
                 console.log("enter weWidget on chatconnected")
