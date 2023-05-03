@@ -1,34 +1,46 @@
 // Waits until Page loaded and then calls basic Setup
 let customerDepartment = "Chat Private DE"
 function waitForChat(){
+    console.log("entering waitForChat")
     if (typeof zE == "undefined") {
+        console.log("entering undefined if")
         if(gaSend){
             ga('send', 'event', 'Errors', 'ChatInitialLoad', 'undefined load');
           }
         window.addEventListener('load', function() {
+            console.log("enter addEventListener")
             zE('webWidget:on', 'chat:connected', function() {
+                console.log("enter weWidget on chatconnected")
                 openWidgetForUnreadMessages();
                 hideWidgetWhenMinimized();
                 listenDepartmentStatus(customerDepartment);
+                hideChat()
                 if(isChatting()){
+                    console.log("enter isChatting")
                     openChat();
                 }else{
+                    console.log("enter isChatting else")
                     changeWebWidgetSettingInitial(getChatDepartment());
                     hideChat();
                 }
             });
         })
     } else {
+        console.log("entering undefined else")
         if(gaSend){
             ga('send', 'event', 'Errors', 'ChatInitialLoad', 'defined load');
           }
         zE('webWidget:on', 'chat:connected', function() {
+            console.log("enter weWidget on chatconnected")
             openWidgetForUnreadMessages();
             hideWidgetWhenMinimized();
             listenDepartmentStatus(customerDepartment);
+            hideChat()
             if(isChatting()){
+                console.log("enter isChatting")
                 openChat();
             }else{
+                console.log("enter isChatting else")
                 changeWebWidgetSettingInitial(getChatDepartment());
                 hideChat();
             }
