@@ -6,6 +6,27 @@
 <div id="webWidget" class="webWidgetDiv"></div>
 <!--<link rel="icon" type="image/x-icon" href="{{asset 'fav_galaxus.png'}}">-->
 
+<script>
+  window.addEventListener('load', (event) => {
+            console.log("enter addEventListener 2")
+            zE('webWidget:on', 'chat:connected', function() {
+                console.log("enter webWidget on chatconnected")
+                openWidgetForUnreadMessages();
+                hideWidgetWhenMinimized();
+                listenDepartmentStatus(customerDepartment);
+                hideChat()
+                if(isChatting()){
+                    console.log("enter isChatting")
+                    openChat();
+                }else{
+                    console.log("enter isChatting else")
+                    changeWebWidgetSettingInitial(getChatDepartment());
+                    hideChat();
+                }
+            });
+        });
+</script>
+
 <script src="{{asset 'holidaysAndSwitches.js'}}"></script>
 <script src="{{asset 'infoBoxWording.js'}}"></script>
 <script src="{{asset 'dynamicWording.js'}}"></script>
