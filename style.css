@@ -4786,7 +4786,7 @@ html {
 /*Banner*/
 
 .bannerInfo {
-  background: #f67858;
+  background: #fc2;
   float: none;
 }
 
@@ -4815,5 +4815,5 @@ html {
 
 #bannerInfo__text, .bannerInfo__edit,
 .bannerInfo__close > span {
-  color: #ffffff;
+  color: black;
 }
