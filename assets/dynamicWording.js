@@ -48,6 +48,9 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
     let callbackPhoneError1NL = "";
     let callbackPhoneError2NL = "";
 
+    //Anzahl Tage Wartezeit beim Mailform
+    let mailWaitDays = "";
+
     //shopLink
     let shopLink = ""
 
@@ -97,6 +100,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Zwitserse telefoonnummers worden geaccepteerd.';
                 callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)800, (0)84, (0)900, (0)901, (0)906';
 
+                mailWaitDays = "3-4"
+
                 break;
         case 'helpcenter.galaxus.ch':
                 shopLink = "https://www.galaxus.ch/"
@@ -142,6 +147,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Zwitserse telefoonnummers worden geaccepteerd.';
                 callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)800, (0)84, (0)900, (0)901, (0)906';
 
+                mailWaitDays = "3-4"
+
                 break;
         case 'helpcenter.galaxus.de':
                 shopLink = "https://www.galaxus.de/"
@@ -183,6 +190,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Duitse telefoonnummers worden geaccepteerd.';
                 callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)700, (0)800, (0)900';
 
+                mailWaitDays = "1-2"
+
                 break;
         case 'helpcenter.galaxus.at':
                 shopLink = "https://www.galaxus.at/"
@@ -223,6 +232,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError2EN = 'The following area codes are not accepted: (0)700, (0)800, (0)900';
                 callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Oostenrijkse telefoonnummers worden geaccepteerd.';
                 callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)700, (0)800, (0)900';
+
+                mailWaitDays = "1-2"
 
                 break;
         case 'helpcenter.galaxus.fr':
@@ -266,6 +277,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = '';
                 callbackPhoneError2NL = '';
 
+                mailWaitDays = "1-2"
+
                 break;
         case 'helpcenter.galaxus.it':
                 shopLink = "https://www.galaxus.it/"
@@ -307,6 +320,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError2EN = '';
                 callbackPhoneError1NL = '';
                 callbackPhoneError2NL = '';
+
+                mailWaitDays = "1-2"
 
                 break;
         case 'helpcenter.galaxus.be':
@@ -350,6 +365,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = '';
                 callbackPhoneError2NL = '';
 
+                mailWaitDays = "1-2"
+
                 break;
         case 'helpcenter.galaxus.nl':
                 shopLink = "https://www.galaxus.nl/"
@@ -391,6 +408,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError2EN = '';
                 callbackPhoneError1NL = '';
                 callbackPhoneError2NL = '';
+
+                mailWaitDays = "1-2"
 
                 break;
         case 'helpcenter.galaxus.lu':
@@ -434,6 +453,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = '';
                 callbackPhoneError2NL = '';
 
+                mailWaitDays = "1-2"
+
                 break;
         default:
                 shopLink = "https://www.digitec.ch/"
@@ -475,6 +496,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Zwitserse telefoonnummers worden geaccepteerd.';
                 callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)800, (0)84, (0)900, (0)901, (0)906';
 
+                mailWaitDays = "3-4"
+
                 break;
     }
 
@@ -506,8 +529,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'phone' : 'Telefon',
         'chat' : 'Chat',
         'email' : 'Kontaktformular',
-        'emailDescription' : 'Wartezeit <font class="mailWaitTime">1-2</font> Tage',
-        'emailDescriptionMobile' : 'Wartezeit <font class="mailWaitTime">1-2</font> Tage',
+        'emailDescription' : 'Wartezeit ' + mailWaitDays + ' Tage',
+        'emailDescriptionMobile' : 'Wartezeit ' + mailWaitDays + ' Tage',
         'callbackTitle' : 'Wir rufen Dich an',
         'demandCallback' : 'Anruf anfordern',
         //'callbackPhoneNumberHint' : 'Hinweis: Nur Schweizer Telefonnummern werden akzeptiert.',
@@ -592,8 +615,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'phone' : 'Téléphone',
         'chat' : 'Chat',
         'email' : 'Formulaire de contact',
-        'emailDescription' : "Réponse dans 1-2 jours",
-        'emailDescriptionMobile' : "Réponse dans 1-2 jours",
+        'emailDescription' : "Réponse dans " + mailWaitDays + " jours",
+        'emailDescriptionMobile' : "Réponse dans " + mailWaitDays + " jours",
         'callbackTitle' : 'Nous vous appelons',
         'demandCallback' : 'Demander un appel',
         //'callbackPhoneNumberHint' : 'Remarque : seuls les numéros de téléphone suisses sont acceptés.',
@@ -678,8 +701,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'phone' : 'Telefono',
         'chat' : 'Chat',
         'email' : 'Modulo di contatto',
-        'emailDescription' : "Risposta in 1-2 giorni",
-        'emailDescriptionMobile' : "Risposta in 1-2 giorni",
+        'emailDescription' : "Risposta in " + mailWaitDays + " giorni",
+        'emailDescriptionMobile' : "Risposta in " + mailWaitDays + " giorni",
         'callbackTitle' : 'Vi chiamiamo',
         'demandCallback' : 'Richiedi una chiamata',
         //'callbackPhoneNumberHint' : 'Nota: sono accettati solo i numeri di telefono svizzeri.',
@@ -764,8 +787,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'phone' : 'Phone',
         'chat' : 'Chat',
         'email' : 'Contact form',
-        'emailDescription' : "Reply time 1-2 days",
-        'emailDescriptionMobile' : "Reply time 1-2 days",
+        'emailDescription' : "Reply time " + mailWaitDays + " days",
+        'emailDescriptionMobile' : "Reply time " + mailWaitDays + " days",
         'callbackTitle' : 'We call you',
         'demandCallback' : 'Request call',
         //'callbackPhoneNumberHint' : 'Note: Only Swiss phone numbers are accepted.',
@@ -850,8 +873,8 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
             'phone' : 'Telefoon',
             'chat' : 'Chat',
             'email' : 'Contactformulier',
-            'emailDescription' : 'Wachttijd <font class="mailWaitTime">1-2</font> dagen',
-            'emailDescriptionMobile' : 'Wachttijd <font class="mailWaitTime">1-2</font> dagen',
+            'emailDescription' : 'Wachttijd ' + mailWaitDays + ' dagen',
+            'emailDescriptionMobile' : 'Wachttijd ' + mailWaitDays + ' dagen',
             'callbackTitle' : 'We bellen je',
             'demandCallback' : 'Een gesprek aanvragen',
             //'callbackPhoneNumberHint' : 'Hinweis: Nur Schweizer Telefonnummern werden akzeptiert.',

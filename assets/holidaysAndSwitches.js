@@ -4,7 +4,7 @@ var UTCHourOffset = 2;
 
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
-var switchHideContactFormDuringOpeningTimes = false;
+var switchHideContactFormDuringOpeningTimes = true;
 var switchHideContactFormOutsideOpeningTimes = false;
 var switchHideContactFormForPEDuringOpeningTimes = true;
 var switchHideContactFormForPEOutsideOpeningTimes = true;
@@ -288,26 +288,26 @@ var showHolidays = {
 var textToDisplay = {
     // Switzerland
     0 : {
-      'de' : '<br>01.05.2023: 1. Mai, geschlossen<br>17.05.2023: ab 17:00 geschlossen<br>18.05.2023: Auffahrt, geschlossen<br>29.05.2023: Pfingstmontag, geschlossen',
-      'fr' : "<br>01.05.2023 : 1er mai, fermé<br>17.05.2023 : fermé à partir de 17:00<br>18.05.2023 : Ascension, fermé<br>29.05.2023 : Lundi de Pentecôte, fermé",
-      'it' : '<br>01.05.2023: 1 maggio, chiuso<br>17.05.2023: chiuso dalle ore 17:00<br>18.05.2023: Ascensione, chiuso<br>29.05.2023: Lunedì di Pentecoste, chiuso',
-      'en-US' : '<br>01.05.2023: May 1st, closed<br>17.05.2023: closed from 17:00<br>18.05.2023: Ascension, closed<br>29.05.2023: Whit Monday, closed',
+      'de' : '<br>17.05.2023: ab 17:00 geschlossen<br>18.05.2023: Auffahrt, geschlossen<br>29.05.2023: Pfingstmontag, geschlossen',
+      'fr' : "<br>17.05.2023 : fermé à partir de 17:00<br>18.05.2023 : Ascension, fermé<br>29.05.2023 : Lundi de Pentecôte, fermé",
+      'it' : '<br>17.05.2023: chiuso dalle ore 17:00<br>18.05.2023: Ascensione, chiuso<br>29.05.2023: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>17.05.2023: closed from 17:00<br>18.05.2023: Ascension, closed<br>29.05.2023: Whit Monday, closed',
       'nl': ''
     },
     //Germany
     1 : {
-      'de' : '<br>01.05.2023: 1. Mai, geschlossen<br>18.05.2023: Auffahrt, geschlossen<br>29.05.2023: Pfingstmontag, geschlossen',
-      'fr' : "<br>01.05.2023 : 1er mai, fermé<br>18.05.2023 : Ascension, fermé<br>29.05.2023 : Lundi de Pentecôte, fermé",
-      'it' : '<br>01.05.2023: 1 maggio, chiuso<br>18.05.2023: Ascensione, chiuso<br>29.05.2023: Lunedì di Pentecoste, chiuso',
-      'en-US' : '<br>01.05.2023: May 1st, closed<br>18.05.2023: Ascension, closed<br>29.05.2023: Whit Monday, closed',
+      'de' : '<br>18.05.2023: Auffahrt, geschlossen<br>29.05.2023: Pfingstmontag, geschlossen',
+      'fr' : "<br>18.05.2023 : Ascension, fermé<br>29.05.2023 : Lundi de Pentecôte, fermé",
+      'it' : '<br>18.05.2023: Ascensione, chiuso<br>29.05.2023: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>18.05.2023: Ascension, closed<br>29.05.2023: Whit Monday, closed',
       'nl': ''
     },
     //Austria
     2 : {
-      'de' : '<br>01.05.2023: 1. Mai, geschlossen<br>18.05.2023: Auffahrt, geschlossen<br>29.05.2023: Pfingstmontag, geschlossen',
-      'fr' : "<br>01.05.2023 : 1er mai, fermé<br>18.05.2023 : Ascension, fermé<br>29.05.2023 : Lundi de Pentecôte, fermé",
-      'it' : '<br>01.05.2023: 1 maggio, chiuso<br>18.05.2023: Ascensione, chiuso<br>29.05.2023: Lunedì di Pentecoste, chiuso',
-      'en-US' : '<br>01.05.2023: May 1st, closed<br>18.05.2023: Ascension, closed<br>29.05.2023: Whit Monday, closed',
+      'de' : '<br>18.05.2023: Auffahrt, geschlossen<br>29.05.2023: Pfingstmontag, geschlossen',
+      'fr' : "<br>18.05.2023 : Ascension, fermé<br>29.05.2023 : Lundi de Pentecôte, fermé",
+      'it' : '<br>18.05.2023: Ascensione, chiuso<br>29.05.2023: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>18.05.2023: Ascension, closed<br>29.05.2023: Whit Monday, closed',
       'nl': ''
     },
     //France
