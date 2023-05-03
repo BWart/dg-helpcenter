@@ -6,27 +6,6 @@
 <div id="webWidget" class="webWidgetDiv"></div>
 <!--<link rel="icon" type="image/x-icon" href="{{asset 'fav_galaxus.png'}}">-->
 
-<script>
-  window.addEventListener('load', (event) => {
-            console.log("enter addEventListener 2")
-            zE('webWidget:on', 'chat:connected', function() {
-                console.log("enter webWidget on chatconnected")
-                openWidgetForUnreadMessages();
-                hideWidgetWhenMinimized();
-                listenDepartmentStatus(customerDepartment);
-                hideChat()
-                if(isChatting()){
-                    console.log("enter isChatting")
-                    openChat();
-                }else{
-                    console.log("enter isChatting else")
-                    changeWebWidgetSettingInitial(getChatDepartment());
-                    hideChat();
-                }
-            });
-        });
-</script>
-
 <script src="{{asset 'holidaysAndSwitches.js'}}"></script>
 <script src="{{asset 'infoBoxWording.js'}}"></script>
 <script src="{{asset 'dynamicWording.js'}}"></script>
@@ -53,6 +32,19 @@ link.onload = showBody();
       $("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=18dfacef-9aec-49ae-bbe4-0bcd883ef859"/><//script>')
     }   
 //webWidgetDiv.hide()
+///////////////////////////////////////////////////////////////////////Zopim Integration/////////////////////////////////////////////////////////////////
+//Zopim integration Ausgelagert in Chat.js
+let gaSend = false;
+try {
+  waitForChat();
+}
+catch (e) {
+  console.log(e);
+  if(gaSend){
+    ga('send', 'event', 'Errors', 'ChatInitialLoad', String(e));
+  }
+}
+
 $("#customDGStyle").html(link)
 
 function showBody(){
