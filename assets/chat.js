@@ -4,39 +4,47 @@ let customerDepartment = "Chat Private DE"
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
-async function asyncChatLoad(){
-    await sleep(1500)
+async function asyncChatLoad(counter){
+    await sleep(1000)
+    if (counter > 10){
+        return;
+    }
+    if (typeof zE == "undefined"){
+        asyncChatLoad(counter+1);
+        return;
+    }
+    hideChat();
+    asyncChatStart()
 }
-async function asyncChatStart(){
-    console.log("enter asyncChatStart")
-    await sleep(1500)
-    console.log("finished sleeping 1.5 seconds")
+
+async function asyncChatStart(counter){
+    await sleep(1000)
+    if (counter > 10){
+        return;
+    }
+    if (typeof (zE('webWidget:get', 'chat:department', 'Chat Private DE')) == "undefined"){
+        asyncChatStart(counter+1)
+        return;
+    }
     openWidgetForUnreadMessages();
     hideWidgetWhenMinimized();
     listenDepartmentStatus(customerDepartment);
     if(isChatting()){
-        console.log("enter isChatting")
         openChat();
     }else{
-        console.log("enter isChatting else")
         changeWebWidgetSettingInitial(getChatDepartment());
     }
 }
 
 function waitForChat(){
-    console.log("enter waitforchatNew")
     window.addEventListener('load', (event) => {
-        console.log("enter load event listener")
         if (typeof zE == "undefined") {
-            console.log("enter zE undefined")
-            asyncChatLoad()
+            asyncChatLoad(0)
         }
         else {
-            console.log("enter zE defined")
             hideChat();
-            asyncChatStart()
+            asyncChatStart(0)
         }
-        
     })
 }
 
