@@ -425,10 +425,10 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         dynamicWording['fr']['questionNotAnswered'] = 'Choisissez votre canal de contact'
         dynamicWording['it']['questionNotAnswered'] = 'Scegli il tuo canale di contatto'
         dynamicWording['en-US']['questionNotAnswered'] = 'Choose your contact channel'
-        dynamicWording['de']['toShop'] = '<a href="https://www.mobile.galaxus.ch/" target="blank">Zum Shop</a>'
-        dynamicWording['fr']['toShop'] = '<a href="https://www.mobile.galaxus.ch/" target="blank">Vers le Shop</a>'
-        dynamicWording['it']['toShop'] = '<a href="https://www.mobile.galaxus.ch/" target="blank">Al Shop</a>'
-        dynamicWording['en-US']['toShop'] = '<a href="https://www.mobile.galaxus.ch/" target="blank">To Shop</a>'
+        dynamicWording['de']['toShop'] = '<a href="https://mobile.galaxus.ch/" target="blank">Zum Shop</a>'
+        dynamicWording['fr']['toShop'] = '<a href="https://mobile.galaxus.ch/" target="blank">Vers le Shop</a>'
+        dynamicWording['it']['toShop'] = '<a href="https://mobile.galaxus.ch/" target="blank">Al Shop</a>'
+        dynamicWording['en-US']['toShop'] = '<a href="https://mobile.galaxus.ch/" target="blank">To Shop</a>'
     }
 
 
