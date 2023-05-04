@@ -93,28 +93,28 @@ var chatAndPhoneWaitThreshholdToShowContactFormLU = 50000;
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
 //CH
-var bannerSwitchCHDE = true;
-var bannerSwitchCHFR = true;
-var bannerSwitchCHIT = true;
-var bannerSwitchCHEN = true;
-var bannerSwitchCHNL = true;
+var bannerSwitchCHDE = false;
+var bannerSwitchCHFR = false;
+var bannerSwitchCHIT = false;
+var bannerSwitchCHEN = false;
+var bannerSwitchCHNL = false;
 var bannerSwitchConnectDE = false;
 var bannerSwitchConnectFR = false;
 var bannerSwitchConnectIT = false;
 var bannerSwitchConnectEN = false;
 var bannerSwitchConnectNL = false;
 //Germany
-var bannerSwitchDEDE = true;
-var bannerSwitchDEFR = true;
-var bannerSwitchDEIT = true;
-var bannerSwitchDEEN = true;
-var bannerSwitchDENL = true;
+var bannerSwitchDEDE = false;
+var bannerSwitchDEFR = false;
+var bannerSwitchDEIT = false;
+var bannerSwitchDEEN = false;
+var bannerSwitchDENL = false;
 //Austria
-var bannerSwitchATDE = true;
-var bannerSwitchATFR = true;
-var bannerSwitchATIT = true;
-var bannerSwitchATEN = true;
-var bannerSwitchATNL = true;
+var bannerSwitchATDE = false;
+var bannerSwitchATFR = false;
+var bannerSwitchATIT = false;
+var bannerSwitchATEN = false;
+var bannerSwitchATNL = false;
 //France
 var bannerSwitchFRDE = false;
 var bannerSwitchFRFR = false;
