@@ -93,28 +93,28 @@ var chatAndPhoneWaitThreshholdToShowContactFormLU = 50000;
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
 //CH
-var bannerSwitchCHDE = false;
-var bannerSwitchCHFR = false;
-var bannerSwitchCHIT = false;
-var bannerSwitchCHEN = false;
-var bannerSwitchCHNL = false;
+var bannerSwitchCHDE = true;
+var bannerSwitchCHFR = true;
+var bannerSwitchCHIT = true;
+var bannerSwitchCHEN = true;
+var bannerSwitchCHNL = true;
 var bannerSwitchConnectDE = false;
 var bannerSwitchConnectFR = false;
 var bannerSwitchConnectIT = false;
 var bannerSwitchConnectEN = false;
 var bannerSwitchConnectNL = false;
 //Germany
-var bannerSwitchDEDE = false;
-var bannerSwitchDEFR = false;
-var bannerSwitchDEIT = false;
-var bannerSwitchDEEN = false;
-var bannerSwitchDENL = false;
+var bannerSwitchDEDE = true;
+var bannerSwitchDEFR = true;
+var bannerSwitchDEIT = true;
+var bannerSwitchDEEN = true;
+var bannerSwitchDENL = true;
 //Austria
-var bannerSwitchATDE = false;
-var bannerSwitchATFR = false;
-var bannerSwitchATIT = false;
-var bannerSwitchATEN = false;
-var bannerSwitchATNL = false;
+var bannerSwitchATDE = true;
+var bannerSwitchATFR = true;
+var bannerSwitchATIT = true;
+var bannerSwitchATEN = true;
+var bannerSwitchATNL = true;
 //France
 var bannerSwitchFRDE = false;
 var bannerSwitchFRFR = false;
@@ -153,13 +153,15 @@ function fillTopBannerWording(){
       'de' : "Technische Störung",
       'fr' : "Panne technique",
       'it' : "Guasto tecnico",
-      'en-US' : "Attention"
+      'en-US' : "Attention",
+      'nl' : ""
     },
     "outputTextBannerCH" : {
       'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
       'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
       'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request.",
+      'nl' : ""
     },
     "outputHeadingBannerDE" : {
       'de' : "Technische Störung",
@@ -171,79 +173,92 @@ function fillTopBannerWording(){
       'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
       'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
       'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request.",
+      'nl' : ""
     },
     "outputHeadingBannerAT" : {
       'de' : "Technische Störung",
       'fr' : "Panne techniqe",
       'it' : "Guasto tecnico",
-      'en-US' : "Technical issue"
+      'en-US' : "Technical issue",
+      'nl' : ""
     },
     "outputTextBannerAT" : {
       'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
       'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
       'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request.",
+      'nl' : ""
     },
     "outputHeadingBannerFR" : {
       'de' : "Technische Störung",
       'fr' : "Panne techniqe",
       'it' : "Guasto tecnico",
-      'en-US' : "Technical issue"
+      'en-US' : "Technical issue",
+      'nl' : ""
     },
     "outputTextBannerFR" : {
       'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
       'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
       'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request.",
+      'nl' : ""
     },
     "outputHeadingBannerIT" : {
       'de' : "Technische Störung",
       'fr' : "Panne techniqe",
       'it' : "Guasto tecnico",
-      'en-US' : "Technical issue"
+      'en-US' : "Technical issue",
+      'nl' : ""
     },
     "outputTextBannerIT" : {
       'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
       'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
       'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request.",
+      'nl' : ""
     },
     "outputHeadingBannerBE" : {
       'de' : "Technische Störung",
       'fr' : "Panne techniqe",
       'it' : "Guasto tecnico",
-      'en-US' : "Technical issue"
+      'en-US' : "Technical issue",
+      'nl' : ""
     },
     "outputTextBannerBE" : {
       'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
       'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
       'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request.",
+      'nl' : ""
     },
     "outputHeadingBannerNL" : {
       'de' : "Technische Störung",
       'fr' : "Panne techniqe",
       'it' : "Guasto tecnico",
-      'en-US' : "Technical issue"
+      'en-US' : "Technical issue",
+      'nl' : ""
     },
     "outputTextBannerNL" : {
       'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
       'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
       'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request.",
+      'nl' : ""
     },
     "outputHeadingBannerLU" : {
       'de' : "Technische Störung",
       'fr' : "Panne techniqe",
       'it' : "Guasto tecnico",
-      'en-US' : "Technical issue"
+      'en-US' : "Technical issue",
+      'nl' : ""
     },
     "outputTextBannerLU" : {
       'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
       'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
       'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request."
+      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request.",
+      'nl' : ""
     }
     }
       return topBannerWording;
