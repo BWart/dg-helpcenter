@@ -1,6 +1,46 @@
 // Waits until Page loaded and then calls basic Setup
 let customerDepartment = "Chat Private DE"
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function asyncChatLoad(){
+    await sleep(1500)
+}
+async function asyncChatStart(){
+    console.log("enter asyncChatStart")
+    await sleep(1500)
+    console.log("finished sleeping 1.5 seconds")
+    openWidgetForUnreadMessages();
+    hideWidgetWhenMinimized();
+    listenDepartmentStatus(customerDepartment);
+    if(isChatting()){
+        console.log("enter isChatting")
+        openChat();
+    }else{
+        console.log("enter isChatting else")
+        changeWebWidgetSettingInitial(getChatDepartment());
+    }
+}
+
 function waitForChat(){
+    console.log("enter waitforchatNew")
+    window.addEventListener('load', (event) => {
+        console.log("enter load event listener")
+        if (typeof zE == "undefined") {
+            console.log("enter zE undefined")
+            asyncChatLoad()
+        }
+        else {
+            console.log("enter zE defined")
+            hideChat();
+            asyncChatStart()
+        }
+        
+    })
+}
+
+/*function waitForChat(){
     console.log("entering waitForChat")
     if (typeof zE == "undefined") {
         console.log("entering undefined if")
@@ -46,7 +86,7 @@ function waitForChat(){
             }
         });
     }
-}
+}*/
 
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
 //Initial WebWebidget Settings

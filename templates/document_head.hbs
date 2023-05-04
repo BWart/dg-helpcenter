@@ -32,18 +32,6 @@ link.onload = showBody();
       $("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=18dfacef-9aec-49ae-bbe4-0bcd883ef859"/><//script>')
     }   
 //webWidgetDiv.hide()
-///////////////////////////////////////////////////////////////////////Zopim Integration/////////////////////////////////////////////////////////////////
-//Zopim integration Ausgelagert in Chat.js
-let gaSend = false;
-try {
-  waitForChat();
-}
-catch (e) {
-  console.log(e);
-  if(gaSend){
-    ga('send', 'event', 'Errors', 'ChatInitialLoad', String(e));
-  }
-}
 
 $("#customDGStyle").html(link)
 
