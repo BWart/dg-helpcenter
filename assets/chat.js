@@ -1,40 +1,100 @@
 // Waits until Page loaded and then calls basic Setup
 let customerDepartment = "Chat Private DE"
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function asyncChatLoad(counter){
+    await sleep(1000)
+    if (counter > 10){
+        return;
+    }
+    if (typeof zE == "undefined"){
+        asyncChatLoad(counter+1);
+        return;
+    }
+    hideChat();
+    asyncChatStart()
+}
+
+async function asyncChatStart(counter){
+    await sleep(1000)
+    if (counter > 10){
+        return;
+    }
+    if (typeof (zE('webWidget:get', 'chat:department', 'Chat Private DE')) == "undefined"){
+        asyncChatStart(counter+1)
+        return;
+    }
+    openWidgetForUnreadMessages();
+    hideWidgetWhenMinimized();
+    listenDepartmentStatus(customerDepartment);
+    if(isChatting()){
+        openChat();
+    }else{
+        changeWebWidgetSettingInitial(getChatDepartment());
+    }
+}
+
 function waitForChat(){
+    window.addEventListener('load', (event) => {
+        if (typeof zE == "undefined") {
+            asyncChatLoad(0)
+        }
+        else {
+            hideChat();
+            asyncChatStart(0)
+        }
+    })
+}
+
+/*function waitForChat(){
+    console.log("entering waitForChat")
     if (typeof zE == "undefined") {
+        console.log("entering undefined if")
         if(gaSend){
             ga('send', 'event', 'Errors', 'ChatInitialLoad', 'undefined load');
           }
-        window.addEventListener('load', function() {
+        window.addEventListener('load', (event) => {
+            console.log("enter addEventListener")
             zE('webWidget:on', 'chat:connected', function() {
+                console.log("enter weWidget on chatconnected")
                 openWidgetForUnreadMessages();
                 hideWidgetWhenMinimized();
                 listenDepartmentStatus(customerDepartment);
+                hideChat()
                 if(isChatting()){
+                    console.log("enter isChatting")
                     openChat();
                 }else{
+                    console.log("enter isChatting else")
                     changeWebWidgetSettingInitial(getChatDepartment());
                     hideChat();
                 }
             });
         })
     } else {
+        console.log("entering undefined else")
         if(gaSend){
             ga('send', 'event', 'Errors', 'ChatInitialLoad', 'defined load');
           }
         zE('webWidget:on', 'chat:connected', function() {
+            console.log("enter weWidget on chatconnected")
             openWidgetForUnreadMessages();
             hideWidgetWhenMinimized();
             listenDepartmentStatus(customerDepartment);
+            hideChat()
             if(isChatting()){
+                console.log("enter isChatting")
                 openChat();
             }else{
+                console.log("enter isChatting else")
                 changeWebWidgetSettingInitial(getChatDepartment());
                 hideChat();
             }
         });
     }
-}
+}*/
 
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
 //Initial WebWebidget Settings
