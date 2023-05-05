@@ -4785,20 +4785,35 @@ html {
 
 /*Banner*/
 
+
 .bannerInfo {
-  background: #f67858;
+  background: #fc2;
   float: none;
+}
+.bannerInfo a{
+  color:#755915;
+  text-decoration: underline;
+}
+.bannerInfo a:hover{
+  color:black;
+  text-decoration: underline;
 }
 
 .bannerInfo__content {
   padding: 16px;
   max-width: 500px;
-  margin-left: 35%;
-  margin-right: 35%;
   display: flex;
   align-items: center;
-  width: 50%;
-  
+  margin-left: 35%;
+  margin-right: 35%;
+  width: 80%;
+}
+@media (max-width: 804px) {
+  .bannerInfo__content {
+    margin-left: 0%;
+    margin-right: 0%;
+    width: 95%;
+  }
 }
 
 #bannerInfo__text {
@@ -4815,5 +4830,5 @@ html {
 
 #bannerInfo__text, .bannerInfo__edit,
 .bannerInfo__close > span {
-  color: #ffffff;
+  color: black;
 }
