@@ -100,7 +100,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Zwitserse telefoonnummers worden geaccepteerd.';
                 callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)800, (0)84, (0)900, (0)901, (0)906';
 
-                mailWaitDays = "3-4"
+                mailWaitDays = "1-2"
 
                 break;
         case 'helpcenter.galaxus.ch':
@@ -147,7 +147,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Zwitserse telefoonnummers worden geaccepteerd.';
                 callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)800, (0)84, (0)900, (0)901, (0)906';
 
-                mailWaitDays = "3-4"
+                mailWaitDays = "1-2"
 
                 break;
         case 'helpcenter.galaxus.de':
@@ -496,7 +496,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Zwitserse telefoonnummers worden geaccepteerd.';
                 callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)800, (0)84, (0)900, (0)901, (0)906';
 
-                mailWaitDays = "3-4"
+                mailWaitDays = "1-2"
 
                 break;
     }
