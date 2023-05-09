@@ -49,8 +49,8 @@ var showHolidays = {
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-        'de' : '<br>Aufgrund unseres hohen Anfragevolumens sind wir zurzeit nur per E-Mail und Chat erreichbar.',
-        'fr' : "",
+        'de' : '',
+        'fr' : '',
         'it' : '',
         'en-US' : '',
     }
