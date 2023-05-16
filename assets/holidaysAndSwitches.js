@@ -42,7 +42,7 @@ function fillTopBannerWording() {
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2023-02-20 00:00:00', '2023-05-08 22:00:00', 0]
+      ['2023-04-27 00:00:00', '2023-05-29 22:00:00', 0]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
