@@ -49,10 +49,10 @@ var showHolidays = {
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-        'de' : '',
-        'fr' : '',
-        'it' : '',
-        'en-US' : '',
+      'de' : '<br>17.05.2023: ab 17:00 geschlossen<br>18.05.2023: Auffahrt, geschlossen<br>29.05.2023: Pfingstmontag, geschlossen',
+      'fr' : "<br>17.05.2023 : fermé à partir de 17:00<br>18.05.2023 : Ascension, fermé<br>29.05.2023 : Lundi de Pentecôte, fermé",
+      'it' : '<br>17.05.2023: chiuso dalle ore 17:00<br>18.05.2023: Ascensione, chiuso<br>29.05.2023: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>17.05.2023: closed from 17:00<br>18.05.2023: Ascension, closed<br>29.05.2023: Whit Monday, closed'
     }
 }
 
