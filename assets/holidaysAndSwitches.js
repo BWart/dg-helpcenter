@@ -49,7 +49,7 @@ var showHolidays = {
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-      'de' : '<br>Aufgrund unseres hohen Anfragevoluments sind wir zurzeit nur per E-Mail und Chat erreichbar<br>29.05.2023: Pfingstmontag, geschlossen',
+      'de' : '<br>Aufgrund unseres hohen Anfragevolumens sind wir zurzeit nur per E-Mail und Chat erreichbar<br>29.05.2023: Pfingstmontag, geschlossen',
       'fr' : "<br>29.05.2023 : Lundi de Pentecôte, fermé",
       'it' : '<br>29.05.2023: Lunedì di Pentecoste, chiuso',
       'en-US' : '<br>29.05.2023: Whit Monday, closed'
