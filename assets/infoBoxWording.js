@@ -12,6 +12,7 @@ function fillInfoBoxWording() {
       let hp7 = "";
       let hp8 = "";
       let offerte = "";
+      let agbWikiNumber = "";
 
       let seite = "";
       let shopLinkName = "";
@@ -36,6 +37,8 @@ function fillInfoBoxWording() {
                   hp7 = "/360000452549";
                   hp8 = "/9229492228114";
 
+                  agbWikiNumber = "478";
+
                   offerte = "CHF 5'000.-";
                   break;
             case 'helpcenter.galaxus.ch':
@@ -53,6 +56,8 @@ function fillInfoBoxWording() {
                   hp6 = "/360007334059";
                   hp7 = "/360014471940";
                   hp8 = "/9229468573714";
+
+                  agbWikiNumber = "478";
 
                   offerte = "CHF 5'000.-";
                   break;
@@ -72,6 +77,8 @@ function fillInfoBoxWording() {
                   hp7 = "/360008226499";
                   hp8 = "/9229681720466";
 
+                  agbWikiNumber = "5589";
+
                   offerte = "EUR 5'000.-";
                   break;
             case 'helpcenter.galaxus.at':
@@ -89,6 +96,8 @@ function fillInfoBoxWording() {
                   hp6 = "/4407011198994";
                   hp7 = "/4407007830674";
                   hp8 = "/9229717842962";
+
+                  agbWikiNumber = "6031";
 
                   offerte = "EUR 5'000.-";
                   break;
@@ -108,6 +117,8 @@ function fillInfoBoxWording() {
                   hp7 = "/7706724974866";
                   hp8 = "/9232516283026";
 
+                  agbWikiNumber = "6123";
+
                   offerte = "EUR 5'000.-";
                   break;
             case 'helpcenter.galaxus.it':
@@ -125,6 +136,8 @@ function fillInfoBoxWording() {
                   hp6 = "/8177762450066";
                   hp7 = "/8177794011666";
                   hp8 = "/9249985259154";
+
+                  agbWikiNumber = "6135";
 
                   offerte = "EUR 5'000.-";
                   break;
@@ -144,6 +157,8 @@ function fillInfoBoxWording() {
                   hp7 = "/8471528329618";
                   hp8 = "/9979919377810";
 
+                  agbWikiNumber = "6141";
+
                   offerte = "EUR 5'000.-";
                   break;
             case 'helpcenter.galaxus.nl':
@@ -161,6 +176,8 @@ function fillInfoBoxWording() {
                   hp6 = "/8178008143634";
                   hp7 = "/8178022947858";
                   hp8 = "/9979883676818";
+
+                  agbWikiNumber = "6141";
 
                   offerte = "EUR 5'000.-";
                   break;
@@ -180,6 +197,8 @@ function fillInfoBoxWording() {
                   hp7 = "/10145019165970";
                   hp8 = "/10145019814674";
 
+                  agbWikiNumber = "6141";
+
                   offerte = "EUR 5'000.-";
                   break;
             default:
@@ -197,6 +216,8 @@ function fillInfoBoxWording() {
                   hp6 = "/115005646085";
                   hp7 = "/360000452549";
                   hp8 = "/9229492228114";
+
+                  agbWikiNumber = "478";
 
                   offerte = "CHF 5'000.-";
                   break;
@@ -270,11 +291,11 @@ function fillInfoBoxWording() {
                   'nl': "U kunt uw transportschade binnen 8 dagen na ontvangst <a href='" + shopURL + "after-sales' target='blank'>aanmelden als defect product</a>."
             },
             "webform_case_not_working_product": {
-                  'de': "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "wiki/559' target='blank'>Garantierichtlinien</a> sowie in unseren <a href='" + shopURL + "Wiki/478' target='blank'>AGBs</a>.",
-                  'fr': "Si un produit est défectueux et s'il peut être pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + shopURL + "after-sales' target='blank'>signaler un défaut</a>.<br><br>Les dommages causés par une utilisation inappropriée ne sont pas couverts par la garantie. Vous trouverez un complément d'information concernant ce point dans nos <a href='" + shopURL + "wiki/559' target='blank'>conditions de garantie</a> et <a href='" + shopURL + "Wiki/478' target='blank'>CGV</a>.",
-                  'it': "Se un prodotto è difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + shopURL + "after-sales' target='blank'>segnala un difetto</a>.<br><br>I danni dovuti ad un uso improprio non sono coperti dalla garanzia. Puoi trovare ulteriori informazioni nelle nostre <a href='" + shopURL + "wiki/559' target='blank'>condizioni di garanzia</a> e nelle <a href='" + shopURL + "Wiki/478' target='blank'>CGC</a>.",
-                  'en-US': "Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + shopURL + "after-sales' target='blank'>report a defect</a>.<br><br>Damage caused by incorrect use is not covered by the warranty. For more information, see our <a href='" + shopURL + "wiki/559' target='blank'>warranty policy</a> and our <a href='" + shopURL + "Wiki/478' target='blank'>terms and conditions</a>.",
-                  'nl': "Als een product defect is en het een garantiegeval betreft, moet u een <a href='" + shopURL + "after-sales' target='blank'>defect registreren</a> in uw klantenaccount.<br><br>Schade veroorzaakt door oneigenlijk gebruik valt niet onder de garantie. Meer informatie vindt u in ons <a href='" + shopURL + "wiki/559' target='blank'>garantiebeleid</a> en in onze <a href='" + shopURL + "Wiki/478' target='blank'>algemene voorwaarden</a>."
+                  'de': "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "wiki/559' target='blank'>Garantierichtlinien</a> sowie in unseren <a href='" + shopURL + "Wiki/" + agbWikiNumber + "' target='blank'>AGBs</a>.",
+                  'fr': "Si un produit est défectueux et s'il peut être pris en charge par la garantie, vous devez aller dans votre compte client pour <a href='" + shopURL + "after-sales' target='blank'>signaler un défaut</a>.<br><br>Les dommages causés par une utilisation inappropriée ne sont pas couverts par la garantie. Vous trouverez un complément d'information concernant ce point dans nos <a href='" + shopURL + "wiki/559' target='blank'>conditions de garantie</a> et <a href='" + shopURL + "Wiki/" + agbWikiNumber + "' target='blank'>CGV</a>.",
+                  'it': "Se un prodotto è difettoso e se si tratta di un caso coperto dalla garanzia, devi notificare il danno tramite il tuo conto cliente alla voce <a href='" + shopURL + "after-sales' target='blank'>segnala un difetto</a>.<br><br>I danni dovuti ad un uso improprio non sono coperti dalla garanzia. Puoi trovare ulteriori informazioni nelle nostre <a href='" + shopURL + "wiki/559' target='blank'>condizioni di garanzia</a> e nelle <a href='" + shopURL + "Wiki/" + agbWikiNumber + "' target='blank'>CGC</a>.",
+                  'en-US': "Should a product prove defective and constitute a warranty claim, go to your customer account and <a href='" + shopURL + "after-sales' target='blank'>report a defect</a>.<br><br>Damage caused by incorrect use is not covered by the warranty. For more information, see our <a href='" + shopURL + "wiki/559' target='blank'>warranty policy</a> and our <a href='" + shopURL + "Wiki/" + agbWikiNumber + "' target='blank'>terms and conditions</a>.",
+                  'nl': "Als een product defect is en het een garantiegeval betreft, moet u een <a href='" + shopURL + "after-sales' target='blank'>defect registreren</a> in uw klantenaccount.<br><br>Schade veroorzaakt door oneigenlijk gebruik valt niet onder de garantie. Meer informatie vindt u in ons <a href='" + shopURL + "wiki/559' target='blank'>garantiebeleid</a> en in onze <a href='" + shopURL + "Wiki/" + agbWikiNumber + "' target='blank'>algemene voorwaarden</a>."
             },
             "webform_case_wrong_product": {
                   'de': "Damit wir dein Anliegen rasch prüfen können, stelle uns die Herstellernummer oder den EAN-Code (Strichcode) des falsch erhaltenen Produkt zur Verfügung. Der EAN-Code befindet sich auf der Produktverpackung und dient dazu ein Produkt zweifelsfrei zu identifizieren. Er besteht aus einem Strichcode, respektive Barcode, und 13 Ziffern:<div style=width:100%;text-align:center;max-height:55px;overflow:hidden;'><img style='width:200px;' src='https://helpcenter.galaxus.ch/hc/article_attachments/4410101322642/ean13.gif'/></div>",
@@ -593,7 +614,7 @@ function fillInfoBoxWording() {
 
       //TODO: ÜBERSETZUNG IT+FR+EN+NL
       if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at') {
-            infoBoxWording['webform_case_not_working_product']['de'] = "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "wiki/5547' target='blank'>Gewährleistungsinformationen</a> sowie in unseren <a href='" + shopURL + "Wiki/478' target='blank'>AGBs</a>.";
+            infoBoxWording['webform_case_not_working_product']['de'] = "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales/service-cases/register' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "wiki/5547' target='blank'>Gewährleistungsinformationen</a> sowie in unseren <a href='" + shopURL + "Wiki/" + agbWikiNumber + "' target='blank'>AGBs</a>.";
             infoBoxWording['webform_case_shipping_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br>Leider kann ein Paket auch mal etwas länger unterwegs sein oder es landet bei deinem Nachbarn. Sollte das Paket auch nach ein paar Tagen nicht auftauchen, leiten wir gerne eine Nachforschung ein.<br><br><b>Momentan ist unser Versandpartner DHL mit den Lieferungen leider im Verzug. Bitte kontaktiere unseren Kundenservice nur, falls sich dein Paket seit <i>5 oder mehr Tagen</i> immer noch im Transport befindet.</b>";
             infoBoxWording['webform_case_order_status']['de'] = "Die aktuellen Informationen zum Lieferstatus deiner Produkte findest du in der <a href='" + shopURL + "Order' target='blank'>Bestellübersicht</a> in deinem Kundenkonto. Zudem findest du dort die Sendungsnummer deines Pakets.<br><br><b>Momentan ist unser Versandpartner DHL mit den Lieferungen leider im Verzug. Bitte kontaktiere unseren Kundenservice nur, falls sich dein Paket seit <i>5 oder mehr Tagen</i> immer noch im Transport befindet.</b>";
             infoBoxWording['webform_case_payment_reminder']['de'] = "Es kann bis zu fünf Werktage dauern, bis deine Zahlung in unserem System verbucht wird. Deshalb kann es sein, dass sich die Mahnung/Zahlungserinnerung mit deiner Zahlung überschnitten hat. In diesem Fall kannst du die Mahnung ignorieren.<br>Weitere Möglichkeiten woran es liegen kann findest du unter <a href='" + helpcenterURL + "articles" + hp6 + "' target='blank'>Warum habe ich eine Zahlungserinnerung erhalten, obwohl ich bezahlt habe?</a>.";
