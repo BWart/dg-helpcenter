@@ -255,6 +255,13 @@
   // General variables
   // Following variables are already defined elsewhere: portal, currentLanguage
   let fullLink = window.location.href;
+
+  if (fullLink.slice(-12) == "requests/new"){
+    if ((portal != "helpcenter.digitec.ch" && portal != "helpcenter.galaxus.ch") || currentLanguage == "de" || currentLanguage == "it") {
+      window.location.href = fullLink + "?ticket_form_id=39231"
+    }
+  }
+
   let customerType = setCustomerType();  //the function also removes offers for private customers in the dropdown selection
   let infoBoxWording = fillInfoBoxWording();
   let dynamicWording = filldynamicWording();
