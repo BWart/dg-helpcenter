@@ -49,7 +49,7 @@ var showHolidays = {
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-      'de' : '<br>29.05.2023: Pfingstmontag, geschlossen',
+      'de' : '<br>Aufgrund unseres hohen Anfragevoluments sind wir zurzeit nur per E-Mail und Chat erreichbar<br>29.05.2023: Pfingstmontag, geschlossen',
       'fr' : "<br>29.05.2023 : Lundi de Pentecôte, fermé",
       'it' : '<br>29.05.2023: Lunedì di Pentecoste, chiuso',
       'en-US' : '<br>29.05.2023: Whit Monday, closed'
@@ -68,7 +68,7 @@ var hideWaitingTimes = {
 
 //OPENING HOURS
 const openingHours = {
-  "helpcenter.mobile.galaxus.ch": {"weekday": [[11, 0, 12, 0], [13, 0, 17, 0]], "saturday": []},
+  "helpcenter.mobile.galaxus.ch": {"weekday": [[8, 0, 12, 0], [13, 0, 17, 0]], "saturday": []},
 }
 
 
