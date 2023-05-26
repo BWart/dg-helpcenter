@@ -463,7 +463,7 @@
   if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (!isInOpeningTimes() || isHoliday())){
     callbackButton = $('.callback-number-offline')
     callbackButtonMobile = $('.callback-number-offline-mobile')
-  } else if ((portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at") && (!isInOpeningTimes() || isHoliday())){
+  } else if ((portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at") && (!isInOpeningTimes() || !isInOpeningTimesWithoutSaturday() || isHoliday())){
     callbackButton = $('.callback-number-offline')
     callbackButtonMobile = $('.callback-number-offline-mobile')
   }
@@ -1075,6 +1075,9 @@
   function changeWaitTimeHTML(seconds, elements){
       if (callbackCheck()){
         callbackWaitTimesDOMElements.show();
+        if ((portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at") && !isInOpeningTimesWithoutSaturday()) {
+          callbackWaitTimesDOMElements.hide()
+        }
         callWaitTimesDOMElements.hide();
         $('.phone-number').hide()
         callbackButton.show()
