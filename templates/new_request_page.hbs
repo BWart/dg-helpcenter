@@ -1384,6 +1384,10 @@
           tempPhoneWaitThreshholdToShowContactForm = phoneWaitThreshholdToShowContactFormEU;
           tempChatWaitThreshholdToShowContactForm = chatWaitThreshholdToShowContactFormEU;
           tempChatAndPhoneWaitThreshholdToShowContactForm = chatAndPhoneWaitThreshholdToShowContactFormEU;
+          if (currentLanguage == "en-US"){
+            tempSwitchHidePhoneDuringOpening = true;
+            tempSwitchHidePhoneOutsideOpening = true;
+          }
           break;
         case 'helpcenter.galaxus.fr':
           isOpen = isInOpeningTimes();
