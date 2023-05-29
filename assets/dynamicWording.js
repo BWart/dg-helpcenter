@@ -163,7 +163,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2NL = " | Za ";  //WICHTIG: braucht leading " | " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "09:00 - 17:00 (Chat)";
                 uhrzeitPrivatkundePe = "08:00 - 19:00";
@@ -206,7 +206,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " | " wenn befüllt
                 tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
-                tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2NL = " | Za ";  //WICHTIG: braucht leading " | " wenn befüllt
                 uhrzeitPrivatkunde = "08:00 - 19:00";
                 uhrzeitPrivatkunde2 = "09:00 - 17:00 (Chat)";
                 uhrzeitPrivatkundePe = "08:00 - 19:00";
