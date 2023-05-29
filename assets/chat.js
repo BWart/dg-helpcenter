@@ -243,6 +243,9 @@ function getChatDepartmentLanguage(){
         //return "EN"
         return "Multilingual"
     }
+    if ((portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at") && chatDepartmentLanguage.toUpperCase() == "EN"){
+        return "DE"
+    }
     return chatDepartmentLanguage.toUpperCase();
 }
 
