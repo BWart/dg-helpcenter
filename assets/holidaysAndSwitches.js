@@ -42,17 +42,17 @@ function fillTopBannerWording() {
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2023-04-27 00:00:00', '2023-05-29 22:00:00', 0]
+      ['2023-04-27 00:00:00', '2023-06-30 22:00:00', 0]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-      'de' : '<br>Aufgrund unseres hohen Anfragevolumens sind wir zurzeit nur per E-Mail und Chat erreichbar<br>29.05.2023: Pfingstmontag, geschlossen',
-      'fr' : "<br>29.05.2023 : Lundi de Pentecôte, fermé",
-      'it' : '<br>29.05.2023: Lunedì di Pentecoste, chiuso',
-      'en-US' : '<br>29.05.2023: Whit Monday, closed'
+      'de' : '<br>Aufgrund unseres hohen Anfragevolumens sind wir zurzeit nur per E-Mail und Chat erreichbar',
+      'fr' : "",
+      'it' : '',
+      'en-US' : ''
     }
 }
 
