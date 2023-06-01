@@ -71,8 +71,12 @@ function callbackCheck(){
     if (enteredRGNumber.length < 5){
       invoiceLink = "None"
     }
+    let tempLanguage = currentLanguage;
+    if (tempLanguage == "en-us"){
+      tempLanguage = "en"
+    }
     var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\nOrder: " + orderLink + " \nInvoice: " + invoiceLink + "\nRequest Reason: " + compiledSubject + " \n -- \ninteraction_id: "
-    var ticketTags = "callback_request voice " + requestReasonTag + " talkdesk_interaction_"
+    var ticketTags = "callback_request voice " + requestReasonTag + " " + tempLanguage + " talkdesk_interaction_"
     var baseOrderLink = ""
     var baseRGLink = baseERPLink + "Invoice/"
     var custName = enteredMail.split("@")[0].replace(".", " ")
