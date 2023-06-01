@@ -123,6 +123,9 @@ function callbackCheck(){
       case 'it':
         customerLocale = "22"
         break;
+      case 'nl':
+        customerLocale = "1005"
+        break;
       default:
         customerLocale = "1"
         break;
@@ -137,6 +140,9 @@ function callbackCheck(){
         break;
       case 'it':
         callbackPerLang = "Richiamo"
+        break;
+      case 'nl':
+        callbackPerLang = "Callback"
         break;
       default:
         callbackPerLang = "Callback"
@@ -154,8 +160,12 @@ function callbackCheck(){
     if (enteredRGNumber.length < 5){
       invoiceLink = "None"
     }
+    let tempLanguage = currentLanguage;
+    if (tempLanguage == "en-us"){
+      tempLanguage = "en"
+    }
     var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\nOrder: " + orderLink + " \nInvoice: " + invoiceLink + "\nRequest Reason: " + compiledSubject + " \n -- \ninteraction_id: "
-    var ticketTags = "callback_request voice " + requestReasonTag + brandTag + " talkdesk_interaction_"
+    var ticketTags = "callback_request voice " + requestReasonTag + brandTag + " " + tempLanguage + " talkdesk_interaction_"
     var baseOrderLink = baseERPLink + "Order/"
     var baseRGLink = baseERPLink + "Invoice/"
     var custName = enteredMail.split("@")[0].replace(".", " ")
