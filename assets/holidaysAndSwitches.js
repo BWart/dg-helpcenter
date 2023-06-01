@@ -13,20 +13,33 @@ var bannerSwitchFR = false;
 var bannerSwitchIT = false;
 var bannerSwitchEN = false;
 
+let userAgentString = navigator.userAgent;
+console.log(userAgentString)
+let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+let safariAgent = userAgentString.indexOf("Safari") > -1;
+if ((chromeAgent) && (safariAgent)) {safariAgent = false};
+
+if (safariAgent && window.location.href.includes('requests')){
+  bannerSwitchDE = true;
+  bannerSwitchFR = true;
+  bannerSwitchIT = true;
+  bannerSwitchEN = true;
+}
+
 // --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
 function fillTopBannerWording() {
   var topBannerWording = {
     "outputHeadingBanner": {
-      'de': "Digitec Connect ist neu Galaxus Mobile",
-      'fr': "Galaxus Mobile remplace digitec connect",
-      'it': "digitec connect è ora Galaxus Mobile",
-      'en-US': "digitec connect is now Galaxus Mobile"
+      'de': "Technische Probleme Safari",
+      'fr': "Problèmes techniques Safari",
+      'it': "Problemi tecnici Safari",
+      'en-US': "Safari technical problems"
     },
     "outputTextBanner": {
-      'de': "Falls du Fragen zu deinen gekauften digitec connect Gutscheinen aus Promotionen hast findest du Informationen dazu in folgenden Artikeln:<br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639614908562' target='blank'>Was passiert mit gekauften Gutscheinen?</a><br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639683064722' target='blank'>Was passiert mit geschenkten Gutscheinen aus Promotionen?</a>",
-      'fr': "Si vous avez des questions sur les bons d'achat digitec connect que vous avez achetés dans le cadre de promotions, vous trouverez des informations à ce sujet dans les articles suivants :<br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639614908562' target='blank'>Que se passe-t-il avec les bons d'achat achetés ?</a><br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639683064722' target='blank'>Que se passe-t-il avec les bons d'achat issus de promotions ?</a>",
-      'it': "Se avete domande sui buoni digitec connect acquistati con le promozioni, potete trovare informazioni nei seguenti articoli:<br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639614908562' target='blank'>Cosa succede ai voucher acquistati?</a><br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639683064722' target='blank'>Cosa succede ai buoni regalo delle promozioni?</a>",
-      'en-US': "If you have questions about your purchased digitec connect vouchers from promotions, you can find information about them in the following articles:<br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639614908562' target='blank'>What happens to purchased vouchers?</a><br><a href='https://helpcenter.mobile.galaxus.ch/hc/articles/10639683064722' target='blank'>What happens to gift vouchers from promotions?</a>"
+      'de': "Aufgrund technischer Probleme funktioniert unser Chat aktuell leider auf Safari nicht. Falls du uns per Chat kontaktieren willst, verwende bitte einen anderen Browser wie Chrome oder Firefox.",
+      'fr': "En raison de problèmes techniques, notre chat ne fonctionne malheureusement pas actuellement sur Safari. Si vous souhaitez nous contacter par chat, utilise un autre navigateur comme Chrome ou Firefox.",
+      'it': "A causa di problemi tecnici, la nostra chat non funziona attualmente su Safari. Se volete contattarci via chat, utilizzate un altro browser come Chrome o Firefox.",
+      'en-US': "Due to technical issues, our chat is currently unfortunately not working on Safari. If you want to contact us via chat, please use another browser like Chrome or Firefox."
     }
   }
   return topBannerWording;
