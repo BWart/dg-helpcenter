@@ -17,6 +17,8 @@ let userAgentString = navigator.userAgent;
 console.log(userAgentString)
 let chromeAgent = userAgentString.indexOf("Chrome") > -1;
 let safariAgent = userAgentString.indexOf("Safari") > -1;
+let IExplorerAgent = userAgentString.indexOf("MSIE") > -1 || userAgentString.indexOf("rv") > -1;
+let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 if ((chromeAgent) && (safariAgent)) {safariAgent = false};
 
 if (safariAgent && window.location.href.includes('requests')){
