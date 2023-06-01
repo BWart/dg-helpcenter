@@ -13,7 +13,7 @@ var bannerSwitchFR = false;
 var bannerSwitchIT = false;
 var bannerSwitchEN = false;
 
-let userAgentString = navigator.userAgent;
+/*let userAgentString = navigator.userAgent;
 console.log(userAgentString)
 let chromeAgent = userAgentString.indexOf("Chrome") > -1;
 let safariAgent = userAgentString.indexOf("Safari") > -1;
@@ -26,7 +26,7 @@ if (safariAgent && window.location.href.includes('requests')){
   bannerSwitchFR = true;
   bannerSwitchIT = true;
   bannerSwitchEN = true;
-}
+}*/
 
 // --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
 function fillTopBannerWording() {
