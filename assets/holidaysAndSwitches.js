@@ -146,6 +146,41 @@ var bannerSwitchLUIT = false;
 var bannerSwitchLUEN = false;
 var bannerSwitchLUNL = false;
 
+let userAgentString = navigator.userAgent;
+console.log(userAgentString)
+let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+let safariAgent = userAgentString.indexOf("Safari") > -1;
+let IExplorerAgent = userAgentString.indexOf("MSIE") > -1 || userAgentString.indexOf("rv") > -1;
+let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
+if ((chromeAgent) && (safariAgent)) {safariAgent = false};
+
+if (safariAgent && window.location.href.includes('requests')){
+  /*bannerSwitchCHDE = true;
+  bannerSwitchCHFR = true;
+  bannerSwitchCHIT = true;
+  bannerSwitchCHEN = true;
+  bannerSwitchCHNL = true;*/
+}
+
+// --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
+function fillTopBannerWording() {
+  var topBannerWording = {
+    "outputHeadingBanner": {
+      'de': "Technische Probleme Safari",
+      'fr': "Problèmes techniques Safari",
+      'it': "Problemi tecnici Safari",
+      'en-US': "Safari technical problems"
+    },
+    "outputTextBanner": {
+      'de': "Aufgrund technischer Probleme funktioniert unser Chat aktuell leider auf Safari nicht. Falls du uns per Chat kontaktieren willst, verwende bitte einen anderen Browser wie Chrome oder Firefox.",
+      'fr': "En raison de problèmes techniques, notre chat ne fonctionne malheureusement pas actuellement sur Safari. Si vous souhaitez nous contacter par chat, utilise un autre navigateur comme Chrome ou Firefox.",
+      'it': "A causa di problemi tecnici, la nostra chat non funziona attualmente su Safari. Se volete contattarci via chat, utilizzate un altro browser come Chrome o Firefox.",
+      'en-US': "Due to technical issues, our chat is currently unfortunately not working on Safari. If you want to contact us via chat, please use another browser like Chrome or Firefox."
+    }
+  }
+  return topBannerWording;
+}
+
 // --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
 function fillTopBannerWording(){
     topBannerWording = {
