@@ -324,7 +324,7 @@
   let callbackButtonClicked = false;
   callbackButton.hide();
   callbackButtonMobile.hide();
-  if (/*(!isInOpeningTimes() || isHoliday())*/true){
+  if ((!isInOpeningTimes() || isHoliday())){
     callbackButton = $('.callback-number-offline')
     callbackButtonMobile = $('.callback-number-offline-mobile')
   }
@@ -894,7 +894,7 @@
               }
           }
       }
-      callbackWaitTimesDOMElements.hide()
+      //callbackWaitTimesDOMElements.hide()
   }
 
   //Returns true or false for holidays
