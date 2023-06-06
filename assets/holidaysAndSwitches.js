@@ -28,6 +28,18 @@ if (safariAgent && window.location.href.includes('requests')){
   bannerSwitchEN = true;
 }*/
 
+//These currently only affect German language; if effecting other languages is needed edit function reorderContactChannels() in new_request_page.hbs
+let switchHideContactFormDuringOpeningTimes = true;
+let switchHideContactFormOutsideOpeningTimes = false;
+let switchHidePhoneDuringOpeningTimes = false;
+let switchHidePhoneOutsideOpeningTimes = false;
+let switchHideChatDuringOpeningTimes = false;
+let switchHideChatOutsideOpeningTimes = false;
+//THESE ARE NOT NET IMPLEMENTED ON GALAXUS MOBILE; ADD TO FUNCTION REORDERCONTACTCHANNELS() IN NEW_REQUEST_PAGE.HBS IF FEATURE IS REQUESTED
+/*let phoneWaitThreshholdToShowContactForm = 50000;
+let chatWaitThreshholdToShowContactForm = 50000;
+let chatAndPhoneWaitThreshholdToShowContactForm = 50000;*/
+
 // --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
 function fillTopBannerWording() {
   var topBannerWording = {

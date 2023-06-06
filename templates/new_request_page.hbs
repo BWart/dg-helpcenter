@@ -919,8 +919,20 @@
     let contactChannelCall = true;
     let contactChannelMail = true;
 
+    if (isInOpeningTimes()){
+      contactChannelChat = !switchHideChatDuringOpeningTimes;
+      contactChannelCall = !switchHidePhoneDuringOpeningTimes;
+      contactChannelMail = !switchHideContactFormDuringOpeningTimes;
+    } else {
+      contactChannelChat = !switchHideChatOutsideOpeningTimes;
+      contactChannelCall = !switchHidePhoneOutsideOpeningTimes;
+      contactChannelMail = !switchHideContactFormOutsideOpeningTimes;
+    }
+
     if (currentLanguage != "de") {
       contactChannelCall = false;
+      contactChannelMail = true;
+      contactChannelChat = true;
     }
         
 
