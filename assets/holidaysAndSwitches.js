@@ -6,7 +6,7 @@ var UTCHourOffset = 2;
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
 var switchHideContactFormDuringOpeningTimes = false;
 var switchHideContactFormOutsideOpeningTimes = false;
-var switchHideContactFormForPEDuringOpeningTimes = true;
+var switchHideContactFormForPEDuringOpeningTimes = false;
 var switchHideContactFormForPEOutsideOpeningTimes = true;
 var switchHideContactFormForBusinessDuringOpeningTimes = false;
 var switchHideContactFormForBusinessOutsideOpeningTimes = false;
@@ -42,13 +42,13 @@ var switchHidePhoneForNLOutsideOpeningTimes = true;
 var switchHidePhoneForLUDuringOpeningTimes = true;
 var switchHidePhoneForLUOutsideOpeningTimes = true;
 //set to true if the Chat should be hidden, set to false if it should be displayed
-var switchHideChatDuringOpeningTimes = true;
+var switchHideChatDuringOpeningTimes = false;
 var switchHideChatOutsideOpeningTimes = false;
 var switchHideChatForPEDuringOpeningTimes = true;
 var switchHideChatForPEOutsideOpeningTimes = false;
-var switchHideChatForBusinessDuringOpeningTimes = true;
+var switchHideChatForBusinessDuringOpeningTimes = false;
 var switchHideChatForBusinessOutsideOpeningTimes = false;
-var switchHideChatForEUDuringOpeningTimes = true;
+var switchHideChatForEUDuringOpeningTimes = false;
 var switchHideChatForEUOutsideOpeningTimes = false;
 var switchHideChatForFRDuringOpeningTimes = true;
 var switchHideChatForFROutsideOpeningTimes = true;
@@ -154,7 +154,7 @@ let IExplorerAgent = userAgentString.indexOf("MSIE") > -1 || userAgentString.ind
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 if ((chromeAgent) && (safariAgent)) {safariAgent = false};
 
-if (window.location.href.includes('requests')){
+/*if (window.location.href.includes('requests')){
   //CH
 bannerSwitchCHDE = true;
 bannerSwitchCHFR = true;
@@ -173,7 +173,7 @@ bannerSwitchATFR = true;
 bannerSwitchATIT = true;
 bannerSwitchATEN = true;
 bannerSwitchATNL = true;
-}
+}*/
 
 // --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
 function fillTopBannerWording(){
