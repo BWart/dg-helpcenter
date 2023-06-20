@@ -203,7 +203,7 @@ function fillTopBannerWording(){
       'de' : "Aufgrund einer technischen Störung steht unser Live-Chat aktuell nicht zur Verfügung. Du kannst uns aber weiterhin per Telefon und Kontaktformular kontaktieren.",
       'fr' : "En raison d'un dysfonctionnement technique, notre chat en direct n'est pas disponible pour le moment. Cependant, vous pouvez toujours nous contacter par téléphone et via le formulaire de contact.",
       'it' : "A causa di un problema tecnico, la nostra live chat non è attualmente disponibile. Tuttavia, è ancora possibile contattarci tramite telefono e modulo di contatto.",
-      'en-US' : "Due to a technical malfunction, our live chat is currently not available. However, you can still contact us via phone and contact form.",
+      'en-US' : "Due to a technical malfunction, our live chat is currently not available. However, you can still contact us via contact form.",
       'nl' : "Vanwege een technisch probleem is onze live chat momenteel niet beschikbaar. U kunt echter nog steeds contact met ons opnemen via de telefoon en het contactformulier."
     },
     "outputHeadingBannerAT" : {
@@ -217,7 +217,7 @@ function fillTopBannerWording(){
       'de' : "Aufgrund einer technischen Störung steht unser Live-Chat aktuell nicht zur Verfügung. Du kannst uns aber weiterhin per Telefon und Kontaktformular kontaktieren.",
       'fr' : "En raison d'un dysfonctionnement technique, notre chat en direct n'est pas disponible pour le moment. Cependant, vous pouvez toujours nous contacter par téléphone et via le formulaire de contact.",
       'it' : "A causa di un problema tecnico, la nostra live chat non è attualmente disponibile. Tuttavia, è ancora possibile contattarci tramite telefono e modulo di contatto.",
-      'en-US' : "Due to a technical malfunction, our live chat is currently not available. However, you can still contact us via phone and contact form.",
+      'en-US' : "Due to a technical malfunction, our live chat is currently not available. However, you can still contact us via contact form.",
       'nl' : "Vanwege een technisch probleem is onze live chat momenteel niet beschikbaar. U kunt echter nog steeds contact met ons opnemen via de telefoon en het contactformulier."
     },
     "outputHeadingBannerFR" : {
