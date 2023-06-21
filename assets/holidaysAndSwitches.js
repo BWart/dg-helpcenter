@@ -44,7 +44,7 @@ var switchHidePhoneForLUOutsideOpeningTimes = true;
 //set to true if the Chat should be hidden, set to false if it should be displayed
 var switchHideChatDuringOpeningTimes = false;
 var switchHideChatOutsideOpeningTimes = false;
-var switchHideChatForPEDuringOpeningTimes = true;
+var switchHideChatForPEDuringOpeningTimes = false;
 var switchHideChatForPEOutsideOpeningTimes = false;
 var switchHideChatForBusinessDuringOpeningTimes = false;
 var switchHideChatForBusinessOutsideOpeningTimes = false;
