@@ -6,7 +6,7 @@ var UTCHourOffset = 2;
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
 var switchHideContactFormDuringOpeningTimes = false;
 var switchHideContactFormOutsideOpeningTimes = false;
-var switchHideContactFormForPEDuringOpeningTimes = false;
+var switchHideContactFormForPEDuringOpeningTimes = true;
 var switchHideContactFormForPEOutsideOpeningTimes = true;
 var switchHideContactFormForBusinessDuringOpeningTimes = false;
 var switchHideContactFormForBusinessOutsideOpeningTimes = false;
@@ -44,7 +44,7 @@ var switchHidePhoneForLUOutsideOpeningTimes = true;
 //set to true if the Chat should be hidden, set to false if it should be displayed
 var switchHideChatDuringOpeningTimes = false;
 var switchHideChatOutsideOpeningTimes = false;
-var switchHideChatForPEDuringOpeningTimes = false;
+var switchHideChatForPEDuringOpeningTimes = true;
 var switchHideChatForPEOutsideOpeningTimes = false;
 var switchHideChatForBusinessDuringOpeningTimes = false;
 var switchHideChatForBusinessOutsideOpeningTimes = false;
