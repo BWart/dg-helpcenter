@@ -11,6 +11,7 @@ function fillInfoBoxWording() {
       let hp6 = "";
       let hp7 = "";
       let hp8 = "";
+      let hp = "";
       let offerte = "";
       let agbWikiNumber = "";
 
@@ -36,6 +37,7 @@ function fillInfoBoxWording() {
                   hp6 = "/115005646085";
                   hp7 = "/360000452549";
                   hp8 = "/9229492228114";
+                  hp9 = "/360000010699";
 
                   agbWikiNumber = "478";
 
@@ -56,6 +58,7 @@ function fillInfoBoxWording() {
                   hp6 = "/360007334059";
                   hp7 = "/360014471940";
                   hp8 = "/9229468573714";
+                  hp9 = "/360007333959";
 
                   agbWikiNumber = "478";
 
@@ -76,6 +79,7 @@ function fillInfoBoxWording() {
                   hp6 = "/360010182760";
                   hp7 = "/360008226499";
                   hp8 = "/9229681720466";
+                  hp9 = "/360008142520";
 
                   agbWikiNumber = "5589";
 
@@ -96,6 +100,7 @@ function fillInfoBoxWording() {
                   hp6 = "/4407011198994";
                   hp7 = "/4407007830674";
                   hp8 = "/9229717842962";
+                  hp9 = "/4407067390610";
 
                   agbWikiNumber = "6031";
 
@@ -116,6 +121,7 @@ function fillInfoBoxWording() {
                   hp6 = "/7971569619602";
                   hp7 = "/7706724974866";
                   hp8 = "/9232516283026";
+                  hp9 = "/7971613275794";
 
                   agbWikiNumber = "6123";
 
@@ -136,6 +142,7 @@ function fillInfoBoxWording() {
                   hp6 = "/8177762450066";
                   hp7 = "/8177794011666";
                   hp8 = "/9249985259154";
+                  hp9 = "/8177794311954";
 
                   agbWikiNumber = "6135";
 
@@ -156,6 +163,7 @@ function fillInfoBoxWording() {
                   hp6 = "/8471544448530";
                   hp7 = "/8471528329618";
                   hp8 = "/9979919377810";
+                  hp9 = "/8471544580754";
 
                   agbWikiNumber = "6141";
 
@@ -176,6 +184,7 @@ function fillInfoBoxWording() {
                   hp6 = "/8178008143634";
                   hp7 = "/8178022947858";
                   hp8 = "/9979883676818";
+                  hp9 = "/8178023245586";
 
                   agbWikiNumber = "6141";
 
@@ -196,26 +205,28 @@ function fillInfoBoxWording() {
                   hp6 = "/10145019437202";
                   hp7 = "/10145019165970";
                   hp8 = "/10145019814674";
+                  hp9 = ""
 
                   agbWikiNumber = "6141";
 
                   offerte = "EUR 5'000.-";
                   break;
             default:
-                  shopURL = "https://www.digitec.ch/";
+                  shopURL = "https://www.galaxus.ch/";
 
-                  helpcenterURL = "https://helpcenter.digitec.ch/hc/";
-                  seite = "digitec";
-                  shopLinkName = "digitec.ch"
+                  helpcenterURL = "https://helpcenter.galaxus.ch/hc/";
+                  seite = "Galaxus";
+                  shopLinkName = "galaxus.ch"
 
-                  hp1 = "/115005646225";
-                  hp2 = "/360012370979";
-                  hp3 = "/360014638579";
-                  hp4 = "/360010272859";
-                  hp5 = "/360012795199";
-                  hp6 = "/115005646085";
-                  hp7 = "/360000452549";
-                  hp8 = "/9229492228114";
+                  hp1 = "/360007334359";
+                  hp2 = "/360012372239";
+                  hp3 = "/360007333839";
+                  hp4 = "/360010180420";
+                  hp5 = "/360012690580";
+                  hp6 = "/360007334059";
+                  hp7 = "/360014471940";
+                  hp8 = "/9229468573714";
+                  hp9 = "/360007333959";
 
                   agbWikiNumber = "478";
 
@@ -383,6 +394,18 @@ function fillInfoBoxWording() {
                   'en-US': "Our payment deadline is 20 days after the invoice is issued. Generally, this deadline cannot be extended. Of course, we understand that invoices are occasionally overlooked. For this reason, we send a reminder after the payment deadline has expired. The reminder will state the date of the new payment deadline. We cannot extend this final deadline.<br><br>The best way forward is to transfer the amount straight away to avoid any extra charges. There is no need for you to send us a confirmation of payment.",
                   'nl': "De betalingstermijn bedraagt 20 dagen en kan over het algemeen niet worden verlengd. Natuurlijk kan het voorkomen dat een factuur een keer over het hoofd wordt gezien. Daarom sturen wij na het verstrijken van de betalingstermijn een betalingsherinnering. De betalingsherinnering vermeldt de periode waarvoor de termijn is verlengd. Deze termijn kan over het algemeen niet worden verlengd.<br><br>Om extra kosten te voorkomen, moet u het openstaande bedrag onmiddellijk betalen. U hoeft de betaling niet te bevestigen."
             },
+            "webform_case_voucher": {
+                  'de': "Du hast Fragen zum Einlösen eines Gutscheins? Detaillierte Informationen findest du <a href='" + helpcenterURL + "articles" + hp9 + "' target='blank'>hier</a>.<br><br>Brauchst du weitere Hilfe oder Unterstützung, kontaktiere unseren Kundendienst.",
+                  'fr': "Vous avez des questions sur l'utilisation d'un bon ? Vous trouverez des informations détaillées <a href='" + helpcenterURL + "articles" + hp9 + "' target='blank'>ici</a>.<br><br>Si vous avez besoin d'aide ou d'assistance, veuillez contacter notre service clientèle.",
+                  'it': "Avete domande sul riscatto di un buono? Potete trovare informazioni dettagliate <a href='" + helpcenterURL + "articles" + hp9 + "' target='blank'>qui</a>.<br><br>Se avete bisogno di ulteriore aiuto o assistenza, contattate il nostro servizio clienti.",
+                  'en-US': "Do you have questions about redeeming a voucher? You can find detailed information <a href='" + helpcenterURL + "articles" + hp9 + "' target='blank'>here</a>.<br><br>If you need further help or assistance, please contact our customer service.",
+                  'nl': "Heb je vragen over het inwisselen van een voucher? <a href='" + helpcenterURL + "articles" + hp9 + "' target='blank'>Hier</a> vindt u gedetailleerde informatie.<br><br>Als u verdere hulp of assistentie nodig heeft, neem dan contact op met onze klantenservice.",
+                  'deMailTemplate': "",
+                  'frMailTemplate': "",
+                  'itMailTemplate': "",
+                  "en-USMailTemplate": "",
+                  "nlMailTemplate": ""
+            },
 
             //LEVEL 0: Kundenkonto
             "webform_case_delete_account": {
@@ -464,21 +487,6 @@ function fillInfoBoxWording() {
                   'it': "Le domande su un prodotto già disponibile su " + seite + " possono essere scritte direttamente sulla relativa pagina del prodotto. La nostra comunità vi risponderà entro poche ore. La cosa migliore: tutti beneficiano del vostro contributo :-)<br><br>Clicca qui per la <a href='" + shopURL + "community' target='blank'>comunità</a>.",
                   'en-US': "You can enter questions about products that are already available on " + seite + " directly on its product page. Our Community answers within a few hours. Additionally: everyone benefits from your contribution :-)<br><br>Click here to go to the <a href='" + shopURL + "community' target='blank'>Community</a>.",
                   'nl': "U kunt vragen stellen over een product dat al beschikbaar is op " + seite + " direct op de betreffende productpagina. Onze gemeenschap zal u binnen enkele uren antwoorden. Bovendien profiteert iedereen van uw bijdrage :-)<br><br>Klik hier om <a href='" + shopURL + "community' target='blank'>naar de community te gaan</a>."
-            },
-
-            //LEVEL 0: Gutscheine einlösen
-            "webform_case_voucher": {
-                  'de': "Dein Gutscheincode wurde aus technischen Gründen gesperrt und durch einene neuen Code ersetzt? Der neue Code befindet sich im Benutzerkonto des Käufers unter <a href='" + shopURL + "coupon' target='blank'>Geschenkgutscheine</a>.<br><br>Brauchst du weitere Hilfe oder Unterstützung, kontaktiere unseren Kundendienst.",
-                  'fr': "Votre code de bon a été bloqué pour des raisons techniques et remplacé par un nouveau code ? Le nouveau code se trouve dans le compte de l'acheteur, sous la rubrique <a href='" + shopURL + "coupon' target='blank'>Bons d'achat</a>.<br><br>Si vous avez besoin d'aide ou d'assistance, veuillez contacter notre service clientèle.",
-                  'it': "Il codice del vostro buono è stato bloccato per motivi tecnici e sostituito con un nuovo codice? Il nuovo codice si trova nell'account dell'acquirente alla voce <a href='" + shopURL + "coupon' target='blank'>Buoni regalo</a>.<br><br>Se avete bisogno di ulteriore aiuto o assistenza, contattate il nostro servizio clienti.",
-                  'en-US': "Your voucher code has been blocked for technical reasons and replaced with a new code? The new code can be found in the buyer's account under <a href='" + shopURL + "coupon' target='blank'>Vouchers</a>.<br><br>If you need further help or assistance, please contact our customer service.",
-                  'nl': "Uw tegoedboncode is om technische redenen geblokkeerd en vervangen door een nieuwe code? De nieuwe code is te vinden in de account van de koper onder <a href='" + shopURL + "coupon' target='blank'>Cadeaubonnen</a>.<br><br>Als u verdere hulp of assistentie nodig heeft, neem dan contact op met onze klantenservice.",
-                  'deMailTemplate': "Gutscheincode: \nUrsprünglicher Käufer des Gutscheins: \n",
-                  'frMailTemplate': "Code de bon d'achat : \nAcheteur initial du bon : \n",
-                  'itMailTemplate': "Codice del buono: \nAcquirente originale del buono: \n",
-                  "en-USMailTemplate": "Voucher code: \nOriginal purchaser of the voucher: \n",
-                  "nlMailTemplate": "Vouchercode: \nOorspronkelijke koper van de bon: \n"
-            
             },
 
             //LEVEL 0: Offerte
