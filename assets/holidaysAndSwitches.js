@@ -154,7 +154,7 @@ let IExplorerAgent = userAgentString.indexOf("MSIE") > -1 || userAgentString.ind
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 if ((chromeAgent) && (safariAgent)) {safariAgent = false};
 
-/*if (window.location.href.includes('requests')){
+if (window.location.href.includes('requests') && safariAgent){
   //CH
 bannerSwitchCHDE = true;
 bannerSwitchCHFR = true;
@@ -173,52 +173,52 @@ bannerSwitchATFR = true;
 bannerSwitchATIT = true;
 bannerSwitchATEN = true;
 bannerSwitchATNL = true;
-}*/
+}
 
 // --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
 function fillTopBannerWording(){
     topBannerWording = {
     "outputHeadingBannerCH" : {
-      'de' : "Technische Probleme Chat",
-      'fr' : "Problèmes techniques Chat",
-      'it' : "Problemi tecnici Chat",
-      'en-US' : "Technical Issues with Chat",
-      'nl' : "Technische problemen Chat"
+      'de' : "Technische Probleme Chat in Safari",
+      'fr' : "Problèmes techniques Chat dans Safari",
+      'it' : "Problemi tecnici Chat in Safari",
+      'en-US' : "Technical Issues Chat with Safari",
+      'nl' : "Technische problemen Chat in Safari"
     },
     "outputTextBannerCH" : {
-      'de' : "Aufgrund einer technischen Störung steht unser Live-Chat aktuell nicht zur Verfügung. Du kannst uns aber weiterhin per Telefon und Kontaktformular kontaktieren.",
-      'fr' : "En raison d'un dysfonctionnement technique, notre chat en direct n'est pas disponible pour le moment. Cependant, vous pouvez toujours nous contacter par téléphone et via le formulaire de contact.",
-      'it' : "A causa di un problema tecnico, la nostra live chat non è attualmente disponibile. Tuttavia, è ancora possibile contattarci tramite telefono e modulo di contatto.",
-      'en-US' : "Due to a technical malfunction, our live chat is currently not available. However, you can still contact us via phone and contact form.",
-      'nl' : "Vanwege een technisch probleem is onze live chat momenteel niet beschikbaar. U kunt echter nog steeds contact met ons opnemen via de telefoon en het contactformulier."
+      'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
+      'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
+      'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
+      'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
+      'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
     },
     "outputHeadingBannerDE" : {
-      'de' : "Technische Probleme Chat",
-      'fr' : "Problèmes techniques Chat",
-      'it' : "Problemi tecnici Chat",
-      'en-US' : "Technical Issues with Chat",
-      'nl' : "Technische problemen Chat"
+      'de' : "Technische Probleme Chat in Safari",
+      'fr' : "Problèmes techniques Chat dans Safari",
+      'it' : "Problemi tecnici Chat in Safari",
+      'en-US' : "Technical Issues Chat with Safari",
+      'nl' : "Technische problemen Chat in Safari"
     },
     "outputTextBannerDE" : {
-      'de' : "Aufgrund einer technischen Störung steht unser Live-Chat aktuell nicht zur Verfügung. Du kannst uns aber weiterhin per Telefon und Kontaktformular kontaktieren.",
-      'fr' : "En raison d'un dysfonctionnement technique, notre chat en direct n'est pas disponible pour le moment. Cependant, vous pouvez toujours nous contacter par téléphone et via le formulaire de contact.",
-      'it' : "A causa di un problema tecnico, la nostra live chat non è attualmente disponibile. Tuttavia, è ancora possibile contattarci tramite telefono e modulo di contatto.",
-      'en-US' : "Due to a technical malfunction, our live chat is currently not available. However, you can still contact us via contact form.",
-      'nl' : "Vanwege een technisch probleem is onze live chat momenteel niet beschikbaar. U kunt echter nog steeds contact met ons opnemen via de telefoon en het contactformulier."
+      'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
+      'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
+      'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
+      'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
+      'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
     },
     "outputHeadingBannerAT" : {
-      'de' : "Technische Probleme Chat",
-      'fr' : "Problèmes techniques Chat",
-      'it' : "Problemi tecnici Chat",
-      'en-US' : "Technical Issues with Chat",
-      'nl' : "Technische problemen Chat"
+      'de' : "Technische Probleme Chat in Safari",
+      'fr' : "Problèmes techniques Chat dans Safari",
+      'it' : "Problemi tecnici Chat in Safari",
+      'en-US' : "Technical Issues Chat with Safari",
+      'nl' : "Technische problemen Chat in Safari"
     },
     "outputTextBannerAT" : {
-      'de' : "Aufgrund einer technischen Störung steht unser Live-Chat aktuell nicht zur Verfügung. Du kannst uns aber weiterhin per Telefon und Kontaktformular kontaktieren.",
-      'fr' : "En raison d'un dysfonctionnement technique, notre chat en direct n'est pas disponible pour le moment. Cependant, vous pouvez toujours nous contacter par téléphone et via le formulaire de contact.",
-      'it' : "A causa di un problema tecnico, la nostra live chat non è attualmente disponibile. Tuttavia, è ancora possibile contattarci tramite telefono e modulo di contatto.",
-      'en-US' : "Due to a technical malfunction, our live chat is currently not available. However, you can still contact us via contact form.",
-      'nl' : "Vanwege een technisch probleem is onze live chat momenteel niet beschikbaar. U kunt echter nog steeds contact met ons opnemen via de telefoon en het contactformulier."
+      'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
+      'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
+      'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
+      'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
+      'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
     },
     "outputHeadingBannerFR" : {
       'de' : "Technische Störung",
