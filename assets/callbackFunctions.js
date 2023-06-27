@@ -23,7 +23,7 @@ function callbackCheck(){
     var customerLocale = ""
     var customerSearchLink = ""
     customerTypeShorthand = "connect"
-    brandId = "9685289814674" //Galaxus Mobile
+    brandID = "9685289814674" //Galaxus Mobile
     groupID = "9631731442450" //Callback Requests Connect
     //groupID = "360003887000"  //Connect Privatkunden
     //groupID = "360003882299"  //Connect Firmenkunden
