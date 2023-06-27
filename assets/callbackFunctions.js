@@ -1,5 +1,6 @@
 function callbackCheck(){
-    //return false;
+  console.log("ENTER CALLBACKCHECK")
+    return false;
     //CallbackCheck Private CH
     if (reasonsForCallback.indexOf(requestReasonTag) >= 0 && localStorage.getItem("callbackGroup5") == "true" && customerType == "private-customer" && (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch')){
       //console.log("callbackcheck private true")
