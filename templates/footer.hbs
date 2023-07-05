@@ -12,6 +12,6 @@
 if(window.location.hostname == "helpcenter.connect.digitec.ch"){
   $('.contactFormLink').attr("href", "/hc/requests/new?ticket_form_id=360002056120");
 }else{
-  $('.contactFormLink').attr("href", "/hc/requests/new");
+  $('.contactFormLink').attr("href", "/hc/" + currentLanguage.toLowerCase() + "/requests/new");
 }
 </script>
