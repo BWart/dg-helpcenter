@@ -5,6 +5,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 async function asyncChatLoad(counter){
+    console.log("calling asyncChatLoad")
     await sleep(1000)
     if (counter > 10){
         return;
@@ -18,6 +19,7 @@ async function asyncChatLoad(counter){
 }
 
 async function asyncChatStart(counter){
+    console.log("calling asyncChatStart")
     await sleep(1000)
     if (counter > 10){
         return;
@@ -37,6 +39,7 @@ async function asyncChatStart(counter){
 }
 
 function waitForChat(){
+    console.log("calling waitForChat")
     window.addEventListener('load', (event) => {
         if (typeof zE == "undefined") {
             asyncChatLoad(0)
