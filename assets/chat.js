@@ -24,6 +24,7 @@ async function asyncChatStart(counter){
     if (counter > 10){
         return;
     }
+    console.log(zE('webWidget:get', 'chat:department', 'Chat Private DE'))
     if (typeof (zE('webWidget:get', 'chat:department', 'Chat Private DE')) == "undefined"){
         asyncChatStart(counter+1)
         return;
