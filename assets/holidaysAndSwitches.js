@@ -153,6 +153,7 @@ let safariAgent = userAgentString.indexOf("Safari") > -1;
 let IExplorerAgent = userAgentString.indexOf("MSIE") > -1 || userAgentString.indexOf("rv") > -1;
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 if ((chromeAgent) && (safariAgent)) {safariAgent = false};
+safariAgent = false;
 
 if (window.location.href.includes('requests') && safariAgent){
   //CH
