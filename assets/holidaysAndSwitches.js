@@ -8,11 +8,11 @@ var UTCHourOffset = 2;
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
-var bannerSwitchDE = false;
-var bannerSwitchFR = false;
-var bannerSwitchIT = false;
-var bannerSwitchEN = false;
-var bannerSwitchNL = false;
+var bannerSwitchDE = true;
+var bannerSwitchFR = true;
+var bannerSwitchIT = true;
+var bannerSwitchEN = true;
+var bannerSwitchNL = true;
 
 let userAgentString = navigator.userAgent;
 console.log(userAgentString)
