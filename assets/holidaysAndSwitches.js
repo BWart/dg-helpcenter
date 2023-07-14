@@ -8,11 +8,11 @@ var UTCHourOffset = 2;
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
-var bannerSwitchDE = true;
-var bannerSwitchFR = true;
-var bannerSwitchIT = true;
-var bannerSwitchEN = true;
-var bannerSwitchNL = true;
+var bannerSwitchDE = false;
+var bannerSwitchFR = false;
+var bannerSwitchIT = false;
+var bannerSwitchEN = false;
+var bannerSwitchNL = false;
 
 let userAgentString = navigator.userAgent;
 console.log(userAgentString)
@@ -49,8 +49,8 @@ if (safariAgent && window.location.href.includes('requests')){
 //These currently only affect German language; if effecting other languages is needed edit function reorderContactChannels() in new_request_page.hbs
 let switchHideContactFormDuringOpeningTimes = false;
 let switchHideContactFormOutsideOpeningTimes = false;
-let switchHidePhoneDuringOpeningTimes = true;
-let switchHidePhoneOutsideOpeningTimes = true;
+let switchHidePhoneDuringOpeningTimes = false;
+let switchHidePhoneOutsideOpeningTimes = false;
 let switchHideChatDuringOpeningTimes = false;
 let switchHideChatOutsideOpeningTimes = false;
 //THESE ARE NOT NET IMPLEMENTED ON GALAXUS MOBILE; ADD TO FUNCTION REORDERCONTACTCHANNELS() IN NEW_REQUEST_PAGE.HBS IF FEATURE IS REQUESTED
@@ -64,29 +64,28 @@ let chatAndPhoneWaitThreshholdToShowContactForm = 50000;*/
 function fillTopBannerWording() {
   var topBannerWording = {
     "outputHeadingBanner": {
-      /*'de' : "Technische Probleme Chat in Safari",
+      'de' : "Technische Probleme Chat in Safari",
       'fr' : "Problèmes techniques Chat dans Safari",
       'it' : "Problemi tecnici Chat in Safari",
       'en-US' : "Technical Issues Chat with Safari",
-      'nl' : "Technische problemen Chat in Safari"*/
-      'de' : "Technische Probleme Call",
+      'nl' : "Technische problemen Chat in Safari"
+      /*'de' : "Technische Probleme Call",
       'fr' : "Problèmes techniques Appel",
       'it' : "Problemi tecnici Chiamare",
       'en-US' : "Technical Issues Call",
-      'nl' : "Technische problemen Bel"
+      'nl' : "Technische problemen Bel"*/
     },
     "outputTextBanner": {
-      /*'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
+      'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
       'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
       'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
       'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
       'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
-      */
-     'de' : "Aufgrund technischer Probleme steht unsere Telefonleitung temporär nicht zur Verfügung.",
+     /*'de' : "Aufgrund technischer Probleme steht unsere Telefonleitung temporär nicht zur Verfügung.",
      'fr' : "En raison de problèmes techniques, notre ligne téléphonique est temporairement indisponible.",
      'it' : "A causa di problemi tecnici, la nostra linea telefonica non è temporaneamente disponibile.",
      'en-US' : "Due to technical problems our phone line is temporarily unavailable.",
-     'nl' : "Door technische problemen is onze telefoonlijn tijdelijk niet beschikbaar."
+     'nl' : "Door technische problemen is onze telefoonlijn tijdelijk niet beschikbaar."*/
     }
   }
   return topBannerWording;
