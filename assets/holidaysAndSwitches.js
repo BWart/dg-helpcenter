@@ -23,14 +23,14 @@ var switchHideContactFormForNLOutsideOpeningTimes = false;
 var switchHideContactFormForLUDuringOpeningTimes = false;
 var switchHideContactFormForLUOutsideOpeningTimes = false;
 //set to true if the phone number should be hidden, set to false if it should be displayed
-var switchHidePhoneDuringOpeningTimes = true;
-var switchHidePhoneOutsideOpeningTimes = true;
+var switchHidePhoneDuringOpeningTimes = false;
+var switchHidePhoneOutsideOpeningTimes = false;
 var switchHidePhoneForPEDuringOpeningTimes = true;   //THIS IS CURRENTLY VALID ON ALL HELPCENTERS IN CH + EU
 var switchHidePhoneForPEOutsideOpeningTimes = true;  //THIS IS CURRENTLY VALID ON ALL HELPCENTERS IN CH + EU
-var switchHidePhoneForBusinessDuringOpeningTimes = true;
-var switchHidePhoneForBusinessOutsideOpeningTimes = true;
-var switchHidePhoneForEUDuringOpeningTimes = true;
-var switchHidePhoneForEUOutsideOpeningTimes = true;
+var switchHidePhoneForBusinessDuringOpeningTimes = false;
+var switchHidePhoneForBusinessOutsideOpeningTimes = false;
+var switchHidePhoneForEUDuringOpeningTimes = false;
+var switchHidePhoneForEUOutsideOpeningTimes = false;
 var switchHidePhoneForFRDuringOpeningTimes = true;
 var switchHidePhoneForFROutsideOpeningTimes = true;
 var switchHidePhoneForITDuringOpeningTimes = true;
@@ -93,24 +93,24 @@ var chatAndPhoneWaitThreshholdToShowContactFormLU = 50000;
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
 //CH
-var bannerSwitchCHDE = true;
-var bannerSwitchCHFR = true;
-var bannerSwitchCHIT = true;
-var bannerSwitchCHEN = true;
-var bannerSwitchCHNL = true;
-var bannerSwitchConnectDE = true;
-var bannerSwitchConnectFR = true;
-var bannerSwitchConnectIT = true;
-var bannerSwitchConnectEN = true;
-var bannerSwitchConnectNL = true;
+var bannerSwitchCHDE = false;
+var bannerSwitchCHFR = false;
+var bannerSwitchCHIT = false;
+var bannerSwitchCHEN = false;
+var bannerSwitchCHNL = false;
+var bannerSwitchConnectDE = false;
+var bannerSwitchConnectFR = false;
+var bannerSwitchConnectIT = false;
+var bannerSwitchConnectEN = false;
+var bannerSwitchConnectNL = false;
 //Germany
-var bannerSwitchDEDE = true;
+var bannerSwitchDEDE = false;
 var bannerSwitchDEFR = false;
 var bannerSwitchDEIT = false;
 var bannerSwitchDEEN = false;
 var bannerSwitchDENL = false;
 //Austria
-var bannerSwitchATDE = true;
+var bannerSwitchATDE = false;
 var bannerSwitchATFR = false;
 var bannerSwitchATIT = false;
 var bannerSwitchATEN = false;
@@ -180,79 +180,79 @@ bannerSwitchATNL = true;
 function fillTopBannerWording(){
     topBannerWording = {
     "outputHeadingBannerCH" : {
-      /*'de' : "Technische Probleme Chat in Safari",
+      'de' : "Technische Probleme Chat in Safari",
       'fr' : "Problèmes techniques Chat dans Safari",
       'it' : "Problemi tecnici Chat in Safari",
       'en-US' : "Technical Issues Chat with Safari",
-      'nl' : "Technische problemen Chat in Safari"*/
-      'de' : "Technische Probleme Call",
+      'nl' : "Technische problemen Chat in Safari"
+      /*'de' : "Technische Probleme Call",
       'fr' : "Problèmes techniques Appel",
       'it' : "Problemi tecnici Chiamare",
       'en-US' : "Technical Issues Call",
-      'nl' : "Technische problemen Bel"
+      'nl' : "Technische problemen Bel"*/
     },
     "outputTextBannerCH" : {
-      /*'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
+      'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
       'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
       'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
       'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
       'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
-      */
-     'de' : "Aufgrund technischer Probleme steht unsere Telefonleitung temporär nicht zur Verfügung.",
+      
+     /*'de' : "Aufgrund technischer Probleme steht unsere Telefonleitung temporär nicht zur Verfügung.",
      'fr' : "En raison de problèmes techniques, notre ligne téléphonique est temporairement indisponible.",
      'it' : "A causa di problemi tecnici, la nostra linea telefonica non è temporaneamente disponibile.",
      'en-US' : "Due to technical problems our phone line is temporarily unavailable.",
-     'nl' : "Door technische problemen is onze telefoonlijn tijdelijk niet beschikbaar."
+     'nl' : "Door technische problemen is onze telefoonlijn tijdelijk niet beschikbaar."*/
     },
     "outputHeadingBannerDE" : {
-      /*'de' : "Technische Probleme Chat in Safari",
+      'de' : "Technische Probleme Chat in Safari",
       'fr' : "Problèmes techniques Chat dans Safari",
       'it' : "Problemi tecnici Chat in Safari",
       'en-US' : "Technical Issues Chat with Safari",
-      'nl' : "Technische problemen Chat in Safari"*/
-      'de' : "Technische Probleme Call",
+      'nl' : "Technische problemen Chat in Safari"
+      /*'de' : "Technische Probleme Call",
       'fr' : "Problèmes techniques Appel",
       'it' : "Problemi tecnici Chiamare",
       'en-US' : "Technical Issues Call",
-      'nl' : "Technische problemen Bel"
+      'nl' : "Technische problemen Bel"*/
     },
     "outputTextBannerDE" : {
-      /*'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
+      'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
       'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
       'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
       'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
       'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
-      */
+      /*
      'de' : "Aufgrund technischer Probleme steht unsere Telefonleitung temporär nicht zur Verfügung.",
      'fr' : "En raison de problèmes techniques, notre ligne téléphonique est temporairement indisponible.",
      'it' : "A causa di problemi tecnici, la nostra linea telefonica non è temporaneamente disponibile.",
      'en-US' : "Due to technical problems our phone line is temporarily unavailable.",
-     'nl' : "Door technische problemen is onze telefoonlijn tijdelijk niet beschikbaar."
+     'nl' : "Door technische problemen is onze telefoonlijn tijdelijk niet beschikbaar."*/
     },
     "outputHeadingBannerAT" : {
-      /*'de' : "Technische Probleme Chat in Safari",
+      'de' : "Technische Probleme Chat in Safari",
       'fr' : "Problèmes techniques Chat dans Safari",
       'it' : "Problemi tecnici Chat in Safari",
       'en-US' : "Technical Issues Chat with Safari",
-      'nl' : "Technische problemen Chat in Safari"*/
-      'de' : "Technische Probleme Call",
+      'nl' : "Technische problemen Chat in Safari"
+      /*'de' : "Technische Probleme Call",
       'fr' : "Problèmes techniques Appel",
       'it' : "Problemi tecnici Chiamare",
       'en-US' : "Technical Issues Call",
-      'nl' : "Technische problemen Bel"
+      'nl' : "Technische problemen Bel"*/
     },
     "outputTextBannerAT" : {
-      /*'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
+      'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
       'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
       'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
       'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
       'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
-      */
+      /*
      'de' : "Aufgrund technischer Probleme steht unsere Telefonleitung temporär nicht zur Verfügung.",
      'fr' : "En raison de problèmes techniques, notre ligne téléphonique est temporairement indisponible.",
      'it' : "A causa di problemi tecnici, la nostra linea telefonica non è temporaneamente disponibile.",
      'en-US' : "Due to technical problems our phone line is temporarily unavailable.",
-     'nl' : "Door technische problemen is onze telefoonlijn tijdelijk niet beschikbaar."  
+     'nl' : "Door technische problemen is onze telefoonlijn tijdelijk niet beschikbaar." */
     },
     "outputHeadingBannerFR" : {
       'de' : "Technische Störung",
