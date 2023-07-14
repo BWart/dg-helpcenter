@@ -49,8 +49,8 @@ if (safariAgent && window.location.href.includes('requests')){
 //These currently only affect German language; if effecting other languages is needed edit function reorderContactChannels() in new_request_page.hbs
 let switchHideContactFormDuringOpeningTimes = false;
 let switchHideContactFormOutsideOpeningTimes = false;
-let switchHidePhoneDuringOpeningTimes = false;
-let switchHidePhoneOutsideOpeningTimes = false;
+let switchHidePhoneDuringOpeningTimes = true;
+let switchHidePhoneOutsideOpeningTimes = true;
 let switchHideChatDuringOpeningTimes = false;
 let switchHideChatOutsideOpeningTimes = false;
 //THESE ARE NOT NET IMPLEMENTED ON GALAXUS MOBILE; ADD TO FUNCTION REORDERCONTACTCHANNELS() IN NEW_REQUEST_PAGE.HBS IF FEATURE IS REQUESTED
