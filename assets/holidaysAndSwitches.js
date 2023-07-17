@@ -193,8 +193,8 @@ function fillTopBannerWording(){
       'de' : "Technische Probleme Bestellaufgabe im Webshop",
       'fr' : "Problèmes techniques Passation de commande dans la boutique en ligne",
       'it' : "Problemi tecnici Ordinare nel webshop",
-      'en-US' : "Technical Issues Call",
-      'nl' : "Technical problems order placement in webshop"
+      'en-US' : "Technical problems order placement in webshop",
+      'nl' : "Technische problemen Bestellen in de webshop"
     },
     "outputTextBannerCH" : {
       /*'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
@@ -228,8 +228,8 @@ function fillTopBannerWording(){
       'de' : "Technische Probleme Bestellaufgabe im Webshop",
       'fr' : "Problèmes techniques Passation de commande dans la boutique en ligne",
       'it' : "Problemi tecnici Ordinare nel webshop",
-      'en-US' : "Technical Issues Call",
-      'nl' : "Technical problems order placement in webshop"
+      'en-US' : "Technical problems order placement in webshop",
+      'nl' : "Technische problemen Bestellen in de webshop"
     },
     "outputTextBannerDE" : {
       /*'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
@@ -263,8 +263,8 @@ function fillTopBannerWording(){
       'de' : "Technische Probleme Bestellaufgabe im Webshop",
       'fr' : "Problèmes techniques Passation de commande dans la boutique en ligne",
       'it' : "Problemi tecnici Ordinare nel webshop",
-      'en-US' : "Technical Issues Call",
-      'nl' : "Technical problems order placement in webshop"
+      'en-US' : "Technical problems order placement in webshop",
+      'nl' : "Technische problemen Bestellen in de webshop"
     },
     "outputTextBannerAT" : {
       /*'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
