@@ -93,27 +93,27 @@ var chatAndPhoneWaitThreshholdToShowContactFormLU = 50000;
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
 //CH
-var bannerSwitchCHDE = true;
-var bannerSwitchCHFR = true;
-var bannerSwitchCHIT = true;
-var bannerSwitchCHEN = true;
-var bannerSwitchCHNL = true;
+var bannerSwitchCHDE = false;
+var bannerSwitchCHFR = false;
+var bannerSwitchCHIT = false;
+var bannerSwitchCHEN = false;
+var bannerSwitchCHNL = false;
 var bannerSwitchConnectDE = false;
 var bannerSwitchConnectFR = false;
 var bannerSwitchConnectIT = false;
 var bannerSwitchConnectEN = false;
 var bannerSwitchConnectNL = false;
 //Germany
-var bannerSwitchDEDE = true;
+var bannerSwitchDEDE = false;
 var bannerSwitchDEFR = false;
 var bannerSwitchDEIT = false;
-var bannerSwitchDEEN = true;
+var bannerSwitchDEEN = false;
 var bannerSwitchDENL = false;
 //Austria
-var bannerSwitchATDE = true;
+var bannerSwitchATDE = false;
 var bannerSwitchATFR = false;
 var bannerSwitchATIT = false;
-var bannerSwitchATEN = true;
+var bannerSwitchATEN = false;
 var bannerSwitchATNL = false;
 //France
 var bannerSwitchFRDE = false;
@@ -180,109 +180,112 @@ bannerSwitchATNL = true;
 function fillTopBannerWording(){
     topBannerWording = {
     "outputHeadingBannerCH" : {
-      /*'de' : "Technische Probleme Chat in Safari",
+      'de' : "Technische Probleme Chat in Safari",
       'fr' : "Problèmes techniques Chat dans Safari",
       'it' : "Problemi tecnici Chat in Safari",
       'en-US' : "Technical Issues Chat with Safari",
-      'nl' : "Technische problemen Chat in Safari"*/
+      'nl' : "Technische problemen Chat in Safari"
       /*'de' : "Technische Probleme Call",
       'fr' : "Problèmes techniques Appel",
       'it' : "Problemi tecnici Chiamare",
       'en-US' : "Technical Issues Call",
       'nl' : "Technische problemen Bel"*/
-      'de' : "Technische Probleme Bestellaufgabe im Webshop",
+      /*'de' : "Technische Probleme Bestellaufgabe im Webshop",
       'fr' : "Problèmes techniques Passation de commande dans la boutique en ligne",
       'it' : "Problemi tecnici Ordinare nel webshop",
       'en-US' : "Technical problems order placement in webshop",
-      'nl' : "Technische problemen Bestellen in de webshop"
+      'nl' : "Technische problemen Bestellen in de webshop"*/
     },
     "outputTextBannerCH" : {
-      /*'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
+      'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
       'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
       'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
       'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
       'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
-      */
+      
       /*'de' : "Aufgrund technischer Probleme steht unsere Telefonleitung temporär nicht zur Verfügung.",
       'fr' : "En raison de problèmes techniques, notre ligne téléphonique est temporairement indisponible.",
       'it' : "A causa di problemi tecnici, la nostra linea telefonica non è temporaneamente disponibile.",
       'en-US' : "Due to technical problems our phone line is temporarily unavailable.",
       'nl' : "Door technische problemen is onze telefoonlijn tijdelijk niet beschikbaar."*/
-      'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
+      /*'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
       'fr' : "Actuellement, certains clients ne peuvent pas passer de commandes dans notre boutique en ligne. Nous sommes conscients du problème et nous travaillons à une solution. Malheureusement, nous ne pouvons pas vous proposer de solution par le biais de nos canaux de contact pour le moment. Veuillez réessayer dans la boutique en ligne ultérieurement. ",
       'it' : "Attualmente, alcuni clienti non possono effettuare ordini nel nostro negozio online. Siamo consapevoli del problema e stiamo lavorando a una soluzione. Purtroppo, al momento non possiamo offrire una soluzione attraverso i nostri canali di contatto. Vi invitiamo a riprovare a visitare il negozio online in un secondo momento.",
       'en-US' : "Currently, some customers can not place orders in our webshop. We are aware of the problem and are working on a solution. Unfortunately, we can't offer you a solution through our contact channels here at the moment. Please try again in the webshop at a later time.",
       'nl' : "Op dit moment kunnen sommige klanten geen bestellingen plaatsen in onze webshop. We zijn ons bewust van het probleem en werken aan een oplossing. Helaas kunnen we je op dit moment geen oplossing bieden via onze contactkanalen hier. Probeer het later nog eens in de webshop."
+      */
     },
     "outputHeadingBannerDE" : {
-      /*'de' : "Technische Probleme Chat in Safari",
+      'de' : "Technische Probleme Chat in Safari",
       'fr' : "Problèmes techniques Chat dans Safari",
       'it' : "Problemi tecnici Chat in Safari",
       'en-US' : "Technical Issues Chat with Safari",
-      'nl' : "Technische problemen Chat in Safari"*/
+      'nl' : "Technische problemen Chat in Safari"
       /*'de' : "Technische Probleme Call",
       'fr' : "Problèmes techniques Appel",
       'it' : "Problemi tecnici Chiamare",
       'en-US' : "Technical Issues Call",
       'nl' : "Technische problemen Bel"*/
-      'de' : "Technische Probleme Bestellaufgabe im Webshop",
+      /*'de' : "Technische Probleme Bestellaufgabe im Webshop",
       'fr' : "Problèmes techniques Passation de commande dans la boutique en ligne",
       'it' : "Problemi tecnici Ordinare nel webshop",
       'en-US' : "Technical problems order placement in webshop",
-      'nl' : "Technische problemen Bestellen in de webshop"
+      'nl' : "Technische problemen Bestellen in de webshop"*/
     },
     "outputTextBannerDE" : {
-      /*'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
+      'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
       'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
       'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
       'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
       'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
-      */
+      
       /*'de' : "Aufgrund technischer Probleme steht unsere Telefonleitung temporär nicht zur Verfügung.",
       'fr' : "En raison de problèmes techniques, notre ligne téléphonique est temporairement indisponible.",
       'it' : "A causa di problemi tecnici, la nostra linea telefonica non è temporaneamente disponibile.",
       'en-US' : "Due to technical problems our phone line is temporarily unavailable.",
       'nl' : "Door technische problemen is onze telefoonlijn tijdelijk niet beschikbaar."*/
-      'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
+      /*'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
       'fr' : "Actuellement, certains clients ne peuvent pas passer de commandes dans notre boutique en ligne. Nous sommes conscients du problème et nous travaillons à une solution. Malheureusement, nous ne pouvons pas vous proposer de solution par le biais de nos canaux de contact pour le moment. Veuillez réessayer dans la boutique en ligne ultérieurement. ",
       'it' : "Attualmente, alcuni clienti non possono effettuare ordini nel nostro negozio online. Siamo consapevoli del problema e stiamo lavorando a una soluzione. Purtroppo, al momento non possiamo offrire una soluzione attraverso i nostri canali di contatto. Vi invitiamo a riprovare a visitare il negozio online in un secondo momento.",
       'en-US' : "Currently, some customers can not place orders in our webshop. We are aware of the problem and are working on a solution. Unfortunately, we can't offer you a solution through our contact channels here at the moment. Please try again in the webshop at a later time.",
       'nl' : "Op dit moment kunnen sommige klanten geen bestellingen plaatsen in onze webshop. We zijn ons bewust van het probleem en werken aan een oplossing. Helaas kunnen we je op dit moment geen oplossing bieden via onze contactkanalen hier. Probeer het later nog eens in de webshop."
+      */
     },
     "outputHeadingBannerAT" : {
-      /*'de' : "Technische Probleme Chat in Safari",
+      'de' : "Technische Probleme Chat in Safari",
       'fr' : "Problèmes techniques Chat dans Safari",
       'it' : "Problemi tecnici Chat in Safari",
       'en-US' : "Technical Issues Chat with Safari",
-      'nl' : "Technische problemen Chat in Safari"*/
+      'nl' : "Technische problemen Chat in Safari"
       /*'de' : "Technische Probleme Call",
       'fr' : "Problèmes techniques Appel",
       'it' : "Problemi tecnici Chiamare",
       'en-US' : "Technical Issues Call",
       'nl' : "Technische problemen Bel"*/
-      'de' : "Technische Probleme Bestellaufgabe im Webshop",
+      /*'de' : "Technische Probleme Bestellaufgabe im Webshop",
       'fr' : "Problèmes techniques Passation de commande dans la boutique en ligne",
       'it' : "Problemi tecnici Ordinare nel webshop",
       'en-US' : "Technical problems order placement in webshop",
-      'nl' : "Technische problemen Bestellen in de webshop"
+      'nl' : "Technische problemen Bestellen in de webshop"*/
     },
     "outputTextBannerAT" : {
-      /*'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
+      'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
       'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
       'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
       'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
       'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
-      */
+      
       /*'de' : "Aufgrund technischer Probleme steht unsere Telefonleitung temporär nicht zur Verfügung.",
       'fr' : "En raison de problèmes techniques, notre ligne téléphonique est temporairement indisponible.",
       'it' : "A causa di problemi tecnici, la nostra linea telefonica non è temporaneamente disponibile.",
       'en-US' : "Due to technical problems our phone line is temporarily unavailable.",
       'nl' : "Door technische problemen is onze telefoonlijn tijdelijk niet beschikbaar."*/
-      'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
+      /*'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
       'fr' : "Actuellement, certains clients ne peuvent pas passer de commandes dans notre boutique en ligne. Nous sommes conscients du problème et nous travaillons à une solution. Malheureusement, nous ne pouvons pas vous proposer de solution par le biais de nos canaux de contact pour le moment. Veuillez réessayer dans la boutique en ligne ultérieurement. ",
       'it' : "Attualmente, alcuni clienti non possono effettuare ordini nel nostro negozio online. Siamo consapevoli del problema e stiamo lavorando a una soluzione. Purtroppo, al momento non possiamo offrire una soluzione attraverso i nostri canali di contatto. Vi invitiamo a riprovare a visitare il negozio online in un secondo momento.",
       'en-US' : "Currently, some customers can not place orders in our webshop. We are aware of the problem and are working on a solution. Unfortunately, we can't offer you a solution through our contact channels here at the moment. Please try again in the webshop at a later time.",
       'nl' : "Op dit moment kunnen sommige klanten geen bestellingen plaatsen in onze webshop. We zijn ons bewust van het probleem en werken aan een oplossing. Helaas kunnen we je op dit moment geen oplossing bieden via onze contactkanalen hier. Probeer het later nog eens in de webshop."
+      */
     },
     "outputHeadingBannerFR" : {
       'de' : "Technische Störung",
