@@ -21,7 +21,7 @@ function callbackCheck(){
 
 
 
-  function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker){
+  function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker, enteredCsatChecker){
     var brandID = ""
     var groupID = ""
     var brandName = ""
@@ -30,6 +30,10 @@ function callbackCheck(){
     var customerTypeShorthand = ""
     var brandTag = " brand-"
     var customerLocale = ""
+    var csatTag = " "
+    if (enteredCsatChecker == "yes"){
+      csatTag = " csat-eu-opt-in "
+    }
     if (customerType == "private-customer") {
       customerTypeShorthand = "c"
     } else if (customerType == "business-customer") {
@@ -165,7 +169,7 @@ function callbackCheck(){
       tempLanguage = "en"
     }
     var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\nOrder: " + orderLink + " \nInvoice: " + invoiceLink + "\nRequest Reason: " + compiledSubject + " \n -- \ninteraction_id: "
-    var ticketTags = "callback_request voice " + requestReasonTag + brandTag + " " + tempLanguage + " talkdesk_interaction_"
+    var ticketTags = "callback_request voice" + csatTag + requestReasonTag + brandTag + " " + tempLanguage + " talkdesk_interaction_"
     var baseOrderLink = baseERPLink + "Order/"
     var baseRGLink = baseERPLink + "Invoice/"
     var custName = enteredMail.split("@")[0].replace(".", " ")

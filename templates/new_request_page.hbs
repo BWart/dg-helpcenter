@@ -234,6 +234,9 @@
                     <tr>
                       <td width="20px" style="vertical-align:top" ><input type="checkbox" id="callbackRecording" name="callbackRecording" class="callback_customer_record_checker" checked></td><td style="vertical-align:top"><label data-wording-key="callbackRecordingLabelEU"></label></td>
                     </tr>
+                    <tr>
+                      <td width="20px" style="vertical-align:top" ><input type="checkbox" id="callbackCsat" name="callbackCsat" class="callback_customer_csat_checker"></td><td style="vertical-align:top"><label data-wording-key="callbackCsatLabelEU"></label></td>
+                    </tr>
                   </table>
                 </div>
                 <div class="form-field">
@@ -495,6 +498,7 @@
   const callBackRGInputField = $('.callback_customer_rg_number_input')
   const callBackMailInputField = $('.callback_customer_mail_input')
   const callBackRecordChecker = $('.callback_customer_record_checker')
+  const callBackCsatChecker = $('.callback_customer_csat_checker')
   const chPreCodeTable = $('.chPreCodeTable')
   const callbackPrecode = $('.callbackVorwahl')
   let callbackCountry = "CH"
@@ -911,7 +915,7 @@
     document.body.appendChild(script2);
   }
 
-  function addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker){
+  function addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker, enteredCsatChecker){
     $('.callbackScript').remove();
     var script2 = document.createElement('script');
     script2.classList.add('callbackScript');
@@ -923,7 +927,7 @@
       //script2.src = 'https://hardread.ch/testing/callbackEU.js';
     }
     script2.onload = function() {
-      callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker);
+      callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker, enteredCsatChecker);
     }
     script2.onerror = function() {
         callBackTokenChecker = false;
@@ -1695,8 +1699,12 @@
     let enteredRGNumber = callBackRGInputField.val()
     let enteredMail = callBackMailInputField.val()
     let enteredRecordChecker = "no"
+    let enteredCsatChecker = "no"
     if (callBackRecordChecker.is(':checked')){
       enteredRecordChecker = "yes"
+    }
+    if (callBackCsatChecker.is(':checked')){
+      enteredCsatChecker = "yes"
     }
     let validationChecker = true;
     if (enteredPhoneNumberShort.substring(0,1) == "0"){
@@ -1773,7 +1781,7 @@
       $('.callbackFormErrorText').html('')
       sessionStorage.setItem("callbackReturn", "true")
       sessionStorage.setItem("callbackCustomerPhone", enteredPhoneNumber)
-      addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker);
+      addExternalScriptForCallback(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker, enteredCsatChecker);
     }
   })
 
