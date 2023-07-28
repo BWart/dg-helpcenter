@@ -200,10 +200,11 @@ function isOverflowDepartmentTresholdReached(selectedDepartmentWaitingTime, over
 //Gets language and changes to uppercase
 function getChatDepartmentLanguage(){
     var chatDepartmentLanguage = getNormalizedLanguage();
-    if (chatDepartmentLanguage.toUpperCase() != "DE"){
+    /*if (chatDepartmentLanguage.toUpperCase() != "DE"){
         return "Multilingual"
-    }
-    return chatDepartmentLanguage.toUpperCase();
+    } */
+    return "Multilingual"
+    //return chatDepartmentLanguage.toUpperCase();
 }
 
 //Normalisiert die HTML Sprache
