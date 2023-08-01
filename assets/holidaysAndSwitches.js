@@ -106,10 +106,10 @@ var showHolidays = {
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-      'de' : 'Aufgrund des Feiertags sind die Live-Kontaktkanäle geschlossen',
-      'fr' : 'En raison du jour férié, les canaux de contact en direct sont fermés',
-      'it' : 'A causa della festività, i canali di contatto sono chiusi.',
-      'en-US' : 'due to the holiday the live contact channels are closed'
+      'de' : 'Am 1.8.2023 - Aufgrund des Feiertags sind die Live-Kontaktkanäle geschlossen.',
+      'fr' : 'Le 1.8.2023 - En raison du jour férié, les canaux de contact en direct sont fermés.',
+      'it' : 'Il 1.8.2023 - A causa della festività, i canali di contatto sono chiusi.',
+      'en-US' : 'On 1.8.2023 - Due to the holiday the live contact channels are closed.'
     }
 }
 
