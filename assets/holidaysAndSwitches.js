@@ -99,17 +99,17 @@ function fillTopBannerWording() {
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2023-04-27 00:00:00', '2023-05-30 22:00:00', '2023-08-01 00:00:00', '2023-08-01 22:00:00' 0]
+      ['2023-08-01 00:00:00', '2023-08-01 22:00:00' 0]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-      'de' : '',
-      'fr' : "",
-      'it' : '',
-      'en-US' : ''
+      'de' : 'Aufgrund des Feiertags sind die Live-Kontaktkanäle geschlossen',
+      'fr' : "En raison du jour férié, les canaux de contact en direct sont fermés",
+      'it' : 'A causa della festività, i canali di contatto sono chiusi.',
+      'en-US' : 'due to the holiday the live contact channels are closed'
     }
 }
 
