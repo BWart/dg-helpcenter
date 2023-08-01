@@ -371,7 +371,7 @@ function fillTopBannerWording(){
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2023-04-27 00:00:00', '2023-05-29 22:00:00', 0]
+      ['2023-08-01 00:00:00', '2023-08-01 22:00:00', 0]
     ],
     'de' : [
       ['2023-04-27 00:00:00', '2023-05-29 22:00:00', 1]
@@ -400,10 +400,10 @@ var showHolidays = {
 var textToDisplay = {
     // Switzerland
     0 : {
-      'de' : '<br>29.05.2023: Pfingstmontag, geschlossen',
-      'fr' : "<br>29.05.2023 : Lundi de Pentecôte, fermé",
-      'it' : '<br>29.05.2023: Lunedì di Pentecoste, chiuso',
-      'en-US' : '<br>29.05.2023: Whit Monday, closed',
+      'de' : '<br>01.08.2023: Feiertag, geschlossen',
+      'fr' : "<br>01.08.2023 : Jour férié, fermé",
+      'it' : '<br>01.08.2023: Giorno festivo, chiuso',
+      'en-US' : '<br>01.08.2023: Holiday, closed',
       'nl': ''
     },
     //Germany
@@ -469,7 +469,7 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-      ['2023-05-01 00:00:00', '2023-05-01 22:00:00'], ['2023-05-17 15:00:00', '2023-05-18 22:00:00'], ['2023-05-29 00:00:00', '2023-05-29 22:00:00']
+      ['2023-05-01 00:00:00', '2023-05-01 22:00:00'], ['2023-05-17 15:00:00', '2023-05-18 22:00:00'], ['2023-05-29 00:00:00', '2023-05-29 22:00:00'],  ['2023-08-01 00:00:00', '2023-08-01 22:00:00']
     ],
     'de' : [
       ['2023-05-01 00:00:00', '2023-05-01 22:00:00'], ['2023-05-18 00:00:00', '2023-05-18 22:00:00'], ['2023-05-29 00:00:00', '2023-05-29 22:00:00']
