@@ -99,7 +99,7 @@ function fillTopBannerWording() {
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2023-04-27 00:00:00', '2023-05-30 22:00:00', '2023-08-01 22:00:00', 0]
+      ['2023-04-27 00:00:00', '2023-05-30 22:00:00', '2023-08-01 00:00:00', '2023-08-01 22:00:00' 0]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
@@ -118,7 +118,7 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-      ['2023-05-01 00:00:00', '2023-05-01 22:00:00'], ['2023-05-17 14:00:00', '2023-05-18 22:00:00'], ['2023-05-29 00:00:00', '2023-05-29 22:00:00']
+      ['2023-05-01 00:00:00', '2023-05-01 22:00:00'], ['2023-05-17 14:00:00', '2023-05-18 22:00:00'], ['2023-05-29 00:00:00', '2023-05-29 22:00:00'], ['2023-08-01 00:00:00', '2023-08-01 22:00:00']
     ]
 }
 
