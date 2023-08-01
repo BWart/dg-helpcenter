@@ -49,9 +49,9 @@ if (safariAgent && window.location.href.includes('requests')){
 //These currently only affect German language; if effecting other languages is needed edit function reorderContactChannels() in new_request_page.hbs
 let switchHideContactFormDuringOpeningTimes = false;
 let switchHideContactFormOutsideOpeningTimes = false;
-let switchHidePhoneDuringOpeningTimes = false;
+let switchHidePhoneDuringOpeningTimes = true;
 let switchHidePhoneOutsideOpeningTimes = false;
-let switchHideChatDuringOpeningTimes = false;
+let switchHideChatDuringOpeningTimes = true;
 let switchHideChatOutsideOpeningTimes = false;
 //THESE ARE NOT NET IMPLEMENTED ON GALAXUS MOBILE; ADD TO FUNCTION REORDERCONTACTCHANNELS() IN NEW_REQUEST_PAGE.HBS IF FEATURE IS REQUESTED
 /*let phoneWaitThreshholdToShowContactForm = 50000;
@@ -99,7 +99,7 @@ function fillTopBannerWording() {
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2023-04-27 00:00:00', '2023-05-30 22:00:00', 0]
+      ['2023-04-27 00:00:00', '2023-05-30 22:00:00', '2023-08-01 22:00:00', 0]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
