@@ -6,7 +6,7 @@ var UTCHourOffset = 2;
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
 var switchHideContactFormDuringOpeningTimes = false;
 var switchHideContactFormOutsideOpeningTimes = false;
-var switchHideContactFormForPEDuringOpeningTimes = false;
+var switchHideContactFormForPEDuringOpeningTimes = true;
 var switchHideContactFormForPEOutsideOpeningTimes = true;
 var switchHideContactFormForBusinessDuringOpeningTimes = false;
 var switchHideContactFormForBusinessOutsideOpeningTimes = false;
@@ -23,11 +23,11 @@ var switchHideContactFormForNLOutsideOpeningTimes = false;
 var switchHideContactFormForLUDuringOpeningTimes = false;
 var switchHideContactFormForLUOutsideOpeningTimes = false;
 //set to true if the phone number should be hidden, set to false if it should be displayed
-var switchHidePhoneDuringOpeningTimes = true;
+var switchHidePhoneDuringOpeningTimes = false;
 var switchHidePhoneOutsideOpeningTimes = false;
 var switchHidePhoneForPEDuringOpeningTimes = true;   //THIS IS CURRENTLY VALID ON ALL HELPCENTERS IN CH + EU
 var switchHidePhoneForPEOutsideOpeningTimes = true;  //THIS IS CURRENTLY VALID ON ALL HELPCENTERS IN CH + EU
-var switchHidePhoneForBusinessDuringOpeningTimes = true;
+var switchHidePhoneForBusinessDuringOpeningTimes = false;
 var switchHidePhoneForBusinessOutsideOpeningTimes = false;
 var switchHidePhoneForEUDuringOpeningTimes = false;
 var switchHidePhoneForEUOutsideOpeningTimes = false;
@@ -42,11 +42,11 @@ var switchHidePhoneForNLOutsideOpeningTimes = true;
 var switchHidePhoneForLUDuringOpeningTimes = true;
 var switchHidePhoneForLUOutsideOpeningTimes = true;
 //set to true if the Chat should be hidden, set to false if it should be displayed
-var switchHideChatDuringOpeningTimes = true;
+var switchHideChatDuringOpeningTimes = false;
 var switchHideChatOutsideOpeningTimes = false;
-var switchHideChatForPEDuringOpeningTimes = true;
+var switchHideChatForPEDuringOpeningTimes = false;
 var switchHideChatForPEOutsideOpeningTimes = false;
-var switchHideChatForBusinessDuringOpeningTimes = true;
+var switchHideChatForBusinessDuringOpeningTimes = false;
 var switchHideChatForBusinessOutsideOpeningTimes = false;
 var switchHideChatForEUDuringOpeningTimes = false;
 var switchHideChatForEUOutsideOpeningTimes = false;
