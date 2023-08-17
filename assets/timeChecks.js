@@ -82,38 +82,3 @@ function isInCHPEOpeningTimes() {
     })
     return openChecker
 }
-
-
-function isInYoummdayShift() {
-    const d = new Date();
-    let dayOfWeek = d.getUTCDay();
-    let currentMinutes = 60*(d.getUTCHours() + UTCHourOffset) + d.getUTCMinutes();
-    timesToCheck = []
-    shiftChecker = false
-    switch (dayOfWeek){
-        case 1:
-            timesToCheck = mondayYDShifts
-            break;
-        case 2:
-            timesToCheck = tuesdayYDShifts
-            break;
-        case 3:
-            timesToCheck = wednesdayYDShifts
-            break;
-        case 4:
-            timesToCheck = thursdayYDShifts
-            break;
-        case 5:
-            timesToCheck = fridayYDShifts
-            break;
-        default:
-            timesToCheck = fallbackYDShifts
-            break;
-    }
-    timesToCheck.forEach((timeSet) => {
-        if (currentMinutes >= (60*timeSet[0] + timeSet[1]) && currentMinutes < (60*timeSet[2] + timeSet[3])){
-            shiftChecker = true
-        }
-    })
-    return shiftChecker
-}

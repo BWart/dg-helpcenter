@@ -166,12 +166,7 @@ function getWebWidgetSettings(department){
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
     var chatDepartmentType = getChatDepartmentType();
-
-    if(chatDepartmentType.includes('Yoummday')){
-        var dep = 'Chat ' + chatDepartmentType + ' DE'; 
-    }else{
-        var dep = 'Chat ' + chatDepartmentType + ' ' + getChatDepartmentLanguage(); 
-    }
+    var dep = 'Chat ' + chatDepartmentType + ' ' + getChatDepartmentLanguage(); 
  
     if(dep.includes('Private') && typeof chatWaitTimes != 'undefined'){        
         try {
@@ -321,15 +316,6 @@ function getDGChatDepartmentType(){
             case(isPeDiy()):
                 DGChatDepartmentType = 'PeDiy';
                 break;  
-            case(isYoummdayBasic()):
-                DGChatDepartmentType = 'YoummdayBasic';
-                break;
-            case(isYoummdayAdvanced()):
-                DGChatDepartmentType = 'YoummdayAdvanced';
-                break;
-            case(isYoummdayExpert()):
-                DGChatDepartmentType = 'YoummdayExpert';
-                break;
             default:
                 DGChatDepartmentType = 'Private';
         }
@@ -456,70 +442,6 @@ function isPeHome(){
 //Special Routing for PeDiy
 function isPeDiy(){
     if(requestReasonTag == 'webform_case_product_advice_diy'){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-
-//Special Routing for YoummdayBasic
-function isYoummdayBasic(){
-       if(lang == 'de' && isInYoummdayShift() && (requestReasonTag == 'webform_case_shipping_status' || requestReasonTag == 'webform_case_ready_for_shipment' || requestReasonTag == 'webform_case_order_status') && isYoummdayBasicAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayBasic DE')){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-function isYoummdayBasicAvailable(){
-    if(isDepartmentAvailable('Chat YoummdayBasic DE')){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-function isYoummdayWaitingTimeSmall(yoummdayDepartment){
-    if(typeof chatWaitTimes != 'undefined'){   
-        if(chatWaitTimes['Chat Private ' + getChatDepartmentLanguage()] < chatWaitTimes[yoummdayDepartment] && chatWaitTimes[yoummdayDepartment] > 300){
-            return false;
-        }else{
-            return true;
-        }
-    }else{
-        return true;
-    }
-}
-
-//Special Routing for YoummdayAdvanced
-function isYoummdayAdvanced(){
-    if(lang == 'de' && isInYoummdayShift() && (requestReasonTag == 'webform_case_return' || requestReasonTag == 'webform_case_receipt') && isYoummdayAdvancedAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayAdvanced DE') ){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-function isYoummdayAdvancedAvailable(){
-    if(isDepartmentAvailable('Chat YoummdayAdvanced DE')){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-//Special Routing for YoummdayExpert
-function isYoummdayExpert(){
-    if(lang == 'de' && isInYoummdayShift() && (requestReasonTag == 'webform_case_wrong_product') && isYoummdayExpertAvailable() && isYoummdayWaitingTimeSmall('Chat YoummdayExpert DE')){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-function isYoummdayExpertAvailable(){
-    if(isDepartmentAvailable('Chat YoummdayExpert DE')){
         return true;
     }else{
         return false;
