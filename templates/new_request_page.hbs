@@ -260,7 +260,20 @@
   let fullLink = window.location.href;
 
   if (fullLink.slice(-12) == "requests/new"){
-    if ((portal != "helpcenter.digitec.ch" && portal != "helpcenter.galaxus.ch") || currentLanguage == "de" || currentLanguage == "it") {
+    let tempCustomerType = ""
+    try{
+      let tempVarFromSessionStorage = JSON.parse(sessionStorage.getItem('user-info'))["isPrivate"]
+      if (tempVarFromSessionStorage == true) {tempCustomerType = "private"}
+      if (tempVarFromSessionStorage == false) {tempCustomerType = "business"}
+    } catch(error) {
+      console.log("Couldn't get IsPrivate")
+      console.log(error)
+    }
+
+    if (tempCustomerType == "business"){
+      window.location.href = fullLink + "?ticket_form_id=360000554760"
+    }
+    if ((portal != "helpcenter.digitec.ch" && portal != "helpcenter.galaxus.ch") || currentLanguage == "de" || currentLanguage == "it" || tempCustomerType == "private") {
       window.location.href = fullLink + "?ticket_form_id=39231"
     }
   }
@@ -611,6 +624,30 @@
     removeOfferforPrivate();
   }
 
+  //--- FILLING IN USER INFO ---
+  try {
+    $('input[name="request[anonymous_requester_email]"]').val(JSON.parse(sessionStorage.getItem('user-info'))["email"])
+  }
+  catch (error) {
+    console.log("Couldn't set E-Mail")
+    console.log(error)
+  }
+  try {
+    let tempPhoneNumber = JSON.parse(sessionStorage.getItem('user-info'))["phone"]
+    if (tempPhoneNumber.length > 2) {
+      let tempPhoneNumberPart1 = tempPhoneNumber.substring(0, tempPhoneNumber.indexOf(" ")).replace("+", "")
+      let tempPhoneNumberPart2 = tempPhoneNumber.substring(tempPhoneNumber.indexOf(" ")+1, tempPhoneNumber.length).replaceAll(" ", "")
+      $('input[name="callback_customer_phone_number"]').val(parseInt(tempPhoneNumberPart2))
+      if(tempPhoneNumberPart1 == "423"){
+        $('.radioLI').click()
+        callbackPrecode.html("+423&nbsp;&nbsp;") 
+        callbackCountry = "LI"
+      }
+    }
+  } catch (error){
+    console.log("Couldn't set phone number")
+    console.log(error)
+  }
 
 
   // --- FUNCTIONS THAT ADJUST THE PAGE AND ELEMENTS ---
