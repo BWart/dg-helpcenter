@@ -3,15 +3,6 @@
  */
 
 $(document).ready(function() {
-  const urlParams = new URLSearchParams(window.location.search)
-  const userInfo = urlParams.get('user-info')
-  if (userInfo != null){
-    sessionStorage.setItem('user-info', atob(userInfo))
-  } else {
-    if (sessionStorage.getItem('user-info') == null){
-      sessionStorage.setItem('user-info', '{"isPrivate":true,"phone":"","email":""}')
-    }
-  }
 
   //Weiterleitung Connect Section
 

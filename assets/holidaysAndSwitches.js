@@ -147,7 +147,6 @@ var bannerSwitchLUEN = false;
 var bannerSwitchLUNL = false;
 
 let userAgentString = navigator.userAgent;
-console.log(userAgentString)
 let chromeAgent = userAgentString.indexOf("Chrome") > -1;
 let safariAgent = userAgentString.indexOf("Safari") > -1;
 let IExplorerAgent = userAgentString.indexOf("MSIE") > -1 || userAgentString.indexOf("rv") > -1;
