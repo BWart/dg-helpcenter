@@ -931,7 +931,8 @@
     script.src = 'https://py-waittimes-web.prod.pub.devinite.com/waitTimes.js';
     //script.src = 'https://hardread.ch/testing/waitTimes.js';
     script.onload = function() {
-        setWaitTimes();
+      callWaitTimes["privateCHDE"] = -1;
+      setWaitTimes();
     }
     script.onerror = function() {
         waitTimes.hide();
@@ -1118,6 +1119,10 @@
       }
       //hideContactForm();
       waitTimes.show();
+      if(callSeconds == -1){
+        callbackWaitTimesDOMElements.hide();
+        callWaitTimesDOMElements.hide();
+      }
   }
 
   function changeWaitTimeHTML(seconds, elements){
