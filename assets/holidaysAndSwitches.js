@@ -493,6 +493,10 @@ var hideWaitingTimes = {
     ]
 }
 
+//Hiding waiting times in case of stuck calls/chats
+let waitTimesToHideCall = []
+let waitTimesToHideChat = []
+
 
 //OPENING HOURS
 const openingHours = {
