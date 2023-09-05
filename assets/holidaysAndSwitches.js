@@ -5,7 +5,7 @@ var UTCHourOffset = 2;
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
 var switchHideContactFormDuringOpeningTimes = false;
-var switchHideContactFormOutsideOpeningTimes = false;
+var switchHideContactFormOutsideOpeningTimes = true;
 var switchHideContactFormForPEDuringOpeningTimes = true;
 var switchHideContactFormForPEOutsideOpeningTimes = true;
 var switchHideContactFormForBusinessDuringOpeningTimes = false;
