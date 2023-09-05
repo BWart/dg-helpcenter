@@ -5,7 +5,7 @@ var UTCHourOffset = 2;
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
 var switchHideContactFormDuringOpeningTimes = false;
-var switchHideContactFormOutsideOpeningTimes = true;
+var switchHideContactFormOutsideOpeningTimes = false;
 var switchHideContactFormForPEDuringOpeningTimes = true;
 var switchHideContactFormForPEOutsideOpeningTimes = true;
 var switchHideContactFormForBusinessDuringOpeningTimes = false;
@@ -93,7 +93,7 @@ var chatAndPhoneWaitThreshholdToShowContactFormLU = 50000;
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
 //CH
-var bannerSwitchCHDE = true;
+var bannerSwitchCHDE = false;
 var bannerSwitchCHFR = false;
 var bannerSwitchCHIT = false;
 var bannerSwitchCHEN = false;
