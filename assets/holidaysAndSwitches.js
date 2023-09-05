@@ -93,7 +93,7 @@ var chatAndPhoneWaitThreshholdToShowContactFormLU = 50000;
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
 //CH
-var bannerSwitchCHDE = false;
+var bannerSwitchCHDE = true;
 var bannerSwitchCHFR = false;
 var bannerSwitchCHIT = false;
 var bannerSwitchCHEN = false;
@@ -216,7 +216,6 @@ function fillTopBannerWording(){
       'en-US' : "Currently, some customers can not place orders in our webshop. We are aware of the problem and are working on a solution. Unfortunately, we can't offer you a solution through our contact channels here at the moment. Please try again in the webshop at a later time.",
       'nl' : "Op dit moment kunnen sommige klanten geen bestellingen plaatsen in onze webshop. We zijn ons bewust van het probleem en werken aan een oplossing. Helaas kunnen we je op dit moment geen oplossing bieden via onze contactkanalen hier. Probeer het later nog eens in de webshop."
       */
-
     },
     "outputHeadingBannerDE" : {
       'de' : "Technische Probleme Chat in Safari",
@@ -363,9 +362,6 @@ function fillTopBannerWording(){
     }
       return topBannerWording;
 }
-
-
-
 
 
 // --- ENTER HOLIDAYS HERE TO BE DISPLAYED IN THE HELPCENTER AND FOR THE WAITING TIMES TO BE REMOVED ---
