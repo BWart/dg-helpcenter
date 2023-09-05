@@ -146,6 +146,8 @@ var bannerSwitchLUIT = false;
 var bannerSwitchLUEN = false;
 var bannerSwitchLUNL = false;
 
+/*Safari nicht mehr benötigt unten
+
 let userAgentString = navigator.userAgent;
 let chromeAgent = userAgentString.indexOf("Chrome") > -1;
 let safariAgent = userAgentString.indexOf("Safari") > -1;
@@ -174,10 +176,11 @@ bannerSwitchATIT = true;
 bannerSwitchATEN = true;
 bannerSwitchATNL = true;
 }
-
+*/
 // --- TEXT TO BE DISPLAYED IN THE TOP BANNER ---
 function fillTopBannerWording(){
     topBannerWording = {
+      //heading setzt den Titel 
     "outputHeadingBannerCH" : {
       'de' : "Technische Probleme Chat in Safari",
       'fr' : "Problèmes techniques Chat dans Safari",
@@ -213,6 +216,7 @@ function fillTopBannerWording(){
       'en-US' : "Currently, some customers can not place orders in our webshop. We are aware of the problem and are working on a solution. Unfortunately, we can't offer you a solution through our contact channels here at the moment. Please try again in the webshop at a later time.",
       'nl' : "Op dit moment kunnen sommige klanten geen bestellingen plaatsen in onze webshop. We zijn ons bewust van het probleem en werken aan een oplossing. Helaas kunnen we je op dit moment geen oplossing bieden via onze contactkanalen hier. Probeer het later nog eens in de webshop."
       */
+
     },
     "outputHeadingBannerDE" : {
       'de' : "Technische Probleme Chat in Safari",
