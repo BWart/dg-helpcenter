@@ -25,7 +25,8 @@ link.onload = showBody();
   if(window.location.hostname !="helpcenter.digitec.ch" && window.location.hostname !="helpcenter.connect.digitec.ch" && window.location.hostname !="digitec.zendesk.com"){
   	link.setAttribute("href", "{{asset 'galaxus-styles.css'}}");
     $('[rel="icon"]').attr("href", "{{asset 'fav_galaxus.png'}}");
-    $("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4"/><//script>')
+    //$("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4"/><//script>')
+    $("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=d53f0c05-68d4-4d46-9445-42582504ce73"/><//script>')
     }else{
 			link.setAttribute("href","{{asset 'digitec-styles.css'}}");
       $('[rel="icon"]').attr("href", "{{asset 'fav_digitec.png'}}");
@@ -42,4 +43,6 @@ function showBody(){
 </script>
 
 
-
+<!-- Start of digitec-connect Zendesk Widget script -->
+<!--<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=d53f0c05-68d4-4d46-9445-42582504ce73"> </script>-->
+<!-- End of digitec-connect Zendesk Widget script -->

@@ -5,6 +5,7 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 async function asyncChatLoad(counter){
+    console.log("asyncChatLoad")
     await sleep(1000)
     if (counter > 10){
         return;
@@ -13,27 +14,21 @@ async function asyncChatLoad(counter){
         asyncChatLoad(counter+1);
         return;
     }
-    hideChat();
-    asyncChatStart()
+    zE("messenger", 'hide')
 }
 
 async function asyncChatStart(counter){
+    console.log("asyncChatStart")
     await sleep(1000)
     if (counter > 10){
         return;
     }
-    if (typeof (zE('webWidget:get', 'chat:department', 'Chat Private DE')) == "undefined"){
+    if (typeof zE == "undefined"){
         asyncChatStart(counter+1)
         return;
     }
-    openWidgetForUnreadMessages();
-    hideWidgetWhenMinimized();
-    listenDepartmentStatus(customerDepartment);
-    if(isChatting()){
-        openChat();
-    }else{
-        changeWebWidgetSettingInitial(getChatDepartment());
-    }
+
+    zE("messenger", 'hide')
 }
 
 function waitForChat(){
@@ -42,59 +37,20 @@ function waitForChat(){
             asyncChatLoad(0)
         }
         else {
-            hideChat();
-            asyncChatStart(0)
+            zE("messenger", 'hide')
         }
     })
+    console.log(zE("messenger:get", "conversationTags"))
+    //openWidgetForUnreadMessages();
+    //hideWidgetWhenMinimized();
+    //listenDepartmentStatus(customerDepartment);
+    //if(isChatting()){
+    //    openChat();
+    //}else{
+    //    changeWebWidgetSettingInitial(getChatDepartment());
+    //}
 }
 
-/*function waitForChat(){
-    console.log("entering waitForChat")
-    if (typeof zE == "undefined") {
-        console.log("entering undefined if")
-        if(gaSend){
-            ga('send', 'event', 'Errors', 'ChatInitialLoad', 'undefined load');
-          }
-        window.addEventListener('load', (event) => {
-            console.log("enter addEventListener")
-            zE('webWidget:on', 'chat:connected', function() {
-                console.log("enter weWidget on chatconnected")
-                openWidgetForUnreadMessages();
-                hideWidgetWhenMinimized();
-                listenDepartmentStatus(customerDepartment);
-                hideChat()
-                if(isChatting()){
-                    console.log("enter isChatting")
-                    openChat();
-                }else{
-                    console.log("enter isChatting else")
-                    changeWebWidgetSettingInitial(getChatDepartment());
-                    hideChat();
-                }
-            });
-        })
-    } else {
-        console.log("entering undefined else")
-        if(gaSend){
-            ga('send', 'event', 'Errors', 'ChatInitialLoad', 'defined load');
-          }
-        zE('webWidget:on', 'chat:connected', function() {
-            console.log("enter weWidget on chatconnected")
-            openWidgetForUnreadMessages();
-            hideWidgetWhenMinimized();
-            listenDepartmentStatus(customerDepartment);
-            hideChat()
-            if(isChatting()){
-                console.log("enter isChatting")
-                openChat();
-            }else{
-                console.log("enter isChatting else")
-                changeWebWidgetSettingInitial(getChatDepartment());
-                hideChat();
-            }
-        });
-    }
-}*/
 
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
 //Initial WebWebidget Settings
@@ -107,59 +63,6 @@ function changeWebWidgetSettingInitial(department){
 function changeWebWidgetSettingsOnChange(department){
     zE('webWidget', 'updateSettings', getWebWidgetSettings(department));
     zE('webWidget', 'setLocale', getNormalizedLanguage()); // Setzt die Widget Sprache
-}
-
-// Definiert die Widget Settings
-function getWebWidgetSettings(department){
-    dynamicWording = filldynamicWording();
-    console.log('Department Set: '+ department);
-
-    var zeSettings = {
-        webWidget: {
-            chat: {
-                suppress: false,
-                departments: {
-                    select: department,
-                    enabled: []
-                },
-                title: {
-                    '*': dynamicWording['en-US']['chatUs'],
-                    fr: dynamicWording[getLanguage()]['chatUs'],
-                    de: dynamicWording[getLanguage()]['chatUs'],
-                    it: dynamicWording[getLanguage()]['chatUs']
-                },
-                prechatForm: {
-                    greeting: {
-                        '*': dynamicWording['en-US']['chatGreetingText'],
-                        fr: dynamicWording[getLanguage()]['chatGreetingText'],
-                        de: dynamicWording[getLanguage()]['chatGreetingText'],
-                        it: dynamicWording[getLanguage()]['chatGreetingText']
-                    }
-                },
-                offlineForm: {
-                    greeting: {
-                        '*': dynamicWording['en-US']['chatOfflineMessage'],
-                        fr: dynamicWording[getLanguage()]['chatOfflineMessage'],
-                        de: dynamicWording[getLanguage()]['chatOfflineMessage'],
-                        it: dynamicWording[getLanguage()]['chatOfflineMessage']
-                    }
-                }
-            },
-            contactForm: {
-                suppress: true
-            },
-            helpCenter: {
-                suppress: true
-            },
-            talk: {
-                suppress: true
-            },
-            answerBot: {
-                suppress: true
-            }
-        }
-    }
-    return zeSettings;
 }
 
 /////////////////////////////////////////////////////////////Departments///////////////////////////////////////////////////////////////////////////

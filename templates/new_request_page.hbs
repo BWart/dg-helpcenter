@@ -1099,6 +1099,7 @@
   }
 
   function setWaitTime(chatSeconds, callSeconds, callbackSeconds){
+      let customerDepartment = "Chat Private DE"
       $(".recommendedChannel").css('display' , 'none');
       if (chatSeconds[customerDepartment] < 181){
           $(".recommendedChannel").css('display' , 'inline-block');
