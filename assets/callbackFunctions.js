@@ -131,7 +131,7 @@ function callbackCheck(){
         customerLocale = "22"
         break;
       case 'nl':
-        customerLocale = "1005"compiledSubject
+        customerLocale = "1005"
         break;
       default:
         customerLocale = "1"
