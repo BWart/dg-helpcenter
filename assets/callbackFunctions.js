@@ -41,7 +41,8 @@ function callbackCheck(){
         if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (currentLanguage.toLowerCase() == "de" || currentLanguage.toLowerCase() == "it")){
           customerTypeShorthand = "c"
         } else {
-          customerTypeShorthand = "b"
+          //customerTypeShorthand = "b"
+          customerTypeShortand = "c"
         }
       } else {
         customerTypeShorthand = "c"
@@ -117,6 +118,8 @@ function callbackCheck(){
         }
         break;   
     }
+    if (ringGroup == "callback2b_ch_en-us_lv1"){ringGroup = "callback2c_ch_en-us_lv1"}
+    if (ringGroup == "callback2b_ch_fr_lv1"){ringGroup = "callback2c_ch_fr_lv1"}
     switch (currentLanguage){
       case 'de':
         customerLocale = "8"
@@ -128,7 +131,7 @@ function callbackCheck(){
         customerLocale = "22"
         break;
       case 'nl':
-        customerLocale = "1005"
+        customerLocale = "1005"compiledSubject
         break;
       default:
         customerLocale = "1"
