@@ -15,6 +15,7 @@ async function asyncChatLoad(counter){
         return;
     }
     zE("messenger", 'hide')
+    if (isChatOpenInSession()) {openChat()}
 }
 
 async function asyncChatStart(counter){
@@ -27,7 +28,6 @@ async function asyncChatStart(counter){
         asyncChatStart(counter+1)
         return;
     }
-
     zE("messenger", 'hide')
 }
 
@@ -38,9 +38,9 @@ function waitForChat(){
         }
         else {
             zE("messenger", 'hide')
+            if (isChatOpenInSession()) {openChat()}
         }
     })
-    console.log(zE("messenger:get", "conversationTags"))
     //openWidgetForUnreadMessages();
     //hideWidgetWhenMinimized();
     //listenDepartmentStatus(customerDepartment);
@@ -51,9 +51,34 @@ function waitForChat(){
     //}
 }
 
+function openChat(){
+    sessionStorage.setItem("chatOpenedInSession", "true")
+    zE("messenger", "show")
+    console.log(requestReasonTag)
+    zE("messenger:set", "conversationTags", [requestReasonTag])
+    zE("messenger", "open")
+}
+
+function isChatOpenInSession(){
+    if (sessionStorage.getItem("chatOpenedInSession") == "true") {return true};
+    return false;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
+// --------------------------------------- OLD, ONLY KEPT AS REFERENCE FOR NOW, NOT NEEDED FOR MESSAGING ANYMORE --------------------------------------------------
 //Initial WebWebidget Settings
+/*
 function changeWebWidgetSettingInitial(department){
     window.zESettings = getWebWidgetSettings(department); // Widget Settings Initiales Setup
     zE('webWidget', 'setLocale', getNormalizedLanguage()); // Setzt die Widget Sprache   
@@ -503,4 +528,4 @@ function openChat(){
 function hideChat(){
     //webWidgetDiv.hide()
     zE('webWidget', 'hide');
-}
+}*/

@@ -837,7 +837,7 @@
         break;
     }
     try {
-      updateChatDepartment();
+      if (isInOpeningTimes()){showChatButton()}
     }
     catch (e) {
       console.log(e);
@@ -1634,7 +1634,7 @@
 
   //Action when clicking the chat button
   $('.button-chat').on("click", function () {
-    checkForTagChanges();
+    //checkForTagChanges();
     if(!isInOpeningTimes()){
       chatClosedMessage.show()
       liveChannelsClosedMessage.show()
@@ -1651,9 +1651,9 @@
       return 0;
     }
     try {
-      updateChatDepartment();
+      //updateChatDepartment();
       openChat();
-      setEventListernerForChatStart();
+      //setEventListernerForChatStart();
     }
     catch (e) {
       console.log(e); 
