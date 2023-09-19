@@ -295,11 +295,11 @@ function fillInfoBoxWording() {
 
             //LEVEL 0: Probleme mit einer Bestellung
             "webform_case_damaged_product": {
-                  'de': "Du kannst deinen Transportschaden innerhalb von 5 Kalendertagen nach Erhalt als <a href='" + shopURL + "after-sales' target='blank'>defektes Produkt anmelden</a>.",
-                  'fr': "Dans les 5 jours civils suivant la réception, vous pouvez <a href='" + shopURL + "after-sales' target='blank'>faire enregistrer</a> les dommages causés par le transport <a href='" + shopURL + "after-sales' target='blank'>comme un produit défectueux.</a>",
-                  'it': "Entro 5 giorni di calendario dal ricevimento, è possibile <a href='" + shopURL + "after-sales' target='blank'>segnalare</a> il danno da trasporto <a href='" + shopURL + "after-sales' target='blank'>come prodotto difettoso</a>.",
-                  'en-US': "Within 5 calendar days after receipt, you can <a href='" + shopURL + "after-sales' target='blank'>register</a> your transport damage <a href='" + shopURL + "after-sales' target='blank'>as a defective product.</a>",
-                  'nl': "U kunt uw transportschade binnen 5 dagen na ontvangst <a href='" + shopURL + "after-sales' target='blank'>aanmelden als defect product</a>."
+                  'de': "Weist ein Produkt einen Transportschaden auf, <a href='" + shopURL + "after-sales' target='blank'>melde dies bitte umgehend als defektes Produkt an</a>.",
+                  'it': "Se un prodotto presenta danni da trasporto, <a href='" + shopURL + "after-sales' target='blank'>si prega di segnalarlo immediatamente come prodotto difettoso</a>.",
+                  'fr': "Si un produit a été endommagé pendant le transport, <a href='" + shopURL + "after-sales' target='blank'>veuillez le signaler immédiatement comme un produit défectueux</a>.",
+                  'en-US': "If a product was damaged in transit, <a href='" + shopURL + "after-sales' target='blank'>please report this immediately as a defective product</a>.",
+                  'nl': "Indien een product transportschade vertoont, <a href='" + shopURL + "after-sales' target='blank'>gelieve dit onmiddellijk te melden als een defect product</a>."
             },
             "webform_case_not_working_product": {
                   'de': "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "guide/14' target='blank'>Garantierichtlinien</a> sowie in unseren <a href='" + shopURL + "Wiki/" + agbWikiNumber + "' target='blank'>AGBs</a>.",
@@ -636,12 +636,6 @@ function fillInfoBoxWording() {
       }
 
       if (portal != "helpcenter.digitec.ch" && portal != "helpcenter.galaxus.ch") {
-            infoBoxWording['webform_case_damaged_product']['de'] = "Weist ein Produkt einen Transportschaden auf, <a href='" + shopURL + "after-sales' target='blank'>melde dies bitte umgehend als defektes Produkt an</a>."
-            infoBoxWording['webform_case_damaged_product']['it'] = "Se un prodotto presenta danni da trasporto, <a href='" + shopURL + "after-sales' target='blank'>si prega di segnalarlo immediatamente come prodotto difettoso</a>."
-            infoBoxWording['webform_case_damaged_product']['fr'] = "Si un produit a été endommagé pendant le transport, <a href='" + shopURL + "after-sales' target='blank'>veuillez le signaler immédiatement comme un produit défectueux</a>."
-            infoBoxWording['webform_case_damaged_product']['en-US'] = "If a product was damaged in transit, <a href='" + shopURL + "after-sales' target='blank'>please report this immediately as a defective product</a>."
-            infoBoxWording['webform_case_damaged_product']['nl'] = "Indien een product transportschade vertoont, <a href='" + shopURL + "after-sales' target='blank'>gelieve dit onmiddellijk te melden als een defect product</a>."
-
             infoBoxWording['webform_case_data_request']['deMailTemplate'] = "Ich bitte um schriftliche Auskunft über meine bei " + shopLinkName + " gespeicherten Daten innerhalb von 30 Tagen.\nDie Nummer zu meinem Benutzerkonto lautet: \n"
             infoBoxWording['webform_case_data_request']['frMailTemplate'] = "Veuillez nous communiquer par écrit, dans un délai de 30 jours, les données personnelles que " + shopLinkName + " détient à mon sujet.\nLe numéro de mon compte d'utilisateur est : \n"
             infoBoxWording['webform_case_data_request']['itMailTemplate'] = "Chiedo che mi vengano fornite informazioni sui miei dati memorizzati su " + shopLinkName + ", per iscritto, entro 30 giorni.\nIl numero del mio conto utente è: \n"
