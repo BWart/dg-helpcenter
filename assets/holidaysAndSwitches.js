@@ -373,10 +373,10 @@ var showHolidays = {
       ['2023-08-01 00:00:00', '2023-08-01 22:00:00', 0]
     ],
     'de' : [
-      ['2023-04-27 00:00:00', '2023-05-29 22:00:00', 1]
+      ['2023-09-18 00:00:00', '2023-10-03 22:00:00', 1]
     ],
     'at' : [
-      ['2023-04-27 00:00:00', '2023-05-29 22:00:00', 2]
+      ['2023-09-18 00:00:00', '2023-10-03 22:00:00', 2]
     ],
     'fr' : [
       ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 3]
@@ -407,18 +407,18 @@ var textToDisplay = {
     },
     //Germany
     1 : {
-      'de' : '<br>29.05.2023: Pfingstmontag, geschlossen',
-      'fr' : "<br>29.05.2023 : Lundi de Pentecôte, fermé",
-      'it' : '<br>29.05.2023: Lunedì di Pentecoste, chiuso',
-      'en-US' : '<br>29.05.2023: Whit Monday, closed',
+      'de' : '<br>03.10.2023: Tag der Deutschen Einheit, geschlossen',
+      'fr' : "<br>03.10.2023 : Jour de l'Unité allemande , fermé",
+      'it' : "<br>03.10.2023: Giorno dell'unità tedesca, chiuso",
+      'en-US' : '<br>03.10.2023: German Unity Day, closed',
       'nl': ''
     },
     //Austria
     2 : {
-      'de' : '<br>29.05.2023: Pfingstmontag, geschlossen',
-      'fr' : "<br>29.05.2023 : Lundi de Pentecôte, fermé",
-      'it' : '<br>29.05.2023: Lunedì di Pentecoste, chiuso',
-      'en-US' : '<br>29.05.2023: Whit Monday, closed',
+      'de' : '<br>03.10.2023: Tag der Deutschen Einheit, geschlossen',
+      'fr' : "<br>03.10.2023 : Jour de l'Unité allemande , fermé",
+      'it' : "<br>03.10.2023: Giorno dell'unità tedesca, chiuso",
+      'en-US' : '<br>03.10.2023: German Unity Day, closed',
       'nl': ''
     },
     //France

@@ -41,8 +41,8 @@ function callbackCheck(){
         if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (currentLanguage.toLowerCase() == "de" || currentLanguage.toLowerCase() == "it")){
           customerTypeShorthand = "c"
         } else {
-          //customerTypeShorthand = "b"
-          customerTypeShortand = "c"
+          customerTypeShorthand = "b"
+          //customerTypeShortand = "c"
         }
       } else {
         customerTypeShorthand = "c"

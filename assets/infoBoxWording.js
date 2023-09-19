@@ -295,11 +295,11 @@ function fillInfoBoxWording() {
 
             //LEVEL 0: Probleme mit einer Bestellung
             "webform_case_damaged_product": {
-                  'de': "Du kannst deinen Transportschaden innerhalb von 8 Tagen nach Erhalt als <a href='" + shopURL + "after-sales' target='blank'>defektes Produkt anmelden</a>.",
-                  'fr': "Dans les 8 jours suivant la réception, vous pouvez <a href='" + shopURL + "after-sales' target='blank'>faire enregistrer</a> les dommages causés par le transport <a href='" + shopURL + "after-sales' target='blank'>comme un produit défectueux.</a>",
-                  'it': "Entro 8 giorni dal ricevimento, è possibile <a href='" + shopURL + "after-sales' target='blank'>segnalare</a> il danno da trasporto <a href='" + shopURL + "after-sales' target='blank'>come prodotto difettoso</a>.",
-                  'en-US': "Within 8 days after receipt, you can <a href='" + shopURL + "after-sales' target='blank'>register</a> your transport damage <a href='" + shopURL + "after-sales' target='blank'>as a defective product.</a>",
-                  'nl': "U kunt uw transportschade binnen 8 dagen na ontvangst <a href='" + shopURL + "after-sales' target='blank'>aanmelden als defect product</a>."
+                  'de': "Du kannst deinen Transportschaden innerhalb von 5 Kalendertagen nach Erhalt als <a href='" + shopURL + "after-sales' target='blank'>defektes Produkt anmelden</a>.",
+                  'fr': "Dans les 5 jours civils suivant la réception, vous pouvez <a href='" + shopURL + "after-sales' target='blank'>faire enregistrer</a> les dommages causés par le transport <a href='" + shopURL + "after-sales' target='blank'>comme un produit défectueux.</a>",
+                  'it': "Entro 5 giorni di calendario dal ricevimento, è possibile <a href='" + shopURL + "after-sales' target='blank'>segnalare</a> il danno da trasporto <a href='" + shopURL + "after-sales' target='blank'>come prodotto difettoso</a>.",
+                  'en-US': "Within 5 calendar days after receipt, you can <a href='" + shopURL + "after-sales' target='blank'>register</a> your transport damage <a href='" + shopURL + "after-sales' target='blank'>as a defective product.</a>",
+                  'nl': "U kunt uw transportschade binnen 5 dagen na ontvangst <a href='" + shopURL + "after-sales' target='blank'>aanmelden als defect product</a>."
             },
             "webform_case_not_working_product": {
                   'de': "Sollte ein Produkt defekt sein und es sich um einen Garantiefall handeln, dann musst du in deinem Kundenkonto einen <a href='" + shopURL + "after-sales' target='blank'>Defekt anmelden</a>.<br><br>Beschädigungen, welche auf unsachgemäße Bedienung zurückzuführen sind, fallen nicht unter Garantie. Weitere Informationen findest du in unseren <a href='" + shopURL + "guide/14' target='blank'>Garantierichtlinien</a> sowie in unseren <a href='" + shopURL + "Wiki/" + agbWikiNumber + "' target='blank'>AGBs</a>.",
