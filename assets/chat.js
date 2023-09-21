@@ -52,8 +52,19 @@ function waitForChat(){
 }
 
 function openChat(){
+    console.log("openChat")
+
     sessionStorage.setItem("chatOpenedInSession", "true")
+    
     zE("messenger", "show")
+
+    zE("messenger:set", "conversationFields", [
+        {id: "360007585419", value: 123456},
+        //{id: "360021132800", value: "webform_case_connect_b2b"}
+        {id: "360021132820", value: 763066030},
+        //{id: "123", value: "adfasdfasdf"}
+    ])
+
     console.log(requestReasonTag)
     zE("messenger:set", "conversationTags", [requestReasonTag])
     zE("messenger", "open")
