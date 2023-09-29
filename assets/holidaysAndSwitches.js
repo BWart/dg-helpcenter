@@ -124,8 +124,8 @@ var hideWaitingTimes = {
 
 //Hiding waiting times in case of stuck calls/chats
 //format aus wiatiing nehmen https://py-waittimes-web.prod.pub.devinite.com/waitTimes.js
-let waitTimesToHideCall = []
-let waitTimesToHideChat = ['Chat Mobile Multilingual']
+let waitTimesToHideCall = ['connectDE', 'connectFR', 'connectIT', 'connectEN']
+let waitTimesToHideChat = []
 
 
 //OPENING HOURS
