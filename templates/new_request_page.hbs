@@ -627,7 +627,7 @@
   function showChatButton(){
     $(".button-chat").removeClass("button-offline");
     $(".button-chat").html(dynamicWording[currentLanguage]['chatUs']);
-    $(".recommendedChannel").css('display' , 'inline-block');
+    $(".recommendedChannel").css('display' , 'none');
     chatWaitTimesDOMElements.show();
   }
 
@@ -641,6 +641,12 @@
     script.classList.add('waitTimeScript')
     script.src = 'https://py-waittimes-web.prod.pub.devinite.com/waitTimes.js';
     script.onload = function() {
+        waitTimesToHideCall.forEach((groupName) => {
+          callWaitTimes[groupName] = -1
+        })
+        waitTimesToHideChat.forEach((groupName) => {
+          chatWaitTimes[groupName] = -1
+        })
         setWaitTimes();
     }
     script.onerror = function() {
@@ -808,6 +814,13 @@
       }
       //hideContactForm();
       waitTimes.show();
+      if(callSeconds == -1){
+        callbackWaitTimesDOMElements.hide();
+        callWaitTimesDOMElements.hide();
+      }
+      if(chatSeconds[customerDepartment] == -1) {
+        chatWaitTimesDOMElements.hide();
+      }
   }
 
   function changeWaitTimeHTML(seconds, elements){
