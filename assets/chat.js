@@ -386,7 +386,7 @@ function sortArray(a, b){
 
 //Special Routing for PeIt
 function isPeIt(){
-    if(requestReasonTag == 'webform_case_product_advice_it'){
+    if(requestReasonTag == 'webform_case_product_advice_it' && localStorage.getItem("PEABTestGroup") == "B"){
         return true;
     }else{
         return false;
@@ -396,7 +396,7 @@ function isPeIt(){
 
 //Special Routing for PeNetwork
 function isPeNetwork(){
-    if(requestReasonTag == 'webform_case_product_advice_network'){
+    if(requestReasonTag == 'webform_case_product_advice_network' && localStorage.getItem("PEABTestGroup") == "B"){
         return true;
     }else{
         return false;
@@ -405,7 +405,7 @@ function isPeNetwork(){
 
 //Special Routing for PePhoto
 function isPePhoto(){
-    if(requestReasonTag == 'webform_case_product_advice_photo'){
+    if(requestReasonTag == 'webform_case_product_advice_photo' && localStorage.getItem("PEABTestGroup") == "B"){
         return true;
     }else{
         return false;
@@ -414,7 +414,7 @@ function isPePhoto(){
 
 //Special Routing for PeConsumer
 function isPeConsumer(){
-    if(requestReasonTag == 'webform_case_product_advice_consumer'){
+    if(requestReasonTag == 'webform_case_product_advice_consumer' && localStorage.getItem("PEABTestGroup") == "B"){
         return true;
     }else{
         return false;
@@ -423,7 +423,7 @@ function isPeConsumer(){
 
 //Special Routing for PePhoto
 function isPePhoto(){
-    if(requestReasonTag == 'webform_case_product_advice_photo'){
+    if(requestReasonTag == 'webform_case_product_advice_photo' && localStorage.getItem("PEABTestGroup") == "B"){
         return true;
     }else{
         return false;
@@ -432,7 +432,7 @@ function isPePhoto(){
 
 //Special Routing for PeHome
 function isPeHome(){
-    if(requestReasonTag == 'webform_case_product_advice_home'){
+    if(requestReasonTag == 'webform_case_product_advice_home' && localStorage.getItem("PEABTestGroup") == "B"){
         return true;
     }else{
         return false;
@@ -441,7 +441,7 @@ function isPeHome(){
 
 //Special Routing for PeDiy
 function isPeDiy(){
-    if(requestReasonTag == 'webform_case_product_advice_diy'){
+    if(requestReasonTag == 'webform_case_product_advice_diy' && localStorage.getItem("PEABTestGroup") == "B"){
         return true;
     }else{
         return false;
@@ -523,8 +523,11 @@ function removeOldTags(){
 
 //Fügt die neuen Tags für Skill, WebformCase und Sprache hinzu.
 function addNewZopimTags(){
+    let abTag = "pe_routing_test_group_unknown"
+    if (localStorage.getItem("PEABTestGroup") == "A") {abTag = "pe_routing_test_group_a"}
+    if (localStorage.getItem("PEABTestGroup") == "B") {abTag = "pe_routing_test_group_b"}
     var languageTag = getNormalizedLanguage();
-    setZopimTags([languageTag, requestReasonTag]); // Alle neuen Tags werden gesetzt
+    setZopimTags([languageTag, requestReasonTag, abTag]); // Alle neuen Tags werden gesetzt
 }
 
 // Wenn ein Webform Case im Session Storage vorhanden ist, wird dieser von den Chat Tags entfernt -> Wenn User die Auswahl im Dropdown ändern, sind ansonsten mehrere Tags vorhanden

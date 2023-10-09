@@ -15,6 +15,14 @@
 <script src="{{asset 'timeChecks.js'}}"></script>
 
 <script>
+
+//Setting A/B Test group for PE Chat Routing
+if (localStorage.getItem("PEABTestGroup") != "A" && localStorage.getItem("PEABTestGroup") != "B") {
+  let x = Math.random()
+  if (x < 0.2) {localStorage.setItem("PEABTestGroup", "A")}
+  else {localStorage.setItem("PEABTestGroup", "B")}
+}
+
 //const webWidgetDiv = $(".webWidgetDiv")
 var link = document.createElement('link');
 link.setAttribute("rel", "stylesheet");
