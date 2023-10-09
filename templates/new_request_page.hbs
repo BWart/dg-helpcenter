@@ -8,7 +8,17 @@
   <h1 class="Header" id="HeaderID" data-wording-key="headerTitle">
       <!--{{t 'submit_a_request'}}{{#if follow_up}}<span class='follow-up-hint'>{{follow_up}}</span>{{/if}}-->
   </h1>
-  
+  <button class="testbtn">update tags</button>
+  <script>$('.testbtn').on("click", function (){
+    console.log("CLICKED")
+    zE("messenger:set", "conversationFields", [
+        {id: "360007585419", value: 95774269},
+        //{id: "360021132800", value: "webform_case_connect_b2b"}
+        {id: "360021132820", value: 763066030},
+        //{id: "123", value: "adfasdfasdf"}
+    ])
+  })
+  </script>
   <div class="form requestform" id="requestForm">
     <font class="contactFormInfoTextClass regular" data-wording-key="contactFormInfoText"></font><font class="fallbackInfoText regular" data-wording-key="fallbackInfoText"></font><br><br>
     <!-- AUTOMATED CHAT -->

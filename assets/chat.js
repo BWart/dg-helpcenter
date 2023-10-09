@@ -51,23 +51,15 @@ function waitForChat(){
     //}
 }
 
-function openChat(){
-    console.log("openChat")
-
+async function openChat(){
     sessionStorage.setItem("chatOpenedInSession", "true")
-    
-    zE("messenger", "show")
-
-    console.log(requestReasonTag)
     zE("messenger:set", "conversationTags", [requestReasonTag])
-
     zE("messenger:set", "conversationFields", [
-        {id: "360007585419", value: "95774269"},
-        //{id: "360021132800", value: "webform_case_connect_b2b"}
-        {id: "360021132820", value: "0763066030"},
-        //{id: "123", value: "adfasdfasdf"}
+        {id: "360007585419", value: 95774269},
+        {id: "360021132820", value: 763066030},
     ])
-
+    await sleep(300)
+    zE("messenger", "show")
     zE("messenger", "open")
 }
 
