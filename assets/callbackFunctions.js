@@ -204,7 +204,7 @@ function callbackCheck(){
       "order_id": "1234",
       "customer_name": "max_mustermann",
       "phone_number": "+41763066030",
-      "zendesk_ticket_id": "174944",
+      "zendesk_ticket_id": "11324",
       "request_reason": "test_request_reason",
       "ist_test": "yes",
       "allow_csat": "no",
