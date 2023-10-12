@@ -54,13 +54,16 @@ function waitForChat(){
 async function openChat(){
     sessionStorage.setItem("chatOpenedInSession", "true")
     zE("messenger:set", "conversationTags", [requestReasonTag])
-    zE("messenger:set", "conversationFields", [
+    /*zE("messenger:set", "conversationFields", [
         {id: "360007585419", value: 95774269},
         {id: "360021132820", value: 763066030},
-    ])
-    await sleep(300)
+    ])*/
     zE("messenger", "show")
+    await sleep(300)
     zE("messenger", "open")
+}
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function isChatOpenInSession(){

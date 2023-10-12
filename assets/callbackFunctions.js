@@ -174,7 +174,7 @@ function callbackCheck(){
     var baseRGLink = baseERPLink + "Invoice/"
     var custName = enteredMail.split("@")[0].replace(".", " ")
     var customerSearchLink = baseERPLink + "Customer/SearchPersonAdvanced?&PersonAdvancedSearch.EMail=" + enteredMail
-    var dataToPass = {
+    /*var dataToPass = {
         "customer_phone": enteredPhoneNumber,
         "customer_mail": enteredMail,
         "customer_search_link": customerSearchLink,
@@ -195,11 +195,25 @@ function callbackCheck(){
         "erp_link_base_order": baseOrderLink,
         "erp_link_base_invoice": baseRGLink,
         "callback_country": callbackCountry
+    }*/
+    var dataToPass ={
+      "portal": "digitec",
+      "language": "de",
+      "allow_recording": "no",
+      "customer_id": "1234",
+      "order_id": "1234",
+      "customer_name": "max_mustermann",
+      "phone_number": "+41763066030",
+      "zendesk_ticket_id": "174944",
+      "request_reason": "test_request_reason",
+      "ist_test": "yes",
+      "allow_csat": "no",
+      "customer_type": "private"
     }
     var dataToPass2 = JSON.stringify(dataToPass)
     let auth = "Bearer " + wertmarke
     console.log(ringGroup)
-    $.ajax({
+    /*$.ajax({
       type: "POST",
       url: "https://api.talkdeskapp.com/flows/3731b2ebb4c5492f868cbe2f1e3e3601/interactions",
       headers: {"content-type" : "application/json",
@@ -217,6 +231,22 @@ function callbackCheck(){
         if(gaSend){
           ga('send', 'event', 'Errors', 'CallbackAPI', String(result))
         }
+        var dynamicWording2 = filldynamicWording();
+        $('.callbackFormErrorText').html(dynamicWording2[currentLanguage]['callbackAPIError'])
+      },
+      dataType: "json"
+    })*/
+    $.ajax({
+      type: "POST",
+      url: "https://api.talkdeskapp.com/flows/60cdbd1fe3e241da8ed3e7ff3b6b1d18/interactions",
+      headers: {"content-type" : "application/json",
+      "authorization" : auth
+      },
+      data: dataToPass2,
+      success: function(result){
+        console.log("success")
+      },
+      error: function (result){
         var dynamicWording2 = filldynamicWording();
         $('.callbackFormErrorText').html(dynamicWording2[currentLanguage]['callbackAPIError'])
       },
