@@ -74,10 +74,10 @@ function fillTopBannerWording() {
       'it' : "Guasto di rete ad Andelfingen",
       'en-US' : "Network malfunction in Andelfingen",
       'nl' : "Netwerkstoring in Andelfingen"*/
-      'de' : "Schon gewusst:",
-      'fr' : "Le saviez-vous :",
-      'it' : "Lo sapevi:",
-      'en-US' : "Did you know:",
+      'de' : "Schon gewusst",
+      'fr' : "Le saviez-vous",
+      'it' : "Lo sapevi",
+      'en-US' : "Did you know",
       'nl' : ""
     },
     "outputTextBanner": {
