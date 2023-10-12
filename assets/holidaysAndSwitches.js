@@ -8,10 +8,10 @@ var UTCHourOffset = 2;
 
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
-var bannerSwitchDE = false;
-var bannerSwitchFR = false;
-var bannerSwitchIT = false;
-var bannerSwitchEN = false;
+var bannerSwitchDE = true;
+var bannerSwitchFR = true;
+var bannerSwitchIT = true;
+var bannerSwitchEN = true;
 var bannerSwitchNL = false;
 
 /*let userAgentString = navigator.userAgent;
@@ -69,11 +69,16 @@ function fillTopBannerWording() {
       'it' : "Problemi tecnici Chat in Safari",
       'en-US' : "Technical Issues Chat with Safari",
       'nl' : "Technische problemen Chat in Safari"*/
-      'de' : "Netzwerkstörung in Andelfingen",
+      /*'de' : "Netzwerkstörung in Andelfingen",
       'fr' : "Panne de réseau à Andelfingen",
       'it' : "Guasto di rete ad Andelfingen",
       'en-US' : "Network malfunction in Andelfingen",
-      'nl' : "Netwerkstoring in Andelfingen"
+      'nl' : "Netwerkstoring in Andelfingen"*/
+      'de' : "Schon gewusst:",
+      'fr' : "Le saviez-vous :",
+      'it' : "Lo sapevi:",
+      'en-US' : "Did you know:",
+      'nl' : ""
     },
     "outputTextBanner": {
       /*'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
@@ -81,11 +86,16 @@ function fillTopBannerWording() {
       'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
       'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
       'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."*/
-     'de' : "In der Region Andelfingen und Kleinandelfingen ist der Service aktuell aufgrund einer Netzwerkstörung eingeschränkt. Das Problem ist bekannt und Techniker vor Ort. Die Störung dauert voraussichtlich bis zum Abend des 2. Septembers.<br>Alle Störungen auf dem Sunrise Netz findest du unter <a href='https://www.sunrise.ch/de/support/aktuelle-stoerungen' target='blank'>diesem Link</a>.",
+     /*'de' : "In der Region Andelfingen und Kleinandelfingen ist der Service aktuell aufgrund einer Netzwerkstörung eingeschränkt. Das Problem ist bekannt und Techniker vor Ort. Die Störung dauert voraussichtlich bis zum Abend des 2. Septembers.<br>Alle Störungen auf dem Sunrise Netz findest du unter <a href='https://www.sunrise.ch/de/support/aktuelle-stoerungen' target='blank'>diesem Link</a>.",
      'fr' : "Le service est actuellement limité dans la région d'Andelfingen et de Kleinandelfingen en raison d'une défaillance du réseau. Le problème est connu et des techniciens sont sur place. La panne devrait durer jusqu'au 2 septembre au soir.<br>Vous trouverez toutes les pannes sur le réseau Sunrise sous <a href='https://www.sunrise.ch/fr/support/derangements-actuels' target='blank'>ce lien</a>.",
      'it' : "Il servizio è attualmente limitato nella regione di Andelfingen e Kleinandelfingen a causa di un guasto alla rete. Il problema è noto e i tecnici sono sul posto. Il guasto dovrebbe durare fino alla sera del 2 settembre.<br>Tutti i guasti della rete Sunrise sono disponibili a <a href='https://www.sunrise.ch/it/supporto/malfunzionamenti-attuali' target='blank'>questo link</a>.",
      'en-US' : "Service is currently limited in the Andelfingen and Kleinandelfingen region due to a network fault. The problem is known and technicians are on site. The disruption is expected to last until the evening of September 2.<br>You can find all disruptions on the Sunrise network under <a href='https://www.sunrise.ch/en/support/current-malfunctions' target='blank'>this link</a>.",
-     'nl' : "De service is momenteel beperkt in de regio Andelfingen en Kleinandelfingen vanwege een netwerkstoring. Het probleem is bekend en technici zijn ter plaatse. De storing zal naar verwachting tot de avond van 2 september duren.<br>Je kunt alle storingen op het Sunrise-netwerk vinden onder <a href='https://www.sunrise.ch/en/support/current-malfunctions' target='blank'>deze link</a>."
+     'nl' : "De service is momenteel beperkt in de regio Andelfingen en Kleinandelfingen vanwege een netwerkstoring. Het probleem is bekend en technici zijn ter plaatse. De storing zal naar verwachting tot de avond van 2 september duren.<br>Je kunt alle storingen op het Sunrise-netwerk vinden onder <a href='https://www.sunrise.ch/en/support/current-malfunctions' target='blank'>deze link</a>."*/
+     "de" : "Du kannst einen Wechsel deines Abonnemenets selber in deinem Cockpit vornehmen. Hast du Fragen dazu oder zu den Wechselfristen findest du <a href='https://helpcenter.mobile.galaxus.ch/hc/de/14344381476466'>hier</a> alle Informationen.",
+     "fr" : "Vous pouvez modifier votre abonnement vous-même dans votre cockpit. Si vous avez des questions à ce sujet ou sur les délais de changement, vous trouverez toutes les informations <a href='https://helpcenter.mobile.galaxus.ch/hc/fr/14344381476466'>ici</a>.",
+     "it" : "È possibile modificare il set di abbonamenti direttamente nel cockpit. Se avete domande su questo argomento o sulle scadenze per il cambio, potete trovare tutte le informazioni <a href='https://helpcenter.mobile.galaxus.ch/hc/it/14344381476466'>qui</a>.",
+     "en-US" : "You can change your subscription yourself in your Cockpit. If you have any questions about this or about the switching deadlines, you can find all the information <a href='https://helpcenter.mobile.galaxus.ch/hc/en-us/14344381476466'>here</a>.",
+      "nl" : ""
     }
   }
   return topBannerWording;

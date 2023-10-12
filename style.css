@@ -4786,11 +4786,13 @@ html {
 /*Banner*/
 
 .bannerInfo {
-  background: #fc2;
+  /*background: #fc2;*/
+  background: #ddd;
   float: none;
 }
 .bannerInfo a{
-  color:#755915;
+  /*color:#755915;*/
+  color: #565656;
   text-decoration: underline;
 }
 .bannerInfo a:hover{
