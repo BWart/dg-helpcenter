@@ -14,7 +14,7 @@ var bannerSwitchIT = false;
 var bannerSwitchEN = false;
 var bannerSwitchNL = false;
 
-let userAgentString = navigator.userAgent;
+/*let userAgentString = navigator.userAgent;
 console.log(userAgentString)
 let chromeAgent = userAgentString.indexOf("Chrome") > -1;
 let safariAgent = userAgentString.indexOf("Safari") > -1;
@@ -29,7 +29,7 @@ if (window.location.href.includes('requests') && safariAgent){
   bannerSwitchIT = true;
   bannerSwitchEN = true;
   bannerSwitchNL = true;
-}
+}*/
 
 /*let userAgentString = navigator.userAgent;
 console.log(userAgentString)
