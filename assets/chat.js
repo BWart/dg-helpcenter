@@ -113,6 +113,7 @@ function changeWebWidgetSettingsOnChange(department){
 function getWebWidgetSettings(department){
     dynamicWording = filldynamicWording();
     console.log('Department Set: '+ department);
+    console.log(localStorage.getItem("PEABTestGroup"))
 
     var zeSettings = {
         webWidget: {
