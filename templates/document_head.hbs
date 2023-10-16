@@ -17,10 +17,10 @@
 <script>
 
 //Setting A/B Test group for PE Chat Routing
-if (localStorage.getItem("PEABTestGroup") != "A" && localStorage.getItem("PEABTestGroup") != "B") {
+if (localStorage.getItem("PEABTestGroup2") != "A" && localStorage.getItem("PEABTestGroup2") != "B") {
   let x = Math.random()
-  if (x < 0.2) {localStorage.setItem("PEABTestGroup", "A")}
-  else {localStorage.setItem("PEABTestGroup", "B")}
+  if (x < 0.5) {localStorage.setItem("PEABTestGroup2", "A")}
+  else {localStorage.setItem("PEABTestGroup2", "B")}
 }
 
 //const webWidgetDiv = $(".webWidgetDiv")
