@@ -505,7 +505,7 @@ const openingHours = {
   "helpcenter.digitec.ch": {"weekday": [[8, 0, 19, 0]], "saturday": []},
   "helpcenter.galaxus.ch": {"weekday": [[8, 0, 19, 0]], "saturday": []},
   "helpcenter.galaxus.de": {"weekday": [[8, 0, 19, 0]], "saturday": [[9, 0, 17, 0]]},
-  "helpcenter.galaxus.at": {"weekday": [[8, 0, 21, 0]], "saturday": [[9, 0, 17, 0]]},
+  "helpcenter.galaxus.at": {"weekday": [[8, 0, 19, 0]], "saturday": [[9, 0, 17, 0]]},
   "helpcenter.galaxus.fr": {"weekday": [], "saturday": []},
   "helpcenter.galaxus.it": {"weekday": [], "saturday": []},
   "helpcenter.galaxus.be": {"weekday": [], "saturday": []},
