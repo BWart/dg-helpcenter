@@ -93,11 +93,11 @@ var chatAndPhoneWaitThreshholdToShowContactFormLU = 50000;
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
 //CH
-var bannerSwitchCHDE = false;
-var bannerSwitchCHFR = false;
-var bannerSwitchCHIT = false;
-var bannerSwitchCHEN = false;
-var bannerSwitchCHNL = false;
+var bannerSwitchCHDE = true;
+var bannerSwitchCHFR = true;
+var bannerSwitchCHIT = true;
+var bannerSwitchCHEN = true;
+var bannerSwitchCHNL = true;
 var bannerSwitchConnectDE = false;
 var bannerSwitchConnectFR = false;
 var bannerSwitchConnectIT = false;
@@ -182,11 +182,11 @@ function fillTopBannerWording(){
     topBannerWording = {
       //heading setzt den Titel 
     "outputHeadingBannerCH" : {
-      'de' : "Technische Probleme Chat in Safari",
-      'fr' : "Problèmes techniques Chat dans Safari",
-      'it' : "Problemi tecnici Chat in Safari",
-      'en-US' : "Technical Issues Chat with Safari",
-      'nl' : "Technische problemen Chat in Safari"
+      'de' : "Anfragen bezüglich Google-Promotion",
+      'fr' : "Demande de promotion Google",
+      'it' : "Richieste di informazioni sulla promozione Google",
+      'en-US' : "Google-promotion requests",
+      'nl' : "Vragen over Google Promotie"
       /*'de' : "Technische Probleme Call",
       'fr' : "Problèmes techniques Appel",
       'it' : "Problemi tecnici Chiamare",
@@ -199,11 +199,13 @@ function fillTopBannerWording(){
       'nl' : "Technische problemen Bestellen in de webshop"*/
     },
     "outputTextBannerCH" : {
-      'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
-      'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
-      'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
-      'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
-      'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
+      'de' : "Wir verzeichnen momentan ein hohes Anfrageaufkommen bezüglich der Google-Pixel Aktion mit gratis Zubehör. Die Seite https://reward-promos.com/launch2023 funktioniert aktuell nicht und Google arbeitet an einer Lösung. Wir bieten um etwas Geduld.
+",
+      'fr' : "Nous enregistrons actuellement un grand nombre de demandes concernant l'action Google Pixel avec des accessoires gratuits. La page https://reward-promos.com/launch2023 ne fonctionne pas actuellement et Google travaille à une solution. Nous vous prions de bien vouloir patienter.",
+      'it' : "Al momento stiamo riscontrando un elevato volume di richieste relative alla promozione Google Pixel con accessori gratuiti. La pagina https://reward-promos.com/launch2023 non funziona e Google sta cercando una soluzione. Vi chiediamo di avere pazienza.",
+      'en-US' : "We are currently experiencing a high volume of inquiries regarding the Google Pixel promotion with free accessories. The site https://reward-promos.com/launch2023 is currently not working and Google is working on a solution. We ask for your patience.  
+",
+      'nl' : "We krijgen momenteel veel vragen over de Google Pixel-promotie met gratis accessoires. De pagina https://reward-promos.com/launch2023 werkt momenteel niet en Google werkt aan een oplossing. We vragen om een beetje geduld."
       
       /*'de' : "Aufgrund technischer Probleme steht unsere Telefonleitung temporär nicht zur Verfügung.",
       'fr' : "En raison de problèmes techniques, notre ligne téléphonique est temporairement indisponible.",
