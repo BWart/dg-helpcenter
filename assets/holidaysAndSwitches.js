@@ -2,6 +2,7 @@
 // 2 during summer time, 1 during winter time
 var UTCHourOffset = 2;
 
+
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
 var switchHideContactFormDuringOpeningTimes = false;
@@ -90,14 +91,15 @@ var chatAndPhoneWaitThreshholdToShowContactFormNL = 50000;
 var chatAndPhoneWaitThreshholdToShowContactFormLU = 50000;
 
 
+
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
 //CH
-var bannerSwitchCHDE = false;
-var bannerSwitchCHFR = false;
-var bannerSwitchCHIT = false;
-var bannerSwitchCHEN = false;
-var bannerSwitchCHNL = false;
+var bannerSwitchCHDE = true;
+var bannerSwitchCHFR = true;
+var bannerSwitchCHIT = true;
+var bannerSwitchCHEN = true;
+var bannerSwitchCHNL = true;
 var bannerSwitchConnectDE = false;
 var bannerSwitchConnectFR = false;
 var bannerSwitchConnectIT = false;
@@ -146,7 +148,9 @@ var bannerSwitchLUIT = false;
 var bannerSwitchLUEN = false;
 var bannerSwitchLUNL = false;
 
+
 /*Safari nicht mehr benötigt unten
+
 
 let userAgentString = navigator.userAgent;
 let chromeAgent = userAgentString.indexOf("Chrome") > -1;
@@ -155,6 +159,7 @@ let IExplorerAgent = userAgentString.indexOf("MSIE") > -1 || userAgentString.ind
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 if ((chromeAgent) && (safariAgent)) {safariAgent = false};
 safariAgent = false;
+
 
 if (window.location.href.includes('requests') && safariAgent){
   //CH
@@ -199,13 +204,11 @@ function fillTopBannerWording(){
       'nl' : "Technische problemen Bestellen in de webshop"*/
     },
     "outputTextBannerCH" : {
-      'de' : "Wir verzeichnen momentan ein hohes Anfrageaufkommen bezüglich der Google-Pixel Aktion mit gratis Zubehör. Die Seite https://reward-promos.com/launch2023 funktioniert aktuell nicht und Google arbeitet an einer Lösung. Wir bieten um etwas Geduld.
-",
-      'fr' : "Nous enregistrons actuellement un grand nombre de demandes concernant l'action Google Pixel avec des accessoires gratuits. La page https://reward-promos.com/launch2023 ne fonctionne pas actuellement et Google travaille à une solution. Nous vous prions de bien vouloir patienter.",
-      'it' : "Al momento stiamo riscontrando un elevato volume di richieste relative alla promozione Google Pixel con accessori gratuiti. La pagina https://reward-promos.com/launch2023 non funziona e Google sta cercando una soluzione. Vi chiediamo di avere pazienza.",
-      'en-US' : "We are currently experiencing a high volume of inquiries regarding the Google Pixel promotion with free accessories. The site https://reward-promos.com/launch2023 is currently not working and Google is working on a solution. We ask for your patience.  
-",
-      'nl' : "We krijgen momenteel veel vragen over de Google Pixel-promotie met gratis accessoires. De pagina https://reward-promos.com/launch2023 werkt momenteel niet en Google werkt aan een oplossing. We vragen om een beetje geduld."
+      'de' : "Wir verzeichnen momentan ein hohes Anfrageaufkommen bezüglich der Google-Pixel Aktion mit gratis Zubehör. Die Seite <a href='https://reward-promos.com/launch2023' target='blank'>reward-promos.com/launch2023</a> funktioniert aktuell nicht und Google arbeitet an einer Lösung. Wir bitten um etwas Geduld.",
+      'fr' : "Nous enregistrons actuellement un grand nombre de demandes concernant l'action Google Pixel avec des accessoires gratuits. La page <a href='https://reward-promos.com/launch2023' target='blank'>reward-promos.com/launch2023</a> ne fonctionne pas actuellement et Google travaille à une solution. Nous vous prions de bien vouloir patienter.",
+      'it' : "Al momento stiamo riscontrando un elevato volume di richieste relative alla promozione Google Pixel con accessori gratuiti. La pagina <a href='https://reward-promos.com/launch2023' target='blank'>reward-promos.com/launch2023</a> non funziona e Google sta cercando una soluzione. Vi chiediamo di avere pazienza.",
+      'en-US' : "We are currently experiencing a high volume of inquiries regarding the Google Pixel promotion with free accessories. The site <a href='https://reward-promos.com/launch2023' target='blank'>reward-promos.com/launch2023</a> is currently not working and Google is working on a solution. We ask for your patience.  ",
+      'nl' : "We krijgen momenteel veel vragen over de Google Pixel-promotie met gratis accessoires. De pagina <a href='https://reward-promos.com/launch2023' target='blank'>reward-promos.com/launch2023</a> werkt momenteel niet en Google werkt aan een oplossing. We vragen om een beetje geduld."
   
       /*'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
       'fr' : "Actuellement, certains clients ne peuvent pas passer de commandes dans notre boutique en ligne. Nous sommes conscients du problème et nous travaillons à une solution. Malheureusement, nous ne pouvons pas vous proposer de solution par le biais de nos canaux de contact pour le moment. Veuillez réessayer dans la boutique en ligne ultérieurement. ",
@@ -361,6 +364,7 @@ function fillTopBannerWording(){
 }
 
 
+
 // --- ENTER HOLIDAYS HERE TO BE DISPLAYED IN THE HELPCENTER AND FOR THE WAITING TIMES TO BE REMOVED ---
 //WHEN TO SHOW THE HOLIDAY INFORMATION TEXT (USUALLY STARTS SOME DAYS BEFORE THE ACTUAL HOLIDAY)
 //NOTE THAT DATES MUST BE NOTED IN UTC TIME
@@ -460,6 +464,7 @@ var textToDisplay = {
     }
 }
 
+
 //WHEN TO HIDE THE WAITING TIMES (WHEN HOLIDAYS ARE ONGOING)
 //NOTE THAT DATES MUST BE NOTED IN UTC TIME
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
@@ -490,10 +495,12 @@ var hideWaitingTimes = {
     ]
 }
 
+
 //Hiding waiting times in case of stuck calls/chats
 //format aus waiting nehmen https://py-waittimes-web.prod.pub.devinite.com/waitTimes.js
 let waitTimesToHideCall = []
 let waitTimesToHideChat = []
+
 
 
 //OPENING HOURS
@@ -514,11 +521,13 @@ const openingHours = {
   "chPE": {"weekday": [[8, 0, 18, 0]], "saturday": []}
 }
 
+
 //Connect
 var connectOpeningHourWeekday = 8;
 var connectClosingHourWeekday = 17;
 var connectOpeningHourSaturday = false;
 var connectClosingHourSaturday = false;
+
 
 
 ////////////////////////////////////////////////////////////////////////////////////////Chat Fallback///////////////////////////////////////////////////////////////////////////////////////
@@ -528,13 +537,16 @@ var chatDeIsFallback = false;
 var chatItIsFallback = false;
 var chatFrIsFallback = false;
 
+
 //Defines if the Language has a Fallback
 var chatEnHasFallback = false;
 var chatDeHasFallback = false;
 var chatItHasFallback = false;
 var chatFrHasFallback = false;
 
+
 //Amount of Seconds for Fallback to trigger
 var secondsToChatFallback = 300;
 //Percentage of Waiting Time difference between the two languages
 var percentageForChatFallback = 400;
+
