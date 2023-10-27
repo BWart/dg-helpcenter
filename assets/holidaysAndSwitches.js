@@ -187,11 +187,6 @@ function fillTopBannerWording(){
       'it' : "Richieste di informazioni sulla promozione Google",
       'en-US' : "Google-promotion requests",
       'nl' : "Vragen over Google Promotie"
-      'de' : "Anfragen bezüglich Google-Promotion",
-      'fr' : "Demande de promotion Google",
-      'it' : "Richieste di informazioni sulla promozione Google",
-      'en-US' : "Google-promotion requests",
-      'nl' : "Vragen over Google Promotie"
       /*'de' : "Technische Probleme Call",
       'fr' : "Problèmes techniques Appel",
       'it' : "Problemi tecnici Chiamare",
@@ -211,15 +206,7 @@ function fillTopBannerWording(){
       'en-US' : "We are currently experiencing a high volume of inquiries regarding the Google Pixel promotion with free accessories. The site https://reward-promos.com/launch2023 is currently not working and Google is working on a solution. We ask for your patience.  
 ",
       'nl' : "We krijgen momenteel veel vragen over de Google Pixel-promotie met gratis accessoires. De pagina https://reward-promos.com/launch2023 werkt momenteel niet en Google werkt aan een oplossing. We vragen om een beetje geduld."
-      
-   'de' : "Wir verzeichnen momentan ein hohes Anfrageaufkommen bezüglich der Google-Pixel Aktion mit gratis Zubehör. Die Seite https://reward-promos.com/launch2023 funktioniert aktuell nicht und Google arbeitet an einer Lösung. Wir bieten um etwas Geduld.
-",
-      'fr' : "Nous enregistrons actuellement un grand nombre de demandes concernant l'action Google Pixel avec des accessoires gratuits. La page https://reward-promos.com/launch2023 ne fonctionne pas actuellement et Google travaille à une solution. Nous vous prions de bien vouloir patienter.",
-      'it' : "Al momento stiamo riscontrando un elevato volume di richieste relative alla promozione Google Pixel con accessori gratuiti. La pagina https://reward-promos.com/launch2023 non funziona e Google sta cercando una soluzione. Vi chiediamo di avere pazienza.",
-      'en-US' : "We are currently experiencing a high volume of inquiries regarding the Google Pixel promotion with free accessories. The site https://reward-promos.com/launch2023 is currently not working and Google is working on a solution. We ask for your patience.  
-",
-      'nl' : "We krijgen momenteel veel vragen over de Google Pixel-promotie met gratis accessoires. De pagina https://reward-promos.com/launch2023 werkt momenteel niet en Google werkt aan een oplossing. We vragen om een beetje geduld."
-      
+  
       /*'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
       'fr' : "Actuellement, certains clients ne peuvent pas passer de commandes dans notre boutique en ligne. Nous sommes conscients du problème et nous travaillons à une solution. Malheureusement, nous ne pouvons pas vous proposer de solution par le biais de nos canaux de contact pour le moment. Veuillez réessayer dans la boutique en ligne ultérieurement. ",
       'it' : "Attualmente, alcuni clienti non possono effettuare ordini nel nostro negozio online. Siamo consapevoli del problema e stiamo lavorando a una soluzione. Purtroppo, al momento non possiamo offrire una soluzione attraverso i nostri canali di contatto. Vi invitiamo a riprovare a visitare il negozio online in un secondo momento.",
