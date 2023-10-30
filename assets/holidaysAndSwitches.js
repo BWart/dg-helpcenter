@@ -1,6 +1,6 @@
 // --- TIMEZONE OFFSET --- 
 // 2 during summer time, 1 during winter time
-var UTCHourOffset = 2;
+var UTCHourOffset = 1;
 
 
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
