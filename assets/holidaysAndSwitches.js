@@ -140,7 +140,7 @@ let waitTimesToHideChat = []
 
 //OPENING HOURS
 const openingHours = {
-  "helpcenter.mobile.galaxus.ch": {"weekday": [[8, 0, 13, 0], [14, 0, 17, 0]], "saturday": []},
+  "helpcenter.mobile.galaxus.ch": {"weekday": [[9, 0, 13, 0], [14, 0, 18, 0]], "saturday": []},
 }
 
 
