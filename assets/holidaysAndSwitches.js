@@ -3,6 +3,7 @@
 var UTCHourOffset = 1;
 
 
+
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
 var switchHideContactFormDuringOpeningTimes = false;
@@ -92,6 +93,7 @@ var chatAndPhoneWaitThreshholdToShowContactFormLU = 50000;
 
 
 
+
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
 //CH
@@ -149,7 +151,9 @@ var bannerSwitchLUEN = false;
 var bannerSwitchLUNL = false;
 
 
+
 /*Safari nicht mehr benötigt unten
+
 
 
 let userAgentString = navigator.userAgent;
@@ -159,6 +163,7 @@ let IExplorerAgent = userAgentString.indexOf("MSIE") > -1 || userAgentString.ind
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 if ((chromeAgent) && (safariAgent)) {safariAgent = false};
 safariAgent = false;
+
 
 
 if (window.location.href.includes('requests') && safariAgent){
@@ -365,6 +370,7 @@ function fillTopBannerWording(){
 
 
 
+
 // --- ENTER HOLIDAYS HERE TO BE DISPLAYED IN THE HELPCENTER AND FOR THE WAITING TIMES TO BE REMOVED ---
 //WHEN TO SHOW THE HOLIDAY INFORMATION TEXT (USUALLY STARTS SOME DAYS BEFORE THE ACTUAL HOLIDAY)
 //NOTE THAT DATES MUST BE NOTED IN UTC TIME
@@ -465,6 +471,7 @@ var textToDisplay = {
 }
 
 
+
 //WHEN TO HIDE THE WAITING TIMES (WHEN HOLIDAYS ARE ONGOING)
 //NOTE THAT DATES MUST BE NOTED IN UTC TIME
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
@@ -496,6 +503,7 @@ var hideWaitingTimes = {
 }
 
 
+
 //Hiding waiting times in case of stuck calls/chats
 //format aus waiting nehmen https://py-waittimes-web.prod.pub.devinite.com/waitTimes.js
 let waitTimesToHideCall = []
@@ -522,11 +530,13 @@ const openingHours = {
 }
 
 
+
 //Connect
 var connectOpeningHourWeekday = 8;
 var connectClosingHourWeekday = 17;
 var connectOpeningHourSaturday = false;
 var connectClosingHourSaturday = false;
+
 
 
 
@@ -538,6 +548,7 @@ var chatItIsFallback = false;
 var chatFrIsFallback = false;
 
 
+
 //Defines if the Language has a Fallback
 var chatEnHasFallback = false;
 var chatDeHasFallback = false;
@@ -545,8 +556,8 @@ var chatItHasFallback = false;
 var chatFrHasFallback = false;
 
 
+
 //Amount of Seconds for Fallback to trigger
 var secondsToChatFallback = 300;
 //Percentage of Waiting Time difference between the two languages
 var percentageForChatFallback = 400;
-

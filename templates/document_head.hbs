@@ -6,6 +6,7 @@
 <div id="webWidget" class="webWidgetDiv"></div>
 <!--<link rel="icon" type="image/x-icon" href="{{asset 'fav_galaxus.png'}}">-->
 
+
 <script src="{{asset 'holidaysAndSwitches.js'}}"></script>
 <script src="{{asset 'infoBoxWording.js'}}"></script>
 <script src="{{asset 'dynamicWording.js'}}"></script>
@@ -14,40 +15,34 @@
 <script src="{{asset 'callbackFunctions.js'}}"></script>
 <script src="{{asset 'timeChecks.js'}}"></script>
 
+
 <script>
 
-//Setting A/B Test group for PE Chat Routing
-if (localStorage.getItem("PEABTestGroup2") != "A" && localStorage.getItem("PEABTestGroup2") != "B") {
-  let x = Math.random()
-  if (x < 0.5) {localStorage.setItem("PEABTestGroup2", "A")}
-  else {localStorage.setItem("PEABTestGroup2", "B")}
-}
 
 //const webWidgetDiv = $(".webWidgetDiv")
 var link = document.createElement('link');
 link.setAttribute("rel", "stylesheet");
 link.setAttribute("type", "text/css");
 link.onload = showBody();
-	  
+    
   var WidgetURL;
   if(window.location.hostname !="helpcenter.digitec.ch" && window.location.hostname !="helpcenter.connect.digitec.ch" && window.location.hostname !="digitec.zendesk.com"){
-  	link.setAttribute("href", "{{asset 'galaxus-styles.css'}}");
+    link.setAttribute("href", "{{asset 'galaxus-styles.css'}}");
     $('[rel="icon"]').attr("href", "{{asset 'fav_galaxus.png'}}");
     $("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4"/><//script>')
     }else{
-			link.setAttribute("href","{{asset 'digitec-styles.css'}}");
+      link.setAttribute("href","{{asset 'digitec-styles.css'}}");
       $('[rel="icon"]').attr("href", "{{asset 'fav_digitec.png'}}");
       $("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=18dfacef-9aec-49ae-bbe4-0bcd883ef859"/><//script>')
     }   
 //webWidgetDiv.hide()
 
+
 $("#customDGStyle").html(link)
 
+
 function showBody(){
-	$(document.body).css("visibility", "visible");
+  $(document.body).css("visibility", "visible");
 }
   
 </script>
-
-
-

@@ -1,6 +1,7 @@
 // Waits until Page loaded and then calls basic Setup
 let customerDepartment = "Chat Private DE"
 
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -16,6 +17,7 @@ async function asyncChatLoad(counter){
     hideChat();
     asyncChatStart()
 }
+
 
 async function asyncChatStart(counter){
     await sleep(1000)
@@ -36,6 +38,7 @@ async function asyncChatStart(counter){
     }
 }
 
+
 function waitForChat(){
     window.addEventListener('load', (event) => {
         if (typeof zE == "undefined") {
@@ -47,6 +50,7 @@ function waitForChat(){
         }
     })
 }
+
 
 /*function waitForChat(){
     console.log("entering waitForChat")
@@ -96,6 +100,7 @@ function waitForChat(){
     }
 }*/
 
+
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
 //Initial WebWebidget Settings
 function changeWebWidgetSettingInitial(department){
@@ -103,17 +108,19 @@ function changeWebWidgetSettingInitial(department){
     zE('webWidget', 'setLocale', getNormalizedLanguage()); // Setzt die Widget Sprache   
 }
 
+
 // Updated die Widget Settings - Update Soll nur bei Dropdown Change im Request Form und beim Reconnect passieren. Ansonsten soll die Einstellung nicht überschrieben werden
 function changeWebWidgetSettingsOnChange(department){
     zE('webWidget', 'updateSettings', getWebWidgetSettings(department));
     zE('webWidget', 'setLocale', getNormalizedLanguage()); // Setzt die Widget Sprache
 }
 
+
 // Definiert die Widget Settings
 function getWebWidgetSettings(department){
     dynamicWording = filldynamicWording();
     console.log('Department Set: '+ department);
-    console.log(localStorage.getItem("PEABTestGroup2"))
+
 
     var zeSettings = {
         webWidget: {
@@ -163,6 +170,7 @@ function getWebWidgetSettings(department){
     return zeSettings;
 }
 
+
 /////////////////////////////////////////////////////////////Departments///////////////////////////////////////////////////////////////////////////
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
@@ -180,6 +188,7 @@ function getChatDepartment(){
         }
     }
 
+
     console.log('Expected Department :' + dep)
     //return("Chat Testgroup DE")
     if(typeof getDepartmentInfo(dep) != 'undefined'){
@@ -188,6 +197,7 @@ function getChatDepartment(){
         return 'Chat Private ' + getChatDepartmentLanguage();
     }
 }
+
 
 function getDepartmentWithOverflowCheck(selectedDepartment){
     overflowDepartmentArray = checkForOverflow();
@@ -199,6 +209,7 @@ function getDepartmentWithOverflowCheck(selectedDepartment){
         return selectedDepartment;
     }
 }
+
 
 function getDepartmentWaitingTime(){
     switch(getChatDepartmentLanguage()){
@@ -224,6 +235,7 @@ function getDepartmentWaitingTime(){
     }
 }
 
+
 function isOverflowDepartmentTresholdReached(selectedDepartmentWaitingTime, overflowDepartmentWaitingTime){
     if(selectedDepartmentWaitingTime > (overflowDepartmentWaitingTime /100 * percentageForChatFallback)){
         return true;
@@ -231,6 +243,7 @@ function isOverflowDepartmentTresholdReached(selectedDepartmentWaitingTime, over
         return false;
     }
 }
+
 
 //Gets language and changes to uppercase
 function getChatDepartmentLanguage(){
@@ -244,6 +257,7 @@ function getChatDepartmentLanguage(){
     }
     return chatDepartmentLanguage.toUpperCase();
 }
+
 
 //Normalisiert die HTML Sprache
 function getNormalizedLanguage(){
@@ -267,9 +281,11 @@ function getNormalizedLanguage(){
     return normalizedLanguage;
 }
 
+
 function getLanguage(){
     return $('html').attr('lang');
 }
+
 
 //Department Type wird anhand der Domain gesetzt
 function getChatDepartmentType(){
@@ -278,7 +294,7 @@ function getChatDepartmentType(){
     switch(href){
         case('helpcenter.digitec.ch'):
         case('helpcenter.galaxus.ch'):
-            chatDepartmentType = getDGChatDepartmentType();
+            chatDepartmentType = 'Private';
             break;
         case('helpcenter.connect.digitec.ch'):
             chatDepartmentType = 'Private';
@@ -293,38 +309,7 @@ function getChatDepartmentType(){
     return chatDepartmentType;
 }
 
-//Unterteilung zwischen PE & Private
-function getDGChatDepartmentType(){
-    lang = getNormalizedLanguage();
-    var DGChatDepartmentType;
-    if(typeof customerType != 'undefined' && typeof requestReasonTag != 'undefined'){
-        switch(true){
-            case(isPeIt()):
-                DGChatDepartmentType = 'PeIt';
-                break;
-            case(isPeNetwork()):
-                DGChatDepartmentType = 'PeNetwork';
-                break;
-            case(isPeConsumer()):
-                DGChatDepartmentType = 'PeConsumer';
-                break;
-            case(isPePhoto()):
-                DGChatDepartmentType = 'PePhoto';
-                break;
-            case(isPeHome()):
-                DGChatDepartmentType = 'PeHome';
-                break;
-            case(isPeDiy()):
-                DGChatDepartmentType = 'PeDiy';
-                break;  
-            default:
-                DGChatDepartmentType = 'Private';
-        }
-        return DGChatDepartmentType;  
-    }else{
-        return 'Private';
-    }
-}
+
 
 /////////////////////////////////////////////////////////////Special Routing Conditions///////////////////////////////////////////////////////////////////////////
 //Special Overflow Routing for big Workload
@@ -335,6 +320,7 @@ function checkForOverflow(){
         return getChatDepartmentLanguage();
     }
 }
+
 
 function isOverflowActive(chatDepartmentLanguage){
     switch(chatDepartmentLanguage){
@@ -350,6 +336,7 @@ function isOverflowActive(chatDepartmentLanguage){
             return false;
     }
 }
+
 
 function getOverflowDepartmentLanguage(){
     var overflowDepartments = [];
@@ -368,6 +355,7 @@ function getOverflowDepartmentLanguage(){
     return getOverflowDepartment(overflowDepartments);
 }
 
+
 function getOverflowDepartment(overflowDepartments){
     if(overflowDepartments.length > 0){
         return overflowDepartments.sort(sortArray)[0];
@@ -375,6 +363,7 @@ function getOverflowDepartment(overflowDepartments){
         return getChatDepartmentLanguage();
     }
 }
+
 
 function sortArray(a, b){
     if (a[1] === b[1]){
@@ -385,69 +374,6 @@ function sortArray(a, b){
     }
 }
 
-//Special Routing for PeIt
-function isPeIt(){
-    if(requestReasonTag == 'webform_case_product_advice_it' && localStorage.getItem("PEABTestGroup2") == "B"){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-
-//Special Routing for PeNetwork
-function isPeNetwork(){
-    if(requestReasonTag == 'webform_case_product_advice_network' && localStorage.getItem("PEABTestGroup2") == "B"){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-//Special Routing for PePhoto
-function isPePhoto(){
-    if(requestReasonTag == 'webform_case_product_advice_photo' && localStorage.getItem("PEABTestGroup2") == "B"){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-//Special Routing for PeConsumer
-function isPeConsumer(){
-    if(requestReasonTag == 'webform_case_product_advice_consumer' && localStorage.getItem("PEABTestGroup2") == "B"){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-//Special Routing for PePhoto
-function isPePhoto(){
-    if(requestReasonTag == 'webform_case_product_advice_photo' && localStorage.getItem("PEABTestGroup2") == "B"){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-//Special Routing for PeHome
-function isPeHome(){
-    if(requestReasonTag == 'webform_case_product_advice_home' && localStorage.getItem("PEABTestGroup2") == "B"){
-        return true;
-    }else{
-        return false;
-    }
-}
-
-//Special Routing for PeDiy
-function isPeDiy(){
-    if(requestReasonTag == 'webform_case_product_advice_diy' && localStorage.getItem("PEABTestGroup2") == "B"){
-        return true;
-    }else{
-        return false;
-    }
-}
 
 function isDepartmentAvailable(depName){
     var dep = getDepartmentInfo(depName)
@@ -461,6 +387,7 @@ function isDepartmentAvailable(depName){
         return false;
     }
 }
+
 
 function getDepartmentInfo(departmentName){
     return zE('webWidget:get', 'chat:department', departmentName)
@@ -482,6 +409,7 @@ function updateChatDepartment(){
     }
 }
 
+
 function checkDepartmentforInitialButtonChange(selectedDepartment){
     if(isDepartmentAvailable(selectedDepartment) && isInOpeningTimes()){
         showChatButton();
@@ -489,6 +417,7 @@ function checkDepartmentforInitialButtonChange(selectedDepartment){
         hideChatButton();
     }
 }
+
 
 // Hide or Shows Button if Chosen Department Status Changes 
 function listenDepartmentStatus(){
@@ -500,6 +429,7 @@ function listenDepartmentStatus(){
     });
 }
 
+
 // Shows Chat button if anyone is available and inside opening hours
 function changeButtonVisibility(status){
     if(status == 'online' && isInOpeningTimes()){
@@ -509,6 +439,7 @@ function changeButtonVisibility(status){
     }
   }
 
+
 /////////////////////////////////////////////////////////////////Zopim Tags/////////////////////////////////////////////////////////////////////////
 //Nach dem Klick auf den Chat Button werden vorhandene Skills entfernt und neue gesetzt
 function checkForTagChanges(){
@@ -517,19 +448,19 @@ function checkForTagChanges(){
     addNewZopimTags();    
 }
 
+
 //Entfert Tags für Sprache sowie Skills -> Es sind danach keine Tags mehr vorhanden und können neu gesetzt werden
 function removeOldTags(){
     removeZopimTags(['de', 'fr', 'it', 'en']); // entfernt initial alle Sprachen
 }
 
+
 //Fügt die neuen Tags für Skill, WebformCase und Sprache hinzu.
 function addNewZopimTags(){
-    let abTag = "pe_routing_test_group_unknown"
-    if (localStorage.getItem("PEABTestGroup2") == "A") {abTag = "pe_routing_test_group_a"}
-    if (localStorage.getItem("PEABTestGroup2") == "B") {abTag = "pe_routing_test_group_b"}
     var languageTag = getNormalizedLanguage();
-    setZopimTags([languageTag, requestReasonTag, abTag]); // Alle neuen Tags werden gesetzt
+    setZopimTags([languageTag, requestReasonTag]); // Alle neuen Tags werden gesetzt
 }
+
 
 // Wenn ein Webform Case im Session Storage vorhanden ist, wird dieser von den Chat Tags entfernt -> Wenn User die Auswahl im Dropdown ändern, sind ansonsten mehrere Tags vorhanden
 function removeOldWebformCaseTag(){
@@ -539,6 +470,7 @@ function removeOldWebformCaseTag(){
     }
     sessionStorage.setItem('requestReason', requestReasonTag);
 }
+
 
 // Setzt den Chat Tag - Einzeln oder Array
 function setZopimTags(tags){                                                                  
@@ -550,6 +482,7 @@ function removeZopimTags(tags){
     zE('webWidget', 'chat:removeTags', tags);  
 }
 
+
 // Callback for Start and Adds Event Listeners
 function setEventListernerForChatStart(){
     zE('webWidget:on', 'chat:start', function() {
@@ -558,11 +491,13 @@ function setEventListernerForChatStart(){
     });
 }
 
+
 function setEventListenerForChatEnd(){
     zE('webWidget:on', 'chat:end', function() {
         updateChatDepartment();
     });
 }
+
 
 //Set tags when Chat Reconnects
 function setTagsAndDepartmentAtReconnect(){
@@ -572,12 +507,14 @@ function setTagsAndDepartmentAtReconnect(){
     });
 }
 
+
 //////////////////////////////////////////////////////////Globale Chat Functions////////////////////////////////////////////////////////////////
 function openWidgetForUnreadMessages(){
     zE('webWidget:on', 'chat:unreadMessages', function(number) {
         openChat();
     });
 }
+
 
 function hideWidgetWhenMinimized(){
     zE('webWidget:on', 'userEvent', function(event) {
@@ -587,6 +524,7 @@ function hideWidgetWhenMinimized(){
     });
 }
 
+
 function isChatting(){
     if(zE('webWidget:get', 'chat:isChatting')){
         return true;
@@ -595,11 +533,13 @@ function isChatting(){
     }
 }
 
+
 function openChat(){
     //webWidgetDiv.show()
     zE('webWidget', 'show');
     document.getElementById('launcher').contentWindow.document.getElementById('Embed').getElementsByTagName('button')[0].click();
 }
+
 
 function hideChat(){
     //webWidgetDiv.hide()
