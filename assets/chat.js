@@ -35,6 +35,11 @@ async function asyncChatStart(counter){
         openChat();
     }else{
         changeWebWidgetSettingInitial(getChatDepartment());
+        if (chatOpenFromHelpAssist == true) {
+            setChatDepartmentForHelpAssist(JSON.parse(sessionStorage.getItem('user-info'))["requestReason"], JSON.parse(sessionStorage.getItem('user-info'))["isPrivate"]);
+            openChat();
+            setEventListenerForChatStart();
+        }
     }
 }
 
@@ -49,6 +54,20 @@ function waitForChat(){
             asyncChatStart(0)
         }
     })
+}
+
+function setChatDepartmentForHelpAssist(helpAssistRequestReason, isPrivate){
+    let templang = getNormalizedLanguage();
+    if (portal == "helpcenter.galaxus.ch" || portal == "helpcenter.digitec.ch") {
+        if (templang == 'de'){
+            zE('webWidget', 'updateSettings', getWebWidgetSettings("Chat Private DE"))
+        } else {
+            zE('webWidget', 'updateSettings', getWebWidgetSettings("Chat Private Multilingual"))
+        }
+    } else { //if portal not digitec or galaxus
+        zE('webWidget', 'updateSettings', getWebWidgetSettings("Chat EU DE"))
+    }
+    //setZopimTags([languageTag, requestReasonTag])
 }
 
 
@@ -252,10 +271,9 @@ function getChatDepartmentLanguage(){
         //return "EN"
         return "Multilingual"
     }
-    if ((portal == "helpcenter.galaxus.de" || portal == "helpcenter.galaxus.at") && chatDepartmentLanguage.toUpperCase() == "EN"){
+    else {
         return "DE"
     }
-    return chatDepartmentLanguage.toUpperCase();
 }
 
 
@@ -301,6 +319,10 @@ function getChatDepartmentType(){
             break;
         case('helpcenter.galaxus.de'):
         case('helpcenter.galaxus.at'):
+        case('helpcenter.galaxus.fr'):
+        case('helpcenter.galaxus.it'):
+        case('helpcenter.galaxus.nl'):
+        case('helpcenter.galaxus.be'):
             chatDepartmentType = 'EU';
             break;
         default:
@@ -484,7 +506,7 @@ function removeZopimTags(tags){
 
 
 // Callback for Start and Adds Event Listeners
-function setEventListernerForChatStart(){
+function setEventListenerForChatStart(){
     zE('webWidget:on', 'chat:start', function() {
         setTagsAndDepartmentAtReconnect();
         setEventListenerForChatEnd();

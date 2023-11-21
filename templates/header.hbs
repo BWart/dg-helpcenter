@@ -64,15 +64,20 @@
 
 <script type="text/javascript" >
 
-  const urlParams = new URLSearchParams(window.location.search)
-  const userInfo = urlParams.get('user-info')
+  const urlParams = new URLSearchParams(window.location.search);
+  const userInfo = urlParams.get('user-info');
+  let chatOpenFromHelpAssist = false;
+
   if (userInfo != null){
     sessionStorage.setItem('user-info', atob(userInfo))
+    console.log("BEFORE IF")
+    if (JSON.parse(atob(userInfo))["openChat"] == true){chatOpenFromHelpAssist = true;}
   } else {
     if (sessionStorage.getItem('user-info') == null){
-      sessionStorage.setItem('user-info', '{"isPrivate":"","phone":"","email":""}')
+      sessionStorage.setItem('user-info', '{"isPrivate":"","phone":"","email":"","requestReason":"General"}')
     }
   }
+
   
 //href -> Link dynamisch nach Hostname ersetzen;
 // innerHTML -> gibt das Logo in svg an

@@ -52,14 +52,14 @@ var switchHideChatForBusinessDuringOpeningTimes = false;
 var switchHideChatForBusinessOutsideOpeningTimes = false;
 var switchHideChatForEUDuringOpeningTimes = false;
 var switchHideChatForEUOutsideOpeningTimes = false;
-var switchHideChatForFRDuringOpeningTimes = true;
-var switchHideChatForFROutsideOpeningTimes = true;
-var switchHideChatForITDuringOpeningTimes = true;
-var switchHideChatForITOutsideOpeningTimes = true;
-var switchHideChatForBEDuringOpeningTimes = true;
-var switchHideChatForBEOutsideOpeningTimes = true;
-var switchHideChatForNLDuringOpeningTimes = true;
-var switchHideChatForNLOutsideOpeningTimes = true;
+var switchHideChatForFRDuringOpeningTimes = false;
+var switchHideChatForFROutsideOpeningTimes = false;
+var switchHideChatForITDuringOpeningTimes = false;
+var switchHideChatForITOutsideOpeningTimes = false;
+var switchHideChatForBEDuringOpeningTimes = false;
+var switchHideChatForBEOutsideOpeningTimes = false;
+var switchHideChatForNLDuringOpeningTimes = false;
+var switchHideChatForNLOutsideOpeningTimes = false;
 var switchHideChatForLUDuringOpeningTimes = true;
 var switchHideChatForLUOutsideOpeningTimes = true;
 //If contact form is hidden, set threshhold to show it again when the waiting time for live contact channels get too high; set to 50000 if contact form should never be shown
@@ -486,7 +486,7 @@ var hideWaitingTimes = {
       ['2023-10-03 00:00:00', '2023-10-03 22:00:00']
     ],
     'fr' : [
-      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
+      ['2022-04-06 15:00:00', '2022-04-10 22:00:00']
     ],
     'it' : [
       ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
@@ -518,10 +518,10 @@ const openingHours = {
   "helpcenter.galaxus.ch": {"weekday": [[8, 0, 19, 0]], "saturday": []},
   "helpcenter.galaxus.de": {"weekday": [[8, 0, 19, 0]], "saturday": [[9, 0, 17, 0]]},
   "helpcenter.galaxus.at": {"weekday": [[8, 0, 19, 0]], "saturday": [[9, 0, 17, 0]]},
-  "helpcenter.galaxus.fr": {"weekday": [], "saturday": []},
-  "helpcenter.galaxus.it": {"weekday": [], "saturday": []},
-  "helpcenter.galaxus.be": {"weekday": [], "saturday": []},
-  "helpcenter.galaxus.nl": {"weekday": [], "saturday": []},
+  "helpcenter.galaxus.fr": {"weekday": [[8, 0, 19, 0]], "saturday": [[9, 0, 17, 0]]},
+  "helpcenter.galaxus.it": {"weekday": [[8, 0, 19, 0]], "saturday": [[9, 0, 17, 0]]},
+  "helpcenter.galaxus.be": {"weekday": [[8, 0, 19, 0]], "saturday": [[9, 0, 17, 0]]},
+  "helpcenter.galaxus.nl": {"weekday": [[8, 0, 19, 0]], "saturday": [[9, 0, 17, 0]]},
   "helpcenter.galaxus.lu": {"weekday": [], "saturday": []},
   //special cases for CH Routing
   "helpcenter.connect.digitec.ch": {"weekday": [[8, 0, 17, 0]], "saturday": []},

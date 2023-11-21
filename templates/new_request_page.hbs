@@ -962,7 +962,7 @@
       waitTimes.hide();
       return;
     }
-    if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
+    if (portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at' || portal == 'helpcenter.galaxus.fr' || portal == 'helpcenter.galaxus.it' || portal == 'helpcenter.galaxus.nl' || portal == 'helpcenter.galaxus.be'){
       if (isInOpeningTimes()) {
         if (customerType == 'private-customer') {
           if (callWaitTimes['privateGer'] >= callWaitTimes['privateAt']) {
@@ -1065,6 +1065,7 @@
   }
 
   function setWaitTime(chatSeconds, callSeconds, callbackSeconds){
+    console.log("enter setwaittime")
       $(".recommendedChannel").css('display' , 'none');
       if (chatSeconds[customerDepartment] < 181){
           $(".recommendedChannel").css('display' , 'inline-block');
@@ -1275,16 +1276,16 @@
         break;
       case 'helpcenter.galaxus.de':
       case 'helpcenter.galaxus.at':
+      case 'helpcenter.galaxus.fr':
+      case 'helpcenter.galaxus.it':
+      case 'helpcenter.galaxus.be':
+      case 'helpcenter.galaxus.nl':
         isOpen = isInOpeningTimes();
         isCH = false;
         if (requestReasonTag.includes('webform_case_product_advice_')){
           isPE = true
         }
         break;
-      case 'helpcenter.galaxus.fr':
-      case 'helpcenter.galaxus.it':
-      case 'helpcenter.galaxus.be':
-      case 'helpcenter.galaxus.nl':
       case 'helpcenter.galaxus.lu':
         isOpen = false
         
@@ -1618,7 +1619,7 @@
     try {
       updateChatDepartment();
       openChat();
-      setEventListernerForChatStart();
+      setEventListenerForChatStart();
     }
     catch (e) {
       console.log(e); 
