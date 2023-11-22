@@ -153,14 +153,16 @@ function getWebWidgetSettings(department){
                     '*': dynamicWording['en-US']['chatUs'],
                     fr: dynamicWording[getLanguage()]['chatUs'],
                     de: dynamicWording[getLanguage()]['chatUs'],
-                    it: dynamicWording[getLanguage()]['chatUs']
+                    it: dynamicWording[getLanguage()]['chatUs'],
+                    nl: dynamicWording[getLanguage()]['chatUs']
                 },
                 prechatForm: {
                     greeting: {
                         '*': dynamicWording['en-US']['chatGreetingText'],
                         fr: dynamicWording[getLanguage()]['chatGreetingText'],
                         de: dynamicWording[getLanguage()]['chatGreetingText'],
-                        it: dynamicWording[getLanguage()]['chatGreetingText']
+                        it: dynamicWording[getLanguage()]['chatGreetingText'],
+                        nl: dynamicWording[getLanguage()]['chatGreetingText']
                     }
                 },
                 offlineForm: {
@@ -168,7 +170,8 @@ function getWebWidgetSettings(department){
                         '*': dynamicWording['en-US']['chatOfflineMessage'],
                         fr: dynamicWording[getLanguage()]['chatOfflineMessage'],
                         de: dynamicWording[getLanguage()]['chatOfflineMessage'],
-                        it: dynamicWording[getLanguage()]['chatOfflineMessage']
+                        it: dynamicWording[getLanguage()]['chatOfflineMessage'],
+                        nl: dynamicWording[getLanguage()]['chatOfflineMessage']
                     }
                 }
             },
@@ -292,6 +295,9 @@ function getNormalizedLanguage(){
             break;
         case ('en-US'):
             normalizedLanguage = 'en';
+            break;
+        case ('nl'):
+            normalizedLanguage = 'nl';
             break;
         default:
             normalizedLanguage = 'de';
