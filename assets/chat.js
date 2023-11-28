@@ -38,7 +38,10 @@ async function asyncChatStart(counter){
         if (chatOpenFromHelpAssist == true) {
             setChatDepartmentForHelpAssist(JSON.parse(sessionStorage.getItem('user-info'))["requestReason"], JSON.parse(sessionStorage.getItem('user-info'))["isPrivate"]);
             let languageTag = getNormalizedLanguage();
-            let tagsArray = JSON.parse(sessionStorage.getItem('user-info'))["tags"].split("|")
+            let tagsArray = [];
+            if (typeof JSON.parse(sessionStorage.getItem('user-info'))["tags"] == "string" || JSON.parse(sessionStorage.getItem('user-info'))["tags"] instanceof String){
+                tagsArray = JSON.parse(sessionStorage.getItem('user-info'))["tags"].split("|")
+            }
             tagsArray.push(languageTag);
             tagsArray.push("chat_request")
             setZopimTags(tagsArray)
