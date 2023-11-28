@@ -41,6 +41,11 @@ async function asyncChatStart(counter){
             let tagsArray = [];
             if (typeof JSON.parse(sessionStorage.getItem('user-info'))["tags"] == "string" || JSON.parse(sessionStorage.getItem('user-info'))["tags"] instanceof String){
                 tagsArray = JSON.parse(sessionStorage.getItem('user-info'))["tags"].split("|")
+                if (JSON.parse(sessionStorage.getItem('user-info'))["tags"].length < 1){
+                    tagsArray.push("chatFromHAWithoutTags")
+                }
+            } else {
+                tagsArray.push("chatFromHAWithoutTags")
             }
             tagsArray.push(languageTag);
             tagsArray.push("chat_request")
