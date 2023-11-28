@@ -70,11 +70,10 @@
 
   if (userInfo != null){
     sessionStorage.setItem('user-info', atob(userInfo))
-    console.log("BEFORE IF")
     if (JSON.parse(atob(userInfo))["openChat"] == true){chatOpenFromHelpAssist = true;}
   } else {
     if (sessionStorage.getItem('user-info') == null){
-      sessionStorage.setItem('user-info', '{"isPrivate":"","phone":"","email":"","requestReason":"General"}')
+      sessionStorage.setItem('user-info', '{"isPrivate":"","phone":"","email":"","tags":"","openChat":false}')
     }
   }
 

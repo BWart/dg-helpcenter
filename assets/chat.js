@@ -37,6 +37,11 @@ async function asyncChatStart(counter){
         changeWebWidgetSettingInitial(getChatDepartment());
         if (chatOpenFromHelpAssist == true) {
             setChatDepartmentForHelpAssist(JSON.parse(sessionStorage.getItem('user-info'))["requestReason"], JSON.parse(sessionStorage.getItem('user-info'))["isPrivate"]);
+            let languageTag = getNormalizedLanguage();
+            let tagsArray = JSON.parse(sessionStorage.getItem('user-info'))["tags"].split("|")
+            tagsArray.push(languageTag);
+            tagsArray.push("chat_request")
+            setZopimTags(tagsArray)
             openChat();
             setEventListenerForChatStart();
         }
@@ -67,7 +72,6 @@ function setChatDepartmentForHelpAssist(helpAssistRequestReason, isPrivate){
     } else { //if portal not digitec or galaxus
         zE('webWidget', 'updateSettings', getWebWidgetSettings("Chat EU DE"))
     }
-    //setZopimTags([languageTag, requestReasonTag])
 }
 
 
