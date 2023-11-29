@@ -60,7 +60,11 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
       groupID = "6972193395474"
       brandName = "digitec"
       baseERPLink = "https://erp.digitecgalaxus.ch/"
-      ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
+      var level = callbackRingGroupLevels[requestReasonTag];
+      if (typeof level == "undefined"){
+        level = "_lv2"
+      }
+      ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + level
       brandTag += "digitec-"
       if (customerType == "private-customer"){
         brandTag += "private"
@@ -73,7 +77,11 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
       groupID = "6972193395474"
       brandName = "galaxus CH"
       baseERPLink = "https://erp.digitecgalaxus.ch/"
-      ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
+      var level = callbackRingGroupLevels[requestReasonTag];
+      if (typeof level == "undefined"){
+        level = "_lv2"
+      }
+      ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + level
       brandTag += "galaxus-"
       if (customerType == "private-customer"){
         brandTag += "private"
@@ -86,7 +94,11 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
       groupID = "6972193395474"
       brandName = "digitec CONNECT"
       baseERPLink = "https://erp.digitecgalaxus.ch/"
-      ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
+      var level = callbackRingGroupLevels[requestReasonTag];
+      if (typeof level == "undefined"){
+        level = "_lv2"
+      }
+      ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + level
       brandTag = ""
       break;
     case 'helpcenter.galaxus.de':
@@ -94,7 +106,11 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
       groupID = "8588490254354"
       brandName = "galaxus DE"
       baseERPLink = "https://erp.galaxus.eu/"
-      ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
+      var level = callbackRingGroupLevels[requestReasonTag];
+      if (typeof level == "undefined"){
+        level = "_lv2"
+      }
+      ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + level
       brandTag = ""
       break;
     case 'helpcenter.galaxus.at':
@@ -102,7 +118,11 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
       groupID = "8588490254354"
       brandName = "galaxus AT"
       baseERPLink = "https://erp.galaxus.eu/"
-      ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
+      var level = callbackRingGroupLevels[requestReasonTag];
+      if (typeof level == "undefined"){
+        level = "_lv2"
+      }
+      ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + level
       brandTag = ""
       break;
     default:
@@ -110,7 +130,11 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
       groupID = "6972193395474"
       brandName = "Brand unknown"
       baseERPLink = "https://erp.digitecgalaxus.ch/"
-      ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + callbackRingGroupLevels[requestReasonTag]
+      var level = callbackRingGroupLevels[requestReasonTag];
+      if (typeof level == "undefined"){
+        level = "_lv2"
+      }
+      ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + level
       brandTag += "digitec-"
       if (customerType == "private-customer"){
         brandTag += "private"
