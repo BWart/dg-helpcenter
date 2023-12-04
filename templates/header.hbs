@@ -198,13 +198,30 @@ setMetaDescription();
 
 /*console.log(currentLanguage);*/
 
-
+//CH
 var headingBannerCH=topBannerWording['outputHeadingBannerCH'][currentLanguage];
 var textBannerCH=topBannerWording['outputTextBannerCH'][currentLanguage];
+//DE
 var headingBannerDE=topBannerWording['outputHeadingBannerDE'][currentLanguage];
 var textBannerDE=topBannerWording['outputTextBannerDE'][currentLanguage];
+//AT
 var headingBannerAT=topBannerWording['outputHeadingBannerAT'][currentLanguage];
 var textBannerAT=topBannerWording['outputTextBannerAT'][currentLanguage];
+//FR
+var headingBannerAT=topBannerWording['outputHeadingBannerFR'][currentLanguage];
+var textBannerAT=topBannerWording['outputTextBannerFR'][currentLanguage];
+//IT
+var headingBannerAT=topBannerWording['outputHeadingBannerIT'][currentLanguage];
+var textBannerAT=topBannerWording['outputTextBannerIT'][currentLanguage];
+//NL
+var headingBannerAT=topBannerWording['outputHeadingBannerNL'][currentLanguage];
+var textBannerAT=topBannerWording['outputTextBannerNL'][currentLanguage];
+//BE
+var headingBannerAT=topBannerWording['outputHeadingBannerBE'][currentLanguage];
+var textBannerAT=topBannerWording['outputTextBannerBE'][currentLanguage];
+//LU
+var headingBannerAT=topBannerWording['outputHeadingBannerLU'][currentLanguage];
+var textBannerAT=topBannerWording['outputTextBannerLU'][currentLanguage];
 
 
 /*console.log(topBannerWording);
@@ -228,6 +245,8 @@ if(window.location.hostname =="helpcenter.digitec.ch" || window.location.hostnam
     bannerSwitch = bannerSwitchCHIT;
   }else if(currentLanguage =='en-US'){ //CH ENGLISCH
     bannerSwitch = bannerSwitchCHEN;
+  }else if(currentLanguage =='nl'){ //CH HOLLÄNDISCH
+    bannerSwitch = bannerSwitchCHNL;
   }
   else { //Rest
     bannerSwitch = false;
@@ -242,73 +261,126 @@ else if(window.location.hostname == 'helpcenter.connect.digitec.ch'){
     bannerSwitch = bannerSwitchConnectIT;
   }else if(currentLanguage =='en-US'){ //CH ENGLISCH
     bannerSwitch = bannerSwitchConnectEN;
+  }else if(currentLanguage =='nl'){ //CH HOLLÄNDISCH
+    bannerSwitch = bannerSwitchConnectNL;
   }
   else { //Rest
     bannerSwitch = false;
   }
 }
 else if(window.location.hostname =="helpcenter.galaxus.de"){ //DEUTSCHLAND
-  if(currentLanguage =='de'){ //CH DEUTSCH
+  if(currentLanguage =='de'){ //DE DEUTSCH
     bannerSwitch = bannerSwitchDEDE;
-  }else if(currentLanguage =='fr'){ //CH FRANZÖSISCH
+  }else if(currentLanguage =='fr'){ //DE FRANZÖSISCH
     bannerSwitch = bannerSwitchDEFR;
-  }else if(currentLanguage =='it'){ //CH ITALIENISCH
+  }else if(currentLanguage =='it'){ //DE ITALIENISCH
     bannerSwitch = bannerSwitchDEIT;
-  }else if(currentLanguage =='en-US'){ //CH ENGLISCH
+  }else if(currentLanguage =='en-US'){ //DE ENGLISCH
     bannerSwitch = bannerSwitchDEEN;
+  }else if(currentLanguage =='nl'){ //DE HOLLÄNDISCH
+    bannerSwitch = bannerSwitchDENL;
   }
   else { //Rest
     bannerSwitch = false;
   }
 }
 else if(window.location.hostname =="helpcenter.galaxus.at"){ //ÖSTERREICH
-  if(currentLanguage =='de'){ //CH DEUTSCH
+  if(currentLanguage =='de'){ //AT DEUTSCH
     bannerSwitch = bannerSwitchATDE;
-  }else if(currentLanguage =='fr'){ //CH FRANZÖSISCH
+  }else if(currentLanguage =='fr'){ //AT FRANZÖSISCH
     bannerSwitch = bannerSwitchATFR;
-  }else if(currentLanguage =='it'){ //CH ITALIENISCH
+  }else if(currentLanguage =='it'){ //AT ITALIENISCH
     bannerSwitch = bannerSwitchATIT;
-  }else if(currentLanguage =='en-US'){ //CH ENGLISCH
+  }else if(currentLanguage =='en-US'){ //AT ENGLISCH
     bannerSwitch = bannerSwitchATEN;
+  }else if(currentLanguage =='nl'){ //AT HOLLÄNDISCH
+    bannerSwitch = bannerSwitchATNL;
   }
   else { //Rest
     bannerSwitch = false;
   }
 }
-else if(window.location.hostname =="helpcenter.galaxus.fr"){ //ÖSTERREICH
-  if(currentLanguage =='de'){ //CH DEUTSCH
+else if(window.location.hostname =="helpcenter.galaxus.fr"){ //FRANKREICH
+  if(currentLanguage =='de'){ //FR DEUTSCH
     bannerSwitch = bannerSwitchFRDE;
-  }else if(currentLanguage =='fr'){ //CH FRANZÖSISCH
+  }else if(currentLanguage =='fr'){ //FR FRANZÖSISCH
     bannerSwitch = bannerSwitchFRFR;
-  }else if(currentLanguage =='it'){ //CH ITALIENISCH
+  }else if(currentLanguage =='it'){ //FR ITALIENISCH
     bannerSwitch = bannerSwitchFRIT;
-  }else if(currentLanguage =='en-US'){ //CH ENGLISCH
+  }else if(currentLanguage =='en-US'){ //FR ENGLISCH
     bannerSwitch = bannerSwitchFREN;
+  }else if(currentLanguage =='nl'){ //FR HOLLÄNDISCH
+    bannerSwitch = bannerSwitchFRNL;
   }
-  else if(window.location.hostname =="helpcenter.galaxus.it"){ //ÖSTERREICH
-  if(currentLanguage =='de'){ //CH DEUTSCH
+  else { //Rest
+    bannerSwitch = false;
+  }
+}
+else if(window.location.hostname =="helpcenter.galaxus.it"){ //ITALIEN
+  if(currentLanguage =='de'){ //IT DEUTSCH
     bannerSwitch = bannerSwitchITDE;
-  }else if(currentLanguage =='fr'){ //CH FRANZÖSISCH
+  }else if(currentLanguage =='fr'){ //IT FRANZÖSISCH
     bannerSwitch = bannerSwitchITFR;
-  }else if(currentLanguage =='it'){ //CH ITALIENISCH
+  }else if(currentLanguage =='it'){ //IT ITALIENISCH
     bannerSwitch = bannerSwitchITIT;
-  }else if(currentLanguage =='en-US'){ //CH ENGLISCH
+  }else if(currentLanguage =='en-US'){ //IT ENGLISCH
     bannerSwitch = bannerSwitchITEN;
+  }else if(currentLanguage =='nl'){ //IT HOLLÄNDISCH
+    bannerSwitch = bannerSwitchITNL;
   }
   else { //Rest
     bannerSwitch = false;
   }
 }
+else if(window.location.hostname =="helpcenter.galaxus.nl"){ //NIEDERLANDE
+  if(currentLanguage =='de'){ //NL DEUTSCH
+    bannerSwitch = bannerSwitchNLDE;
+  }else if(currentLanguage =='fr'){ //NL FRANZÖSISCH
+    bannerSwitch = bannerSwitchNLFR;
+  }else if(currentLanguage =='it'){ //NL ITALIENISCH
+    bannerSwitch = bannerSwitchNLIT;
+  }else if(currentLanguage =='en-US'){ //NL ENGLISCH
+    bannerSwitch = bannerSwitchNLEN;
+  }else if(currentLanguage =='nl'){ //NL HOLLÄNDISCH
+    bannerSwitch = bannerSwitchNLNL;
+  }
   else { //Rest
     bannerSwitch = false;
   }
 }
-else{ //Rest
-  bannerSwitch = false;
+else if(window.location.hostname =="helpcenter.galaxus.be"){ //BELGIEN
+  if(currentLanguage =='de'){ //BE DEUTSCH
+    bannerSwitch = bannerSwitchBEDE;
+  }else if(currentLanguage =='fr'){ //BE FRANZÖSISCH
+    bannerSwitch = bannerSwitchBEFR;
+  }else if(currentLanguage =='it'){ //BE ITALIENISCH
+    bannerSwitch = bannerSwitchBEIT;
+  }else if(currentLanguage =='en-US'){ //BE ENGLISCH
+    bannerSwitch = bannerSwitchBEEN;
+  }else if(currentLanguage =='nl'){ //BE HOLLÄNDISCH
+    bannerSwitch = bannerSwitchBENL;
+  }
+  else { //Rest
+    bannerSwitch = false;
+  }
+}
+else if(window.location.hostname =="helpcenter.galaxus.lu"){ //LUXEMBURG
+  if(currentLanguage =='de'){ //LU DEUTSCH
+    bannerSwitch = bannerSwitcLUEDE;
+  }else if(currentLanguage =='fr'){ //LU FRANZÖSISCH
+    bannerSwitch = bannerSwitchLUFR;
+  }else if(currentLanguage =='it'){ //LU ITALIENISCH
+    bannerSwitch = bannerSwitchLUIT;
+  }else if(currentLanguage =='en-US'){ //LU ENGLISCH
+    bannerSwitch = bannerSwitchLUEN;
+  }else if(currentLanguage =='nl'){ //LU HOLLÄNDISCH
+    bannerSwitch = bannerSwitchLUNL;
+  }
+  else { //Rest
+    bannerSwitch = false;
+  }
 }
 ////////////////////////////////////////////////////////////////////
-
-
 
 //Je nach Domain unterschiedliche Banner
 if(window.location.hostname =="helpcenter.digitec.ch" || window.location.hostname =="helpcenter.galaxus.ch"){
@@ -320,9 +392,30 @@ else if(window.location.hostname =="helpcenter.galaxus.de"){
 else if(window.location.hostname =="helpcenter.galaxus.at"){
   document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerAT + ":</strong><br> " + textBannerAT;
 }
+else if(window.location.hostname =="helpcenter.galaxus.fr"){
+  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerFR + ":</strong><br> " + textBannerFR;
+}
+else if(window.location.hostname =="helpcenter.galaxus.it"){
+  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerIT + ":</strong><br> " + textBannerIT;
+}
+else if(window.location.hostname =="helpcenter.galaxus.nl"){
+  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerNL + ":</strong><br> " + textBannerNL;
+}
+else if(window.location.hostname =="helpcenter.galaxus.be"){
+  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerBE + ":</strong><br> " + textBannerBE;
+}
+else if(window.location.hostname =="helpcenter.galaxus.lu"){
+  document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerLU + ":</strong><br> " + textBannerLU;
+}
 else{ /*Digitec ist Else*/
     document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerCH + ":</strong><br> " + textBannerCH;
 }
+
+//Meldung für Chat Öffnung durch Help Assist
+//if (chatOpenFromHelpAssist){
+//  bannerSwitch = true
+//  switch 
+//}
 
 
 if(bannerSwitch){
