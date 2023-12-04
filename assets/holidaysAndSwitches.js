@@ -97,11 +97,11 @@ var chatAndPhoneWaitThreshholdToShowContactFormLU = 50000;
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
 //CH
-var bannerSwitchCHDE = false;
-var bannerSwitchCHFR = false;
-var bannerSwitchCHIT = false;
-var bannerSwitchCHEN = false;
-var bannerSwitchCHNL = false;
+var bannerSwitchCHDE = true;
+var bannerSwitchCHFR = true;
+var bannerSwitchCHIT = true;
+var bannerSwitchCHEN = true;
+var bannerSwitchCHNL = true;
 var bannerSwitchConnectDE = false;
 var bannerSwitchConnectFR = false;
 var bannerSwitchConnectIT = false;
@@ -192,11 +192,11 @@ function fillTopBannerWording(){
     topBannerWording = {
       //heading setzt den Titel 
     "outputHeadingBannerCH" : {
-      'de' : "Anfragen bezüglich Google-Promotion",
-      'fr' : "Demande de promotion Google",
-      'it' : "Richieste di informazioni sulla promozione Google",
-      'en-US' : "Google-promotion requests",
-      'nl' : "Vragen over Google Promotie"
+      'de' : "Problem mit Zahlungen",
+      'fr' : "Problème avec les paiements",
+      'it' : "Problemi con i pagamenti",
+      'en-US' : "Payment issues",
+      'nl' : "Probleem met betalingen"
       /*'de' : "Technische Probleme Call",
       'fr' : "Problèmes techniques Appel",
       'it' : "Problemi tecnici Chiamare",
@@ -209,11 +209,11 @@ function fillTopBannerWording(){
       'nl' : "Technische problemen Bestellen in de webshop"*/
     },
     "outputTextBannerCH" : {
-      'de' : "Wir verzeichnen momentan ein hohes Anfrageaufkommen bezüglich der Google-Pixel Aktion mit gratis Zubehör. Die Seite <a href='https://reward-promos.com/launch2023' target='blank'>reward-promos.com/launch2023</a> funktioniert aktuell nicht und Google arbeitet an einer Lösung. Wir bitten um etwas Geduld.",
-      'fr' : "Nous enregistrons actuellement un grand nombre de demandes concernant l'action Google Pixel avec des accessoires gratuits. La page <a href='https://reward-promos.com/launch2023' target='blank'>reward-promos.com/launch2023</a> ne fonctionne pas actuellement et Google travaille à une solution. Nous vous prions de bien vouloir patienter.",
-      'it' : "Al momento stiamo riscontrando un elevato volume di richieste relative alla promozione Google Pixel con accessori gratuiti. La pagina <a href='https://reward-promos.com/launch2023' target='blank'>reward-promos.com/launch2023</a> non funziona e Google sta cercando una soluzione. Vi chiediamo di avere pazienza.",
-      'en-US' : "We are currently experiencing a high volume of inquiries regarding the Google Pixel promotion with free accessories. The site <a href='https://reward-promos.com/launch2023' target='blank'>reward-promos.com/launch2023</a> is currently not working and Google is working on a solution. We ask for your patience.  ",
-      'nl' : "We krijgen momenteel veel vragen over de Google Pixel-promotie met gratis accessoires. De pagina <a href='https://reward-promos.com/launch2023' target='blank'>reward-promos.com/launch2023</a> werkt momenteel niet en Google werkt aan een oplossing. We vragen om een beetje geduld."
+      'de' : "Wir verzeichnen momentan ein Problem mit Direktzahlungen (TWINT, Kreditkarte usw.). Wir arbeiten an der Behebung des Problems.",
+      'fr' : "Nous enregistrons actuellement un problème avec les paiements directs (TWINT, carte de crédit, etc.). Nous travaillons à la résolution de ce problème.",
+      'it' : "Si sta verificando un problema con i pagamenti diretti (TWINT, carta di credito, ecc.). Stiamo lavorando per risolvere il problema.",
+      'en-US' : "We are currently experiencing a problem with direct payments (TWINT, credit card, etc.). We are working to resolve the problem.",
+      'nl' : "We hebben momenteel een probleem met directe betalingen (TWINT, creditcard, enz.). We werken eraan om het probleem op te lossen."
   
       /*'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
       'fr' : "Actuellement, certains clients ne peuvent pas passer de commandes dans notre boutique en ligne. Nous sommes conscients du problème et nous travaillons à une solution. Malheureusement, nous ne pouvons pas vous proposer de solution par le biais de nos canaux de contact pour le moment. Veuillez réessayer dans la boutique en ligne ultérieurement. ",
