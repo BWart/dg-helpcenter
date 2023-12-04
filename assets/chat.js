@@ -2,6 +2,7 @@
 let customerDepartment = "Chat Private DE"
 
 
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -17,6 +18,7 @@ async function asyncChatLoad(counter){
     hideChat();
     asyncChatStart()
 }
+
 
 
 async function asyncChatStart(counter){
@@ -57,6 +59,7 @@ async function asyncChatStart(counter){
 }
 
 
+
 function waitForChat(){
     window.addEventListener('load', (event) => {
         if (typeof zE == "undefined") {
@@ -68,6 +71,7 @@ function waitForChat(){
         }
     })
 }
+
 
 function setChatDepartmentForHelpAssist(helpAssistRequestReason, isPrivate){
     let templang = getNormalizedLanguage();
@@ -81,6 +85,7 @@ function setChatDepartmentForHelpAssist(helpAssistRequestReason, isPrivate){
         zE('webWidget', 'updateSettings', getWebWidgetSettings("Chat EU DE"))
     }
 }
+
 
 
 /*function waitForChat(){
@@ -132,12 +137,14 @@ function setChatDepartmentForHelpAssist(helpAssistRequestReason, isPrivate){
 }*/
 
 
+
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
 //Initial WebWebidget Settings
 function changeWebWidgetSettingInitial(department){
     window.zESettings = getWebWidgetSettings(department); // Widget Settings Initiales Setup
     zE('webWidget', 'setLocale', getNormalizedLanguage()); // Setzt die Widget Sprache   
 }
+
 
 
 // Updated die Widget Settings - Update Soll nur bei Dropdown Change im Request Form und beim Reconnect passieren. Ansonsten soll die Einstellung nicht überschrieben werden
@@ -147,10 +154,12 @@ function changeWebWidgetSettingsOnChange(department){
 }
 
 
+
 // Definiert die Widget Settings
 function getWebWidgetSettings(department){
     dynamicWording = filldynamicWording();
     console.log('Department Set: '+ department);
+
 
 
     var zeSettings = {
@@ -205,6 +214,7 @@ function getWebWidgetSettings(department){
 }
 
 
+
 /////////////////////////////////////////////////////////////Departments///////////////////////////////////////////////////////////////////////////
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
@@ -223,6 +233,7 @@ function getChatDepartment(){
     }
 
 
+
     console.log('Expected Department :' + dep)
     //return("Chat Testgroup DE")
     if(typeof getDepartmentInfo(dep) != 'undefined'){
@@ -231,6 +242,7 @@ function getChatDepartment(){
         return 'Chat Private ' + getChatDepartmentLanguage();
     }
 }
+
 
 
 function getDepartmentWithOverflowCheck(selectedDepartment){
@@ -243,6 +255,7 @@ function getDepartmentWithOverflowCheck(selectedDepartment){
         return selectedDepartment;
     }
 }
+
 
 
 function getDepartmentWaitingTime(){
@@ -270,6 +283,7 @@ function getDepartmentWaitingTime(){
 }
 
 
+
 function isOverflowDepartmentTresholdReached(selectedDepartmentWaitingTime, overflowDepartmentWaitingTime){
     if(selectedDepartmentWaitingTime > (overflowDepartmentWaitingTime /100 * percentageForChatFallback)){
         return true;
@@ -277,6 +291,7 @@ function isOverflowDepartmentTresholdReached(selectedDepartmentWaitingTime, over
         return false;
     }
 }
+
 
 
 //Gets language and changes to uppercase
@@ -290,6 +305,7 @@ function getChatDepartmentLanguage(){
         return "DE"
     }
 }
+
 
 
 //Normalisiert die HTML Sprache
@@ -318,9 +334,11 @@ function getNormalizedLanguage(){
 }
 
 
+
 function getLanguage(){
     return $('html').attr('lang');
 }
+
 
 
 //Department Type wird anhand der Domain gesetzt
@@ -351,6 +369,7 @@ function getChatDepartmentType(){
 
 
 
+
 /////////////////////////////////////////////////////////////Special Routing Conditions///////////////////////////////////////////////////////////////////////////
 //Special Overflow Routing for big Workload
 function checkForOverflow(){
@@ -360,6 +379,7 @@ function checkForOverflow(){
         return getChatDepartmentLanguage();
     }
 }
+
 
 
 function isOverflowActive(chatDepartmentLanguage){
@@ -376,6 +396,7 @@ function isOverflowActive(chatDepartmentLanguage){
             return false;
     }
 }
+
 
 
 function getOverflowDepartmentLanguage(){
@@ -396,6 +417,7 @@ function getOverflowDepartmentLanguage(){
 }
 
 
+
 function getOverflowDepartment(overflowDepartments){
     if(overflowDepartments.length > 0){
         return overflowDepartments.sort(sortArray)[0];
@@ -403,6 +425,7 @@ function getOverflowDepartment(overflowDepartments){
         return getChatDepartmentLanguage();
     }
 }
+
 
 
 function sortArray(a, b){
@@ -413,6 +436,7 @@ function sortArray(a, b){
         return (a[1] < b[1]) ? -1 : 1;
     }
 }
+
 
 
 function isDepartmentAvailable(depName){
@@ -427,6 +451,7 @@ function isDepartmentAvailable(depName){
         return false;
     }
 }
+
 
 
 function getDepartmentInfo(departmentName){
@@ -450,6 +475,7 @@ function updateChatDepartment(){
 }
 
 
+
 function checkDepartmentforInitialButtonChange(selectedDepartment){
     if(isDepartmentAvailable(selectedDepartment) && isInOpeningTimes()){
         showChatButton();
@@ -457,6 +483,7 @@ function checkDepartmentforInitialButtonChange(selectedDepartment){
         hideChatButton();
     }
 }
+
 
 
 // Hide or Shows Button if Chosen Department Status Changes 
@@ -470,6 +497,7 @@ function listenDepartmentStatus(){
 }
 
 
+
 // Shows Chat button if anyone is available and inside opening hours
 function changeButtonVisibility(status){
     if(status == 'online' && isInOpeningTimes()){
@@ -478,6 +506,7 @@ function changeButtonVisibility(status){
         hideChatButton();
     }
   }
+
 
 
 /////////////////////////////////////////////////////////////////Zopim Tags/////////////////////////////////////////////////////////////////////////
@@ -489,10 +518,12 @@ function checkForTagChanges(){
 }
 
 
+
 //Entfert Tags für Sprache sowie Skills -> Es sind danach keine Tags mehr vorhanden und können neu gesetzt werden
 function removeOldTags(){
     removeZopimTags(['de', 'fr', 'it', 'en']); // entfernt initial alle Sprachen
 }
+
 
 
 //Fügt die neuen Tags für Skill, WebformCase und Sprache hinzu.
@@ -500,6 +531,7 @@ function addNewZopimTags(){
     var languageTag = getNormalizedLanguage();
     setZopimTags([languageTag, requestReasonTag]); // Alle neuen Tags werden gesetzt
 }
+
 
 
 // Wenn ein Webform Case im Session Storage vorhanden ist, wird dieser von den Chat Tags entfernt -> Wenn User die Auswahl im Dropdown ändern, sind ansonsten mehrere Tags vorhanden
@@ -510,6 +542,7 @@ function removeOldWebformCaseTag(){
     }
     sessionStorage.setItem('requestReason', requestReasonTag);
 }
+
 
 
 // Setzt den Chat Tag - Einzeln oder Array
@@ -523,6 +556,7 @@ function removeZopimTags(tags){
 }
 
 
+
 // Callback for Start and Adds Event Listeners
 function setEventListenerForChatStart(){
     zE('webWidget:on', 'chat:start', function() {
@@ -532,11 +566,13 @@ function setEventListenerForChatStart(){
 }
 
 
+
 function setEventListenerForChatEnd(){
     zE('webWidget:on', 'chat:end', function() {
         updateChatDepartment();
     });
 }
+
 
 
 //Set tags when Chat Reconnects
@@ -548,6 +584,7 @@ function setTagsAndDepartmentAtReconnect(){
 }
 
 
+
 //////////////////////////////////////////////////////////Globale Chat Functions////////////////////////////////////////////////////////////////
 function openWidgetForUnreadMessages(){
     zE('webWidget:on', 'chat:unreadMessages', function(number) {
@@ -556,13 +593,17 @@ function openWidgetForUnreadMessages(){
 }
 
 
+
 function hideWidgetWhenMinimized(){
     zE('webWidget:on', 'userEvent', function(event) {
         if(event.action == 'Web Widget Minimised'){
-            zE('webWidget', 'hide');
+            if (!(sessionStorage.getItem('chatOpenFromHelpAssist') == 'yes' && isInOpeningTimes())){
+                zE('webWidget', 'hide');
+            }
         }
     });
 }
+
 
 
 function isChatting(){
@@ -574,11 +615,13 @@ function isChatting(){
 }
 
 
+
 function openChat(){
     //webWidgetDiv.show()
     zE('webWidget', 'show');
     document.getElementById('launcher').contentWindow.document.getElementById('Embed').getElementsByTagName('button')[0].click();
 }
+
 
 
 function hideChat(){

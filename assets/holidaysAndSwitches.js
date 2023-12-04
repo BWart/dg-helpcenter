@@ -4,6 +4,7 @@ var UTCHourOffset = 1;
 
 
 
+
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
 //set to true if the contact form should be hidden during live channel opening times, set to false if it should be displayed
 var switchHideContactFormDuringOpeningTimes = false;
@@ -94,6 +95,7 @@ var chatAndPhoneWaitThreshholdToShowContactFormLU = 50000;
 
 
 
+
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
 //CH
@@ -108,51 +110,53 @@ var bannerSwitchConnectIT = false;
 var bannerSwitchConnectEN = false;
 var bannerSwitchConnectNL = false;
 //Germany
-var bannerSwitchDEDE = false;
-var bannerSwitchDEFR = false;
-var bannerSwitchDEIT = false;
-var bannerSwitchDEEN = false;
-var bannerSwitchDENL = false;
+var bannerSwitchDEDE = true;
+var bannerSwitchDEFR = true;
+var bannerSwitchDEIT = true;
+var bannerSwitchDEEN = true;
+var bannerSwitchDENL = true;
 //Austria
-var bannerSwitchATDE = false;
-var bannerSwitchATFR = false;
-var bannerSwitchATIT = false;
-var bannerSwitchATEN = false;
-var bannerSwitchATNL = false;
+var bannerSwitchATDE = true;
+var bannerSwitchATFR = true;
+var bannerSwitchATIT = true;
+var bannerSwitchATEN = true;
+var bannerSwitchATNL = true;
 //France
-var bannerSwitchFRDE = false;
-var bannerSwitchFRFR = false;
-var bannerSwitchFRIT = false;
-var bannerSwitchFREN = false;
-var bannerSwitchFRNL = false;
+var bannerSwitchFRDE = true;
+var bannerSwitchFRFR = true;
+var bannerSwitchFRIT = true;
+var bannerSwitchFREN = true;
+var bannerSwitchFRNL = true;
 //Italy
-var bannerSwitchITDE = false;
-var bannerSwitchITFR = false;
-var bannerSwitchITIT = false;
-var bannerSwitchITEN = false;
-var bannerSwitchITNL = false;
+var bannerSwitchITDE = true;
+var bannerSwitchITFR = true;
+var bannerSwitchITIT = true;
+var bannerSwitchITEN = true;
+var bannerSwitchITNL = true;
 //Belgium
-var bannerSwitchBEDE = false;
-var bannerSwitchBEFR = false;
-var bannerSwitchBEIT = false;
-var bannerSwitchBEEN = false;
-var bannerSwitchBENL = false;
+var bannerSwitchBEDE = true;
+var bannerSwitchBEFR = true;
+var bannerSwitchBEIT = true;
+var bannerSwitchBEEN = true;
+var bannerSwitchBENL = true;
 //Netherlands
-var bannerSwitchNLDE = false;
-var bannerSwitchNLFR = false;
-var bannerSwitchNLIT = false;
-var bannerSwitchNLEN = false;
-var bannerSwitchNLNL = false;
+var bannerSwitchNLDE = true;
+var bannerSwitchNLFR = true;
+var bannerSwitchNLIT = true;
+var bannerSwitchNLEN = true;
+var bannerSwitchNLNL = true;
 //Luxembourg
-var bannerSwitchLUDE = false;
-var bannerSwitchLUFR = false;
-var bannerSwitchLUIT = false;
-var bannerSwitchLUEN = false;
-var bannerSwitchLUNL = false;
+var bannerSwitchLUDE = true;
+var bannerSwitchLUFR = true;
+var bannerSwitchLUIT = true;
+var bannerSwitchLUEN = true;
+var bannerSwitchLUNL = true;
+
 
 
 
 /*Safari nicht mehr benötigt unten
+
 
 
 
@@ -163,6 +167,7 @@ let IExplorerAgent = userAgentString.indexOf("MSIE") > -1 || userAgentString.ind
 let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
 if ((chromeAgent) && (safariAgent)) {safariAgent = false};
 safariAgent = false;
+
 
 
 
@@ -192,11 +197,11 @@ function fillTopBannerWording(){
     topBannerWording = {
       //heading setzt den Titel 
     "outputHeadingBannerCH" : {
-      'de' : "Problem mit Zahlungen",
-      'fr' : "Problème avec les paiements",
-      'it' : "Problemi con i pagamenti",
-      'en-US' : "Payment issues",
-      'nl' : "Probleem met betalingen"
+      'de' : "Verzögerungen bei Lieferungen",
+      'fr' : "Retards dans les livraisons",
+      'it' : "Ritardi nelle consegne",
+      'en-US' : "Delays in deliveries",
+      'nl' : "Vertragingen in leveringen"
       /*'de' : "Technische Probleme Call",
       'fr' : "Problèmes techniques Appel",
       'it' : "Problemi tecnici Chiamare",
@@ -207,13 +212,18 @@ function fillTopBannerWording(){
       'it' : "Problemi tecnici Ordinare nel webshop",
       'en-US' : "Technical problems order placement in webshop",
       'nl' : "Technische problemen Bestellen in de webshop"*/
+      /*'de' : "Technische Probleme Chat in Safari",
+      'fr' : "Problèmes techniques Chat dans Safari",
+      'it' : "Problemi tecnici Chat in Safari",
+      'en-US' : "Technical Issues Chat with Safari",
+      'nl' : "Technische problemen Chat in Safari"*/
     },
     "outputTextBannerCH" : {
-      'de' : "Wir verzeichnen momentan ein Problem mit Direktzahlungen (TWINT, Kreditkarte usw.). Wir arbeiten an der Behebung des Problems.",
-      'fr' : "Nous enregistrons actuellement un problème avec les paiements directs (TWINT, carte de crédit, etc.). Nous travaillons à la résolution de ce problème.",
-      'it' : "Si sta verificando un problema con i pagamenti diretti (TWINT, carta di credito, ecc.). Stiamo lavorando per risolvere il problema.",
-      'en-US' : "We are currently experiencing a problem with direct payments (TWINT, credit card, etc.). We are working to resolve the problem.",
-      'nl' : "We hebben momenteel een probleem met directe betalingen (TWINT, creditcard, enz.). We werken eraan om het probleem op te lossen."
+      'de' : "Aufgrund aktuell hoher Paketmengen und erschwerter Wetterbedingungen kann es in einigen Fällen zu Verzögerungen bei der Auslieferung deiner Sendung kommen. Wir bitten dich in diesen Fällen um Geduld.<br>Einen Link zur Sendungsverfolgung findest du jeweils in der <a href='https://galaxus.ch/order' target='blank'>Bestellübersicht</a>.",
+      'fr' : "En raison du volume élevé de colis et des conditions météorologiques difficiles, il se peut que la livraison de votre envoi soit retardée dans certains cas. Nous vous demandons de faire preuve de patience dans ces cas-là.<br>Vous trouverez un lien pour suivre votre envoi dans <a href='https://galaxus.ch/order' target='blank'>l'aperçu de votre commande</a>.",
+      'it' : "A causa dell'attuale elevato volume di pacchi e delle difficili condizioni meteorologiche, in alcuni casi potrebbero verificarsi ritardi nella consegna del vostro pacco. Vi chiediamo di avere pazienza in questi casi.<br>Troverete un link per seguire il vostro pacco nella <a href='https://galaxus.ch/order' target='blank'>panoramica dell'ordine</a>.",
+      'en-US' : "Due to the current high parcel volumes and difficult weather conditions, there may be delays in the delivery of your shipment in some cases. We ask for your patience in these cases.<br>You can  find a link to track your shipment in the <a href='https://galaxus.ch/order' target='blank'>order overview</a>.",
+      'nl' : "Door de huidige grote hoeveelheid pakketten en moeilijke weersomstandigheden kan er in sommige gevallen vertraging optreden bij de bezorging van je pakket. We vragen om je geduld in deze gevallen.<br>Je vindt een link om je pakket te volgen in het <a href='https://galaxus.ch/order' target='blank'>besteloverzicht</a>."
   
       /*'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
       'fr' : "Actuellement, certains clients ne peuvent pas passer de commandes dans notre boutique en ligne. Nous sommes conscients du problème et nous travaillons à une solution. Malheureusement, nous ne pouvons pas vous proposer de solution par le biais de nos canaux de contact pour le moment. Veuillez réessayer dans la boutique en ligne ultérieurement. ",
@@ -221,152 +231,115 @@ function fillTopBannerWording(){
       'en-US' : "Currently, some customers can not place orders in our webshop. We are aware of the problem and are working on a solution. Unfortunately, we can't offer you a solution through our contact channels here at the moment. Please try again in the webshop at a later time.",
       'nl' : "Op dit moment kunnen sommige klanten geen bestellingen plaatsen in onze webshop. We zijn ons bewust van het probleem en werken aan een oplossing. Helaas kunnen we je op dit moment geen oplossing bieden via onze contactkanalen hier. Probeer het later nog eens in de webshop."
       */
+     /*'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
+      'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
+      'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
+      'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
+      'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
+      */
     },
     "outputHeadingBannerDE" : {
-      'de' : "Technische Probleme Chat in Safari",
-      'fr' : "Problèmes techniques Chat dans Safari",
-      'it' : "Problemi tecnici Chat in Safari",
-      'en-US' : "Technical Issues Chat with Safari",
-      'nl' : "Technische problemen Chat in Safari"
-      /*'de' : "Technische Probleme Call",
-      'fr' : "Problèmes techniques Appel",
-      'it' : "Problemi tecnici Chiamare",
-      'en-US' : "Technical Issues Call",
-      'nl' : "Technische problemen Bel"*/
-      /*'de' : "Technische Probleme Bestellaufgabe im Webshop",
-      'fr' : "Problèmes techniques Passation de commande dans la boutique en ligne",
-      'it' : "Problemi tecnici Ordinare nel webshop",
-      'en-US' : "Technical problems order placement in webshop",
-      'nl' : "Technische problemen Bestellen in de webshop"*/
+      'de' : "Verzögerungen bei Lieferungen",
+      'fr' : "Retards dans les livraisons",
+      'it' : "Ritardi nelle consegne",
+      'en-US' : "Delays in deliveries",
+      'nl' : "Vertragingen in leveringen"
     },
     "outputTextBannerDE" : {
-      'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
-      'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
-      'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
-      'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
-      'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
-      
-      /*'de' : "Aufgrund technischer Probleme steht unsere Telefonleitung temporär nicht zur Verfügung.",
-      'fr' : "En raison de problèmes techniques, notre ligne téléphonique est temporairement indisponible.",
-      'it' : "A causa di problemi tecnici, la nostra linea telefonica non è temporaneamente disponibile.",
-      'en-US' : "Due to technical problems our phone line is temporarily unavailable.",
-      'nl' : "Door technische problemen is onze telefoonlijn tijdelijk niet beschikbaar."*/
-      /*'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
-      'fr' : "Actuellement, certains clients ne peuvent pas passer de commandes dans notre boutique en ligne. Nous sommes conscients du problème et nous travaillons à une solution. Malheureusement, nous ne pouvons pas vous proposer de solution par le biais de nos canaux de contact pour le moment. Veuillez réessayer dans la boutique en ligne ultérieurement. ",
-      'it' : "Attualmente, alcuni clienti non possono effettuare ordini nel nostro negozio online. Siamo consapevoli del problema e stiamo lavorando a una soluzione. Purtroppo, al momento non possiamo offrire una soluzione attraverso i nostri canali di contatto. Vi invitiamo a riprovare a visitare il negozio online in un secondo momento.",
-      'en-US' : "Currently, some customers can not place orders in our webshop. We are aware of the problem and are working on a solution. Unfortunately, we can't offer you a solution through our contact channels here at the moment. Please try again in the webshop at a later time.",
-      'nl' : "Op dit moment kunnen sommige klanten geen bestellingen plaatsen in onze webshop. We zijn ons bewust van het probleem en werken aan een oplossing. Helaas kunnen we je op dit moment geen oplossing bieden via onze contactkanalen hier. Probeer het later nog eens in de webshop."
-      */
+      'de' : "Aufgrund aktuell hoher Paketmengen und erschwerter Wetterbedingungen kann es in einigen Fällen zu Verzögerungen bei der Auslieferung deiner Sendung kommen. Wir bitten dich in diesen Fällen um Geduld.<br>Einen Link zur Sendungsverfolgung findest du jeweils in der <a href='https://galaxus.de/order' target='blank'>Bestellübersicht</a>.",
+      'fr' : "En raison du volume élevé de colis et des conditions météorologiques difficiles, il se peut que la livraison de votre envoi soit retardée dans certains cas. Nous vous demandons de faire preuve de patience dans ces cas-là.<br>Vous trouverez un lien pour suivre votre envoi dans <a href='https://galaxus.de/order' target='blank'>l'aperçu de votre commande</a>.",
+      'it' : "A causa dell'attuale elevato volume di pacchi e delle difficili condizioni meteorologiche, in alcuni casi potrebbero verificarsi ritardi nella consegna del vostro pacco. Vi chiediamo di avere pazienza in questi casi.<br>Troverete un link per seguire il vostro pacco nella <a href='https://galaxus.de/order' target='blank'>panoramica dell'ordine</a>.",
+      'en-US' : "Due to the current high parcel volumes and difficult weather conditions, there may be delays in the delivery of your shipment in some cases. We ask for your patience in these cases.<br>You can  find a link to track your shipment in the <a href='https://galaxus.de/order' target='blank'>order overview</a>.",
+      'nl' : "Door de huidige grote hoeveelheid pakketten en moeilijke weersomstandigheden kan er in sommige gevallen vertraging optreden bij de bezorging van je pakket. We vragen om je geduld in deze gevallen.<br>Je vindt een link om je pakket te volgen in het <a href='https://galaxus.de/order' target='blank'>besteloverzicht</a>."
     },
     "outputHeadingBannerAT" : {
-      'de' : "Technische Probleme Chat in Safari",
-      'fr' : "Problèmes techniques Chat dans Safari",
-      'it' : "Problemi tecnici Chat in Safari",
-      'en-US' : "Technical Issues Chat with Safari",
-      'nl' : "Technische problemen Chat in Safari"
-      /*'de' : "Technische Probleme Call",
-      'fr' : "Problèmes techniques Appel",
-      'it' : "Problemi tecnici Chiamare",
-      'en-US' : "Technical Issues Call",
-      'nl' : "Technische problemen Bel"*/
-      /*'de' : "Technische Probleme Bestellaufgabe im Webshop",
-      'fr' : "Problèmes techniques Passation de commande dans la boutique en ligne",
-      'it' : "Problemi tecnici Ordinare nel webshop",
-      'en-US' : "Technical problems order placement in webshop",
-      'nl' : "Technische problemen Bestellen in de webshop"*/
+      'de' : "Verzögerungen bei Lieferungen",
+      'fr' : "Retards dans les livraisons",
+      'it' : "Ritardi nelle consegne",
+      'en-US' : "Delays in deliveries",
+      'nl' : "Vertragingen in leveringen"
     },
     "outputTextBannerAT" : {
-      'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
-      'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
-      'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
-      'en-US' : "Unfortunately, our chat is currently not working correctly in the Safari browser. You can use another browser like Chrome or Firefox to use our chat. We are working on a solution.",
-      'nl' : "Helaas werkt onze chat momenteel niet goed in de browser Safari. Je kunt onze chat gebruiken met een andere browser zoals Chrome of Firefox. We werken aan een oplossing."
-      
-      /*'de' : "Aufgrund technischer Probleme steht unsere Telefonleitung temporär nicht zur Verfügung.",
-      'fr' : "En raison de problèmes techniques, notre ligne téléphonique est temporairement indisponible.",
-      'it' : "A causa di problemi tecnici, la nostra linea telefonica non è temporaneamente disponibile.",
-      'en-US' : "Due to technical problems our phone line is temporarily unavailable.",
-      'nl' : "Door technische problemen is onze telefoonlijn tijdelijk niet beschikbaar."*/
-      /*'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
-      'fr' : "Actuellement, certains clients ne peuvent pas passer de commandes dans notre boutique en ligne. Nous sommes conscients du problème et nous travaillons à une solution. Malheureusement, nous ne pouvons pas vous proposer de solution par le biais de nos canaux de contact pour le moment. Veuillez réessayer dans la boutique en ligne ultérieurement. ",
-      'it' : "Attualmente, alcuni clienti non possono effettuare ordini nel nostro negozio online. Siamo consapevoli del problema e stiamo lavorando a una soluzione. Purtroppo, al momento non possiamo offrire una soluzione attraverso i nostri canali di contatto. Vi invitiamo a riprovare a visitare il negozio online in un secondo momento.",
-      'en-US' : "Currently, some customers can not place orders in our webshop. We are aware of the problem and are working on a solution. Unfortunately, we can't offer you a solution through our contact channels here at the moment. Please try again in the webshop at a later time.",
-      'nl' : "Op dit moment kunnen sommige klanten geen bestellingen plaatsen in onze webshop. We zijn ons bewust van het probleem en werken aan een oplossing. Helaas kunnen we je op dit moment geen oplossing bieden via onze contactkanalen hier. Probeer het later nog eens in de webshop."
-      */
+      'de' : "Aufgrund aktuell hoher Paketmengen und erschwerter Wetterbedingungen kann es in einigen Fällen zu Verzögerungen bei der Auslieferung deiner Sendung kommen. Wir bitten dich in diesen Fällen um Geduld.<br>Einen Link zur Sendungsverfolgung findest du jeweils in der <a href='https://galaxus.at/order' target='blank'>Bestellübersicht</a>.",
+      'fr' : "En raison du volume élevé de colis et des conditions météorologiques difficiles, il se peut que la livraison de votre envoi soit retardée dans certains cas. Nous vous demandons de faire preuve de patience dans ces cas-là.<br>Vous trouverez un lien pour suivre votre envoi dans <a href='https://galaxus.at/order' target='blank'>l'aperçu de votre commande</a>.",
+      'it' : "A causa dell'attuale elevato volume di pacchi e delle difficili condizioni meteorologiche, in alcuni casi potrebbero verificarsi ritardi nella consegna del vostro pacco. Vi chiediamo di avere pazienza in questi casi.<br>Troverete un link per seguire il vostro pacco nella <a href='https://galaxus.at/order' target='blank'>panoramica dell'ordine</a>.",
+      'en-US' : "Due to the current high parcel volumes and difficult weather conditions, there may be delays in the delivery of your shipment in some cases. We ask for your patience in these cases.<br>You can  find a link to track your shipment in the <a href='https://galaxus.at/order' target='blank'>order overview</a>.",
+      'nl' : "Door de huidige grote hoeveelheid pakketten en moeilijke weersomstandigheden kan er in sommige gevallen vertraging optreden bij de bezorging van je pakket. We vragen om je geduld in deze gevallen.<br>Je vindt een link om je pakket te volgen in het <a href='https://galaxus.at/order' target='blank'>besteloverzicht</a>."
     },
     "outputHeadingBannerFR" : {
-      'de' : "Technische Störung",
-      'fr' : "Panne techniqe",
-      'it' : "Guasto tecnico",
-      'en-US' : "Technical issue",
-      'nl' : ""
+      'de' : "Verzögerungen bei Lieferungen",
+      'fr' : "Retards dans les livraisons",
+      'it' : "Ritardi nelle consegne",
+      'en-US' : "Delays in deliveries",
+      'nl' : "Vertragingen in leveringen"
     },
     "outputTextBannerFR" : {
-      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
-      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
-      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request.",
-      'nl' : ""
+      'de' : "Aufgrund aktuell hoher Paketmengen und erschwerter Wetterbedingungen kann es in einigen Fällen zu Verzögerungen bei der Auslieferung deiner Sendung kommen. Wir bitten dich in diesen Fällen um Geduld.<br>Einen Link zur Sendungsverfolgung findest du jeweils in der <a href='https://galaxus.fr/order' target='blank'>Bestellübersicht</a>.",
+      'fr' : "En raison du volume élevé de colis et des conditions météorologiques difficiles, il se peut que la livraison de votre envoi soit retardée dans certains cas. Nous vous demandons de faire preuve de patience dans ces cas-là.<br>Vous trouverez un lien pour suivre votre envoi dans <a href='https://galaxus.fr/order' target='blank'>l'aperçu de votre commande</a>.",
+      'it' : "A causa dell'attuale elevato volume di pacchi e delle difficili condizioni meteorologiche, in alcuni casi potrebbero verificarsi ritardi nella consegna del vostro pacco. Vi chiediamo di avere pazienza in questi casi.<br>Troverete un link per seguire il vostro pacco nella <a href='https://galaxus.fr/order' target='blank'>panoramica dell'ordine</a>.",
+      'en-US' : "Due to the current high parcel volumes and difficult weather conditions, there may be delays in the delivery of your shipment in some cases. We ask for your patience in these cases.<br>You can  find a link to track your shipment in the <a href='https://galaxus.fr/order' target='blank'>order overview</a>.",
+      'nl' : "Door de huidige grote hoeveelheid pakketten en moeilijke weersomstandigheden kan er in sommige gevallen vertraging optreden bij de bezorging van je pakket. We vragen om je geduld in deze gevallen.<br>Je vindt een link om je pakket te volgen in het <a href='https://galaxus.fr/order' target='blank'>besteloverzicht</a>."
     },
     "outputHeadingBannerIT" : {
-      'de' : "Technische Störung",
-      'fr' : "Panne techniqe",
-      'it' : "Guasto tecnico",
-      'en-US' : "Technical issue",
-      'nl' : ""
+      'de' : "Verzögerungen bei Lieferungen",
+      'fr' : "Retards dans les livraisons",
+      'it' : "Ritardi nelle consegne",
+      'en-US' : "Delays in deliveries",
+      'nl' : "Vertragingen in leveringen"
     },
     "outputTextBannerIT" : {
-      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
-      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
-      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request.",
-      'nl' : ""
+      'de' : "Aufgrund aktuell hoher Paketmengen und erschwerter Wetterbedingungen kann es in einigen Fällen zu Verzögerungen bei der Auslieferung deiner Sendung kommen. Wir bitten dich in diesen Fällen um Geduld.<br>Einen Link zur Sendungsverfolgung findest du jeweils in der <a href='https://galaxus.it/order' target='blank'>Bestellübersicht</a>.",
+      'fr' : "En raison du volume élevé de colis et des conditions météorologiques difficiles, il se peut que la livraison de votre envoi soit retardée dans certains cas. Nous vous demandons de faire preuve de patience dans ces cas-là.<br>Vous trouverez un lien pour suivre votre envoi dans <a href='https://galaxus.it/order' target='blank'>l'aperçu de votre commande</a>.",
+      'it' : "A causa dell'attuale elevato volume di pacchi e delle difficili condizioni meteorologiche, in alcuni casi potrebbero verificarsi ritardi nella consegna del vostro pacco. Vi chiediamo di avere pazienza in questi casi.<br>Troverete un link per seguire il vostro pacco nella <a href='https://galaxus.it/order' target='blank'>panoramica dell'ordine</a>.",
+      'en-US' : "Due to the current high parcel volumes and difficult weather conditions, there may be delays in the delivery of your shipment in some cases. We ask for your patience in these cases.<br>You can  find a link to track your shipment in the <a href='https://galaxus.it/order' target='blank'>order overview</a>.",
+      'nl' : "Door de huidige grote hoeveelheid pakketten en moeilijke weersomstandigheden kan er in sommige gevallen vertraging optreden bij de bezorging van je pakket. We vragen om je geduld in deze gevallen.<br>Je vindt een link om je pakket te volgen in het <a href='https://galaxus.it/order' target='blank'>besteloverzicht</a>."
     },
     "outputHeadingBannerBE" : {
-      'de' : "Technische Störung",
-      'fr' : "Panne techniqe",
-      'it' : "Guasto tecnico",
-      'en-US' : "Technical issue",
-      'nl' : ""
+      'de' : "Verzögerungen bei Lieferungen",
+      'fr' : "Retards dans les livraisons",
+      'it' : "Ritardi nelle consegne",
+      'en-US' : "Delays in deliveries",
+      'nl' : "Vertragingen in leveringen"
     },
     "outputTextBannerBE" : {
-      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
-      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
-      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request.",
-      'nl' : ""
+      'de' : "Aufgrund aktuell hoher Paketmengen und erschwerter Wetterbedingungen kann es in einigen Fällen zu Verzögerungen bei der Auslieferung deiner Sendung kommen. Wir bitten dich in diesen Fällen um Geduld.<br>Einen Link zur Sendungsverfolgung findest du jeweils in der <a href='https://galaxus.be/order' target='blank'>Bestellübersicht</a>.",
+      'fr' : "En raison du volume élevé de colis et des conditions météorologiques difficiles, il se peut que la livraison de votre envoi soit retardée dans certains cas. Nous vous demandons de faire preuve de patience dans ces cas-là.<br>Vous trouverez un lien pour suivre votre envoi dans <a href='https://galaxus.be/order' target='blank'>l'aperçu de votre commande</a>.",
+      'it' : "A causa dell'attuale elevato volume di pacchi e delle difficili condizioni meteorologiche, in alcuni casi potrebbero verificarsi ritardi nella consegna del vostro pacco. Vi chiediamo di avere pazienza in questi casi.<br>Troverete un link per seguire il vostro pacco nella <a href='https://galaxus.be/order' target='blank'>panoramica dell'ordine</a>.",
+      'en-US' : "Due to the current high parcel volumes and difficult weather conditions, there may be delays in the delivery of your shipment in some cases. We ask for your patience in these cases.<br>You can  find a link to track your shipment in the <a href='https://galaxus.be/order' target='blank'>order overview</a>.",
+      'nl' : "Door de huidige grote hoeveelheid pakketten en moeilijke weersomstandigheden kan er in sommige gevallen vertraging optreden bij de bezorging van je pakket. We vragen om je geduld in deze gevallen.<br>Je vindt een link om je pakket te volgen in het <a href='https://galaxus.be/order' target='blank'>besteloverzicht</a>."
     },
     "outputHeadingBannerNL" : {
-      'de' : "Technische Störung",
-      'fr' : "Panne techniqe",
-      'it' : "Guasto tecnico",
-      'en-US' : "Technical issue",
-      'nl' : ""
+      'de' : "Verzögerungen bei Lieferungen",
+      'fr' : "Retards dans les livraisons",
+      'it' : "Ritardi nelle consegne",
+      'en-US' : "Delays in deliveries",
+      'nl' : "Vertragingen in leveringen"
     },
     "outputTextBannerNL" : {
-      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
-      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
-      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request.",
-      'nl' : ""
+      'de' : "Aufgrund aktuell hoher Paketmengen und erschwerter Wetterbedingungen kann es in einigen Fällen zu Verzögerungen bei der Auslieferung deiner Sendung kommen. Wir bitten dich in diesen Fällen um Geduld.<br>Einen Link zur Sendungsverfolgung findest du jeweils in der <a href='https://galaxus.nl/order' target='blank'>Bestellübersicht</a>.",
+      'fr' : "En raison du volume élevé de colis et des conditions météorologiques difficiles, il se peut que la livraison de votre envoi soit retardée dans certains cas. Nous vous demandons de faire preuve de patience dans ces cas-là.<br>Vous trouverez un lien pour suivre votre envoi dans <a href='https://galaxus.nl/order' target='blank'>l'aperçu de votre commande</a>.",
+      'it' : "A causa dell'attuale elevato volume di pacchi e delle difficili condizioni meteorologiche, in alcuni casi potrebbero verificarsi ritardi nella consegna del vostro pacco. Vi chiediamo di avere pazienza in questi casi.<br>Troverete un link per seguire il vostro pacco nella <a href='https://galaxus.nl/order' target='blank'>panoramica dell'ordine</a>.",
+      'en-US' : "Due to the current high parcel volumes and difficult weather conditions, there may be delays in the delivery of your shipment in some cases. We ask for your patience in these cases.<br>You can  find a link to track your shipment in the <a href='https://galaxus.nl/order' target='blank'>order overview</a>.",
+      'nl' : "Door de huidige grote hoeveelheid pakketten en moeilijke weersomstandigheden kan er in sommige gevallen vertraging optreden bij de bezorging van je pakket. We vragen om je geduld in deze gevallen.<br>Je vindt een link om je pakket te volgen in het <a href='https://galaxus.nl/order' target='blank'>besteloverzicht</a>."
     },
     "outputHeadingBannerLU" : {
-      'de' : "Technische Störung",
-      'fr' : "Panne techniqe",
-      'it' : "Guasto tecnico",
-      'en-US' : "Technical issue",
-      'nl' : ""
+      'de' : "Verzögerungen bei Lieferungen",
+      'fr' : "Retards dans les livraisons",
+      'it' : "Ritardi nelle consegne",
+      'en-US' : "Delays in deliveries",
+      'nl' : "Vertragingen in leveringen"
     },
     "outputTextBannerLU" : {
-      'de' : "Aufgrund einer technischer Störung unserer Systeme können wir Ihnen zurzeit nicht in jedem Anliegen weiterhelfen.",
-      'fr' : "En raison d'une panne technique de nos systèmes, nous ne pouvons actuellement pas vous aider dans toutes vos demandes.",
-      'it' : "A causa di un malfunzionamento tecnico dei nostri sistemi, non siamo attualmente in grado di assistervi per ogni richiesta.",
-      'en-US' : "Due to a technical malfunction of our systems, we are currently unable to assist you with every request.",
-      'nl' : ""
+      'de' : "Aufgrund aktuell hoher Paketmengen und erschwerter Wetterbedingungen kann es in einigen Fällen zu Verzögerungen bei der Auslieferung deiner Sendung kommen. Wir bitten dich in diesen Fällen um Geduld.<br>Einen Link zur Sendungsverfolgung findest du jeweils in der <a href='https://galaxus.lu/order' target='blank'>Bestellübersicht</a>.",
+      'fr' : "En raison du volume élevé de colis et des conditions météorologiques difficiles, il se peut que la livraison de votre envoi soit retardée dans certains cas. Nous vous demandons de faire preuve de patience dans ces cas-là.<br>Vous trouverez un lien pour suivre votre envoi dans <a href='https://galaxus.lu/order' target='blank'>l'aperçu de votre commande</a>.",
+      'it' : "A causa dell'attuale elevato volume di pacchi e delle difficili condizioni meteorologiche, in alcuni casi potrebbero verificarsi ritardi nella consegna del vostro pacco. Vi chiediamo di avere pazienza in questi casi.<br>Troverete un link per seguire il vostro pacco nella <a href='https://galaxus.lu/order' target='blank'>panoramica dell'ordine</a>.",
+      'en-US' : "Due to the current high parcel volumes and difficult weather conditions, there may be delays in the delivery of your shipment in some cases. We ask for your patience in these cases.<br>You can  find a link to track your shipment in the <a href='https://galaxus.lu/order' target='blank'>order overview</a>.",
+      'nl' : "Door de huidige grote hoeveelheid pakketten en moeilijke weersomstandigheden kan er in sommige gevallen vertraging optreden bij de bezorging van je pakket. We vragen om je geduld in deze gevallen.<br>Je vindt een link om je pakket te volgen in het <a href='https://galaxus.lu/order' target='blank'>besteloverzicht</a>."
     }
     }
       return topBannerWording;
 }
+
 
 
 
@@ -472,6 +445,7 @@ var textToDisplay = {
 
 
 
+
 //WHEN TO HIDE THE WAITING TIMES (WHEN HOLIDAYS ARE ONGOING)
 //NOTE THAT DATES MUST BE NOTED IN UTC TIME
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
@@ -504,10 +478,12 @@ var hideWaitingTimes = {
 
 
 
+
 //Hiding waiting times in case of stuck calls/chats
 //format aus waiting nehmen https://py-waittimes-web.prod.pub.devinite.com/waitTimes.js
 let waitTimesToHideCall = []
 let waitTimesToHideChat = []
+
 
 
 
@@ -531,11 +507,13 @@ const openingHours = {
 
 
 
+
 //Connect
 var connectOpeningHourWeekday = 8;
 var connectClosingHourWeekday = 17;
 var connectOpeningHourSaturday = false;
 var connectClosingHourSaturday = false;
+
 
 
 
@@ -549,11 +527,13 @@ var chatFrIsFallback = false;
 
 
 
+
 //Defines if the Language has a Fallback
 var chatEnHasFallback = false;
 var chatDeHasFallback = false;
 var chatItHasFallback = false;
 var chatFrHasFallback = false;
+
 
 
 

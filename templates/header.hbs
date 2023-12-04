@@ -1,10 +1,12 @@
 <div id="sectorBand">
 
+
 </div>
 <header class="header">
   <div class="logo">
     <a id="logoAnchor" href="https://helpcenter.digitec.ch/hc">
     </a>  
+
 
   </div>
   <div class="backtoshop" style="margin-left:auto;padding-right:25px;font-weight:300" data-wording-key="toShop"></div>
@@ -25,6 +27,7 @@
       {{/if}}
     </div>
 
+
     
   <!--<div class="nav-wrapper">
     <span class="icon-menu"></span>
@@ -35,7 +38,9 @@
     {{user_info}}
   </div>-->
 
+
 </header>
+
 
     <div class="bannerInfo" id="bannerSchalter">
     <div class="bannerInfo__content">
@@ -62,20 +67,25 @@
     </div>
   </div>
 
+
 <script type="text/javascript" >
+
 
   const urlParams = new URLSearchParams(window.location.search);
   const userInfo = urlParams.get('user-info');
   let chatOpenFromHelpAssist = false;
-
+  sessionStorage.setItem('chatOpenFromHelpAssist', 'no')
   if (userInfo != null){
     sessionStorage.setItem('user-info', atob(userInfo))
-    if (JSON.parse(atob(userInfo))["openChat"] == true){chatOpenFromHelpAssist = true;}
+    if (JSON.parse(atob(userInfo))["openChat"] == true){
+      chatOpenFromHelpAssist = true;
+      sessionStorage.setItem('chatOpenFromHelpAssist', 'yes')}
   } else {
     if (sessionStorage.getItem('user-info') == null){
       sessionStorage.setItem('user-info', '{"isPrivate":"","phone":"","email":"","tags":"","openChat":false}')
     }
   }
+
 
   
 //href -> Link dynamisch nach Hostname ersetzen;
@@ -83,9 +93,11 @@
 let portal = window.location.hostname;
 let gaSend = false;
 
+
 let tempLink = window.location.href;
 let upperCaseChecker = false;
 //console.log(tempLink)
+
 
 //for (const c of tempLink){
 //  console.log('enter')
@@ -95,13 +107,16 @@ let upperCaseChecker = false;
 //  }
 //}
 
+
 //if (upperCaseChecker){
 //  window.location.href = tempLink.toLowerCase();
 //}
 
+
 if (tempLink.includes('de-CH')){
   window.location.href = tempLink.substring(0, tempLink.length - 3);
 }
+
 
 
 // Sets Logo and Link based on URL
@@ -173,12 +188,16 @@ switch(portal){
 
 
 
+
 var currentLanguage = $('html').attr('lang');
 var topBannerWording = fillTopBannerWording();
 
+
 setMetaDescription();
 
+
 /*console.log(currentLanguage);*/
+
 
 var headingBannerCH=topBannerWording['outputHeadingBannerCH'][currentLanguage];
 var textBannerCH=topBannerWording['outputTextBannerCH'][currentLanguage];
@@ -187,14 +206,18 @@ var textBannerDE=topBannerWording['outputTextBannerDE'][currentLanguage];
 var headingBannerAT=topBannerWording['outputHeadingBannerAT'][currentLanguage];
 var textBannerAT=topBannerWording['outputTextBannerAT'][currentLanguage];
 
+
 /*console.log(topBannerWording);
 console.log(window.location.hostname);*/
 
 
+
 /****************banner****************/
+
 
 /////////////////////Banner Einschalten/Auschalten///////////////////
 var bannerSwitch; //true=an, false=aus, FÜR ALLE DOMAINS
+
 
 if(window.location.hostname =="helpcenter.digitec.ch" || window.location.hostname =="helpcenter.galaxus.ch"){ //SCHWEIZ
   if(currentLanguage =='de'){ //CH DEUTSCH
@@ -286,6 +309,7 @@ else{ //Rest
 ////////////////////////////////////////////////////////////////////
 
 
+
 //Je nach Domain unterschiedliche Banner
 if(window.location.hostname =="helpcenter.digitec.ch" || window.location.hostname =="helpcenter.galaxus.ch"){
   document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerCH + ":</strong><br> " + textBannerCH;
@@ -300,11 +324,13 @@ else{ /*Digitec ist Else*/
     document.getElementById('bannerInfo__text').innerHTML="<strong>" + headingBannerCH + ":</strong><br> " + textBannerCH;
 }
 
+
 if(bannerSwitch){
   $('#bannerSchalter').show();
 }else{
   $('#bannerSchalter').hide();
 }
+
 
 function setMetaDescription(){
   switch(currentLanguage){
@@ -326,4 +352,3 @@ function setMetaDescription(){
   }
 }
 </script>
-

@@ -9,6 +9,7 @@
 
 
 
+
 <section class="section hero" style="margin-bottom:0px">
   <div class="hero-inner">
     <h2 style="margin-bottom:20px;"><font class='searchBoxText' data-wording-key='searchBoxText' style="color:black; margin-botton:20px;"></font></h2>
@@ -19,7 +20,7 @@
 <div class="container">
     <!-- <div class='infoNoteBox' style='background-color: #f2d13a; bottom:0; position: center; margin-bottom:60px'>
       <table width='100%'><tr><th align='center' width='100%'><font class='infoNoteText' data-wording-key='infoNoteText' style='text-alignment:center;' color='black'></font></th></tr></table> 
-	</div>	-->
+  </div>  -->
   <section class="section knowledge-base">
     <section class="categories blocks">
       <ul class="blocks-list">
@@ -67,6 +68,7 @@
     {{/if}}
   </section>
 
+
   <!--{{#if help_center.community_enabled}}
     <section class="section community">
       <h2>{{t 'community'}}</h2>
@@ -74,14 +76,17 @@
         {{t 'join_conversation'}}
       {{/link}}
 
+
       <div class="community-image"></div>
     </section>
   {{/if}}-->
+
 
   <!--<section class="section activity">
     {{recent_activity}}
   </section>-->
 </div>
+
 
 <div class="container ticketsubmitconfirmation">
 <div class="form">
@@ -90,12 +95,14 @@
 <font id="backToHelpcenter"></font>
 </div></div>
 
+
 <div class="container callbacksubmitconfirmation">
 <div class="form">
 <h2 style="margin-top:50px" data-wording-key="callbackSubmitConfirmationTitle"></h2>
 <font style="color:#218521" data-wording-key="callbackSubmintConfirmationTextPt1"></font><font data-wording-key="callbackSubmintConfirmationTextPt2"></font></font><b id="dgCustomerPhone"></b><font data-wording-key="callbackSubmintConfirmationTextPt3"></font>
 <font id="backToHelpcenter2"></font>
 </div></div>
+
 
 
   <script>
@@ -128,25 +135,26 @@
       sessionStorage.removeItem('callbackCustomerPhone');
   }
 
+
   var elements = document.getElementsByClassName('blocks-item-title');
   var elements2 = document.getElementsByClassName('blocks-item-inner-table-cell');
   var pixelheight = "24"
   for (index = 0; index < elements.length; index++){
-		switch(elements[index].innerHTML.toString().toLowerCase()){
-			case 'bestellungen':
-			case 'orders':
-			case 'commandes':
-			case 'ordini':
+    switch(elements[index].innerHTML.toString().toLowerCase()){
+      case 'bestellungen':
+      case 'orders':
+      case 'commandes':
+      case 'ordini':
       case 'bestellingen':
-				elements2[index].innerHTML = '<img src="{{asset 'shopping-cart.png'}}" height="' + pixelheight + 'px">';
-				break;
+        elements2[index].innerHTML = '<img src="{{asset 'shopping-cart.png'}}" height="' + pixelheight + 'px">';
+        break;
       case 'bezahlung':
-			case 'payment':
-			case 'paiement':
-			case 'pagamento':
+      case 'payment':
+      case 'paiement':
+      case 'pagamento':
       case 'betaling':
-				elements2[index].innerHTML = '<img src="{{asset 'orders-and-payment.png'}}" height="' + pixelheight + 'px">';
-				break;
+        elements2[index].innerHTML = '<img src="{{asset 'orders-and-payment.png'}}" height="' + pixelheight + 'px">';
+        break;
       case 'rückerstattung': //Temporär hier bis eigenes Icon
       case 'refund': // Temporär hier bis eigenes Icon
       case 'remboursement': // Temporär hier bis eigenes Icon
@@ -157,38 +165,40 @@
       case 'rückgabe und gewährleistung':
       case 'rückgabe &amp; gewährleistung':
       case 'garantie &amp; rückgabe': 
-			case 'warranty &amp; return':
-			case 'garantie &amp; retour':
-			case 'resi e garanzia':
+      case 'warranty &amp; return':
+      case 'garantie &amp; retour':
+      case 'resi e garanzia':
       case 'teruggave en garantie':
       case 'teruggave &amp; garantie':
-				elements2[index].innerHTML = '<img src="{{asset 'arrows.png'}}" height="' + pixelheight + 'px">';
-				break;
-			case 'dienstleistungen &amp; services': 
-			case 'additional services':
-			case 'prestations &amp; services':
-			case 'prestazioni e servizi':
+        elements2[index].innerHTML = '<img src="{{asset 'arrows.png'}}" height="' + pixelheight + 'px">';
+        break;
+      case 'dienstleistungen &amp; services': 
+      case 'additional services':
+      case 'prestations &amp; services':
+      case 'prestazioni e servizi':
       case 'diensten &amp; services':
       case 'diensten en services':
-				elements2[index].innerHTML = '<img src="{{asset 'wrench.png'}}" height="' + pixelheight + 'px">';
-				break;
-			case 'kundenkonto': 
+        elements2[index].innerHTML = '<img src="{{asset 'wrench.png'}}" height="' + pixelheight + 'px">';
+        break;
+      case 'kundenkonto': 
       case 'benutzerkonto':
-			case 'customer account':
-			case 'compte client':
-			case 'conto cliente':
+      case 'customer account':
+      case 'compte client':
+      case 'conto cliente':
       case 'gebruikersaccount':
-				elements2[index].innerHTML = '<img src="{{asset 'customer-account.png'}}" height="' + pixelheight + 'px">';
-				break;
-			case 'digitec connect':
+        elements2[index].innerHTML = '<img src="{{asset 'customer-account.png'}}" height="' + pixelheight + 'px">';
+        break;
+      case 'digitec connect':
       case 'digitec connect ': 
-				elements2[index].innerHTML = '<img src="{{asset 'simcard.png'}}" height="' + pixelheight + 'px">';
-			default:
-				break;
-		}
-	}
+        elements2[index].innerHTML = '<img src="{{asset 'simcard.png'}}" height="' + pixelheight + 'px">';
+      default:
+        break;
+    }
+  }
+
 
 /////////////TITLE/////////////////
+
 
   if(window.location.hostname !="helpcenter.digitec.ch" && window.location.hostname !="helpcenter.connect.digitec.ch"){
     $("#seitenTitel").prop('title', 'Galaxus Helpcenter');
@@ -199,4 +209,3 @@
   }
   
 </script>
-
