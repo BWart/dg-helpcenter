@@ -335,9 +335,30 @@ function fillTopBannerWording(){
       'it' : "A causa dell'attuale elevato volume di pacchi e delle difficili condizioni meteorologiche, in alcuni casi potrebbero verificarsi ritardi nella consegna del vostro pacco. Vi chiediamo di avere pazienza in questi casi.<br>Troverete un link per seguire il vostro pacco nella <a href='https://galaxus.lu/order' target='blank'>panoramica dell'ordine</a>.",
       'en-US' : "Due to the current high parcel volumes and difficult weather conditions, there may be delays in the delivery of your shipment in some cases. We ask for your patience in these cases.<br>You can  find a link to track your shipment in the <a href='https://galaxus.lu/order' target='blank'>order overview</a>.",
       'nl' : "Door de huidige grote hoeveelheid pakketten en moeilijke weersomstandigheden kan er in sommige gevallen vertraging optreden bij de bezorging van je pakket. We vragen om je geduld in deze gevallen.<br>Je vindt een link om je pakket te volgen in het <a href='https://galaxus.lu/order' target='blank'>besteloverzicht</a>."
+    },
+    "outputHeadingBannerChat" : {
+      'de' : "Vielen Dank für deine Chat-Anfrage",
+      'fr' : "Merci pour votre demande de chat",
+      'it' : "Grazie per la sua richiesta di chat",
+      'en-US' : "Thank you for your chat request",
+      'nl' : "Bedankt voor uw chataanvraag"
+    },
+    "outputTextBannerChat" : {
+      'de' : "Das Chat-Fenster öffnet sich gleich unten rechts.",
+      'fr' : "La fenêtre de chat s'ouvre en bas à droite.",
+      'it' : "La finestra di chat si aprirà in basso a destra.",
+      'en-US' : "The chat window will open at the bottom right.",
+      'nl' : "Het chatvenster wordt rechtsonder geopend."
+    },
+    "outputTextBannerChatSafari" : {
+      'de' : "Das Chat-Fenster öffnet sich gleich unten rechts.<br><br><strong>Technische Probleme Safari:</strong><br>Falls das Chat-Fenster in deinem Safari-Browser sich nicht öffnet, versuche es mit einem anderen Browser über unseren Shop.",
+      'fr' : "La fenêtre de chat s'ouvre en bas à droite.<br><br><strong>Problèmes techniques Safari :</strong><br>Si la fenêtre de chat ne s'ouvre pas dans votre navigateur Safari, essayez un autre navigateur via notre boutique.",
+      'it' : "La finestra di chat si aprirà in basso a destra.<br><br><strong>Problemi tecnici Safari:</strong><br>Se la finestra di chat non si apre nel browser Safari, provare un altro browser tramite il nostro negozio.",
+      'en-US' : "The chat window will open at the bottom right.<br><br><strong>Technical problems Safari:</strong><br>If the chat window does not open in your Safari browser, try another browser via our store.",
+      'nl' : "Het chatvenster wordt rechtsonder geopend.<br><br><strong>Technische problemen Safari:</strong><br>Als het chatvenster niet opent in je Safari browser, probeer dan een andere browser via onze shop."
     }
     }
-      return topBannerWording;
+  return topBannerWording;
 }
 
 

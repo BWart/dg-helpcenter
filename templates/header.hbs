@@ -220,8 +220,8 @@ var textBannerNL=topBannerWording['outputTextBannerNL'][currentLanguage];
 var headingBannerBE=topBannerWording['outputHeadingBannerBE'][currentLanguage];
 var textBannerBE=topBannerWording['outputTextBannerBE'][currentLanguage];
 //LU
-var headingBannerBE=topBannerWording['outputHeadingBannerLU'][currentLanguage];
-var textBannerBE=topBannerWording['outputTextBannerLU'][currentLanguage];
+var headingBannerLU=topBannerWording['outputHeadingBannerLU'][currentLanguage];
+var textBannerLU=topBannerWording['outputTextBannerLU'][currentLanguage];
 
 
 /*console.log(topBannerWording);
@@ -412,10 +412,20 @@ else{ /*Digitec ist Else*/
 }
 
 //Meldung für Chat Öffnung durch Help Assist
-//if (chatOpenFromHelpAssist){
-//  bannerSwitch = true
-//  switch 
-//}
+let userAgentString = navigator.userAgent;
+let chromeAgent = userAgentString.indexOf("Chrome") > -1;
+let safariAgent = userAgentString.indexOf("Safari") > -1;
+let IExplorerAgent = userAgentString.indexOf("MSIE") > -1 || userAgentString.indexOf("rv") > -1;
+let firefoxAgent = userAgentString.indexOf("Firefox") > -1;
+if ((chromeAgent) && (safariAgent)) {safariAgent = false};
+if (chatOpenFromHelpAssist){
+  bannerSwitch = true
+  if (safariAgent){
+    document.getElementById('bannerInfo__text').innerHTML="<strong>" + topBannerWording['outputHeadingBannerChat'][currentLanguage] + ":</strong><br> " + topBannerWording['outputTextBannerChatSafari'][currentLanguage];
+  } else {
+    document.getElementById('bannerInfo__text').innerHTML="<strong>" + topBannerWording['outputHeadingBannerChat'][currentLanguage] + ":</strong><br> " + topBannerWording['outputTextBannerChat'][currentLanguage];
+  }
+}
 
 
 if(bannerSwitch){
