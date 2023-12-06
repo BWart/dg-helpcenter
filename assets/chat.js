@@ -348,7 +348,8 @@ function getChatDepartmentType(){
     switch(href){
         case('helpcenter.digitec.ch'):
         case('helpcenter.galaxus.ch'):
-            chatDepartmentType = 'Private';
+            //chatDepartmentType = 'Private';
+            chatDepartmentType = getDGChatDepartmentType();
             break;
         case('helpcenter.connect.digitec.ch'):
             chatDepartmentType = 'Private';
@@ -627,4 +628,104 @@ function openChat(){
 function hideChat(){
     //webWidgetDiv.hide()
     zE('webWidget', 'hide');
+}
+
+
+
+/////////// "ALTES" PE ROUTING ///////////
+
+//Unterteilung zwischen PE & Private
+function getDGChatDepartmentType(){
+    lang = getNormalizedLanguage();
+    var DGChatDepartmentType;
+    if(typeof customerType != 'undefined' && typeof requestReasonTag != 'undefined'){
+        switch(true){
+            case(isPeIt()):
+                DGChatDepartmentType = 'PeIt';
+                break;
+            case(isPeNetwork()):
+                DGChatDepartmentType = 'PeNetwork';
+                break;
+            case(isPeConsumer()):
+                DGChatDepartmentType = 'PeConsumer';
+                break;
+            case(isPePhoto()):
+                DGChatDepartmentType = 'PePhoto';
+                break;
+            case(isPeHome()):
+                DGChatDepartmentType = 'PeHome';
+                break;
+            case(isPeDiy()):
+                DGChatDepartmentType = 'PeDiy';
+                break;  
+            default:
+                DGChatDepartmentType = 'Private';
+        }
+        return DGChatDepartmentType;  
+    }else{
+        return 'Private';
+    }
+}
+//Special Routing for PeIt
+function isPeIt(){
+    if(requestReasonTag == 'webform_case_product_advice_it' && localStorage.getItem("PEABTestGroup3") == "B"){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
+//Special Routing for PeNetwork
+function isPeNetwork(){
+    if(requestReasonTag == 'webform_case_product_advice_network' && localStorage.getItem("PEABTestGroup3") == "B"){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for PePhoto
+function isPePhoto(){
+    if(requestReasonTag == 'webform_case_product_advice_photo' && localStorage.getItem("PEABTestGroup3") == "B"){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for PeConsumer
+function isPeConsumer(){
+    if(requestReasonTag == 'webform_case_product_advice_consumer' && localStorage.getItem("PEABTestGroup3") == "B"){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for PePhoto
+function isPePhoto(){
+    if(requestReasonTag == 'webform_case_product_advice_photo' && localStorage.getItem("PEABTestGroup3") == "B"){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for PeHome
+function isPeHome(){
+    if(requestReasonTag == 'webform_case_product_advice_home' && localStorage.getItem("PEABTestGroup3") == "B"){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+//Special Routing for PeDiy
+function isPeDiy(){
+    if(requestReasonTag == 'webform_case_product_advice_diy' && localStorage.getItem("PEABTestGroup3") == "B"){
+        return true;
+    }else{
+        return false;
+    }
 }
