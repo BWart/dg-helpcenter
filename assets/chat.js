@@ -39,7 +39,7 @@ async function asyncChatStart(counter){
         changeWebWidgetSettingInitial(getChatDepartment());
         if (chatOpenFromHelpAssist == true) {
             setChatDepartmentForHelpAssist(JSON.parse(sessionStorage.getItem('user-info'))["requestReason"], JSON.parse(sessionStorage.getItem('user-info'))["isPrivate"]);
-            let languageTag = getNormalizedLanguage();
+            //let languageTag = getNormalizedLanguage();
             let tagsArray = [];
             if (typeof JSON.parse(sessionStorage.getItem('user-info'))["tags"] == "string" || JSON.parse(sessionStorage.getItem('user-info'))["tags"] instanceof String){
                 tagsArray = JSON.parse(sessionStorage.getItem('user-info'))["tags"].split("|")
@@ -49,7 +49,7 @@ async function asyncChatStart(counter){
             } else {
                 tagsArray.push("chatFromHAWithoutTags")
             }
-            tagsArray.push(languageTag);
+            //tagsArray.push(languageTag);
             tagsArray.push("chat_request")
             setZopimTags(tagsArray)
             openChat();
