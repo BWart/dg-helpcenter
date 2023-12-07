@@ -240,20 +240,20 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 shopLink = "https://www.galaxus.fr/"
 
                 //Öffnungszeiten
-                tagePrivatkundeDE = "";
-                tagePrivatkundeFR = "";
-                tagePrivatkundeIT = "";
-                tagePrivatkundeEN = "";
-                tagePrivatkundeNL = "";
-                tagePrivatkunde2DE = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2FR = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2IT = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                tagePrivatkunde2NL = "";  //WICHTIG: braucht leading " |  " wenn befüllt
-                uhrzeitPrivatkunde = "";
-                uhrzeitPrivatkunde2 = "";
-                uhrzeitPrivatkundePe = "";
-                uhrzeitPrivatkunde2Pe = "";
+                tagePrivatkundeDE = "Mo - Fr ";
+                tagePrivatkundeFR = "Lu - Ve ";
+                tagePrivatkundeIT = "Lun - Ven ";
+                tagePrivatkundeEN = "Mo - Fr ";
+                tagePrivatkundeNL = "Ma - Vr ";
+                tagePrivatkunde2DE = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2FR = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2IT = " | Sat ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2EN = " | Sa ";  //WICHTIG: braucht leading " | " wenn befüllt
+                tagePrivatkunde2NL = " | Za ";  //WICHTIG: braucht leading " | " wenn befüllt
+                uhrzeitPrivatkunde = "08:00 - 19:00";
+                uhrzeitPrivatkunde2 = "09:00 - 17:00 (Chat)";
+                uhrzeitPrivatkundePe = "08:00 - 19:00";
+                uhrzeitPrivatkunde2Pe = "09:00 - 17:00 (Chat)";
                 // TODO: LINKS AUF KORREKTHEIT PRÜFEN
                 privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/5567" target="blank">Datenschutzerklärung</a>';
                 privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.fr/wiki/5567" target="blank">Déclaration de protection des données</a>';
