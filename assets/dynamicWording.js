@@ -190,7 +190,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Duitse telefoonnummers worden geaccepteerd.';
                 callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)700, (0)800, (0)900';
 
-                mailWaitDays = "1-2"
+                mailWaitDays = "3-4"
 
                 break;
         case 'helpcenter.galaxus.at':
@@ -233,7 +233,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = 'Voer een geldig telefoonnummer in. Alleen Oostenrijkse telefoonnummers worden geaccepteerd.';
                 callbackPhoneError2NL = 'De volgende voorvoegsels worden niet aanvaard: (0)700, (0)800, (0)900';
 
-                mailWaitDays = "1-2"
+                mailWaitDays = "3-4"
 
                 break;
         case 'helpcenter.galaxus.fr':
@@ -277,7 +277,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = '';
                 callbackPhoneError2NL = '';
 
-                mailWaitDays = "1-2"
+                mailWaitDays = "3-4"
 
                 break;
         case 'helpcenter.galaxus.it':
@@ -321,7 +321,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = '';
                 callbackPhoneError2NL = '';
 
-                mailWaitDays = "1-2"
+                mailWaitDays = "3-4"
 
                 break;
         case 'helpcenter.galaxus.be':
@@ -365,7 +365,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = '';
                 callbackPhoneError2NL = '';
 
-                mailWaitDays = "1-2"
+                mailWaitDays = "3-4"
 
                 break;
         case 'helpcenter.galaxus.nl':
@@ -409,7 +409,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = '';
                 callbackPhoneError2NL = '';
 
-                mailWaitDays = "1-2"
+                mailWaitDays = "3-4"
 
                 break;
         case 'helpcenter.galaxus.lu':
@@ -453,7 +453,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
                 callbackPhoneError1NL = '';
                 callbackPhoneError2NL = '';
 
-                mailWaitDays = "1-2"
+                mailWaitDays = "3-4"
 
                 break;
         default:
