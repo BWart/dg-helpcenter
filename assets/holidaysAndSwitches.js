@@ -371,28 +371,28 @@ function fillTopBannerWording(){
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2023-08-01 00:00:00', '2023-08-01 22:00:00', 0]
+      ['2023-12-10 00:00:00', '2023-12-26 23:00:00', 0], ['2023-12-10 00:00:00', '2024-01-01 23:00:00', 10]
     ],
     'de' : [
-      ['2023-09-18 00:00:00', '2023-10-03 22:00:00', 1]
+      ['2023-12-10 00:00:00', '2023-12-26 23:00:00', 1], ['2023-12-10 00:00:00', '2024-01-01 23:00:00', 11]
     ],
     'at' : [
-      ['2023-09-18 00:00:00', '2023-10-03 22:00:00', 2]
+      ['2023-12-10 00:00:00', '2023-12-26 23:00:00', 2], ['2023-12-10 00:00:00', '2024-01-01 23:00:00', 12]
     ],
     'fr' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 3]
+      ['2023-12-10 00:00:00', '2023-12-26 23:00:00', 3], ['2023-12-10 00:00:00', '2024-01-01 23:00:00', 13]
     ],
     'it' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 4],
+      ['2023-12-10 00:00:00', '2023-12-26 23:00:00', 4], ['2023-12-10 00:00:00', '2024-01-01 23:00:00', 14]
     ],
     'be' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 5],
+      ['2023-12-10 00:00:00', '2023-12-26 23:00:00', 5], ['2023-12-10 00:00:00', '2024-01-01 23:00:00', 15]
     ],
     'nl' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 6],
+      ['2023-12-10 00:00:00', '2023-12-26 23:00:00', 6], ['2023-12-10 00:00:00', '2024-01-01 23:00:00', 16]
     ],
     'lu' : [
-      ['2022-10-02 15:00:00', '2022-10-03 22:00:00', 7],
+      ['2023-12-10 00:00:00', '2023-12-26 23:00:00', 7], ['2023-12-10 00:00:00', '2024-01-01 23:00:00', 17]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
@@ -400,67 +400,123 @@ var showHolidays = {
 var textToDisplay = {
     // Switzerland
     0 : {
-      'de' : '<br>01.08.2023: Feiertag, geschlossen',
-      'fr' : "<br>01.08.2023 : Jour férié, fermé",
-      'it' : '<br>01.08.2023: Giorno festivo, chiuso',
-      'en-US' : '<br>01.08.2023: Holiday, closed',
-      'nl': ''
+      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen',
+      'fr' : "<br>25.-26.12.2023: Noël, fermé",
+      'it' : '<br>25.-26.12.2023: Natale, chiuso',
+      'en-US' : '<br>25.-26.12.2023: Christmas, closed',
+      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten'
+    },
+    10 : {
+      'de' : '<br>1.1.2024: Neujahr, geschlossen',
+      'fr' : "<br>1.1.2024: Nouvel An, fermé",
+      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
+      'en-US' : '<br>1.1.2024: New Year, closed',
+      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
     },
     //Germany
     1 : {
-      'de' : '<br>03.10.2023: Tag der Deutschen Einheit, geschlossen',
-      'fr' : "<br>03.10.2023 : Jour de l'Unité allemande , fermé",
-      'it' : "<br>03.10.2023: Giorno dell'unità tedesca, chiuso",
-      'en-US' : '<br>03.10.2023: German Unity Day, closed',
-      'nl': ''
+      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen',
+      'fr' : "<br>25.-26.12.2023: Noël, fermé",
+      'it' : '<br>25.-26.12.2023: Natale, chiuso',
+      'en-US' : '<br>25.-26.12.2023: Christmas, closed',
+      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten'
+    },
+    11 : {
+      'de' : '<br>1.1.2024: Neujahr, geschlossen',
+      'fr' : "<br>1.1.2024: Nouvel An, fermé",
+      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
+      'en-US' : '<br>1.1.2024: New Year, closed',
+      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
     },
     //Austria
     2 : {
-      'de' : '<br>03.10.2023: Tag der Deutschen Einheit, geschlossen',
-      'fr' : "<br>03.10.2023 : Jour de l'Unité allemande , fermé",
-      'it' : "<br>03.10.2023: Giorno dell'unità tedesca, chiuso",
-      'en-US' : '<br>03.10.2023: German Unity Day, closed',
-      'nl': ''
+      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen',
+      'fr' : "<br>25.-26.12.2023: Noël, fermé",
+      'it' : '<br>25.-26.12.2023: Natale, chiuso',
+      'en-US' : '<br>25.-26.12.2023: Christmas, closed',
+      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten'
+    },
+    12 : {
+      'de' : '<br>1.1.2024: Neujahr, geschlossen',
+      'fr' : "<br>1.1.2024: Nouvel An, fermé",
+      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
+      'en-US' : '<br>1.1.2024: New Year, closed',
+      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
     },
     //France
     3 : {
-      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
-      'fr' : '<br>27.06.2022 16:00: fermé',
-      'it' : '<br>27.06.2022 16:00: chiuso',
-      'en-US' : '<br>27.06.2022: Closed from 16:00',
-      'nl': ''
+      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen',
+      'fr' : "<br>25.-26.12.2023: Noël, fermé",
+      'it' : '<br>25.-26.12.2023: Natale, chiuso',
+      'en-US' : '<br>25.-26.12.2023: Christmas, closed',
+      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten'
+    },
+    13 : {
+      'de' : '<br>1.1.2024: Neujahr, geschlossen',
+      'fr' : "<br>1.1.2024: Nouvel An, fermé",
+      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
+      'en-US' : '<br>1.1.2024: New Year, closed',
+      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
     },
     //Italy
     4 : {
-      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
-      'fr' : '<br>27.06.2022 16:00: fermé',
-      'it' : '<br>27.06.2022 16:00: chiuso',
-      'en-US' : '<br>27.06.2022: Closed from 16:00',
-      'nl': ''
+      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen',
+      'fr' : "<br>25.-26.12.2023: Noël, fermé",
+      'it' : '<br>25.-26.12.2023: Natale, chiuso',
+      'en-US' : '<br>25.-26.12.2023: Christmas, closed',
+      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten'
+    },
+    14 : {
+      'de' : '<br>1.1.2024: Neujahr, geschlossen',
+      'fr' : "<br>1.1.2024: Nouvel An, fermé",
+      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
+      'en-US' : '<br>1.1.2024: New Year, closed',
+      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
     },
     //Belgium
     5 : {
-      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
-      'fr' : '<br>27.06.2022 16:00: fermé',
-      'it' : '<br>27.06.2022 16:00: chiuso',
-      'en-US' : '<br>27.06.2022: Closed from 16:00',
-      'nl': ''
+      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen',
+      'fr' : "<br>25.-26.12.2023: Noël, fermé",
+      'it' : '<br>25.-26.12.2023: Natale, chiuso',
+      'en-US' : '<br>25.-26.12.2023: Christmas, closed',
+      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten'
+    },
+    15 : {
+      'de' : '<br>1.1.2024: Neujahr, geschlossen',
+      'fr' : "<br>1.1.2024: Nouvel An, fermé",
+      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
+      'en-US' : '<br>1.1.2024: New Year, closed',
+      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
     },
     //Netherlands
     6 : {
-      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
-      'fr' : '<br>27.06.2022 16:00: fermé',
-      'it' : '<br>27.06.2022 16:00: chiuso',
-      'en-US' : '<br>27.06.2022: Closed from 16:00',
-      'nl': ''
+      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen',
+      'fr' : "<br>25.-26.12.2023: Noël, fermé",
+      'it' : '<br>25.-26.12.2023: Natale, chiuso',
+      'en-US' : '<br>25.-26.12.2023: Christmas, closed',
+      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten'
+    },
+    16 : {
+      'de' : '<br>1.1.2024: Neujahr, geschlossen',
+      'fr' : "<br>1.1.2024: Nouvel An, fermé",
+      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
+      'en-US' : '<br>1.1.2024: New Year, closed',
+      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
     },
     //Luxembourg
     7 : {
-      'de' : '<br>27.06.2022: Ab 16:00 geschlossen',
-      'fr' : '<br>27.06.2022 16:00: fermé',
-      'it' : '<br>27.06.2022 16:00: chiuso',
-      'en-US' : '<br>27.06.2022: Closed from 16:00',
-      'nl': ''
+      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen',
+      'fr' : "<br>25.-26.12.2023: Noël, fermé",
+      'it' : '<br>25.-26.12.2023: Natale, chiuso',
+      'en-US' : '<br>25.-26.12.2023: Christmas, closed',
+      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten'
+    },
+    17 : {
+      'de' : '<br>1.1.2024: Neujahr, geschlossen',
+      'fr' : "<br>1.1.2024: Nouvel An, fermé",
+      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
+      'en-US' : '<br>1.1.2024: New Year, closed',
+      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
     }
 }
 
@@ -502,7 +558,7 @@ var hideWaitingTimes = {
 
 //Hiding waiting times in case of stuck calls/chats
 //format aus waiting nehmen https://py-waittimes-web.prod.pub.devinite.com/waitTimes.js
-let waitTimesToHideCall = []
+let waitTimesToHideCall = ['privateCHDE']
 let waitTimesToHideChat = []
 
 
