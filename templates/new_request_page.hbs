@@ -1278,14 +1278,18 @@
       case 'helpcenter.galaxus.de':
       case 'helpcenter.galaxus.at':
       case 'helpcenter.galaxus.fr':
+        isOpen = isInOpeningTimes();
+        isCH = false;
+        if (requestReasonTag.includes('webform_case_product_advice_')){
+          isPE = true;
+        }
+        break;
       case 'helpcenter.galaxus.it':
       case 'helpcenter.galaxus.be':
       case 'helpcenter.galaxus.nl':
         isOpen = isInOpeningTimes();
         isCH = false;
-        if (requestReasonTag.includes('webform_case_product_advice_')){
-          isPE = true
-        }
+        isPE = false;
         break;
       case 'helpcenter.galaxus.lu':
         isOpen = false
@@ -1296,7 +1300,7 @@
     }
     // Business Logic to Add Or Remove Contact Option Based on Selection ------> Change in HolidayAndSwitches.js
     // PE
-    if (isPE && isCH){
+    if (isPE /*&& isCH*/){
       // In Business Hours
       if (isOpen){
         if (switchHideContactFormForPEDuringOpeningTimes){
