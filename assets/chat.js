@@ -530,7 +530,15 @@ function removeOldTags(){
 //Fügt die neuen Tags für Skill, WebformCase und Sprache hinzu.
 function addNewZopimTags(){
     var languageTag = getNormalizedLanguage();
-    setZopimTags([languageTag, requestReasonTag]); // Alle neuen Tags werden gesetzt
+    setZopimTags([languageTag, requestReasonTag, getCustomerTypeTag()]); // Alle neuen Tags werden gesetzt
+}
+
+function getCustomerTypeTag(){
+    if (customerType == "business-customer") {
+        return "customer_type_business";
+    } else {
+        return "customer_type_private";
+    }
 }
 
 
@@ -547,9 +555,10 @@ function removeOldWebformCaseTag(){
 
 
 // Setzt den Chat Tag - Einzeln oder Array
-function setZopimTags(tags){                                                                  
+function setZopimTags(tags){
     zE('webWidget', 'chat:addTags', tags);                                                                                    
 }
+
   
 // Entfernt Tags - Einzelne oder Array
 function removeZopimTags(tags){

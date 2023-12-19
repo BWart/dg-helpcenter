@@ -29,15 +29,17 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
   var baseERPLink = ""
   var ringGroup = ""
   var customerTypeShorthand = ""
-  var brandTag = " brand-"
   var customerLocale = ""
   var csatTag = " "
+  var customerTypeTag = " "
   if (enteredCsatChecker == "yes"){
     csatTag = " csat-eu-opt-in "
   }
   if (customerType == "private-customer") {
     customerTypeShorthand = "c"
+    customerTypeTag = " customer_type_private"
   } else if (customerType == "business-customer") {
+    customerTypeTag = " customer_type_business"
     if (isInBusinessOpeningTimes()){
       if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (currentLanguage.toLowerCase() == "de" || currentLanguage.toLowerCase() == "it")){
         customerTypeShorthand = "c"
@@ -65,12 +67,6 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
         level = "_lv2"
       }
       ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + level
-      brandTag += "digitec-"
-      if (customerType == "private-customer"){
-        brandTag += "private"
-      } else {
-        brandTag += "business"
-      }
       break;
     case 'helpcenter.galaxus.ch':
       brandID = "486521"
@@ -82,12 +78,6 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
         level = "_lv2"
       }
       ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + level
-      brandTag += "galaxus-"
-      if (customerType == "private-customer"){
-        brandTag += "private"
-      } else {
-        brandTag += "business"
-      }
       break;
     case 'helpcenter.connect.digitec.ch':
       brandID = "360002520320"
@@ -99,7 +89,6 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
         level = "_lv2"
       }
       ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + level
-      brandTag = ""
       break;
     case 'helpcenter.galaxus.de':
       brandID = "360000002879"
@@ -111,7 +100,6 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
         level = "_lv2"
       }
       ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + level
-      brandTag = ""
       break;
     case 'helpcenter.galaxus.at':
       brandID = "360002535479"
@@ -123,7 +111,6 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
         level = "_lv2"
       }
       ringGroup = "callback2" + customerTypeShorthand + "_ger_" + currentLanguage.toLowerCase() + level
-      brandTag = ""
       break;
     default:
       brandID = "486521"
@@ -135,12 +122,6 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
         level = "_lv2"
       }
       ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + level
-      brandTag += "digitec-"
-      if (customerType == "private-customer"){
-        brandTag += "private"
-      } else {
-        brandTag += "business"
-      }
       break;   
   }
   if (ringGroup == "callback2b_ch_en-us_lv1"){ringGroup = "callback2c_ch_en-us_lv1"}
@@ -197,7 +178,7 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
     tempLanguage = "en"
   }
   var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\nOrder: " + orderLink + " \nInvoice: " + invoiceLink + "\nRequest Reason: " + compiledSubject + " \n -- \ninteraction_id: "
-  var ticketTags = "callback_request voice" + csatTag + requestReasonTag + brandTag + " " + tempLanguage + " talkdesk_interaction_"
+  var ticketTags = "callback_request voice" + csatTag + requestReasonTag + customerTypeTag + " " + tempLanguage + " talkdesk_interaction_"
   var baseOrderLink = baseERPLink + "Order/"
   var baseRGLink = baseERPLink + "Invoice/"
   var custName = enteredMail.split("@")[0].replace(".", " ")
