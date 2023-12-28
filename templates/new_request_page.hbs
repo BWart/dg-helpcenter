@@ -582,11 +582,13 @@
   else if (fullLink.slice(-8) == 'requests'){
     //TODO: Handling beim Laden nach Eingabefehler
     removeOfferforPrivate();
+    removePEforEU();
     pageSetup('mailFormWrong')
   }
   // Rest; Case when the page loads after the customer type was selected
   else {
     pageSetup('customerChosen');
+    removePEforEU();
     removeOfferforPrivate();
   }
 
@@ -849,6 +851,18 @@
     }
   }
 
+  function removePEforEU(){
+    if (portal == "helpcenter.galaxus.fr" || portal == "helpcenter.galaxus.it" || portal == "helpcenter.galaxus.nl" || portal == "helpcenter.galaxus.be"){
+      labelsToRemove = ["Product information", "Produktberatung", "Conseil produits", "Consulenza prodotti", "Productadvies"]
+      try {
+        var catJson = JSON.parse(requestReasonDropdownContents.attr("data-tagger"));
+        requestReasonDropdownContents.attr("data-tagger", removeCategoryFromJsonByLabel(catJson, labelsToRemove));
+      }
+      catch (e) { // Initial wird das Formular immer geladen ohne Kundentyp und deshalb hier etwas unschön gecatcht. Funktionalität ist jedoch nicht kritisch 
+      }
+    }
+  }
+
   function removeSubcategoryFromJson(json, categoryToRemove){
     for (var i = 0; i < json.length; i++){
       if(json[i].options){
@@ -865,6 +879,15 @@
   function removeCategoryFromJson(json, categoryToRemove){  	
     for (var i = 0; i < json.length; i++){
       if (json[i].value == categoryToRemove){
+        json.splice(i,1);
+      }
+    }
+  return JSON.stringify(json);
+  }
+
+  function removeCategoryFromJsonByLabel(json, labelsToRemove){  	
+    for (var i = 0; i < json.length; i++){
+      if (labelsToRemove.includes(json[i].label)){
         json.splice(i,1);
       }
     }
