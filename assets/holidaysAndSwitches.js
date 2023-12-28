@@ -110,47 +110,47 @@ var bannerSwitchConnectIT = false;
 var bannerSwitchConnectEN = false;
 var bannerSwitchConnectNL = false;
 //Germany
-var bannerSwitchDEDE = true;
-var bannerSwitchDEFR = true;
-var bannerSwitchDEIT = true;
-var bannerSwitchDEEN = true;
-var bannerSwitchDENL = true;
+var bannerSwitchDEDE = false;
+var bannerSwitchDEFR = false;
+var bannerSwitchDEIT = false;
+var bannerSwitchDEEN = false;
+var bannerSwitchDENL = false;
 //Austria
-var bannerSwitchATDE = true;
-var bannerSwitchATFR = true;
-var bannerSwitchATIT = true;
-var bannerSwitchATEN = true;
-var bannerSwitchATNL = true;
+var bannerSwitchATDE = false;
+var bannerSwitchATFR = false;
+var bannerSwitchATIT = false;
+var bannerSwitchATEN = false;
+var bannerSwitchATNL = false;
 //France
-var bannerSwitchFRDE = true;
-var bannerSwitchFRFR = true;
-var bannerSwitchFRIT = true;
-var bannerSwitchFREN = true;
-var bannerSwitchFRNL = true;
+var bannerSwitchFRDE = false;
+var bannerSwitchFRFR = false;
+var bannerSwitchFRIT = false;
+var bannerSwitchFREN = false;
+var bannerSwitchFRNL = false;
 //Italy
-var bannerSwitchITDE = true;
-var bannerSwitchITFR = true;
-var bannerSwitchITIT = true;
-var bannerSwitchITEN = true;
-var bannerSwitchITNL = true;
+var bannerSwitchITDE = false;
+var bannerSwitchITFR = false;
+var bannerSwitchITIT = false;
+var bannerSwitchITEN = false;
+var bannerSwitchITNL = false;
 //Belgium
-var bannerSwitchBEDE = true;
-var bannerSwitchBEFR = true;
-var bannerSwitchBEIT = true;
-var bannerSwitchBEEN = true;
-var bannerSwitchBENL = true;
+var bannerSwitchBEDE = false;
+var bannerSwitchBEFR = false;
+var bannerSwitchBEIT = false;
+var bannerSwitchBEEN = false;
+var bannerSwitchBENL = false;
 //Netherlands
-var bannerSwitchNLDE = true;
-var bannerSwitchNLFR = true;
-var bannerSwitchNLIT = true;
-var bannerSwitchNLEN = true;
-var bannerSwitchNLNL = true;
+var bannerSwitchNLDE = false;
+var bannerSwitchNLFR = false;
+var bannerSwitchNLIT = false;
+var bannerSwitchNLEN = false;
+var bannerSwitchNLNL = false;
 //Luxembourg
-var bannerSwitchLUDE = true;
-var bannerSwitchLUFR = true;
-var bannerSwitchLUIT = true;
-var bannerSwitchLUEN = true;
-var bannerSwitchLUNL = true;
+var bannerSwitchLUDE = false;
+var bannerSwitchLUFR = false;
+var bannerSwitchLUIT = false;
+var bannerSwitchLUEN = false;
+var bannerSwitchLUNL = false;
 
 
 
