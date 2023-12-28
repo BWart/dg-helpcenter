@@ -61,6 +61,7 @@ async function asyncChatStart(counter){
 
 
 function waitForChat(){
+    $(".recommendedChannel").css('display' , 'none');
     window.addEventListener('load', (event) => {
         if (typeof zE == "undefined") {
             asyncChatLoad(0)
