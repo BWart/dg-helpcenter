@@ -109,17 +109,18 @@ function fillTopBannerWording() {
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2023-08-01 00:00:00', '2023-08-01 22:00:00', 0]
+      ['2023-12-26 23:00:00', '2024-01-01 23:00:00', 0]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-      'de' : '<br>Am 1.8.2023 - Aufgrund des Feiertags sind die Live-Kontaktkanäle geschlossen.',
-      'fr' : "<br>Le 1.8.2023 - En raison du jour férié, les canaux de contact en direct sont fermés.",
-      'it' : '<br>Il 1.8.2023 - A causa della festività, i canali di contatto sono chiusi.',
-      'en-US' : '<br>On 1.8.2023 - Due to the holiday the live contact channels are closed.'
+      'de' : '<br>1.1.2024: Neujahr, geschlossen',
+      'fr' : "<br>1.1.2024: Nouvel An, fermé",
+      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
+      'en-US' : '<br>1.1.2024: New Year, closed',
+      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
     }
 }
 
@@ -128,7 +129,7 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-      ['2023-08-29 00:00:00', '2023-08-29 22:00:00']
+      ['2024-01-01 00:00:00', '2024-01-01 22:00:00']
     ]
 }
 
