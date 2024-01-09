@@ -45,12 +45,15 @@ async function asyncChatStart(counter){
                 tagsArray = JSON.parse(sessionStorage.getItem('user-info'))["tags"].split("|")
                 if (JSON.parse(sessionStorage.getItem('user-info'))["tags"].length < 1){
                     tagsArray.push("chatFromHAWithoutTags")
+                } else if (Object.keys(JSON.parse(sessionStorage.getItem('user-info'))).includes("order")){
+                    tagsArray.push("order_number_" + String(JSON.parse(sessionStorage.getItem('user-info'))["order"]))
                 }
             } else {
                 tagsArray.push("chatFromHAWithoutTags")
             }
             //tagsArray.push(languageTag);
             tagsArray.push("chat_request")
+            console.log(tagsArray)
             setZopimTags(tagsArray)
             openChat();
             setEventListenerForChatStart();
