@@ -47,6 +47,7 @@ async function asyncChatStart(counter){
                     tagsArray.push("chatFromHAWithoutTags")
                 } else if (Object.keys(JSON.parse(sessionStorage.getItem('user-info'))).includes("order")){
                     tagsArray.push("order_number_" + String(JSON.parse(sessionStorage.getItem('user-info'))["order"]))
+                    tagsArray.push("has_order_number")
                 }
             } else {
                 tagsArray.push("chatFromHAWithoutTags")
