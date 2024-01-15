@@ -23,6 +23,19 @@ function callbackCheck(){
 
 
 function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker, enteredCsatChecker){
+  const reasonsForb2b =["webform_case_creditnote",
+  "webform_case_refund",
+  "webform_case_other_request_returns",
+  "webform_case_receipt",
+  "webform_case_payment_reminder",
+  "webform_case_no_bill",
+  "webform_case_dunning_block",
+  "webform_case_voucher",
+  "webform_case_other_request_payment",
+  "webform_case_delete_account",
+  "webform_case_cant_login",
+  "webform_case_other_request_account",
+  "webform_case_offer"]
   var brandID = ""
   var groupID = ""
   var brandName = ""
@@ -41,7 +54,7 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
   } else if (customerType == "business-customer") {
     customerTypeTag = " customer_type_business"
     if (isInBusinessOpeningTimes()){
-      if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (currentLanguage.toLowerCase() == "de" || currentLanguage.toLowerCase() == "it")){
+      if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (currentLanguage.toLowerCase() == "de" || currentLanguage.toLowerCase() == "it") && !(reasonsForb2b.includes(requestReasonTag))){
         customerTypeShorthand = "c"
       } else {
         customerTypeShorthand = "b"
@@ -124,8 +137,9 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
       ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + level
       break;   
   }
-  if (ringGroup == "callback2b_ch_en-us_lv1"){ringGroup = "callback2c_ch_en-us_lv1"}
-  if (ringGroup == "callback2b_ch_fr_lv1"){ringGroup = "callback2c_ch_fr_lv1"}
+  //Replaced by extra check in if-case to check for customertypeshorthand b
+  //if (ringGroup == "callback2b_ch_en-us_lv1"){ringGroup = "callback2c_ch_en-us_lv1"}
+  //if (ringGroup == "callback2b_ch_fr_lv1"){ringGroup = "callback2c_ch_fr_lv1"}
   switch (currentLanguage){
     case 'de':
       customerLocale = "8"
