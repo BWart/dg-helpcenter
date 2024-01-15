@@ -32,6 +32,30 @@ function fillInfoBoxWording() {
                   'it': "",
                   'en-US': ""
             },
+            "webform_case_connect_porting": {
+                  'de': "",
+                  'fr': "",
+                  'it': "",
+                  'en-US': ""
+            },
+            "webform_case_connect_roaming": {
+                  'de': "",
+                  'fr': "",
+                  'it': "",
+                  'en-US': ""
+            },
+            "webform_case_connect_network": {
+                  'de': "",
+                  'fr': "",
+                  'it': "",
+                  'en-US': ""
+            },
+            "webform_case_connect_sim": {
+                  'de': "",
+                  'fr': "",
+                  'it': "",
+                  'en-US': ""
+            },
 
             //Error-Meldungen für Attachment
             "attachment-errors": {
