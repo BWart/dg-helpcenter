@@ -54,11 +54,10 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
   } else if (customerType == "business-customer") {
     customerTypeTag = " customer_type_business"
     if (isInBusinessOpeningTimes()){
-      if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (currentLanguage.toLowerCase() == "de" || currentLanguage.toLowerCase() == "it") && !(reasonsForb2b.includes(requestReasonTag))){
-        customerTypeShorthand = "c"
-      } else {
+      if ((portal == "helpcenter.digitec.ch" || portal == "helpcenter.galaxus.ch") && (currentLanguage.toLowerCase() == "en-us" || currentLanguage.toLowerCase() == "fr") && (reasonsForb2b.includes(requestReasonTag))){
         customerTypeShorthand = "b"
-        //customerTypeShortand = "c"
+      } else {
+        customerTypeShorthand = "c"
       }
     } else {
       customerTypeShorthand = "c"
@@ -222,6 +221,7 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
   var dataToPass2 = JSON.stringify(dataToPass)
   let auth = "Bearer " + wertmarke
   console.log(ringGroup)
+  /*
   $.ajax({
     type: "POST",
     url: "https://api.talkdeskapp.com/flows/3731b2ebb4c5492f868cbe2f1e3e3601/interactions",
