@@ -221,7 +221,7 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
   var dataToPass2 = JSON.stringify(dataToPass)
   let auth = "Bearer " + wertmarke
   console.log(ringGroup)
-  /*
+  
   $.ajax({
     type: "POST",
     url: "https://api.talkdeskapp.com/flows/3731b2ebb4c5492f868cbe2f1e3e3601/interactions",
