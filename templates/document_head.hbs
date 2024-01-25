@@ -8,6 +8,7 @@
 
 
 
+
 <script src="{{asset 'holidaysAndSwitches.js'}}"></script>
 <script src="{{asset 'infoBoxWording.js'}}"></script>
 <script src="{{asset 'dynamicWording.js'}}"></script>
@@ -18,7 +19,9 @@
 
 
 
+
 <script>
+
 
 //Setting A/B Test group for PE Chat Routing
 if (true){
@@ -27,6 +30,16 @@ if (true){
   if (x < 0.5) {localStorage.setItem("PEABTestGroup3", "A")}
   else {localStorage.setItem("PEABTestGroup3", "A")}
 }
+
+
+//Setting A/B Test Group for hiding Product advice
+if (localStorage.getItem("hideAdviceABTest") != "A" && localStorage.getItem("hideAdviceABTest") != "B"){
+  let x = Math.random()
+  if (x < 0.5) {localStorage.setItem("hideAdviceABTest", "A")}
+  else {localStorage.setItem("hideAdviceABTest", "B")}
+}
+console.log(localStorage.getItem("hideAdviceABTest"))
+
 
 //const webWidgetDiv = $(".webWidgetDiv")
 var link = document.createElement('link');
@@ -48,7 +61,9 @@ link.onload = showBody();
 
 
 
+
 $("#customDGStyle").html(link)
+
 
 
 

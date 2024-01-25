@@ -3,6 +3,7 @@ let customerDepartment = "Chat Private DE"
 
 
 
+
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -18,6 +19,7 @@ async function asyncChatLoad(counter){
     hideChat();
     asyncChatStart()
 }
+
 
 
 
@@ -64,6 +66,7 @@ async function asyncChatStart(counter){
 
 
 
+
 function waitForChat(){
     $(".recommendedChannel").css('display' , 'none');
     window.addEventListener('load', (event) => {
@@ -78,6 +81,7 @@ function waitForChat(){
 }
 
 
+
 function setChatDepartmentForHelpAssist(helpAssistRequestReason, isPrivate){
     let templang = getNormalizedLanguage();
     if (portal == "helpcenter.galaxus.ch" || portal == "helpcenter.digitec.ch") {
@@ -90,6 +94,7 @@ function setChatDepartmentForHelpAssist(helpAssistRequestReason, isPrivate){
         zE('webWidget', 'updateSettings', getWebWidgetSettings("Chat EU DE"))
     }
 }
+
 
 
 
@@ -143,12 +148,14 @@ function setChatDepartmentForHelpAssist(helpAssistRequestReason, isPrivate){
 
 
 
+
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
 //Initial WebWebidget Settings
 function changeWebWidgetSettingInitial(department){
     window.zESettings = getWebWidgetSettings(department); // Widget Settings Initiales Setup
     zE('webWidget', 'setLocale', getNormalizedLanguage()); // Setzt die Widget Sprache   
 }
+
 
 
 
@@ -160,10 +167,12 @@ function changeWebWidgetSettingsOnChange(department){
 
 
 
+
 // Definiert die Widget Settings
 function getWebWidgetSettings(department){
     dynamicWording = filldynamicWording();
     console.log('Department Set: '+ department);
+
 
 
 
@@ -220,6 +229,7 @@ function getWebWidgetSettings(department){
 
 
 
+
 /////////////////////////////////////////////////////////////Departments///////////////////////////////////////////////////////////////////////////
 // Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
 function getChatDepartment(){
@@ -239,6 +249,7 @@ function getChatDepartment(){
 
 
 
+
     console.log('Expected Department :' + dep)
     //return("Chat Testgroup DE")
     if(typeof getDepartmentInfo(dep) != 'undefined'){
@@ -247,6 +258,7 @@ function getChatDepartment(){
         return 'Chat Private ' + getChatDepartmentLanguage();
     }
 }
+
 
 
 
@@ -260,6 +272,7 @@ function getDepartmentWithOverflowCheck(selectedDepartment){
         return selectedDepartment;
     }
 }
+
 
 
 
@@ -289,6 +302,7 @@ function getDepartmentWaitingTime(){
 
 
 
+
 function isOverflowDepartmentTresholdReached(selectedDepartmentWaitingTime, overflowDepartmentWaitingTime){
     if(selectedDepartmentWaitingTime > (overflowDepartmentWaitingTime /100 * percentageForChatFallback)){
         return true;
@@ -296,6 +310,7 @@ function isOverflowDepartmentTresholdReached(selectedDepartmentWaitingTime, over
         return false;
     }
 }
+
 
 
 
@@ -310,6 +325,7 @@ function getChatDepartmentLanguage(){
         return "DE"
     }
 }
+
 
 
 
@@ -340,9 +356,11 @@ function getNormalizedLanguage(){
 
 
 
+
 function getLanguage(){
     return $('html').attr('lang');
 }
+
 
 
 
@@ -376,6 +394,7 @@ function getChatDepartmentType(){
 
 
 
+
 /////////////////////////////////////////////////////////////Special Routing Conditions///////////////////////////////////////////////////////////////////////////
 //Special Overflow Routing for big Workload
 function checkForOverflow(){
@@ -385,6 +404,7 @@ function checkForOverflow(){
         return getChatDepartmentLanguage();
     }
 }
+
 
 
 
@@ -402,6 +422,7 @@ function isOverflowActive(chatDepartmentLanguage){
             return false;
     }
 }
+
 
 
 
@@ -424,6 +445,7 @@ function getOverflowDepartmentLanguage(){
 
 
 
+
 function getOverflowDepartment(overflowDepartments){
     if(overflowDepartments.length > 0){
         return overflowDepartments.sort(sortArray)[0];
@@ -431,6 +453,7 @@ function getOverflowDepartment(overflowDepartments){
         return getChatDepartmentLanguage();
     }
 }
+
 
 
 
@@ -442,6 +465,7 @@ function sortArray(a, b){
         return (a[1] < b[1]) ? -1 : 1;
     }
 }
+
 
 
 
@@ -457,6 +481,7 @@ function isDepartmentAvailable(depName){
         return false;
     }
 }
+
 
 
 
@@ -482,6 +507,7 @@ function updateChatDepartment(){
 
 
 
+
 function checkDepartmentforInitialButtonChange(selectedDepartment){
     if(isDepartmentAvailable(selectedDepartment) && isInOpeningTimes()){
         showChatButton();
@@ -489,6 +515,7 @@ function checkDepartmentforInitialButtonChange(selectedDepartment){
         hideChatButton();
     }
 }
+
 
 
 
@@ -504,6 +531,7 @@ function listenDepartmentStatus(){
 
 
 
+
 // Shows Chat button if anyone is available and inside opening hours
 function changeButtonVisibility(status){
     if(status == 'online' && isInOpeningTimes()){
@@ -512,6 +540,7 @@ function changeButtonVisibility(status){
         hideChatButton();
     }
   }
+
 
 
 
@@ -525,6 +554,7 @@ function checkForTagChanges(){
 
 
 
+
 //Entfert Tags für Sprache sowie Skills -> Es sind danach keine Tags mehr vorhanden und können neu gesetzt werden
 function removeOldTags(){
     removeZopimTags(['de', 'fr', 'it', 'en']); // entfernt initial alle Sprachen
@@ -532,11 +562,17 @@ function removeOldTags(){
 
 
 
+
 //Fügt die neuen Tags für Skill, WebformCase und Sprache hinzu.
 function addNewZopimTags(){
     var languageTag = getNormalizedLanguage();
-    setZopimTags([languageTag, requestReasonTag, getCustomerTypeTag()]); // Alle neuen Tags werden gesetzt
+    var abTest = ""
+    if (localStorage.getItem("hideAdviceABTest") == "A" && (portal == "helpcenter.galaxus.ch" || portal == "helpcenter.digitec.ch")){
+        abTest = "peremove_group_a"
+    }
+    setZopimTags([languageTag, requestReasonTag, getCustomerTypeTag(), abTest]); // Alle neuen Tags werden gesetzt
 }
+
 
 function getCustomerTypeTag(){
     if (customerType == "business-customer") {
@@ -545,6 +581,7 @@ function getCustomerTypeTag(){
         return "customer_type_private";
     }
 }
+
 
 
 
@@ -559,16 +596,19 @@ function removeOldWebformCaseTag(){
 
 
 
+
 // Setzt den Chat Tag - Einzeln oder Array
 function setZopimTags(tags){
     zE('webWidget', 'chat:addTags', tags);                                                                                    
 }
+
 
   
 // Entfernt Tags - Einzelne oder Array
 function removeZopimTags(tags){
     zE('webWidget', 'chat:removeTags', tags);  
 }
+
 
 
 
@@ -582,11 +622,13 @@ function setEventListenerForChatStart(){
 
 
 
+
 function setEventListenerForChatEnd(){
     zE('webWidget:on', 'chat:end', function() {
         updateChatDepartment();
     });
 }
+
 
 
 
@@ -600,12 +642,14 @@ function setTagsAndDepartmentAtReconnect(){
 
 
 
+
 //////////////////////////////////////////////////////////Globale Chat Functions////////////////////////////////////////////////////////////////
 function openWidgetForUnreadMessages(){
     zE('webWidget:on', 'chat:unreadMessages', function(number) {
         openChat();
     });
 }
+
 
 
 
@@ -621,6 +665,7 @@ function hideWidgetWhenMinimized(){
 
 
 
+
 function isChatting(){
     if(zE('webWidget:get', 'chat:isChatting')){
         return true;
@@ -628,6 +673,7 @@ function isChatting(){
         return false;
     }
 }
+
 
 
 
@@ -639,6 +685,7 @@ function openChat(){
 
 
 
+
 function hideChat(){
     //webWidgetDiv.hide()
     zE('webWidget', 'hide');
@@ -646,7 +693,9 @@ function hideChat(){
 
 
 
+
 /////////// "ALTES" PE ROUTING ///////////
+
 
 //Unterteilung zwischen PE & Private
 function getDGChatDepartmentType(){
@@ -690,6 +739,7 @@ function isPeIt(){
 }
 
 
+
 //Special Routing for PeNetwork
 function isPeNetwork(){
     if(requestReasonTag == 'webform_case_product_advice_network' && localStorage.getItem("PEABTestGroup3") == "B"){
@@ -699,6 +749,7 @@ function isPeNetwork(){
     }
 }
 
+
 //Special Routing for PePhoto
 function isPePhoto(){
     if(requestReasonTag == 'webform_case_product_advice_photo' && localStorage.getItem("PEABTestGroup3") == "B"){
@@ -707,6 +758,7 @@ function isPePhoto(){
         return false;
     }
 }
+
 
 //Special Routing for PeConsumer
 function isPeConsumer(){
@@ -717,6 +769,7 @@ function isPeConsumer(){
     }
 }
 
+
 //Special Routing for PePhoto
 function isPePhoto(){
     if(requestReasonTag == 'webform_case_product_advice_photo' && localStorage.getItem("PEABTestGroup3") == "B"){
@@ -726,6 +779,7 @@ function isPePhoto(){
     }
 }
 
+
 //Special Routing for PeHome
 function isPeHome(){
     if(requestReasonTag == 'webform_case_product_advice_home' && localStorage.getItem("PEABTestGroup3") == "B"){
@@ -734,6 +788,7 @@ function isPeHome(){
         return false;
     }
 }
+
 
 //Special Routing for PeDiy
 function isPeDiy(){

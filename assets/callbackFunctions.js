@@ -22,6 +22,7 @@ function callbackCheck(){
 
 
 
+
 function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail, enteredRGNumber, enteredRecordChecker, enteredCsatChecker){
   const reasonsForb2b =["webform_case_creditnote",
   "webform_case_refund",
@@ -45,6 +46,7 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
   var customerLocale = ""
   var csatTag = " "
   var customerTypeTag = " "
+  var abTag = " "
   if (enteredCsatChecker == "yes"){
     csatTag = " csat-eu-opt-in "
   }
@@ -79,6 +81,9 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
         level = "_lv2"
       }
       ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + level
+      if (localStorage.getItem("hideAdviceABTest") == "A"){
+        abTag = " peremove_group_a"
+      }
       break;
     case 'helpcenter.galaxus.ch':
       brandID = "486521"
@@ -90,6 +95,9 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
         level = "_lv2"
       }
       ringGroup = "callback2" + customerTypeShorthand + "_ch_" + currentLanguage.toLowerCase() + level
+      if (localStorage.getItem("hideAdviceABTest") == "A"){
+        abTag = " peremove_group_a"
+      }
       break;
     case 'helpcenter.connect.digitec.ch':
       brandID = "360002520320"
@@ -191,7 +199,7 @@ function callbackAPIRequest(enteredPhoneNumber, enteredOrderNumber, enteredMail,
     tempLanguage = "en"
   }
   var ticketBody = "This is a callback request\n\nCustomer Phone: " + enteredPhoneNumber + "\nCustomer Mail: " + enteredMail + "\nOrder: " + orderLink + " \nInvoice: " + invoiceLink + "\nRequest Reason: " + compiledSubject + " \n -- \ninteraction_id: "
-  var ticketTags = "callback_request voice" + csatTag + requestReasonTag + customerTypeTag + " " + tempLanguage + " talkdesk_interaction_"
+  var ticketTags = "callback_request voice" + csatTag + requestReasonTag + customerTypeTag + " " + tempLanguage + abTag + " talkdesk_interaction_"
   var baseOrderLink = baseERPLink + "Order/"
   var baseRGLink = baseERPLink + "Invoice/"
   var custName = enteredMail.split("@")[0].replace(".", " ")

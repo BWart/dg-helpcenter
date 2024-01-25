@@ -439,6 +439,8 @@
   const callbackClosedMessage = $('.callbackClosedMessage')
   //Mailform fields, with label and Input field
   const mailFormOrderNumberOrPhoneNumber = $('.request_custom_fields_360007585419');  //Input field for order number, phone number on digitec Connect
+  const orderNumberTestField = $('.request_custom_fields_14349681669010');  //Test Field used for AB Testing
+  const orderNumberTestFieldInputOnly = $('#request_custom_fields_14349681669010')
   const mailFormSubject = $('.request_subject');
   const mailFormMessage = $('.request_description');
   const mailFormMailInput = $('.request_anonymous_requester_email');
@@ -583,12 +585,14 @@
     //TODO: Handling beim Laden nach Eingabefehler
     removeOfferforPrivate();
     removePEforEU();
+    removePEforABTest();
     pageSetup('mailFormWrong')
   }
   // Rest; Case when the page loads after the customer type was selected
   else {
     pageSetup('customerChosen');
     removePEforEU();
+    removePEforABTest();
     removeOfferforPrivate();
   }
 
@@ -857,6 +861,19 @@
       try {
         var catJson = JSON.parse(requestReasonDropdownContents.attr("data-tagger"));
         requestReasonDropdownContents.attr("data-tagger", removeCategoryFromJsonByLabel(catJson, labelsToRemove));
+      }
+      catch (e) { // Initial wird das Formular immer geladen ohne Kundentyp und deshalb hier etwas unschön gecatcht. Funktionalität ist jedoch nicht kritisch 
+      }
+    }
+  }
+
+  function removePEforABTest(){
+    if ((portal == "helpcenter.galaxus.ch" || portal == "helpcenter.digitec.ch") && localStorage.getItem("hideAdviceABTest") == "A"){
+      labelsToRemove = ["Product information", "Produktberatung", "Conseil produits", "Consulenza prodotti", "Productadvies"]
+      try {
+        var catJson = JSON.parse(requestReasonDropdownContents.attr("data-tagger"));
+        requestReasonDropdownContents.attr("data-tagger", removeCategoryFromJsonByLabel(catJson, labelsToRemove));
+        orderNumberTestFieldInputOnly.val("1")
       }
       catch (e) { // Initial wird das Formular immer geladen ohne Kundentyp und deshalb hier etwas unschön gecatcht. Funktionalität ist jedoch nicht kritisch 
       }
@@ -1851,6 +1868,7 @@
     circleThreeTitleThree.hide();
     requestForm.show();
     mailFormSubject.hide();
+    orderNumberTestField.hide();
     backButton.show();
     contactInfos.hide();
   }
