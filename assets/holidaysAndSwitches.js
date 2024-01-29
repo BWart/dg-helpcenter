@@ -47,7 +47,7 @@ if (safariAgent && window.location.href.includes('requests')){
 }*/
 
 //These currently only affect German language; if effecting other languages is needed edit function reorderContactChannels() in new_request_page.hbs
-let switchHideContactFormDuringOpeningTimes = true;
+let switchHideContactFormDuringOpeningTimes = false;
 let switchHideContactFormOutsideOpeningTimes = false;
 let switchHidePhoneDuringOpeningTimes = false;
 let switchHidePhoneOutsideOpeningTimes = false;
