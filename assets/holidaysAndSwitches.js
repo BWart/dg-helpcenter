@@ -566,7 +566,7 @@ var hideWaitingTimes = {
 
 //Hiding waiting times in case of stuck calls/chats
 //format aus waiting nehmen https://py-waittimes-web.prod.pub.devinite.com/waitTimes.js
-let waitTimesToHideCall = []
+let waitTimesToHideCall = ["privateCHDE", "privateCHEN", "callbackDE", "callbackEN", "callbackGERDE"]
 let waitTimesToHideChat = []
 
 
