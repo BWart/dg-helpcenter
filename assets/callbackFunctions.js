@@ -121,7 +121,13 @@ function callbackCheck(){
       error: function (result){
         callbackButtonClicked = false;
         if(gaSend){
-          ga('send', 'event', 'Errors', 'CallbackAPI', String(result))
+          //ga('send', 'event', 'Errors', 'CallbackAPI', String(result))
+          try{
+            ga('send', 'event', 'Errors', 'CallbackAPI', portal + " " + JSON.parse(result["responseText"])["message"])
+          }
+          catch (e) {
+            ga('send', 'event', 'Errors', 'CallbackAPI', "unkown, catch error:" + String(e))
+          }
         }
         var dynamicWording2 = filldynamicWording();
         $('.callbackFormErrorText').html(dynamicWording2[currentLanguage]['callbackAPIError'])
