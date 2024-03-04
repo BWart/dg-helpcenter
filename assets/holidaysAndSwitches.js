@@ -101,11 +101,11 @@ var chatAndPhoneWaitThreshholdToShowContactFormLU = 50000;
 // --- VARIABLES TO TOGGLE THE INFORMATION TOP BANNER ---
 //Switch per Portal and Language combination, whethe the top banner should be shown. Set to false to have it hidden, true if it should be shown.
 //CH
-var bannerSwitchCHDE = false;
-var bannerSwitchCHFR = false;
-var bannerSwitchCHIT = false;
-var bannerSwitchCHEN = false;
-var bannerSwitchCHNL = false;
+var bannerSwitchCHDE = true;
+var bannerSwitchCHFR = true;
+var bannerSwitchCHIT = true;
+var bannerSwitchCHEN = true;
+var bannerSwitchCHNL = true;
 var bannerSwitchConnectDE = false;
 var bannerSwitchConnectFR = false;
 var bannerSwitchConnectIT = false;
@@ -202,21 +202,23 @@ function fillTopBannerWording(){
     topBannerWording = {
       //heading setzt den Titel 
     "outputHeadingBannerCH" : {
+      /*
       'de' : "Verzögerungen bei Lieferungen",
       'fr' : "Retards dans les livraisons",
       'it' : "Ritardi nelle consegne",
       'en-US' : "Delays in deliveries",
       'nl' : "Vertragingen in leveringen"
+      /*
       /*'de' : "Technische Probleme Call",
       'fr' : "Problèmes techniques Appel",
       'it' : "Problemi tecnici Chiamare",
       'en-US' : "Technical Issues Call",
       'nl' : "Technische problemen Bel"*/
-      /*'de' : "Technische Probleme Bestellaufgabe im Webshop",
+      'de' : "Technische Probleme Bestellaufgabe im Webshop",
       'fr' : "Problèmes techniques Passation de commande dans la boutique en ligne",
       'it' : "Problemi tecnici Ordinare nel webshop",
       'en-US' : "Technical problems order placement in webshop",
-      'nl' : "Technische problemen Bestellen in de webshop"*/
+      'nl' : "Technische problemen Bestellen in de webshop"
       /*'de' : "Technische Probleme Chat in Safari",
       'fr' : "Problèmes techniques Chat dans Safari",
       'it' : "Problemi tecnici Chat in Safari",
@@ -224,18 +226,19 @@ function fillTopBannerWording(){
       'nl' : "Technische problemen Chat in Safari"*/
     },
     "outputTextBannerCH" : {
+      /*
       'de' : "Aufgrund aktuell hoher Paketmengen und erschwerter Wetterbedingungen kann es in einigen Fällen zu Verzögerungen bei der Auslieferung deiner Sendung kommen. Wir bitten dich in diesen Fällen um Geduld.<br>Einen Link zur Sendungsverfolgung findest du jeweils in der <a href='https://galaxus.ch/order' target='blank'>Bestellübersicht</a>.",
       'fr' : "En raison du volume élevé de colis et des conditions météorologiques difficiles, il se peut que la livraison de votre envoi soit retardée dans certains cas. Nous vous demandons de faire preuve de patience dans ces cas-là.<br>Vous trouverez un lien pour suivre votre envoi dans <a href='https://galaxus.ch/order' target='blank'>l'aperçu de votre commande</a>.",
       'it' : "A causa dell'attuale elevato volume di pacchi e delle difficili condizioni meteorologiche, in alcuni casi potrebbero verificarsi ritardi nella consegna del vostro pacco. Vi chiediamo di avere pazienza in questi casi.<br>Troverete un link per seguire il vostro pacco nella <a href='https://galaxus.ch/order' target='blank'>panoramica dell'ordine</a>.",
       'en-US' : "Due to the current high parcel volumes and difficult weather conditions, there may be delays in the delivery of your shipment in some cases. We ask for your patience in these cases.<br>You can  find a link to track your shipment in the <a href='https://galaxus.ch/order' target='blank'>order overview</a>.",
       'nl' : "Door de huidige grote hoeveelheid pakketten en moeilijke weersomstandigheden kan er in sommige gevallen vertraging optreden bij de bezorging van je pakket. We vragen om je geduld in deze gevallen.<br>Je vindt een link om je pakket te volgen in het <a href='https://galaxus.ch/order' target='blank'>besteloverzicht</a>."
-  
-      /*'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
+  */
+      'de' : "Aktuell können einige Kunden in unserem Webshop keine Bestellungen aufgeben. Das Problem ist uns bekannt und wir arbeiten an einer Lösung. Leider können wir dir über unsere Kontaktkanäle hier aktuell keine Lösung anbieten. Bitte versuche es zu einem späteren Zeitpunkt noch einmal im Webshop. ",
       'fr' : "Actuellement, certains clients ne peuvent pas passer de commandes dans notre boutique en ligne. Nous sommes conscients du problème et nous travaillons à une solution. Malheureusement, nous ne pouvons pas vous proposer de solution par le biais de nos canaux de contact pour le moment. Veuillez réessayer dans la boutique en ligne ultérieurement. ",
       'it' : "Attualmente, alcuni clienti non possono effettuare ordini nel nostro negozio online. Siamo consapevoli del problema e stiamo lavorando a una soluzione. Purtroppo, al momento non possiamo offrire una soluzione attraverso i nostri canali di contatto. Vi invitiamo a riprovare a visitare il negozio online in un secondo momento.",
       'en-US' : "Currently, some customers can not place orders in our webshop. We are aware of the problem and are working on a solution. Unfortunately, we can't offer you a solution through our contact channels here at the moment. Please try again in the webshop at a later time.",
       'nl' : "Op dit moment kunnen sommige klanten geen bestellingen plaatsen in onze webshop. We zijn ons bewust van het probleem en werken aan een oplossing. Helaas kunnen we je op dit moment geen oplossing bieden via onze contactkanalen hier. Probeer het later nog eens in de webshop."
-      */
+      
      /*'de' : "Aktuell funktioniert unser Chat im Safari-Browser leider nicht korrekt. Du kannst mit einem anderen Browser wie Chrome oder Firefox unseren Chat verwenden. Wir arbeiten an einer Lösung.",
       'fr' : "Malheureusement, notre chat ne fonctionne pas correctement dans le navigateur Safari. Vous pouvez utiliser un autre navigateur comme Chrome ou Firefox pour utiliser notre chat. Nous travaillons à une solution.",
       'it' : "Purtroppo la nostra chat non funziona correttamente con il browser Safari. È possibile utilizzare la chat con un altro browser come Chrome o Firefox. Stiamo lavorando a una soluzione.",
