@@ -185,7 +185,7 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   
 ///////////////////////////////////////////////////////////////////////Zopim Integration/////////////////////////////////////////////////////////////////
 //Zopim integration Ausgelagert in Chat.js
-try {
+/*try {
   waitForChat();
 }
 catch (e) {
@@ -194,5 +194,21 @@ catch (e) {
     ga('send', 'event', 'Errors', 'ChatInitialLoad', String(e));
   }
 }
+
+});*/
+
+
+
+//////////////////////////////////////////////////////////////////////Talkdesk Chat/////////////////////////////////////////////////////////////////
+//Zopim integration Ausgelagert in chattalkdesk.js
+/*try {
+  waitForChat();
+}
+catch (e) {
+  console.log(e);
+  if(gaSend){
+    ga('send', 'event', 'Errors', 'ChatInitialLoad', String(e));
+  }
+}*/
 
 });

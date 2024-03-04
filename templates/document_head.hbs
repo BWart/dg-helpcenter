@@ -4,6 +4,7 @@
 <meta name="google-site-verification" content="8X_8QzD4bZxyaCY1dA-h_IbHT_1aIVhsuTgc_8KGDzo" />
 <div id="customDGStyle"></div>
 <div id="webWidget" class="webWidgetDiv"></div>
+<div id="talkdeskWebWidget" class="talkdeskWebWidgetDiv"></div>
 <!--<link rel="icon" type="image/x-icon" href="{{asset 'fav_galaxus.png'}}">-->
 
 
@@ -12,7 +13,8 @@
 <script src="{{asset 'holidaysAndSwitches.js'}}"></script>
 <script src="{{asset 'infoBoxWording.js'}}"></script>
 <script src="{{asset 'dynamicWording.js'}}"></script>
-<script src="{{asset 'chat.js'}}"></script>
+<!--<script src="{{asset 'chat.js'}}"></script>-->
+<!--<script src="{{asset 'chattalkdesk.js'}}"></script><!---->
 <script src="{{asset 'contactChannelOrdering.js'}}"></script>
 <script src="{{asset 'callbackFunctions.js'}}"></script>
 <script src="{{asset 'timeChecks.js'}}"></script>
@@ -21,6 +23,17 @@
 
 
 <script>
+
+  function openTalkdeskChat(){
+    sessionStorage.setItem('activeTalkdeskChat', 'yes')
+    var s = document.createElement('script');
+    s.setAttribute('src', "{{asset 'chattalkdesk.js'}}")
+    document.body.appendChild(s)
+  }
+
+  if (sessionStorage.getItem('activeTalkdeskChat') == 'yes'){
+    openTalkdeskChat();
+  }
 
 
 //Setting A/B Test group for PE Chat Routing
@@ -51,11 +64,11 @@ link.onload = showBody();
   if(window.location.hostname !="helpcenter.digitec.ch" && window.location.hostname !="helpcenter.connect.digitec.ch" && window.location.hostname !="digitec.zendesk.com"){
     link.setAttribute("href", "{{asset 'galaxus-styles.css'}}");
     $('[rel="icon"]').attr("href", "{{asset 'fav_galaxus.png'}}");
-    $("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4"/><//script>')
+    //$("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4"/><//script>')
     }else{
       link.setAttribute("href","{{asset 'digitec-styles.css'}}");
       $('[rel="icon"]').attr("href", "{{asset 'fav_digitec.png'}}");
-      $("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=18dfacef-9aec-49ae-bbe4-0bcd883ef859"/><//script>')
+      //$("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=18dfacef-9aec-49ae-bbe4-0bcd883ef859"/><//script>')
     }   
 //webWidgetDiv.hide()
 

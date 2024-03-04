@@ -245,6 +245,31 @@
                   <button type="button" class="button-large callbackSubmitButton" data-wording-key="demandCallback"></button>
                 </div>
               </form>
+
+              <form class="chatRequestForm" id="chatRequestForm" action="">
+                <div class="form-field string optional request">
+                  <label for="callback_customer_email" data-wording-key="callbackEmailLabel"></label>
+                  <input type="email" name="chat_customer_email" id="chat_customer_email" class="chat_customer_mail_input"/>
+                  <label class="callbackMailErrorLabel"><font color="red" class="callbackMailErrorText"></font></label>
+                  <!--<label><i data-wording-key="callbackMailHint"></i></label>-->
+                </div>
+                <div class="form-field string optional request">
+                  <label for="callback_customer_email" data-wording-key="callbackEmailLabel"></label>
+                  <input type="email" name="chat_customer_email" id="chat_customer_email" class="chat_customer_mail_input"/>
+                  <label class="callbackMailErrorLabel"><font color="red" class="callbackMailErrorText"></font></label>
+                  <!--<label><i data-wording-key="callbackMailHint"></i></label>-->
+                </div>
+                <div class="form-field string optional request chatOrderNumberFields">
+                  <label data-wording-key="callbackOrderNumber"></label>
+                  <table><tr><td><input type="number" name="chat_customer_order_number" class="chat_customer_order_number_input"/></td></tr></table>
+                </div>
+                <div class="form-field">
+                  <label data-wording-key="callbackAgentHint"></label>
+                  <label class="callbackFormErrorText" style="color:red"></label>
+                  <button type="button" class="button-large chatSubmitButton" data-wording-key="demandChat"></button>
+                </div>
+              </form>
+
             </td>
         </tr>
     </table>
@@ -488,6 +513,10 @@
   const callbackForm = $('.callbackRequestForm')
   const callBackSubmitButton = $('.callbackSubmitButton')
   callbackForm.hide()
+
+  const chatForm = $('.chatRequestForm')
+  const chatSubmitButton = $('.chatSubmitButton')
+  chatForm.show()
   
   if (portal == 'helpcenter.digitec.ch' || portal == 'helpcenter.galaxus.ch' || portal == 'helpcenter.galaxus.de' || portal == 'helpcenter.galaxus.at'){
     if (localStorage.getItem("callbackGroup5") === null){
@@ -765,6 +794,10 @@
     }
     fillHoliday(currentLanguage);
     //console.log(callbackRingGroupLevels[requestReasonTag])
+
+    if(isInOpeningTimes()){
+      showChatButton()
+    }
   }
 
   function updateLabelAndTemplate(){
@@ -809,17 +842,7 @@
         privateContact.show();
         break;
     }
-    try {
-      updateChatDepartment();
-    }
-    catch (e) {
-      console.log(e);
-      hideChatButton(); 
-      if(gaSend){
-        //TODO: TRACKING
-        //ga('send', 'event', 'Errors', 'ChatLoad', String(e));
-      }
-    } 
+    
     addExternalScriptForWaitingTimes(false);
     contactInfos.show();
     requestForm.hide();
@@ -1105,6 +1128,7 @@
     }
   }
 
+  let customerDepartment = "Chat Private DE"
   function setWaitTime(chatSeconds, callSeconds, callbackSeconds){
     console.log("enter setwaittime")
       $(".recommendedChannel").css('display' , 'none');
@@ -1645,7 +1669,7 @@
 
   //Action when clicking the chat button
   $('.button-chat').on("click", function () {
-    checkForTagChanges();
+    //checkForTagChanges();
     if(!isInOpeningTimes()){
       chatClosedMessage.show()
       liveChannelsClosedMessage.show()
@@ -1661,7 +1685,9 @@
       callbackWaitTimesDOMElements.hide();
       return 0;
     }
-    try {
+    console.log("AAAA")
+    chatForm.show()
+    /*try {
       updateChatDepartment();
       openChat();
       setEventListenerForChatStart();
@@ -1672,7 +1698,7 @@
       if(gaSend){
         ga('send', 'event', 'Errors', 'ChatLoadAfterDropdown', String(e));
       }
-    } 
+    }*/
   });
 
   //--- CALLBACK EVENTS ---
@@ -1741,6 +1767,10 @@
     } else {
       $('.callbackRGNumberFormFields').hide();
     }
+  })
+
+  chatSubmitButton.on("click", function(){
+    openTalkdeskChat();
   })
 
   callBackSubmitButton.on("click", function(){
