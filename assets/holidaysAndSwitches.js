@@ -380,28 +380,28 @@ function fillTopBannerWording(){
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2023-12-10 00:00:00', '2023-12-26 23:00:00', 0], ['2023-12-26 23:00:00', '2024-01-01 23:00:00', 10]
+      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 0]
     ],
     'de' : [
-      ['2023-12-10 00:00:00', '2023-12-26 23:00:00', 1], ['2023-12-26 23:00:00', '2024-01-01 23:00:00', 11]
+      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 1]
     ],
     'at' : [
-      ['2023-12-10 00:00:00', '2023-12-26 23:00:00', 2], ['2023-12-26 23:00:00', '2024-01-01 23:00:00', 12]
+      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 2]
     ],
     'fr' : [
-      ['2023-12-10 00:00:00', '2023-12-26 23:00:00', 3], ['2023-12-26 23:00:00', '2024-01-01 23:00:00', 13]
+      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 3]
     ],
     'it' : [
-      ['2023-12-01 00:00:00', '2023-12-02 23:00:00', 4],
+      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 4]
     ],
     'be' : [
-      ['2023-12-01 00:00:00', '2023-12-02 23:00:00', 5],
+      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 5]
     ],
     'nl' : [
-      ['2023-12-01 00:00:00', '2023-12-02 23:00:00', 6],
+      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 6]
     ],
     'lu' : [
-      ['2023-12-01 00:00:00', '2023-12-02 23:00:00', 7],
+      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 7]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
@@ -409,124 +409,68 @@ var showHolidays = {
 var textToDisplay = {
     // Switzerland
     0 : {
-      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>25.-26.12.2023: Noël, fermé<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>25.-26.12.2023: Natale, chiuso<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>25.-26.12.2023: Christmas, closed<br>1.1.2024: New Year, closed',
-      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten<br>1.1.2024: Nieuwjaar, gesloten'
-    },
-    10 : {
-      'de' : '<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>1.1.2024: New Year, closed',
-      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
+      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
+      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
     },
     //Germany
     1 : {
-      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>25.-26.12.2023: Noël, fermé<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>25.-26.12.2023: Natale, chiuso<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>25.-26.12.2023: Christmas, closed<br>1.1.2024: New Year, closed',
-      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten<br>1.1.2024: Nieuwjaar, gesloten'
-    },
-    11 : {
-      'de' : '<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>1.1.2024: New Year, closed',
-      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
+      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
+      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
     },
     //Austria
     2 : {
-      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>25.-26.12.2023: Noël, fermé<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>25.-26.12.2023: Natale, chiuso<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>25.-26.12.2023: Christmas, closed<br>1.1.2024: New Year, closed',
-      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten<br>1.1.2024: Nieuwjaar, gesloten'
-    },
-    12 : {
-      'de' : '<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>1.1.2024: New Year, closed',
-      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
+      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
+      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
     },
     //France
     3 : {
-      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>25.-26.12.2023: Noël, fermé<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>25.-26.12.2023: Natale, chiuso<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>25.-26.12.2023: Christmas, closed<br>1.1.2024: New Year, closed',
-      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten<br>1.1.2024: Nieuwjaar, gesloten'
-    },
-    13 : {
-      'de' : '<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>1.1.2024: New Year, closed',
-      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
+      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
+      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
     },
     //Italy
     4 : {
-      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>25.-26.12.2023: Noël, fermé<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>25.-26.12.2023: Natale, chiuso<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>25.-26.12.2023: Christmas, closed<br>1.1.2024: New Year, closed',
-      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten<br>1.1.2024: Nieuwjaar, gesloten'
-    },
-    14 : {
-      'de' : '<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>1.1.2024: New Year, closed',
-      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
+      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
+      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
     },
     //Belgium
     5 : {
-      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>25.-26.12.2023: Noël, fermé<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>25.-26.12.2023: Natale, chiuso<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>25.-26.12.2023: Christmas, closed<br>1.1.2024: New Year, closed',
-      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten<br>1.1.2024: Nieuwjaar, gesloten'
-    },
-    15 : {
-      'de' : '<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>1.1.2024: New Year, closed',
-      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
+      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
+      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
     },
     //Netherlands
     6 : {
-      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>25.-26.12.2023: Noël, fermé<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>25.-26.12.2023: Natale, chiuso<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>25.-26.12.2023: Christmas, closed<br>1.1.2024: New Year, closed',
-      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten<br>1.1.2024: Nieuwjaar, gesloten'
-    },
-    16 : {
-      'de' : '<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>1.1.2024: New Year, closed',
-      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
+      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
+      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
     },
     //Luxembourg
     7 : {
-      'de' : '<br>25.-26.12.2023: Weihnachten, geschlossen<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>25.-26.12.2023: Noël, fermé<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>25.-26.12.2023: Natale, chiuso<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>25.-26.12.2023: Christmas, closed<br>1.1.2024: New Year, closed',
-      'nl': '<br>25.-26.12.2023: Kerstmis, gesloten<br>1.1.2024: Nieuwjaar, gesloten'
+      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
+      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
     },
-    17 : {
-      'de' : '<br>1.1.2024: Neujahr, geschlossen',
-      'fr' : "<br>1.1.2024: Nouvel An, fermé",
-      'it' : '<br>1.1.2024: Anno nuovo, chiuso',
-      'en-US' : '<br>1.1.2024: New Year, closed',
-      'nl': '<br>1.1.2024: Nieuwjaar, gesloten'
-    }
 }
 
 
@@ -538,28 +482,28 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-      ['2023-12-25 00:00:00', '2023-12-26 22:00:00'], ['2024-01-01 00:00:00', '2024-01-01 22:00:00']
+      ['2024-29-03 00:00:00', '2024-04-01 22:00:00']
     ],
     'de' : [
-      ['2023-12-25 00:00:00', '2023-12-26 22:00:00'], ['2024-01-01 00:00:00', '2024-01-01 22:00:00']
+      ['2024-29-03 00:00:00', '2024-04-01 22:00:00']
     ],
     'at' : [
-      ['2023-12-25 00:00:00', '2023-12-26 22:00:00'], ['2024-01-01 00:00:00', '2024-01-01 22:00:00']
+      ['2024-29-03 00:00:00', '2024-04-01 22:00:00']
     ],
     'fr' : [
-      ['2023-12-25 00:00:00', '2023-12-26 22:00:00'], ['2024-01-01 00:00:00', '2024-01-01 22:00:00']
+      ['2024-29-03 00:00:00', '2024-04-01 22:00:00']
     ],
     'it' : [
-      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
+      ['2024-29-03 00:00:00', '2024-04-01 22:00:00']
     ],
     'be' : [
-      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
+      ['2024-29-03 00:00:00', '2024-04-01 22:00:00']
     ],
     'nl' : [
-      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
+      ['2024-29-03 00:00:00', '2024-04-01 22:00:00']
     ],
     'lu' : [
-      ['2023-04-06 15:00:00', '2023-04-10 22:00:00']
+      ['2024-29-03 00:00:00', '2024-04-01 22:00:00']
     ]
 }
 
