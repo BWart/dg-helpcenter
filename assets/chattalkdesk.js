@@ -25,8 +25,8 @@
            * If you would like to do it, you need to remove the following commented code and
            * modify the webchat.setContextParam parameters to pass in the data you need.
            */
-           /*function setContext() {
-             webchat.setContextParam({ "var1": "value1", "var2": "value2", "var3": 100 })
+           function setContext() {
+             webchat.setContextParam({ "field_name1": "Olaf", "field_email1": "bastian.wartmann@sunrise.ch", "custom_dorpdown1": "Ring1"})
            }
            // Send data when the chat conversation is initiated
            webchat.onConversationStart = function() {
@@ -35,7 +35,7 @@
            // Send data when the chat widget is open
            webchat.onOpenWebchat = function() {
              setContext()
-           }*/
+           }//*/
         };
       })(
         window,
