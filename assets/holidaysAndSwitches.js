@@ -116,11 +116,11 @@ var showHolidays = {
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
     0 : {
-      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
-      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
+      'de' : '<br>28.03.2024: Ab 16:00 geschlossen<br>29.03. - 01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>28.03.2024: Fermé à partir de 16:00<br>29.03. - 01.04.2024: Pâques, fermé',
+      'it' : '<br>28.03.2024: Chiuso dalle 16:00<br>29.03. - 01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>28.03.2024: Closed from 16:00<br>29.03. - 01.04.2024: Easter, closed',
+      'nl': '<br>28.03.2024: Gesloten vanaf 16:00<br>29.03. - 01.04.2024: Pasen, gesloten'
     }
 }
 
@@ -129,7 +129,7 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-      ['2024-03-29 00:00:00', '2024-04-01 22:00:00']
+      ['2024-03-28 17:00:00', '2024-04-01 22:00:00']
     ]
 }
 
