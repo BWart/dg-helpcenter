@@ -34,13 +34,14 @@ if (true){
 
 //Setting A/B Test Group for hiding Product advice
 //A = hide PE and set additional Tag, B = no change
-if (localStorage.getItem("hideAdviceABTest") != "A" && localStorage.getItem("hideAdviceABTest") != "B"){
+//if (localStorage.getItem("hideAdviceABTest") != "A" && localStorage.getItem("hideAdviceABTest") != "B"){
   let x = Math.random()
   //if (x < 0.5) {localStorage.setItem("hideAdviceABTest", "A")}
   //else {localStorage.setItem("hideAdviceABTest", "B")}
-  localStorage.setItem("hideAdviceABTest", "B")
-}
-console.log(localStorage.getItem("hideAdviceABTest"))
+  //localStorage.setItem("hideAdviceABTest", "B")
+//}
+localStorage.setItem("hideAdviceABTest", "B")
+//console.log(localStorage.getItem("hideAdviceABTest"))
 
 
 //const webWidgetDiv = $(".webWidgetDiv")
