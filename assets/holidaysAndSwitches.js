@@ -380,28 +380,28 @@ function fillTopBannerWording(){
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 0]
+      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 0]
     ],
     'de' : [
-      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 1]
+      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 1]
     ],
     'at' : [
-      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 2]
+      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 2]
     ],
     'fr' : [
-      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 3]
+      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 3]
     ],
     'it' : [
-      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 4]
+      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 4]
     ],
     'be' : [
-      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 5]
+      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 5]
     ],
     'nl' : [
-      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 6]
+      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 6]
     ],
     'lu' : [
-      ['2024-03-14 00:00:00', '2023-04-01 23:00:00', 7]
+      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 7]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
@@ -409,67 +409,67 @@ var showHolidays = {
 var textToDisplay = {
     // Switzerland
     0 : {
-      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
-      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
+      'de' : '<br>28.03.2024: Ab 17:00 geschlossen<br>29.03. - 01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>28.03.2024: Fermé à partir de 17:00<br>29.03. - 01.04.2024: Pâques, fermé',
+      'it' : '<br>28.03.2024: Chiuso dalle 17:00<br>29.03. - 01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>28.03.2024: Closed from 17:00<br>29.03. - 01.04.2024: Easter, closed',
+      'nl': '<br>28.03.2024: Gesloten vanaf 17:00<br>29.03. - 01.04.2024: Pasen, gesloten'
     },
     //Germany
     1 : {
-      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
-      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
+      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
     },
     //Austria
     2 : {
-      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
-      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
+      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
     },
     //France
     3 : {
-      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
-      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
+      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
     },
     //Italy
     4 : {
-      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
-      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
+      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
     },
     //Belgium
     5 : {
-      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
-      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
+      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
     },
     //Netherlands
     6 : {
-      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
-      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
+      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
     },
     //Luxembourg
     7 : {
-      'de' : '<br>29.03.-01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03.-01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03.-01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03.-01.04.2024: Easter, closed',
-      'nl': '<br>29.03.-01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
+      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
+      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
+      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
+      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
     },
 }
 
@@ -482,7 +482,7 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-      ['2024-29-03 00:00:00', '2024-04-01 22:00:00']
+      ['2024-28-03 18:00:00', '2024-04-01 22:00:00']
     ],
     'de' : [
       ['2024-29-03 00:00:00', '2024-04-01 22:00:00']
