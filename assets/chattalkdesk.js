@@ -19,7 +19,9 @@
         firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
         script.onload = function() {
           webchat = TalkdeskChatSDK(node, props);
-          webchat.init(configs);
+          webchat.init(configs).then(() => {
+            webchat.selfHostedApp.open();
+          });
           /*
            * Send custom data from your website to TalkDesk!
            * If you would like to do it, you need to remove the following commented code and
@@ -28,6 +30,7 @@
            function setContext() {
              webchat.setContextParam({ "field_name1": "Olaf", "field_email1": "bastian.wartmann@sunrise.ch", "custom_dorpdown1": "Ring1"})
            }
+
            // Send data when the chat conversation is initiated
            webchat.onConversationStart = function() {
              setContext()

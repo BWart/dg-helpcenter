@@ -24,7 +24,25 @@
 
 <script>
 
+  let talkdesk_order_number = "";
+  let talkdesk_webform_case = "";
   function openTalkdeskChat(){
+    talkdesk_order_number = "none"
+    talkdesk_webform_case = requestReasonTag
+    sessionStorage.setItem('activeTalkdeskChat', 'yes')
+    var s = document.createElement('script');
+    s.setAttribute('src', "{{asset 'chattalkdesk.js'}}")
+    document.body.appendChild(s)
+  }
+
+  function openTalkdeskChatFromActiveSession(){
+    var s = document.createElement('script');
+    s.setAttribute('src', "{{asset 'chattalkdesk.js'}}")
+    document.body.appendChild(s)
+  }
+
+  function openTalkdeskChatFromShop(){
+    
     sessionStorage.setItem('activeTalkdeskChat', 'yes')
     var s = document.createElement('script');
     s.setAttribute('src', "{{asset 'chattalkdesk.js'}}")
@@ -32,7 +50,7 @@
   }
 
   if (sessionStorage.getItem('activeTalkdeskChat') == 'yes'){
-    openTalkdeskChat();
+    openTalkdeskChatFromActiveSession();
   }
 
 

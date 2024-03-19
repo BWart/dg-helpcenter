@@ -80,6 +80,7 @@
     if (JSON.parse(atob(userInfo))["openChat"] == true){
       chatOpenFromHelpAssist = true;
       sessionStorage.setItem('chatOpenFromHelpAssist', 'yes')}
+      openTalkdeskChatFromShop();
   } else {
     if (sessionStorage.getItem('user-info') == null){
       sessionStorage.setItem('user-info', '{"isPrivate":"","phone":"","email":"","tags":"","openChat":false}')
