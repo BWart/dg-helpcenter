@@ -56,6 +56,12 @@ function fillInfoBoxWording() {
                   'it': "",
                   'en-US': ""
             },
+            "webform_case_connect_holder": {
+                  'de': "",
+                  'fr': "",
+                  'it': "",
+                  'en-US': ""
+            },
 
             //Error-Meldungen für Attachment
             "attachment-errors": {
