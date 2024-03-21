@@ -69,19 +69,45 @@ function getTalkdeskChatBrandId(){
   }
 }
 
+function getTalkdeskChatBrandName(){
+  switch(portal){
+    case 'helpcenter.digitec.ch':
+      return "DIGITEC"
+      break;
+    case 'helpcenter.galaxus.ch':
+      return "GALAXUS SWITZERLAND"
+      break;
+    case 'helpcenter.connect.digitec.ch':
+      return "GALAXUS MOBILES"
+      break;
+    case 'helpcenter.galaxus.de':
+      return "GALAXUS GERMANY"
+      break;
+    case 'helpcenter.galaxus.at':
+      return "GALAXUS AUSTRIA"
+      break;
+    case 'helpcenter.galaxus.fr':
+      return "GALAXUS FRANCE"
+      break;
+    default:
+      return "486521"
+      break;
+  }
+}
+
 function getTalkdeskChatGroupId(){
   switch(portal){
     case 'helpcenter.digitec.ch':
     case 'helpcenter.galaxus.ch':
-      groupID = "17792456160914"
+      return "17792456160914"
       break;
     case 'helpcenter.galaxus.de':
     case 'helpcenter.galaxus.at':
     case 'helpcenter.galaxus.fr':
-      groupID = "17792456160914"
+      return "17792456160914"
       break;
     default:
-      groupID = "17792456160914"
+      return "17792456160914"
       break;
   }
 }
@@ -89,19 +115,30 @@ function getTalkdeskChatGroupId(){
 function getTalkdeskChatCustomerLocale(){
   switch(getTalkdeskChatLanguage()){
     case 'de':
-      customerLocale = "8"
+      return "8"
       break;
     case 'fr':
-      customerLocale = "16"
+      return "16"
       break;
     case 'it':
-      customerLocale = "22"
+      return "22"
       break;
     case 'nl':
-      customerLocale = "1005"
+      return "1005"
       break;
     default:
-      customerLocale = "1"
+      return "1"
+      break;
+  }
+}
+
+function getTalkdeskChatSubjectText(){
+  switch(getTalkdeskChatLanguage()){
+    case 'de':
+      return "Deine Anfrage im Live-Chat: " + $(requestReasonDropdownNesty).text();
+      break;
+    default:
+      return "Your Live Chat request: " + $(requestReasonDropdownNesty).text();
       break;
   }
 }
@@ -128,9 +165,6 @@ var webchat;
   firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
   script.onload = function() {
     webchat = TalkdeskChatSDK(node, props);
-    webchat.init(configs).then(() => {
-      webchat.selfHostedApp.open();
-    });
     /*
       * Send custom data from your website to TalkDesk!
       * If you would like to do it, you need to remove the following commented code and
@@ -138,7 +172,7 @@ var webchat;
       */
       function setContext() {
         //webchat.setContextParam({ "field_name1": "Olaf", "field_email1": "bastian.wartmann@sunrise.ch", "custom_dorpdown1": "Ring1"})
-        webchat.setContextParam({"order_number": "", "webform_case": "", "brand_id": getTalkdeskChatBrandId(), "ticket_tags": "", "customer_language": getTalkdeskChatLanguage(), "group_id": getTalkdeskChatGroupId(), "customer_locale": getTalkdeskChatCustomerLocale()})
+        webchat.setContextParam({"order_number": "", "webform_case": requestReasonTag, "brand_id": getTalkdeskChatBrandId(), "ticket_tags": "talkdesk_chat_test " + requestReasonTag, "customer_language": getTalkdeskChatLanguage(), "group_id": getTalkdeskChatGroupId(), "customer_locale": getTalkdeskChatCustomerLocale(), "brand_name": getTalkdeskChatBrandName(), "webform_case_text": getTalkdeskChatSubjectText()})
       }
 
       // Send data when the chat conversation is initiated
@@ -149,6 +183,10 @@ var webchat;
       webchat.onOpenWebchat = function() {
         setContext()
       }//*/
+
+      webchat.init(configs).then(() => {
+        webchat.selfHostedApp.open();
+      });
   };
 })(
   window,
