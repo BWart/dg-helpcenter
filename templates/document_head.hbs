@@ -37,12 +37,11 @@
 
   function openTalkdeskChatFromActiveSession(){
     var s = document.createElement('script');
-    s.setAttribute('src', "{{asset 'chattalkdesk.js'}}")
+    s.setAttribute('src', "{{asset 'chattalkdeskactivesession.js'}}")
     document.body.appendChild(s)
   }
 
   function openTalkdeskChatFromShop(){
-    
     sessionStorage.setItem('activeTalkdeskChat', 'yes')
     var s = document.createElement('script');
     s.setAttribute('src', "{{asset 'chattalkdesk.js'}}")

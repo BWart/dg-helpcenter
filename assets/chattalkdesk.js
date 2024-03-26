@@ -133,13 +133,43 @@ function getTalkdeskChatCustomerLocale(){
 }
 
 function getTalkdeskChatSubjectText(){
-  switch(getTalkdeskChatLanguage()){
-    case 'de':
-      return "Deine Anfrage im Live-Chat: " + $(requestReasonDropdownNesty).text();
-      break;
-    default:
-      return "Your Live Chat request: " + $(requestReasonDropdownNesty).text();
-      break;
+  if (chatOpenFromHelpAssist == true){
+    switch(getTalkdeskChatLanguage()){
+      case 'de':
+        return "Deine Anfrage im Live-Chat";
+        break;
+      default:
+        return "Your Live Chat request";
+        break;
+    }
+  }else {
+    switch(getTalkdeskChatLanguage()){
+      case 'de':
+        return "Deine Anfrage im Live-Chat: " + $(requestReasonDropdownNesty).text();
+        break;
+      default:
+        return "Your Live Chat request: " + $(requestReasonDropdownNesty).text();
+        break;
+    }
+}
+}
+
+function getTalkdeskChatWebformCase(){
+  if (chatOpenFromHelpAssist == true){
+    return "chatFromHelpAssist"
+  } else {
+    return requestReasonTag;
+  }
+}
+
+function getTalkdeskOrderNumber(){
+  console.log("inTDOrderNumber")
+  if(chatOpenFromHelpAssist == true){
+    console.log("inTDOrderNumber2")
+    console.log(JSON.parse(sessionStorage.getItem('user-info'))["order"])
+    return String(JSON.parse(sessionStorage.getItem('user-info'))["order"])
+  }else{
+    return ""
   }
 }
       
@@ -170,9 +200,11 @@ var webchat;
       * If you would like to do it, you need to remove the following commented code and
       * modify the webchat.setContextParam parameters to pass in the data you need.
       */
+
+    console.log("sprache: " + getTalkdeskChatLanguage())
       function setContext() {
         //webchat.setContextParam({ "field_name1": "Olaf", "field_email1": "bastian.wartmann@sunrise.ch", "custom_dorpdown1": "Ring1"})
-        webchat.setContextParam({"order_number": "", "webform_case": requestReasonTag, "brand_id": getTalkdeskChatBrandId(), "ticket_tags": "talkdesk_chat_test " + requestReasonTag, "customer_language": getTalkdeskChatLanguage(), "group_id": getTalkdeskChatGroupId(), "customer_locale": getTalkdeskChatCustomerLocale(), "brand_name": getTalkdeskChatBrandName(), "webform_case_text": getTalkdeskChatSubjectText()})
+        webchat.setContextParam({"order_number": getTalkdeskOrderNumber(), "webform_case": getTalkdeskChatWebformCase(), "brand_id": getTalkdeskChatBrandId(), "ticket_tags": "talkdesk_chat_test " + getTalkdeskChatWebformCase(), "customer_language": getTalkdeskChatLanguage(), "group_id": getTalkdeskChatGroupId(), "customer_locale": getTalkdeskChatCustomerLocale(), "brand_name": getTalkdeskChatBrandName(), "webform_case_text": getTalkdeskChatSubjectText()})
       }
 
       // Send data when the chat conversation is initiated
