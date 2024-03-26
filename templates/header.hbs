@@ -77,7 +77,13 @@
   sessionStorage.setItem('chatOpenFromHelpAssist', 'no')
   if (userInfo != null){
     sessionStorage.setItem('user-info', atob(userInfo))
+    console.log("IMHEEEEEEERE")
+    console.log(JSON.parse(atob(userInfo))["openChat"])
+    console.log(JSON.parse(atob(userInfo))["openChat"] == true)
+    console.log(JSON.parse(atob(userInfo))["openChat"] === true)
+    console.log(sessionStorage.getItem("chatOpenFromHelpAssist"))
     if (JSON.parse(atob(userInfo))["openChat"] == true){
+      console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
       chatOpenFromHelpAssist = true;
       sessionStorage.setItem('chatOpenFromHelpAssist', 'yes')}
       openTalkdeskChatFromShop();

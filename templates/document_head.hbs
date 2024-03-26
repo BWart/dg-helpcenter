@@ -27,6 +27,7 @@
   let talkdesk_order_number = "";
   let talkdesk_webform_case = "";
   function openTalkdeskChat(){
+    console.log("in openTalkdeskChat")
     talkdesk_order_number = "none"
     talkdesk_webform_case = requestReasonTag
     sessionStorage.setItem('activeTalkdeskChat', 'yes')
@@ -36,16 +37,21 @@
   }
 
   function openTalkdeskChatFromActiveSession(){
+    console.log("in openTalkdeskChatFromActiveSession")
     var s = document.createElement('script');
     s.setAttribute('src', "{{asset 'chattalkdeskactivesession.js'}}")
     document.body.appendChild(s)
   }
 
   function openTalkdeskChatFromShop(){
-    sessionStorage.setItem('activeTalkdeskChat', 'yes')
-    var s = document.createElement('script');
-    s.setAttribute('src', "{{asset 'chattalkdesk.js'}}")
-    document.body.appendChild(s)
+    console.log("in openTalkdeskChatFromShop")
+    if (JSON.parse(atob(userInfo))["openChat"] === true){
+      console.log("entering the if too")
+      sessionStorage.setItem('activeTalkdeskChat', 'yes')
+      var s = document.createElement('script');
+      s.setAttribute('src', "{{asset 'chattalkdesk.js'}}")
+      document.body.appendChild(s)
+    }
   }
 
   if (sessionStorage.getItem('activeTalkdeskChat') == 'yes'){
