@@ -172,6 +172,14 @@ function getTalkdeskOrderNumber(){
     return ""
   }
 }
+
+function getTalkeskChatTouchpointId(){
+  if (window.location.hostname == "helpcenter.galaxus.de"){
+    return "4a65e5943cc944538eb262962650d463"
+  }else{
+    return "aff514a814ee4a52bf1942f1902cbae1"
+  }
+}
       
       
       
@@ -224,6 +232,6 @@ var webchat;
   window,
   document,
   "tdWebchat",
-  { touchpointId: "aff514a814ee4a52bf1942f1902cbae1", accountId: "", region: "td-us-1" },
+  { touchpointId: getTalkeskChatTouchpointId(), accountId: "", region: "td-us-1" },
   { enableValidation: false, enableEmoji: true, enableUserInput: true, enableAttachments: true }
 );
