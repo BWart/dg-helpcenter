@@ -417,59 +417,59 @@ var textToDisplay = {
     },
     //Germany
     1 : {
-      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
-      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
+      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
+      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
+      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
+      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
     },
     //Austria
     2 : {
-      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
-      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
+      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
+      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
+      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
+      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
     },
     //France
     3 : {
-      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
-      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
+      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
+      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
+      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
+      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
     },
     //Italy
     4 : {
-      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
-      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
+      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
+      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
+      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
+      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
     },
     //Belgium
     5 : {
-      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
-      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
+      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
+      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
+      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
+      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
     },
     //Netherlands
     6 : {
-      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
-      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
+      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
+      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
+      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
+      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
     },
     //Luxembourg
     7 : {
-      'de' : '<br>29.03. - 01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>29.03. - 01.04.2024: Pâques, fermé',
-      'it' : '<br>29.03. - 01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>29.03. - 01.04.2024: Easter, closed',
-      'nl': '<br>29.03. - 01.04.2024: Pasen, gesloten'
+      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
+      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
+      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
+      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
+      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
     },
 }
 
@@ -485,25 +485,25 @@ var hideWaitingTimes = {
       ['2024-03-28 18:00:00', '2024-04-01 22:00:00']
     ],
     'de' : [
-      ['2024-03-29 00:00:00', '2024-04-01 22:00:00']
+      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
     ],
     'at' : [
-      ['2024-03-29 00:00:00', '2024-04-01 22:00:00']
+      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
     ],
     'fr' : [
-      ['2024-03-29 00:00:00', '2024-04-01 22:00:00']
+      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
     ],
     'it' : [
-      ['2024-03-29 00:00:00', '2024-04-01 22:00:00']
+      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
     ],
     'be' : [
-      ['2024-03-29 00:00:00', '2024-04-01 22:00:00']
+      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
     ],
     'nl' : [
-      ['2024-03-29 00:00:00', '2024-04-01 22:00:00']
+      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
     ],
     'lu' : [
-      ['2024-03-29 00:00:00', '2024-04-01 22:00:00']
+      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
     ]
 }
 
