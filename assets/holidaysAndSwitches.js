@@ -1,6 +1,6 @@
 // --- TIMEZONE OFFSET --- 
 // 2 during summer time, 1 during winter time
-var UTCHourOffset = 3;
+var UTCHourOffset = 2;
 
 // --- VARIABLES TO TOGGLE THE SEPARATE CONTACT CHANNELS ON AND OFF ---
 // --- Removed for Connect, everything handled directly inside the NewRequestPage script as the logic is simple ---
@@ -141,7 +141,7 @@ let waitTimesToHideChat = []
 
 //OPENING HOURS
 const openingHours = {
-  "helpcenter.mobile.galaxus.ch": {"weekday": [[9, 0, 13, 0], [14, 0, 18, 0]], "saturday": []},
+  "helpcenter.mobile.galaxus.ch": {"weekday": [[8, 0, 12, 0], [13, 0, 17, 0]], "saturday": []},
 }
 
 
