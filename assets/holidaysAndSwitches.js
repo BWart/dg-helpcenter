@@ -1,6 +1,6 @@
 // --- TIMEZONE OFFSET --- 
 // 2 during summer time, 1 during winter time
-var UTCHourOffset = 1;
+var UTCHourOffset = 2;
 
 
 
