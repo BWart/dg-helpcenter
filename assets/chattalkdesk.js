@@ -212,7 +212,16 @@ var webchat;
     console.log("sprache: " + getTalkdeskChatLanguage())
       function setContext() {
         //webchat.setContextParam({ "field_name1": "Olaf", "field_email1": "bastian.wartmann@sunrise.ch", "custom_dorpdown1": "Ring1"})
-        webchat.setContextParam({"order_number": getTalkdeskOrderNumber(), "webform_case": getTalkdeskChatWebformCase(), "brand_id": getTalkdeskChatBrandId(), "ticket_tags": "talkdesk_chat_test " + getTalkdeskChatWebformCase(), "customer_language": getTalkdeskChatLanguage(), "group_id": getTalkdeskChatGroupId(), "customer_locale": getTalkdeskChatCustomerLocale(), "brand_name": getTalkdeskChatBrandName(), "webform_case_text": getTalkdeskChatSubjectText()})
+        webchat.setContextParam(
+          {"order_number": getTalkdeskOrderNumber(),
+          "webform_case": getTalkdeskChatWebformCase(),
+          "brand_id": getTalkdeskChatBrandId(),
+          "ticket_tags": "talkdesk_chat_test " + getTalkdeskChatWebformCase(),
+          "customer_language": getTalkdeskChatLanguage(),
+          "group_id": getTalkdeskChatGroupId(),
+          "customer_locale": getTalkdeskChatCustomerLocale(),
+          "brand_name": getTalkdeskChatBrandName(),
+          "webform_case_text": getTalkdeskChatSubjectText()})
       }
 
       // Send data when the chat conversation is initiated
