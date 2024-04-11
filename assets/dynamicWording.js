@@ -56,10 +56,10 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
     tagePrivatkunde2EN = "";  //WICHTIG: braucht leading " |  " wenn befüllt
     uhrzeitPrivatkunde = "08:00 - 12:00, 13:00 - 17:00";
     uhrzeitPrivatkunde2 = "";
-    privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Datenschutzerklärung</a>';
-    privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Déclaration de protection des données</a>';
-    privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Informativa sulla protezione dei dati</a>';
-    privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.digitec.ch/wiki/2791" target="blank">Privacy statement</a>';
+    privacynoticeDE = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/6207" target="blank">Datenschutzerklärung</a>';
+    privacynoticeFR = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/6207" target="blank">Déclaration de protection des données</a>';
+    privacynoticeIT = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/6207" target="blank">Informativa sulla protezione dei dati</a>';
+    privacynoticeEN = '<a style="color:white;font-size:13px;" href="https://www.galaxus.ch/wiki/6207" target="blank">Privacy statement</a>';
 
     telPrivatkunde = "+41445759700";
     telPrivatkundeText = "+41 44 575 97 00";
@@ -122,7 +122,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'callbackFormError' : 'Bitte überprüfe Deine Eingaben<br>',
         'callbackAPIError' : 'Deine Anfrage konnte nicht übermittelt werden. Bitte verwende einen unserer anderen Kontaktkanäle.',
         'contact' : 'Kontaktiere uns',
-        'questionNotAnswered' : 'Deine Frage ist nicht beantwortet?',
+        'questionNotAnswered' : 'Wähle deinen Kontaktkanal',
         'noAnswerFound' : 'Keine passende Antwort gefunden?',
         'writeUs' : 'Schreib uns',
         'recommendedChannel' : 'Empfohlener Kanal',
@@ -145,7 +145,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatWaitTime': 'Wartezeit <font class="chatWaitTime"></font> min',
         'callWaitTime': 'Wartezeit <font class="callWaitTime"></font> min',
         'callbackWaitTime': 'Wartezeit <font class="callbackWaitTime"></font> min',
-        'toShop' : '<a href="https://www.digitec.ch/" target="blank">Zum Shop</a>',
+        'toShop' : '<a href="https://mobile.galaxus.ch/" target="blank">Zum Shop</a>',
         'ticketSubmitConfirmationTitle' : 'Vielen Dank für deine Anfrage!',
         'ticketSubmintConfirmationTextPt1' : '&#10003 Deine Anfrage wurde erfolgreich übermittelt.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'Wir senden dir eine Kopie deiner Anfrage an ',
@@ -209,7 +209,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'callbackFormError' : 'Veuillez vérifier vos saisies<br>',
         'callbackAPIError' : 'Ta demande n\'a pas pu être transmise. Veuillez utiliser l\'un de nos autres canaux de contact.',
         'contact' : 'Contactez-nous',
-        'questionNotAnswered' : 'Pas trouvé votre réponse ?',
+        'questionNotAnswered' : 'Choisissez votre canal de contact',
         'noAnswerFound' : 'Vous n\'avez pas trouvé la bonne réponse ?',
         'writeUs' : 'Ecrivez-nous',
         'recommendedChannel' : 'Canal recommandé',
@@ -232,7 +232,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatWaitTime': 'Réponse en <font class="chatWaitTime"></font> min',
         'callWaitTime': 'Réponse en <font class="callWaitTime"></font> min',
         'callbackWaitTime': 'Réponse en <font class="callbackWaitTime"></font> min',
-        'toShop' : '<a href="https://www.digitec.ch/" target="blank">Vers le Shop</a>',
+        'toShop' : '<a href="https://mobile.galaxus.ch/" target="blank">Vers le Shop</a>',
         'ticketSubmitConfirmationTitle' : 'Merci pour votre demande !',
         'ticketSubmintConfirmationTextPt1' : '&#10003 Votre demande a été transmise avec succès.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'Nous vous enverrons une copie de votre demande à ',
@@ -296,7 +296,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'callbackFormError' : 'Controllate le vostre iscrizioni<br>',
         'callbackAPIError' : 'Non è stato possibile inviare la richiesta. Si prega di utilizzare uno degli altri canali di contatto.',
         'contact' : 'Contattaci',
-        'questionNotAnswered' : 'Non risolve il tuo problema?',
+        'questionNotAnswered' : 'Scegli il tuo canale di contatto',
         'noAnswerFound' : 'Non hai trovato la risposta giusta?',
         'writeUs' : 'Scrivici',
         'recommendedChannel' : 'Canale consigliato',
@@ -319,7 +319,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatWaitTime': 'Risposta in <font class="chatWaitTime"></font> min',
         'callWaitTime': 'Risposta in <font class="callWaitTime"></font> min',
         'callbackWaitTime': 'Risposta in <font class="callbackWaitTime"></font> min',
-        'toShop' : '<a href="https://www.digitec.ch/" target="blank">Al negozio</a>',
+        'toShop' : '<a href="https://mobile.galaxus.ch/" target="blank">Al negozio</a>',
         'ticketSubmitConfirmationTitle' : 'Grazie per la tua richiesta!',
         'ticketSubmintConfirmationTextPt1' : '&#10003 La tua richiesta è stata inviata con successo.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'Vi invieremo una copia della vostra richiesta a ',
@@ -383,7 +383,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'callbackFormError' : 'Please check your entries<br>',
         'callbackAPIError' : 'There was a problem submitting your request. Please contact us under another contact channel',
         'contact' : 'Contact us',
-        'questionNotAnswered' : 'Your question is not answered?',
+        'questionNotAnswered' : 'Choose your contact channel',
         'noAnswerFound' : 'Can\'t find what you\'re looking for?',
         'writeUs' : 'Write us',
         'recommendedChannel' : 'Recommended channel',
@@ -406,7 +406,7 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'chatWaitTime': 'Reply time <font class="chatWaitTime"></font> min',
         'callWaitTime': 'Reply time <font class="callWaitTime"></font> min',
         'callbackWaitTime': 'Reply time <font class="callbackWaitTime"></font> min',
-        'toShop' : '<a href="https://www.digitec.ch/" target="blank">To Shop</a>',
+        'toShop' : '<a href="https://mobile.galaxus.ch/" target="blank">To Shop</a>',
         'ticketSubmitConfirmationTitle' : 'Thank you for your request!',
         'ticketSubmintConfirmationTextPt1' : '&#10003 Your request has been successfully submitted.<br><br>',
         'ticketSubmintConfirmationTextPt2' : 'We will send you a copy of your request to ',
@@ -427,18 +427,6 @@ function filldynamicWording(extraPrivateNumber, extraPrivateNumberText){
         'liveChannelsClosedMessage' : 'Unfortunately, our live channels are longer available, gladly we are available within the opening hours. Outside the opening hours you can use the contact form.'
         }
     }
-
-    if (window.location.hostname == 'helpcenter.mobile.galaxus.ch'){
-        dynamicWording['de']['questionNotAnswered'] = 'Wähle deinen Kontaktkanal'
-        dynamicWording['fr']['questionNotAnswered'] = 'Choisissez votre canal de contact'
-        dynamicWording['it']['questionNotAnswered'] = 'Scegli il tuo canale di contatto'
-        dynamicWording['en-US']['questionNotAnswered'] = 'Choose your contact channel'
-        dynamicWording['de']['toShop'] = '<a href="https://mobile.galaxus.ch/" target="blank">Zum Shop</a>'
-        dynamicWording['fr']['toShop'] = '<a href="https://mobile.galaxus.ch/" target="blank">Vers le Shop</a>'
-        dynamicWording['it']['toShop'] = '<a href="https://mobile.galaxus.ch/" target="blank">Al Shop</a>'
-        dynamicWording['en-US']['toShop'] = '<a href="https://mobile.galaxus.ch/" target="blank">To Shop</a>'
-    }
-
 
   return dynamicWording;  
 }
