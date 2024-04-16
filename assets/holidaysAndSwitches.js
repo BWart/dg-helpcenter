@@ -380,28 +380,28 @@ function fillTopBannerWording(){
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 0]
+      ['2024-04-17 01:00:00', '2024-04-23 23:00:00', 0], ['2024-04-23 23:00:00', '2024-05-01 23:00:00', 1], ['2024-05-01 23:00:00', '2024-05-09 23:00:00', 2], ['2024-05-09 23:00:00', '2024-05-20 23:00:00', 3], ['2024-07-18 23:00:00', '2024-08-01 23:00:00', 4]
     ],
     'de' : [
-      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 1]
+      ['2024-04-17 01:00:00', '2024-04-23 23:00:00', 10], ['2024-04-23 23:00:00', '2024-05-01 23:00:00', 11], ['2024-05-01 23:00:00', '2024-05-09 23:00:00', 12], ['2024-05-09 23:00:00', '2024-05-20 23:00:00', 13]
     ],
     'at' : [
-      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 2]
+      ['2024-04-17 01:00:00', '2024-04-23 23:00:00', 20], ['2024-04-23 23:00:00', '2024-05-01 23:00:00', 21], ['2024-05-01 23:00:00', '2024-05-09 23:00:00', 22], ['2024-05-09 23:00:00', '2024-05-20 23:00:00', 23]
     ],
     'fr' : [
-      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 3]
+      ['2024-04-17 01:00:00', '2024-04-23 23:00:00', 30], ['2024-04-23 23:00:00', '2024-05-01 23:00:00', 31], ['2024-05-01 23:00:00', '2024-05-09 23:00:00', 32], ['2024-05-09 23:00:00', '2024-05-20 23:00:00', 33]
     ],
     'it' : [
-      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 4]
+      ['2024-04-17 01:00:00', '2024-04-23 23:00:00', 40], ['2024-04-23 23:00:00', '2024-05-01 23:00:00', 41], ['2024-05-01 23:00:00', '2024-05-09 23:00:00', 42], ['2024-05-09 23:00:00', '2024-05-20 23:00:00', 43]
     ],
     'be' : [
-      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 5]
+      ['2024-04-17 01:00:00', '2024-04-23 23:00:00', 50], ['2024-04-23 23:00:00', '2024-05-01 23:00:00', 51], ['2024-05-01 23:00:00', '2024-05-09 23:00:00', 52], ['2024-05-09 23:00:00', '2024-05-20 23:00:00', 53]
     ],
     'nl' : [
-      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 6]
+      ['2024-04-17 01:00:00', '2024-04-23 23:00:00', 60], ['2024-04-23 23:00:00', '2024-05-01 23:00:00', 61], ['2024-05-01 23:00:00', '2024-05-09 23:00:00', 62], ['2024-05-09 23:00:00', '2024-05-20 23:00:00', 63]
     ],
     'lu' : [
-      ['2024-03-14 00:00:00', '2024-04-01 23:00:00', 7]
+      ['2024-04-17 01:00:00', '2024-04-23 23:00:00', 70], ['2024-04-23 23:00:00', '2024-05-01 23:00:00', 71], ['2024-05-01 23:00:00', '2024-05-09 23:00:00', 72], ['2024-05-09 23:00:00', '2024-05-20 23:00:00', 73]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
@@ -409,68 +409,243 @@ var showHolidays = {
 var textToDisplay = {
     // Switzerland
     0 : {
-      'de' : '<br>28.03.2024: Ab 17:00 geschlossen<br>29.03. - 01.04.2024: Ostern, geschlossen',
-      'fr' : '<br>28.03.2024: Fermé à partir de 17:00<br>29.03. - 01.04.2024: Pâques, fermé',
-      'it' : '<br>28.03.2024: Chiuso dalle 17:00<br>29.03. - 01.04.2024: Pasqua, chiuso',
-      'en-US' : '<br>28.03.2024: Closed from 17:00<br>29.03. - 01.04.2024: Easter, closed',
-      'nl': '<br>28.03.2024: Gesloten vanaf 17:00<br>29.03. - 01.04.2024: Pasen, gesloten'
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten'
+    },
+    1 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen<br>08.05.2024: Ab 17 Uhr geschlossen<br>09.05.2024: Auffahrt, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé<br>08.05.2024 : fermé à partir de 17 heures<br>09.05.2024 : Ascension, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso<br>08.05.2024: Chiuso dalle 17:00<br>09.05.2024: Ascensione, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed<br>08.05.2024: Closed from 17:00<br>09.05.2024: Ascension, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten<br>08.05.2024: Gesloten vanaf 17:00<br>09.05.2024: Hemelvaart, gesloten'
+    },
+    2 : {
+      'de' : '<br>08.05.2024: Ab 16 Uhr geschlossen<br>09.05.2024: Auffahrt, geschlossen<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>08.05.2024 : fermé à partir de 16 heures<br>09.05.2024 : Ascension, fermé<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>08.05.2024: Chiuso dalle 16:00<br>09.05.2024: Ascensione, chiuso<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>08.05.2024: Closed from 16:00<br>09.05.2024: Ascension, closed<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>08.05.2024: Gesloten vanaf 16:00<br>09.05.2024: Hemelvaart, gesloten<br>20.05.2024: Pinkstermaandag, gesloten'
+    },
+    3 : {
+      'de' : '<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>20.05.2024: Pinkstermaandag, gesloten'
+    },
+    4 : {
+      'de' : '<br>01.08.2024: 1. August, geschlossen',
+      'fr' : '<br>01.08.2024 : 1er août, fermé',
+      'it' : '<br>01.08.2024: 1 agosto, chiuso',
+      'en-US' : '<br>01.08.2024: August 1, closed',
+      'nl': '<br>01.08.2024: 1 augustus, gesloten'
     },
     //Germany
-    1 : {
-      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
-      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
-      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
-      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
-      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
+    10 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten'
+    },
+    11 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen<br>09.05.2024: Auffahrt, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé<br>09.05.2024 : Ascension, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso<br>09.05.2024: Ascensione, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed<br>09.05.2024: Ascension, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten<br>09.05.2024: Hemelvaart, gesloten'
+    },
+    12 : {
+      'de' : '<br>09.05.2024: Auffahrt, geschlossen<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>09.05.2024 : Ascension, fermé<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>09.05.2024: Ascensione, chiuso<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>09.05.2024: Ascension, closed<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>09.05.2024: Hemelvaart, gesloten<br>20.05.2024: Pinkstermaandag, gesloten'
+    },
+    13 : {
+      'de' : '<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>20.05.2024: Pinkstermaandag, gesloten'
     },
     //Austria
-    2 : {
-      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
-      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
-      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
-      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
-      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
+    20 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten'
+    },
+    21 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen<br>09.05.2024: Auffahrt, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé<br>09.05.2024 : Ascension, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso<br>09.05.2024: Ascensione, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed<br>09.05.2024: Ascension, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten<br>09.05.2024: Hemelvaart, gesloten'
+    },
+    22 : {
+      'de' : '<br>09.05.2024: Auffahrt, geschlossen<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>09.05.2024 : Ascension, fermé<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>09.05.2024: Ascensione, chiuso<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>09.05.2024: Ascension, closed<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>09.05.2024: Hemelvaart, gesloten<br>20.05.2024: Pinkstermaandag, gesloten'
+    },
+    23 : {
+      'de' : '<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>20.05.2024: Pinkstermaandag, gesloten'
     },
     //France
-    3 : {
-      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
-      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
-      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
-      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
-      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
+    30 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten'
+    },
+    31 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen<br>09.05.2024: Auffahrt, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé<br>09.05.2024 : Ascension, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso<br>09.05.2024: Ascensione, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed<br>09.05.2024: Ascension, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten<br>09.05.2024: Hemelvaart, gesloten'
+    },
+    32 : {
+      'de' : '<br>09.05.2024: Auffahrt, geschlossen<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>09.05.2024 : Ascension, fermé<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>09.05.2024: Ascensione, chiuso<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>09.05.2024: Ascension, closed<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>09.05.2024: Hemelvaart, gesloten<br>20.05.2024: Pinkstermaandag, gesloten'
+    },
+    33 : {
+      'de' : '<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>20.05.2024: Pinkstermaandag, gesloten'
     },
     //Italy
-    4 : {
-      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
-      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
-      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
-      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
-      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
+    40 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten'
+    },
+    41 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen<br>09.05.2024: Auffahrt, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé<br>09.05.2024 : Ascension, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso<br>09.05.2024: Ascensione, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed<br>09.05.2024: Ascension, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten<br>09.05.2024: Hemelvaart, gesloten'
+    },
+    42 : {
+      'de' : '<br>09.05.2024: Auffahrt, geschlossen<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>09.05.2024 : Ascension, fermé<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>09.05.2024: Ascensione, chiuso<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>09.05.2024: Ascension, closed<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>09.05.2024: Hemelvaart, gesloten<br>20.05.2024: Pinkstermaandag, gesloten'
+    },
+    43 : {
+      'de' : '<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>20.05.2024: Pinkstermaandag, gesloten'
     },
     //Belgium
-    5 : {
-      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
-      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
-      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
-      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
-      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
+    50 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten'
+    },
+    51 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen<br>09.05.2024: Auffahrt, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé<br>09.05.2024 : Ascension, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso<br>09.05.2024: Ascensione, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed<br>09.05.2024: Ascension, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten<br>09.05.2024: Hemelvaart, gesloten'
+    },
+    52 : {
+      'de' : '<br>09.05.2024: Auffahrt, geschlossen<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>09.05.2024 : Ascension, fermé<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>09.05.2024: Ascensione, chiuso<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>09.05.2024: Ascension, closed<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>09.05.2024: Hemelvaart, gesloten<br>20.05.2024: Pinkstermaandag, gesloten'
+    },
+    53 : {
+      'de' : '<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>20.05.2024: Pinkstermaandag, gesloten'
     },
     //Netherlands
-    6 : {
-      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
-      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
-      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
-      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
-      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
+    60 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten'
+    },
+    61 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen<br>09.05.2024: Auffahrt, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé<br>09.05.2024 : Ascension, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso<br>09.05.2024: Ascensione, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed<br>09.05.2024: Ascension, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten<br>09.05.2024: Hemelvaart, gesloten'
+    },
+    62 : {
+      'de' : '<br>09.05.2024: Auffahrt, geschlossen<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>09.05.2024 : Ascension, fermé<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>09.05.2024: Ascensione, chiuso<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>09.05.2024: Ascension, closed<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>09.05.2024: Hemelvaart, gesloten<br>20.05.2024: Pinkstermaandag, gesloten'
+    },
+    63 : {
+      'de' : '<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>20.05.2024: Pinkstermaandag, gesloten'
     },
     //Luxembourg
-    7 : {
-      'de' : '<br>29.03.2024: Karfreitag, geschlossen<br>01.04.2024: Ostermontag, geschlossen',
-      'fr' : '<br>29.03.2024 : Vendredi saint, fermé<br>01.04.2024 : Lundi de Pâques, fermé',
-      'it' : '<br>29.03.2024: Venerdì Santo, chiuso<br>01.04.2024: Lunedì di Pasqua, chiuso',
-      'en-US' : '<br>29.03.2024: Good Friday, closed<br>01.04.2024: Easter Monday, closed',
-      'nl': '<br>29.03.2024: Goede vrijdag, gesloten<br>01.04.2024: Paasmaandag, gesloten'
+    70 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten'
     },
+    71 : {
+      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen<br>09.05.2024: Auffahrt, geschlossen',
+      'fr' : '<br>01.05.2024 : Fête du travail, fermé<br>09.05.2024 : Ascension, fermé',
+      'it' : '<br>01.05.2024: Festa del lavoro, chiuso<br>09.05.2024: Ascensione, chiuso',
+      'en-US' : '<br>01.05.2024: Labor Day, closed<br>09.05.2024: Ascension, closed',
+      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten<br>09.05.2024: Hemelvaart, gesloten'
+    },
+    72 : {
+      'de' : '<br>09.05.2024: Auffahrt, geschlossen<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>09.05.2024 : Ascension, fermé<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>09.05.2024: Ascensione, chiuso<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>09.05.2024: Ascension, closed<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>09.05.2024: Hemelvaart, gesloten<br>20.05.2024: Pinkstermaandag, gesloten'
+    },
+    73 : {
+      'de' : '<br>20.05.2024: Pfingstmontag, geschlossen',
+      'fr' : '<br>20.05.2024 : Lundi de Pentecôte, fermé',
+      'it' : '<br>20.05.2024: Lunedì di Pentecoste, chiuso',
+      'en-US' : '<br>20.05.2024: Whit Monday, closed',
+      'nl': '<br>20.05.2024: Pinkstermaandag, gesloten'
+    }
 }
 
 
@@ -482,28 +657,28 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-      ['2024-03-28 16:00:00', '2024-04-01 22:00:00']
+      ['2024-05-01 01:00:00', '2024-05-01 23:00:00'], ['2024-05-08 15:00:00', '2024-05-09 23:00:00'], ['2024-05-20 01:00:00', '2024-05-20 23:00:00'], ['2024-08-01 14:00:00', '2024-08-01 23:00:00']
     ],
     'de' : [
-      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
+      ['2024-05-01 01:00:00', '2024-05-01 23:00:00'], ['2024-05-08 23:00:00', '2024-05-09 23:00:00'], ['2024-05-20 01:00:00', '2024-05-20 23:00:00']
     ],
     'at' : [
-      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
+      ['2024-05-01 01:00:00', '2024-05-01 23:00:00'], ['2024-05-08 23:00:00', '2024-05-09 23:00:00'], ['2024-05-20 01:00:00', '2024-05-20 23:00:00']
     ],
     'fr' : [
-      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
+      ['2024-05-01 01:00:00', '2024-05-01 23:00:00'], ['2024-05-08 23:00:00', '2024-05-09 23:00:00'], ['2024-05-20 01:00:00', '2024-05-20 23:00:00']
     ],
     'it' : [
-      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
+      ['2024-05-01 01:00:00', '2024-05-01 23:00:00'], ['2024-05-08 23:00:00', '2024-05-09 23:00:00'], ['2024-05-20 01:00:00', '2024-05-20 23:00:00']
     ],
     'be' : [
-      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
+      ['2024-05-01 01:00:00', '2024-05-01 23:00:00'], ['2024-05-08 23:00:00', '2024-05-09 23:00:00'], ['2024-05-20 01:00:00', '2024-05-20 23:00:00']
     ],
     'nl' : [
-      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
+      ['2024-05-01 01:00:00', '2024-05-01 23:00:00'], ['2024-05-08 23:00:00', '2024-05-09 23:00:00'], ['2024-05-20 01:00:00', '2024-05-20 23:00:00']
     ],
     'lu' : [
-      ['2024-03-29 00:01:00', '2024-03-29 22:00:00'], ['2024-03-31 00:01:00', '2024-04-01 22:00:00']
+      ['2024-05-01 01:00:00', '2024-05-01 23:00:00'], ['2024-05-08 23:00:00', '2024-05-09 23:00:00'], ['2024-05-20 01:00:00', '2024-05-20 23:00:00']
     ]
 }
 
