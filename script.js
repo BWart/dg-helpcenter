@@ -185,6 +185,7 @@ $('#new_request.request-form label:contains("Di cosa si tratta?")').parent().ins
   
 ///////////////////////////////////////////////////////////////////////Zopim Integration/////////////////////////////////////////////////////////////////
 //Zopim integration Ausgelagert in Chat.js
+/*
 try {
   waitForChat();
 }
@@ -193,6 +194,6 @@ catch (e) {
   if(gaSend){
     ga('send', 'event', 'Errors', 'ChatInitialLoad', String(e));
   }
-}
+}*/
 
 });

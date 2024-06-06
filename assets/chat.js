@@ -1,6 +1,227 @@
 // Waits until Page loaded and then calls basic Setup
 let customerDepartment = "Chat Private DE"
 
+///////////////////////////////////////////////////////////New Request Page Events/////////////////////////////////////////////////////////////
+function updateChatDepartment(){
+    /*if(!isChatting()){
+        var chatDepartment = getChatDepartment();
+        customerDepartment = chatDepartment;
+        changeWebWidgetSettingsOnChange(chatDepartment);
+        checkDepartmentforInitialButtonChange(chatDepartment);
+        addExternalScriptForWaitingTimes(false);
+        //listenDepartmentStatus(chatDepartment);
+    }else{*/
+        if (isInOpeningTimes()){
+            showChatButton();
+        }
+    //}
+}
+
+
+
+
+function checkDepartmentforInitialButtonChange(selectedDepartment){
+    if(isDepartmentAvailable(selectedDepartment) && isInOpeningTimes()){
+        showChatButton();
+    }else{
+        hideChatButton();
+    }
+}
+
+
+
+
+// Hide or Shows Button if Chosen Department Status Changes 
+function listenDepartmentStatus(){
+    zE('webWidget:on', 'chat:departmentStatus', function(department) {
+        if(department.name == customerDepartment){
+            changeButtonVisibility(department.status);
+            updateChatDepartment();
+        }
+    });
+}
+
+
+
+
+// Shows Chat button if anyone is available and inside opening hours
+function changeButtonVisibility(status){
+    if(status == 'online' && isInOpeningTimes()){
+        showChatButton();
+    }else{
+        hideChatButton();
+    }
+  }
+
+
+
+/////////////////////////////////////////////////////////////Departments///////////////////////////////////////////////////////////////////////////
+// Gibt das Chat Department anhand der Sprache und des Kundentyps zurück
+function getChatDepartment(){
+    var chatDepartmentType = getChatDepartmentType();
+    var dep = 'Chat ' + chatDepartmentType + ' ' + getChatDepartmentLanguage();
+    
+    console.log("DEPARTMENT: " + dep)
+ 
+    if(dep.includes('Private') && typeof chatWaitTimes != 'undefined'){        
+        try {
+            dep = getDepartmentWithOverflowCheck(dep);
+        }catch (e) {
+            console.error(e);
+            if(gaSend){
+                ga('send', 'event', 'Errors', 'ChatOverflow', String(e));
+            }
+        }
+    }
+
+
+
+
+    console.log('Expected Department :' + dep)
+    return dep;
+    //return("Chat Testgroup DE")
+    /*if(typeof getDepartmentInfo(dep) != 'undefined'){
+        return dep;
+    }else{*/
+        return 'Chat Private ' + getChatDepartmentLanguage();
+    //}
+}
+
+
+
+
+function getDepartmentWithOverflowCheck(selectedDepartment){
+    overflowDepartmentArray = checkForOverflow();
+    var departmenWaitingTime = getDepartmentWaitingTime();
+        
+    if(isDepartmentAvailable(selectedDepartment) && departmenWaitingTime > secondsToChatFallback && isOverflowDepartmentTresholdReached(departmenWaitingTime, overflowDepartmentArray[0][1])){
+        return 'Chat Private ' + overflowDepartmentArray[0][0];
+    }else{
+        return selectedDepartment;
+    }
+}
+
+
+
+
+function getDepartmentWaitingTime(){
+    console.log("in DepartmenWaitingTime")
+    switch(getChatDepartmentLanguage()){
+        case 'DE':
+            return chatWaitTimes['Chat Private DE'];
+            break;
+        case 'EN':
+            //return chatWaitTimes['Chat Private EN'];
+            return chatWaitTimes['Chat Private Multilingual'];
+            break;
+        case 'IT':
+            //return chatWaitTimes['Chat Private IT'];
+            return chatWaitTimes['Chat Private Multilingual'];
+            //return chatWaitTimes['Chat Private EN'];
+            break;
+        case 'FR':
+            //return chatWaitTimes['Chat Private FR'];
+            return chatWaitTimes['Chat Private Multilingual'];
+            //return chatWaitTimes['Chat Private EN'];
+            break;
+        default:
+            return 0;
+    }
+}
+
+
+
+
+function isOverflowDepartmentTresholdReached(selectedDepartmentWaitingTime, overflowDepartmentWaitingTime){
+    if(selectedDepartmentWaitingTime > (overflowDepartmentWaitingTime /100 * percentageForChatFallback)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+
+
+
+//Gets language and changes to uppercase
+function getChatDepartmentLanguage(){
+    var chatDepartmentLanguage = getNormalizedLanguage();
+    if ((portal == "helpcenter.galaxus.ch" || portal == "helpcenter.digitec.ch") && chatDepartmentLanguage.toUpperCase() != "DE"){
+        //return "EN"
+        return "Multilingual"
+    }
+    else {
+        return "DE"
+    }
+}
+
+
+
+
+//Normalisiert die HTML Sprache
+function getNormalizedLanguage(){
+    var normalizedLanguage;
+    switch(getLanguage()) {
+        case ('de'):
+            normalizedLanguage = 'de';
+            break;
+        case ('fr'):
+            normalizedLanguage = 'fr';
+            break;
+        case ('it'):
+            normalizedLanguage = 'it';
+            break;
+        case ('en-US'):
+            normalizedLanguage = 'en';
+            break;
+        case ('nl'):
+            normalizedLanguage = 'nl';
+            break;
+        default:
+            normalizedLanguage = 'de';
+    }
+    return normalizedLanguage;
+}
+
+
+
+
+function getLanguage(){
+    return $('html').attr('lang');
+}
+
+//Department Type wird anhand der Domain gesetzt
+function getChatDepartmentType(){
+    var href = window.location.hostname;
+    var chatDepartmentType;
+    switch(href){
+        case('helpcenter.digitec.ch'):
+        case('helpcenter.galaxus.ch'):
+            //chatDepartmentType = 'Private';
+            chatDepartmentType = getDGChatDepartmentType();
+            break;
+        case('helpcenter.connect.digitec.ch'):
+            chatDepartmentType = 'Private';
+            break;
+        case('helpcenter.galaxus.de'):
+        case('helpcenter.galaxus.at'):
+        case('helpcenter.galaxus.fr'):
+        case('helpcenter.galaxus.it'):
+        case('helpcenter.galaxus.nl'):
+        case('helpcenter.galaxus.be'):
+            chatDepartmentType = 'EU';
+            break;
+        default:
+            chatDepartmentType = 'Private';
+    }
+    return chatDepartmentType;
+}
+
+
+
+/*// Waits until Page loaded and then calls basic Setup
+let customerDepartment = "Chat Private DE"
+
 
 
 
@@ -146,7 +367,7 @@ function setChatDepartmentForHelpAssist(helpAssistRequestReason, isPrivate){
     }
 }*/
 
-
+/*
 
 
 ///////////////////////////////////////////////////////////Widget/////////////////////////////////////////////////////////
@@ -798,3 +1019,4 @@ function isPeDiy(){
         return false;
     }
 }
+*/

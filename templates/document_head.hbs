@@ -23,6 +23,39 @@
 <script>
 
 
+  function openRocketChat(){
+    console.log("in openRocketChat")
+    rocket_order_number = "none"
+    rocket_webform_case = requestReasonTag
+    sessionStorage.setItem('activeRocketChat', 'yes')
+    var s = document.createElement('script');
+    s.setAttribute('src', "{{asset 'chat_rocketchat.js'}}")
+    document.body.appendChild(s)
+  }
+
+  function openRocketChatFromActiveSession(){
+    console.log("in openRocketChatFromActiveSession")
+    var s = document.createElement('script');
+    //s.setAttribute('src', "{{asset 'chatrocketactivesession.js'}}")
+    document.body.appendChild(s)
+  }
+
+  function openRocketChatFromShop(){
+    console.log("in openRocketChatFromShop")
+    if (JSON.parse(atob(userInfo))["openChat"] === true){
+      console.log("entering the if too")
+      sessionStorage.setItem('activeRocketChat', 'yes')
+      var s = document.createElement('script');
+      s.setAttribute('src', "{{asset 'chat_rocketchat.js'}}")
+      document.body.appendChild(s)
+    }
+  }
+
+  if (sessionStorage.getItem('activeRocketChat') == 'yes'){
+    openRocketChatFromActiveSession();
+  }
+
+
 //Setting A/B Test group for PE Chat Routing
 if (true){
 //localStorage.getItem("PEABTestGroup3") != "A" && localStorage.getItem("PEABTestGroup2") != "B") {
@@ -54,11 +87,11 @@ link.onload = showBody();
   if(window.location.hostname !="helpcenter.digitec.ch" && window.location.hostname !="helpcenter.connect.digitec.ch" && window.location.hostname !="digitec.zendesk.com"){
     link.setAttribute("href", "{{asset 'galaxus-styles.css'}}");
     $('[rel="icon"]').attr("href", "{{asset 'fav_galaxus.png'}}");
-    $("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4"/><//script>')
+    //$("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=c3b964cb-d956-44fd-a01e-05987c5d9fe4"/><//script>')
     }else{
       link.setAttribute("href","{{asset 'digitec-styles.css'}}");
       $('[rel="icon"]').attr("href", "{{asset 'fav_digitec.png'}}");
-      $("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=18dfacef-9aec-49ae-bbe4-0bcd883ef859"/><//script>')
+      //$("#webWidget").html('<script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=18dfacef-9aec-49ae-bbe4-0bcd883ef859"/><//script>')
     }   
 //webWidgetDiv.hide()
 

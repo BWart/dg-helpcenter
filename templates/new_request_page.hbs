@@ -1108,6 +1108,8 @@
   function setWaitTime(chatSeconds, callSeconds, callbackSeconds){
     console.log("enter setwaittime")
       $(".recommendedChannel").css('display' , 'none');
+      customerDepartment = getChatDepartment()
+      console.log("Customerdepartment is: " + customerDepartment)
       if (chatSeconds[customerDepartment] < 181){
           $(".recommendedChannel").css('display' , 'inline-block');
       }
@@ -1645,7 +1647,7 @@
 
   //Action when clicking the chat button
   $('.button-chat').on("click", function () {
-    checkForTagChanges();
+    //checkForTagChanges();
     if(!isInOpeningTimes()){
       chatClosedMessage.show()
       liveChannelsClosedMessage.show()
@@ -1661,6 +1663,8 @@
       callbackWaitTimesDOMElements.hide();
       return 0;
     }
+    openRocketChat();
+    /*
     try {
       updateChatDepartment();
       openChat();
@@ -1672,7 +1676,7 @@
       if(gaSend){
         ga('send', 'event', 'Errors', 'ChatLoadAfterDropdown', String(e));
       }
-    } 
+    }*/
   });
 
   //--- CALLBACK EVENTS ---
