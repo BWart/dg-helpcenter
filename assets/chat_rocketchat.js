@@ -8,6 +8,12 @@
     RocketChat(function() {
         this.setGuestEmail('sample@rocket.chat')
         this.setDepartment('Chat EU DE');
-        this.setCustomField("ordernumber", "12345678")
+        this.setCustomField('ordernumber', '12345678')
         this.maximizeWidget();
+    });
+
+    RocketChat(function(){
+        this.onChatStarted(function(){
+            this.setCustomField('ordernumber', '12345678')
+        });
     });
