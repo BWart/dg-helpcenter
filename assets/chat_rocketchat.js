@@ -8,6 +8,7 @@
 
     RocketChat(function() {
         //this.setGuestEmail('sample@rocket.chat');
+        console.log("SETTING PARAMETERS")
         this.setLanguage(getNormalizedLanguage())
         this.setDepartment(getDepartmentRocketChat());
         this.maximizeWidget();
@@ -17,7 +18,13 @@
         this.setCustomField('portal', portal)
         this.setCustomField('requestreason', requestReasonTag)
         this.setCustomField('tags', '')
+
+        this.onChatMinimized(function(){
+            console.log("ISMINIMIZED")
+        })
     });
+
+    console.log("IM HEEEEEEEEEEEEEEEEEEEEERREEEEEEEEEEEEEE")
 
 
 function getDepartmentRocketChat(){
@@ -44,6 +51,7 @@ function getDepartmentRocketChat(){
             depString += ' Multilingual'
             break;
     }
-
+    console.log("depString is: " + depString)
     return depString;
 }
+
