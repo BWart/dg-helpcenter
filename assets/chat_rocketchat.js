@@ -7,8 +7,43 @@
 })(window, document, 'script', 'https://digitecgalaxus.demo-rocket.chat/livechat');
 
     RocketChat(function() {
-        this.setGuestEmail('sample@rocket.chat');
-        this.setDepartment('Chat EU Multilingual');
+        //this.setGuestEmail('sample@rocket.chat');
+        this.setLanguage(getNormalizedLanguage())
+        this.setDepartment(getDepartmentRocketChat());
         this.maximizeWidget();
+        this.setCustomField('customertype', customerType);
+        this.setCustomField('language', getNormalizedLanguage());
         this.setCustomField('ordernumber', '999');
+        this.setCustomField('portal', portal)
+        this.setCustomField('requestreason', requestReasonTag)
+        this.setCustomField('tags', '')
     });
+
+
+function getDepartmentRocketChat(){
+    let depString = "Chat"
+    switch (portal) {
+        case 'helpcenter.digitec.ch':
+        case 'helpcenter.galaxus.ch':
+            if (customerType == "business-customer" && ['fr', 'en'].includes(getNormalizedLanguage())){
+                depString += " Business"
+            } else {
+                depString += " Private"
+            }
+            break;
+        default:
+            depString += " EU"
+            break;
+    }
+
+    switch (getNormalizedLanguage()){
+        case 'de':
+            depString += ' DE'
+            break;
+        default:
+            depString += ' Multilingual'
+            break;
+    }
+
+    return depString;
+}
