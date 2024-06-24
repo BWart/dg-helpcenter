@@ -1,5 +1,4 @@
 const userParams = JSON.parse(atob(userInfo))
-console.log(userParams)
 
 
 let customerTypeRocket = ""
@@ -27,13 +26,12 @@ RocketChat(function() {
 
     let ordernumberrocket = ''
 
-    if (typeof 'ordernumber', userParams["order"] == 'undefined'){
-        ordernumberrocket = ''
-    } else {
+    if (Object.keys(userParams).includes("order")){
         ordernumberrocket = userParams["order"].toString()
+    } else {
+        ordernumberrocket = ''
     }
 
-    console.log(customerTypeRocket)
     this.setCustomField('customertype', customerTypeRocket);
     this.setCustomField('language', getNormalizedLanguage());
     this.setCustomField('ordernumber', ordernumberrocket);
