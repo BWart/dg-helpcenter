@@ -14,61 +14,34 @@
     j.async = true; j.src = 'https://digitecgalaxus.rocket.chat/livechat/rocketchat-livechat.min.js?_=201903270000';
     h.parentNode.insertBefore(j, h);
 })(window, document, 'script', 'https://digitecgalaxus.rocket.chat/livechat');//*/
-
+    console.log("normalized languate is: ")
+    console.log(getNormalizedLanguage())
     RocketChat(function() {
         //this.setGuestEmail('sample@rocket.chat');
         console.log("SETTING PARAMETERS")
         this.setLanguage(getNormalizedLanguage())
         this.setDepartment(getDepartmentRocketChat());
-        this.maximizeWidget();
-
-        //this.setCustomField('customertype', 'testervalue');
-        //this.setCustomField('language', 'testervalue');
-        //this.setCustomField('ordernumber', '963');
-        //this.setCustomField('portal', 'testervalue')
-        //this.setCustomField('requestreason', 'testervalue')
-        //this.setCustomField('tags', '')
 
         this.setCustomField('customertype', customerType);
         this.setCustomField('language', getNormalizedLanguage());
-        this.setCustomField('ordernumber', '999');
+        this.setCustomField('ordernumber', '');
         this.setCustomField('portal', portal)
         this.setCustomField('requestreason', requestReasonTag)
         this.setCustomField('tags', '')
 
-        this.onChatMinimized(function(){
-            console.log("ISMINIMIZED")
-        })
+        this.maximizeWidget();
     });
 
-    console.log("IM HEEEEEEEEEEEEEEEEEEEEERREEEEEEEEEEEEEE 1234")
-
-
 function getDepartmentRocketChat(){
-    let depString = "Chat"
-    switch (portal) {
-        case 'helpcenter.digitec.ch':
-        case 'helpcenter.galaxus.ch':
-            if (customerType == "business-customer" && ['fr', 'en'].includes(getNormalizedLanguage())){
-                depString += " Business"
-            } else {
-                depString += " Private"
-            }
-            break;
-        default:
-            depString += " EU"
-            break;
-    }
-
+    let depString = ""
     switch (getNormalizedLanguage()){
         case 'de':
-            depString += ' DE'
+            depString += 'Galaxus Chat Deutsch'
             break;
         default:
-            depString += ' Multilingual'
+            depString += 'Galaxus Chat English'
             break;
     }
-    console.log("depString is: " + depString)
     return depString;
 }
 

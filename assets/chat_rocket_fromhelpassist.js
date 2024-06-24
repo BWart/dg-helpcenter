@@ -21,12 +21,11 @@ if (userParams["isPrivate"]){
 
 RocketChat(function() {
     //this.setGuestEmail('sample@rocket.chat');
-    console.log("SETTING PARAMETERS")
     this.setLanguage(getNormalizedLanguage())
     this.setDepartment(getDepartmentRocketChat());
     this.setGuestEmail(userParams["email"])
-    this.maximizeWidget();
 
+    console.log(customerTypeRocket)
     this.setCustomField('customertype', customerTypeRocket);
     this.setCustomField('language', getNormalizedLanguage());
     this.setCustomField('ordernumber', userParams["order"].toString());
@@ -34,33 +33,19 @@ RocketChat(function() {
     this.setCustomField('requestreason', 'rocketfromhelpassist')
     this.setCustomField('tags', userParams["tags"])
 
+    this.maximizeWidget();
 });
 
 
 function getDepartmentRocketChat(){
-    let depString = "Chat"
-    switch (portal) {
-        case 'helpcenter.digitec.ch':
-        case 'helpcenter.galaxus.ch':
-            if (customerTypeRocket == "business-customer" && ['fr', 'en'].includes(getNormalizedLanguage())){
-                depString += " Business"
-            } else {
-                depString += " Private"
-            }
-            break;
-        default:
-            depString += " EU"
-            break;
-    }
-
+    let depString = ""
     switch (getNormalizedLanguage()){
         case 'de':
-            depString += ' DE'
+            depString += 'Galaxus Chat Deutsch'
             break;
         default:
-            depString += ' Multilingual'
+            depString += 'Galaxus Chat English'
             break;
     }
-    console.log("depString is: " + depString)
     return depString;
 }
