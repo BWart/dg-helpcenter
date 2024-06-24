@@ -25,10 +25,18 @@ RocketChat(function() {
     this.setDepartment(getDepartmentRocketChat());
     this.setGuestEmail(userParams["email"])
 
+    let ordernumberrocket = ''
+
+    if (typeof 'ordernumber', userParams["order"] == 'undefined'){
+        ordernumberrocket = ''
+    } else {
+        ordernumberrocket = userParams["order"].toString()
+    }
+
     console.log(customerTypeRocket)
     this.setCustomField('customertype', customerTypeRocket);
     this.setCustomField('language', getNormalizedLanguage());
-    this.setCustomField('ordernumber', userParams["order"].toString());
+    this.setCustomField('ordernumber', ordernumberrocket);
     this.setCustomField('portal', portal)
     this.setCustomField('requestreason', 'rocketfromhelpassist')
     this.setCustomField('tags', userParams["tags"])
