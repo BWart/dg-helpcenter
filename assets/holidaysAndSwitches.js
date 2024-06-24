@@ -389,7 +389,7 @@ var showHolidays = {
       ['2024-04-17 01:00:00', '2024-04-23 23:00:00', 20], ['2024-04-23 23:00:00', '2024-05-01 23:00:00', 21], ['2024-05-01 23:00:00', '2024-05-09 23:00:00', 22], ['2024-05-09 23:00:00', '2024-05-20 23:00:00', 23]
     ],
     'fr' : [
-      ['2024-04-17 01:00:00', '2024-04-23 23:00:00', 30], ['2024-04-23 23:00:00', '2024-05-01 23:00:00', 31], ['2024-05-01 23:00:00', '2024-05-09 23:00:00', 32], ['2024-05-09 23:00:00', '2024-05-20 23:00:00', 33]
+      ['2024-06-24 13:00:00', '2024-06-25 23:00:00', 30]
     ],
     'it' : [
       ['2024-04-17 01:00:00', '2024-04-23 23:00:00', 40], ['2024-04-23 23:00:00', '2024-05-01 23:00:00', 41], ['2024-05-01 23:00:00', '2024-05-09 23:00:00', 42], ['2024-05-09 23:00:00', '2024-05-20 23:00:00', 43]
@@ -503,32 +503,11 @@ var textToDisplay = {
     },
     //France
     30 : {
-      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen',
-      'fr' : '<br>01.05.2024 : Fête du travail, fermé',
-      'it' : '<br>01.05.2024: Festa del lavoro, chiuso',
-      'en-US' : '<br>01.05.2024: Labor Day, closed',
-      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten'
-    },
-    31 : {
-      'de' : '<br>01.05.2024: Tag der Arbeit, geschlossen<br>09.05.2024: Auffahrt, geschlossen',
-      'fr' : '<br>01.05.2024 : Fête du travail, fermé<br>09.05.2024 : Ascension, fermé',
-      'it' : '<br>01.05.2024: Festa del lavoro, chiuso<br>09.05.2024: Ascensione, chiuso',
-      'en-US' : '<br>01.05.2024: Labor Day, closed<br>09.05.2024: Ascension, closed',
-      'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten<br>09.05.2024: Hemelvaart, gesloten'
-    },
-    32 : {
-      'de' : '<br>09.05.2024: Auffahrt, geschlossen<br>20.05.2024: Pfingstmontag, geschlossen',
-      'fr' : '<br>09.05.2024 : Ascension, fermé<br>20.05.2024 : Lundi de Pentecôte, fermé',
-      'it' : '<br>09.05.2024: Ascensione, chiuso<br>20.05.2024: Lunedì di Pentecoste, chiuso',
-      'en-US' : '<br>09.05.2024: Ascension, closed<br>20.05.2024: Whit Monday, closed',
-      'nl': '<br>09.05.2024: Hemelvaart, gesloten<br>20.05.2024: Pinkstermaandag, gesloten'
-    },
-    33 : {
-      'de' : '<br>20.05.2024: Pfingstmontag, geschlossen',
-      'fr' : '<br>20.05.2024 : Lundi de Pentecôte, fermé',
-      'it' : '<br>20.05.2024: Lunedì di Pentecoste, chiuso',
-      'en-US' : '<br>20.05.2024: Whit Monday, closed',
-      'nl': '<br>20.05.2024: Pinkstermaandag, gesloten'
+      'de' : '<br>24.06.2024 - 25.06.2024: Wartungsarbeiten an unserem Chat',
+      'fr' : '<br>24.06.2024 - 25.06.2024: Travaux de maintenance sur notre chat',
+      'it' : '<br>24.06.2024 - 25.06.2024: Interventi di manutenzione sulla nostra chat',
+      'en-US' : '<br>24.06.2024 - 25.06.2024: Maintenance work on our chat',
+      'nl': '<br>24.06.2024 - 25.06.2024: Onderhoudswerk aan onze chat',
     },
     //Italy
     40 : {
@@ -666,7 +645,7 @@ var hideWaitingTimes = {
       ['2024-05-01 01:00:00', '2024-05-01 23:00:00'], ['2024-05-08 23:00:00', '2024-05-09 23:00:00'], ['2024-05-20 01:00:00', '2024-05-20 23:00:00']
     ],
     'fr' : [
-      ['2024-05-01 01:00:00', '2024-05-01 23:00:00'], ['2024-05-08 23:00:00', '2024-05-09 23:00:00'], ['2024-05-20 01:00:00', '2024-05-20 23:00:00']
+      ['2024-06-24 13:00:00', '2024-06-25 23:00:00']
     ],
     'it' : [
       ['2024-05-01 01:00:00', '2024-05-01 23:00:00'], ['2024-05-08 23:00:00', '2024-05-09 23:00:00'], ['2024-05-20 01:00:00', '2024-05-20 23:00:00']
