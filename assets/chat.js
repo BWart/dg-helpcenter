@@ -567,16 +567,10 @@ function removeOldTags(){
 function addNewZopimTags(){
     var languageTag = getNormalizedLanguage();
     var abTest = ""
-    var isChatOpen = ""
     if (localStorage.getItem("hideAdviceABTest") == "A" && (portal == "helpcenter.galaxus.ch" || portal == "helpcenter.digitec.ch")){
         abTest = "peremove_group_a"
     }
-    if (isInOpeningTimes()){
-        isChatOpen = "chat_open"
-    } else {
-        isChatOpen = "chat_closed"
-    }
-    setZopimTags([languageTag, requestReasonTag, getCustomerTypeTag(), abTest, isChatOpen]); // Alle neuen Tags werden gesetzt
+    setZopimTags([languageTag, requestReasonTag, getCustomerTypeTag(), abTest]); // Alle neuen Tags werden gesetzt
 }
 
 
