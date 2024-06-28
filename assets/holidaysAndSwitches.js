@@ -109,7 +109,7 @@ function fillTopBannerWording() {
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2024-04-17 01:00:00', '2024-04-23 23:00:00', 0], ['2024-04-23 23:00:00', '2024-05-01 23:00:00', 1], ['2024-05-01 23:00:00', '2024-05-09 23:00:00', 2], ['2024-05-09 23:00:00', '2024-05-20 23:00:00', 3], ['2024-07-18 23:00:00', '2024-08-01 23:00:00', 4]
+      ['2024-04-17 01:00:00', '2024-04-23 23:00:00', 0], ['2024-04-23 23:00:00', '2024-05-01 23:00:00', 1], ['2024-06-28 05:00:00', '2024-06-28 23:00:00', 2], ['2024-07-18 23:00:00', '2024-08-01 23:00:00', 3]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
@@ -130,20 +130,13 @@ var textToDisplay = {
     'nl': '<br>01.05.2024: Dag van de Arbeid, gesloten<br>08.05.2024: Gesloten vanaf 16:00<br>09.05.2024: Hemelvaart, gesloten'
   },
   2 : {
-    'de' : '<br>08.05.2024: Ab 16 Uhr geschlossen<br>09.05.2024: Auffahrt, geschlossen<br>20.05.2024: Pfingstmontag, geschlossen',
-    'fr' : '<br>08.05.2024 : fermé à partir de 16 heures<br>09.05.2024 : Ascension, fermé<br>20.05.2024 : Lundi de Pentecôte, fermé',
-    'it' : '<br>08.05.2024: Chiuso dalle 16:00<br>09.05.2024: Ascensione, chiuso<br>20.05.2024: Lunedì di Pentecoste, chiuso',
-    'en-US' : '<br>08.05.2024: Closed from 16:00<br>09.05.2024: Ascension, closed<br>20.05.2024: Whit Monday, closed',
-    'nl': '<br>08.05.2024: Gesloten vanaf 16:00<br>09.05.2024: Hemelvaart, gesloten<br>20.05.2024: Pinkstermaandag, gesloten'
+    'de' : '<br>28.06.2024: Ab 16 Uhr geschlossen<br>',
+    'fr' : '<br>28.06.2024 : fermé à partir de 16 heures<br>',
+    'it' : '<br>28.06.2024: Chiuso dalle 16:00<br>',
+    'en-US' : '<br>28.06.2024: Closed from 16:00<br>',
+    'nl': '<br>28.06.2024: Gesloten vanaf 16:00<br>'
   },
   3 : {
-    'de' : '<br>20.05.2024: Pfingstmontag, geschlossen',
-    'fr' : '<br>20.05.2024 : Lundi de Pentecôte, fermé',
-    'it' : '<br>20.05.2024: Lunedì di Pentecoste, chiuso',
-    'en-US' : '<br>20.05.2024: Whit Monday, closed',
-    'nl': '<br>20.05.2024: Pinkstermaandag, gesloten'
-  },
-  4 : {
     'de' : '<br>01.08.2024: 1. August, geschlossen',
     'fr' : '<br>01.08.2024 : 1er août, fermé',
     'it' : '<br>01.08.2024: 1 agosto, chiuso',
@@ -157,7 +150,7 @@ var textToDisplay = {
 //Values per Array: ['starting date of a holiday', 'ending date of a holiday']
 var hideWaitingTimes = {
     'ch' : [
-      ['2024-05-01 01:00:00', '2024-05-01 23:00:00'], ['2024-05-08 14:00:00', '2024-05-09 23:00:00'], ['2024-05-20 01:00:00', '2024-05-20 23:00:00'], ['2024-08-01 14:00:00', '2024-08-01 23:00:00']
+      ['2024-05-01 01:00:00', '2024-05-01 23:00:00'], ['2024-05-08 14:00:00', '2024-05-09 23:00:00'], ['2024-05-20 01:00:00', '2024-05-20 23:00:00'], ['2024-06-28 14:00:00', '2024-06-28 23:00:00'] , ['2024-08-01 01:00:00', '2024-08-01 23:00:00']
     ]
 }
 
