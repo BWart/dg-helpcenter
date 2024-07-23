@@ -1490,8 +1490,8 @@
       stampslist.forEach((stampset) => {
           if (utc_timestamp > Date.parse(stampset[0]) && utc_timestamp < Date.parse(stampset[1])){
               var tempstring = textToDisplay[stampset[2]][lang]
-              $('#holidaysDesktop')[0].innerHTML = tempstring
-              $('#holidaysMobile')[0].innerHTML = tempstring
+              $('#holidaysDesktop')[0].innerHTML += tempstring
+              $('#holidaysMobile')[0].innerHTML += tempstring
           }
       })
     }

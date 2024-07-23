@@ -109,18 +109,18 @@ function fillTopBannerWording() {
 //Values per Array: ['starting date to show the text', 'end date to stop showing the text', ID of the text to Display]
 var showHolidays = {
     'ch' : [
-      ['2024-07-22 01:00:00', '2024-07-26 23:00:00', 0], ['2024-07-18 23:00:00', '2024-08-01 23:00:00', 1]
+      ['2024-07-15 01:00:00', '2024-07-26 23:00:00', 0], ['2024-07-18 23:00:00', '2024-08-01 23:00:00', 1]
     ]
 }
 //THE TEXT TO BE DISPLAYED ACCORDING TO THE ID SET ABOVE
 //NOTE: The values always need a leading <br>
 var textToDisplay = {
   0 : {
-    'de' : '<br>24.-26.07.2024: Jeweils ab 14:30 geschlossen',
-    'fr' : '<br>24.-26.07.2024 : fermé à partir de 14h30',
-    'it' : '<br>24-26.07.2024: chiuso dalle 14:30 di ogni giorno.',
-    'en-US' : '<br>24.-26.07.2024: Closed from 14:30 each day',
-    'nl': '<br>25.-26.07.2024: elke dag gesloten vanaf 14:30'
+    'de' : '<br>24. - 26.07.2024: Jeweils ab 14:30 geschlossen',
+    'fr' : '<br>24. - 26.07.2024 : fermé à partir de 14h30',
+    'it' : '<br>24 - 26.07.2024: chiuso dalle 14:30 di ogni giorno.',
+    'en-US' : '<br>24. - 26.07.2024: Closed from 14:30 each day',
+    'nl': '<br>24. - 26.07.2024: elke dag gesloten vanaf 14:30'
   },
   1 : {
     'de' : '<br>01.08.2024: 1. August, geschlossen',
