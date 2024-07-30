@@ -1487,12 +1487,13 @@
       datestring = String(d.getUTCFullYear()) + '-' + String(d.getUTCMonth() + 1) + '-' + String(d.getUTCDate()) + ' ' + String(d.getUTCHours()) + ':' + String(d.getUTCMinutes()) + ':' + String(d.getUTCSeconds())
       const utc_timestamp = Date.parse(datestring)
       var stampslist = showHolidays[portalChooser]
+      let tempstring = "";
       stampslist.forEach((stampset) => {
           if (utc_timestamp > Date.parse(stampset[0]) && utc_timestamp < Date.parse(stampset[1])){
-              var tempstring = textToDisplay[stampset[2]][lang]
-              $('#holidaysDesktop')[0].innerHTML += tempstring
-              $('#holidaysMobile')[0].innerHTML += tempstring
+              tempstring += textToDisplay[stampset[2]][lang]
           }
       })
+      $('#holidaysDesktop')[0].innerHTML = tempstring
+      $('#holidaysMobile')[0].innerHTML = tempstring
     }
 </script>
